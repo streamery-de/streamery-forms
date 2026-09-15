@@ -54,7 +54,7 @@ class Support
 	public static function get_links(): array
 	{
 		$links = array(
-			'kofi'           => 'https://ko-fi.com/gutenform',
+			'kofi'           => 'https://ko-fi.com/streamery',
 			// Stays empty until the GitHub Sponsors profile is approved.
 			'githubSponsors' => '',
 			'review'         => 'https://wordpress.org/support/plugin/streamery-forms/reviews/#new-post',

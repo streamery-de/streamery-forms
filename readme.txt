@@ -1,6 +1,6 @@
 === Streamery Forms ===
 Contributors: streamery
-Donate link: https://ko-fi.com/gutenform
+Donate link: https://ko-fi.com/streamery
 Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
@@ -122,7 +122,7 @@ Yes. Editors can read and manage inbox entries. Settings that affect the whole s
 
 = How can I support Streamery Forms? =
 
-Streamery Forms is free, with no pro version and no locked features. The easiest way to help is a review here on WordPress.org or a translation on translate.wordpress.org. If you would like to support development, you can buy a coffee at [ko-fi.com/gutenform](https://ko-fi.com/gutenform).
+Streamery Forms is free, with no pro version and no locked features. The easiest way to help is a review here on WordPress.org or a translation on translate.wordpress.org. If you would like to support development, you can buy a coffee at [ko-fi.com/streamery](https://ko-fi.com/streamery).
 
 The plugin shows a small support link on its settings screen and, once, after 50 collected submissions. Administrators can dismiss it, and developers can remove it entirely with `add_filter( 'streamery-forms/support_links', '__return_empty_array' );`. No request is ever made to a donation platform, and nothing is shown to site visitors.
 
