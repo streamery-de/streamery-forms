@@ -1,10 +1,11 @@
 === Streamery Forms ===
 Contributors: streamery
+Donate link: https://ko-fi.com/gutenform
 Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -119,6 +120,12 @@ In `wp-content/uploads/streamery-forms/`. The directory is protected against scr
 
 Yes. Editors can read and manage inbox entries. Settings that affect the whole site — SMTP, provider feeds, mailboxes, CAPTCHA keys — remain administrator-only.
 
+= How can I support Streamery Forms? =
+
+Streamery Forms is free, with no pro version and no locked features. The easiest way to help is a review here on WordPress.org or a translation on translate.wordpress.org. If you would like to support development, you can buy a coffee at [ko-fi.com/gutenform](https://ko-fi.com/gutenform).
+
+The plugin shows a small support link on its settings screen and, once, after 50 collected submissions. Administrators can dismiss it, and developers can remove it entirely with `add_filter( 'streamery-forms/support_links', '__return_empty_array' );`. No request is ever made to a donation platform, and nothing is shown to site visitors.
+
 = What happens to my data if I delete the plugin? =
 
 By default, nothing: your submissions, mailboxes, and providers are kept, so deleting and reinstalling does not lose anything. If you want everything removed, enable "Delete all data on uninstall" in the settings before deleting the plugin. Plugin options — including the stored SMTP password — are always removed on uninstall.
@@ -141,10 +148,16 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Changelog ==
 
+= 1.0.1 =
+* Fix: Multi-step forms now scroll back to the top of the form when moving to the next or previous step.
+
 = 1.0.0 =
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Multi-step forms scroll back to the top of the form on step change.
 
 = 1.0.0 =
 Initial release.

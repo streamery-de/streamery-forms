@@ -1,5 +1,6 @@
 import { Separator } from "@/components/ui/separator"
 import { SidebarNav } from "@/components/settings/sidebar-nav"
+import { SupportCard } from "@/components/support/SupportCard"
 
 const sidebarNavItems = [
   {
@@ -43,6 +44,7 @@ export default function SettingsLayout({ children }: SettingsLayoutProps) {
         <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
           <aside className="-mx-4 lg:w-1/5">
             <SidebarNav items={sidebarNavItems} />
+            <SupportCard className="mx-4 mt-8 hidden lg:block" />
           </aside>
           <div className="flex-1 lg:max-w-2xl">{children}</div>
         </div>

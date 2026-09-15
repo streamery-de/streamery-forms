@@ -4,7 +4,9 @@
  */
 
 .wp-block-streamery-forms-form {
-	/* styles for the form block */
+	/* Gap kept above the form when a step change scrolls back to it. Themes with
+	   a taller sticky header can raise --streamery-forms-scroll-offset. */
+	scroll-margin-top: calc(var(--wp-admin--admin-bar--height, 0px) + var(--streamery-forms-scroll-offset, 100px));
 }
 
 .streamery-forms-success-modal {

@@ -321,6 +321,11 @@ GPLv2 or later
 
 For support, please open an issue on the [GitHub repository](https://github.com/streamery/streamery-forms).
 
+Streamery Forms is free, with no pro version and no locked features. If it saves you time, you can support its development:
+
+- ☕ [Buy a coffee on Ko-fi](https://ko-fi.com/gutenform)
+- ⭐ [Leave a review on WordPress.org](https://wordpress.org/support/plugin/streamery-forms/reviews/#new-post)
+
 ## Documentation
 
 The `documentation/` folder contains a Next.js app for platform docs and preview. To run it locally:

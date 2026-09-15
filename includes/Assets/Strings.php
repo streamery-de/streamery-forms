@@ -815,6 +815,17 @@ class Strings
 			'progressBar' => __('Progress Bar', 'streamery-forms'),
 			'progressBubbles' => __('Step Bubbles', 'streamery-forms'),
 			'stepTitle' => __('Step Title', 'streamery-forms'),
+
+			// Support
+			'supportStreameryForms' => __('Support Streamery Forms', 'streamery-forms'),
+			'supportText' => __('Streamery Forms is free, with no pro version and no locked features. If it saves you time, a coffee helps keep it maintained.', 'streamery-forms'),
+			/* translators: %d: submission milestone, e.g. 50. */
+			'supportMilestoneTitle' => __('%d+ submissions collected', 'streamery-forms'),
+			'supportMilestoneText' => __('Glad Streamery Forms is working for you. If you like it, a coffee or a quick review helps a lot.', 'streamery-forms'),
+			'supportOnKofi' => __('Buy a coffee', 'streamery-forms'),
+			'sponsorOnGithub' => __('Sponsor on GitHub', 'streamery-forms'),
+			'leaveReview' => __('Leave a review', 'streamery-forms'),
+			'dismissSupport' => __('Don\'t show again', 'streamery-forms'),
 		);
 	}
 }

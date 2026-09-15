@@ -719,6 +719,44 @@ class Actions
 	}
 
 	/**
+	 * Dismiss the "Support Streamery Forms" prompt for the current user.
+	 *
+	 * @param \WP_REST_Request $request
+	 * @return array|\WP_Error
+	 */
+	public function update_support_dismissed(\WP_REST_Request $request)
+	{
+		// Verify nonce
+		$nonce = $request->get_header('X-WP-Nonce');
+		if (!$nonce || !wp_verify_nonce($nonce, 'wp_rest')) {
+			return new \WP_Error(
+				'rest_forbidden',
+				__('Security check failed.', 'streamery-forms'),
+				array('status' => 403)
+			);
+		}
+
+		// Check user capabilities
+		if (!current_user_can('manage_options')) {
+			return new \WP_Error(
+				'rest_forbidden',
+				__('You do not have permission to manage settings.', 'streamery-forms'),
+				array('status' => 403)
+			);
+		}
+
+		$params = $request->get_json_params();
+		$dismissed = isset($params['dismissed']) ? (bool) $params['dismissed'] : true;
+
+		update_user_meta(get_current_user_id(), \StreameryForms\Admin\Support::DISMISSED_META_KEY, $dismissed ? '1' : '');
+
+		return array(
+			'success'   => true,
+			'dismissed' => $dismissed,
+		);
+	}
+
+	/**
 	 * Get the "delete all data on uninstall" opt-in.
 	 *
 	 * @return array|\WP_Error

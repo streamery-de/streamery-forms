@@ -11,6 +11,7 @@ use StreameryForms\Core\Smtp;
 use StreameryForms\Core\EmailLogger;
 use StreameryForms\Admin\Menu;
 use StreameryForms\Admin\AdminBar;
+use StreameryForms\Admin\Support;
 use StreameryForms\Assets\Frontend;
 use StreameryForms\Assets\Admin;
 use StreameryForms\Traits\Base;
@@ -78,6 +79,7 @@ final class StreameryForms
 	{
 		if (is_admin()) {
 			Menu::get_instance()->init();
+			Support::get_instance()->init();
 			Admin::get_instance()->bootstrap();
 			Deactivate::get_instance()->init();
 			\StreameryForms\Core\Crypto::maybe_show_unavailable_notice();

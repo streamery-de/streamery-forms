@@ -108,6 +108,7 @@ Route::prefix(
 		$route->post('/settings/skip-first-steps', '\StreameryForms\Controllers\Settings\Actions@update_skip_first_steps', $manage_settings);
 		$route->get('/settings/charts-visible', '\StreameryForms\Controllers\Settings\Actions@get_charts_visible', $manage_settings);
 		$route->post('/settings/charts-visible', '\StreameryForms\Controllers\Settings\Actions@update_charts_visible', $manage_settings);
+		$route->post('/settings/support-dismissed', '\StreameryForms\Controllers\Settings\Actions@update_support_dismissed', $manage_settings);
 		$route->get('/settings/admin-bar', '\StreameryForms\Controllers\Settings\Actions@get_admin_bar_enabled', $manage_settings);
 		$route->post('/settings/admin-bar', '\StreameryForms\Controllers\Settings\Actions@update_admin_bar_enabled', $manage_settings);
 		$route->get('/settings/delete-data-on-uninstall', '\StreameryForms\Controllers\Settings\Actions@get_delete_data_on_uninstall', $manage_settings);

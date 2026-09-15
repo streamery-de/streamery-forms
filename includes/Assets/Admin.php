@@ -110,6 +110,7 @@ class Admin
 			'userInfo'             => $this->get_user_data(),
 			'strings'              => Strings::get_strings(),
 			'providersIconBaseUrl'   => defined('STREAMERY_FORMS_ASSETS_URL') ? STREAMERY_FORMS_ASSETS_URL . '/providers/' : '',
+			'support'              => \StreameryForms\Admin\Support::get_script_data(),
 		);
 	}
 
