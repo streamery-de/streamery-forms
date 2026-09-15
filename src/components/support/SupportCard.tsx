@@ -38,7 +38,7 @@ export function SupportCard({ variant = "compact", className }: SupportCardProps
 	}
 
 	const title = isMilestone
-		? __("supportMilestoneTitle", "%d submissions collected").replace("%d", String(milestoneEntries))
+		? __("supportMilestoneTitle", "%d+ submissions collected").replace("%d", String(milestoneEntries))
 		: __("supportGutenform", "Support Gutenform");
 	const text = isMilestone ? __("supportMilestoneText") : __("supportText");
 

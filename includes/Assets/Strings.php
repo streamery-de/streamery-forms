@@ -819,8 +819,8 @@ class Strings
 			// Support
 			'supportGutenform' => __('Support Gutenform', 'gutenform-builder'),
 			'supportText' => __('Gutenform is free, with no pro version and no locked features. If it saves you time, a coffee helps keep it maintained.', 'gutenform-builder'),
-			/* translators: %d: number of stored form submissions. */
-			'supportMilestoneTitle' => __('%d submissions collected', 'gutenform-builder'),
+			/* translators: %d: submission milestone, e.g. 50. */
+			'supportMilestoneTitle' => __('%d+ submissions collected', 'gutenform-builder'),
 			'supportMilestoneText' => __('Glad Gutenform is working for you. If you like it, a coffee or a quick review helps a lot.', 'gutenform-builder'),
 			'supportOnKofi' => __('Buy a coffee', 'gutenform-builder'),
 			'sponsorOnGithub' => __('Sponsor on GitHub', 'gutenform-builder'),
