@@ -360,9 +360,12 @@ function getVisibleStepIndices(formEl: HTMLElement): number[] {
 function focusStep(formEl: HTMLElement, stepEl: HTMLElement, visibleIndex: number, total: number) {
 	if (!stepEl) return;
 
-	// The step container is not natively focusable.
+	// The step container is not natively focusable. Focusing does not scroll
+	// reliably on its own: a tall step whose lower part is already on screen
+	// counts as "visible", so the user stayed at the bottom by the nav buttons.
 	stepEl.setAttribute('tabindex', '-1');
-	stepEl.focus({ preventScroll: false });
+	stepEl.focus({ preventScroll: true });
+	scrollFormIntoView(formEl);
 
 	let liveRegion = formEl.querySelector<HTMLElement>('.gutenform-step-status');
 	if (!liveRegion) {
@@ -379,6 +382,20 @@ function focusStep(formEl: HTMLElement, stepEl: HTMLElement, visibleIndex: numbe
 		.replace('%2$s', String(total));
 
 	liveRegion.textContent = title ? `${label}: ${title}` : label;
+}
+
+/**
+ * Scrolls back to the top of the form after a step change, but only when the
+ * top is out of view. The gap above it (scroll-margin-top, see style.css)
+ * keeps it clear of the admin bar and sticky theme headers.
+ */
+function scrollFormIntoView(formEl: HTMLElement) {
+	const offset = parseFloat(getComputedStyle(formEl).scrollMarginTop) || 0;
+	const top = formEl.getBoundingClientRect().top;
+	if (top >= offset && top < window.innerHeight) return;
+
+	const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+	formEl.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
 }
 
 function goToStepByVisibleIndex(

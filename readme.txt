@@ -4,7 +4,7 @@ Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -112,10 +112,16 @@ Yes. Provider classes are registered through the `gutenform/available_providers`
 
 == Changelog ==
 
+= 1.0.1 =
+* Fix: Multi-step forms now scroll back to the top of the form when moving to the next or previous step.
+
 = 1.0.0 =
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Multi-step forms scroll back to the top of the form on step change.
 
 = 1.0.0 =
 Initial release.
