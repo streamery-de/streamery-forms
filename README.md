@@ -69,7 +69,7 @@ A modern WordPress form builder plugin for the block editor. Create beautiful, r
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/streamery/streamery-forms.git
+git clone https://github.com/streamery-de/streamery-forms.git
 ```
 
 2. Install dependencies:
@@ -319,7 +319,7 @@ GPLv2 or later
 
 ## Support
 
-For support, please open an issue on the [GitHub repository](https://github.com/streamery/streamery-forms).
+For support, please open an issue on the [GitHub repository](https://github.com/streamery-de/streamery-forms).
 
 Streamery Forms is free, with no pro version and no locked features. If it saves you time, you can support its development:
 

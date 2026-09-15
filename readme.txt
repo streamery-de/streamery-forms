@@ -73,7 +73,7 @@ Privacy policy: https://friendlycaptcha.com/legal/privacy/
 
 The JavaScript and CSS in `assets/admin/dist/` and `assets/blocks/` are compiled. The human-readable source is public at:
 
-https://github.com/streamery/streamery-forms
+https://github.com/streamery-de/streamery-forms
 
 * `src/admin/`, `src/components/`, `src/lib/` — the admin app (React), built with Vite (`vite.admin.config.js`) into `assets/admin/dist/`
 * `src/blocks/` — the form blocks, built with `@wordpress/scripts` (`webpack.config.js`) into `assets/blocks/`
