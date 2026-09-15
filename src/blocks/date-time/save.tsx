@@ -34,11 +34,11 @@ export default function save(props: BlockSaveProps<DateTimeAttributes>) {
 			})}
 		>
 			{label && (
-				<label htmlFor={id} className="gutenform-field__label">
+				<label htmlFor={id} className="streamery-forms-field__label">
 					{label}
 				</label>
 			)}
-			<div className="gutenform-datetime-inputs">
+			<div className="streamery-forms-datetime-inputs">
 				<input
 					type={inputType}
 					name={name}
@@ -47,11 +47,11 @@ export default function save(props: BlockSaveProps<DateTimeAttributes>) {
 					defaultValue={defaultValue}
 					{...(min && { min })}
 					{...(max && !range && { max })}
-					className="gutenform-datetime-input"
+					className="streamery-forms-datetime-input"
 				/>
 				{range && (
 					<>
-						<span className="gutenform-datetime-separator" aria-hidden="true">
+						<span className="streamery-forms-datetime-separator" aria-hidden="true">
 							–
 						</span>
 						<input
@@ -62,12 +62,12 @@ export default function save(props: BlockSaveProps<DateTimeAttributes>) {
 							defaultValue={defaultValueEnd}
 							{...(min && { min })}
 							{...(max && { max })}
-							className="gutenform-datetime-input"
+							className="streamery-forms-datetime-input"
 						/>
 					</>
 				)}
 			</div>
-			{help && <p className="gutenform-field__help" id={`${id}-help`}>{help}</p>}
+			{help && <p className="streamery-forms-field__help" id={`${id}-help`}>{help}</p>}
 		</div>
 	);
 }

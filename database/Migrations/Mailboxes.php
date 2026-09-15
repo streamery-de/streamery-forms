@@ -3,14 +3,14 @@
 /**
  * Database migration for mailboxes table.
  *
- * @package Gutenform
+ * @package StreameryForms
  * @subpackage Database\Migrations
  * @since 1.0.0
  */
 
-namespace Gutenform\Database\Migrations;
+namespace StreameryForms\Database\Migrations;
 
-use Gutenform\Interfaces\Migration;
+use StreameryForms\Interfaces\Migration;
 use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
 use Prappo\WpEloquent\Database\Schema\Blueprint;
 
@@ -19,9 +19,9 @@ defined('ABSPATH') || exit;
 /**
  * Class Mailboxes
  *
- * Represents the migration for creating the 'wp_gutenform_mailboxes' table.
+ * Represents the migration for creating the 'wp_streamery_forms_mailboxes' table.
  *
- * @package Gutenform\Database\Migrations
+ * @package StreameryForms\Database\Migrations
  */
 class Mailboxes implements Migration
 {
@@ -31,7 +31,7 @@ class Mailboxes implements Migration
 	 *
 	 * @var string
 	 */
-	public static $table = 'gutenform_mailboxes';
+	public static $table = 'streamery_forms_mailboxes';
 
 	/**
 	 * Run the migrations.

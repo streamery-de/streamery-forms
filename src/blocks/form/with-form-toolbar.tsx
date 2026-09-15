@@ -1,5 +1,5 @@
 /**
- * Higher-order component that injects Gutenform's form-level toolbar controls
+ * Higher-order component that injects Streamery Forms' form-level toolbar controls
  * into any block nested inside a form, at any depth. Registered via
  * addFilter('editor.BlockEdit').
  *
@@ -37,13 +37,13 @@ const withFormToolbar = createHigherOrderComponent((BlockEdit: any) => {
 					select('core/block-editor');
 
 				// The form block renders its own toolbar (see block-controls.tsx).
-				if (getBlockName(clientId) === 'gutenform/form') {
+				if (getBlockName(clientId) === 'streamery-forms/form') {
 					return null;
 				}
 
 				let formClientId: string | null = null;
 				for (const pid of getBlockParents(clientId)) {
-					if (getBlockName(pid) === 'gutenform/form') {
+					if (getBlockName(pid) === 'streamery-forms/form') {
 						formClientId = pid;
 						break;
 					}
@@ -52,7 +52,7 @@ const withFormToolbar = createHigherOrderComponent((BlockEdit: any) => {
 				if (!formClientId) return null;
 
 				const stepBlocks = getBlocks(formClientId).filter(
-					(b: any) => b.name === 'gutenform/step'
+					(b: any) => b.name === 'streamery-forms/step'
 				);
 				const formAttrs = getBlockAttributes(formClientId);
 
@@ -86,7 +86,7 @@ const withFormToolbar = createHigherOrderComponent((BlockEdit: any) => {
 		};
 
 		const handleAddStep = () => {
-			const newBlock = createBlock('gutenform/step', {
+			const newBlock = createBlock('streamery-forms/step', {
 				title: `Step ${steps.length + 1}`,
 			});
 			insertBlock(newBlock, undefined, formClientId);

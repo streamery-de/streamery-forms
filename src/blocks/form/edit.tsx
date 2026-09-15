@@ -28,7 +28,7 @@ export default function Edit(props: BlockEditProps<FormAttributes>) {
 		attributes.formId,
 		clientId,
 		(attrs: { id: string }) => setAttributes({ formId: attrs.id }),
-		'gutenform'
+		'streamery-forms'
 	);
 
 	// Get all inner blocks using useSelect

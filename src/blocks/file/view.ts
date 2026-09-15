@@ -9,12 +9,12 @@
  * Frontend strings for this view script.
  *
  * These are announced by screen readers, so they must be translatable rather
- * than hardcoded English. They're localized from PHP onto window.gutenform
+ * than hardcoded English. They're localized from PHP onto window.streamery_forms
  * (see includes/Assets/Frontend.php); the second argument is the English
  * fallback used when no translation is present.
  */
 function t(key: string, fallback: string): string {
-	const strings = (window as any).gutenform?.strings || {};
+	const strings = (window as any).streamery_forms?.strings || {};
 	return strings[key] || fallback;
 }
 
@@ -36,7 +36,7 @@ interface FileUploadState {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-	const fileUploadFields = document.querySelectorAll<HTMLElement>('.gutenform-file-upload-field');
+	const fileUploadFields = document.querySelectorAll<HTMLElement>('.streamery-forms-file-upload-field');
 	
 	fileUploadFields.forEach((field) => {
 		initFileUploadField(field);
@@ -44,9 +44,9 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function initFileUploadField(field: HTMLElement) {
-	const uploadZone = field.querySelector<HTMLElement>('.gutenform-file-upload-zone');
-	const fileInput = field.querySelector<HTMLInputElement>('.gutenform-file-input');
-	const fileList = field.querySelector<HTMLElement>('.gutenform-file-upload-list');
+	const uploadZone = field.querySelector<HTMLElement>('.streamery-forms-file-upload-zone');
+	const fileInput = field.querySelector<HTMLInputElement>('.streamery-forms-file-input');
+	const fileList = field.querySelector<HTMLElement>('.streamery-forms-file-upload-list');
 
 	if (!uploadZone || !fileInput || !fileList) {
 		return;
@@ -66,19 +66,19 @@ function initFileUploadField(field: HTMLElement) {
 	uploadZone.addEventListener('dragover', (e) => {
 		e.preventDefault();
 		e.stopPropagation();
-		uploadZone.classList.add('gutenform-file-upload-zone--dragover');
+		uploadZone.classList.add('streamery-forms-file-upload-zone--dragover');
 	});
 
 	uploadZone.addEventListener('dragleave', (e) => {
 		e.preventDefault();
 		e.stopPropagation();
-		uploadZone.classList.remove('gutenform-file-upload-zone--dragover');
+		uploadZone.classList.remove('streamery-forms-file-upload-zone--dragover');
 	});
 
 	uploadZone.addEventListener('drop', (e) => {
 		e.preventDefault();
 		e.stopPropagation();
-		uploadZone.classList.remove('gutenform-file-upload-zone--dragover');
+		uploadZone.classList.remove('streamery-forms-file-upload-zone--dragover');
 		
 		const files = Array.from(e.dataTransfer?.files || []);
 		handleFiles(files);
@@ -164,9 +164,9 @@ function initFileUploadField(field: HTMLElement) {
 			formData.append('accept_types', acceptTypes);
 		}
 
-		const apiUrl = (window as any).gutenform?.apiUrl || '';
-		const nonce = (window as any).gutenform?.nonce || '';
-		const namespace = (window as any).gutenform?.namespace || 'gutenform/v1';
+		const apiUrl = (window as any).streamery_forms?.apiUrl || '';
+		const nonce = (window as any).streamery_forms?.nonce || '';
+		const namespace = (window as any).streamery_forms?.namespace || 'streamery-forms/v1';
 
 		const xhr = new XMLHttpRequest();
 
@@ -232,7 +232,7 @@ function initFileUploadField(field: HTMLElement) {
 
 	function createFileItem(file: File, state: FileUploadState): HTMLElement {
 		const item = document.createElement('div');
-		item.className = 'gutenform-file-item';
+		item.className = 'streamery-forms-file-item';
 		item.dataset.fileName = file.name;
 		updateFileItem(item, state);
 		return item;
@@ -245,18 +245,18 @@ function initFileUploadField(field: HTMLElement) {
 
 		if (state.status === 'uploading') {
 			item.innerHTML = `
-				<div class="gutenform-file-item-info">
-					<span class="gutenform-file-item-name">${escapeHtml(fileName)}</span>
-					<span class="gutenform-file-item-size">${fileSize}</span>
+				<div class="streamery-forms-file-item-info">
+					<span class="streamery-forms-file-item-name">${escapeHtml(fileName)}</span>
+					<span class="streamery-forms-file-item-size">${fileSize}</span>
 				</div>
-				<div class="gutenform-file-item-progress">
-					<div class="gutenform-file-item-progress-bar" style="width: ${state.progress}%"></div>
-					<span class="gutenform-file-item-progress-text">${state.progress}%</span>
+				<div class="streamery-forms-file-item-progress">
+					<div class="streamery-forms-file-item-progress-bar" style="width: ${state.progress}%"></div>
+					<span class="streamery-forms-file-item-progress-text">${state.progress}%</span>
 				</div>
-				<button type="button" class="gutenform-file-item-cancel" aria-label="${escapeHtml(t('cancelUpload', 'Cancel upload'))}">×</button>
+				<button type="button" class="streamery-forms-file-item-cancel" aria-label="${escapeHtml(t('cancelUpload', 'Cancel upload'))}">×</button>
 			`;
 			
-			const cancelBtn = item.querySelector('.gutenform-file-item-cancel');
+			const cancelBtn = item.querySelector('.streamery-forms-file-item-cancel');
 			if (cancelBtn) {
 				cancelBtn.addEventListener('click', () => {
 					// Cancel upload (would need to track xhr to abort)
@@ -269,15 +269,15 @@ function initFileUploadField(field: HTMLElement) {
 			const isImage = uploadedFile.type.startsWith('image/');
 			
 			item.innerHTML = `
-				<div class="gutenform-file-item-info">
-					${isImage ? `<img src="${escapeHtml(uploadedFile.url)}" alt="${escapeHtml(uploadedFile.name)}" class="gutenform-file-item-thumbnail" />` : ''}
-					<span class="gutenform-file-item-name">${escapeHtml(uploadedFile.original_name || uploadedFile.name)}</span>
-					<span class="gutenform-file-item-size">${fileSize}</span>
+				<div class="streamery-forms-file-item-info">
+					${isImage ? `<img src="${escapeHtml(uploadedFile.url)}" alt="${escapeHtml(uploadedFile.name)}" class="streamery-forms-file-item-thumbnail" />` : ''}
+					<span class="streamery-forms-file-item-name">${escapeHtml(uploadedFile.original_name || uploadedFile.name)}</span>
+					<span class="streamery-forms-file-item-size">${fileSize}</span>
 				</div>
-				<button type="button" class="gutenform-file-item-remove" aria-label="${escapeHtml(t('removeFile', 'Remove file'))}">×</button>
+				<button type="button" class="streamery-forms-file-item-remove" aria-label="${escapeHtml(t('removeFile', 'Remove file'))}">×</button>
 			`;
 			
-			const removeBtn = item.querySelector('.gutenform-file-item-remove');
+			const removeBtn = item.querySelector('.streamery-forms-file-item-remove');
 			if (removeBtn) {
 				removeBtn.addEventListener('click', () => {
 					const index = uploadedFiles.findIndex(f => f.url === uploadedFile.url);
@@ -290,14 +290,14 @@ function initFileUploadField(field: HTMLElement) {
 			}
 		} else if (state.status === 'error') {
 			item.innerHTML = `
-				<div class="gutenform-file-item-info">
-					<span class="gutenform-file-item-name">${escapeHtml(fileName)}</span>
-					<span class="gutenform-file-item-error">${escapeHtml(state.error || 'Upload failed')}</span>
+				<div class="streamery-forms-file-item-info">
+					<span class="streamery-forms-file-item-name">${escapeHtml(fileName)}</span>
+					<span class="streamery-forms-file-item-error">${escapeHtml(state.error || 'Upload failed')}</span>
 				</div>
-				<button type="button" class="gutenform-file-item-remove" aria-label="${escapeHtml(t('removeFile', 'Remove file'))}">×</button>
+				<button type="button" class="streamery-forms-file-item-remove" aria-label="${escapeHtml(t('removeFile', 'Remove file'))}">×</button>
 			`;
 			
-			const removeBtn = item.querySelector('.gutenform-file-item-remove');
+			const removeBtn = item.querySelector('.streamery-forms-file-item-remove');
 			if (removeBtn) {
 				removeBtn.addEventListener('click', () => {
 					item.remove();
@@ -353,7 +353,7 @@ function initFileUploadField(field: HTMLElement) {
 	function showError(message: string) {
 		// Create temporary error message
 		const errorDiv = document.createElement('div');
-		errorDiv.className = 'gutenform-file-upload-error';
+		errorDiv.className = 'streamery-forms-file-upload-error';
 		errorDiv.textContent = message;
 		field.appendChild(errorDiv);
 		

@@ -84,10 +84,10 @@ export default function WelcomePage() {
   useEffect(() => {
     const checkSkipped = async () => {
       try {
-        const response = await fetch(`${window.gutenForm?.apiUrl || ''}gutenform/v1/settings/skip-first-steps`, {
+        const response = await fetch(`${window.streameryForms?.apiUrl || ''}streamery-forms/v1/settings/skip-first-steps`, {
           method: 'GET',
           headers: {
-            'X-WP-Nonce': window.gutenForm?.nonce || '',
+            'X-WP-Nonce': window.streameryForms?.nonce || '',
           },
         });
         if (response.ok) {
@@ -117,11 +117,11 @@ export default function WelcomePage() {
 
   const handleSkipSetup = async () => {
     try {
-      const response = await fetch(`${window.gutenForm?.apiUrl || ''}gutenform/v1/settings/skip-first-steps`, {
+      const response = await fetch(`${window.streameryForms?.apiUrl || ''}streamery-forms/v1/settings/skip-first-steps`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'X-WP-Nonce': window.gutenForm?.nonce || '',
+          'X-WP-Nonce': window.streameryForms?.nonce || '',
         },
         body: JSON.stringify({ skipped: true }),
       });
@@ -150,7 +150,7 @@ export default function WelcomePage() {
     <div className="flex items-center justify-center min-h-screen p-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <Card className="w-full max-w-2xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold">{__('welcomeToGutenForm')}</CardTitle>
+          <CardTitle className="text-3xl font-bold">{__('welcomeToStreameryForms')}</CardTitle>
           <CardDescription className="text-lg mt-2">
             {__("letsGetYouStarted")}
           </CardDescription>

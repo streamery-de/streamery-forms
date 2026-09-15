@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gutenform/honeypot",
+	"name": "streamery-forms/honeypot",
 	"version": "0.1.0",
 	"title": "HoneyPot",
 	"category": "widgets",
 	"icon": "hidden",
 	"description": "Hidden field for spam detection. Bots will fill this field, humans won't.",
-	"ancestor": ["gutenform/form"],
+	"ancestor": ["streamery-forms/form"],
 	"example": {},
 	"attributes": {
 		"style": {
@@ -38,7 +38,7 @@
 	"supports": {
 		"html": false
 	},
-	"textdomain": "gutenform-builder",
+	"textdomain": "streamery-forms",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

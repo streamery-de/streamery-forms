@@ -1,5 +1,5 @@
 /* Modal Overlay */
-.gutenform-options-modal-overlay {
+.streamery-forms-options-modal-overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -13,7 +13,7 @@
 }
 
 /* Modal Container */
-.gutenform-options-modal-container {
+.streamery-forms-options-modal-container {
 	background-color: #fff;
 	width: 90%;
 	max-width: 1200px;
@@ -26,12 +26,12 @@
 }
 
 /* Modal Content */
-.gutenform-options-modal-content {
+.streamery-forms-options-modal-content {
 	flex: 1;
 	overflow: hidden;
 }
 
-.gutenform-options-modal-content-wrapper {
+.streamery-forms-options-modal-content-wrapper {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -40,7 +40,7 @@
 }
 
 /* Modal Header */
-.gutenform-options-modal-header {
+.streamery-forms-options-modal-header {
 	padding: 16px 24px;
 	border-bottom: 1px solid #ddd;
 	display: flex;
@@ -48,32 +48,32 @@
 	align-items: center;
 }
 
-.gutenform-options-modal-header__content {
+.streamery-forms-options-modal-header__content {
 	display: flex;
 	align-items: center;
 	gap: 16px;
 	flex: 1;
 }
 
-.gutenform-options-modal-header__title {
+.streamery-forms-options-modal-header__title {
 	margin: 0;
 }
 
 /* Disabled input styling */
-.gutenform-options-table input:disabled,
-.gutenform-options-table .components-text-control__input:disabled {
+.streamery-forms-options-table input:disabled,
+.streamery-forms-options-table .components-text-control__input:disabled {
 	opacity: 0.6;
 	cursor: not-allowed;
 }
 
-.gutenform-options-modal-header h2 {
+.streamery-forms-options-modal-header h2 {
 	margin: 0;
 	font-size: 18px;
 	font-weight: 600;
 }
 
 /* Modal Footer */
-.gutenform-options-modal-footer {
+.streamery-forms-options-modal-footer {
 	padding: 16px 24px;
 	border-top: 1px solid #ddd;
 	display: flex;
@@ -82,7 +82,7 @@
 }
 
 /* Bulk Actions Bar */
-.gutenform-options-bulk-actions {
+.streamery-forms-options-bulk-actions {
 	padding: 12px 16px;
 	border-bottom: 1px solid #ddd;
 	background-color: #f0f6fc;
@@ -91,13 +91,13 @@
 	gap: 12px;
 }
 
-.gutenform-options-bulk-actions span {
+.streamery-forms-options-bulk-actions span {
 	font-size: 13px;
 	color: #1d2327;
 }
 
 /* Preset Grid */
-.gutenform-options-preset-grid {
+.streamery-forms-options-preset-grid {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -106,14 +106,14 @@
 	padding: 40px;
 }
 
-.gutenform-options-preset-grid h3 {
+.streamery-forms-options-preset-grid h3 {
 	margin-bottom: 24px;
 	font-size: 16px;
 	font-weight: 600;
 	color: #1d2327;
 }
 
-.gutenform-options-preset-grid-container {
+.streamery-forms-options-preset-grid-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	gap: 16px;
@@ -122,7 +122,7 @@
 }
 
 /* Preset Boxes */
-.gutenform-options-preset-box-empty {
+.streamery-forms-options-preset-box-empty {
 	border: 2px dashed #ddd;
 	border-radius: 8px;
 	padding: 24px;
@@ -136,23 +136,23 @@
 	justify-content: center;
 }
 
-.gutenform-options-preset-box-empty:hover {
+.streamery-forms-options-preset-box-empty:hover {
 	border-color: #2271b1;
 	background-color: #f0f6fc;
 }
 
-.gutenform-options-preset-box-empty-icon {
+.streamery-forms-options-preset-box-empty-icon {
 	font-size: 32px;
 	margin-bottom: 12px;
 }
 
-.gutenform-options-preset-box-empty-title {
+.streamery-forms-options-preset-box-empty-title {
 	font-size: 14px;
 	font-weight: 600;
 	color: #1d2327;
 }
 
-.gutenform-options-preset-box {
+.streamery-forms-options-preset-box {
 	border: 2px solid #ddd;
 	border-radius: 8px;
 	padding: 20px;
@@ -161,31 +161,31 @@
 	transition: all 0.2s;
 }
 
-.gutenform-options-preset-box:hover {
+.streamery-forms-options-preset-box:hover {
 	border-color: #2271b1;
 	background-color: #f0f6fc;
 }
 
-.gutenform-options-preset-box-title {
+.streamery-forms-options-preset-box-title {
 	font-size: 16px;
 	font-weight: 600;
 	margin-bottom: 12px;
 	color: #1d2327;
 }
 
-.gutenform-options-preset-box-count {
+.streamery-forms-options-preset-box-count {
 	font-size: 12px;
 	color: #646970;
 	margin-bottom: 12px;
 }
 
-.gutenform-options-preset-box-preview {
+.streamery-forms-options-preset-box-preview {
 	font-size: 11px;
 	color: #8c8f94;
 }
 
 /* Options Table */
-.gutenform-options-table-wrapper {
+.streamery-forms-options-table-wrapper {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -193,36 +193,36 @@
 	padding: 16px;
 }
 
-.gutenform-options-table-actions {
+.streamery-forms-options-table-actions {
 	margin-bottom: 12px;
 	display: flex;
 	justify-content: flex-end;
 }
 
-.gutenform-options-table-container {
+.streamery-forms-options-table-container {
 	flex: 1;
 	overflow: auto;
 	border: 1px solid #ddd;
 	border-radius: 2px;
 }
 
-.gutenform-options-table {
+.streamery-forms-options-table {
 	width: 100%;
 	border-collapse: collapse;
 }
 
-.gutenform-options-table thead {
+.streamery-forms-options-table thead {
 	position: sticky;
 	top: 0;
 	background-color: #fff;
 	z-index: 10;
 }
 
-.gutenform-options-table thead tr {
+.streamery-forms-options-table thead tr {
 	border-bottom: 2px solid #ddd;
 }
 
-.gutenform-options-table th {
+.streamery-forms-options-table th {
 	padding: 8px;
 	text-align: left;
 	font-size: 12px;
@@ -231,72 +231,72 @@
 	background-color: #fff;
 }
 
-.gutenform-options-table th.gutenform-options-table-th-checkbox {
+.streamery-forms-options-table th.streamery-forms-options-table-th-checkbox {
 	width: 40px;
 	text-align: center;
 }
 
-.gutenform-options-table th.gutenform-options-table-th-move {
+.streamery-forms-options-table th.streamery-forms-options-table-th-move {
 	width: 40px;
 }
 
-.gutenform-options-table th.gutenform-options-table-th-actions {
+.streamery-forms-options-table th.streamery-forms-options-table-th-actions {
 	width: 80px;
 	text-align: center;
 }
 
 /* Table Row */
-.gutenform-options-table-row {
+.streamery-forms-options-table-row {
 	transition: background-color 0.2s;
 }
 
-.gutenform-options-table-row.gutenform-options-table-row-selected {
+.streamery-forms-options-table-row.streamery-forms-options-table-row-selected {
 	background-color: #f0f6fc;
 }
 
-.gutenform-options-table-row.gutenform-options-table-row-dragging {
+.streamery-forms-options-table-row.streamery-forms-options-table-row-dragging {
 	opacity: 0.5;
 	background-color: #f0f0f0;
 }
 
-.gutenform-options-table-row-new {
+.streamery-forms-options-table-row-new {
 	background-color: #f9f9f9;
 	position: sticky;
 	bottom: 0;
 }
 
-.gutenform-options-table td {
+.streamery-forms-options-table td {
 	padding: 8px;
 }
 
-.gutenform-options-table td.gutenform-options-table-td-checkbox {
+.streamery-forms-options-table td.streamery-forms-options-table-td-checkbox {
 	width: 40px;
 	text-align: center;
 }
 
-.gutenform-options-table td.gutenform-options-table-td-move {
+.streamery-forms-options-table td.streamery-forms-options-table-td-move {
 	width: 40px;
 	cursor: grab;
 	text-align: center;
 }
 
-.gutenform-options-table td.gutenform-options-table-td-actions {
+.streamery-forms-options-table td.streamery-forms-options-table-td-actions {
 	width: 80px;
 	text-align: center;
 }
 
 /* Bulk Add Options Modal */
-.gutenform-bulk-add-options-modal .components-modal__content {
+.streamery-forms-bulk-add-options-modal .components-modal__content {
 	padding: 24px;
 }
 
-.gutenform-bulk-add-options-content {
+.streamery-forms-bulk-add-options-content {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
 }
 
-.gutenform-bulk-add-options-footer {
+.streamery-forms-bulk-add-options-footer {
 	display: flex;
 	justify-content: flex-end;
 	gap: 8px;

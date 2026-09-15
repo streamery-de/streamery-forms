@@ -67,10 +67,10 @@ export const FormBlockControls = ({
 				<Modal
 					title={__('changeTemplate')}
 					onRequestClose={() => setIsTemplateModalOpen(false)}
-					className="gutenform-change-template-modal"
+					className="streamery-forms-change-template-modal"
 					style={{ maxWidth: '720px' }}
 				>
-					<p className="gutenform-change-template-modal__warning">
+					<p className="streamery-forms-change-template-modal__warning">
 						{__('templateResetWarning')}
 					</p>
 					<TemplateSelect onSelect={handleTemplateSelect} />

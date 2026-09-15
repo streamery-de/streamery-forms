@@ -50,7 +50,7 @@ export function createFieldBlock(fieldName: string, clientId?: string): any {
   const uniqueId = `field-${slug}-${Date.now()}`;
 
   // Create block with default attributes
-  const block = createBlock('gutenform/input', {
+  const block = createBlock('streamery-forms/input', {
     label: label,
     name: slug,
     id: uniqueId,

@@ -3,13 +3,13 @@
 /**
  * Abstract Provider Base Class
  *
- * Base class for all Gutenform providers. Defines the interface and common functionality.
+ * Base class for all Streamery Forms providers. Defines the interface and common functionality.
  *
- * @package Gutenform\Providers
+ * @package StreameryForms\Providers
  * @since 1.0.0
  */
 
-namespace Gutenform\Providers;
+namespace StreameryForms\Providers;
 
 defined('ABSPATH') || exit;
 
@@ -195,12 +195,12 @@ abstract class AbstractProvider
     {
         $extensions = array('svg', 'png', 'jpg', 'jpeg');
 
-        if (defined('GUTENFORM_DIR') && defined('GUTENFORM_ASSETS_URL')) {
-            $plugin_path = GUTENFORM_DIR . 'assets/providers/';
+        if (defined('STREAMERY_FORMS_DIR') && defined('STREAMERY_FORMS_ASSETS_URL')) {
+            $plugin_path = STREAMERY_FORMS_DIR . 'assets/providers/';
             foreach ($extensions as $ext) {
                 $filename = $slug . '.' . $ext;
                 if (file_exists($plugin_path . $filename)) {
-                    return GUTENFORM_ASSETS_URL . '/providers/' . $filename;
+                    return STREAMERY_FORMS_ASSETS_URL . '/providers/' . $filename;
                 }
             }
         }
@@ -339,7 +339,7 @@ abstract class AbstractProvider
                     }, $value)));
                 }
             } elseif (is_bool($value)) {
-                $formatted_value = $value ? __('Yes', 'gutenform-builder') : __('No', 'gutenform-builder');
+                $formatted_value = $value ? __('Yes', 'streamery-forms') : __('No', 'streamery-forms');
             } else {
                 $formatted_value = esc_html((string) $value);
             }
@@ -348,7 +348,7 @@ abstract class AbstractProvider
         }
 
         $table = '<table style="border-collapse:collapse;width:100%;background:#fafbfc;border:1px solid #eaeaea;font-family:sans-serif;font-size:14px;margin:10px 0 15px 0;">';
-        $table .= '<thead><tr style="background:#f0f4f8;"><th style="padding:8px 10px; text-align:left; border-bottom:2px solid #eaeaea;">' . __('Field', 'gutenform-builder') . '</th><th style="padding:8px 10px;text-align:left; border-bottom:2px solid #eaeaea;">' . __('Value', 'gutenform-builder') . '</th></tr></thead>';
+        $table .= '<thead><tr style="background:#f0f4f8;"><th style="padding:8px 10px; text-align:left; border-bottom:2px solid #eaeaea;">' . __('Field', 'streamery-forms') . '</th><th style="padding:8px 10px;text-align:left; border-bottom:2px solid #eaeaea;">' . __('Value', 'streamery-forms') . '</th></tr></thead>';
         $table .= '<tbody>' . $rows . '</tbody>';
         $table .= '</table>';
 
@@ -366,7 +366,7 @@ abstract class AbstractProvider
         // This used to just return the identifier, so every {form_title}
         // placeholder rendered the slug instead of the form's actual title.
         // The title is now indexed server-side, so it can be looked up.
-        $form = \Gutenform\Core\FormRegistry::get_instance()->get_form_config($form_identifier);
+        $form = \StreameryForms\Core\FormRegistry::get_instance()->get_form_config($form_identifier);
         $title = isset($form['config']['form_title']) ? trim((string) $form['config']['form_title']) : '';
 
         return '' !== $title ? $title : $form_identifier;
@@ -379,7 +379,7 @@ abstract class AbstractProvider
      * is set by the client's own request and is trivially spoofable unless a
      * specific trusted reverse proxy strips/overwrites it, which this plugin
      * has no way to know. Sites that do run behind such a proxy can opt in to
-     * a specific header via the gutenform/client_ip/trusted_header filter.
+     * a specific header via the streamery-forms/client_ip/trusted_header filter.
      *
      * @return string The IP address.
      */
@@ -396,7 +396,7 @@ abstract class AbstractProvider
          *
          * @param string|null $header e.g. 'HTTP_X_FORWARDED_FOR'. Null (default) trusts only REMOTE_ADDR.
          */
-        $trusted_header = apply_filters('gutenform/client_ip/trusted_header', null);
+        $trusted_header = apply_filters('streamery-forms/client_ip/trusted_header', null);
 
         if (! empty($trusted_header) && array_key_exists($trusted_header, $_SERVER)) {
             $forwarded = sanitize_text_field(wp_unslash((string) $_SERVER[$trusted_header]));

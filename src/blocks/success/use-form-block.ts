@@ -12,7 +12,7 @@ export const useFormBlock = (clientId: string) => {
 			// Find the form block parent
 			for (const parentId of parentIds) {
 				const parentBlock = getBlock(parentId);
-				if (parentBlock?.name === 'gutenform/form') {
+				if (parentBlock?.name === 'streamery-forms/form') {
 					return parentBlock;
 				}
 			}

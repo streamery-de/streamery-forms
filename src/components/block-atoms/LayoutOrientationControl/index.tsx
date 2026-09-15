@@ -19,15 +19,15 @@ export function LayoutOrientationControl({
 	label = __('layout'),
 }: LayoutOrientationControlProps) {
 	return (
-		<BaseControl label={label} className="gutenform-layout-orientation-control">
-			<ButtonGroup className="gutenform-layout-button-group">
+		<BaseControl label={label} className="streamery-forms-layout-orientation-control">
+			<ButtonGroup className="streamery-forms-layout-button-group">
 				<Button
 					isPressed={value === 'horizontal'}
 					onClick={() => onChange('horizontal')}
 					icon={<ArrowRight size={18} />}
 					label={__('horizontal')}
 					showTooltip
-					className="gutenform-layout-btn"
+					className="streamery-forms-layout-btn"
 				/>
 				<Button
 					isPressed={value === 'vertical'}
@@ -35,7 +35,7 @@ export function LayoutOrientationControl({
 					icon={<ArrowDown size={18} />}
 					label={__('vertical')}
 					showTooltip
-					className="gutenform-layout-btn"
+					className="streamery-forms-layout-btn"
 				/>
 			</ButtonGroup>
 		</BaseControl>

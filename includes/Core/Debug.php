@@ -5,11 +5,11 @@
  *
  * Handles debug functionality for form submissions.
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
 defined('ABSPATH') || exit;
 
@@ -26,7 +26,7 @@ class Debug
      *
      * @var string
      */
-    const OPTION_NAME = 'gutenform_debug_enabled';
+    const OPTION_NAME = 'streamery_forms_debug_enabled';
 
     /**
      * Checks if debug mode is enabled.
@@ -107,8 +107,8 @@ class Debug
         );
 
         // Collect provider information
-        $registry = \Gutenform\Providers\Registry::get_instance();
-        $providers = \Gutenform\Models\Providers::where('is_active', true)->get();
+        $registry = \StreameryForms\Providers\Registry::get_instance();
+        $providers = \StreameryForms\Models\Providers::where('is_active', true)->get();
 
         foreach ($providers as $provider_feed) {
             $provider = $registry->get_provider($provider_feed->provider_type);

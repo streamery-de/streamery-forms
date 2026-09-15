@@ -32,17 +32,17 @@ export function StorageSection({ attributes, setAttributes, setProviderOverride 
 
 	return (
 		<>
-			<h3 className="gutenform-form-settings__section-title">
+			<h3 className="streamery-forms-form-settings__section-title">
 				{__('formSettingsStorage', 'Storage & Inbox')}
 			</h3>
-			<p className="gutenform-form-settings__section-description">
+			<p className="streamery-forms-form-settings__section-description">
 				{__(
 					'formSettingsStorageDescription',
 					'Every submission of this form is stored in the inbox. Choose where it lands.'
 				)}
 			</p>
 
-			<div className="gutenform-form-settings__field">
+			<div className="streamery-forms-form-settings__field">
 				<MailboxSelect
 					value={attributes.mailboxId}
 					onChange={(mailboxId) => setAttributes({ mailboxId })}
@@ -50,7 +50,7 @@ export function StorageSection({ attributes, setAttributes, setProviderOverride 
 			</div>
 
 			{databaseFeed && (
-				<div className="gutenform-form-settings__field">
+				<div className="streamery-forms-form-settings__field">
 					<TextControl
 						label={__('entrySubject', 'Entry subject')}
 						value={subject}

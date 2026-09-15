@@ -9,11 +9,11 @@
  * required fields were only enforced by the browser, and a select could be
  * posted with any value at all.
  *
- * @package Gutenform\Controllers\Submissions
+ * @package StreameryForms\Controllers\Submissions
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\Submissions;
+namespace StreameryForms\Controllers\Submissions;
 
 defined('ABSPATH') || exit;
 
@@ -68,7 +68,7 @@ class FieldValidator
                 if (! empty($field['required']) && empty($field['conditional'])) {
                     $errors[$field['name']] = sprintf(
                         /* translators: %s: form field name. */
-                        __('The field "%s" is required.', 'gutenform-builder'),
+                        __('The field "%s" is required.', 'streamery-forms'),
                         $field['name']
                     );
                 }
@@ -149,7 +149,7 @@ class FieldValidator
                  * @param mixed       $value  Submitted value.
                  * @param array       $field  Field schema entry.
                  */
-                $error = apply_filters('gutenform/select/validate_populated_value', null, $value, $field);
+                $error = apply_filters('streamery-forms/select/validate_populated_value', null, $value, $field);
 
                 return is_string($error) && '' !== $error ? $error : null;
             }
@@ -188,7 +188,7 @@ class FieldValidator
         if (count($value) > $max_files) {
             return sprintf(
                 /* translators: 1: form field name, 2: maximum number of files. */
-                __('The field "%1$s" accepts at most %2$d file(s).', 'gutenform-builder'),
+                __('The field "%1$s" accepts at most %2$d file(s).', 'streamery-forms'),
                 $field['name'],
                 $max_files
             );
@@ -215,7 +215,7 @@ class FieldValidator
                 if (! is_email($value)) {
                     return sprintf(
                         /* translators: %s: form field name. */
-                        __('The field "%s" must be a valid email address.', 'gutenform-builder'),
+                        __('The field "%s" must be a valid email address.', 'streamery-forms'),
                         $field['name']
                     );
                 }
@@ -225,7 +225,7 @@ class FieldValidator
                 if (! is_numeric($value)) {
                     return sprintf(
                         /* translators: %s: form field name. */
-                        __('The field "%s" must be a number.', 'gutenform-builder'),
+                        __('The field "%s" must be a number.', 'streamery-forms'),
                         $field['name']
                     );
                 }
@@ -235,7 +235,7 @@ class FieldValidator
                 if (! filter_var($value, FILTER_VALIDATE_URL)) {
                     return sprintf(
                         /* translators: %s: form field name. */
-                        __('The field "%s" must be a valid URL.', 'gutenform-builder'),
+                        __('The field "%s" must be a valid URL.', 'streamery-forms'),
                         $field['name']
                     );
                 }
@@ -253,7 +253,7 @@ class FieldValidator
     {
         return sprintf(
             /* translators: %s: form field name. */
-            __('The field "%s" has an invalid value.', 'gutenform-builder'),
+            __('The field "%s" has an invalid value.', 'streamery-forms'),
             $field['name']
         );
     }

@@ -11,7 +11,7 @@ interface BulkActionsBarProps {
 
 export const BulkActionsBar = ({ selectedCount, onDelete }: BulkActionsBarProps) => {
 	return (
-		<div className="gutenform-options-bulk-actions">
+		<div className="streamery-forms-options-bulk-actions">
 			<span>
 				{selectedCount} {__('selected')}
 			</span>

@@ -104,7 +104,7 @@ export default function Step3({ stepCount }: StepProps) {
 
     try {
       const response = await fetch(
-        gutenForm.apiUrl + "myplugin/v1/accounts/create",
+        streameryForms.apiUrl + "myplugin/v1/accounts/create",
         {
           method: "POST",
           headers: {

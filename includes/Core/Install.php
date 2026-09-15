@@ -1,20 +1,20 @@
 <?php
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
-use Gutenform\Database\Migrations\Mailboxes;
-use Gutenform\Database\Migrations\Entries;
-use Gutenform\Database\Migrations\EntryLabels;
-use Gutenform\Database\Migrations\Providers;
-use Gutenform\Database\Migrations\AddFormIdentifierToProviders;
-use Gutenform\Database\Migrations\AddFolderIdToEntries;
-use Gutenform\Database\Migrations\EmailLogs;
-use Gutenform\Database\Migrations\Forms;
-use Gutenform\Database\Migrations\InboxFolders;
-use Gutenform\Database\Seeders\EntryLabelsSeeder as SeedersEntryLabels;
-use Gutenform\Database\Seeders\MailboxesSeeder as SeedersMailboxes;
-use Gutenform\Database\Seeders\DatabaseProviderSeeder;
-use Gutenform\Traits\Base;
+use StreameryForms\Database\Migrations\Mailboxes;
+use StreameryForms\Database\Migrations\Entries;
+use StreameryForms\Database\Migrations\EntryLabels;
+use StreameryForms\Database\Migrations\Providers;
+use StreameryForms\Database\Migrations\AddFormIdentifierToProviders;
+use StreameryForms\Database\Migrations\AddFolderIdToEntries;
+use StreameryForms\Database\Migrations\EmailLogs;
+use StreameryForms\Database\Migrations\Forms;
+use StreameryForms\Database\Migrations\InboxFolders;
+use StreameryForms\Database\Seeders\EntryLabelsSeeder as SeedersEntryLabels;
+use StreameryForms\Database\Seeders\MailboxesSeeder as SeedersMailboxes;
+use StreameryForms\Database\Seeders\DatabaseProviderSeeder;
+use StreameryForms\Traits\Base;
 
 defined('ABSPATH') || exit;
 
@@ -38,7 +38,7 @@ class Install
 	/**
 	 * Option key holding the installed schema version.
 	 */
-	private const DB_VERSION_OPTION = 'gutenform_db_version';
+	private const DB_VERSION_OPTION = 'streamery_forms_db_version';
 
 	/**
 	 * Initialize the class
@@ -51,7 +51,7 @@ class Install
 		$this->install_tables();
 		$this->insert_data();
 		Capabilities::grant_role_capabilities();
-		update_option('gutenform_capabilities_version', Capabilities::VERSION, false);
+		update_option('streamery_forms_capabilities_version', Capabilities::VERSION, false);
 		update_option(self::DB_VERSION_OPTION, self::DB_VERSION, false);
 	}
 

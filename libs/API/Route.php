@@ -7,9 +7,9 @@
  * @since 1.0.0
  */
 
-namespace Gutenform\Libs\API;
+namespace StreameryForms\Libs\API;
 
-use Gutenform\Libs\API\ApiRouteException;
+use StreameryForms\Libs\API\ApiRouteException;
 
 defined('ABSPATH') || exit;
 
@@ -29,7 +29,7 @@ class Route
 	 * requests (e.g. form submission, file upload). Pass this as the auth
 	 * argument -- routes are deny-by-default otherwise.
 	 */
-	public const ALLOW_PUBLIC = '__gutenform_public_route__';
+	public const ALLOW_PUBLIC = '__streamery_forms_public_route__';
 
 	/**
 	 * All registerd routes.

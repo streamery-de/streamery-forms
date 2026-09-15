@@ -2,10 +2,10 @@
   "labelKey": "templateContact",
   "category": "basics",
   "value": [
-    ["gutenform/input", { "type": "text", "label": { "__": "firstName", "fallback": "Vorname" }, "required": true }],
-    ["gutenform/input", { "type": "text", "label": { "__": "lastName", "fallback": "Nachname" }, "required": true }],
-    ["gutenform/input", { "type": "email", "label": { "__": "email", "fallback": "E-Mail" }, "required": true, "isPrimaryMail": true }],
-    ["gutenform/select", {
+    ["streamery-forms/input", { "type": "text", "label": { "__": "firstName", "fallback": "Vorname" }, "required": true }],
+    ["streamery-forms/input", { "type": "text", "label": { "__": "lastName", "fallback": "Nachname" }, "required": true }],
+    ["streamery-forms/input", { "type": "email", "label": { "__": "email", "fallback": "E-Mail" }, "required": true, "isPrimaryMail": true }],
+    ["streamery-forms/select", {
       "label": { "__": "subject", "fallback": "Betreff" },
       "placeholder": { "__": "selectAnOption" },
       "options": [
@@ -15,15 +15,15 @@
       ],
       "required": true
     }],
-    ["gutenform/textarea", { "label": { "__": "message", "fallback": "Nachricht" }, "required": true, "rows": 5 }],
-    ["gutenform/checkbox", {
+    ["streamery-forms/textarea", { "label": { "__": "message", "fallback": "Nachricht" }, "required": true, "rows": 5 }],
+    ["streamery-forms/checkbox", {
       "label": { "__": "privacyConsent", "fallback": "Datenschutz-Einwilligung" },
       "options": [{ "label": { "__": "iAgreeToPrivacyPolicy", "fallback": "Ich stimme der Datenschutzerklärung zu." }, "value": "agreed" }],
       "required": true,
       "isConsent": true,
       "presetName": "consent"
     }],
-    ["gutenform/submit", {}],
-    ["gutenform/success", {}]
+    ["streamery-forms/submit", {}],
+    ["streamery-forms/success", {}]
   ]
 }

@@ -10,7 +10,7 @@ export default function Edit(props: BlockEditProps<SubmitAttributes>) {
 	const { attributes, setAttributes, clientId } = props;
 
 	// Automatically generate and set unique ID
-	useUniqueID(attributes.id, clientId, setAttributes, 'gutenform-submit');
+	useUniqueID(attributes.id, clientId, setAttributes, 'streamery-forms-submit');
 
 	return (
 		<>

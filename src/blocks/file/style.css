@@ -3,11 +3,11 @@
  * Frontend styles for the file upload field
  */
 
-.gutenform-file-upload-field {
+.streamery-forms-file-upload-field {
 	position: relative;
 }
 
-.gutenform-file-upload-zone {
+.streamery-forms-file-upload-zone {
 	position: relative;
 	border: 2px dashed var(--field-accent, #3b82f6);
 	border-radius: 0.5rem;
@@ -18,17 +18,17 @@
 	background-color: #fff;
 }
 
-.gutenform-file-upload-zone:hover {
+.streamery-forms-file-upload-zone:hover {
 	border-color: var(--field-accent-hover, #2563eb);
 	background-color: #f8fafc;
 }
 
-.gutenform-file-upload-zone--dragover {
+.streamery-forms-file-upload-zone--dragover {
 	border-color: var(--field-accent-hover, #2563eb);
 	background-color: var(--field-accent-muted, #eff6ff);
 }
 
-.gutenform-file-upload-icon {
+.streamery-forms-file-upload-icon {
 	margin: 0 auto 1rem;
 	color: var(--field-accent, #3b82f6);
 	display: flex;
@@ -36,23 +36,23 @@
 	align-items: center;
 }
 
-.gutenform-file-upload-icon svg {
+.streamery-forms-file-upload-icon svg {
 	width: 48px;
 	height: 48px;
 }
 
-.gutenform-file-upload-text {
+.streamery-forms-file-upload-text {
 	display: flex;
 	flex-direction: column;
 	gap: 0.25rem;
 }
 
-.gutenform-file-upload-text-primary {
+.streamery-forms-file-upload-text-primary {
 	color: var(--field-accent, #3b82f6);
 	font-weight: 500;
 }
 
-.gutenform-file-upload-text-secondary {
+.streamery-forms-file-upload-text-secondary {
 	color: #6b7280;
 	font-size: 0.875rem;
 }
@@ -65,7 +65,7 @@
  * operate without a mouse. The clip-rect pattern hides it visually while
  * keeping it a real, reachable form control.
  */
-.gutenform-file-input {
+.streamery-forms-file-input {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -79,30 +79,30 @@
 }
 
 /* Make the focus ring visible on the drop zone when the hidden input has focus. */
-.gutenform-file-input:focus-visible + *,
-.gutenform-file-upload-zone:focus-within {
+.streamery-forms-file-input:focus-visible + *,
+.streamery-forms-file-upload-zone:focus-within {
 	outline: 2px solid var(--field-focus-color, #3858e9);
 	outline-offset: 2px;
 }
 
-.gutenform-file-upload-url {
+.streamery-forms-file-upload-url {
 	margin-top: 1rem;
 	padding-top: 1rem;
 	border-top: 1px solid #e5e7eb;
 }
 
-.gutenform-file-upload-url > p {
+.streamery-forms-file-upload-url > p {
 	margin: 0 0 0.5rem;
 	font-size: 0.875rem;
 	color: #6b7280;
 }
 
-.gutenform-file-upload-url-input {
+.streamery-forms-file-upload-url-input {
 	display: flex;
 	gap: 0.5rem;
 }
 
-.gutenform-file-url-input {
+.streamery-forms-file-url-input {
 	flex: 1;
 	padding: 0.5rem 0.75rem;
 	border: 1px solid #d1d5db;
@@ -110,13 +110,13 @@
 	font-size: 0.875rem;
 }
 
-.gutenform-file-url-input:focus {
+.streamery-forms-file-url-input:focus {
 	outline: none;
 	border-color: var(--field-accent, #3b82f6);
 	box-shadow: 0 0 0 3px var(--field-accent-ring, rgba(59, 130, 246, 0.25));
 }
 
-.gutenform-file-url-upload-btn {
+.streamery-forms-file-url-upload-btn {
 	padding: 1rem 2rem;
 	background-color: var(--field-accent, #3b82f6);
 	color: #fff;
@@ -128,23 +128,23 @@
 	transition: background-color 0.2s ease;
 }
 
-.gutenform-file-url-upload-btn:hover:not(:disabled) {
+.streamery-forms-file-url-upload-btn:hover:not(:disabled) {
 	background-color: var(--field-accent-hover, #2563eb);
 }
 
-.gutenform-file-url-upload-btn:disabled {
+.streamery-forms-file-url-upload-btn:disabled {
 	background-color: #9ca3af;
 	cursor: not-allowed;
 }
 
-.gutenform-file-upload-list {
+.streamery-forms-file-upload-list {
 	margin-top: 1rem;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 }
 
-.gutenform-file-item {
+.streamery-forms-file-item {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -155,7 +155,7 @@
 	gap: 0.75rem;
 }
 
-.gutenform-file-item-info {
+.streamery-forms-file-item-info {
 	display: flex;
 	align-items: center;
 	gap: 0.75rem;
@@ -163,7 +163,7 @@
 	min-width: 0;
 }
 
-.gutenform-file-item-thumbnail {
+.streamery-forms-file-item-thumbnail {
 	width: 40px;
 	height: 40px;
 	object-fit: cover;
@@ -171,7 +171,7 @@
 	flex-shrink: 0;
 }
 
-.gutenform-file-item-name {
+.streamery-forms-file-item-name {
 	font-size: 0.875rem;
 	font-weight: 500;
 	color: #111827;
@@ -180,20 +180,20 @@
 	white-space: nowrap;
 }
 
-.gutenform-file-item-size {
+.streamery-forms-file-item-size {
 	font-size: 0.75rem;
 	color: #6b7280;
 	margin-left: auto;
 	flex-shrink: 0;
 }
 
-.gutenform-file-item-error {
+.streamery-forms-file-item-error {
 	font-size: 0.75rem;
 	color: #dc2626;
 	margin-left: 0.5rem;
 }
 
-.gutenform-file-item-progress {
+.streamery-forms-file-item-progress {
 	position: relative;
 	flex: 1;
 	height: 8px;
@@ -202,7 +202,7 @@
 	overflow: hidden;
 }
 
-.gutenform-file-item-progress-bar {
+.streamery-forms-file-item-progress-bar {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -211,7 +211,7 @@
 	transition: width 0.3s ease;
 }
 
-.gutenform-file-item-progress-text {
+.streamery-forms-file-item-progress-text {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -222,8 +222,8 @@
 	z-index: 1;
 }
 
-.gutenform-file-item-cancel,
-.gutenform-file-item-remove {
+.streamery-forms-file-item-cancel,
+.streamery-forms-file-item-remove {
 	width: 24px;
 	height: 24px;
 	display: flex;
@@ -240,12 +240,12 @@
 	transition: color 0.2s ease;
 }
 
-.gutenform-file-item-cancel:hover,
-.gutenform-file-item-remove:hover {
+.streamery-forms-file-item-cancel:hover,
+.streamery-forms-file-item-remove:hover {
 	color: #dc2626;
 }
 
-.gutenform-file-upload-error {
+.streamery-forms-file-upload-error {
 	margin-top: 0.5rem;
 	padding: 0.75rem;
 	background-color: #fef2f2;

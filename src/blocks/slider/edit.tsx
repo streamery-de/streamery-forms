@@ -114,10 +114,10 @@ export default function Edit(props: BlockEditProps<SliderAttributes>) {
 				onHelpChange={(help) => setAttributes({ help })}
 				attributes={attributes}
 			>
-				<div className="gutenform-slider-wrapper">
+				<div className="streamery-forms-slider-wrapper">
 					<div
 						ref={sliderRef}
-						className="gutenform-slider gutenform-slider--editor"
+						className="streamery-forms-slider streamery-forms-slider--editor"
 						style={
 							orientation === 'vertical'
 								? { height: '200px', margin: '0 auto' }

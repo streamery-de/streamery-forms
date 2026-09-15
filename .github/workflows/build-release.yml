@@ -51,25 +51,25 @@ jobs:
       - name: Create distribution archive
         run: |
           composer global require wp-cli/dist-archive-command
-          "$(composer config -g home)/vendor/bin/wp" dist-archive . ./gutenform-builder.zip
+          "$(composer config -g home)/vendor/bin/wp" dist-archive . ./streamery-forms.zip --plugin-dirname=streamery-forms
 
       # actions/upload-artifact always wraps whatever `path` points to in its
       # own zip when downloaded from the Actions UI. Uploading the .zip file
       # directly used to give users a zip-of-a-zip (WordPress found no plugin
-      # inside). Unpacking it first so `dist/gutenform-builder/` is uploaded
+      # inside). Unpacking it first so `dist/streamery-forms/` is uploaded
       # means the one zip GitHub produces on download IS the plugin package.
       - name: Unpack archive for artifact upload
         run: |
           mkdir dist
-          unzip -q gutenform-builder.zip -d dist
-          test -f dist/gutenform-builder/gutenform-builder.php || { echo "::error::plugin bootstrap file missing from archive"; exit 1; }
-          test -f dist/gutenform-builder/vendor/autoload.php || { echo "::error::vendor/autoload.php missing from archive"; exit 1; }
-          test -f dist/gutenform-builder/vendor/prappo/wp-eloquent/src/Support/helpers.php || { echo "::error::vendor/prappo/wp-eloquent/src missing from archive (check .distignore anchoring)"; exit 1; }
+          unzip -q streamery-forms.zip -d dist
+          test -f dist/streamery-forms/streamery-forms.php || { echo "::error::plugin bootstrap file missing from archive"; exit 1; }
+          test -f dist/streamery-forms/vendor/autoload.php || { echo "::error::vendor/autoload.php missing from archive"; exit 1; }
+          test -f dist/streamery-forms/vendor/prappo/wp-eloquent/src/Support/helpers.php || { echo "::error::vendor/prappo/wp-eloquent/src missing from archive (check .distignore anchoring)"; exit 1; }
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gutenform-builder
+          name: streamery-forms
           path: dist
 
   # Publishing to the WordPress.org SVN repository. Only runs on a tag, and only
@@ -109,6 +109,6 @@ jobs:
         env:
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
-          SLUG: gutenform-builder
+          SLUG: streamery-forms
           # Banners/icons/screenshots go to SVN /assets/, not into the plugin.
           ASSETS_DIR: .wordpress-org

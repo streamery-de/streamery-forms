@@ -113,7 +113,7 @@ export function transformToInput(
 ): any {
   const common = getCommonAttributes(attributes)
 
-  return createBlock('gutenform/input', {
+  return createBlock('streamery-forms/input', {
     ...common,
     type: targetType,
     isPrimaryMail: attributes.isPrimaryMail || false,
@@ -126,7 +126,7 @@ export function transformToInput(
 export function transformToTextarea(attributes: any): any {
   const common = getCommonAttributes(attributes)
 
-  return createBlock('gutenform/textarea', {
+  return createBlock('streamery-forms/textarea', {
     ...common,
     rows: attributes.rows || 4,
   } as TextareaAttributes)
@@ -144,7 +144,7 @@ export function transformToSelect(attributes: any): any {
     { label: 'Option 2', value: 'option2' },
   ]
 
-  return createBlock('gutenform/select', {
+  return createBlock('streamery-forms/select', {
     ...common,
     options: options,
     optionsPopulated: attributes.optionsPopulated || false,
@@ -164,7 +164,7 @@ export function transformToCheckbox(attributes: any): any {
   const common = getCommonAttributes(attributes)
   const options = attributes.options || defaultOptions
 
-  return createBlock('gutenform/checkbox', {
+  return createBlock('streamery-forms/checkbox', {
     ...common,
     options,
     styleVariant: attributes.styleVariant || 'default',
@@ -180,7 +180,7 @@ export function transformToRadio(attributes: any): any {
   const common = getCommonAttributes(attributes)
   const options = attributes.options || defaultOptions
 
-  return createBlock('gutenform/radio', {
+  return createBlock('streamery-forms/radio', {
     ...common,
     options,
     styleVariant: attributes.styleVariant || 'default',
@@ -194,7 +194,7 @@ export function transformToRadio(attributes: any): any {
 export function transformToDateTime(attributes: any): any {
   const common = getCommonAttributes(attributes)
 
-  return createBlock('gutenform/date-time', {
+  return createBlock('streamery-forms/date-time', {
     ...common,
     mode: attributes.mode || 'date',
     range: attributes.range || false,
@@ -210,7 +210,7 @@ export function transformToDateTime(attributes: any): any {
 export function transformToSlider(attributes: any): any {
   const common = getCommonAttributes(attributes)
 
-  return createBlock('gutenform/slider', {
+  return createBlock('streamery-forms/slider', {
     ...common,
     min: attributes.min ?? 0,
     max: attributes.max ?? 100,

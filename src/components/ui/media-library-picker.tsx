@@ -50,9 +50,9 @@ export function MediaLibraryPicker({
 
       // Create media uploader
       const mediaUploader = wp.media({
-        title: __('selectImage', 'gutenform') || 'Select Image',
+        title: __('selectImage', 'streamery-forms') || 'Select Image',
         button: {
-          text: __('useThisImage', 'gutenform') || 'Use this image',
+          text: __('useThisImage', 'streamery-forms') || 'Use this image',
         },
         multiple: false,
         library: {

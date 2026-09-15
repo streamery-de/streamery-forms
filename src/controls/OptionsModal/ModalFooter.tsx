@@ -10,7 +10,7 @@ interface ModalFooterProps {
 
 export const ModalFooter = ({ hasOptions, onClose, onSave }: ModalFooterProps) => {
 	return (
-		<div className="gutenform-options-modal-footer">
+		<div className="streamery-forms-options-modal-footer">
 			
 			<Button onClick={onClose} variant="secondary">
 				{__('cancel')}

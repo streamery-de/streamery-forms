@@ -1,4 +1,4 @@
-=== Gutenform Builder ===
+=== Streamery Forms ===
 Contributors: streamery
 Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
@@ -12,7 +12,7 @@ Build forms directly in the block editor, collect submissions in a built-in inbo
 
 == Description ==
 
-Gutenform Builder is a form builder for the WordPress block editor. You compose a form the same way you compose any other page — by adding blocks — and every submission is stored in an inbox inside your WordPress admin, so nothing depends on an email actually arriving.
+Streamery Forms is a form builder for the WordPress block editor. You compose a form the same way you compose any other page — by adding blocks — and every submission is stored in an inbox inside your WordPress admin, so nothing depends on an email actually arriving.
 
 **Building forms**
 
@@ -54,9 +54,9 @@ All of these are enforced on the server. A submission cannot bypass them by talk
 
 == Third-Party Services ==
 
-Gutenform Builder does not contact any external service on its own. The following are optional and only ever active once **you** configure them.
+Streamery Forms does not contact any external service on its own. The following are optional and only ever active once **you** configure them.
 
-**Google reCAPTCHA** — only when you enable reCAPTCHA and enter your keys under Gutenform → Settings. When enabled, the reCAPTCHA script is loaded from Google on pages containing a form, and the visitor's CAPTCHA response token plus their IP address are sent to Google for verification on submit.
+**Google reCAPTCHA** — only when you enable reCAPTCHA and enter your keys under Streamery Forms → Settings. When enabled, the reCAPTCHA script is loaded from Google on pages containing a form, and the visitor's CAPTCHA response token plus their IP address are sent to Google for verification on submit.
 Service: https://www.google.com/recaptcha/
 Terms: https://policies.google.com/terms
 Privacy policy: https://policies.google.com/privacy
@@ -68,13 +68,42 @@ Privacy policy: https://friendlycaptcha.com/legal/privacy/
 
 **Webhook provider** — only when you add a webhook feed. Submissions of the forms you assign it to are sent to the URL **you** configure. That endpoint is yours; where the data goes and how it is handled is determined entirely by the address you enter. No default endpoint exists and nothing is sent anywhere unless you set one up.
 
+== Source Code ==
+
+The JavaScript and CSS in `assets/admin/dist/` and `assets/blocks/` are compiled. The human-readable source is public at:
+
+https://github.com/streamery/streamery-forms
+
+* `src/admin/`, `src/components/`, `src/lib/` — the admin app (React), built with Vite (`vite.admin.config.js`) into `assets/admin/dist/`
+* `src/blocks/` — the form blocks, built with `@wordpress/scripts` (`webpack.config.js`) into `assets/blocks/`
+* `assets/admin/deactivate.js` and `assets/admin/deactivate.css` are not compiled
+
+To build the plugin from source:
+
+1. `composer install --no-dev --optimize-autoloader`
+2. `npm ci`
+3. `npm run build`
+
+Bundled third-party libraries (all MIT-licensed; full list in `package.json` and `composer.json`):
+
+* friendly-challenge — https://github.com/FriendlyCaptcha/friendly-challenge
+* CodeMirror / @uiw/react-codemirror — https://github.com/uiwjs/react-codemirror
+* noUiSlider — https://github.com/leongersen/noUiSlider
+* Radix UI — https://github.com/radix-ui/primitives
+* React Router — https://github.com/remix-run/react-router
+* Recharts — https://github.com/recharts/recharts
+* date-fns — https://github.com/date-fns/date-fns
+* Zod — https://github.com/colinhacks/zod
+* vite-for-wp (adapted in `libs/assets.php`) — https://github.com/kucrut/vite-for-wp
+* wp-eloquent (Composer, in `vendor/`) — https://github.com/prappo/wp-eloquent
+
 == Installation ==
 
-1. Upload the plugin to `/wp-content/plugins/gutenform-builder/`, or install it through Plugins → Add New.
+1. Upload the plugin to `/wp-content/plugins/streamery-forms/`, or install it through Plugins → Add New.
 2. Activate it through the Plugins screen.
 3. Edit a page or post, add the **Form** block, and add field blocks inside it.
 4. Open **Form Settings** from the block toolbar to choose a mailbox and add providers.
-5. Submissions appear under **Gutenform → Inbox**.
+5. Submissions appear under **Streamery Forms → Inbox**.
 
 == Frequently Asked Questions ==
 
@@ -84,7 +113,7 @@ No. The database provider is always active, so submissions land in the inbox as 
 
 = Where are file uploads stored? =
 
-In `wp-content/uploads/gutenform/`. The directory is protected against script execution, uploads are restricted to a server-side list of allowed file types, and an upload is only ever linked to a submission through a single-use token — a submission cannot reference some other file on your site.
+In `wp-content/uploads/streamery-forms/`. The directory is protected against script execution, uploads are restricted to a server-side list of allowed file types, and an upload is only ever linked to a submission through a single-use token — a submission cannot reference some other file on your site.
 
 = Can editors manage submissions without being administrators? =
 
@@ -100,7 +129,7 @@ Yes. Form submission does not depend on a per-page nonce that could expire in a 
 
 = Can I add my own provider? =
 
-Yes. Provider classes are registered through the `gutenform/available_providers` filter, so an add-on plugin can register its own without modifying this one.
+Yes. Provider classes are registered through the `streamery-forms/available_providers` filter, so an add-on plugin can register its own without modifying this one.
 
 == Screenshots ==
 

@@ -66,26 +66,26 @@ export default function save(props: BlockSaveProps<SliderAttributes>) {
 			})}
 		>
 			{label && (
-				<label htmlFor={id} className="gutenform-field__label">
+				<label htmlFor={id} className="streamery-forms-field__label">
 					{label}
 				</label>
 			)}
-			<div className="gutenform-slider-wrapper">
+			<div className="streamery-forms-slider-wrapper">
 				{range ? (
 					<>
 						<input
 							type="hidden"
 							name={`${name}_min`}
 							defaultValue={String(startVal)}
-							className="gutenform-slider-hidden-min"
+							className="streamery-forms-slider-hidden-min"
 						/>
 						<input
 							type="hidden"
 							name={`${name}_max`}
 							defaultValue={String(endVal)}
-							className="gutenform-slider-hidden-max"
+							className="streamery-forms-slider-hidden-max"
 						/>
-						<div className="gutenform-slider" aria-hidden="true" />
+						<div className="streamery-forms-slider" aria-hidden="true" />
 					</>
 				) : (
 					<>
@@ -93,14 +93,14 @@ export default function save(props: BlockSaveProps<SliderAttributes>) {
 							type="hidden"
 							name={name}
 							defaultValue={String(singleValue)}
-							className="gutenform-slider-hidden"
+							className="streamery-forms-slider-hidden"
 							required={required}
 						/>
-						<div className="gutenform-slider" aria-hidden="true" />
+						<div className="streamery-forms-slider" aria-hidden="true" />
 					</>
 				)}
 			</div>
-			{help && <p className="gutenform-field__help" id={`${id}-help`}>{help}</p>}
+			{help && <p className="streamery-forms-field__help" id={`${id}-help`}>{help}</p>}
 		</div>
 	);
 }

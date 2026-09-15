@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gutenform/save-progress",
+	"name": "streamery-forms/save-progress",
 	"version": "0.1.0",
 	"title": "Save Progress",
 	"category": "widgets",
 	"icon": "download",
-	"description": "Save form progress to continue later in Gutenform.",
-	"ancestor": ["gutenform/form"],
+	"description": "Save form progress to continue later in Streamery Forms.",
+	"ancestor": ["streamery-forms/form"],
 	"example": {},
 	"attributes": {
 		"label": {
@@ -30,7 +30,7 @@
 			"fontSize": true
 		}
 	},
-	"textdomain": "gutenform-builder",
+	"textdomain": "streamery-forms",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

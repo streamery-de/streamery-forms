@@ -31,18 +31,18 @@ export default function Edit(props: BlockEditProps<FileAttributes>) {
 				onHelpChange={(help) => setAttributes({ help })}
 				attributes={attributes}
 			>
-				<div className="gutenform-file-upload-preview" style={{ pointerEvents: 'none' }}>
-					<div className="gutenform-file-upload-zone">
-						<div className="gutenform-file-upload-icon">
+				<div className="streamery-forms-file-upload-preview" style={{ pointerEvents: 'none' }}>
+					<div className="streamery-forms-file-upload-zone">
+						<div className="streamery-forms-file-upload-icon">
 							<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
 								<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
 								<polyline points="17 8 12 3 7 8" />
 								<line x1="12" y1="3" x2="12" y2="15" />
 							</svg>
 						</div>
-						<p className="gutenform-file-upload-text">
-							<span className="gutenform-file-upload-text-primary">{__('selectCsvFileToUpload', __('Select a file to upload'))}</span>
-							<span className="gutenform-file-upload-text-secondary">{__('orDragAndDrop', __('or drag and drop it here'))}</span>
+						<p className="streamery-forms-file-upload-text">
+							<span className="streamery-forms-file-upload-text-primary">{__('selectCsvFileToUpload', __('Select a file to upload'))}</span>
+							<span className="streamery-forms-file-upload-text-secondary">{__('orDragAndDrop', __('or drag and drop it here'))}</span>
 						</p>
 					</div>
 				</div>

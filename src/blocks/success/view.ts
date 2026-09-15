@@ -21,28 +21,28 @@
  */
  
 window.addEventListener('DOMContentLoaded', () => {
-	const success = document.querySelectorAll('.wp-block-gutenform-success');
+	const success = document.querySelectorAll('.wp-block-streamery-forms-success');
 	success.forEach(success => {
-		const form = success.closest('.wp-block-gutenform-form');
+		const form = success.closest('.wp-block-streamery-forms-form');
 		if(!form) return;
 
         const modal = document.createElement('div');
-        modal.className = 'gutenform-success-modal';
+        modal.className = 'streamery-forms-success-modal';
         
         const content = document.createElement('div');
-        content.className = 'gutenform-success-modal-content';
+        content.className = 'streamery-forms-success-modal-content';
         content.innerHTML = success.innerHTML;
         
         // Create close button
         const closeButton = document.createElement('button');
-        closeButton.className = 'gutenform-success-modal-close';
+        closeButton.className = 'streamery-forms-success-modal-close';
         closeButton.setAttribute('aria-label', 'Close');
         closeButton.innerHTML = '×';
         closeButton.type = 'button';
         
         // Close modal function - hide modal and remove success class
         const closeModal = () => {
-            form.classList.remove('gutenform-form--success-view');
+            form.classList.remove('streamery-forms-form--success-view');
         };
         
         // Close button click handler

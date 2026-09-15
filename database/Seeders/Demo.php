@@ -3,15 +3,15 @@
 /**
  * Database seeder for demo data.
  *
- * @package Gutenform
+ * @package StreameryForms
  * @subpackage Database\Seeders
  * @since 1.0.0
  */
 
-namespace Gutenform\Database\Seeders;
+namespace StreameryForms\Database\Seeders;
 
 use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
-use Gutenform\Core\Debug;
+use StreameryForms\Core\Debug;
 
 defined('ABSPATH') || exit;
 
@@ -20,7 +20,7 @@ defined('ABSPATH') || exit;
  *
  * Represents the seeder for demo data from demo.sql.
  *
- * @package Gutenform\Database\Seeders
+ * @package StreameryForms\Database\Seeders
  */
 class Demo
 {
@@ -35,7 +35,7 @@ class Demo
 		global $wpdb;
 
 		// Read the demo.sql file.
-		$demo_file = GUTENFORM_DIR . 'src/database/seeds/demo.sql';
+		$demo_file = STREAMERY_FORMS_DIR . 'src/database/seeds/demo.sql';
 
 		if (! file_exists($demo_file)) {
 			return;
@@ -71,7 +71,7 @@ class Demo
 				Capsule::connection()->getPdo()->exec($statement);
 			} catch (\Exception $e) {
 				// Log error but continue with other statements.
-				Debug::log('Gutenform Demo Seeder Error: ' . $e->getMessage());
+				Debug::log('Streamery Forms Demo Seeder Error: ' . $e->getMessage());
 			}
 		}
 	}
@@ -84,7 +84,7 @@ class Demo
 	public static function has_data()
 	{
 		global $wpdb;
-		$table_name = $wpdb->prefix . 'gutenform_mailboxes';
+		$table_name = $wpdb->prefix . 'streamery_forms_mailboxes';
 
 		if (! Capsule::schema()->hasTable($table_name)) {
 			return false;

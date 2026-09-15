@@ -10,7 +10,7 @@ type BlockIconProps = {
 const BlockIcon = ({icon, clean}: BlockIconProps) => {
     const Icon = icon;
 	return (
-			<div className={clsx('gutenform-block-icon', clean && 'clean')}>
+			<div className={clsx('streamery-forms-block-icon', clean && 'clean')}>
 			<Icon />
 		</div>
 	);

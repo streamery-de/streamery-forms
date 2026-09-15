@@ -11,8 +11,8 @@ export default function save(props: BlockSaveProps<CaptchaAttributes>) {
 			'data-captcha-type': props.attributes.captchaType,
 		}) }>
 			{props.attributes.label && <label htmlFor={props.attributes.id}>{props.attributes.label}</label>}
-			<div className="gutenform-captcha-container" data-name={props.attributes.name} data-id={props.attributes.id}></div>
-			{props.attributes.help && <p className="gutenform-field__help" id={`${props.attributes.id}-help`}>{props.attributes.help}</p>}
+			<div className="streamery-forms-captcha-container" data-name={props.attributes.name} data-id={props.attributes.id}></div>
+			{props.attributes.help && <p className="streamery-forms-field__help" id={`${props.attributes.id}-help`}>{props.attributes.help}</p>}
 		</div>
 	);
 }

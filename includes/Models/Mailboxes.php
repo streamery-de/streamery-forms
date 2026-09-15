@@ -3,13 +3,13 @@
 /**
  * Class Mailboxes
  *
- * Represents the Mailboxes model for Gutenform.
+ * Represents the Mailboxes model for Streamery Forms.
  *
- * @package Gutenform\Models
+ * @package StreameryForms\Models
  * @since 1.0.0
  */
 
-namespace Gutenform\Models;
+namespace StreameryForms\Models;
 
 use Prappo\WpEloquent\Database\Eloquent\Model;
 
@@ -18,9 +18,9 @@ defined('ABSPATH') || exit;
 /**
  * Class Mailboxes
  *
- * Represents the Mailboxes model for Gutenform.
+ * Represents the Mailboxes model for Streamery Forms.
  *
- * @package Gutenform\Models
+ * @package StreameryForms\Models
  */
 class Mailboxes extends Model
 {
@@ -30,7 +30,7 @@ class Mailboxes extends Model
 	 *
 	 * @var string
 	 */
-	protected $table = 'gutenform_mailboxes';
+	protected $table = 'streamery_forms_mailboxes';
 
 	/**
 	 * The primary key for the model.

@@ -1,4 +1,4 @@
-.gutenform-field select {
+.streamery-forms-field select {
 	width: 100%;
 	padding: 8px 12px;
 	border: 1px solid #ddd;
@@ -7,7 +7,7 @@
 	font-family: inherit;
 }
 
-.gutenform-field select:focus {
+.streamery-forms-field select:focus {
 	outline: none;
 	border-color: #2271b1;
 	box-shadow: 0 0 0 1px #2271b1;

@@ -25,54 +25,54 @@ registerBlockType(metadata.name as string, {
 		to: [
 			{
 				type: 'block',
-				blocks: ['gutenform/input'],
+				blocks: ['streamery-forms/input'],
 				transform: (attributes: any) => transformToInput(attributes, 'text'),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/textarea'],
+				blocks: ['streamery-forms/textarea'],
 				transform: (attributes: any) => transformToTextarea(attributes),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/select'],
+				blocks: ['streamery-forms/select'],
 				transform: (attributes: any) => transformToSelect(attributes),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/checkbox'],
+				blocks: ['streamery-forms/checkbox'],
 				transform: (attributes: any) => transformToCheckbox(attributes),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/radio'],
+				blocks: ['streamery-forms/radio'],
 				transform: (attributes: any) => transformToRadio(attributes),
 			},
 		],
 		from: [
 			{
 				type: 'block',
-				blocks: ['gutenform/input'],
+				blocks: ['streamery-forms/input'],
 				transform: (attributes: any) => transformToDateTime(attributes),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/textarea'],
+				blocks: ['streamery-forms/textarea'],
 				transform: (attributes: any) => transformToDateTime(attributes),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/select'],
+				blocks: ['streamery-forms/select'],
 				transform: (attributes: any) => transformToDateTime(attributes),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/checkbox'],
+				blocks: ['streamery-forms/checkbox'],
 				transform: (attributes: any) => transformToDateTime(attributes),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/radio'],
+				blocks: ['streamery-forms/radio'],
 				transform: (attributes: any) => transformToDateTime(attributes),
 			},
 		],

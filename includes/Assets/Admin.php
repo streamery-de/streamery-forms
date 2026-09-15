@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Gutenform\Assets;
+namespace StreameryForms\Assets;
 
-use Gutenform\Traits\Base;
-use Gutenform\Libs\Assets;
-use Gutenform\Assets\Strings;
+use StreameryForms\Traits\Base;
+use StreameryForms\Libs\Assets;
+use StreameryForms\Assets\Strings;
 
 defined('ABSPATH') || exit;
 
 /**
  * Class Admin
  *
- * Handles admin functionalities for the Gutenform.
+ * Handles admin functionalities for the Streamery Forms.
  *
- * @package Gutenform\Admin
+ * @package StreameryForms\Admin
  */
 class Admin
 {
@@ -23,17 +23,17 @@ class Admin
 	use Base;
 
 	/**
-	 * Script handle for Gutenform.
+	 * Script handle for Streamery Forms.
 	 */
-	const HANDLE = 'gutenform';
+	const HANDLE = 'streamery-forms';
 
 	/**
-	 * JS Object name for Gutenform.
+	 * JS Object name for Streamery Forms.
 	 */
-	const OBJ_NAME = 'gutenForm';
+	const OBJ_NAME = 'streameryForms';
 
 	/**
-	 * Development script path for Gutenform.
+	 * Development script path for Streamery Forms.
 	 */
 	const DEV_SCRIPT = 'src/admin/main.jsx';
 
@@ -43,9 +43,9 @@ class Admin
 	 * @var array
 	 */
 	private $allowed_screens = array(
-		'toplevel_page_gutenform',
-		'gutenform_page_gutenform-forms-usage',
-		'gutenform_page_gutenform-settings',
+		'toplevel_page_streamery-forms',
+		'streamery-forms_page_streamery-forms-forms-usage',
+		'streamery-forms_page_streamery-forms-settings',
 	);
 
 	/**
@@ -68,16 +68,13 @@ class Admin
 	{
 		if (in_array($screen, $this->allowed_screens, true)) {
 			$enqueued = Assets\enqueue_asset(
-				GUTENFORM_DIR . '/assets/admin/dist',
+				STREAMERY_FORMS_DIR . '/assets/admin/dist',
 				self::DEV_SCRIPT,
 				$this->get_config()
 			);
 			if ($enqueued) {
 				wp_localize_script(self::HANDLE, self::OBJ_NAME, $this->get_data());
-				// Load translations for JavaScript
-				// Use same path format as load_plugin_textdomain
-				$plugin_rel_path = dirname(plugin_basename(GUTENFORM_PLUGIN_FILE)) . '/languages';
-				wp_set_script_translations(self::HANDLE, 'gutenform-builder', $plugin_rel_path);
+				wp_set_script_translations(self::HANDLE, 'streamery-forms');
 			}
 		}
 	}
@@ -112,7 +109,7 @@ class Admin
 			'nonce'                => wp_create_nonce('wp_rest'),
 			'userInfo'             => $this->get_user_data(),
 			'strings'              => Strings::get_strings(),
-			'providersIconBaseUrl'   => defined('GUTENFORM_ASSETS_URL') ? GUTENFORM_ASSETS_URL . '/providers/' : '',
+			'providersIconBaseUrl'   => defined('STREAMERY_FORMS_ASSETS_URL') ? STREAMERY_FORMS_ASSETS_URL . '/providers/' : '',
 		);
 	}
 
@@ -125,21 +122,21 @@ class Admin
 	{
 		// Get all registered block editor scripts
 		$editor_script_handles = array(
-			'gutenform-form-editor-script',
-			'gutenform-input-editor-script',
-			'gutenform-textarea-editor-script',
-			'gutenform-select-editor-script',
-			'gutenform-checkbox-editor-script',
-			'gutenform-radio-editor-script',
-			'gutenform-date-time-editor-script',
-			'gutenform-slider-editor-script',
-			'gutenform-submit-editor-script',
-			'gutenform-success-editor-script',
-			'gutenform-file-editor-script',
-			'gutenform-step-editor-script',
-			'gutenform-step-navigation-editor-script',
-			'gutenform-save-progress-editor-script',
-			'gutenform-progress-editor-script',
+			'streamery-forms-form-editor-script',
+			'streamery-forms-input-editor-script',
+			'streamery-forms-textarea-editor-script',
+			'streamery-forms-select-editor-script',
+			'streamery-forms-checkbox-editor-script',
+			'streamery-forms-radio-editor-script',
+			'streamery-forms-date-time-editor-script',
+			'streamery-forms-slider-editor-script',
+			'streamery-forms-submit-editor-script',
+			'streamery-forms-success-editor-script',
+			'streamery-forms-file-editor-script',
+			'streamery-forms-step-editor-script',
+			'streamery-forms-step-navigation-editor-script',
+			'streamery-forms-save-progress-editor-script',
+			'streamery-forms-progress-editor-script',
 		);
 
 		// Get WordPress upload limit in MB
@@ -148,13 +145,13 @@ class Admin
 
 		foreach ($editor_script_handles as $handle) {
 			if (wp_script_is($handle, 'registered')) {
-				// Pass strings to block editor via gutenform object (lowercase)
+				// Pass strings to block editor via streamery_forms object (lowercase)
 				$editor_data = array(
 					'strings' => Strings::get_strings(),
 					'uploadLimit' => $upload_limit_mb,
 				);
-				wp_localize_script($handle, 'gutenform', $editor_data);
-				// Also pass via gutenForm for consistency
+				wp_localize_script($handle, 'streamery_forms', $editor_data);
+				// Also pass via streameryForms for consistency
 				wp_localize_script($handle, self::OBJ_NAME, $this->get_data());
 			}
 		}

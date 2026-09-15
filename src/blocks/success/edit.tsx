@@ -35,7 +35,7 @@ export default function Edit(props: BlockEditProps<SuccessAttributes>) {
 	useEffect(() => {
 		const findForm = () => {
 			if (successRef.current) {
-				const formElement = successRef.current.closest('.wp-block-gutenform-form');
+				const formElement = successRef.current.closest('.wp-block-streamery-forms-form');
 				if (formElement) {
 					setForm(formElement as HTMLDivElement);
 					return true;
@@ -106,8 +106,8 @@ export default function Edit(props: BlockEditProps<SuccessAttributes>) {
 	return (
 		<div ref={successRef}>
 			{form && createPortal((
-				<div ref={modalRef} className="gutenform-success-modal">
-					<div ref={contentRef} className="gutenform-success-modal-content">
+				<div ref={modalRef} className="streamery-forms-success-modal">
+					<div ref={contentRef} className="streamery-forms-success-modal-content">
 						<ModalCloseButton onClose={closeModal} />
 						{SuccessContent}
 					</div>

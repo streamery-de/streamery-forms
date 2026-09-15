@@ -1,54 +1,43 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Gutenform Builder 0.0.1\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gutenform-"
-"builder\n"
-"POT-Creation-Date: 2026-08-24T21:09:47+00:00\n"
+"Project-Id-Version: Streamery Forms 0.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/streamery-forms"
+"\n"
+"POT-Creation-Date: 2026-09-15T13:31:06+00:00\n"
 "PO-Revision-Date: 2025-12-16 14:47+0000\n"
-"Last-Translator: Gutenform Team\n"
+"Last-Translator: Streamery Forms Team\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: WP-CLI 2.11.0\n"
-"X-Domain: gutenform-builder\n"
+"X-Domain: streamery-forms\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Plugin Name of the plugin
-#: gutenform-builder.php
-msgid "Gutenform Builder"
-msgstr "Gutenform Builder"
+#: streamery-forms.php includes/Admin/AdminBar.php:79
+#: includes/Admin/Menu.php:48 includes/Admin/Menu.php:49
+#: includes/Assets/Strings.php:587
+msgid "Streamery Forms"
+msgstr "Streamery Forms"
 
 #. Plugin URI of the plugin
-#: gutenform-builder.php
-msgid "https://gutenform.de"
+#. Author URI of the plugin
+#: streamery-forms.php
+msgid "https://streamery.de"
 msgstr ""
 
 #. Description of the plugin
-#: gutenform-builder.php
+#: streamery-forms.php
 msgid ""
-"A modern WordPress form builder plugin built with Gutenberg blocks. Create "
-"beautiful, responsive forms directly in the WordPress block editor and "
-"manage all submissions through an intuitive inbox interface. Features an "
-"extensible provider system for handling form submissions via email, "
-"database, or custom providers."
+"Build forms in the block editor, collect submissions in a built-in inbox, "
+"and forward them by email or webhook."
 msgstr ""
-"Ein modernes WordPress-Formular-Plugin, das mit Gutenberg-Blöcken erstellt "
-"wurde. Erstellen Sie schöne, responsive Formulare direkt im WordPress-Block-"
-"Editor und verwalten Sie alle Übermittlungen über eine intuitive Posteingang-"
-"Oberfläche. Bietet ein erweiterbares Anbieter-System zur Verarbeitung von "
-"Formular-Übermittlungen per E-Mail, Datenbank oder benutzerdefinierten "
-"Anbietern."
 
 #. Author of the plugin
-#: gutenform-builder.php
+#: streamery-forms.php
 msgid "Streamery"
-msgstr ""
-
-#. Author URI of the plugin
-#: gutenform-builder.php
-msgid "https://streamery.de"
 msgstr ""
 
 #: database/Seeders/DatabaseProviderSeeder.php:49
@@ -56,8 +45,8 @@ msgid "Database Provider (Default)"
 msgstr "Datenbank-Anbieter (Standard)"
 
 #: database/Seeders/DatabaseProviderSeeder.php:54
-#: includes/Providers/Database.php:75 includes/Providers/Database.php:179
-#: includes/Providers/Email.php:247
+#: includes/Providers/Database.php:76 includes/Providers/Database.php:174
+#: includes/Providers/Email.php:237
 msgid "New Form Submission: {form_title}"
 msgstr "Neue Formular-Übermittlung: {form_title}"
 
@@ -70,38 +59,21 @@ msgid "Entries that need follow-up"
 msgstr "Einträge, die nachverfolgt werden müssen"
 
 #: database/Seeders/MailboxesSeeder.php:44 includes/Assets/Strings.php:196
-#: includes/Providers/Database.php:158
+#: includes/Providers/Database.php:153
 msgid "Default Mailbox"
 msgstr "Standard-Postfach"
 
-#: gutenform-builder.php:41
-msgid "Gutenform Builder could not start."
-msgstr ""
-
-#. translators: %s: what is missing from the installation, e.g. "vendor/autoload.php".
-#: gutenform-builder.php:45
-msgid ""
-"This copy is missing its build output (%s). Install the plugin from an "
-"official release package, or run \"composer install --no-dev -o\" and \"npm "
-"install && npm run build\" in the plugin directory."
-msgstr ""
-
-#: includes/Admin/AdminBar.php:79 includes/Admin/Menu.php:48
-#: includes/Admin/Menu.php:49
-msgid "Gutenform"
-msgstr "Gutenform"
-
-#: includes/Admin/AdminBar.php:129 includes/Admin/Menu.php:79
-#: includes/Admin/Menu.php:80 includes/Assets/Strings.php:591
+#: includes/Admin/AdminBar.php:129 includes/Admin/Menu.php:78
+#: includes/Admin/Menu.php:79 includes/Assets/Strings.php:591
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: includes/Admin/Menu.php:63 includes/Admin/Menu.php:64
+#: includes/Admin/Menu.php:62 includes/Admin/Menu.php:63
 #: includes/Assets/Strings.php:76
 msgid "Inbox"
 msgstr "Posteingang"
 
-#: includes/Admin/Menu.php:71 includes/Admin/Menu.php:72
+#: includes/Admin/Menu.php:70 includes/Admin/Menu.php:71
 #: includes/Assets/Strings.php:89 includes/Assets/Strings.php:90
 msgid "Forms"
 msgstr ""
@@ -147,7 +119,7 @@ msgid "Save"
 msgstr "Speichern"
 
 #: includes/Assets/Strings.php:32 includes/Assets/Strings.php:638
-#: includes/Core/Deactivate.php:91
+#: includes/Core/Deactivate.php:80
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -270,22 +242,22 @@ msgid "Create your first Form"
 msgstr "Erstellen Sie Ihr erstes Formular"
 
 #: includes/Assets/Strings.php:67
-msgid "Build a form using Gutenberg blocks and start collecting submissions."
+msgid "Build a form in the block editor and start collecting submissions."
 msgstr ""
-"Erstellen Sie ein Formular mit Gutenberg-Blöcken und beginnen Sie mit dem "
-"Sammeln von Übermittlungen."
+"Erstellen Sie ein Formular mit Blöcken im Block-Editor und beginnen Sie mit "
+"dem Sammeln von Übermittlungen."
 
 #: includes/Assets/Strings.php:68
 msgid "Build Your first Form"
 msgstr "Erstellen Sie Ihr erstes Formular"
 
 #: includes/Assets/Strings.php:69
-msgid "Create your first form using the Gutenberg block editor"
-msgstr "Erstellen Sie Ihr erstes Formular mit dem Gutenberg-Block-Editor"
+msgid "Create your first form in the block editor"
+msgstr "Erstellen Sie Ihr erstes Formular mit dem Block-Editor"
 
 #: includes/Assets/Strings.php:70
-msgid "Welcome to GutenForm!"
-msgstr "Willkommen bei GutenForm!"
+msgid "Welcome to Streamery Forms!"
+msgstr "Willkommen bei Streamery Forms!"
 
 #: includes/Assets/Strings.php:71
 msgid "Loading checklist..."
@@ -347,7 +319,7 @@ msgstr ""
 msgid "Title"
 msgstr "Titel"
 
-#: includes/Assets/Strings.php:94 includes/Providers/Database.php:165
+#: includes/Assets/Strings.php:94 includes/Providers/Database.php:160
 msgid "Mailbox"
 msgstr ""
 
@@ -372,9 +344,9 @@ msgid "Enter your license key"
 msgstr "Geben Sie Ihren Lizenzschlüssel ein"
 
 #: includes/Assets/Strings.php:102
-msgid "Enter your Gutenform license key to unlock premium features."
+msgid "Enter your Streamery Forms license key to unlock premium features."
 msgstr ""
-"Geben Sie Ihren Gutenform-Lizenzschlüssel ein, um Premium-Funktionen "
+"Geben Sie Ihren Streamery Forms-Lizenzschlüssel ein, um Premium-Funktionen "
 "freizuschalten."
 
 #: includes/Assets/Strings.php:103
@@ -729,7 +701,7 @@ msgid "Set this mailbox as the default for new form submissions."
 msgstr ""
 "Setzen Sie dieses Postfach als Standard für neue Formular-Übermittlungen."
 
-#: includes/Assets/Strings.php:198 includes/Providers/Database.php:150
+#: includes/Assets/Strings.php:198 includes/Providers/Database.php:145
 msgid "Default"
 msgstr "Standard"
 
@@ -860,7 +832,7 @@ msgstr ""
 
 #: includes/Assets/Strings.php:236 includes/Assets/Strings.php:605
 #: includes/Providers/AbstractProvider.php:351
-#: includes/Providers/Webhook.php:660
+#: includes/Providers/Webhook.php:659
 msgid "Value"
 msgstr "Wert"
 
@@ -1048,7 +1020,8 @@ msgid "Enable provider"
 msgstr ""
 
 #: includes/Assets/Strings.php:281
-msgid "No additional providers yet. Add them under Gutenform → Providers."
+msgid ""
+"No additional providers yet. Add them under Streamery Forms → Providers."
 msgstr ""
 
 #: includes/Assets/Strings.php:282
@@ -1244,7 +1217,8 @@ msgstr ""
 #: includes/Assets/Strings.php:330
 msgid ""
 "Options are not managed in the editor. They are filled when the page loads "
-"via the gutenform/select/populated_options filter in your theme or plugin."
+"via the streamery-forms/select/populated_options filter in your theme or "
+"plugin."
 msgstr ""
 
 #: includes/Assets/Strings.php:331
@@ -1485,7 +1459,7 @@ msgid "Personal data"
 msgstr ""
 
 #: includes/Assets/Strings.php:401 includes/Assets/Strings.php:409
-#: includes/Providers/Email.php:252
+#: includes/Providers/Email.php:242
 msgid "Message"
 msgstr "Nachricht"
 
@@ -1509,8 +1483,8 @@ msgstr ""
 msgid "Last name"
 msgstr ""
 
-#: includes/Assets/Strings.php:408 includes/Providers/Database.php:176
-#: includes/Providers/Email.php:244
+#: includes/Assets/Strings.php:408 includes/Providers/Database.php:171
+#: includes/Providers/Email.php:234
 msgid "Subject"
 msgstr "Betreff"
 
@@ -2165,10 +2139,6 @@ msgstr "Lassen Sie uns mit ein paar schnellen Schritten beginnen"
 msgid "🎉 All set! Redirecting to inbox..."
 msgstr "🎉 Alles fertig! Weiterleitung zum Posteingang..."
 
-#: includes/Assets/Strings.php:587
-msgid "Plugin Name"
-msgstr "Plugin-Name"
-
 #: includes/Assets/Strings.php:588
 msgid "Toggle navigation menu"
 msgstr "Navigationsmenü umschalten"
@@ -2452,8 +2422,8 @@ msgstr ""
 msgid "From Email Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:673 includes/Providers/Database.php:185
-#: includes/Providers/Email.php:261
+#: includes/Assets/Strings.php:673 includes/Providers/Database.php:180
+#: includes/Providers/Email.php:251
 msgid "From Email"
 msgstr "Absender E-Mail"
 
@@ -2461,7 +2431,7 @@ msgstr "Absender E-Mail"
 msgid "The email address that will appear as the sender."
 msgstr ""
 
-#: includes/Assets/Strings.php:675 includes/Providers/Email.php:269
+#: includes/Assets/Strings.php:675 includes/Providers/Email.php:259
 msgid "From Name"
 msgstr "Absender Name"
 
@@ -2806,7 +2776,7 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: includes/Assets/Strings.php:779 includes/Providers/Email.php:278
+#: includes/Assets/Strings.php:779 includes/Providers/Email.php:268
 msgid "Template"
 msgstr ""
 
@@ -2835,7 +2805,8 @@ msgid "Admin Bar Menu"
 msgstr ""
 
 #: includes/Assets/Strings.php:790
-msgid "Show Gutenform in the WordPress admin bar with an unread entries count."
+msgid ""
+"Show Streamery Forms in the WordPress admin bar with an unread entries count."
 msgstr ""
 
 #: includes/Assets/Strings.php:791
@@ -2926,27 +2897,27 @@ msgstr ""
 msgid "Step Title"
 msgstr ""
 
-#: includes/Controllers/Database/Actions.php:33
+#: includes/Controllers/Database/Actions.php:34
 msgid "Demo data already exists in the database."
 msgstr "Demo-Daten existieren bereits in der Datenbank."
 
-#: includes/Controllers/Database/Actions.php:41
+#: includes/Controllers/Database/Actions.php:42
 msgid "Demo data has been successfully seeded."
 msgstr "Demo-Daten wurden erfolgreich eingefügt."
 
-#: includes/Controllers/Database/Actions.php:46
+#: includes/Controllers/Database/Actions.php:47
 msgid "Error seeding demo data: "
 msgstr "Fehler beim Einfügen der Demo-Daten: "
 
-#: includes/Controllers/Database/Actions.php:81
+#: includes/Controllers/Database/Actions.php:80
 msgid "You do not have permission to perform this action."
 msgstr "Sie haben keine Berechtigung, diese Aktion auszuführen."
 
-#: includes/Controllers/Database/Actions.php:132
+#: includes/Controllers/Database/Actions.php:98
 msgid "All database tables have been successfully removed."
 msgstr "Alle Datenbanktabellen wurden erfolgreich entfernt."
 
-#: includes/Controllers/Database/Actions.php:144
+#: includes/Controllers/Database/Actions.php:108
 msgid "Error removing database tables: "
 msgstr "Fehler beim Entfernen der Datenbanktabellen: "
 
@@ -2996,12 +2967,12 @@ msgstr ""
 #: includes/Controllers/Entries/Actions.php:492
 #: includes/Controllers/Settings/Actions.php:76
 #: includes/Controllers/Settings/Actions.php:181
-#: includes/Controllers/Settings/Actions.php:468
-#: includes/Controllers/Settings/Actions.php:549
-#: includes/Controllers/Settings/Actions.php:626
-#: includes/Controllers/Settings/Actions.php:697
-#: includes/Controllers/Settings/Actions.php:761
-#: includes/Controllers/Settings/Actions.php:823
+#: includes/Controllers/Settings/Actions.php:464
+#: includes/Controllers/Settings/Actions.php:545
+#: includes/Controllers/Settings/Actions.php:622
+#: includes/Controllers/Settings/Actions.php:693
+#: includes/Controllers/Settings/Actions.php:757
+#: includes/Controllers/Settings/Actions.php:819
 msgid "Security check failed."
 msgstr ""
 
@@ -3021,7 +2992,7 @@ msgstr "Fehler beim Abrufen der Einträge: "
 #: includes/Controllers/Entries/Actions.php:226
 #: includes/Controllers/Entries/Actions.php:315
 #: includes/Controllers/Entries/Actions.php:354
-#: includes/Controllers/EntryLabels/Actions.php:236
+#: includes/Controllers/EntryLabels/Actions.php:237
 msgid "Entry not found."
 msgstr "Eintrag nicht gefunden."
 
@@ -3105,7 +3076,7 @@ msgstr "Fehler beim Abrufen der Labels: "
 #: includes/Controllers/EntryLabels/Actions.php:102
 #: includes/Controllers/EntryLabels/Actions.php:134
 #: includes/Controllers/EntryLabels/Actions.php:191
-#: includes/Controllers/EntryLabels/Actions.php:244
+#: includes/Controllers/EntryLabels/Actions.php:245
 msgid "Label not found."
 msgstr "Label nicht gefunden."
 
@@ -3121,77 +3092,78 @@ msgstr "Label erfolgreich aktualisiert."
 msgid "Failed to update label: "
 msgstr "Fehler beim Aktualisieren des Labels: "
 
-#: includes/Controllers/EntryLabels/Actions.php:209
+#: includes/Controllers/EntryLabels/Actions.php:210
 msgid "Label deleted successfully."
 msgstr "Label erfolgreich gelöscht."
 
-#: includes/Controllers/EntryLabels/Actions.php:214
+#: includes/Controllers/EntryLabels/Actions.php:215
 msgid "Failed to delete label: "
 msgstr "Fehler beim Löschen des Labels: "
 
-#: includes/Controllers/EntryLabels/Actions.php:265
+#: includes/Controllers/EntryLabels/Actions.php:266
 msgid "Label is already attached to this entry."
 msgstr "Label ist bereits an diesen Eintrag angehängt."
 
-#: includes/Controllers/EntryLabels/Actions.php:282
+#: includes/Controllers/EntryLabels/Actions.php:283
 msgid "Label attached to entry successfully."
 msgstr "Label erfolgreich an Eintrag angehängt."
 
-#: includes/Controllers/EntryLabels/Actions.php:287
+#: includes/Controllers/EntryLabels/Actions.php:288
 msgid "Failed to attach label: "
 msgstr "Fehler beim Anhängen des Labels: "
 
-#: includes/Controllers/EntryLabels/Actions.php:319
+#: includes/Controllers/EntryLabels/Actions.php:320
 msgid "Label is not attached to this entry."
 msgstr "Label ist nicht an diesen Eintrag angehängt."
 
-#: includes/Controllers/EntryLabels/Actions.php:326
+#: includes/Controllers/EntryLabels/Actions.php:327
 msgid "Label detached from entry successfully."
 msgstr "Label erfolgreich vom Eintrag getrennt."
 
-#: includes/Controllers/EntryLabels/Actions.php:331
+#: includes/Controllers/EntryLabels/Actions.php:332
 msgid "Failed to detach label: "
 msgstr "Fehler beim Trennen des Labels: "
 
-#: includes/Controllers/FileUpload/Actions.php:87
-#: includes/Controllers/FileUpload/Actions.php:325
+#: includes/Controllers/FileUpload/Actions.php:88
+#: includes/Controllers/FileUpload/Actions.php:122
+#: includes/Controllers/FileUpload/Actions.php:344
 msgid "No file was uploaded."
 msgstr ""
 
 #. translators: %s: maximum file size in megabytes.
-#: includes/Controllers/FileUpload/Actions.php:155
+#: includes/Controllers/FileUpload/Actions.php:174
 msgid "File is too large. Maximum size is %s MB."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:171
+#: includes/Controllers/FileUpload/Actions.php:190
 msgid "Invalid file type. Please check the accepted file types."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:181
+#: includes/Controllers/FileUpload/Actions.php:200
 msgid "This file type is not allowed."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:321
+#: includes/Controllers/FileUpload/Actions.php:340
 msgid "File exceeds the maximum upload size."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:323
+#: includes/Controllers/FileUpload/Actions.php:342
 msgid "File was only partially uploaded."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:327
+#: includes/Controllers/FileUpload/Actions.php:346
 msgid "Missing temporary folder."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:329
+#: includes/Controllers/FileUpload/Actions.php:348
 msgid "Failed to write file to disk."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:331
+#: includes/Controllers/FileUpload/Actions.php:350
 msgid "File upload stopped by extension."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:333
+#: includes/Controllers/FileUpload/Actions.php:352
 msgid "Unknown upload error."
 msgstr ""
 
@@ -3347,10 +3319,10 @@ msgid "You do not have permission to view SMTP settings."
 msgstr ""
 
 #: includes/Controllers/Settings/Actions.php:85
-#: includes/Controllers/Settings/Actions.php:635
-#: includes/Controllers/Settings/Actions.php:706
-#: includes/Controllers/Settings/Actions.php:769
-#: includes/Controllers/Settings/Actions.php:832
+#: includes/Controllers/Settings/Actions.php:631
+#: includes/Controllers/Settings/Actions.php:702
+#: includes/Controllers/Settings/Actions.php:765
+#: includes/Controllers/Settings/Actions.php:828
 msgid "You do not have permission to manage settings."
 msgstr ""
 
@@ -3403,101 +3375,101 @@ msgid "Invalid from email address. Please provide a valid email address."
 msgstr ""
 
 #: includes/Controllers/Settings/Actions.php:315
-msgid "Gutenform SMTP Test Email"
+msgid "Streamery Forms SMTP Test Email"
 msgstr ""
 
 #: includes/Controllers/Settings/Actions.php:316
-msgid "This is a test email from Gutenform SMTP settings."
+msgid "This is a test email from Streamery Forms SMTP settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:351
+#: includes/Controllers/Settings/Actions.php:349
 msgid "Test email address is empty. Please provide a valid email address."
 msgstr ""
 
 #. translators: %s: the email address that failed validation.
-#: includes/Controllers/Settings/Actions.php:370
+#: includes/Controllers/Settings/Actions.php:368
 msgid "Invalid test email address before sending: %s"
 msgstr ""
 
 #. translators: %s: recipient email address.
-#: includes/Controllers/Settings/Actions.php:399
+#: includes/Controllers/Settings/Actions.php:395
 msgid "Test email sent successfully to %s."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:412
+#: includes/Controllers/Settings/Actions.php:408
 msgid ""
 "Failed to send test email. Please check your SMTP settings, credentials, and "
 "server configuration."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:433
+#: includes/Controllers/Settings/Actions.php:429
 msgid "You do not have permission to view CAPTCHA settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:476
+#: includes/Controllers/Settings/Actions.php:472
 msgid "You do not have permission to manage CAPTCHA settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:509
+#: includes/Controllers/Settings/Actions.php:505
 msgid "CAPTCHA settings saved successfully."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:525
+#: includes/Controllers/Settings/Actions.php:521
 msgid "You do not have permission to view debug settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:558
+#: includes/Controllers/Settings/Actions.php:554
 msgid "You do not have permission to manage debug settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:576
+#: includes/Controllers/Settings/Actions.php:572
 msgid "Debug mode enabled."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:577
+#: includes/Controllers/Settings/Actions.php:573
 msgid "Debug mode disabled."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:584
+#: includes/Controllers/Settings/Actions.php:580
 msgid "Failed to update debug mode."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:600
-#: includes/Controllers/Settings/Actions.php:665
-#: includes/Controllers/Settings/Actions.php:735
-#: includes/Controllers/Settings/Actions.php:799
+#: includes/Controllers/Settings/Actions.php:596
+#: includes/Controllers/Settings/Actions.php:661
+#: includes/Controllers/Settings/Actions.php:731
+#: includes/Controllers/Settings/Actions.php:795
 msgid "You do not have permission to view settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:648
+#: includes/Controllers/Settings/Actions.php:644
 msgid "First steps skipped."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:649
+#: includes/Controllers/Settings/Actions.php:645
 msgid "First steps re-enabled."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:719
+#: includes/Controllers/Settings/Actions.php:715
 msgid "Charts are now visible."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:720
+#: includes/Controllers/Settings/Actions.php:716
 msgid "Charts are now hidden."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:782
-msgid "All Gutenform data will be deleted when the plugin is deleted."
+#: includes/Controllers/Settings/Actions.php:778
+msgid "All Streamery Forms data will be deleted when the plugin is deleted."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:783
-msgid "Gutenform data will be kept when the plugin is deleted."
+#: includes/Controllers/Settings/Actions.php:779
+msgid "Streamery Forms data will be kept when the plugin is deleted."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:845
+#: includes/Controllers/Settings/Actions.php:841
 msgid "Admin bar menu enabled."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:846
+#: includes/Controllers/Settings/Actions.php:842
 msgid "Admin bar menu disabled."
 msgstr ""
 
@@ -3583,36 +3555,37 @@ msgstr "Anbieter \"%s\" konnte die Übermittlung nicht verarbeiten."
 msgid "Error in Provider \"%1$s\": %2$s"
 msgstr ""
 
-#: includes/Core/Crypto.php:130
+#: includes/Core/Crypto.php:136
 msgid ""
-"Gutenform: the libsodium PHP extension is not available on this server, so "
-"secrets you save (SMTP password, CAPTCHA keys) are stored in plain text "
-"rather than encrypted. Ask your host to enable the sodium extension."
+"Streamery Forms: the libsodium PHP extension is not available on this "
+"server, so secrets you save (SMTP password, CAPTCHA keys) are stored in "
+"plain text rather than encrypted. Ask your host to enable the sodium "
+"extension."
 msgstr ""
 
-#: includes/Core/Deactivate.php:76
-msgid "Deactivate Gutenform"
-msgstr "Gutenform deaktivieren"
+#: includes/Core/Deactivate.php:74
+msgid "Deactivate Streamery Forms"
+msgstr "Streamery Forms deaktivieren"
 
-#: includes/Core/Deactivate.php:77
+#: includes/Core/Deactivate.php:75
 msgid "What would you like to do?"
 msgstr "Was möchten Sie tun?"
 
-#: includes/Core/Deactivate.php:81
+#: includes/Core/Deactivate.php:76
 msgid "Just disable the plugin"
 msgstr "Plugin nur deaktivieren"
 
-#: includes/Core/Deactivate.php:82
+#: includes/Core/Deactivate.php:77
 msgid "Keep all data and settings. You can reactivate the plugin later."
 msgstr ""
 "Alle Daten und Einstellungen behalten. Sie können das Plugin später wieder "
 "aktivieren."
 
-#: includes/Core/Deactivate.php:86
+#: includes/Core/Deactivate.php:78
 msgid "Disable and remove database tables"
 msgstr "Deaktivieren und Datenbanktabellen entfernen"
 
-#: includes/Core/Deactivate.php:87
+#: includes/Core/Deactivate.php:79
 msgid ""
 "This will permanently delete all form entries, accounts, and settings. This "
 "action cannot be undone."
@@ -3620,25 +3593,25 @@ msgstr ""
 "Dies wird alle Formulareinträge, Konten und Einstellungen dauerhaft löschen. "
 "Diese Aktion kann nicht rückgängig gemacht werden."
 
-#: includes/Core/Deactivate.php:92
+#: includes/Core/Deactivate.php:81
 msgid "Continue"
 msgstr "Fortfahren"
 
-#: includes/Core/Deactivate.php:164
+#: includes/Core/Deactivate.php:82
 msgid "Processing..."
 msgstr "Verarbeitung..."
 
-#: includes/Core/Deactivate.php:194
+#: includes/Core/Deactivate.php:83
 msgid "Database tables removed successfully. Deactivating plugin..."
 msgstr "Datenbanktabellen erfolgreich entfernt. Plugin wird deaktiviert..."
 
-#: includes/Core/Deactivate.php:197 includes/Core/Deactivate.php:210
+#: includes/Core/Deactivate.php:84
 msgid "Error removing database tables. Please try again."
 msgstr ""
 "Fehler beim Entfernen der Datenbanktabellen. Bitte versuchen Sie es erneut."
 
 #: includes/Core/Privacy.php:53 includes/Core/Privacy.php:67
-msgid "Gutenform form submissions"
+msgid "Streamery Forms form submissions"
 msgstr ""
 
 #: includes/Core/Privacy.php:91
@@ -3674,197 +3647,209 @@ msgstr ""
 msgid "Field"
 msgstr "Feld"
 
-#: includes/Providers/Database.php:44
+#: includes/Providers/Database.php:45
 msgid "Database Storage"
 msgstr "Datenbank-Speicherung"
 
-#: includes/Providers/Database.php:169
+#: includes/Providers/Database.php:164
 msgid "Select the mailbox where the entry will be stored."
 msgstr ""
 
-#: includes/Providers/Database.php:180
+#: includes/Providers/Database.php:175
 msgid "Subject for the entry. Placeholders like {form_title} will be replaced."
 msgstr "Betreff für den Eintrag. Platzhalter wie {form_title} werden ersetzt."
 
-#: includes/Providers/Database.php:189
+#: includes/Providers/Database.php:184
 msgid ""
 "Email address of the sender that will be stored in the entry. Placeholders "
 "like {field_email} can be used."
 msgstr ""
 
-#: includes/Providers/Email.php:43
+#: includes/Providers/Email.php:44
 msgid "Email Notification"
 msgstr "E-Mail-Benachrichtigung"
 
-#: includes/Providers/Email.php:235
+#: includes/Providers/Email.php:225
 msgid "Email Address"
 msgstr "E-Mail-Adresse"
 
-#: includes/Providers/Email.php:239
+#: includes/Providers/Email.php:229
 msgid "Email address to which the notification will be sent."
 msgstr "E-Mail-Adresse, an die die Benachrichtigung gesendet wird."
 
-#: includes/Providers/Email.php:248
+#: includes/Providers/Email.php:238
 msgid "Email subject. Placeholders like {form_title} will be replaced."
 msgstr "E-Mail-Betreff. Platzhalter wie {form_title} werden ersetzt."
 
-#: includes/Providers/Email.php:256
+#: includes/Providers/Email.php:246
 msgid ""
 "Email message. HTML allowed. Placeholders like {field_name} will be "
 "replaced. Use {content} to inject form-specific content when the form has "
 "\"Use provider layout\" enabled."
 msgstr ""
 
-#: includes/Providers/Email.php:265
+#: includes/Providers/Email.php:255
 msgid ""
 "Email address of the sender. Placeholders like {field_email} can be used."
 msgstr ""
 
-#: includes/Providers/Email.php:273
+#: includes/Providers/Email.php:263
 msgid "Name of the sender."
 msgstr "Name des Absenders."
 
-#: includes/Providers/Email.php:282
+#: includes/Providers/Email.php:272
 msgid "Template name (internal use)."
 msgstr ""
 
-#: includes/Providers/Webhook.php:54
+#: includes/Providers/Webhook.php:55
 msgid "Webhook"
 msgstr ""
 
 #. translators: %d: HTTP status code returned by the webhook endpoint.
-#: includes/Providers/Webhook.php:149
+#: includes/Providers/Webhook.php:150
 msgid "Endpoint returned HTTP %d."
 msgstr ""
 
-#: includes/Providers/Webhook.php:165
+#: includes/Providers/Webhook.php:166
 msgid "No webhook URL configured."
 msgstr ""
 
-#: includes/Providers/Webhook.php:170
+#: includes/Providers/Webhook.php:171
 msgid "Webhook URL is not a valid absolute URL."
 msgstr ""
 
-#: includes/Providers/Webhook.php:174
+#: includes/Providers/Webhook.php:175
 msgid "Webhook URL must use http or https."
 msgstr ""
 
-#: includes/Providers/Webhook.php:190
+#: includes/Providers/Webhook.php:191
 msgid "Webhook URL points at a private or local address, which is not allowed."
 msgstr ""
 
-#: includes/Providers/Webhook.php:551
+#: includes/Providers/Webhook.php:550
 msgid "Endpoint URL"
 msgstr ""
 
-#: includes/Providers/Webhook.php:555
+#: includes/Providers/Webhook.php:554
 msgid ""
 "The https URL that submissions are sent to. Private and local addresses are "
 "blocked."
 msgstr ""
 
-#: includes/Providers/Webhook.php:560
+#: includes/Providers/Webhook.php:559
 msgid "HTTP Method"
 msgstr ""
 
-#: includes/Providers/Webhook.php:572
+#: includes/Providers/Webhook.php:571
 msgid "Content Type"
 msgstr ""
 
-#: includes/Providers/Webhook.php:583
+#: includes/Providers/Webhook.php:582
 msgid "Authentication"
 msgstr ""
 
-#: includes/Providers/Webhook.php:588
+#: includes/Providers/Webhook.php:587
 msgid "None"
 msgstr ""
 
-#: includes/Providers/Webhook.php:589
+#: includes/Providers/Webhook.php:588
 msgid "Bearer token"
 msgstr ""
 
-#: includes/Providers/Webhook.php:590
+#: includes/Providers/Webhook.php:589
 msgid "API key header"
 msgstr ""
 
-#: includes/Providers/Webhook.php:591
+#: includes/Providers/Webhook.php:590
 msgid "Basic auth"
 msgstr ""
 
-#: includes/Providers/Webhook.php:596
+#: includes/Providers/Webhook.php:595
 msgid "Bearer Token"
 msgstr ""
 
-#: includes/Providers/Webhook.php:601
+#: includes/Providers/Webhook.php:600
 msgid "Sent as an Authorization: Bearer header."
 msgstr ""
 
-#: includes/Providers/Webhook.php:605
+#: includes/Providers/Webhook.php:604
 msgid "API Key Header Name"
 msgstr ""
 
-#: includes/Providers/Webhook.php:609
+#: includes/Providers/Webhook.php:608
 msgid "Letters, digits and hyphens only."
 msgstr ""
 
-#: includes/Providers/Webhook.php:613
+#: includes/Providers/Webhook.php:612
 msgid "API Key"
 msgstr ""
 
-#: includes/Providers/Webhook.php:621
+#: includes/Providers/Webhook.php:620
 msgid "Basic Auth Username"
 msgstr ""
 
-#: includes/Providers/Webhook.php:628
+#: includes/Providers/Webhook.php:627
 msgid "Basic Auth Password"
 msgstr ""
 
-#: includes/Providers/Webhook.php:636
+#: includes/Providers/Webhook.php:635
 msgid "Sign payload (HMAC)"
 msgstr ""
 
-#: includes/Providers/Webhook.php:640
+#: includes/Providers/Webhook.php:639
 msgid ""
-"Adds X-Gutenform-Timestamp and X-Gutenform-Signature headers so the receiver "
-"can verify the payload."
+"Adds X-Streamery-Forms-Timestamp and X-Streamery-Forms-Signature headers so "
+"the receiver can verify the payload."
 msgstr ""
 
-#: includes/Providers/Webhook.php:644
+#: includes/Providers/Webhook.php:643
 msgid "Signing Secret"
 msgstr ""
 
-#: includes/Providers/Webhook.php:649
+#: includes/Providers/Webhook.php:648
 msgid "Used for the HMAC signature: sha256 over \"<timestamp>.<body>\"."
 msgstr ""
 
-#: includes/Providers/Webhook.php:653
+#: includes/Providers/Webhook.php:652
 msgid "Custom Headers"
 msgstr ""
 
-#: includes/Providers/Webhook.php:657
+#: includes/Providers/Webhook.php:656
 msgid "Additional headers sent with every request."
 msgstr ""
 
-#: includes/Providers/Webhook.php:659
+#: includes/Providers/Webhook.php:658
 msgid "Header"
 msgstr ""
 
-#: includes/Providers/Webhook.php:665
+#: includes/Providers/Webhook.php:664
 msgid "Timeout (seconds)"
 msgstr ""
 
-#: includes/Providers/Webhook.php:669
+#: includes/Providers/Webhook.php:668
 msgid "Maximum 15 seconds."
 msgstr ""
 
-#: includes/Providers/Webhook.php:673
+#: includes/Providers/Webhook.php:672
 msgid "Field Mapping"
 msgstr ""
 
-#: includes/Providers/Webhook.php:677
+#: includes/Providers/Webhook.php:676
 msgid ""
 "Map form fields to payload keys. Dot paths create nested objects (e.g. "
 "contact.email). Leave empty to send all fields unchanged."
+msgstr ""
+
+#: streamery-forms.php:46
+msgid "Streamery Forms could not start."
+msgstr ""
+
+#. translators: %s: what is missing from the installation, e.g. "vendor/autoload.php".
+#: streamery-forms.php:50
+msgid ""
+"This copy is missing its build output (%s). Install the plugin from an "
+"official release package, or run \"composer install --no-dev -o\" and \"npm "
+"install && npm run build\" in the plugin directory."
 msgstr ""
 
 #: src/blocks/captcha/block.json
@@ -3886,7 +3871,7 @@ msgstr ""
 
 #: src/blocks/checkbox/block.json
 msgctxt "block description"
-msgid "Checkbox block for Gutenform."
+msgid "Checkbox block for Streamery Forms."
 msgstr ""
 
 #: src/blocks/date-time/block.json
@@ -3896,7 +3881,7 @@ msgstr ""
 
 #: src/blocks/date-time/block.json
 msgctxt "block description"
-msgid "Date or time field for Gutenform."
+msgid "Date or time field for Streamery Forms."
 msgstr ""
 
 #: src/blocks/file/block.json
@@ -3906,7 +3891,7 @@ msgstr ""
 
 #: src/blocks/file/block.json
 msgctxt "block description"
-msgid "File upload block for Gutenform."
+msgid "File upload block for Streamery Forms."
 msgstr ""
 
 #: src/blocks/form/block.json
@@ -3916,8 +3901,8 @@ msgstr "Formular"
 
 #: src/blocks/form/block.json
 msgctxt "block description"
-msgid "Form Wrapper block for Gutenform."
-msgstr "Formular-Wrapper-Block für Gutenform."
+msgid "Form Wrapper block for Streamery Forms."
+msgstr "Formular-Wrapper-Block für Streamery Forms."
 
 #: src/blocks/honeypot/block.json
 msgctxt "block title"
@@ -3937,8 +3922,8 @@ msgstr "Eingabe"
 
 #: src/blocks/input/block.json
 msgctxt "block description"
-msgid "Input block for Gutenform."
-msgstr "Eingabe-Block für Gutenform."
+msgid "Input block for Streamery Forms."
+msgstr "Eingabe-Block für Streamery Forms."
 
 #: src/blocks/progress/block.json
 msgctxt "block title"
@@ -3947,7 +3932,7 @@ msgstr ""
 
 #: src/blocks/progress/block.json
 msgctxt "block description"
-msgid "Progress indicator for multi-step forms in Gutenform."
+msgid "Progress indicator for multi-step forms in Streamery Forms."
 msgstr ""
 
 #: src/blocks/radio/block.json
@@ -3957,7 +3942,7 @@ msgstr ""
 
 #: src/blocks/radio/block.json
 msgctxt "block description"
-msgid "Radio block for Gutenform."
+msgid "Radio block for Streamery Forms."
 msgstr ""
 
 #: src/blocks/save-progress/block.json
@@ -3967,7 +3952,7 @@ msgstr ""
 
 #: src/blocks/save-progress/block.json
 msgctxt "block description"
-msgid "Save form progress to continue later in Gutenform."
+msgid "Save form progress to continue later in Streamery Forms."
 msgstr ""
 
 #: src/blocks/select/block.json
@@ -3977,8 +3962,8 @@ msgstr "Auswahl"
 
 #: src/blocks/select/block.json
 msgctxt "block description"
-msgid "Select block for Gutenform."
-msgstr "Auswahl-Block für Gutenform."
+msgid "Select block for Streamery Forms."
+msgstr "Auswahl-Block für Streamery Forms."
 
 #: src/blocks/slider/block.json
 msgctxt "block title"
@@ -3987,7 +3972,7 @@ msgstr ""
 
 #: src/blocks/slider/block.json
 msgctxt "block description"
-msgid "Slider block for Gutenform."
+msgid "Slider block for Streamery Forms."
 msgstr ""
 
 #: src/blocks/step-navigation/block.json
@@ -3997,7 +3982,7 @@ msgstr ""
 
 #: src/blocks/step-navigation/block.json
 msgctxt "block description"
-msgid "Navigation buttons for multi-step forms in Gutenform."
+msgid "Navigation buttons for multi-step forms in Streamery Forms."
 msgstr ""
 
 #: src/blocks/step/block.json
@@ -4007,7 +3992,7 @@ msgstr ""
 
 #: src/blocks/step/block.json
 msgctxt "block description"
-msgid "Step container block for multi-step forms in Gutenform."
+msgid "Step container block for multi-step forms in Streamery Forms."
 msgstr ""
 
 #: src/blocks/submit/block.json
@@ -4017,8 +4002,8 @@ msgstr "Absenden"
 
 #: src/blocks/submit/block.json
 msgctxt "block description"
-msgid "Submit button block for Gutenform."
-msgstr "Absenden-Button-Block für Gutenform."
+msgid "Submit button block for Streamery Forms."
+msgstr "Absenden-Button-Block für Streamery Forms."
 
 #: src/blocks/success/block.json
 msgctxt "block title"
@@ -4027,8 +4012,8 @@ msgstr "Erfolg"
 
 #: src/blocks/success/block.json
 msgctxt "block description"
-msgid "Success Section for Gutenform."
-msgstr "Erfolgs-Bereich für Gutenform."
+msgid "Success Section for Streamery Forms."
+msgstr "Erfolgs-Bereich für Streamery Forms."
 
 #: src/blocks/textarea/block.json
 msgctxt "block title"
@@ -4037,35 +4022,5 @@ msgstr "Textbereich"
 
 #: src/blocks/textarea/block.json
 msgctxt "block description"
-msgid "Textarea block for Gutenform."
-msgstr "Textbereich-Block für Gutenform."
-
-#~ msgid "Database Provider (Standard)"
-#~ msgstr "Datenbank-Anbieter (Standard)"
-
-#~ msgid "Neue Formular-Übermittlung: {form_title}"
-#~ msgstr "Neue Formular-Übermittlung: {form_title}"
-
-#~ msgid "Chart"
-#~ msgstr "Diagramm"
-
-#~ msgid "Database Provider could not process the submission."
-#~ msgstr "Datenbank-Anbieter konnte die Übermittlung nicht verarbeiten."
-
-#~ msgid "Database Provider Error: %s"
-#~ msgstr "Datenbank-Anbieter Fehler: %s"
-
-#~ msgid "Error in Provider \"%s\": %s"
-#~ msgstr "Fehler im Anbieter \"%s\": %s"
-
-#~ msgid ""
-#~ "Message for the entry. Placeholders like {field_name} will be replaced."
-#~ msgstr ""
-#~ "Nachricht für den Eintrag. Platzhalter wie {field_name} werden ersetzt."
-
-#~ msgid ""
-#~ "Email message. HTML allowed. Placeholders like {field_name} will be "
-#~ "replaced."
-#~ msgstr ""
-#~ "E-Mail-Nachricht. HTML erlaubt. Platzhalter wie {field_name} werden "
-#~ "ersetzt."
+msgid "Textarea block for Streamery Forms."
+msgstr "Textbereich-Block für Streamery Forms."

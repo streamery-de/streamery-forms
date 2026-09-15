@@ -13,7 +13,7 @@ export const useFormBlocks = (clientId: string) => {
 			let formBlockId: string | null = null;
 			for (const parentId of parentIds) {
 				const parentBlock = select('core/block-editor').getBlock(parentId);
-				if (parentBlock?.name === 'gutenform/form') {
+				if (parentBlock?.name === 'streamery-forms/form') {
 					formBlockId = parentId;
 					break;
 				}
@@ -31,7 +31,7 @@ export const useFormBlocks = (clientId: string) => {
 				const inputBlocks: any[] = [];
 				
 				for (const block of blocks) {
-					if (block.name === 'gutenform/input') {
+					if (block.name === 'streamery-forms/input') {
 						inputBlocks.push(block);
 					}
 					

@@ -1,6 +1,6 @@
 <?php
 
-namespace Gutenform\Interfaces;
+namespace StreameryForms\Interfaces;
 
 defined('ABSPATH') || exit;
 
@@ -9,7 +9,7 @@ defined('ABSPATH') || exit;
  *
  * Defines the contract for database migration operations.
  *
- * @package Gutenform\Interfaces
+ * @package StreameryForms\Interfaces
  */
 interface Migration {
 

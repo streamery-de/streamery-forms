@@ -1,16 +1,16 @@
 /**
  * Internationalization utility for accessing translated strings.
  * 
- * Strings are translated in PHP and passed via window.gutenForm.strings
- * or window.gutenform.strings (for block editor).
+ * Strings are translated in PHP and passed via window.streameryForms.strings
+ * or window.streamery_forms.strings (for block editor).
  */
 
 declare global {
 	interface Window {
-		gutenForm?: {
+		streameryForms?: {
 			strings?: Record<string, string>;
 		};
-		gutenform?: {
+		streamery_forms?: {
 			strings?: Record<string, string>;
 		};
 	}
@@ -27,8 +27,8 @@ export function __(key: string, fallback?: string): string {
 	// Normalize key to lowercase for case-insensitive lookup
 	const normalizedKey = key.toLowerCase();
 	
-	// Try admin context first (window.gutenForm)
-	const adminStrings = window.gutenForm?.strings;
+	// Try admin context first (window.streameryForms)
+	const adminStrings = window.streameryForms?.strings;
 	if (adminStrings) {
 		// Try exact match first
 		if (adminStrings[key]) {
@@ -46,8 +46,8 @@ export function __(key: string, fallback?: string): string {
 		}
 	}
 
-	// Try block editor context (window.gutenform)
-	const editorStrings = window.gutenform?.strings;
+	// Try block editor context (window.streamery_forms)
+	const editorStrings = window.streamery_forms?.strings;
 	if (editorStrings) {
 		// Try exact match first
 		if (editorStrings[key]) {

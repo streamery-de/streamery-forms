@@ -3,14 +3,14 @@
 /**
  * Database migration for adding folder_id column to entries table.
  *
- * @package Gutenform
+ * @package StreameryForms
  * @subpackage Database\Migrations
  * @since 1.0.0
  */
 
-namespace Gutenform\Database\Migrations;
+namespace StreameryForms\Database\Migrations;
 
-use Gutenform\Interfaces\Migration;
+use StreameryForms\Interfaces\Migration;
 use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
 use Prappo\WpEloquent\Database\Schema\Blueprint;
 
@@ -19,9 +19,9 @@ defined('ABSPATH') || exit;
 /**
  * Class AddFolderIdToEntries
  *
- * Adds folder_id column to gutenform_entries for inbox folder assignment.
+ * Adds folder_id column to streamery_forms_entries for inbox folder assignment.
  *
- * @package Gutenform\Database\Migrations
+ * @package StreameryForms\Database\Migrations
  */
 class AddFolderIdToEntries implements Migration
 {
@@ -31,7 +31,7 @@ class AddFolderIdToEntries implements Migration
 	 *
 	 * @var string
 	 */
-	public static $table = 'gutenform_entries';
+	public static $table = 'streamery_forms_entries';
 
 	/**
 	 * Run the migrations.

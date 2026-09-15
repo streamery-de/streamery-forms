@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Gutenform Default Skin – Design Tokens & Variations
+   Streamery Forms Default Skin – Design Tokens & Variations
    ========================================================================== */
-form.wp-block-gutenform-form {
+form.wp-block-streamery-forms-form {
   /* --- Brand & Accent --- */
-  --gutenform-accent: #e71d73;
-  --field-accent: var(--gutenform-accent);
+  --streamery-forms-accent: #e71d73;
+  --field-accent: var(--streamery-forms-accent);
   --field-accent-hover: color-mix(in srgb, var(--field-accent) 85%, black);
   --field-accent-muted: color-mix(in srgb, var(--field-accent) 12%, white);
   --field-accent-ring: color-mix(in srgb, var(--field-accent) 25%, transparent);
@@ -48,7 +48,7 @@ form.wp-block-gutenform-form {
   --field-options-gap-cards: 0.75rem;
   --field-option-min-height: 5.5rem;
   --field-option-min-width: 12rem;
-  /* Variant overrides (set on .gutenform-field--*-cards / --*-badges) */
+  /* Variant overrides (set on .streamery-forms-field--*-cards / --*-badges) */
   --field-option-variant-padding: var(--field-option-padding-cards);
   --field-option-variant-radius: var(--field-rounded);
   --field-option-variant-bg: transparent;
@@ -201,7 +201,7 @@ form.wp-block-gutenform-form {
   /* ==========================================================================
      Field: label, help, required
      ========================================================================== */
-  .gutenform-field {
+  .streamery-forms-field {
     label {
       display: block;
       font-size: var(--field-label-size, 87.5%);
@@ -211,7 +211,7 @@ form.wp-block-gutenform-form {
       margin-bottom: var(--field-label-margin-bottom, 0.5rem);
     }
 
-    .gutenform-field__help {
+    .streamery-forms-field__help {
       font-size: var(--field-help-size, 87.5%);
       color: var(--field-help-color, inherit);
       margin-top: var(--field-help-margin-top, 0.5rem);
@@ -224,7 +224,7 @@ form.wp-block-gutenform-form {
     }
   }
 
-  .gutenform-field--required label::after {
+  .streamery-forms-field--required label::after {
     content: " *";
     color: var(--field-required-color, #f00);
   }
@@ -232,7 +232,7 @@ form.wp-block-gutenform-form {
   /* ==========================================================================
      Submit block
      ========================================================================== */
-  .wp-block-gutenform-submit {
+  .wp-block-streamery-forms-submit {
     button {
       display: inline-flex;
       align-items: center;
@@ -276,35 +276,35 @@ form.wp-block-gutenform-form {
   }
 
   /* Submit spinner */
-  .gutenform-submit-spinner {
+  .streamery-forms-submit-spinner {
     display: none;
     width: 1.125em;
     height: 1.125em;
     border: 2px solid currentColor;
     border-top-color: transparent;
     border-radius: 50%;
-    animation: gutenform-spin 0.7s linear infinite;
+    animation: streamery-forms-spin 0.7s linear infinite;
   }
 
-  .gutenform-form--submitting {
-    & .gutenform-submit-spinner {
+  .streamery-forms-form--submitting {
+    & .streamery-forms-submit-spinner {
       display: inline-block;
     }
 
-    & .gutenform-submit-text {
+    & .streamery-forms-submit-text {
       opacity: 0.9;
     }
   }
 
-  @keyframes gutenform-spin {
+  @keyframes streamery-forms-spin {
     to {
       transform: rotate(360deg);
     }
   }
 
-  .gutenform-step-navigation .gutenform-step-submit,
-  .gutenform-step-navigation .gutenform-step-next,
-  .gutenform-step-navigation .gutenform-step-prev {
+  .streamery-forms-step-navigation .streamery-forms-step-submit,
+  .streamery-forms-step-navigation .streamery-forms-step-next,
+  .streamery-forms-step-navigation .streamery-forms-step-prev {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -314,8 +314,8 @@ form.wp-block-gutenform-form {
   /* ==========================================================================
      File block
      ========================================================================== */
-  .wp-block-gutenform-file {
-    .gutenform-file-upload-zone {
+  .wp-block-streamery-forms-file {
+    .streamery-forms-file-upload-zone {
       border: 2px dashed var(--field-border-color, var(--field-accent));
       border-radius: var(--field-rounded);
       padding: 2rem;
@@ -336,21 +336,21 @@ form.wp-block-gutenform-form {
       }
     }
 
-    .gutenform-file-upload-zone--dragover {
+    .streamery-forms-file-upload-zone--dragover {
       border-color: var(--field-border-color-active, var(--field-accent-hover));
       background-color: var(--field-background-color-active, var(--field-accent-muted));
     }
 
-    .gutenform-file-upload-icon,
-    .gutenform-file-upload-text-primary {
+    .streamery-forms-file-upload-icon,
+    .streamery-forms-file-upload-text-primary {
       color: var(--field-border-color, var(--field-accent));
     }
 
-    .gutenform-file-upload-text-secondary {
+    .streamery-forms-file-upload-text-secondary {
       color: var(--field-help-color, #6b7280);
     }
 
-    .gutenform-file-url-input {
+    .streamery-forms-file-url-input {
       input {
         width: 100%;
         padding: var(--field-padding);
@@ -404,14 +404,14 @@ form.wp-block-gutenform-form {
       }
     }
 
-    .gutenform-file-item {
+    .streamery-forms-file-item {
       padding: var(--field-padding);
       border-radius: var(--field-rounded);
       border: var(--field-border);
       background-color: var(--field-background-color, #f9fafb);
     }
 
-    .gutenform-file-item-progress-bar {
+    .streamery-forms-file-item-progress-bar {
       background-color: var(--field-border-color, var(--field-accent));
     }
   }
@@ -419,15 +419,15 @@ form.wp-block-gutenform-form {
   /* ==========================================================================
      Checkbox & Radio: shared option layout
      ========================================================================== */
-  .gutenform-field--checkbox .gutenform-field__label,
-  .gutenform-field--radio .gutenform-field__label {
+  .streamery-forms-field--checkbox .streamery-forms-field__label,
+  .streamery-forms-field--radio .streamery-forms-field__label {
     display: block;
     font-weight: var(--field-label-weight, 600);
     margin-bottom: var(--field-label-margin-bottom, 0.5rem);
   }
 
-  .gutenform-field--checkbox .gutenform-checkbox-option input[type="checkbox"],
-  .gutenform-field--radio .gutenform-radio-option input[type="radio"] {
+  .streamery-forms-field--checkbox .streamery-forms-checkbox-option input[type="checkbox"],
+  .streamery-forms-field--radio .streamery-forms-radio-option input[type="radio"] {
     position: absolute;
     opacity: 0;
     width: 100%;
@@ -439,8 +439,8 @@ form.wp-block-gutenform-form {
     z-index: 1;
   }
 
-  .gutenform-field--checkbox .gutenform-checkbox-option,
-  .gutenform-field--radio .gutenform-radio-option {
+  .streamery-forms-field--checkbox .streamery-forms-checkbox-option,
+  .streamery-forms-field--radio .streamery-forms-radio-option {
     position: relative;
     display: flex;
     align-items: center;
@@ -449,8 +449,8 @@ form.wp-block-gutenform-form {
     transition: color var(--field-transition);
   }
 
-  .gutenform-field--checkbox .gutenform-checkbox-option-content,
-  .gutenform-field--radio .gutenform-radio-option-content {
+  .streamery-forms-field--checkbox .streamery-forms-checkbox-option-content,
+  .streamery-forms-field--radio .streamery-forms-radio-option-content {
     display: flex;
     flex-direction: column;
     gap: 0.125rem;
@@ -458,28 +458,28 @@ form.wp-block-gutenform-form {
     z-index: 0;
   }
 
-  .gutenform-field--checkbox .gutenform-checkbox-option-label,
-  .gutenform-field--radio .gutenform-radio-option-label {
+  .streamery-forms-field--checkbox .streamery-forms-checkbox-option-label,
+  .streamery-forms-field--radio .streamery-forms-radio-option-label {
     font-size: inherit;
     font-weight: normal;
   }
 
-  .gutenform-field--checkbox .gutenform-checkbox-option-description,
-  .gutenform-field--radio .gutenform-radio-option-description {
+  .streamery-forms-field--checkbox .streamery-forms-checkbox-option-description,
+  .streamery-forms-field--radio .streamery-forms-radio-option-description {
     font-size: 0.8125em;
     opacity: 0.85;
   }
 
   /* Layout: vertical / horizontal */
-  .gutenform-field--layout-vertical .gutenform-checkbox-options,
-  .gutenform-field--layout-vertical .gutenform-radio-options {
+  .streamery-forms-field--layout-vertical .streamery-forms-checkbox-options,
+  .streamery-forms-field--layout-vertical .streamery-forms-radio-options {
     display: flex;
     flex-direction: column;
     gap: var(--field-options-gap);
   }
 
-  .gutenform-field--layout-horizontal .gutenform-checkbox-options,
-  .gutenform-field--layout-horizontal .gutenform-radio-options {
+  .streamery-forms-field--layout-horizontal .streamery-forms-checkbox-options,
+  .streamery-forms-field--layout-horizontal .streamery-forms-radio-options {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -498,7 +498,7 @@ form.wp-block-gutenform-form {
   /* ==========================================================================
      Checkbox: Default (box + checkmark)
      ========================================================================== */
-  .gutenform-field--checkbox-default .gutenform-checkbox-option {
+  .streamery-forms-field--checkbox-default .streamery-forms-checkbox-option {
     anchor-scope: self;
 
     &::before {
@@ -552,8 +552,8 @@ form.wp-block-gutenform-form {
   /* ==========================================================================
      Checkbox / Radio: Toggle (shared styles)
      ========================================================================== */
-  .gutenform-field--checkbox-toggle .gutenform-checkbox-option,
-  .gutenform-field--radio-toggle .gutenform-radio-option {
+  .streamery-forms-field--checkbox-toggle .streamery-forms-checkbox-option,
+  .streamery-forms-field--radio-toggle .streamery-forms-radio-option {
     gap: 0.75rem;
 
     &::before {
@@ -600,8 +600,8 @@ form.wp-block-gutenform-form {
   /* ==========================================================================
      Checkbox: Cards & Badges (variants via CSS variables)
      ========================================================================== */
-  .gutenform-field--checkbox-badges,
-  .gutenform-field--radio-badges {
+  .streamery-forms-field--checkbox-badges,
+  .streamery-forms-field--radio-badges {
     --field-option-variant-radius: 9999px;
     --field-option-variant-bg: color-mix(in srgb, currentColor 5%, transparent);
     --field-option-variant-bg-checked: var(--field-accent-muted);
@@ -615,8 +615,8 @@ form.wp-block-gutenform-form {
     --field-option-min-height: 2.5rem;
   }
 
-  .gutenform-field--checkbox-cards .gutenform-checkbox-option,
-  .gutenform-field--checkbox-badges .gutenform-checkbox-option {
+  .streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option,
+  .streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option {
     anchor-scope: self;
     padding: var(--field-option-variant-padding);
     border-radius: var(--field-option-variant-radius);
@@ -666,7 +666,7 @@ form.wp-block-gutenform-form {
       transition: transform var(--field-check-transform-duration);
     }
 
-    & .gutenform-checkbox-option-content {
+    & .streamery-forms-checkbox-option-content {
       margin-top: auto;
       text-align: left;
     }
@@ -687,8 +687,8 @@ form.wp-block-gutenform-form {
     }
   }
 
-  .gutenform-field--checkbox-cards .gutenform-checkbox-options,
-  .gutenform-field--checkbox-badges .gutenform-checkbox-options {
+  .streamery-forms-field--checkbox-cards .streamery-forms-checkbox-options,
+  .streamery-forms-field--checkbox-badges .streamery-forms-checkbox-options {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -699,7 +699,7 @@ form.wp-block-gutenform-form {
   /* ==========================================================================
      Radio: Default (circle + dot)
      ========================================================================== */
-  .gutenform-field--radio-default .gutenform-radio-option {
+  .streamery-forms-field--radio-default .streamery-forms-radio-option {
     anchor-scope: self;
 
     &::before {
@@ -750,12 +750,12 @@ form.wp-block-gutenform-form {
   /* ==========================================================================
      Radio: Cards & Badges (variants via CSS variables)
      ========================================================================== */
-  .gutenform-field--radio-cards {
+  .streamery-forms-field--radio-cards {
     --field-option-variant-padding: var(--field-option-padding);
   }
 
-  .gutenform-field--radio-cards .gutenform-radio-option,
-  .gutenform-field--radio-badges .gutenform-radio-option {
+  .streamery-forms-field--radio-cards .streamery-forms-radio-option,
+  .streamery-forms-field--radio-badges .streamery-forms-radio-option {
     anchor-scope: self;
     padding: var(--field-option-variant-padding);
     border-radius: var(--field-option-variant-radius);
@@ -802,7 +802,7 @@ form.wp-block-gutenform-form {
       transition: transform var(--field-check-transform-duration);
     }
 
-    & .gutenform-radio-option-content {
+    & .streamery-forms-radio-option-content {
       margin-top: auto;
       text-align: left;
     }
@@ -822,8 +822,8 @@ form.wp-block-gutenform-form {
     }
   }
 
-  .gutenform-field--radio-cards .gutenform-radio-options,
-  .gutenform-field--radio-badges .gutenform-radio-options {
+  .streamery-forms-field--radio-cards .streamery-forms-radio-options,
+  .streamery-forms-field--radio-badges .streamery-forms-radio-options {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -834,26 +834,26 @@ form.wp-block-gutenform-form {
   /* ==========================================================================
      Date / Time
      ========================================================================== */
-  .gutenform-field .gutenform-datetime-inputs {
+  .streamery-forms-field .streamery-forms-datetime-inputs {
     display: flex;
     align-items: center;
     gap: var(--field-options-gap);
     flex-wrap: wrap;
   }
 
-  .gutenform-field .gutenform-datetime-input {
+  .streamery-forms-field .streamery-forms-datetime-input {
     flex: 1;
     min-width: 10rem;
   }
 
-  .gutenform-field input[type="date"],
-  .gutenform-field input[type="time"],
-  .gutenform-field input[type="datetime-local"] {
+  .streamery-forms-field input[type="date"],
+  .streamery-forms-field input[type="time"],
+  .streamery-forms-field input[type="datetime-local"] {
     width: auto;
     min-width: 0;
   }
 
-  .gutenform-field--range .gutenform-datetime-inputs .gutenform-datetime-input {
+  .streamery-forms-field--range .streamery-forms-datetime-inputs .streamery-forms-datetime-input {
     flex: 1;
     min-width: 8rem;
   }
@@ -861,7 +861,7 @@ form.wp-block-gutenform-form {
   /* ==========================================================================
      Slider (noUiSlider)
      ========================================================================== */
-  .gutenform-field .gutenform-slider-wrapper {
+  .streamery-forms-field .streamery-forms-slider-wrapper {
     display: flex;
     align-items: center;
     gap: var(--field-options-gap);
@@ -869,11 +869,11 @@ form.wp-block-gutenform-form {
   }
 
   /* Reserve space below when tooltips are shown so nothing gets covered */
-  .gutenform-field[data-slider-tooltips='true'] .gutenform-slider-wrapper {
+  .streamery-forms-field[data-slider-tooltips='true'] .streamery-forms-slider-wrapper {
     margin-bottom: 2.5rem;
   }
 
-  .gutenform-field .gutenform-slider.noUi-target {
+  .streamery-forms-field .streamery-forms-slider.noUi-target {
     flex: 1;
     min-width: 8rem;
     min-height: 1.5rem;
@@ -882,12 +882,12 @@ form.wp-block-gutenform-form {
     border-radius: var(--field-rounded);
   }
 
-  .gutenform-field .noUi-connect {
+  .streamery-forms-field .noUi-connect {
     background: var(--field-accent);
     border-radius: var(--field-rounded);
   }
 
-  .gutenform-field .noUi-handle {
+  .streamery-forms-field .noUi-handle {
     width: 1.25rem;
     height: 1.25rem;
     /* Center handle on track (track 1.5rem, handle 1.25rem) */
@@ -900,16 +900,16 @@ form.wp-block-gutenform-form {
     cursor: pointer;
   }
 
-  .gutenform-field .noUi-handle::before,
-  .gutenform-field .noUi-handle::after {
+  .streamery-forms-field .noUi-handle::before,
+  .streamery-forms-field .noUi-handle::after {
     display: none;
   }
 
-  .gutenform-field .noUi-handle:hover {
+  .streamery-forms-field .noUi-handle:hover {
     border-color: var(--field-accent-hover);
   }
 
-  .gutenform-field .noUi-tooltip {
+  .streamery-forms-field .noUi-tooltip {
     font-size: 0.875rem;
     padding: 0.25rem 0.5rem;
     background: var(--field-accent);
@@ -918,7 +918,7 @@ form.wp-block-gutenform-form {
   }
 
   /* Position tooltips below the slider (default noUiSlider is above) */
-  .gutenform-field .noUi-horizontal .noUi-origin > .noUi-tooltip {
+  .streamery-forms-field .noUi-horizontal .noUi-origin > .noUi-tooltip {
     bottom: auto;
     top: 100%;
     margin-top: 0.5rem;
@@ -927,7 +927,7 @@ form.wp-block-gutenform-form {
     left: 50%;
   }
 
-  .gutenform-field .noUi-vertical .noUi-origin > .noUi-tooltip {
+  .streamery-forms-field .noUi-vertical .noUi-origin > .noUi-tooltip {
     top: auto;
     right: auto;
     bottom: 50%;
@@ -938,13 +938,13 @@ form.wp-block-gutenform-form {
   }
 
   /* Vertical slider */
-  .gutenform-field .gutenform-slider.noUi-target.noUi-vertical {
+  .streamery-forms-field .streamery-forms-slider.noUi-target.noUi-vertical {
     min-width: 1.5rem;
     width: 1.5rem;
     min-height: 10rem;
   }
 
-  .gutenform-field .noUi-vertical .noUi-handle {
+  .streamery-forms-field .noUi-vertical .noUi-handle {
     width: 1.25rem;
     height: 1.25rem;
     /* Center handle on vertical track */
@@ -959,26 +959,26 @@ form.wp-block-gutenform-form {
     input,
     textarea,
     select,
-    .gutenform-datetime-input,
-    .gutenform-slider .noUi-origin,
-    .gutenform-slider .noUi-connect,
-    .wp-block-gutenform-submit button,
-    .gutenform-file-upload-zone,
-    .gutenform-file-url-input input,
-    .gutenform-file-url-input button,
-    .gutenform-field--checkbox .gutenform-checkbox-option::before,
-    .gutenform-field--checkbox .gutenform-checkbox-option::after,
-    .gutenform-field--radio .gutenform-radio-option::before,
-    .gutenform-field--radio .gutenform-radio-option::after {
+    .streamery-forms-datetime-input,
+    .streamery-forms-slider .noUi-origin,
+    .streamery-forms-slider .noUi-connect,
+    .wp-block-streamery-forms-submit button,
+    .streamery-forms-file-upload-zone,
+    .streamery-forms-file-url-input input,
+    .streamery-forms-file-url-input button,
+    .streamery-forms-field--checkbox .streamery-forms-checkbox-option::before,
+    .streamery-forms-field--checkbox .streamery-forms-checkbox-option::after,
+    .streamery-forms-field--radio .streamery-forms-radio-option::before,
+    .streamery-forms-field--radio .streamery-forms-radio-option::after {
       transition-duration: 0.01ms !important;
     }
 
-    .wp-block-gutenform-submit button:active,
-    .gutenform-file-url-input button:active {
+    .wp-block-streamery-forms-submit button:active,
+    .streamery-forms-file-url-input button:active {
       transform: none;
     }
 
-    .gutenform-submit-spinner {
+    .streamery-forms-submit-spinner {
       animation-duration: 1.5s;
     }
   }

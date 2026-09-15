@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gutenform/checkbox",
+	"name": "streamery-forms/checkbox",
 	"version": "0.1.0",
 	"title": "Checkbox",
 	"category": "widgets",
 	"icon": "marker",
-	"description": "Checkbox block for Gutenform.",
-	"ancestor": ["gutenform/form"],
+	"description": "Checkbox block for Streamery Forms.",
+	"ancestor": ["streamery-forms/form"],
 	"example": {},
 	"attributes": {
 		"style": {
@@ -54,7 +54,7 @@
 		"conditionalShow": { "type": "object", "default": null }
 	},
 	"supports": { "html": false },
-	"textdomain": "gutenform-builder",
+	"textdomain": "streamery-forms",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

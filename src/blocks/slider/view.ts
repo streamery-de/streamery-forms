@@ -1,5 +1,5 @@
 /**
- * Initialize noUiSlider on all .gutenform-slider elements and sync values to hidden inputs for form submission.
+ * Initialize noUiSlider on all .streamery-forms-slider elements and sync values to hidden inputs for form submission.
  * @see https://refreshless.com/nouislider/
  */
 import noUiSlider from 'nouislider';
@@ -32,10 +32,10 @@ function tooltipFormatter(step: number): { to: (value: number) => string } {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	const fields = document.querySelectorAll<HTMLElement>('.gutenform-field[data-slider-min]');
+	const fields = document.querySelectorAll<HTMLElement>('.streamery-forms-field[data-slider-min]');
 	fields.forEach((field) => {
-		const wrapper = field.querySelector<HTMLElement>('.gutenform-slider-wrapper');
-		const sliderEl = field.querySelector<HTMLElement>('.gutenform-slider');
+		const wrapper = field.querySelector<HTMLElement>('.streamery-forms-slider-wrapper');
+		const sliderEl = field.querySelector<HTMLElement>('.streamery-forms-slider');
 		if (!wrapper || !sliderEl) return;
 
 		const range = field.getAttribute('data-slider-range') === 'true';
@@ -95,9 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		noUiSlider.create(sliderEl, options as Parameters<typeof noUiSlider.create>[1]);
 
-		const hiddenMin = wrapper.querySelector<HTMLInputElement>('.gutenform-slider-hidden-min');
-		const hiddenMax = wrapper.querySelector<HTMLInputElement>('.gutenform-slider-hidden-max');
-		const hiddenSingle = wrapper.querySelector<HTMLInputElement>('.gutenform-slider-hidden');
+		const hiddenMin = wrapper.querySelector<HTMLInputElement>('.streamery-forms-slider-hidden-min');
+		const hiddenMax = wrapper.querySelector<HTMLInputElement>('.streamery-forms-slider-hidden-max');
+		const hiddenSingle = wrapper.querySelector<HTMLInputElement>('.streamery-forms-slider-hidden');
 
 		const api = sliderEl.noUiSlider;
 		api.on('update', (values: string[]) => {

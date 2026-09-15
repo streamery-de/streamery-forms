@@ -38,13 +38,13 @@ export const NameDisplay = ({ value }: NameDisplayProps) => {
 
 	return (
 		<PanelRow>
-			<div className="gutenform-name-display__container">
+			<div className="streamery-forms-name-display__container">
 				<input
 					type="text"
 					value={value || ''}
 					readOnly
 					disabled
-					className="gutenform-name-display__input"
+					className="streamery-forms-name-display__input"
 					title={value}
 				/>
 				<Tooltip text={copied ? __('copiedExclamation') : __('copyToClipboard')}>
@@ -52,7 +52,7 @@ export const NameDisplay = ({ value }: NameDisplayProps) => {
 						onClick={handleCopy}
 						variant={copied ? 'primary' : 'secondary'}
 						isSmall
-						className={`gutenform-name-display__button ${copied ? 'gutenform-name-display__button--copied' : ''}`}
+						className={`streamery-forms-name-display__button ${copied ? 'streamery-forms-name-display__button--copied' : ''}`}
 					>
 						{copied ? (
 							<>

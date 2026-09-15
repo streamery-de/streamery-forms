@@ -17,7 +17,7 @@ export function SuccessScreenToolbarButton({ successView, onToggle }: Props) {
 	return (
 		<ToolbarButton
 			icon={
-				<span className="gutenform-success-screen-toolbar-button">
+				<span className="streamery-forms-success-screen-toolbar-button">
 					<BlockIcon icon={MonitorCheck} clean={true} />
 					{__('successScreen')}
 				</span>

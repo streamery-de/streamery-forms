@@ -1,0 +1,65 @@
+/* Streamery Forms – deactivation dialog on the Plugins screen. */
+
+.streamery-forms-deactivate {
+	position: fixed;
+	inset: 0;
+	z-index: 100000;
+}
+
+.streamery-forms-deactivate[hidden] {
+	display: none;
+}
+
+.streamery-forms-deactivate__overlay {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.streamery-forms-deactivate__dialog {
+	position: relative;
+	width: 90%;
+	max-width: 500px;
+	padding: 30px;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.streamery-forms-deactivate__dialog h2 {
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+.streamery-forms-deactivate__options {
+	margin: 20px 0;
+}
+
+.streamery-forms-deactivate__option {
+	display: block;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.streamery-forms-deactivate__option input {
+	margin-right: 8px;
+}
+
+.streamery-forms-deactivate__option.is-danger {
+	color: #d63638;
+}
+
+.streamery-forms-deactivate__description {
+	margin: 5px 0 0 24px;
+	font-size: 13px;
+	opacity: 0.8;
+}
+
+.streamery-forms-deactivate__actions {
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
+}

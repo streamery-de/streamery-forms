@@ -13,7 +13,7 @@ export default function save(props: BlockSaveProps<StepNavigationAttributes>) {
 	};
 
 	const blockProps = useBlockProps.save({
-		className: 'gutenform-step-navigation',
+		className: 'streamery-forms-step-navigation',
 		style: {
 			justifyContent: justifyMap[attributes.justification] || 'flex-start',
 		},
@@ -24,7 +24,7 @@ export default function save(props: BlockSaveProps<StepNavigationAttributes>) {
 			{attributes.showPrev && (
 				<button
 					type="button"
-					className="gutenform-step-prev"
+					className="streamery-forms-step-prev"
 					data-action="prev"
 				>
 					<span>{attributes.prevLabel}</span>
@@ -32,19 +32,19 @@ export default function save(props: BlockSaveProps<StepNavigationAttributes>) {
 			)}
 			<button
 				type="button"
-				className="gutenform-step-next"
+				className="streamery-forms-step-next"
 				data-action="next"
 			>
 				<span>{attributes.nextLabel}</span>
 			</button>
 			<button
 				type="submit"
-				className="gutenform-step-submit"
+				className="streamery-forms-step-submit"
 				data-action="submit"
 				style={{ display: 'none', pointerEvents: 'none' }}
 			>
-				<span className="gutenform-submit-spinner" aria-hidden="true" />
-				<span className="gutenform-submit-text">{attributes.submitLabel}</span>
+				<span className="streamery-forms-submit-spinner" aria-hidden="true" />
+				<span className="streamery-forms-submit-text">{attributes.submitLabel}</span>
 			</button>
 		</div>
 	);

@@ -3,13 +3,13 @@
 /**
  * Class Forms
  *
- * Represents the server-side form index for Gutenform.
+ * Represents the server-side form index for Streamery Forms.
  *
- * @package Gutenform\Models
+ * @package StreameryForms\Models
  * @since 1.0.0
  */
 
-namespace Gutenform\Models;
+namespace StreameryForms\Models;
 
 use Prappo\WpEloquent\Database\Eloquent\Model;
 
@@ -18,7 +18,7 @@ defined('ABSPATH') || exit;
 /**
  * Class Forms
  *
- * @package Gutenform\Models
+ * @package StreameryForms\Models
  */
 class Forms extends Model
 {
@@ -28,7 +28,7 @@ class Forms extends Model
 	 *
 	 * @var string
 	 */
-	protected $table = 'gutenform_forms';
+	protected $table = 'streamery_forms_forms';
 
 	/**
 	 * The primary key for the model.

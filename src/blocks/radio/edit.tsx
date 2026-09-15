@@ -30,9 +30,9 @@ export default function Edit(props: BlockEditProps<RadioAttributes>) {
 			<FieldWrapper
 				className={cn(
 					getFieldClasses(attributes),
-					'gutenform-field--radio',
-					`gutenform-field--radio-${styleVariant}`,
-					`gutenform-field--layout-${layout}`,
+					'streamery-forms-field--radio',
+					`streamery-forms-field--radio-${styleVariant}`,
+					`streamery-forms-field--layout-${layout}`,
 				)}
 				label={attributes.label}
 				onLabelChange={(label) => setAttributes({ label })}
@@ -41,19 +41,19 @@ export default function Edit(props: BlockEditProps<RadioAttributes>) {
 				attributes={attributes}
 			>
 				<div
-					className={`gutenform-radio-options gutenform-radio--${styleVariant} gutenform-radio--layout-${layout}`}
+					className={`streamery-forms-radio-options streamery-forms-radio--${styleVariant} streamery-forms-radio--layout-${layout}`}
 					role="radiogroup"
 					aria-label={attributes.label || __('options')}
 				>
 					{options.length === 0 ? (
-						<span className="gutenform-radio-placeholder">
+						<span className="streamery-forms-radio-placeholder">
 							{__('addOptionsInSidebar')}
 						</span>
 					) : (
 						options.map((option, index) => (
 							<label
 								key={index}
-								className="gutenform-radio-option"
+								className="streamery-forms-radio-option"
 								htmlFor={`${attributes.id}-${index}`}
 							>
 								<input
@@ -64,12 +64,12 @@ export default function Edit(props: BlockEditProps<RadioAttributes>) {
 									id={`${attributes.id}-${index}`}
 									readOnly
 								/>
-								<span className="gutenform-radio-option-content">
-									<span className="gutenform-radio-option-label">
+								<span className="streamery-forms-radio-option-content">
+									<span className="streamery-forms-radio-option-label">
 										{option.label}
 									</span>
 									{option.description && (
-										<span className="gutenform-radio-option-description">
+										<span className="streamery-forms-radio-option-description">
 											{option.description}
 										</span>
 									)}

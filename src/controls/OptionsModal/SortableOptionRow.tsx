@@ -38,14 +38,14 @@ export const SortableOptionRow = ({
 	};
 
 	const rowClassName = [
-		'gutenform-options-table-row',
-		isSelected && 'gutenform-options-table-row-selected',
-		isDragging && 'gutenform-options-table-row-dragging',
+		'streamery-forms-options-table-row',
+		isSelected && 'streamery-forms-options-table-row-selected',
+		isDragging && 'streamery-forms-options-table-row-dragging',
 	].filter(Boolean).join(' ');
 
 	return (
 		<tr ref={setNodeRef} className={rowClassName} style={style}>
-			<td className="gutenform-options-table-td-checkbox">
+			<td className="streamery-forms-options-table-td-checkbox">
 				<CheckboxControl
 					checked={isSelected}
 					onChange={(checked) => onSelect(index, checked)}
@@ -53,7 +53,7 @@ export const SortableOptionRow = ({
 				/>
 			</td>
 			<td
-				className="gutenform-options-table-td-move"
+				className="streamery-forms-options-table-td-move"
 				{...attributes}
 				{...listeners}
 			>
@@ -66,7 +66,7 @@ export const SortableOptionRow = ({
 				index={index}
 				showDescription={showDescription}
 			/>
-			<td className="gutenform-options-table-td-actions">
+			<td className="streamery-forms-options-table-td-actions">
 				<Button
 					onClick={() => onDelete(index)}
 					icon={<BlockIcon icon={Trash2} clean={true} />}

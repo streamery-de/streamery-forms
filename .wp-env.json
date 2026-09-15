@@ -14,7 +14,7 @@
 		"WP_ENVIRONMENT_TYPE": "local"
 	},
 	"mappings": {
-		"wp-content/plugins/gutenform-builder": "."
+		"wp-content/plugins/streamery-forms": "."
 	}
 }
 

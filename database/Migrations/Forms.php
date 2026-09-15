@@ -3,14 +3,14 @@
 /**
  * Database migration for the forms index table.
  *
- * @package Gutenform
+ * @package StreameryForms
  * @subpackage Database\Migrations
  * @since 1.0.0
  */
 
-namespace Gutenform\Database\Migrations;
+namespace StreameryForms\Database\Migrations;
 
-use Gutenform\Interfaces\Migration;
+use StreameryForms\Interfaces\Migration;
 use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
 use Prappo\WpEloquent\Database\Schema\Blueprint;
 
@@ -19,12 +19,12 @@ defined('ABSPATH') || exit;
 /**
  * Class Forms
  *
- * Server-side index of every gutenform/form block found in post content.
+ * Server-side index of every streamery-forms/form block found in post content.
  * This is what makes the submission endpoint authoritative: provider feeds,
  * per-form settings, and the field schema are read from here rather than from
  * whatever the submitting browser sends.
  *
- * @package Gutenform\Database\Migrations
+ * @package StreameryForms\Database\Migrations
  */
 class Forms implements Migration
 {
@@ -34,7 +34,7 @@ class Forms implements Migration
 	 *
 	 * @var string
 	 */
-	public static $table = 'gutenform_forms';
+	public static $table = 'streamery_forms_forms';
 
 	/**
 	 * Run the migrations.

@@ -7,11 +7,11 @@
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\Settings;
+namespace StreameryForms\Controllers\Settings;
 
-use Gutenform\Core\Debug;
-use Gutenform\Core\Crypto;
-use Gutenform\Admin\AdminBar;
+use StreameryForms\Core\Debug;
+use StreameryForms\Core\Crypto;
+use StreameryForms\Admin\AdminBar;
 
 defined('ABSPATH') || exit;
 
@@ -28,12 +28,12 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to view SMTP settings.', 'gutenform-builder'),
+				__('You do not have permission to view SMTP settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
 
-		$settings = get_option('gutenform_smtp_settings', array());
+		$settings = get_option('streamery_forms_smtp_settings', array());
 
 		// Return default values if settings don't exist
 		$defaults = array(
@@ -73,7 +73,7 @@ class Actions
 		if (!$nonce || !wp_verify_nonce($nonce, 'wp_rest')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('Security check failed.', 'gutenform-builder'),
+				__('Security check failed.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -82,7 +82,7 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to manage settings.', 'gutenform-builder'),
+				__('You do not have permission to manage settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -108,7 +108,7 @@ class Actions
 			if (empty($settings['host'])) {
 				return new \WP_Error(
 					'invalid_settings',
-					__('SMTP host is required when SMTP is enabled.', 'gutenform-builder'),
+					__('SMTP host is required when SMTP is enabled.', 'streamery-forms'),
 					array('status' => 400)
 				);
 			}
@@ -116,7 +116,7 @@ class Actions
 			if ($settings['auth'] && empty($settings['username'])) {
 				return new \WP_Error(
 					'invalid_settings',
-					__('SMTP username is required when authentication is enabled.', 'gutenform-builder'),
+					__('SMTP username is required when authentication is enabled.', 'streamery-forms'),
 					array('status' => 400)
 				);
 			}
@@ -124,7 +124,7 @@ class Actions
 			if (!is_email($settings['from_email'])) {
 				return new \WP_Error(
 					'invalid_settings',
-					__('Invalid from email address.', 'gutenform-builder'),
+					__('Invalid from email address.', 'streamery-forms'),
 					array('status' => 400)
 				);
 			}
@@ -136,7 +136,7 @@ class Actions
 			$settings['password'] = Crypto::encrypt($settings['password']);
 		} else {
 			// Keep existing password if not provided
-			$existing = get_option('gutenform_smtp_settings', array());
+			$existing = get_option('streamery_forms_smtp_settings', array());
 			if (isset($existing['password'])) {
 				$settings['password'] = $existing['password'];
 			}
@@ -145,7 +145,7 @@ class Actions
 		// Save settings
 		// Note: update_option returns false if the value hasn't changed, which is not an error
 		try {
-			update_option('gutenform_smtp_settings', $settings, false);
+			update_option('streamery_forms_smtp_settings', $settings, false);
 			
 			// Always return success if we got this far (no validation errors)
 			// update_option is reliable in WordPress
@@ -153,13 +153,13 @@ class Actions
 			
 			return array(
 				'success' => true,
-				'message' => __('SMTP settings saved successfully.', 'gutenform-builder'),
+				'message' => __('SMTP settings saved successfully.', 'streamery-forms'),
 				'data' => $saved_settings,
 			);
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'save_failed',
-				__('Failed to save SMTP settings: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to save SMTP settings: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -178,7 +178,7 @@ class Actions
 		if (!$nonce || !wp_verify_nonce($nonce, 'wp_rest')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('Security check failed.', 'gutenform-builder'),
+				__('Security check failed.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -187,7 +187,7 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to test SMTP settings.', 'gutenform-builder'),
+				__('You do not have permission to test SMTP settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -207,7 +207,7 @@ class Actions
 		if (empty($test_settings['enabled'])) {
 			return new \WP_Error(
 				'smtp_disabled',
-				__('SMTP is not enabled.', 'gutenform-builder'),
+				__('SMTP is not enabled.', 'streamery-forms'),
 				array('status' => 400)
 			);
 		}
@@ -224,7 +224,7 @@ class Actions
 		if (empty($test_email_raw) || !is_email($test_email_raw)) {
 			return new \WP_Error(
 				'invalid_email',
-				__('Invalid test email address. Please provide a valid email address.', 'gutenform-builder'),
+				__('Invalid test email address. Please provide a valid email address.', 'streamery-forms'),
 				array('status' => 400)
 			);
 		}
@@ -238,7 +238,7 @@ class Actions
 				'invalid_email',
 				sprintf(
 					/* translators: %s: the email address that failed validation. */
-					__('Invalid test email address after sanitization: %s', 'gutenform-builder'),
+					__('Invalid test email address after sanitization: %s', 'streamery-forms'),
 					$test_email_raw
 				),
 				array('status' => 400)
@@ -246,7 +246,7 @@ class Actions
 		}
 
 		// Temporarily configure SMTP settings for this test
-		$original_settings = get_option('gutenform_smtp_settings', array());
+		$original_settings = get_option('streamery_forms_smtp_settings', array());
 		
 		// Validate from_email first
 		$from_email = isset($test_settings['from_email']) ? sanitize_email($test_settings['from_email']) : '';
@@ -256,7 +256,7 @@ class Actions
 			if (empty($from_email) || !is_email($from_email)) {
 				return new \WP_Error(
 					'invalid_from_email',
-					__('Invalid from email address. Please provide a valid email address in the From Email field.', 'gutenform-builder'),
+					__('Invalid from email address. Please provide a valid email address in the From Email field.', 'streamery-forms'),
 					array('status' => 400)
 				);
 			}
@@ -284,17 +284,17 @@ class Actions
 		}
 		
 		// Temporarily save test settings
-		update_option('gutenform_smtp_settings', $temp_settings, false);
+		update_option('streamery_forms_smtp_settings', $temp_settings, false);
 
 		// Validate from_email before sending
 		$from_email = sanitize_email($temp_settings['from_email']);
 		if (empty($from_email) || !is_email($from_email)) {
 			// Restore original settings
-			update_option('gutenform_smtp_settings', $original_settings, false);
+			update_option('streamery_forms_smtp_settings', $original_settings, false);
 			
 			return new \WP_Error(
 				'invalid_from_email',
-				__('Invalid from email address. Please provide a valid email address.', 'gutenform-builder'),
+				__('Invalid from email address. Please provide a valid email address.', 'streamery-forms'),
 				array('status' => 400)
 			);
 		}
@@ -302,18 +302,18 @@ class Actions
 		// Validate test_email one more time before sending
 		if (empty($test_email) || !is_email($test_email)) {
 			// Restore original settings
-			update_option('gutenform_smtp_settings', $original_settings, false);
+			update_option('streamery_forms_smtp_settings', $original_settings, false);
 			
 			return new \WP_Error(
 				'invalid_test_email',
-				__('Invalid test email address. Please provide a valid email address.', 'gutenform-builder'),
+				__('Invalid test email address. Please provide a valid email address.', 'streamery-forms'),
 				array('status' => 400)
 			);
 		}
 
 		// Send test email with proper headers
-		$subject = __('Gutenform SMTP Test Email', 'gutenform-builder');
-		$message = __('This is a test email from Gutenform SMTP settings.', 'gutenform-builder');
+		$subject = __('Streamery Forms SMTP Test Email', 'streamery-forms');
+		$message = __('This is a test email from Streamery Forms SMTP settings.', 'streamery-forms');
 		
 		// Set email headers to ensure from_email is used
 		$headers = array();
@@ -322,7 +322,7 @@ class Actions
 		$headers[] = 'Content-Type: text/html; charset=UTF-8';
 
 		Debug::log(sprintf(
-				'Gutenform SMTP Test: Sending test email to %s from %s',
+				'Streamery Forms SMTP Test: Sending test email to %s from %s',
 				$test_email,
 				$from_email
 			));
@@ -342,11 +342,11 @@ class Actions
 		// Ensure test_email is not empty before calling wp_mail
 		if (empty($test_email)) {
 			// Restore original settings
-			update_option('gutenform_smtp_settings', $original_settings, false);
+			update_option('streamery_forms_smtp_settings', $original_settings, false);
 			
 			return new \WP_Error(
 				'empty_test_email',
-				__('Test email address is empty. Please provide a valid email address.', 'gutenform-builder'),
+				__('Test email address is empty. Please provide a valid email address.', 'streamery-forms'),
 				array('status' => 400)
 			);
 		}
@@ -359,13 +359,13 @@ class Actions
 		// Final validation
 		if (empty($test_email) || !is_email($test_email)) {
 			// Restore original settings
-			update_option('gutenform_smtp_settings', $original_settings, false);
+			update_option('streamery_forms_smtp_settings', $original_settings, false);
 			
 			return new \WP_Error(
 				'invalid_test_email_final',
 				sprintf(
 					/* translators: %s: the email address that failed validation. */
-					__('Invalid test email address before sending: %s', 'gutenform-builder'),
+					__('Invalid test email address before sending: %s', 'streamery-forms'),
 					$test_email
 				),
 				array('status' => 400)
@@ -373,7 +373,7 @@ class Actions
 		}
 
 		Debug::log(sprintf(
-				'Gutenform SMTP Test: Calling wp_mail() with to=%s, subject=%s, headers=%s',
+				'Streamery Forms SMTP Test: Calling wp_mail() with to=%s, subject=%s, headers=%s',
 				$test_email,
 				$subject,
 				implode(' | ', $headers)
@@ -385,14 +385,14 @@ class Actions
 		remove_action('wp_mail_failed', $error_handler, 10);
 		
 		// Restore original settings
-		update_option('gutenform_smtp_settings', $original_settings, false);
+		update_option('streamery_forms_smtp_settings', $original_settings, false);
 
 		if ($result) {
 			return array(
 				'success' => true,
 				'message' => sprintf(
 					/* translators: %s: recipient email address. */
-					__('Test email sent successfully to %s.', 'gutenform-builder'),
+					__('Test email sent successfully to %s.', 'streamery-forms'),
 					$test_email
 				),
 			);
@@ -405,7 +405,7 @@ class Actions
 		} elseif (isset($phpmailer) && is_object($phpmailer) && !empty($phpmailer->ErrorInfo)) {
 			$detailed_error = $phpmailer->ErrorInfo;
 		} else {
-			$detailed_error = __('Failed to send test email. Please check your SMTP settings, credentials, and server configuration.', 'gutenform-builder');
+			$detailed_error = __('Failed to send test email. Please check your SMTP settings, credentials, and server configuration.', 'streamery-forms');
 		}
 
 		return new \WP_Error(
@@ -426,12 +426,12 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to view CAPTCHA settings.', 'gutenform-builder'),
+				__('You do not have permission to view CAPTCHA settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
 
-		$settings = get_option('gutenform_captcha_settings', array());
+		$settings = get_option('streamery_forms_captcha_settings', array());
 		$masked   = array();
 
 		foreach (array('recaptcha', 'friendlycaptcha') as $provider) {
@@ -461,7 +461,7 @@ class Actions
 		if (!$nonce || !wp_verify_nonce($nonce, 'wp_rest')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('Security check failed.', 'gutenform-builder'),
+				__('Security check failed.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -469,13 +469,13 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to manage CAPTCHA settings.', 'gutenform-builder'),
+				__('You do not have permission to manage CAPTCHA settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
 
 		$params   = $request->get_json_params();
-		$existing = get_option('gutenform_captcha_settings', array());
+		$existing = get_option('streamery_forms_captcha_settings', array());
 		$settings = array();
 
 		foreach (array('recaptcha', 'friendlycaptcha') as $provider) {
@@ -498,11 +498,11 @@ class Actions
 			);
 		}
 
-		update_option('gutenform_captcha_settings', $settings, false);
+		update_option('streamery_forms_captcha_settings', $settings, false);
 
 		return array(
 			'success' => true,
-			'message' => __('CAPTCHA settings saved successfully.', 'gutenform-builder'),
+			'message' => __('CAPTCHA settings saved successfully.', 'streamery-forms'),
 			'data'    => $this->get_captcha_settings(),
 		);
 	}
@@ -518,7 +518,7 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to view debug settings.', 'gutenform-builder'),
+				__('You do not have permission to view debug settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -542,7 +542,7 @@ class Actions
 		if (!$nonce || !wp_verify_nonce($nonce, 'wp_rest')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('Security check failed.', 'gutenform-builder'),
+				__('Security check failed.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -551,7 +551,7 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to manage debug settings.', 'gutenform-builder'),
+				__('You do not have permission to manage debug settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -569,15 +569,15 @@ class Actions
 			return array(
 				'success' => true,
 				'message' => $enabled 
-					? __('Debug mode enabled.', 'gutenform-builder')
-					: __('Debug mode disabled.', 'gutenform-builder'),
+					? __('Debug mode enabled.', 'streamery-forms')
+					: __('Debug mode disabled.', 'streamery-forms'),
 				'enabled' => Debug::is_enabled(),
 			);
 		}
 
 		return new \WP_Error(
 			'update_failed',
-			__('Failed to update debug mode.', 'gutenform-builder'),
+			__('Failed to update debug mode.', 'streamery-forms'),
 			array('status' => 500)
 		);
 	}
@@ -593,12 +593,12 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to view settings.', 'gutenform-builder'),
+				__('You do not have permission to view settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
 
-		$skipped = get_user_meta(get_current_user_id(), 'gutenform_skip_first_steps', true);
+		$skipped = get_user_meta(get_current_user_id(), 'streamery_forms_skip_first_steps', true);
 
 		return array(
 			'success' => true,
@@ -619,7 +619,7 @@ class Actions
 		if (!$nonce || !wp_verify_nonce($nonce, 'wp_rest')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('Security check failed.', 'gutenform-builder'),
+				__('Security check failed.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -628,7 +628,7 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to manage settings.', 'gutenform-builder'),
+				__('You do not have permission to manage settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -636,13 +636,13 @@ class Actions
 		$params = $request->get_json_params();
 		$skipped = isset($params['skipped']) ? (bool) $params['skipped'] : false;
 
-		update_user_meta(get_current_user_id(), 'gutenform_skip_first_steps', $skipped ? '1' : '');
+		update_user_meta(get_current_user_id(), 'streamery_forms_skip_first_steps', $skipped ? '1' : '');
 
 		return array(
 			'success' => true,
 			'message' => $skipped 
-				? __('First steps skipped.', 'gutenform-builder')
-				: __('First steps re-enabled.', 'gutenform-builder'),
+				? __('First steps skipped.', 'streamery-forms')
+				: __('First steps re-enabled.', 'streamery-forms'),
 			'skipped' => $skipped,
 		);
 	}
@@ -658,12 +658,12 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to view settings.', 'gutenform-builder'),
+				__('You do not have permission to view settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
 
-		$visible = get_user_meta(get_current_user_id(), 'gutenform_charts_visible', true);
+		$visible = get_user_meta(get_current_user_id(), 'streamery_forms_charts_visible', true);
 		// Default to true if not set
 		if ($visible === '') {
 			$visible = true;
@@ -690,7 +690,7 @@ class Actions
 		if (!$nonce || !wp_verify_nonce($nonce, 'wp_rest')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('Security check failed.', 'gutenform-builder'),
+				__('Security check failed.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -699,7 +699,7 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to manage settings.', 'gutenform-builder'),
+				__('You do not have permission to manage settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -707,13 +707,13 @@ class Actions
 		$params = $request->get_json_params();
 		$visible = isset($params['visible']) ? (bool) $params['visible'] : true;
 
-		update_user_meta(get_current_user_id(), 'gutenform_charts_visible', $visible ? '1' : '');
+		update_user_meta(get_current_user_id(), 'streamery_forms_charts_visible', $visible ? '1' : '');
 
 		return array(
 			'success' => true,
 			'message' => $visible 
-				? __('Charts are now visible.', 'gutenform-builder')
-				: __('Charts are now hidden.', 'gutenform-builder'),
+				? __('Charts are now visible.', 'streamery-forms')
+				: __('Charts are now hidden.', 'streamery-forms'),
 			'visible' => $visible,
 		);
 	}
@@ -728,14 +728,14 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to view settings.', 'gutenform-builder'),
+				__('You do not have permission to view settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
 
 		return array(
 			'success' => true,
-			'enabled' => (bool) get_option('gutenform_delete_data_on_uninstall', false),
+			'enabled' => (bool) get_option('streamery_forms_delete_data_on_uninstall', false),
 		);
 	}
 
@@ -754,7 +754,7 @@ class Actions
 		if (!$nonce || !wp_verify_nonce($nonce, 'wp_rest')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('Security check failed.', 'gutenform-builder'),
+				__('Security check failed.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -762,7 +762,7 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to manage settings.', 'gutenform-builder'),
+				__('You do not have permission to manage settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -770,13 +770,13 @@ class Actions
 		$params  = $request->get_json_params();
 		$enabled = isset($params['enabled']) ? (bool) $params['enabled'] : false;
 
-		update_option('gutenform_delete_data_on_uninstall', $enabled ? '1' : '', false);
+		update_option('streamery_forms_delete_data_on_uninstall', $enabled ? '1' : '', false);
 
 		return array(
 			'success' => true,
 			'message' => $enabled
-				? __('All Gutenform data will be deleted when the plugin is deleted.', 'gutenform-builder')
-				: __('Gutenform data will be kept when the plugin is deleted.', 'gutenform-builder'),
+				? __('All Streamery Forms data will be deleted when the plugin is deleted.', 'streamery-forms')
+				: __('Streamery Forms data will be kept when the plugin is deleted.', 'streamery-forms'),
 			'enabled' => $enabled,
 		);
 	}
@@ -792,7 +792,7 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to view settings.', 'gutenform-builder'),
+				__('You do not have permission to view settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -816,7 +816,7 @@ class Actions
 		if (!$nonce || !wp_verify_nonce($nonce, 'wp_rest')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('Security check failed.', 'gutenform-builder'),
+				__('Security check failed.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -825,7 +825,7 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to manage settings.', 'gutenform-builder'),
+				__('You do not have permission to manage settings.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -838,8 +838,8 @@ class Actions
 		return array(
 			'success' => true,
 			'message' => $enabled
-				? __('Admin bar menu enabled.', 'gutenform-builder')
-				: __('Admin bar menu disabled.', 'gutenform-builder'),
+				? __('Admin bar menu enabled.', 'streamery-forms')
+				: __('Admin bar menu disabled.', 'streamery-forms'),
 			'enabled' => $enabled,
 		);
 	}

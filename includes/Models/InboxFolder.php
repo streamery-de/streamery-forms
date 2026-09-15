@@ -3,13 +3,13 @@
 /**
  * Class InboxFolder
  *
- * Represents the InboxFolder model for Gutenform.
+ * Represents the InboxFolder model for Streamery Forms.
  *
- * @package Gutenform\Models
+ * @package StreameryForms\Models
  * @since 1.0.0
  */
 
-namespace Gutenform\Models;
+namespace StreameryForms\Models;
 
 use Prappo\WpEloquent\Database\Eloquent\Model;
 
@@ -20,7 +20,7 @@ defined('ABSPATH') || exit;
  *
  * Represents user-defined inbox folders (one tree per mailbox).
  *
- * @package Gutenform\Models
+ * @package StreameryForms\Models
  */
 class InboxFolder extends Model
 {
@@ -30,7 +30,7 @@ class InboxFolder extends Model
 	 *
 	 * @var string
 	 */
-	protected $table = 'gutenform_inbox_folders';
+	protected $table = 'streamery_forms_inbox_folders';
 
 	/**
 	 * The primary key for the model.

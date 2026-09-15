@@ -4,13 +4,13 @@
  *
  * Singleton class that manages all available provider instances.
  *
- * @package Gutenform\Providers
+ * @package StreameryForms\Providers
  * @since 1.0.0
  */
 
-namespace Gutenform\Providers;
+namespace StreameryForms\Providers;
 
-use Gutenform\Traits\Base;
+use StreameryForms\Traits\Base;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -39,7 +39,7 @@ class Registry {
 	/**
 	 * Registers all available providers.
 	 *
-	 * Uses the 'gutenform/available_providers' filter so add-ons (e.g. the Pro
+	 * Uses the 'streamery-forms/available_providers' filter so add-ons (e.g. the Pro
 	 * plugin) can register their own provider classes without touching core.
 	 */
 	private function register_all_providers(): void {
@@ -50,7 +50,7 @@ class Registry {
 		);
 
 		$provider_classes = apply_filters(
-			'gutenform/available_providers',
+			'streamery-forms/available_providers',
 			$base_providers
 		);
 

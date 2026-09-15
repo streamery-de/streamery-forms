@@ -178,7 +178,7 @@ export function MailComp({
           <Separator />
           <CollapsibleSection
             title={__("forms")}
-            storageKey="gutenform-inbox-forms-collapsed"
+            storageKey="streamery-forms-inbox-forms-collapsed"
             defaultOpen={false}
             isCollapsed={isCollapsed}
           >
@@ -190,7 +190,7 @@ export function MailComp({
           <Separator />
           <CollapsibleSection
             title={__("labels")}
-            storageKey="gutenform-inbox-labels-collapsed"
+            storageKey="streamery-forms-inbox-labels-collapsed"
             defaultOpen={false}
             isCollapsed={isCollapsed}
           >

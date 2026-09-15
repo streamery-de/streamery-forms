@@ -1,17 +1,17 @@
 <?php
 
-namespace Gutenform\Admin;
+namespace StreameryForms\Admin;
 
-use Gutenform\Traits\Base;
+use StreameryForms\Traits\Base;
 
 defined('ABSPATH') || exit;
 
 /**
  * Class Menu
  *
- * Represents the admin menu management for the Gutenform plugin.
+ * Represents the admin menu management for the Streamery Forms plugin.
  *
- * @package Gutenform\Admin
+ * @package StreameryForms\Admin
  */
 class Menu
 {
@@ -23,7 +23,7 @@ class Menu
 	 *
 	 * @var string
 	 */
-	private $parent_slug = 'gutenform';
+	private $parent_slug = 'streamery-forms';
 
 	/**
 	 * Initializes the admin menu.
@@ -45,13 +45,12 @@ class Menu
 	{
 
 		add_menu_page(
-			__('Gutenform', 'gutenform-builder'),
-			__('Gutenform', 'gutenform-builder'),
+			__('Streamery Forms', 'streamery-forms'),
+			__('Streamery Forms', 'streamery-forms'),
 			'manage_options',
 			$this->parent_slug,
 			array($this, 'admin_page'),
-			'dashicons-email',
-			3
+			'dashicons-email'
 		);
 
 		$settings_slug = $this->parent_slug . '-settings';
@@ -60,39 +59,31 @@ class Menu
 		$submenu_pages = array(
 			array(
 				'parent_slug' => $this->parent_slug,
-				'page_title'  => __('Inbox', 'gutenform-builder'),
-				'menu_title'  => __('Inbox', 'gutenform-builder'),
+				'page_title'  => __('Inbox', 'streamery-forms'),
+				'menu_title'  => __('Inbox', 'streamery-forms'),
 				'capability'  => 'manage_options',
 				'menu_slug'   => $this->parent_slug,
 				'function'    => array($this, 'admin_page'),
 			),
 			array(
 				'parent_slug' => $this->parent_slug,
-				'page_title'  => __('Forms', 'gutenform-builder'),
-				'menu_title'  => __('Forms', 'gutenform-builder'),
+				'page_title'  => __('Forms', 'streamery-forms'),
+				'menu_title'  => __('Forms', 'streamery-forms'),
 				'capability'  => 'manage_options',
 				'menu_slug'   => $forms_usage_slug,
 				'function'    => array($this, 'admin_page'),
 			),
 			array(
 				'parent_slug' => $this->parent_slug,
-				'page_title'  => __('Settings', 'gutenform-builder'),
-				'menu_title'  => __('Settings', 'gutenform-builder'),
+				'page_title'  => __('Settings', 'streamery-forms'),
+				'menu_title'  => __('Settings', 'streamery-forms'),
 				'capability'  => 'manage_options',
 				'menu_slug'   => $settings_slug,
 				'function'    => array($this, 'admin_page'),
 			),
 		);
 
-		$plugin_submenu_pages = apply_filters('gutenform/submenu_pages', $submenu_pages);
-		// Renamed in 1.0.0; the old gf_* name still runs so existing add-ons keep working.
-		$plugin_submenu_pages = apply_filters_deprecated(
-			'gf_submenu_pages',
-			array($plugin_submenu_pages),
-			'1.0.0',
-			'gutenform/submenu_pages'
-		);
-
+		$plugin_submenu_pages = apply_filters('streamery-forms/submenu_pages', $submenu_pages);
 		foreach ($plugin_submenu_pages as $submenu) {
 
 			add_submenu_page(

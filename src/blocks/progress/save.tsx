@@ -4,7 +4,7 @@ import { type ProgressAttributes } from '@/blockTypes/progress';
 
 export default function save(props: BlockSaveProps<ProgressAttributes>) {
 	const blockProps = useBlockProps.save({
-		className: `gutenform-progress gutenform-progress--${props.attributes.variant}`,
+		className: `streamery-forms-progress streamery-forms-progress--${props.attributes.variant}`,
 		'data-variant': props.attributes.variant,
 	});
 

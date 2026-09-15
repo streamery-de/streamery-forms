@@ -2,11 +2,11 @@
   "labelKey": "templateJobApplication",
   "category": "advanced",
   "value": [
-    ["gutenform/input", { "type": "text", "label": { "__": "name", "fallback": "Name" }, "required": true }],
-    ["gutenform/input", { "type": "text", "label": { "__": "address", "fallback": "Adresse" }, "required": false }],
-    ["gutenform/input", { "type": "email", "label": { "__": "email", "fallback": "E-Mail" }, "required": true, "isPrimaryMail": true }],
-    ["gutenform/input", { "type": "tel", "label": { "__": "phone", "fallback": "Telefon" }, "required": false }],
-    ["gutenform/select", {
+    ["streamery-forms/input", { "type": "text", "label": { "__": "name", "fallback": "Name" }, "required": true }],
+    ["streamery-forms/input", { "type": "text", "label": { "__": "address", "fallback": "Adresse" }, "required": false }],
+    ["streamery-forms/input", { "type": "email", "label": { "__": "email", "fallback": "E-Mail" }, "required": true, "isPrimaryMail": true }],
+    ["streamery-forms/input", { "type": "tel", "label": { "__": "phone", "fallback": "Telefon" }, "required": false }],
+    ["streamery-forms/select", {
       "label": { "__": "desiredPosition", "fallback": "Gewünschte Position" },
       "options": [
         { "label": { "__": "selectAnOption", "fallback": "Bitte wählen" }, "value": "" },
@@ -16,11 +16,11 @@
       ],
       "required": true
     }],
-    ["gutenform/input", { "type": "date", "label": { "__": "earliestStartDate", "fallback": "Frühestes Eintrittsdatum" }, "required": false }],
-    ["gutenform/input", { "type": "text", "label": { "__": "salaryExpectation", "fallback": "Gehaltsvorstellung" }, "required": false }],
-    ["gutenform/file", { "label": { "__": "resumeCv", "fallback": "Lebenslauf (PDF)" }, "required": true, "acceptTypes": "application/pdf" }],
-    ["gutenform/file", { "label": { "__": "coverLetter", "fallback": "Anschreiben / Portfolio" }, "required": false, "acceptTypes": "application/pdf,.doc,.docx" }],
-    ["gutenform/submit", {}],
-    ["gutenform/success", {}]
+    ["streamery-forms/input", { "type": "date", "label": { "__": "earliestStartDate", "fallback": "Frühestes Eintrittsdatum" }, "required": false }],
+    ["streamery-forms/input", { "type": "text", "label": { "__": "salaryExpectation", "fallback": "Gehaltsvorstellung" }, "required": false }],
+    ["streamery-forms/file", { "label": { "__": "resumeCv", "fallback": "Lebenslauf (PDF)" }, "required": true, "acceptTypes": "application/pdf" }],
+    ["streamery-forms/file", { "label": { "__": "coverLetter", "fallback": "Anschreiben / Portfolio" }, "required": false, "acceptTypes": "application/pdf,.doc,.docx" }],
+    ["streamery-forms/submit", {}],
+    ["streamery-forms/success", {}]
   ]
 }

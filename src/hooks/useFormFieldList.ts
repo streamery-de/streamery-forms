@@ -1,14 +1,14 @@
 import { useSelect } from '@wordpress/data';
 
 const FIELD_BLOCK_NAMES = [
-	'gutenform/input',
-	'gutenform/select',
-	'gutenform/textarea',
-	'gutenform/checkbox',
-	'gutenform/radio',
-	'gutenform/date-time',
-	'gutenform/slider',
-	'gutenform/file',
+	'streamery-forms/input',
+	'streamery-forms/select',
+	'streamery-forms/textarea',
+	'streamery-forms/checkbox',
+	'streamery-forms/radio',
+	'streamery-forms/date-time',
+	'streamery-forms/slider',
+	'streamery-forms/file',
 ];
 
 export type FormFieldOptionValue = { label: string; value: string };
@@ -30,12 +30,12 @@ export function useFormFieldList(clientId: string, excludeClientId?: string): Fo
 			const { getBlockParents, getBlocks, getBlockName } = select('core/block-editor');
 			let formBlockId: string | null = null;
 			// When clientId is the form block itself (e.g. form inspector), use it as the form root
-			if (getBlockName(clientId) === 'gutenform/form') {
+			if (getBlockName(clientId) === 'streamery-forms/form') {
 				formBlockId = clientId;
 			} else {
 				const parents = getBlockParents(clientId);
 				for (const pid of parents) {
-					if (getBlockName(pid) === 'gutenform/form') {
+					if (getBlockName(pid) === 'streamery-forms/form') {
 						formBlockId = pid;
 						break;
 					}
@@ -53,9 +53,9 @@ export function useFormFieldList(clientId: string, excludeClientId?: string): Fo
 								label: block.attributes.label || block.attributes.name || block.name,
 							};
 							if (
-								(block.name === 'gutenform/select' ||
-									block.name === 'gutenform/checkbox' ||
-									block.name === 'gutenform/radio') &&
+								(block.name === 'streamery-forms/select' ||
+									block.name === 'streamery-forms/checkbox' ||
+									block.name === 'streamery-forms/radio') &&
 								Array.isArray(block.attributes?.options)
 							) {
 								item.options = block.attributes.options.map((o: { label?: string; value?: string }) => ({

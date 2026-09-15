@@ -49,8 +49,8 @@ const navigation = [
 ];
 
 export default function LayoutOne() {
-    const gutenForm = typeof window !== 'undefined' ? window.gutenForm : null;
-    let showApplicationLayout = !gutenForm?.isAdmin;
+    const streameryForms = typeof window !== 'undefined' ? window.streameryForms : null;
+    let showApplicationLayout = !streameryForms?.isAdmin;
     let location = useLocation();
     const navigate = useNavigate();
     const pageTitle = location.pathname.split("/")[1];
@@ -66,16 +66,16 @@ export default function LayoutOne() {
 
     // Use full URLs for nav links so WordPress admin menu stays in sync (active state)
     const getNavHref = (item) => {
-        const gutenForm = typeof window !== 'undefined' ? window.gutenForm : null;
-        if (gutenForm?.adminUrl) {
-            const base = gutenForm.adminUrl;
-            let page = 'gutenform';
+        const streameryForms = typeof window !== 'undefined' ? window.streameryForms : null;
+        if (streameryForms?.adminUrl) {
+            const base = streameryForms.adminUrl;
+            let page = 'streamery-forms';
             let hash = '#/inbox';
             if (item.path === 'settings') {
-                page = 'gutenform-settings';
+                page = 'streamery-forms-settings';
                 hash = location.pathname.startsWith('/settings') ? '#' + location.pathname : '#/settings';
             } else if (item.path === 'forms-usage') {
-                page = 'gutenform-forms-usage';
+                page = 'streamery-forms-forms-usage';
                 hash = '#/forms-usage';
             }
             return `${base}?page=${page}${hash}`;
@@ -88,7 +88,7 @@ export default function LayoutOne() {
             {showApplicationLayout && <div className="hidden border-r bg-muted/40 md:block">
                 <div className="flex h-full max-h-screen flex-col gap-2">
                     <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
-                        <a href={typeof window !== 'undefined' && window.gutenForm?.adminUrl ? `${window.gutenForm.adminUrl}?page=gutenform#/inbox` : '#/inbox'} className="flex items-center gap-2 font-semibold">
+                        <a href={typeof window !== 'undefined' && window.streameryForms?.adminUrl ? `${window.streameryForms.adminUrl}?page=streamery-forms#/inbox` : '#/inbox'} className="flex items-center gap-2 font-semibold">
                             <Logo />
                             <span className="">{__('pluginName')}</span>
                         </a>

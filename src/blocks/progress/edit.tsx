@@ -9,7 +9,7 @@ import './editor.css';
 export default function Edit(props: BlockEditProps<ProgressAttributes>) {
 	const { attributes, setAttributes, clientId, context } = props;
 
-	const activeStep = (context as any)?.['gutenform/activeStep'] ?? 0;
+	const activeStep = (context as any)?.['streamery-forms/activeStep'] ?? 0;
 
 	// Get step blocks from the parent form
 	const steps = useSelect(
@@ -20,7 +20,7 @@ export default function Edit(props: BlockEditProps<ProgressAttributes>) {
 			if (!formId) return [];
 			const formBlocks = getBlocks(formId);
 			return formBlocks
-				.filter((b: any) => b.name === 'gutenform/step')
+				.filter((b: any) => b.name === 'streamery-forms/step')
 				.map((b: any, index: number) => ({
 					title: b.attributes.title || `Step ${index + 1}`,
 					index,
@@ -35,7 +35,7 @@ export default function Edit(props: BlockEditProps<ProgressAttributes>) {
 		: 100;
 
 	const blockProps = useBlockProps({
-		className: `gutenform-progress gutenform-progress--${attributes.variant}`,
+		className: `streamery-forms-progress streamery-forms-progress--${attributes.variant}`,
 	});
 
 	return (
@@ -57,39 +57,39 @@ export default function Edit(props: BlockEditProps<ProgressAttributes>) {
 			</InspectorControls>
 			<div { ...blockProps }>
 				{attributes.variant === 'bar' ? (
-					<div className="gutenform-progress-bar">
-						<div className="gutenform-progress-bar__track">
+					<div className="streamery-forms-progress-bar">
+						<div className="streamery-forms-progress-bar__track">
 							<div
-								className="gutenform-progress-bar__fill"
+								className="streamery-forms-progress-bar__fill"
 								style={{ width: `${progressPercent}%` }}
 							/>
 						</div>
-						<div className="gutenform-progress-bar__label">
+						<div className="streamery-forms-progress-bar__label">
 							{progressPercent}%
 						</div>
 					</div>
 				) : (
-					<div className="gutenform-progress-bubbles">
+					<div className="streamery-forms-progress-bubbles">
 						{steps.map((step: { title: string; index: number }) => (
 							<div
 								key={step.index}
-								className={`gutenform-progress-bubble ${
+								className={`streamery-forms-progress-bubble ${
 									step.index < activeStep
-										? 'gutenform-progress-bubble--completed'
+										? 'streamery-forms-progress-bubble--completed'
 										: step.index === activeStep
-											? 'gutenform-progress-bubble--active'
+											? 'streamery-forms-progress-bubble--active'
 											: ''
 								}`}
 							>
-								<div className="gutenform-progress-bubble__circle">
+								<div className="streamery-forms-progress-bubble__circle">
 									{step.index + 1}
 								</div>
-								<div className="gutenform-progress-bubble__title">
+								<div className="streamery-forms-progress-bubble__title">
 									{step.title}
 								</div>
 								{step.index < totalSteps - 1 && (
-									<div className={`gutenform-progress-bubble__line ${
-										step.index < activeStep ? 'gutenform-progress-bubble__line--completed' : ''
+									<div className={`streamery-forms-progress-bubble__line ${
+										step.index < activeStep ? 'streamery-forms-progress-bubble__line--completed' : ''
 									}`} />
 								)}
 							</div>

@@ -38,13 +38,13 @@ export function useProviderValidation(
       blocks.forEach((block: any) => {
         // Check if block is a field block
         if (
-          block.name === 'gutenform/input' ||
-          block.name === 'gutenform/textarea' ||
-          block.name === 'gutenform/select' ||
-          block.name === 'gutenform/checkbox' ||
-          block.name === 'gutenform/radio' ||
-          block.name === 'gutenform/date-time' ||
-          block.name === 'gutenform/slider'
+          block.name === 'streamery-forms/input' ||
+          block.name === 'streamery-forms/textarea' ||
+          block.name === 'streamery-forms/select' ||
+          block.name === 'streamery-forms/checkbox' ||
+          block.name === 'streamery-forms/radio' ||
+          block.name === 'streamery-forms/date-time' ||
+          block.name === 'streamery-forms/slider'
         ) {
           const name = block.attributes?.name
           if (name && typeof name === 'string') {

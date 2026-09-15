@@ -1,4 +1,4 @@
-.gutenform-honeypot {
+.streamery-forms-honeypot {
 	display: none !important;
 	visibility: hidden !important;
 	position: absolute !important;
@@ -9,7 +9,7 @@
 	overflow: hidden !important;
 }
 
-.gutenform-honeypot input {
+.streamery-forms-honeypot input {
 	display: none !important;
 }
 

@@ -1,20 +1,20 @@
 <?php
 
-namespace Gutenform\Controllers\Database;
+namespace StreameryForms\Controllers\Database;
 
-use Gutenform\Core\Debug;
-use Gutenform\Database\Seeders\Demo;
-use Gutenform\Database\Migrations\Mailboxes;
-use Gutenform\Database\Migrations\Entries;
-use Gutenform\Database\Migrations\EntryLabels;
-use Gutenform\Database\Migrations\Providers;
+use StreameryForms\Core\Debug;
+use StreameryForms\Database\Seeders\Demo;
+use StreameryForms\Database\Migrations\Mailboxes;
+use StreameryForms\Database\Migrations\Entries;
+use StreameryForms\Database\Migrations\EntryLabels;
+use StreameryForms\Database\Migrations\Providers;
 
 /**
  * Class Actions
  *
  * Handles database-related actions such as seeding demo data and removing tables.
  *
- * @package Gutenform\Controllers\Database
+ * @package StreameryForms\Controllers\Database
  */
 class Actions
 {
@@ -31,7 +31,7 @@ class Actions
 		if (Demo::has_data()) {
 			return array(
 				'success' => false,
-				'message' => __('Demo data already exists in the database.', 'gutenform-builder'),
+				'message' => __('Demo data already exists in the database.', 'streamery-forms'),
 			);
 		}
 
@@ -39,12 +39,12 @@ class Actions
 			Demo::run();
 			return array(
 				'success' => true,
-				'message' => __('Demo data has been successfully seeded.', 'gutenform-builder'),
+				'message' => __('Demo data has been successfully seeded.', 'streamery-forms'),
 			);
 		} catch (\Exception $e) {
 			return array(
 				'success' => false,
-				'message' => __('Error seeding demo data: ', 'gutenform-builder') . $e->getMessage(),
+				'message' => __('Error seeding demo data: ', 'streamery-forms') . $e->getMessage(),
 			);
 		}
 	}
@@ -73,11 +73,11 @@ class Actions
 	{
 		// Check user capabilities
 		if (! current_user_can('activate_plugins')) {
-			Debug::log('Gutenform: Database remove - Permission denied for user: ' . get_current_user_id());
+			Debug::log('Streamery Forms: Database remove - Permission denied for user: ' . get_current_user_id());
 			return new \WP_REST_Response(
 				array(
 					'success' => false,
-					'message' => __('You do not have permission to perform this action.', 'gutenform-builder'),
+					'message' => __('You do not have permission to perform this action.', 'streamery-forms'),
 				),
 				403
 			);
@@ -85,27 +85,27 @@ class Actions
 
 		try {
 			// Drop tables in reverse order of dependencies. DROP removes the rows.
-			Debug::log('Gutenform: Starting database table removal...');
+			Debug::log('Streamery Forms: Starting database table removal...');
 			Entries::down();
 			EntryLabels::down();
 			Mailboxes::down();
 			Providers::down();
-			Debug::log('Gutenform: All database tables removed successfully.');
+			Debug::log('Streamery Forms: All database tables removed successfully.');
 
 			return new \WP_REST_Response(
 				array(
 					'success' => true,
-					'message' => __('All database tables have been successfully removed.', 'gutenform-builder'),
+					'message' => __('All database tables have been successfully removed.', 'streamery-forms'),
 				),
 				200
 			);
 		} catch (\Exception $e) {
-			Debug::log('Gutenform: Error removing database tables: ' . $e->getMessage());
-			Debug::log('Gutenform: Stack trace: ' . $e->getTraceAsString());
+			Debug::log('Streamery Forms: Error removing database tables: ' . $e->getMessage());
+			Debug::log('Streamery Forms: Stack trace: ' . $e->getTraceAsString());
 			return new \WP_REST_Response(
 				array(
 					'success' => false,
-					'message' => __('Error removing database tables: ', 'gutenform-builder') . $e->getMessage(),
+					'message' => __('Error removing database tables: ', 'streamery-forms') . $e->getMessage(),
 				),
 				500
 			);

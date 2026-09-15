@@ -24,7 +24,7 @@ pkgs.mkShell {
 
   # Set environment variables and bootstrap project
   shellHook = ''
-    echo "🚀 Gutenform Development Environment"
+    echo "🚀 Streamery Forms Development Environment"
     echo "Node.js: $(node --version)"
     echo "npm: $(npm --version)"
     echo "PHP: $(php --version | head -n 1)"

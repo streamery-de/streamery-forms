@@ -3,11 +3,11 @@
  * and in the editor.
  */
 
-.wp-block-gutenform-form {
+.wp-block-streamery-forms-form {
 	/* styles for the form block */
 }
 
-.gutenform-success-modal {
+.streamery-forms-success-modal {
 	display: grid;
 	position: fixed;
 	top: 0;
@@ -21,7 +21,7 @@
 	opacity: 0;
 	pointer-events: none;
 
-	.gutenform-success-modal-content {
+	.streamery-forms-success-modal-content {
 		max-width: 600px;
 		margin: auto;
 		padding: 20px;
@@ -33,7 +33,7 @@
 		transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
-	.gutenform-success-modal-close {
+	.streamery-forms-success-modal-close {
 		position: absolute;
 		top: 10px;
 		right: 10px;
@@ -54,30 +54,30 @@
 		justify-content: center;
 	}
 
-	.gutenform-success-modal-close:hover {
+	.streamery-forms-success-modal-close:hover {
 		background-color: #f0f0f0;
 		color: #000;
 	}
 
-	.gutenform-success-modal-close:focus {
+	.streamery-forms-success-modal-close:focus {
 		outline: 2px solid #0073aa;
 		outline-offset: 2px;
 	}
 }
 
-.gutenform-form--success-view {
-	.gutenform-success-modal {
+.streamery-forms-form--success-view {
+	.streamery-forms-success-modal {
 		opacity: 1;
 		pointer-events: auto;
 
-		.gutenform-success-modal-content {
+		.streamery-forms-success-modal-content {
 			transform: scale(1);
 		}
 	}
 }
 
 /* Multi-step form: field validation */
-.gutenform-field--invalid {
+.streamery-forms-field--invalid {
 	border-color: #dc2626 !important;
 	box-shadow: 0 0 0 1px #dc2626;
 }

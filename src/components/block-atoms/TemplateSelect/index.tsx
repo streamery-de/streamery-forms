@@ -25,18 +25,18 @@ const TemplateSelect = ({ onSelect }: TemplateSelectProps) => {
 	})).filter((section) => section.templates.length > 0);
 
 	return (
-		<div className="gutenform-template-select">
-			<p className="gutenform-template-select__intro">
+		<div className="streamery-forms-template-select">
+			<p className="streamery-forms-template-select__intro">
 				{__('templateSelectIntro')}
 			</p>
 			{byCategory.map((section) => (
 				<section
 					key={section.category}
-					className="gutenform-template-select__section"
+					className="streamery-forms-template-select__section"
 					data-category={section.category}
 				>
-					<h3 className="gutenform-template-select__title">{section.label}</h3>
-					<div className="gutenform-template-select__grid">
+					<h3 className="streamery-forms-template-select__title">{section.label}</h3>
+					<div className="streamery-forms-template-select__grid">
 						{section.templates.map((template, index) => (
 							<TemplateCard
 								key={`${section.category}-${index}`}
@@ -61,7 +61,7 @@ type TemplateCardProps = {
 const TemplateCard = ({ label, value, onSelect }: TemplateCardProps) => (
 	<button
 		type="button"
-		className="gutenform-template-select__card"
+		className="streamery-forms-template-select__card"
 		onClick={() => value && onSelect()}
 	>
 		{label}

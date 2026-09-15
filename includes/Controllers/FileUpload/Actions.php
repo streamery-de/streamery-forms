@@ -5,13 +5,13 @@
  *
  * REST API controller for file upload handling.
  *
- * @package Gutenform\Controllers\FileUpload
+ * @package StreameryForms\Controllers\FileUpload
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\FileUpload;
+namespace StreameryForms\Controllers\FileUpload;
 
-use Gutenform\Core\UploadTokens;
+use StreameryForms\Core\UploadTokens;
 
 defined('ABSPATH') || exit;
 
@@ -60,13 +60,13 @@ class Actions
 		);
 
 		/**
-		 * Filters the MIME allowlist for Gutenform's public file upload endpoint.
+		 * Filters the MIME allowlist for Streamery Forms' public file upload endpoint.
 		 * This is always intersected with WordPress' own get_allowed_mime_types(),
 		 * so it can only narrow, never grant a type WordPress itself disallows.
 		 *
 		 * @param array<string, string> $allowed extension(s) => mime type.
 		 */
-		$allowed = apply_filters('gutenform/upload/allowed_mimes', $allowed);
+		$allowed = apply_filters('streamery-forms/upload/allowed_mimes', $allowed);
 
 		$wp_mimes = get_allowed_mime_types();
 
@@ -85,7 +85,7 @@ class Actions
 		if (empty($uploaded['file']) || ! is_array($uploaded['file'])) {
 			return new \WP_Error(
 				'no_file',
-				__('No file was uploaded.', 'gutenform-builder'),
+				__('No file was uploaded.', 'streamery-forms'),
 				array('status' => 400)
 			);
 		}
@@ -119,7 +119,7 @@ class Actions
 			if (empty($file_field['tmp_name'])) {
 				return new \WP_Error(
 					'no_file',
-					__('No file was uploaded.', 'gutenform-builder'),
+					__('No file was uploaded.', 'streamery-forms'),
 					array('status' => 400)
 				);
 			}
@@ -171,7 +171,7 @@ class Actions
 				'file_too_large',
 				sprintf(
 					/* translators: %s: maximum file size in megabytes. */
-					__('File is too large. Maximum size is %s MB.', 'gutenform-builder'),
+					__('File is too large. Maximum size is %s MB.', 'streamery-forms'),
 					$effective_max
 				),
 				array('status' => 400)
@@ -187,7 +187,7 @@ class Actions
 			if (empty($requested)) {
 				return new \WP_Error(
 					'invalid_file_type',
-					__('Invalid file type. Please check the accepted file types.', 'gutenform-builder'),
+					__('Invalid file type. Please check the accepted file types.', 'streamery-forms'),
 					array('status' => 400)
 				);
 			}
@@ -197,7 +197,7 @@ class Actions
 		if (empty($allowed_mimes)) {
 			return new \WP_Error(
 				'invalid_file_type',
-				__('This file type is not allowed.', 'gutenform-builder'),
+				__('This file type is not allowed.', 'streamery-forms'),
 				array('status' => 400)
 			);
 		}
@@ -283,7 +283,7 @@ class Actions
 	}
 
 	/**
-	 * Redirects wp_handle_upload() into wp-content/uploads/gutenform/Y/m/
+	 * Redirects wp_handle_upload() into wp-content/uploads/streamery-forms/Y/m/
 	 * instead of the default uploads root.
 	 *
 	 * @param array $dirs WordPress upload dir info.
@@ -291,7 +291,7 @@ class Actions
 	 */
 	public function filter_upload_dir($dirs)
 	{
-		$dirs['subdir'] = '/gutenform' . $dirs['subdir'];
+		$dirs['subdir'] = '/streamery-forms' . $dirs['subdir'];
 		$dirs['path']   = $dirs['basedir'] . $dirs['subdir'];
 		$dirs['url']    = $dirs['baseurl'] . $dirs['subdir'];
 
@@ -337,19 +337,19 @@ class Actions
 		switch ($error_code) {
 			case UPLOAD_ERR_INI_SIZE:
 			case UPLOAD_ERR_FORM_SIZE:
-				return __('File exceeds the maximum upload size.', 'gutenform-builder');
+				return __('File exceeds the maximum upload size.', 'streamery-forms');
 			case UPLOAD_ERR_PARTIAL:
-				return __('File was only partially uploaded.', 'gutenform-builder');
+				return __('File was only partially uploaded.', 'streamery-forms');
 			case UPLOAD_ERR_NO_FILE:
-				return __('No file was uploaded.', 'gutenform-builder');
+				return __('No file was uploaded.', 'streamery-forms');
 			case UPLOAD_ERR_NO_TMP_DIR:
-				return __('Missing temporary folder.', 'gutenform-builder');
+				return __('Missing temporary folder.', 'streamery-forms');
 			case UPLOAD_ERR_CANT_WRITE:
-				return __('Failed to write file to disk.', 'gutenform-builder');
+				return __('Failed to write file to disk.', 'streamery-forms');
 			case UPLOAD_ERR_EXTENSION:
-				return __('File upload stopped by extension.', 'gutenform-builder');
+				return __('File upload stopped by extension.', 'streamery-forms');
 			default:
-				return __('Unknown upload error.', 'gutenform-builder');
+				return __('Unknown upload error.', 'streamery-forms');
 		}
 	}
 }

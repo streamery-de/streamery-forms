@@ -24,44 +24,44 @@ registerBlockType(metadata.name as string, {
 		to: [
 			{
 				type: 'block',
-				blocks: ['gutenform/input'],
+				blocks: ['streamery-forms/input'],
 				transform: (attributes: any) => transformToInput(attributes, 'text'),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/textarea'],
+				blocks: ['streamery-forms/textarea'],
 				transform: (attributes: any) => transformToTextarea(attributes),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/select'],
+				blocks: ['streamery-forms/select'],
 				transform: (attributes: any) => transformToSelect(attributes),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/checkbox'],
+				blocks: ['streamery-forms/checkbox'],
 				transform: (attributes: any) => transformToCheckbox(attributes),
 			},
 		],
 		from: [
 			{
 				type: 'block',
-				blocks: ['gutenform/input'],
+				blocks: ['streamery-forms/input'],
 				transform: (attributes: any) => transformToRadio(attributes),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/textarea'],
+				blocks: ['streamery-forms/textarea'],
 				transform: (attributes: any) => transformToRadio(attributes),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/select'],
+				blocks: ['streamery-forms/select'],
 				transform: (attributes: any) => transformToRadio(attributes),
 			},
 			{
 				type: 'block',
-				blocks: ['gutenform/checkbox'],
+				blocks: ['streamery-forms/checkbox'],
 				transform: (attributes: any) => transformToRadio(attributes),
 			},
 		],

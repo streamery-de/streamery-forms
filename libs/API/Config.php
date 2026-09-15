@@ -5,9 +5,9 @@
  * @since 1.0.0
  */
 
-namespace Gutenform\Libs\API;
+namespace StreameryForms\Libs\API;
 
-use Gutenform\Libs\API\ApiRouteException;
+use StreameryForms\Libs\API\ApiRouteException;
 
 defined('ABSPATH') || exit;
 

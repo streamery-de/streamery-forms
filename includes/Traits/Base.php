@@ -1,6 +1,6 @@
 <?php
 
-namespace Gutenform\Traits;
+namespace StreameryForms\Traits;
 
 defined('ABSPATH') || exit;
 
@@ -9,7 +9,7 @@ defined('ABSPATH') || exit;
  *
  * Provides a trait with a singleton pattern for obtaining an instance.
  *
- * @package Gutenform\Trait
+ * @package StreameryForms\Trait
  */
 trait Base {
 

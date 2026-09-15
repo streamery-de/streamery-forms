@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gutenform/progress",
+	"name": "streamery-forms/progress",
 	"version": "0.1.0",
 	"title": "Progress",
 	"category": "widgets",
 	"icon": "chart-bar",
-	"description": "Progress indicator for multi-step forms in Gutenform.",
-	"parent": ["gutenform/form"],
-	"usesContext": ["gutenform/activeStep"],
+	"description": "Progress indicator for multi-step forms in Streamery Forms.",
+	"parent": ["streamery-forms/form"],
+	"usesContext": ["streamery-forms/activeStep"],
 	"example": {},
 	"attributes": {
 		"variant": {
@@ -28,7 +28,7 @@
 			"margin": true
 		}
 	},
-	"textdomain": "gutenform-builder",
+	"textdomain": "streamery-forms",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

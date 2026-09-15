@@ -16,14 +16,14 @@ export function AfterSubmitSection({ attributes, setAttributes }: Props) {
 
 	return (
 		<>
-			<h3 className="gutenform-form-settings__section-title">
+			<h3 className="streamery-forms-form-settings__section-title">
 				{__('formSettingsAfterSubmit')}
 			</h3>
-			<p className="gutenform-form-settings__section-description">
+			<p className="streamery-forms-form-settings__section-description">
 				{__('formSettingsAfterSubmitDescription')}
 			</p>
 
-			<div className="gutenform-form-settings__field">
+			<div className="streamery-forms-form-settings__field">
 				<TextareaControl
 					label={__('errorMessage')}
 					value={attributes.errorMessage || ''}
@@ -34,7 +34,7 @@ export function AfterSubmitSection({ attributes, setAttributes }: Props) {
 				/>
 			</div>
 
-			<div className="gutenform-form-settings__field">
+			<div className="streamery-forms-form-settings__field">
 				<TextControl
 					label={__('redirectUrl')}
 					value={redirectUrl}

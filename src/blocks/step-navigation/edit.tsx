@@ -27,10 +27,10 @@ export default function Edit(props: BlockEditProps<StepNavigationAttributes>) {
 			let formClientId: string | null = null;
 			for (const parentId of [...parents].reverse()) {
 				const name = getBlockName(parentId);
-				if (name === 'gutenform/step' && !stepClientId) {
+				if (name === 'streamery-forms/step' && !stepClientId) {
 					stepClientId = parentId;
 				}
-				if (name === 'gutenform/form') {
+				if (name === 'streamery-forms/form') {
 					formClientId = parentId;
 				}
 			}
@@ -38,7 +38,7 @@ export default function Edit(props: BlockEditProps<StepNavigationAttributes>) {
 			if (!formClientId) return { stepIndex: 0, totalSteps: 1 };
 
 			const formBlocks = getBlocks(formClientId);
-			const stepBlocks = formBlocks.filter((b: any) => b.name === 'gutenform/step');
+			const stepBlocks = formBlocks.filter((b: any) => b.name === 'streamery-forms/step');
 			const idx = stepClientId
 				? stepBlocks.findIndex((b: any) => b.clientId === stepClientId)
 				: 0;
@@ -62,7 +62,7 @@ export default function Edit(props: BlockEditProps<StepNavigationAttributes>) {
 	};
 
 	const blockProps = useBlockProps({
-		className: 'gutenform-step-navigation',
+		className: 'streamery-forms-step-navigation',
 		style: {
 			justifyContent: justifyMap[attributes.justification] || 'flex-start',
 		},
@@ -109,7 +109,7 @@ export default function Edit(props: BlockEditProps<StepNavigationAttributes>) {
 			</InspectorControls>
 			<div { ...blockProps }>
 				{attributes.showPrev && !isFirstStep && (
-					<button type="button" className="gutenform-step-prev" onClick={(e) => e.preventDefault()}>
+					<button type="button" className="streamery-forms-step-prev" onClick={(e) => e.preventDefault()}>
 						<RichText
 							tagName="span"
 							value={attributes.prevLabel}
@@ -118,7 +118,7 @@ export default function Edit(props: BlockEditProps<StepNavigationAttributes>) {
 						/>
 					</button>
 				)}
-				<button type="button" className={isLastStep ? 'gutenform-step-submit' : 'gutenform-step-next'} onClick={(e) => e.preventDefault()}>
+				<button type="button" className={isLastStep ? 'streamery-forms-step-submit' : 'streamery-forms-step-next'} onClick={(e) => e.preventDefault()}>
 					<RichText
 						tagName="span"
 						value={isLastStep ? attributes.submitLabel : attributes.nextLabel}

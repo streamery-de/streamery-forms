@@ -39,13 +39,13 @@ export const CopyableTextControl = ({ value, label }: CopyableTextControlProps) 
 
 	return (
 		<PanelRow>
-			<div className="gutenform-copyable-text-control__container">
+			<div className="streamery-forms-copyable-text-control__container">
 				<input
 					type="text"
 					value={value || ''}
 					readOnly
 					disabled
-					className="gutenform-copyable-text-control__input"
+					className="streamery-forms-copyable-text-control__input"
 					title={value}
 					aria-label={label}
 				/>
@@ -54,7 +54,7 @@ export const CopyableTextControl = ({ value, label }: CopyableTextControlProps) 
 						onClick={handleCopy}
 						variant={copied ? 'primary' : 'secondary'}
 						isSmall
-						className={`gutenform-copyable-text-control__button ${copied ? 'gutenform-copyable-text-control__button--copied' : ''}`}
+						className={`streamery-forms-copyable-text-control__button ${copied ? 'streamery-forms-copyable-text-control__button--copied' : ''}`}
 					>
 						{copied ? (
 							<>

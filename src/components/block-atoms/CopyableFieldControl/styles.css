@@ -1,10 +1,10 @@
-.gutenform-copyable-field-control__toggle-wrapper {
+.streamery-forms-copyable-field-control__toggle-wrapper {
 	display: flex;
 	justify-content: flex-end;
 	margin-top: 6px;
 }
 
-.gutenform-copyable-field-control__toggle {
+.streamery-forms-copyable-field-control__toggle {
 	font-size: 11px;
 }
 

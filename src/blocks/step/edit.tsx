@@ -23,11 +23,11 @@ export default function Edit(props: BlockEditProps<StepAttributes>) {
 		attributes.stepId,
 		clientId,
 		(attrs: { id: string }) => setAttributes({ stepId: attrs.id }),
-		'gutenform-step'
+		'streamery-forms-step'
 	);
 
 	// Get the active step from form context
-	const activeStep = (context as any)?.['gutenform/activeStep'] ?? 0;
+	const activeStep = (context as any)?.['streamery-forms/activeStep'] ?? 0;
 
 	const { updateBlockAttributes } = useDispatch('core/block-editor');
 
@@ -42,7 +42,7 @@ export default function Edit(props: BlockEditProps<StepAttributes>) {
 			let formId: string | null = null;
 			for (const pid of [...parents].reverse()) {
 				const name = getBlockName(pid);
-				if (name === 'gutenform/form') {
+				if (name === 'streamery-forms/form') {
 					formId = pid;
 					break;
 				}
@@ -51,7 +51,7 @@ export default function Edit(props: BlockEditProps<StepAttributes>) {
 			if (!parentId) return { stepIndex: 0, hasSelectedDescendant: false, formClientId: null };
 
 			const siblings = getBlocks(parentId);
-			const stepBlocks = siblings.filter((b: any) => b.name === 'gutenform/step');
+			const stepBlocks = siblings.filter((b: any) => b.name === 'streamery-forms/step');
 			const idx = stepBlocks.findIndex((b: any) => b.clientId === clientId);
 
 			return {
@@ -73,7 +73,7 @@ export default function Edit(props: BlockEditProps<StepAttributes>) {
 	const isActive = stepIndex === activeStep;
 
 	const blockProps = useBlockProps({
-		className: `gutenform-step ${isActive ? 'gutenform-step--active' : 'gutenform-step--hidden'}`,
+		className: `streamery-forms-step ${isActive ? 'streamery-forms-step--active' : 'streamery-forms-step--hidden'}`,
 		style: isActive ? {} : { display: 'none' },
 		'data-step-index': stepIndex,
 	});
@@ -84,8 +84,8 @@ export default function Edit(props: BlockEditProps<StepAttributes>) {
 		renderAppender: InnerBlocks.ButtonBlockAppender,
 		templateLock: false,
 		template: [
-			['gutenform/input', { type: 'text' }],
-			['gutenform/step-navigation', {}],
+			['streamery-forms/input', { type: 'text' }],
+			['streamery-forms/step-navigation', {}],
 		],
 	});
 

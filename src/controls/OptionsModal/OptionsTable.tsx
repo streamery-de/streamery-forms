@@ -64,8 +64,8 @@ export const OptionsTable = ({
 	);
 
 	return (
-		<div className="gutenform-options-table-wrapper">
-			<div className="gutenform-options-table-actions">
+		<div className="streamery-forms-options-table-wrapper">
+			<div className="streamery-forms-options-table-actions">
 				<Button
 					onClick={onBulkAddClick}
 					variant="secondary"
@@ -80,18 +80,18 @@ export const OptionsTable = ({
 					items={options.map((_, i) => `option-${i}`)}
 					strategy={verticalListSortingStrategy}
 				>
-					<div className="gutenform-options-table-container">
-						<table className="gutenform-options-table">
+					<div className="streamery-forms-options-table-container">
+						<table className="streamery-forms-options-table">
 							<thead>
 								<tr>
-									<th className="gutenform-options-table-th-checkbox">
+									<th className="streamery-forms-options-table-th-checkbox">
 										<CheckboxControl
 											checked={allSelected || someSelected}
 											onChange={onSelectAll}
 											__nextHasNoMarginBottom={true}
 										/>
 									</th>
-									<th className="gutenform-options-table-th-move">
+									<th className="streamery-forms-options-table-th-move">
 										{__('move')}
 									</th>
 									<th>
@@ -105,7 +105,7 @@ export const OptionsTable = ({
 											{__('description')}
 										</th>
 									)}
-									<th className="gutenform-options-table-th-actions">
+									<th className="streamery-forms-options-table-th-actions">
 										{__('actions')}
 									</th>
 								</tr>

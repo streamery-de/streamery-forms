@@ -3,11 +3,11 @@
 /**
  * API route exception.
  *
- * @package Gutenform
+ * @package StreameryForms
  * @since 1.0.0
  */
 
-namespace Gutenform\Libs\API;
+namespace StreameryForms\Libs\API;
 
 use Exception;
 

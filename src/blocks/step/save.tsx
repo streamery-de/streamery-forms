@@ -6,7 +6,7 @@ import { hasConditionalShowToOutput } from '@/blockTypes/conditionalLogic';
 export default function save(props: BlockSaveProps<StepAttributes>) {
 	const conditionalShow = props.attributes.conditionalShow;
 	const blockProps = useBlockProps.save({
-		className: 'gutenform-step',
+		className: 'streamery-forms-step',
 		'data-step-title': props.attributes.title || 'Step',
 		...(hasConditionalShowToOutput(conditionalShow) && { 'data-conditional-show': JSON.stringify(conditionalShow) }),
 	});

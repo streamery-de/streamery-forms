@@ -3,13 +3,13 @@
 /**
  * Class EmailLogs
  *
- * Represents the EmailLogs model for Gutenform.
+ * Represents the EmailLogs model for Streamery Forms.
  *
- * @package Gutenform\Models
+ * @package StreameryForms\Models
  * @since 1.0.0
  */
 
-namespace Gutenform\Models;
+namespace StreameryForms\Models;
 
 use Prappo\WpEloquent\Database\Eloquent\Model;
 
@@ -18,9 +18,9 @@ defined('ABSPATH') || exit;
 /**
  * Class EmailLogs
  *
- * Represents the EmailLogs model for Gutenform.
+ * Represents the EmailLogs model for Streamery Forms.
  *
- * @package Gutenform\Models
+ * @package StreameryForms\Models
  */
 class EmailLogs extends Model
 {
@@ -30,7 +30,7 @@ class EmailLogs extends Model
      *
      * @var string
      */
-    protected $table = 'gutenform_email_logs';
+    protected $table = 'streamery_forms_email_logs';
 
     /**
      * The primary key for the model.

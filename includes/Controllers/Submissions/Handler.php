@@ -5,17 +5,17 @@
  *
  * Orchestrates form submission processing through multiple providers.
  *
- * @package Gutenform\Controllers\Submissions
+ * @package StreameryForms\Controllers\Submissions
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\Submissions;
+namespace StreameryForms\Controllers\Submissions;
 
-use Gutenform\Core\Debug;
-use Gutenform\Core\FormRegistry;
-use Gutenform\Models\Mailboxes;
-use Gutenform\Models\Providers;
-use Gutenform\Providers\Registry;
+use StreameryForms\Core\Debug;
+use StreameryForms\Core\FormRegistry;
+use StreameryForms\Models\Mailboxes;
+use StreameryForms\Models\Providers;
+use StreameryForms\Providers\Registry;
 
 defined('ABSPATH') || exit;
 
@@ -56,7 +56,7 @@ class Handler
         $feed_ids = $form_registry->resolve_provider_feed_ids($config);
 
         if (empty($feed_ids)) {
-            $errors[] = __('No provider is configured for this form.', 'gutenform-builder');
+            $errors[] = __('No provider is configured for this form.', 'streamery-forms');
             return $this->compile($submission_data, $form_identifier, $results, $errors, false);
         }
 
@@ -73,7 +73,7 @@ class Handler
             if (! in_array($slug, $present_slugs, true)) {
                 $errors[] = sprintf(
                     /* translators: %s: provider slug. */
-                    __('Required provider "%s" has no active feed.', 'gutenform-builder'),
+                    __('Required provider "%s" has no active feed.', 'streamery-forms'),
                     $slug
                 );
             }
@@ -90,7 +90,7 @@ class Handler
             if (! $provider) {
                 $errors[] = sprintf(
                     /* translators: %s: provider slug. */
-                    __('Provider "%s" not found.', 'gutenform-builder'),
+                    __('Provider "%s" not found.', 'streamery-forms'),
                     $provider_slug
                 );
                 continue;
@@ -126,7 +126,7 @@ class Handler
                 if (! $success) {
                     $message = sprintf(
                         /* translators: %s: provider title. */
-                        __('Provider "%s" could not process the submission.', 'gutenform-builder'),
+                        __('Provider "%s" could not process the submission.', 'streamery-forms'),
                         $provider->get_title()
                     );
                     $errors[] = $message;
@@ -138,7 +138,7 @@ class Handler
             } catch (\Exception $e) {
                 $errors[] = sprintf(
                     /* translators: 1: provider title, 2: error message. */
-                    __('Error in Provider "%1$s": %2$s', 'gutenform-builder'),
+                    __('Error in Provider "%1$s": %2$s', 'streamery-forms'),
                     $provider->get_title(),
                     $e->getMessage()
                 );
@@ -173,7 +173,7 @@ class Handler
                 ->where('is_active', true)
                 ->get();
         } catch (\Exception $e) {
-            Debug::log('GutenForm Handler: failed to load provider feeds: ' . $e->getMessage());
+            Debug::log('Streamery Forms Handler: failed to load provider feeds: ' . $e->getMessage());
             return array();
         }
 
@@ -197,7 +197,7 @@ class Handler
      * provider actually permits, plus the internal context keys providers
      * need (feed id for delivery logging, post id and title for payloads).
      *
-     * @param \Gutenform\Providers\AbstractProvider $provider        Provider instance.
+     * @param \StreameryForms\Providers\AbstractProvider $provider        Provider instance.
      * @param object                                $feed            Feed row.
      * @param array                                 $override        Form-level override for this feed.
      * @param array                                 $config          Form config.

@@ -2,58 +2,58 @@
  * Template selection UI – block editor only.
  */
 
-.gutenform-template-select {
-	--gutenform-tpl-bg: #f8f9fa;
-	--gutenform-tpl-border: #e2e4e7;
-	--gutenform-tpl-hover-bg: #fff;
-	--gutenform-tpl-hover-border: #2271b1;
-	--gutenform-tpl-hover-shadow: 0 2px 8px rgba(34, 113, 177, 0.12);
-	--gutenform-tpl-category-color: #1e1e1e;
-	--gutenform-tpl-card-radius: 10px;
-	--gutenform-tpl-card-padding: 14px 16px;
+.streamery-forms-template-select {
+	--streamery-forms-tpl-bg: #f8f9fa;
+	--streamery-forms-tpl-border: #e2e4e7;
+	--streamery-forms-tpl-hover-bg: #fff;
+	--streamery-forms-tpl-hover-border: #2271b1;
+	--streamery-forms-tpl-hover-shadow: 0 2px 8px rgba(34, 113, 177, 0.12);
+	--streamery-forms-tpl-category-color: #1e1e1e;
+	--streamery-forms-tpl-card-radius: 10px;
+	--streamery-forms-tpl-card-padding: 14px 16px;
 	max-width: 720px;
 	padding: 8px 0;
 }
 
-.gutenform-template-select__intro {
+.streamery-forms-template-select__intro {
 	font-size: 13px;
 	color: #50575e;
 	margin-bottom: 20px;
 	line-height: 1.5;
 }
 
-.gutenform-template-select__section {
+.streamery-forms-template-select__section {
 	margin-bottom: 24px;
 }
 
-.gutenform-template-select__section:last-child {
+.streamery-forms-template-select__section:last-child {
 	margin-bottom: 0;
 }
 
-.gutenform-template-select__title {
+.streamery-forms-template-select__title {
 	font-size: 11px;
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
-	color: var(--gutenform-tpl-category-color);
+	color: var(--streamery-forms-tpl-category-color);
 	margin: 0 0 10px 0;
 	padding-bottom: 6px;
-	border-bottom: 1px solid var(--gutenform-tpl-border);
+	border-bottom: 1px solid var(--streamery-forms-tpl-border);
 }
 
-.gutenform-template-select__grid {
+.streamery-forms-template-select__grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	gap: 10px;
 }
 
-.gutenform-template-select__card {
+.streamery-forms-template-select__card {
 	display: block;
 	width: 100%;
-	padding: var(--gutenform-tpl-card-padding);
-	background: var(--gutenform-tpl-bg);
-	border: 1px solid var(--gutenform-tpl-border);
-	border-radius: var(--gutenform-tpl-card-radius);
+	padding: var(--streamery-forms-tpl-card-padding);
+	background: var(--streamery-forms-tpl-bg);
+	border: 1px solid var(--streamery-forms-tpl-border);
+	border-radius: var(--streamery-forms-tpl-card-radius);
 	font-size: 13px;
 	font-weight: 500;
 	color: #1e1e1e;
@@ -62,33 +62,33 @@
 	transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.gutenform-template-select__card:hover {
-	background: var(--gutenform-tpl-hover-bg);
-	border-color: var(--gutenform-tpl-hover-border);
-	box-shadow: var(--gutenform-tpl-hover-shadow);
+.streamery-forms-template-select__card:hover {
+	background: var(--streamery-forms-tpl-hover-bg);
+	border-color: var(--streamery-forms-tpl-hover-border);
+	box-shadow: var(--streamery-forms-tpl-hover-shadow);
 }
 
-.gutenform-template-select__card:focus {
+.streamery-forms-template-select__card:focus {
 	outline: 2px solid #2271b1;
 	outline-offset: 2px;
 }
 
-.gutenform-template-select__card:active {
+.streamery-forms-template-select__card:active {
 	transform: translateY(0);
 }
 
 /* Start section: Blank + Basic get a slightly emphasized first card */
-.gutenform-template-select__section[data-category="start"] .gutenform-template-select__grid {
+.streamery-forms-template-select__section[data-category="start"] .streamery-forms-template-select__grid {
 	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 
-.gutenform-template-select__section[data-category="start"] .gutenform-template-select__card:first-child {
+.streamery-forms-template-select__section[data-category="start"] .streamery-forms-template-select__card:first-child {
 	background: #fff;
 	border-color: #c3c4c7;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-.gutenform-template-select__section[data-category="start"] .gutenform-template-select__card:first-child:hover {
+.streamery-forms-template-select__section[data-category="start"] .streamery-forms-template-select__card:first-child:hover {
 	border-color: #2271b1;
-	box-shadow: var(--gutenform-tpl-hover-shadow);
+	box-shadow: var(--streamery-forms-tpl-hover-shadow);
 }

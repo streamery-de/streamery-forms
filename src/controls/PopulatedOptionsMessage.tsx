@@ -4,13 +4,13 @@ import './PopulatedOptionsMessage.css';
 
 export const PopulatedOptionsMessage = () => {
 	return (
-		<Notice status="info" isDismissible={false} className="gutenform-populated-options-notice">
+		<Notice status="info" isDismissible={false} className="streamery-forms-populated-options-notice">
 			<p>{__('populatedOptionsDescription')}</p>
-			<div className="gutenform-populated-options-notice__example">
-				<span className="gutenform-populated-options-notice__example-label">
+			<div className="streamery-forms-populated-options-notice__example">
+				<span className="streamery-forms-populated-options-notice__example-label">
 					{__('populatedOptionsExampleLabel')}
 				</span>
-				<pre className="gutenform-populated-options-notice__code">
+				<pre className="streamery-forms-populated-options-notice__code">
 					<code>{__('populatedOptionsExampleCode')}</code>
 				</pre>
 			</div>

@@ -8,13 +8,13 @@ import { type BlockSaveProps } from '@wordpress/blocks';
 // recognizes it as a honeypot without needing to know the form. The
 // name/fieldName attributes below stay purely cosmetic (shown to admins,
 // bot-camouflage bait) and never affect what's actually checked.
-const HONEYPOT_PREFIX = 'gutenform_honeypot_';
+const HONEYPOT_PREFIX = 'streamery_forms_honeypot_';
 
 export default function save(props: BlockSaveProps<HoneypotAttributes>) {
 	const bait = props.attributes.name || props.attributes.fieldName || 'field';
 	return (
 		<div { ...useBlockProps.save({
-			className: 'gutenform-honeypot',
+			className: 'streamery-forms-honeypot',
 			style: { display: 'none', visibility: 'hidden', position: 'absolute', left: '-9999px' },
 		}) }>
 			<input

@@ -7,15 +7,15 @@
  * signed with an HMAC so the receiver can verify the payload really came from
  * this site and hasn't been replayed.
  *
- * @package Gutenform\Providers
+ * @package StreameryForms\Providers
  * @since 1.0.0
  */
 
-namespace Gutenform\Providers;
+namespace StreameryForms\Providers;
 
-use Gutenform\Core\Crypto;
-use Gutenform\Core\Debug;
-use Gutenform\Models\Providers as ProviderModel;
+use StreameryForms\Core\Crypto;
+use StreameryForms\Core\Debug;
+use StreameryForms\Models\Providers as ProviderModel;
 
 defined('ABSPATH') || exit;
 
@@ -52,7 +52,7 @@ class Webhook extends AbstractProvider
      */
     public function get_title(): string
     {
-        return __('Webhook', 'gutenform-builder');
+        return __('Webhook', 'streamery-forms');
     }
 
     /**
@@ -99,7 +99,7 @@ class Webhook extends AbstractProvider
             'sslverify'   => true,
             'headers'     => $headers,
             'body'        => $body,
-            'user-agent'  => 'Gutenform/' . (defined('GUTENFORM_VERSION') ? GUTENFORM_VERSION : '1.0.0') . '; ' . home_url('/'),
+            'user-agent'  => 'StreameryForms/' . (defined('STREAMERY_FORMS_VERSION') ? STREAMERY_FORMS_VERSION : '1.0.0') . '; ' . home_url('/'),
         );
 
         $response = wp_remote_request($url, $args);
@@ -147,7 +147,7 @@ class Webhook extends AbstractProvider
             'status'    => $status,
             'error'     => sprintf(
                 /* translators: %d: HTTP status code returned by the webhook endpoint. */
-                __('Endpoint returned HTTP %d.', 'gutenform-builder'),
+                __('Endpoint returned HTTP %d.', 'streamery-forms'),
                 $status
             ),
         );
@@ -163,16 +163,16 @@ class Webhook extends AbstractProvider
     private function validate_url(string $url): ?string
     {
         if ('' === $url) {
-            return __('No webhook URL configured.', 'gutenform-builder');
+            return __('No webhook URL configured.', 'streamery-forms');
         }
 
         $parts = wp_parse_url($url);
         if (empty($parts['host']) || empty($parts['scheme'])) {
-            return __('Webhook URL is not a valid absolute URL.', 'gutenform-builder');
+            return __('Webhook URL is not a valid absolute URL.', 'streamery-forms');
         }
 
         if (! in_array(strtolower($parts['scheme']), array('http', 'https'), true)) {
-            return __('Webhook URL must use http or https.', 'gutenform-builder');
+            return __('Webhook URL must use http or https.', 'streamery-forms');
         }
 
         /**
@@ -183,12 +183,12 @@ class Webhook extends AbstractProvider
          * @param bool   $allow Whether private hosts are allowed.
          * @param string $url   The target URL.
          */
-        if (apply_filters('gutenform/webhook/allow_private_hosts', false, $url)) {
+        if (apply_filters('streamery-forms/webhook/allow_private_hosts', false, $url)) {
             return null;
         }
 
         if ($this->is_private_host($parts['host'])) {
-            return __('Webhook URL points at a private or local address, which is not allowed.', 'gutenform-builder');
+            return __('Webhook URL points at a private or local address, which is not allowed.', 'streamery-forms');
         }
 
         return null;
@@ -292,8 +292,8 @@ class Webhook extends AbstractProvider
             $secret = $this->reveal($settings['secret'] ?? '');
             if ('' !== $secret) {
                 $timestamp = (string) time();
-                $headers['X-Gutenform-Timestamp'] = $timestamp;
-                $headers['X-Gutenform-Signature'] = 'sha256=' . hash_hmac('sha256', $timestamp . '.' . $body, $secret);
+                $headers['X-Streamery-Forms-Timestamp'] = $timestamp;
+                $headers['X-Streamery-Forms-Signature'] = 'sha256=' . hash_hmac('sha256', $timestamp . '.' . $body, $secret);
             }
         }
 
@@ -533,7 +533,7 @@ class Webhook extends AbstractProvider
             $feed->settings = $feed_settings;
             $feed->save();
         } catch (\Exception $e) {
-            Debug::log('GutenForm Webhook: failed to record delivery status: ' . $e->getMessage());
+            Debug::log('Streamery Forms Webhook: failed to record delivery status: ' . $e->getMessage());
         }
     }
 
@@ -547,16 +547,16 @@ class Webhook extends AbstractProvider
         return array(
             array(
                 'name'        => 'url',
-                'label'       => __('Endpoint URL', 'gutenform-builder'),
+                'label'       => __('Endpoint URL', 'streamery-forms'),
                 'type'        => 'url',
                 'required'    => true,
                 'default'     => '',
-                'description' => __('The https URL that submissions are sent to. Private and local addresses are blocked.', 'gutenform-builder'),
-                'placeholder' => 'https://example.com/hooks/gutenform',
+                'description' => __('The https URL that submissions are sent to. Private and local addresses are blocked.', 'streamery-forms'),
+                'placeholder' => 'https://example.com/hooks/streamery-forms',
             ),
             array(
                 'name'     => 'method',
-                'label'    => __('HTTP Method', 'gutenform-builder'),
+                'label'    => __('HTTP Method', 'streamery-forms'),
                 'type'     => 'select',
                 'required' => false,
                 'default'  => 'POST',
@@ -568,7 +568,7 @@ class Webhook extends AbstractProvider
             ),
             array(
                 'name'     => 'content_type',
-                'label'    => __('Content Type', 'gutenform-builder'),
+                'label'    => __('Content Type', 'streamery-forms'),
                 'type'     => 'select',
                 'required' => false,
                 'default'  => 'application/json',
@@ -579,37 +579,37 @@ class Webhook extends AbstractProvider
             ),
             array(
                 'name'     => 'auth_type',
-                'label'    => __('Authentication', 'gutenform-builder'),
+                'label'    => __('Authentication', 'streamery-forms'),
                 'type'     => 'select',
                 'required' => false,
                 'default'  => 'none',
                 'options'  => array(
-                    array('value' => 'none', 'label' => __('None', 'gutenform-builder')),
-                    array('value' => 'bearer', 'label' => __('Bearer token', 'gutenform-builder')),
-                    array('value' => 'api_key', 'label' => __('API key header', 'gutenform-builder')),
-                    array('value' => 'basic', 'label' => __('Basic auth', 'gutenform-builder')),
+                    array('value' => 'none', 'label' => __('None', 'streamery-forms')),
+                    array('value' => 'bearer', 'label' => __('Bearer token', 'streamery-forms')),
+                    array('value' => 'api_key', 'label' => __('API key header', 'streamery-forms')),
+                    array('value' => 'basic', 'label' => __('Basic auth', 'streamery-forms')),
                 ),
             ),
             array(
                 'name'        => 'auth_token',
-                'label'       => __('Bearer Token', 'gutenform-builder'),
+                'label'       => __('Bearer Token', 'streamery-forms'),
                 'type'        => 'password',
                 'required'    => false,
                 'default'     => '',
                 'is_secret'   => true,
-                'description' => __('Sent as an Authorization: Bearer header.', 'gutenform-builder'),
+                'description' => __('Sent as an Authorization: Bearer header.', 'streamery-forms'),
             ),
             array(
                 'name'        => 'api_key_header',
-                'label'       => __('API Key Header Name', 'gutenform-builder'),
+                'label'       => __('API Key Header Name', 'streamery-forms'),
                 'type'        => 'text',
                 'required'    => false,
                 'default'     => 'X-API-Key',
-                'description' => __('Letters, digits and hyphens only.', 'gutenform-builder'),
+                'description' => __('Letters, digits and hyphens only.', 'streamery-forms'),
             ),
             array(
                 'name'      => 'api_key',
-                'label'     => __('API Key', 'gutenform-builder'),
+                'label'     => __('API Key', 'streamery-forms'),
                 'type'      => 'password',
                 'required'  => false,
                 'default'   => '',
@@ -617,14 +617,14 @@ class Webhook extends AbstractProvider
             ),
             array(
                 'name'     => 'auth_user',
-                'label'    => __('Basic Auth Username', 'gutenform-builder'),
+                'label'    => __('Basic Auth Username', 'streamery-forms'),
                 'type'     => 'text',
                 'required' => false,
                 'default'  => '',
             ),
             array(
                 'name'      => 'auth_password',
-                'label'     => __('Basic Auth Password', 'gutenform-builder'),
+                'label'     => __('Basic Auth Password', 'streamery-forms'),
                 'type'      => 'password',
                 'required'  => false,
                 'default'   => '',
@@ -632,48 +632,48 @@ class Webhook extends AbstractProvider
             ),
             array(
                 'name'        => 'sign_payload',
-                'label'       => __('Sign payload (HMAC)', 'gutenform-builder'),
+                'label'       => __('Sign payload (HMAC)', 'streamery-forms'),
                 'type'        => 'checkbox',
                 'required'    => false,
                 'default'     => false,
-                'description' => __('Adds X-Gutenform-Timestamp and X-Gutenform-Signature headers so the receiver can verify the payload.', 'gutenform-builder'),
+                'description' => __('Adds X-Streamery-Forms-Timestamp and X-Streamery-Forms-Signature headers so the receiver can verify the payload.', 'streamery-forms'),
             ),
             array(
                 'name'        => 'secret',
-                'label'       => __('Signing Secret', 'gutenform-builder'),
+                'label'       => __('Signing Secret', 'streamery-forms'),
                 'type'        => 'password',
                 'required'    => false,
                 'default'     => '',
                 'is_secret'   => true,
-                'description' => __('Used for the HMAC signature: sha256 over "<timestamp>.<body>".', 'gutenform-builder'),
+                'description' => __('Used for the HMAC signature: sha256 over "<timestamp>.<body>".', 'streamery-forms'),
             ),
             array(
                 'name'        => 'custom_headers',
-                'label'       => __('Custom Headers', 'gutenform-builder'),
+                'label'       => __('Custom Headers', 'streamery-forms'),
                 'type'        => 'repeater',
                 'required'    => false,
                 'default'     => array(),
-                'description' => __('Additional headers sent with every request.', 'gutenform-builder'),
+                'description' => __('Additional headers sent with every request.', 'streamery-forms'),
                 'fields'      => array(
-                    array('name' => 'key', 'label' => __('Header', 'gutenform-builder'), 'type' => 'text'),
-                    array('name' => 'value', 'label' => __('Value', 'gutenform-builder'), 'type' => 'text'),
+                    array('name' => 'key', 'label' => __('Header', 'streamery-forms'), 'type' => 'text'),
+                    array('name' => 'value', 'label' => __('Value', 'streamery-forms'), 'type' => 'text'),
                 ),
             ),
             array(
                 'name'        => 'timeout',
-                'label'       => __('Timeout (seconds)', 'gutenform-builder'),
+                'label'       => __('Timeout (seconds)', 'streamery-forms'),
                 'type'        => 'number',
                 'required'    => false,
                 'default'     => self::DEFAULT_TIMEOUT,
-                'description' => __('Maximum 15 seconds.', 'gutenform-builder'),
+                'description' => __('Maximum 15 seconds.', 'streamery-forms'),
             ),
             array(
                 'name'                => 'field_map',
-                'label'               => __('Field Mapping', 'gutenform-builder'),
+                'label'               => __('Field Mapping', 'streamery-forms'),
                 'type'                => 'field_map',
                 'required'            => false,
                 'default'             => array(),
-                'description'         => __('Map form fields to payload keys. Dot paths create nested objects (e.g. contact.email). Leave empty to send all fields unchanged.', 'gutenform-builder'),
+                'description'         => __('Map form fields to payload keys. Dot paths create nested objects (e.g. contact.email). Leave empty to send all fields unchanged.', 'streamery-forms'),
                 // The mapping is the one thing a single form may change -- never the URL or credentials.
                 'allow_form_override' => true,
             ),
