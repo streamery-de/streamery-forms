@@ -45,8 +45,8 @@ export function SupportCard({ variant = "compact", className }: SupportCardProps
 	return (
 		<div
 			className={cn(
-				"group relative rounded-lg border bg-gradient-to-br from-rose-50 to-amber-50 p-4 text-sm",
-				"dark:border-gray-700 dark:from-rose-950/40 dark:to-amber-950/30",
+				"group relative rounded-lg border bg-gradient-to-br from-sky-50 to-emerald-50 p-4 text-sm",
+				"dark:border-gray-700 dark:from-sky-950/40 dark:to-emerald-950/30",
 				className
 			)}
 		>
@@ -65,7 +65,7 @@ export function SupportCard({ variant = "compact", className }: SupportCardProps
 			<div className="mb-1.5 flex items-center gap-2 pr-5 font-semibold dark:text-white">
 				<Heart
 					className={cn(
-						"h-4 w-4 shrink-0 fill-rose-500 text-rose-500 transition-transform duration-300 ease-out",
+						"h-4 w-4 shrink-0 fill-[#0289d9] text-[#0289d9] transition-transform duration-300 ease-out",
 						"motion-safe:group-hover:scale-125"
 					)}
 					aria-hidden="true"

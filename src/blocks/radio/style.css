@@ -82,12 +82,12 @@
 	width: 0.5rem;
 	height: 0.5rem;
 	border-radius: 50%;
-	background: var(--field-accent, #E71D73);
+	background: var(--field-accent, #0289d9);
 	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .streamery-forms-field--radio-default .streamery-forms-radio-option:has(input:checked)::before {
-	border-color: var(--field-accent, #E71D73);
+	border-color: var(--field-accent, #0289d9);
 }
 
 .streamery-forms-field--radio-default .streamery-forms-radio-option:has(input:checked)::after {
@@ -99,7 +99,7 @@
 }
 
 .streamery-forms-field--radio-default .streamery-forms-radio-option:has(input:focus-visible)::before {
-	box-shadow: var(--field-ring-focus, 0 0 0 3px color-mix(in srgb, #E71D73 25%, transparent));
+	box-shadow: var(--field-ring-focus, 0 0 0 3px color-mix(in srgb, #0289d9 25%, transparent));
 }
 
 /* Radio: Karten & Badges */
@@ -149,7 +149,7 @@
 	width: 0.375rem;
 	height: 0.375rem;
 	border-radius: 50%;
-	background: var(--field-accent, #E71D73);
+	background: var(--field-accent, #0289d9);
 	transform: translate(50%, -50%) scale(0);
 	transform-origin: 50% 50%;
 	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -161,7 +161,7 @@
 }
 
 .streamery-forms-field--radio-cards .streamery-forms-radio-option:has(input:checked)::before {
-	border-color: var(--field-accent, #E71D73);
+	border-color: var(--field-accent, #0289d9);
 }
 
 .streamery-forms-field--radio-cards .streamery-forms-radio-option:has(input:checked)::after {
@@ -192,7 +192,7 @@
 	width: 0.375rem;
 	height: 0.375rem;
 	border-radius: 50%;
-	background: var(--field-accent, #E71D73);
+	background: var(--field-accent, #0289d9);
 	transform: translateY(-50%) scale(0);
 	transform-origin: 50% 50%;
 	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -200,12 +200,12 @@
 
 .streamery-forms-field--radio-cards .streamery-forms-radio-option:has(input:checked),
 .streamery-forms-field--radio-badges .streamery-forms-radio-option:has(input:checked) {
-	border-color: var(--field-accent, #E71D73);
-	box-shadow: 0 0 0 1px var(--field-accent, #E71D73);
+	border-color: var(--field-accent, #0289d9);
+	box-shadow: 0 0 0 1px var(--field-accent, #0289d9);
 }
 
 .streamery-forms-field--radio-badges .streamery-forms-radio-option:has(input:checked) {
-	background: var(--field-accent-muted, color-mix(in srgb, #E71D73 12%, white));
+	background: var(--field-accent-muted, color-mix(in srgb, #0289d9 12%, white));
 }
 
 .streamery-forms-field--radio-cards .streamery-forms-radio-option:has(input:checked) {
@@ -213,7 +213,7 @@
 }
 
 .streamery-forms-field--radio-badges .streamery-forms-radio-option:has(input:checked)::before {
-	border-color: var(--field-accent, #E71D73);
+	border-color: var(--field-accent, #0289d9);
 }
 
 .streamery-forms-field--radio-badges .streamery-forms-radio-option:has(input:checked)::after {

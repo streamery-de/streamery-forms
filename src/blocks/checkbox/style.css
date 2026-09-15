@@ -88,8 +88,8 @@
 }
 
 .streamery-forms-field--checkbox-default .streamery-forms-checkbox-option:has(input:checked)::before {
-	background: var(--field-accent, #E71D73);
-	border-color: var(--field-accent, #E71D73);
+	background: var(--field-accent, #0289d9);
+	border-color: var(--field-accent, #0289d9);
 }
 
 .streamery-forms-field--checkbox-default .streamery-forms-checkbox-option:has(input:checked)::after {
@@ -101,7 +101,7 @@
 }
 
 .streamery-forms-field--checkbox-default .streamery-forms-checkbox-option:has(input:focus-visible)::before {
-	box-shadow: var(--field-ring-focus, 0 0 0 3px color-mix(in srgb, #E71D73 25%, transparent));
+	box-shadow: var(--field-ring-focus, 0 0 0 3px color-mix(in srgb, #0289d9 25%, transparent));
 }
 
 /* Checkbox: Schalter */
@@ -135,8 +135,8 @@
 }
 
 .streamery-forms-field--checkbox-toggle .streamery-forms-checkbox-option:has(input:checked)::before {
-	background: var(--field-accent, #E71D73);
-	border-color: var(--field-accent, #E71D73);
+	background: var(--field-accent, #0289d9);
+	border-color: var(--field-accent, #0289d9);
 }
 
 .streamery-forms-field--checkbox-toggle .streamery-forms-checkbox-option:has(input:checked)::after {
@@ -144,7 +144,7 @@
 }
 
 .streamery-forms-field--checkbox-toggle .streamery-forms-checkbox-option:has(input:focus-visible)::before {
-	box-shadow: var(--field-ring-focus, 0 0 0 3px color-mix(in srgb, #E71D73 25%, transparent));
+	box-shadow: var(--field-ring-focus, 0 0 0 3px color-mix(in srgb, #0289d9 25%, transparent));
 }
 
 /* Checkbox: Karten & Badges */
@@ -240,18 +240,18 @@
 }
 
 .streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option:has(input:checked)::before {
-	background: var(--field-accent, #E71D73);
-	border-color: var(--field-accent, #E71D73);
+	background: var(--field-accent, #0289d9);
+	border-color: var(--field-accent, #0289d9);
 }
 
 .streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option:has(input:checked),
 .streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option:has(input:checked) {
-	border-color: var(--field-accent, #E71D73);
-	box-shadow: 0 0 0 1px var(--field-accent, #E71D73);
+	border-color: var(--field-accent, #0289d9);
+	box-shadow: 0 0 0 1px var(--field-accent, #0289d9);
 }
 
 .streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option:has(input:checked) {
-	background: var(--field-accent-muted, color-mix(in srgb, #E71D73 12%, white));
+	background: var(--field-accent-muted, color-mix(in srgb, #0289d9 12%, white));
 }
 
 .streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option:has(input:checked) {
@@ -259,8 +259,8 @@
 }
 
 .streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option:has(input:checked)::before {
-	background: var(--field-accent, #E71D73);
-	border-color: var(--field-accent, #E71D73);
+	background: var(--field-accent, #0289d9);
+	border-color: var(--field-accent, #0289d9);
 }
 
 .streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option:has(input:checked)::after {

@@ -6,7 +6,7 @@
 }
 
 .streamery-forms-block-icon:not(.clean) {
-    background: linear-gradient(to bottom, #E71D73, #A0174F);
+    background: linear-gradient(130deg, #0289d9, #18d94b);
     color: white;
     /* border-radius: 50%; */
     display: flex;

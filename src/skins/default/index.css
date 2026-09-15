@@ -3,7 +3,7 @@
    ========================================================================== */
 form.wp-block-streamery-forms-form {
   /* --- Brand & Accent --- */
-  --streamery-forms-accent: #e71d73;
+  --streamery-forms-accent: #0289d9;
   --field-accent: var(--streamery-forms-accent);
   --field-accent-hover: color-mix(in srgb, var(--field-accent) 85%, black);
   --field-accent-muted: color-mix(in srgb, var(--field-accent) 12%, white);
