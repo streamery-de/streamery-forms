@@ -113,6 +113,7 @@ class Admin
 			'userInfo'             => $this->get_user_data(),
 			'strings'              => Strings::get_strings(),
 			'providersIconBaseUrl'   => defined('GUTENFORM_ASSETS_URL') ? GUTENFORM_ASSETS_URL . '/providers/' : '',
+			'support'              => \Gutenform\Admin\Support::get_script_data(),
 		);
 	}
 

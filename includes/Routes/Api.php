@@ -108,6 +108,7 @@ Route::prefix(
 		$route->post('/settings/skip-first-steps', '\Gutenform\Controllers\Settings\Actions@update_skip_first_steps', $manage_settings);
 		$route->get('/settings/charts-visible', '\Gutenform\Controllers\Settings\Actions@get_charts_visible', $manage_settings);
 		$route->post('/settings/charts-visible', '\Gutenform\Controllers\Settings\Actions@update_charts_visible', $manage_settings);
+		$route->post('/settings/support-dismissed', '\Gutenform\Controllers\Settings\Actions@update_support_dismissed', $manage_settings);
 		$route->get('/settings/admin-bar', '\Gutenform\Controllers\Settings\Actions@get_admin_bar_enabled', $manage_settings);
 		$route->post('/settings/admin-bar', '\Gutenform\Controllers\Settings\Actions@update_admin_bar_enabled', $manage_settings);
 		$route->get('/settings/delete-data-on-uninstall', '\Gutenform\Controllers\Settings\Actions@get_delete_data_on_uninstall', $manage_settings);

@@ -1,5 +1,6 @@
 === Gutenform Builder ===
 Contributors: streamery
+Donate link: https://ko-fi.com/gutenform
 Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
@@ -89,6 +90,12 @@ In `wp-content/uploads/gutenform/`. The directory is protected against script ex
 = Can editors manage submissions without being administrators? =
 
 Yes. Editors can read and manage inbox entries. Settings that affect the whole site — SMTP, provider feeds, mailboxes, CAPTCHA keys — remain administrator-only.
+
+= How can I support Gutenform? =
+
+Gutenform is free, with no pro version and no locked features. The easiest way to help is a review here on WordPress.org or a translation on translate.wordpress.org. If you would like to support development, you can buy a coffee at [ko-fi.com/gutenform](https://ko-fi.com/gutenform).
+
+The plugin shows a small support link on its settings screen and, once, after 50 collected submissions. Administrators can dismiss it, and developers can remove it entirely with `add_filter( 'gutenform/support_links', '__return_empty_array' );`. No request is ever made to a donation platform, and nothing is shown to site visitors.
 
 = What happens to my data if I delete the plugin? =
 

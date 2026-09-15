@@ -1,13 +1,54 @@
 import { __ } from "@/lib/i18n";
 import { InspectorControls } from '@wordpress/block-editor';
-import { TextControl, PanelBody, SelectControl } from '@wordpress/components';
+import { TextControl, PanelBody, SelectControl, ExternalLink, Button } from '@wordpress/components';
 import { type BlockEditProps } from '@wordpress/blocks';
+import { useEffect, useState } from '@wordpress/element';
+import { dismissSupport, getSupportData, hasSupportLinks, onSupportDismissed } from '@/lib/support';
 import { type FormAttributes } from '@/blockTypes/form';
 import skins from '../../skins';
 import { useProviderValidation } from '../../hooks/useProviderValidation';
 import { MissingFieldsDialog } from '../../components/block-atoms/MissingFieldsDialog';
 
 type FormInspectorControlsProps = BlockEditProps<FormAttributes>;
+
+/**
+ * Collapsed "Support Gutenform" panel -- form block only, admins only, gone
+ * for good once dismissed.
+ */
+const SupportPanel = () => {
+	const { links, dismissed: initiallyDismissed } = getSupportData();
+	const [dismissed, setDismissed] = useState(initiallyDismissed);
+
+	useEffect(() => onSupportDismissed(() => setDismissed(true)), []);
+
+	if (dismissed || !hasSupportLinks(links)) {
+		return null;
+	}
+
+	return (
+		<PanelBody title={__('supportGutenform', 'Support Gutenform')} initialOpen={false}>
+			<p>{__('supportText')}</p>
+			{links.kofi && (
+				<p>
+					<ExternalLink href={links.kofi}>{__('supportOnKofi', 'Buy a coffee')}</ExternalLink>
+				</p>
+			)}
+			{links.githubSponsors && (
+				<p>
+					<ExternalLink href={links.githubSponsors}>{__('sponsorOnGithub', 'Sponsor on GitHub')}</ExternalLink>
+				</p>
+			)}
+			{links.review && (
+				<p>
+					<ExternalLink href={links.review}>{__('leaveReview', 'Leave a review')}</ExternalLink>
+				</p>
+			)}
+			<Button variant="link" onClick={dismissSupport} style={{ color: '#757575' }}>
+				{__('dismissSupport', "Don't show again")}
+			</Button>
+		</PanelBody>
+	);
+};
 
 /**
  * The sidebar keeps only identity and presentation. Everything configurable
@@ -55,6 +96,7 @@ export const FormInspectorControls = ({ attributes, setAttributes, clientId }: F
 						__nextHasNoMarginBottom={true}
 					/>
 				</PanelBody>
+				<SupportPanel />
 			</InspectorControls>
 			<MissingFieldsDialog
 				open={shouldShowDialog}

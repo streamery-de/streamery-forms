@@ -11,6 +11,7 @@ use Gutenform\Core\Smtp;
 use Gutenform\Core\EmailLogger;
 use Gutenform\Admin\Menu;
 use Gutenform\Admin\AdminBar;
+use Gutenform\Admin\Support;
 use Gutenform\Assets\Frontend;
 use Gutenform\Assets\Admin;
 use Gutenform\Traits\Base;
@@ -110,6 +111,7 @@ final class Gutenform
 	{
 		if (is_admin()) {
 			Menu::get_instance()->init();
+			Support::get_instance()->init();
 			Admin::get_instance()->bootstrap();
 			Deactivate::get_instance()->init();
 			\Gutenform\Core\Crypto::maybe_show_unavailable_notice();

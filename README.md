@@ -319,7 +319,12 @@ GPLv2 or later
 
 ## Support
 
-For support, please open an issue on the [GitHub repository](https://github.com/yourusername/gutenform).
+For support, please open an issue on the [GitHub repository](https://github.com/gutenform/gutenform-builder).
+
+Gutenform is free, with no pro version and no locked features. If it saves you time, you can support its development:
+
+- ☕ [Buy a coffee on Ko-fi](https://ko-fi.com/gutenform)
+- ⭐ [Leave a review on WordPress.org](https://wordpress.org/support/plugin/gutenform-builder/reviews/#new-post)
 
 ## Documentation
 
