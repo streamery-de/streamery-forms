@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-15T13:38:28+00:00\n"
+"POT-Creation-Date: 2026-09-15T14:18:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: streamery-forms\n"
@@ -24,9 +24,8 @@ msgid "Streamery Forms"
 msgstr ""
 
 #. Plugin URI of the plugin
-#. Author URI of the plugin
 #: streamery-forms.php
-msgid "https://streamery.de"
+msgid "https://github.com/streamery-de/streamery-forms"
 msgstr ""
 
 #. Description of the plugin
@@ -37,6 +36,11 @@ msgstr ""
 #. Author of the plugin
 #: streamery-forms.php
 msgid "Streamery"
+msgstr ""
+
+#. Author URI of the plugin
+#: streamery-forms.php
+msgid "https://streamery.de"
 msgstr ""
 
 #: database/Seeders/DatabaseProviderSeeder.php:49

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Streamery Forms 0.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/streamery-forms\n"
-"POT-Creation-Date: 2026-09-15T13:38:28+00:00\n"
+"POT-Creation-Date: 2026-09-15T14:18:38+00:00\n"
 "PO-Revision-Date: 2025-12-16 14:47+0000\n"
 "Last-Translator: Streamery Forms Team\n"
 "Language-Team: German <de@li.org>\n"
@@ -22,9 +22,8 @@ msgid "Streamery Forms"
 msgstr "Streamery Forms"
 
 #. Plugin URI of the plugin
-#. Author URI of the plugin
 #: streamery-forms.php
-msgid "https://streamery.de"
+msgid "https://github.com/streamery-de/streamery-forms"
 msgstr ""
 
 #. Description of the plugin
@@ -37,6 +36,11 @@ msgstr ""
 #. Author of the plugin
 #: streamery-forms.php
 msgid "Streamery"
+msgstr ""
+
+#. Author URI of the plugin
+#: streamery-forms.php
+msgid "https://streamery.de"
 msgstr ""
 
 #: database/Seeders/DatabaseProviderSeeder.php:49

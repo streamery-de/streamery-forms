@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: Streamery Forms
- * Plugin URI: https://streamery.de
+ * Plugin URI: https://github.com/streamery-de/streamery-forms
  * Description: Build forms in the block editor, collect submissions in a built-in inbox, and forward them by email or webhook.
  * Author: Streamery
  * Author URI: https://streamery.de
