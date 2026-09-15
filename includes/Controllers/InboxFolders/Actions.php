@@ -5,21 +5,21 @@
  *
  * Handles inbox folder-related actions: list, create, update, delete.
  *
- * @package Gutenform\Controllers\InboxFolders
+ * @package StreameryForms\Controllers\InboxFolders
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\InboxFolders;
+namespace StreameryForms\Controllers\InboxFolders;
 
-use Gutenform\Models\InboxFolder;
-use Gutenform\Models\Entries;
+use StreameryForms\Models\InboxFolder;
+use StreameryForms\Models\Entries;
 
 /**
  * Class Actions
  *
  * Handles inbox folder CRUD. Folders are per-mailbox; one tree under system folders.
  *
- * @package Gutenform\Controllers\InboxFolders
+ * @package StreameryForms\Controllers\InboxFolders
  */
 class Actions
 {
@@ -37,7 +37,7 @@ class Actions
 			if (empty($mailbox_id)) {
 				return new \WP_Error(
 					'missing_mailbox_id',
-					__('mailbox_id is required.', 'gutenform-builder'),
+					__('mailbox_id is required.', 'streamery-forms'),
 					array('status' => 400)
 				);
 			}
@@ -46,7 +46,7 @@ class Actions
 			if ($mailbox_id <= 0) {
 				return new \WP_Error(
 					'invalid_mailbox_id',
-					__('Invalid mailbox_id.', 'gutenform-builder'),
+					__('Invalid mailbox_id.', 'streamery-forms'),
 					array('status' => 400)
 				);
 			}
@@ -67,7 +67,7 @@ class Actions
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'folders_retrieval_failed',
-				__('Failed to retrieve folders: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to retrieve folders: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -90,7 +90,7 @@ class Actions
 			if ($mailbox_id <= 0 || empty($name)) {
 				return new \WP_Error(
 					'invalid_params',
-					__('mailbox_id and name are required.', 'gutenform-builder'),
+					__('mailbox_id and name are required.', 'streamery-forms'),
 					array('status' => 400)
 				);
 			}
@@ -100,7 +100,7 @@ class Actions
 				if (!$parent) {
 					return new \WP_Error(
 						'parent_not_found',
-						__('Parent folder not found or does not belong to this mailbox.', 'gutenform-builder'),
+						__('Parent folder not found or does not belong to this mailbox.', 'streamery-forms'),
 						array('status' => 400)
 					);
 				}
@@ -120,13 +120,13 @@ class Actions
 
 			return array(
 				'success' => true,
-				'message' => __('Folder created successfully.', 'gutenform-builder'),
+				'message' => __('Folder created successfully.', 'streamery-forms'),
 				'data'    => $folder,
 			);
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'folder_creation_failed',
-				__('Failed to create folder: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to create folder: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -146,7 +146,7 @@ class Actions
 		if (!$folder) {
 			return new \WP_Error(
 				'folder_not_found',
-				__('Folder not found.', 'gutenform-builder'),
+				__('Folder not found.', 'streamery-forms'),
 				array('status' => 404)
 			);
 		}
@@ -166,7 +166,7 @@ class Actions
 						if (!$parent || (int) $parent->id === (int) $folder->id) {
 							return new \WP_Error(
 								'invalid_parent',
-								__('Invalid parent folder.', 'gutenform-builder'),
+								__('Invalid parent folder.', 'streamery-forms'),
 								array('status' => 400)
 							);
 						}
@@ -185,13 +185,13 @@ class Actions
 
 			return array(
 				'success' => true,
-				'message' => __('Folder updated successfully.', 'gutenform-builder'),
+				'message' => __('Folder updated successfully.', 'streamery-forms'),
 				'data'    => $folder,
 			);
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'folder_update_failed',
-				__('Failed to update folder: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to update folder: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -211,7 +211,7 @@ class Actions
 		if (!$folder) {
 			return new \WP_Error(
 				'folder_not_found',
-				__('Folder not found.', 'gutenform-builder'),
+				__('Folder not found.', 'streamery-forms'),
 				array('status' => 404)
 			);
 		}
@@ -227,12 +227,12 @@ class Actions
 
 			return array(
 				'success' => true,
-				'message' => __('Folder deleted successfully.', 'gutenform-builder'),
+				'message' => __('Folder deleted successfully.', 'streamery-forms'),
 			);
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'folder_deletion_failed',
-				__('Failed to delete folder: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to delete folder: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}

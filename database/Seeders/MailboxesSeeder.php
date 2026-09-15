@@ -3,23 +3,23 @@
 /**
  * Database seeder for mailboxes.
  *
- * @package Gutenform
+ * @package StreameryForms
  * @subpackage Database\Seeders
  * @since 1.0.0
  */
 
-namespace Gutenform\Database\Seeders;
+namespace StreameryForms\Database\Seeders;
 
-use Gutenform\Models\Mailboxes;
+use StreameryForms\Models\Mailboxes;
 
 defined('ABSPATH') || exit;
 
 /**
  * Class MailboxesSeeder
  *
- * Represents the seeder for the 'gutenform_mailboxes' table.
+ * Represents the seeder for the 'streamery_forms_mailboxes' table.
  *
- * @package Gutenform\Database\Seeders
+ * @package StreameryForms\Database\Seeders
  * @since 1.0.0
  */
 class MailboxesSeeder
@@ -41,7 +41,7 @@ class MailboxesSeeder
             // Create default mailbox.
             Mailboxes::create(
                 array(
-                    'title'       => __('Default Mailbox', 'gutenform-builder'),
+                    'title'       => __('Default Mailbox', 'streamery-forms'),
                     'is_default'  => true,
                     'date_created' => $current_date,
                     'user_id'     => null, // Default mailbox is not user-specific.

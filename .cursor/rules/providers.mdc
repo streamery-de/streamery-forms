@@ -1,17 +1,17 @@
 ---
-description: How to add or extend Gutenform providers (PHP, API, Form-Block, field mapping)
+description: How to add or extend Streamery Forms providers (PHP, API, Form-Block, field mapping)
 globs: "includes/Providers/**/*.php","**/providers*.tsx","**/providers*.ts","**/useProviders*","**/ProviderType*"
 alwaysApply: false
 ---
 
-# Provider-System (Gutenform)
+# Provider-System (Streamery Forms)
 
 Provider bestimmen, wohin Formularabsendungen gehen und wie sie verarbeitet werden (z. B. E-Mail, Datenbank, WordPress-Aktionen).
 
 ## Architektur (Kurz)
 
-- **PHP:** Jeder Provider ist eine Klasse unter `includes/Providers/`, erbt von `Gutenform\Providers\AbstractProvider`.
-- **Registrierung:** Provider werden über den Filter `gutenform/available_providers` registriert (Array von Klassennamen). Basis-Provider stehen in `Registry.php` im Array `$base_providers`.
+- **PHP:** Jeder Provider ist eine Klasse unter `includes/Providers/`, erbt von `StreameryForms\Providers\AbstractProvider`.
+- **Registrierung:** Provider werden über den Filter `streamery-forms/available_providers` registriert (Array von Klassennamen). Basis-Provider stehen in `Registry.php` im Array `$base_providers`.
 - **API:** `GET providers/types` liefert alle verfügbaren Provider-Typen (slug, title, icon, fields, ggf. action_types mit field_mapping_slots).
 - **Submit:** `Submissions\Handler` ruft für jeden aktiven Provider-Feed `$provider->process_submission($submission_data, $provider_settings, $form_identifier)` auf.
 
@@ -20,10 +20,10 @@ Provider bestimmen, wohin Formularabsendungen gehen und wie sie verarbeitet werd
 ### 1. PHP-Klasse
 
 - Neue Datei: `includes/Providers/<Name>.php` (z. B. `WordPress.php`).
-- Namespace: `Gutenform\Providers`.
+- Namespace: `StreameryForms\Providers`.
 - Klasse erweitert `AbstractProvider` und implementiert:
   - `get_slug(): string` – eindeutiger Slug (z. B. `wordpress`).
-  - `get_title(): string` – Anzeigename (übersetzt mit `__('...', 'gutenform')`).
+  - `get_title(): string` – Anzeigename (übersetzt mit `__('...', 'streamery-forms')`).
   - `process_submission(array $submission_data, array $provider_settings, string $form_identifier): bool` – Logik der Absendung.
   - `get_settings_fields(): array` – Felddefinitionen für die Admin-Konfiguration (name, label, type, required, default, description, options …).
 - Optional: `get_action_types(): array` – wenn der Provider mehrere Aktionstypen hat (z. B. Login, Registrieren, Post erstellen). Jeder Typ: `slug`, `title`, optional `settings_fields`, `field_mapping_slots` (key, label, required).
@@ -32,7 +32,7 @@ Provider bestimmen, wohin Formularabsendungen gehen und wie sie verarbeitet werd
 ### 2. Registrierung
 
 - In `includes/Providers/Registry.php`: neue Klasse zum Array `$base_providers` hinzufügen (z. B. `WordPress::class`), **oder**
-- Theme/Plugin: Filter `gutenform/available_providers` nutzen und eigene Klasse anhängen. Nur Klassen, die `AbstractProvider` erweitern, werden geladen.
+- Theme/Plugin: Filter `streamery-forms/available_providers` nutzen und eigene Klasse anhängen. Nur Klassen, die `AbstractProvider` erweitern, werden geladen.
 
 ### 3. Icon
 
@@ -45,16 +45,16 @@ Provider bestimmen, wohin Formularabsendungen gehen und wie sie verarbeitet werd
 
 ### 5. Provider-Feed (DB) und Feld-Mapping (Form-Block)
 
-- Tabelle `wp_gutenform_providers`: Einträge mit `provider_type` = Slug, optional `action_type`. **Feld-Mapping** wird nicht in den Provider-Settings gespeichert, sondern pro Formular im **Form-Block-Attribut** `providerFieldMappings` (weil beim Anlegen des Providers die Formulare/Felder noch unbekannt sind). Beim Zuweisen eines Providers zum Formular: Modal zur Feld-Zuordnung; in den Provider-Settings des Form-Blocks: Button „Feld-Mapping bearbeiten“ öffnet dasselbe Modal.
+- Tabelle `wp_streamery_forms_providers`: Einträge mit `provider_type` = Slug, optional `action_type`. **Feld-Mapping** wird nicht in den Provider-Settings gespeichert, sondern pro Formular im **Form-Block-Attribut** `providerFieldMappings` (weil beim Anlegen des Providers die Formulare/Felder noch unbekannt sind). Beim Zuweisen eines Providers zum Formular: Modal zur Feld-Zuordnung; in den Provider-Settings des Form-Blocks: Button „Feld-Mapping bearbeiten“ öffnet dasselbe Modal.
 
 ### 6. Sicherheit & i18n
 
 - Alle Ausgaben escapen; Eingaben sanitizen/validieren.
-- Texte in PHP mit `__('...', 'gutenform')`; neue UI-Texte in `includes/Assets/Strings.php` (camelCase-Keys) und im Frontend mit `__('camelCaseKey')` nutzen.
+- Texte in PHP mit `__('...', 'streamery-forms')`; neue UI-Texte in `includes/Assets/Strings.php` (camelCase-Keys) und im Frontend mit `__('camelCaseKey')` nutzen.
 
 ## Erweiterbarkeit (Theme/Plugin)
 
-- Eigene Provider: Klasse von `AbstractProvider` ableiten und per Filter `gutenform/available_providers` registrieren. Ausführlich: `documentation/content/docs/provider-system.mdx` (wird ergänzt nach Umsetzung des Plans).
+- Eigene Provider: Klasse von `AbstractProvider` ableiten und per Filter `streamery-forms/available_providers` registrieren. Ausführlich: `documentation/content/docs/provider-system.mdx` (wird ergänzt nach Umsetzung des Plans).
 - Keine anderen Registrierungswege – die Registry akzeptiert nur Subklassen von `AbstractProvider`.
 
 ## Referenzen

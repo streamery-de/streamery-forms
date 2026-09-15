@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Gutenform\Assets;
+namespace StreameryForms\Assets;
 
-use Gutenform\Core\BlockScanner;
-use Gutenform\Traits\Base;
-use Gutenform\Libs\Assets;
+use StreameryForms\Core\BlockScanner;
+use StreameryForms\Traits\Base;
+use StreameryForms\Libs\Assets;
 
 defined('ABSPATH') || exit;
 
 /**
  * Class Frontend
  *
- * Handles frontend asset loading for Gutenform, including skin styles.
+ * Handles frontend asset loading for Streamery Forms, including skin styles.
  *
- * @package Gutenform\Assets
+ * @package StreameryForms\Assets
  */
 class Frontend
 {
@@ -23,9 +23,9 @@ class Frontend
 	use Base;
 
 	/**
-	 * Skin style handle for Gutenform.
+	 * Skin style handle for Streamery Forms.
 	 */
-	const SKIN_HANDLE = 'gutenform-skin';
+	const SKIN_HANDLE = 'streamery-forms-skin';
 
 	/**
 	 * Development skin script path.
@@ -68,22 +68,22 @@ class Frontend
 		// per WP.org guideline 8 it must be enqueued, never DOM-injected by our JS.
 		if (!empty($captcha['recaptcha']['enabled']) && !empty($captcha['recaptcha']['siteKey'])) {
 			wp_enqueue_script(
-				'gutenform-recaptcha',
+				'streamery-forms-recaptcha',
 				'https://www.google.com/recaptcha/api.js?render=' . rawurlencode($captcha['recaptcha']['siteKey']),
 				array(),
-				GUTENFORM_VERSION,
+				STREAMERY_FORMS_VERSION,
 				true
 			);
 		}
 
-		// Always set the gutenform object inline so it's available before view scripts run
+		// Always set the streamery-forms object inline so it's available before view scripts run
 		$inline_script = sprintf(
-			'window.gutenform = window.gutenform || {}; window.gutenform.assetsUrl = %s; window.gutenform.pluginUrl = %s; window.gutenform.apiUrl = %s; window.gutenform.nonce = %s; window.gutenform.namespace = %s; window.gutenform.captcha = %s; window.gutenform.strings = %s; window.gutenform.postId = %s;',
-			wp_json_encode(GUTENFORM_ASSETS_URL),
-			wp_json_encode(GUTENFORM_URL),
+			'window.streamery_forms = window.streamery_forms || {}; window.streamery_forms.assetsUrl = %s; window.streamery_forms.pluginUrl = %s; window.streamery_forms.apiUrl = %s; window.streamery_forms.nonce = %s; window.streamery_forms.namespace = %s; window.streamery_forms.captcha = %s; window.streamery_forms.strings = %s; window.streamery_forms.postId = %s;',
+			wp_json_encode(STREAMERY_FORMS_ASSETS_URL),
+			wp_json_encode(STREAMERY_FORMS_URL),
 			wp_json_encode($api_url),
 			wp_json_encode($nonce),
-			wp_json_encode(GUTENFORM_ROUTE_PREFIX),
+			wp_json_encode(STREAMERY_FORMS_ROUTE_PREFIX),
 			wp_json_encode($captcha),
 			wp_json_encode($this->get_frontend_strings()),
 			wp_json_encode(is_singular() ? (int) get_queried_object_id() : 0)
@@ -104,18 +104,18 @@ class Frontend
 		}
 
 		// Also try to localize the view script if it's registered
-		// WordPress generates handles like: gutenform-form-view-script
-		$view_script_handle = 'gutenform-form-view-script';
+		// WordPress generates handles like: streamery-forms-form-view-script
+		$view_script_handle = 'streamery-forms-form-view-script';
 		if (wp_script_is($view_script_handle, 'registered')) {
 			wp_localize_script(
 				$view_script_handle,
-				'gutenform',
+				'streamery_forms',
 				array(
-					'assetsUrl' => GUTENFORM_ASSETS_URL,
-					'pluginUrl' => GUTENFORM_URL,
+					'assetsUrl' => STREAMERY_FORMS_ASSETS_URL,
+					'pluginUrl' => STREAMERY_FORMS_URL,
 					'apiUrl'    => $api_url,
 					'nonce'     => $nonce,
-					'namespace' => GUTENFORM_ROUTE_PREFIX,
+					'namespace' => STREAMERY_FORMS_ROUTE_PREFIX,
 					'captcha'   => $captcha,
 					'strings'   => $this->get_frontend_strings(),
 					'postId'    => is_singular() ? (int) get_queried_object_id() : 0,
@@ -134,17 +134,17 @@ class Frontend
 	private function get_frontend_strings(): array
 	{
 		return array(
-			'cancelUpload'  => __('Cancel upload', 'gutenform-builder'),
-			'removeFile'    => __('Remove file', 'gutenform-builder'),
-			'uploadFailed'  => __('Upload failed', 'gutenform-builder'),
-			'networkError'  => __('Network error', 'gutenform-builder'),
-			'submitSuccess' => __('Thank you! Your submission has been received.', 'gutenform-builder'),
-			'submitError'   => __('Your submission could not be sent. Please try again.', 'gutenform-builder'),
+			'cancelUpload'  => __('Cancel upload', 'streamery-forms'),
+			'removeFile'    => __('Remove file', 'streamery-forms'),
+			'uploadFailed'  => __('Upload failed', 'streamery-forms'),
+			'networkError'  => __('Network error', 'streamery-forms'),
+			'submitSuccess' => __('Thank you! Your submission has been received.', 'streamery-forms'),
+			'submitError'   => __('Your submission could not be sent. Please try again.', 'streamery-forms'),
 		);
 	}
 
 	/**
-	 * Whether the request being rendered contains a Gutenform form.
+	 * Whether the request being rendered contains a Streamery Forms form.
 	 *
 	 * Checks the queried post's content plus any synced pattern it references,
 	 * and errs on the side of loading for non-singular views (archives, widget
@@ -160,7 +160,7 @@ class Frontend
 		 *
 		 * @param bool|null $has_form True/false to force, null to auto-detect.
 		 */
-		$forced = apply_filters('gutenform/frontend/has_form', null);
+		$forced = apply_filters('streamery-forms/frontend/has_form', null);
 		if (is_bool($forced)) {
 			return $forced;
 		}
@@ -176,7 +176,7 @@ class Frontend
 			return true;
 		}
 
-		if (has_block('gutenform/form', $post)) {
+		if (has_block('streamery-forms/form', $post)) {
 			return true;
 		}
 
@@ -184,7 +184,7 @@ class Frontend
 		if (has_block('block', $post)) {
 			foreach (BlockScanner::find_block_refs(parse_blocks($post->post_content)) as $ref_id) {
 				$pattern = get_post($ref_id);
-				if ($pattern instanceof \WP_Post && has_block('gutenform/form', $pattern)) {
+				if ($pattern instanceof \WP_Post && has_block('streamery-forms/form', $pattern)) {
 					return true;
 				}
 			}
@@ -201,7 +201,7 @@ class Frontend
 	 */
 	private function get_public_captcha_config(): array
 	{
-		$settings = get_option('gutenform_captcha_settings', array());
+		$settings = get_option('streamery_forms_captcha_settings', array());
 		$config   = array();
 
 		foreach (array('recaptcha', 'friendlycaptcha') as $provider) {
@@ -224,10 +224,10 @@ class Frontend
 	public function enqueue_editor_skin_styles()
 	{
 		// Get all available skins from assets directory (built skins)
-		$skins_dir = GUTENFORM_DIR . '/assets/blocks/skins';
+		$skins_dir = STREAMERY_FORMS_DIR . '/assets/blocks/skins';
 		if (!is_dir($skins_dir)) {
 			// Fallback to src/skins for development
-			$skins_dir = GUTENFORM_DIR . '/src/skins';
+			$skins_dir = STREAMERY_FORMS_DIR . '/src/skins';
 			if (!is_dir($skins_dir)) {
 				return;
 			}
@@ -248,23 +248,23 @@ class Frontend
 
 				if (!file_exists($css_file) && !$is_built) {
 					// Fallback: check src/skins for development
-					$src_css_file = GUTENFORM_DIR . '/src/skins/' . $skin_dir . '/index.css';
+					$src_css_file = STREAMERY_FORMS_DIR . '/src/skins/' . $skin_dir . '/index.css';
 					if (file_exists($src_css_file)) {
 						$css_file = $src_css_file;
-						$css_url = GUTENFORM_URL . '/src/skins/' . $skin_dir . '/index.css';
+						$css_url = STREAMERY_FORMS_URL . '/src/skins/' . $skin_dir . '/index.css';
 					} else {
 						continue;
 					}
 				} else {
-					$css_url = GUTENFORM_ASSETS_URL . '/blocks/skins/' . $skin_dir . '/index.css';
+					$css_url = STREAMERY_FORMS_ASSETS_URL . '/blocks/skins/' . $skin_dir . '/index.css';
 				}
 
-				$handle = 'gutenform-skin-' . $skin_dir;
+				$handle = 'streamery-forms-skin-' . $skin_dir;
 				wp_enqueue_style(
 					$handle,
 					$css_url,
 					array(),
-					GUTENFORM_VERSION
+					STREAMERY_FORMS_VERSION
 				);
 			}
 		}

@@ -3,13 +3,13 @@
 /**
  * Class Providers
  *
- * Represents the Providers model for Gutenform.
+ * Represents the Providers model for Streamery Forms.
  *
- * @package Gutenform\Models
+ * @package StreameryForms\Models
  * @since 1.0.0
  */
 
-namespace Gutenform\Models;
+namespace StreameryForms\Models;
 
 use Prappo\WpEloquent\Database\Eloquent\Model;
 
@@ -18,9 +18,9 @@ defined('ABSPATH') || exit;
 /**
  * Class Providers
  *
- * Represents the Providers model for Gutenform.
+ * Represents the Providers model for Streamery Forms.
  *
- * @package Gutenform\Models
+ * @package StreameryForms\Models
  */
 class Providers extends Model
 {
@@ -30,7 +30,7 @@ class Providers extends Model
 	 *
 	 * @var string
 	 */
-	protected $table = 'gutenform_providers';
+	protected $table = 'streamery_forms_providers';
 
 	/**
 	 * The primary key for the model.

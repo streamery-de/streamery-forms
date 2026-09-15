@@ -5,15 +5,15 @@
  *
  * Handles provider-related actions such as creation, retrieval, deletion, and update.
  *
- * @package Gutenform\Controllers\Providers
+ * @package StreameryForms\Controllers\Providers
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\Providers;
+namespace StreameryForms\Controllers\Providers;
 
-use Gutenform\Core\Crypto;
-use Gutenform\Models\Providers;
-use Gutenform\Providers\Registry;
+use StreameryForms\Core\Crypto;
+use StreameryForms\Models\Providers;
+use StreameryForms\Providers\Registry;
 
 defined('ABSPATH') || exit;
 
@@ -22,7 +22,7 @@ defined('ABSPATH') || exit;
  *
  * Handles provider-related actions.
  *
- * @package Gutenform\Controllers\Providers
+ * @package StreameryForms\Controllers\Providers
  */
 class Actions
 {
@@ -139,13 +139,13 @@ class Actions
 
 			return array(
 				'success' => true,
-				'message' => __('Provider created successfully.', 'gutenform-builder'),
+				'message' => __('Provider created successfully.', 'streamery-forms'),
 				'data'    => $this->mask_secrets($provider),
 			);
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'provider_creation_failed',
-				__('Failed to create provider: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to create provider: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -196,7 +196,7 @@ class Actions
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'provider_retrieval_failed',
-				__('Failed to retrieve providers: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to retrieve providers: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -218,7 +218,7 @@ class Actions
 			if (! $provider) {
 				return new \WP_Error(
 					'provider_not_found',
-					__('Provider not found.', 'gutenform-builder'),
+					__('Provider not found.', 'streamery-forms'),
 					array('status' => 404)
 				);
 			}
@@ -230,7 +230,7 @@ class Actions
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'provider_retrieval_failed',
-				__('Failed to retrieve provider: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to retrieve provider: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -259,7 +259,7 @@ class Actions
 			if (! $provider) {
 				return new \WP_Error(
 					'provider_not_found',
-					__('Provider not found.', 'gutenform-builder'),
+					__('Provider not found.', 'streamery-forms'),
 					array('status' => 404)
 				);
 			}
@@ -271,7 +271,7 @@ class Actions
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'provider_retrieval_failed',
-				__('Failed to retrieve provider: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to retrieve provider: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -292,7 +292,7 @@ class Actions
 		if (! $provider) {
 			return new \WP_Error(
 				'provider_not_found',
-				__('Provider not found.', 'gutenform-builder'),
+				__('Provider not found.', 'streamery-forms'),
 				array('status' => 404)
 			);
 		}
@@ -331,13 +331,13 @@ class Actions
 
 			return array(
 				'success' => true,
-				'message' => __('Provider updated successfully.', 'gutenform-builder'),
+				'message' => __('Provider updated successfully.', 'streamery-forms'),
 				'data'    => $this->mask_secrets($provider),
 			);
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'provider_update_failed',
-				__('Failed to update provider: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to update provider: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -358,7 +358,7 @@ class Actions
 		if (! $provider) {
 			return new \WP_Error(
 				'provider_not_found',
-				__('Provider not found.', 'gutenform-builder'),
+				__('Provider not found.', 'streamery-forms'),
 				array('status' => 404)
 			);
 		}
@@ -368,12 +368,12 @@ class Actions
 
 			return array(
 				'success' => true,
-				'message' => __('Provider deleted successfully.', 'gutenform-builder'),
+				'message' => __('Provider deleted successfully.', 'streamery-forms'),
 			);
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'provider_deletion_failed',
-				__('Failed to delete provider: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to delete provider: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -388,7 +388,7 @@ class Actions
 	public function get_provider_types(\WP_REST_Request $request)
 	{
 		try {
-			$registry = \Gutenform\Providers\Registry::get_instance();
+			$registry = \StreameryForms\Providers\Registry::get_instance();
 			$providers = $registry->get_all_providers();
 
 			$types = array();
@@ -414,7 +414,7 @@ class Actions
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'provider_types_retrieval_failed',
-				__('Failed to retrieve provider types: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to retrieve provider types: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}

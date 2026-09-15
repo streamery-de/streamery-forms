@@ -4,21 +4,21 @@
  *
  * Handles entry label-related actions such as creation, retrieval, deletion, and update.
  *
- * @package Gutenform\Controllers\EntryLabels
+ * @package StreameryForms\Controllers\EntryLabels
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\EntryLabels;
+namespace StreameryForms\Controllers\EntryLabels;
 
-use Gutenform\Models\EntryLabels;
-use Gutenform\Models\Entries;
+use StreameryForms\Models\EntryLabels;
+use StreameryForms\Models\Entries;
 
 /**
  * Class Actions
  *
  * Handles entry label-related actions.
  *
- * @package Gutenform\Controllers\EntryLabels
+ * @package StreameryForms\Controllers\EntryLabels
  */
 class Actions {
 
@@ -34,7 +34,7 @@ class Actions {
 			if ( EntryLabels::where( 'name', $request->get_param( 'name' ) )->exists() ) {
 				return new \WP_Error(
 					'label_name_exists',
-					__( 'A label with this name already exists.', 'gutenform-builder' ),
+					__( 'A label with this name already exists.', 'streamery-forms' ),
 					array( 'status' => 400 )
 				);
 			}
@@ -49,13 +49,13 @@ class Actions {
 
 			return array(
 				'success' => true,
-				'message' => __( 'Label created successfully.', 'gutenform-builder' ),
+				'message' => __( 'Label created successfully.', 'streamery-forms' ),
 				'data'    => $label,
 			);
 		} catch ( \Exception $e ) {
 			return new \WP_Error(
 				'label_creation_failed',
-				__( 'Failed to create label: ', 'gutenform-builder' ) . $e->getMessage(),
+				__( 'Failed to create label: ', 'streamery-forms' ) . $e->getMessage(),
 				array( 'status' => 500 )
 			);
 		}
@@ -78,7 +78,7 @@ class Actions {
 		} catch ( \Exception $e ) {
 			return new \WP_Error(
 				'label_retrieval_failed',
-				__( 'Failed to retrieve labels: ', 'gutenform-builder' ) . $e->getMessage(),
+				__( 'Failed to retrieve labels: ', 'streamery-forms' ) . $e->getMessage(),
 				array( 'status' => 500 )
 			);
 		}
@@ -99,7 +99,7 @@ class Actions {
 			if ( ! $label ) {
 				return new \WP_Error(
 					'label_not_found',
-					__( 'Label not found.', 'gutenform-builder' ),
+					__( 'Label not found.', 'streamery-forms' ),
 					array( 'status' => 404 )
 				);
 			}
@@ -111,7 +111,7 @@ class Actions {
 		} catch ( \Exception $e ) {
 			return new \WP_Error(
 				'label_retrieval_failed',
-				__( 'Failed to retrieve label: ', 'gutenform-builder' ) . $e->getMessage(),
+				__( 'Failed to retrieve label: ', 'streamery-forms' ) . $e->getMessage(),
 				array( 'status' => 500 )
 			);
 		}
@@ -131,7 +131,7 @@ class Actions {
 		if ( ! $label ) {
 			return new \WP_Error(
 				'label_not_found',
-				__( 'Label not found.', 'gutenform-builder' ),
+				__( 'Label not found.', 'streamery-forms' ),
 				array( 'status' => 404 )
 			);
 		}
@@ -142,7 +142,7 @@ class Actions {
 				if ( EntryLabels::where( 'name', $request->get_param( 'name' ) )->exists() ) {
 					return new \WP_Error(
 						'label_name_exists',
-						__( 'A label with this name already exists.', 'gutenform-builder' ),
+						__( 'A label with this name already exists.', 'streamery-forms' ),
 						array( 'status' => 400 )
 					);
 				}
@@ -162,13 +162,13 @@ class Actions {
 
 			return array(
 				'success' => true,
-				'message' => __( 'Label updated successfully.', 'gutenform-builder' ),
+				'message' => __( 'Label updated successfully.', 'streamery-forms' ),
 				'data'    => $label,
 			);
 		} catch ( \Exception $e ) {
 			return new \WP_Error(
 				'label_update_failed',
-				__( 'Failed to update label: ', 'gutenform-builder' ) . $e->getMessage(),
+				__( 'Failed to update label: ', 'streamery-forms' ) . $e->getMessage(),
 				array( 'status' => 500 )
 			);
 		}
@@ -188,7 +188,7 @@ class Actions {
 		if ( ! $label ) {
 			return new \WP_Error(
 				'label_not_found',
-				__( 'Label not found.', 'gutenform-builder' ),
+				__( 'Label not found.', 'streamery-forms' ),
 				array( 'status' => 404 )
 			);
 		}
@@ -196,7 +196,7 @@ class Actions {
 		try {
 			// Remove all relations before deleting.
 			global $wpdb;
-			$rel_table = $wpdb->prefix . 'gutenform_entry_label_rel';
+			$rel_table = $wpdb->prefix . 'streamery_forms_entry_label_rel';
 			$wpdb->delete( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- relation table has no cache group.
 				$rel_table,
 				array( 'label_id' => $id ),
@@ -207,12 +207,12 @@ class Actions {
 
 			return array(
 				'success' => true,
-				'message' => __( 'Label deleted successfully.', 'gutenform-builder' ),
+				'message' => __( 'Label deleted successfully.', 'streamery-forms' ),
 			);
 		} catch ( \Exception $e ) {
 			return new \WP_Error(
 				'label_deletion_failed',
-				__( 'Failed to delete label: ', 'gutenform-builder' ) . $e->getMessage(),
+				__( 'Failed to delete label: ', 'streamery-forms' ) . $e->getMessage(),
 				array( 'status' => 500 )
 			);
 		}
@@ -234,7 +234,7 @@ class Actions {
 		if ( ! $entry ) {
 			return new \WP_Error(
 				'entry_not_found',
-				__( 'Entry not found.', 'gutenform-builder' ),
+				__( 'Entry not found.', 'streamery-forms' ),
 				array( 'status' => 404 )
 			);
 		}
@@ -242,14 +242,14 @@ class Actions {
 		if ( ! $label ) {
 			return new \WP_Error(
 				'label_not_found',
-				__( 'Label not found.', 'gutenform-builder' ),
+				__( 'Label not found.', 'streamery-forms' ),
 				array( 'status' => 404 )
 			);
 		}
 
 		try {
 			global $wpdb;
-			$rel_table = $wpdb->prefix . 'gutenform_entry_label_rel';
+			$rel_table = $wpdb->prefix . 'streamery_forms_entry_label_rel';
 
 			// Check if relation already exists. Table name is a plugin constant, not user input.
 			$exists = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, PluginCheck.Security.DirectDB.UnescapedDBParameter
@@ -263,7 +263,7 @@ class Actions {
 			if ( $exists ) {
 				return new \WP_Error(
 					'label_already_attached',
-					__( 'Label is already attached to this entry.', 'gutenform-builder' ),
+					__( 'Label is already attached to this entry.', 'streamery-forms' ),
 					array( 'status' => 400 )
 				);
 			}
@@ -280,12 +280,12 @@ class Actions {
 
 			return array(
 				'success' => true,
-				'message' => __( 'Label attached to entry successfully.', 'gutenform-builder' ),
+				'message' => __( 'Label attached to entry successfully.', 'streamery-forms' ),
 			);
 		} catch ( \Exception $e ) {
 			return new \WP_Error(
 				'label_attach_failed',
-				__( 'Failed to attach label: ', 'gutenform-builder' ) . $e->getMessage(),
+				__( 'Failed to attach label: ', 'streamery-forms' ) . $e->getMessage(),
 				array( 'status' => 500 )
 			);
 		}
@@ -303,7 +303,7 @@ class Actions {
 
 		try {
 			global $wpdb;
-			$rel_table = $wpdb->prefix . 'gutenform_entry_label_rel';
+			$rel_table = $wpdb->prefix . 'streamery_forms_entry_label_rel';
 
 			$deleted = $wpdb->delete( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- relation table has no cache group.
 				$rel_table,
@@ -317,19 +317,19 @@ class Actions {
 			if ( ! $deleted ) {
 				return new \WP_Error(
 					'label_not_attached',
-					__( 'Label is not attached to this entry.', 'gutenform-builder' ),
+					__( 'Label is not attached to this entry.', 'streamery-forms' ),
 					array( 'status' => 404 )
 				);
 			}
 
 			return array(
 				'success' => true,
-				'message' => __( 'Label detached from entry successfully.', 'gutenform-builder' ),
+				'message' => __( 'Label detached from entry successfully.', 'streamery-forms' ),
 			);
 		} catch ( \Exception $e ) {
 			return new \WP_Error(
 				'label_detach_failed',
-				__( 'Failed to detach label: ', 'gutenform-builder' ) . $e->getMessage(),
+				__( 'Failed to detach label: ', 'streamery-forms' ) . $e->getMessage(),
 				array( 'status' => 500 )
 			);
 		}

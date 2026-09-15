@@ -10,7 +10,7 @@ import {
 import { toast } from "sonner";
 import { Loader2, Database, X } from "lucide-react";
 
-declare const gutenForm: {
+declare const streameryForms: {
   apiUrl: string;
 };
 
@@ -28,8 +28,8 @@ export function DemoSeedBanner() {
     try {
       setIsChecking(true);
       const response = await fetch(
-        gutenForm.apiUrl +
-          "gutenform/v1/database/check-demo-data"
+        streameryForms.apiUrl +
+          "streamery-forms/v1/database/check-demo-data"
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -48,8 +48,8 @@ export function DemoSeedBanner() {
     setIsLoading(true);
     try {
       const response = await fetch(
-        gutenForm.apiUrl +
-          "gutenform/v1/database/seed-demo",
+        streameryForms.apiUrl +
+          "streamery-forms/v1/database/seed-demo",
         {
           method: "POST",
           headers: {
@@ -105,7 +105,7 @@ export function DemoSeedBanner() {
         <CardDescription className="text-blue-700 dark:text-blue-300">
           Get started quickly by seeding your database with sample mailboxes,
           entries, labels, and providers. This will help you explore the
-          features of Gutenform.
+          features of Streamery Forms.
         </CardDescription>
       </CardHeader>
       <CardContent>

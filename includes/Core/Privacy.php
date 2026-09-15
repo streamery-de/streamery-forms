@@ -3,20 +3,20 @@
 /**
  * Privacy
  *
- * Hooks Gutenform's stored submissions into WordPress' own personal data
+ * Hooks Streamery Forms' stored submissions into WordPress' own personal data
  * exporter and eraser, so a site's existing GDPR export/erasure requests
  * (Tools -> Export/Erase Personal Data) also cover form entries. Without this,
  * a site owner answering a subject access request would silently miss
  * everything this plugin stored.
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
-use Gutenform\Models\Entries;
-use Gutenform\Traits\Base;
+use StreameryForms\Models\Entries;
+use StreameryForms\Traits\Base;
 
 defined('ABSPATH') || exit;
 
@@ -49,8 +49,8 @@ class Privacy
 	 */
 	public function register_exporter($exporters)
 	{
-		$exporters['gutenform-builder'] = array(
-			'exporter_friendly_name' => __('Gutenform form submissions', 'gutenform-builder'),
+		$exporters['streamery-forms'] = array(
+			'exporter_friendly_name' => __('Streamery Forms form submissions', 'streamery-forms'),
 			'callback'               => array($this, 'export_entries'),
 		);
 
@@ -63,8 +63,8 @@ class Privacy
 	 */
 	public function register_eraser($erasers)
 	{
-		$erasers['gutenform-builder'] = array(
-			'eraser_friendly_name' => __('Gutenform form submissions', 'gutenform-builder'),
+		$erasers['streamery-forms'] = array(
+			'eraser_friendly_name' => __('Streamery Forms form submissions', 'streamery-forms'),
 			'callback'             => array($this, 'erase_entries'),
 		);
 
@@ -88,18 +88,18 @@ class Privacy
 		foreach ($entries as $entry) {
 			$data = array(
 				array(
-					'name'  => __('Form', 'gutenform-builder'),
+					'name'  => __('Form', 'streamery-forms'),
 					'value' => (string) $entry->form_identifier,
 				),
 				array(
-					'name'  => __('Submitted on', 'gutenform-builder'),
+					'name'  => __('Submitted on', 'streamery-forms'),
 					'value' => (string) $entry->date_created,
 				),
 			);
 
 			if (! empty($entry->ip_address)) {
 				$data[] = array(
-					'name'  => __('IP address', 'gutenform-builder'),
+					'name'  => __('IP address', 'streamery-forms'),
 					'value' => (string) $entry->ip_address,
 				);
 			}
@@ -112,9 +112,9 @@ class Privacy
 			}
 
 			$export_items[] = array(
-				'group_id'    => 'gutenform-entries',
-				'group_label' => __('Form submissions', 'gutenform-builder'),
-				'item_id'     => 'gutenform-entry-' . (int) $entry->id,
+				'group_id'    => 'streamery-forms-entries',
+				'group_label' => __('Form submissions', 'streamery-forms'),
+				'item_id'     => 'streamery-forms-entry-' . (int) $entry->id,
 				'data'        => $data,
 			);
 		}
@@ -147,7 +147,7 @@ class Privacy
 			} catch (\Exception $e) {
 				$messages[] = sprintf(
 					/* translators: %d: submission ID that could not be deleted. */
-					__('Could not delete form submission %d.', 'gutenform-builder'),
+					__('Could not delete form submission %d.', 'streamery-forms'),
 					(int) $entry->id
 				);
 			}

@@ -19,9 +19,9 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 	} = props.attributes;
 	const className = cn(
 		getFieldClasses(props.attributes),
-		'gutenform-field--radio',
-		`gutenform-field--radio-${styleVariant}`,
-		`gutenform-field--layout-${layout}`
+		'streamery-forms-field--radio',
+		`streamery-forms-field--radio-${styleVariant}`,
+		`streamery-forms-field--layout-${layout}`
 	);
 
 	return (
@@ -38,12 +38,12 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 			aria-describedby={help ? `${id}-help` : undefined}
 			aria-required={required ? 'true' : undefined}
 		>
-			{label && <legend className="gutenform-field__label">{label}</legend>}
+			{label && <legend className="streamery-forms-field__label">{label}</legend>}
 			<div
 				className={cn(
-					'gutenform-radio-options',
-					`gutenform-radio--${styleVariant}`,
-					`gutenform-radio--layout-${layout}`
+					'streamery-forms-radio-options',
+					`streamery-forms-radio--${styleVariant}`,
+					`streamery-forms-radio--layout-${layout}`
 				)}
 			>
 				{options.map((option, index) => {
@@ -53,7 +53,7 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 					return (
 						<label
 							key={index}
-							className="gutenform-radio-option"
+							className="streamery-forms-radio-option"
 							htmlFor={inputId}
 						>
 							<input
@@ -64,12 +64,12 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 								required={required}
 								defaultChecked={checked}
 							/>
-							<span className="gutenform-radio-option-content">
-								<span className="gutenform-radio-option-label">
+							<span className="streamery-forms-radio-option-content">
+								<span className="streamery-forms-radio-option-label">
 									{option.label}
 								</span>
 								{option.description && (
-									<span className="gutenform-radio-option-description">
+									<span className="streamery-forms-radio-option-description">
 										{option.description}
 									</span>
 								)}
@@ -78,7 +78,7 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 					);
 				})}
 			</div>
-			{help && <p className="gutenform-field__help" id={`${id}-help`}>{help}</p>}
+			{help && <p className="streamery-forms-field__help" id={`${id}-help`}>{help}</p>}
 		</fieldset>
 	);
 }

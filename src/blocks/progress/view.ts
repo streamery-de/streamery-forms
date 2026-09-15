@@ -4,18 +4,18 @@
  */
 
 window.addEventListener('DOMContentLoaded', () => {
-	const progressBlocks = document.querySelectorAll<HTMLElement>('.wp-block-gutenform-progress');
+	const progressBlocks = document.querySelectorAll<HTMLElement>('.wp-block-streamery-forms-progress');
 
 	progressBlocks.forEach((progressEl) => {
-		const form = progressEl.closest('.wp-block-gutenform-form');
+		const form = progressEl.closest('.wp-block-streamery-forms-form');
 		if (!form) return;
 
 		const variant = progressEl.getAttribute('data-variant') || 'bubbles';
 
 		function getVisibleStepTitles(): string[] {
-			const steps = form.querySelectorAll<HTMLElement>('.wp-block-gutenform-step');
+			const steps = form.querySelectorAll<HTMLElement>('.wp-block-streamery-forms-step');
 			return Array.from(steps)
-				.filter((step) => !step.classList.contains('gutenform-step--conditional-hidden'))
+				.filter((step) => !step.classList.contains('streamery-forms-step--conditional-hidden'))
 				.map((step, index) => step.getAttribute('data-step-title') || `Step ${index + 1}`);
 		}
 
@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		buildProgressUI(progressEl, variant, stepTitles, 0, totalSteps);
 
 		// Listen for step changes (event already sends visible currentStep and totalSteps)
-		form.addEventListener('gutenform:stepchange', ((e: CustomEvent) => {
+		form.addEventListener('streamery-forms:stepchange', ((e: CustomEvent) => {
 			const { currentStep, totalSteps: eventTotal } = e.detail;
 			const titles = getVisibleStepTitles();
 			buildProgressUI(progressEl, variant, titles, currentStep, eventTotal);
@@ -58,17 +58,17 @@ function buildBarUI(container: HTMLElement, currentStep: number, totalSteps: num
 		: 100;
 
 	const bar = document.createElement('div');
-	bar.className = 'gutenform-progress-bar';
+	bar.className = 'streamery-forms-progress-bar';
 
 	const track = document.createElement('div');
-	track.className = 'gutenform-progress-bar__track';
+	track.className = 'streamery-forms-progress-bar__track';
 
 	const fill = document.createElement('div');
-	fill.className = 'gutenform-progress-bar__fill';
+	fill.className = 'streamery-forms-progress-bar__fill';
 	fill.style.width = `${percent}%`;
 
 	const label = document.createElement('div');
-	label.className = 'gutenform-progress-bar__label';
+	label.className = 'streamery-forms-progress-bar__label';
 	label.textContent = `${percent}%`;
 
 	track.appendChild(fill);
@@ -84,24 +84,24 @@ function buildBubblesUI(
 	totalSteps: number
 ) {
 	const bubbles = document.createElement('div');
-	bubbles.className = 'gutenform-progress-bubbles';
+	bubbles.className = 'streamery-forms-progress-bubbles';
 
 	stepTitles.forEach((title, index) => {
 		const bubble = document.createElement('div');
-		bubble.className = 'gutenform-progress-bubble';
+		bubble.className = 'streamery-forms-progress-bubble';
 
 		if (index < currentStep) {
-			bubble.classList.add('gutenform-progress-bubble--completed');
+			bubble.classList.add('streamery-forms-progress-bubble--completed');
 		} else if (index === currentStep) {
-			bubble.classList.add('gutenform-progress-bubble--active');
+			bubble.classList.add('streamery-forms-progress-bubble--active');
 		}
 
 		const circle = document.createElement('div');
-		circle.className = 'gutenform-progress-bubble__circle';
+		circle.className = 'streamery-forms-progress-bubble__circle';
 		circle.textContent = String(index + 1);
 
 		const titleEl = document.createElement('div');
-		titleEl.className = 'gutenform-progress-bubble__title';
+		titleEl.className = 'streamery-forms-progress-bubble__title';
 		titleEl.textContent = title;
 
 		bubble.appendChild(circle);
@@ -109,9 +109,9 @@ function buildBubblesUI(
 
 		if (index < totalSteps - 1) {
 			const line = document.createElement('div');
-			line.className = 'gutenform-progress-bubble__line';
+			line.className = 'streamery-forms-progress-bubble__line';
 			if (index < currentStep) {
-				line.classList.add('gutenform-progress-bubble__line--completed');
+				line.classList.add('streamery-forms-progress-bubble__line--completed');
 			}
 			bubble.appendChild(line);
 		}

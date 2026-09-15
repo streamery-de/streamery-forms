@@ -1,16 +1,16 @@
 export const allowedBlocks = [
-	'gutenform/input',
-	'gutenform/textarea',
-	'gutenform/select',
-	'gutenform/checkbox',
-	'gutenform/radio',
-	'gutenform/date-time',
-	'gutenform/slider',
-	'gutenform/file',
-	'gutenform/captcha',
-	'gutenform/honeypot',
-	'gutenform/step-navigation',
-	'gutenform/save-progress',
+	'streamery-forms/input',
+	'streamery-forms/textarea',
+	'streamery-forms/select',
+	'streamery-forms/checkbox',
+	'streamery-forms/radio',
+	'streamery-forms/date-time',
+	'streamery-forms/slider',
+	'streamery-forms/file',
+	'streamery-forms/captcha',
+	'streamery-forms/honeypot',
+	'streamery-forms/step-navigation',
+	'streamery-forms/save-progress',
 	'core/columns',
 	'core/column',
 	'core/heading',
@@ -25,4 +25,4 @@ export const allowedBlocks = [
 	'core/group',
 ];
 
-export const prioritizedInserterBlocks = allowedBlocks.filter(block => block.startsWith('gutenform/'));
+export const prioritizedInserterBlocks = allowedBlocks.filter(block => block.startsWith('streamery-forms/'));

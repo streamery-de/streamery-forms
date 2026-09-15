@@ -1,5 +1,5 @@
 /* Input ausblenden – Optik nur über Label::before/::after */
-.gutenform-field--checkbox .gutenform-checkbox-option input[type="checkbox"] {
+.streamery-forms-field--checkbox .streamery-forms-checkbox-option input[type="checkbox"] {
 	position: absolute;
 	opacity: 0;
 	width: 100%;
@@ -11,7 +11,7 @@
 	z-index: 1;
 }
 
-.gutenform-field--checkbox .gutenform-checkbox-option {
+.streamery-forms-field--checkbox .streamery-forms-checkbox-option {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -20,7 +20,7 @@
 	transition: color var(--field-transition, 0.2s cubic-bezier(0.4, 0, 0.2, 1));
 }
 
-.gutenform-field--checkbox .gutenform-checkbox-option-content {
+.streamery-forms-field--checkbox .streamery-forms-checkbox-option-content {
 	display: flex;
 	flex-direction: column;
 	gap: 0.125rem;
@@ -28,33 +28,33 @@
 	z-index: 0;
 }
 
-.gutenform-field--checkbox .gutenform-checkbox-option-label {
+.streamery-forms-field--checkbox .streamery-forms-checkbox-option-label {
 	font-size: inherit;
 }
 
-.gutenform-field--checkbox .gutenform-checkbox-option-description {
+.streamery-forms-field--checkbox .streamery-forms-checkbox-option-description {
 	font-size: 0.8125em;
 	opacity: 0.85;
 }
 
-.gutenform-field--checkbox .gutenform-checkbox-options {
+.streamery-forms-field--checkbox .streamery-forms-checkbox-options {
 	display: flex;
 	gap: 0.5rem;
 }
 
-.gutenform-field--checkbox .gutenform-checkbox-placeholder {
+.streamery-forms-field--checkbox .streamery-forms-checkbox-placeholder {
 	opacity: 0.6;
 	font-style: italic;
 }
 
 /* Layout */
-.gutenform-field--layout-vertical .gutenform-checkbox-options {
+.streamery-forms-field--layout-vertical .streamery-forms-checkbox-options {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 }
 
-.gutenform-field--layout-horizontal .gutenform-checkbox-options {
+.streamery-forms-field--layout-horizontal .streamery-forms-checkbox-options {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -62,7 +62,7 @@
 }
 
 /* Checkbox: Standard */
-.gutenform-field--checkbox-default .gutenform-checkbox-option::before {
+.streamery-forms-field--checkbox-default .streamery-forms-checkbox-option::before {
 	content: "";
 	flex-shrink: 0;
 	width: 1.25rem;
@@ -73,7 +73,7 @@
 	transition: border-color var(--field-transition, 0.2s cubic-bezier(0.4, 0, 0.2, 1)), background-color var(--field-transition, 0.2s cubic-bezier(0.4, 0, 0.2, 1)), box-shadow var(--field-transition, 0.2s cubic-bezier(0.4, 0, 0.2, 1));
 }
 
-.gutenform-field--checkbox-default .gutenform-checkbox-option::after {
+.streamery-forms-field--checkbox-default .streamery-forms-checkbox-option::after {
 	content: "";
 	position: absolute;
 	left: 0.4375rem;
@@ -87,29 +87,29 @@
 	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.gutenform-field--checkbox-default .gutenform-checkbox-option:has(input:checked)::before {
-	background: var(--field-accent, #E71D73);
-	border-color: var(--field-accent, #E71D73);
+.streamery-forms-field--checkbox-default .streamery-forms-checkbox-option:has(input:checked)::before {
+	background: var(--field-accent, #0289d9);
+	border-color: var(--field-accent, #0289d9);
 }
 
-.gutenform-field--checkbox-default .gutenform-checkbox-option:has(input:checked)::after {
+.streamery-forms-field--checkbox-default .streamery-forms-checkbox-option:has(input:checked)::after {
 	transform: translateY(-50%) rotate(45deg) scale(1);
 }
 
-.gutenform-field--checkbox-default .gutenform-checkbox-option:hover::before {
+.streamery-forms-field--checkbox-default .streamery-forms-checkbox-option:hover::before {
 	border-color: color-mix(in srgb, currentColor 50%, transparent);
 }
 
-.gutenform-field--checkbox-default .gutenform-checkbox-option:has(input:focus-visible)::before {
-	box-shadow: var(--field-ring-focus, 0 0 0 3px color-mix(in srgb, #E71D73 25%, transparent));
+.streamery-forms-field--checkbox-default .streamery-forms-checkbox-option:has(input:focus-visible)::before {
+	box-shadow: var(--field-ring-focus, 0 0 0 3px color-mix(in srgb, #0289d9 25%, transparent));
 }
 
 /* Checkbox: Schalter */
-.gutenform-field--checkbox-toggle .gutenform-checkbox-option {
+.streamery-forms-field--checkbox-toggle .streamery-forms-checkbox-option {
 	gap: 0.75rem;
 }
 
-.gutenform-field--checkbox-toggle .gutenform-checkbox-option::before {
+.streamery-forms-field--checkbox-toggle .streamery-forms-checkbox-option::before {
 	content: "";
 	flex-shrink: 0;
 	width: 2.5rem;
@@ -120,7 +120,7 @@
 	transition: background-color var(--field-transition, 0.2s cubic-bezier(0.4, 0, 0.2, 1)), border-color var(--field-transition, 0.2s cubic-bezier(0.4, 0, 0.2, 1));
 }
 
-.gutenform-field--checkbox-toggle .gutenform-checkbox-option::after {
+.streamery-forms-field--checkbox-toggle .streamery-forms-checkbox-option::after {
 	content: "";
 	position: absolute;
 	left: 0.1875rem;
@@ -134,34 +134,34 @@
 	transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.gutenform-field--checkbox-toggle .gutenform-checkbox-option:has(input:checked)::before {
-	background: var(--field-accent, #E71D73);
-	border-color: var(--field-accent, #E71D73);
+.streamery-forms-field--checkbox-toggle .streamery-forms-checkbox-option:has(input:checked)::before {
+	background: var(--field-accent, #0289d9);
+	border-color: var(--field-accent, #0289d9);
 }
 
-.gutenform-field--checkbox-toggle .gutenform-checkbox-option:has(input:checked)::after {
+.streamery-forms-field--checkbox-toggle .streamery-forms-checkbox-option:has(input:checked)::after {
 	transform: translateY(-50%) translateX(1.125rem);
 }
 
-.gutenform-field--checkbox-toggle .gutenform-checkbox-option:has(input:focus-visible)::before {
-	box-shadow: var(--field-ring-focus, 0 0 0 3px color-mix(in srgb, #E71D73 25%, transparent));
+.streamery-forms-field--checkbox-toggle .streamery-forms-checkbox-option:has(input:focus-visible)::before {
+	box-shadow: var(--field-ring-focus, 0 0 0 3px color-mix(in srgb, #0289d9 25%, transparent));
 }
 
 /* Checkbox: Karten & Badges */
-.gutenform-field--checkbox-cards .gutenform-checkbox-option,
-.gutenform-field--checkbox-badges .gutenform-checkbox-option {
+.streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option,
+.streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option {
 	padding: 0.75rem 1rem;
 	border-radius: var(--field-rounded, 0.5rem);
 	border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
 	transition: border-color var(--field-transition, 0.2s cubic-bezier(0.4, 0, 0.2, 1)), box-shadow var(--field-transition, 0.2s cubic-bezier(0.4, 0, 0.2, 1));
 }
 
-.gutenform-field--checkbox-badges .gutenform-checkbox-option {
+.streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option {
 	background: color-mix(in srgb, currentColor 5%, transparent);
 }
 
 /* Cards: einheitlicher Stil – Toggle oben rechts, Abstand, Label + Beschreibung unten links */
-.gutenform-field--checkbox-cards .gutenform-checkbox-option {
+.streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option {
 	background: transparent;
 	display: flex;
 	flex-direction: column;
@@ -170,7 +170,7 @@
 	padding: 0.75rem 1rem;
 }
 
-.gutenform-field--checkbox-cards .gutenform-checkbox-option::before {
+.streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option::before {
 	content: "";
 	position: absolute;
 	top: 0.75rem;
@@ -185,7 +185,7 @@
 	transition: border-color var(--field-transition, 0.2s cubic-bezier(0.4, 0, 0.2, 1)), background-color var(--field-transition, 0.2s cubic-bezier(0.4, 0, 0.2, 1));
 }
 
-.gutenform-field--checkbox-cards .gutenform-checkbox-option::after {
+.streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option::after {
 	content: "";
 	position: absolute;
 	top: 1.3125rem;
@@ -200,16 +200,16 @@
 	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.gutenform-field--checkbox-cards .gutenform-checkbox-option-content {
+.streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option-content {
 	margin-top: auto;
 	text-align: left;
 }
 
-.gutenform-field--checkbox-badges .gutenform-checkbox-option {
+.streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option {
 	align-items: center;
 }
 
-.gutenform-field--checkbox-badges .gutenform-checkbox-option::before {
+.streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option::before {
 	content: "";
 	flex-shrink: 0;
 	width: 1.125rem;
@@ -221,7 +221,7 @@
 	transition: border-color var(--field-transition, 0.2s cubic-bezier(0.4, 0, 0.2, 1)), background-color var(--field-transition, 0.2s cubic-bezier(0.4, 0, 0.2, 1));
 }
 
-.gutenform-field--checkbox-badges .gutenform-checkbox-option::after {
+.streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option::after {
 	content: "";
 	position: absolute;
 	left: 0.40625rem;
@@ -235,47 +235,47 @@
 	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.gutenform-field--checkbox-cards .gutenform-checkbox-option:has(input:checked)::after {
+.streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option:has(input:checked)::after {
 	transform: translate(50%, -50%) rotate(45deg) scale(1);
 }
 
-.gutenform-field--checkbox-cards .gutenform-checkbox-option:has(input:checked)::before {
-	background: var(--field-accent, #E71D73);
-	border-color: var(--field-accent, #E71D73);
+.streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option:has(input:checked)::before {
+	background: var(--field-accent, #0289d9);
+	border-color: var(--field-accent, #0289d9);
 }
 
-.gutenform-field--checkbox-cards .gutenform-checkbox-option:has(input:checked),
-.gutenform-field--checkbox-badges .gutenform-checkbox-option:has(input:checked) {
-	border-color: var(--field-accent, #E71D73);
-	box-shadow: 0 0 0 1px var(--field-accent, #E71D73);
+.streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option:has(input:checked),
+.streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option:has(input:checked) {
+	border-color: var(--field-accent, #0289d9);
+	box-shadow: 0 0 0 1px var(--field-accent, #0289d9);
 }
 
-.gutenform-field--checkbox-badges .gutenform-checkbox-option:has(input:checked) {
-	background: var(--field-accent-muted, color-mix(in srgb, #E71D73 12%, white));
+.streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option:has(input:checked) {
+	background: var(--field-accent-muted, color-mix(in srgb, #0289d9 12%, white));
 }
 
-.gutenform-field--checkbox-cards .gutenform-checkbox-option:has(input:checked) {
+.streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option:has(input:checked) {
 	background: transparent;
 }
 
-.gutenform-field--checkbox-badges .gutenform-checkbox-option:has(input:checked)::before {
-	background: var(--field-accent, #E71D73);
-	border-color: var(--field-accent, #E71D73);
+.streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option:has(input:checked)::before {
+	background: var(--field-accent, #0289d9);
+	border-color: var(--field-accent, #0289d9);
 }
 
-.gutenform-field--checkbox-badges .gutenform-checkbox-option:has(input:checked)::after {
+.streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option:has(input:checked)::after {
 	transform: translateY(-50%) rotate(45deg) scale(1);
 }
 
-.gutenform-field--checkbox-badges .gutenform-checkbox-option {
+.streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option {
 	border-radius: 9999px;
 }
 
-.gutenform-field--checkbox-badges .gutenform-checkbox-option::after {
+.streamery-forms-field--checkbox-badges .streamery-forms-checkbox-option::after {
 	left: 1.3125rem;
 }
 
-.gutenform-field--checkbox-cards .gutenform-checkbox-options {
+.streamery-forms-field--checkbox-cards .streamery-forms-checkbox-options {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -283,12 +283,12 @@
 	width: 100%;
 }
 
-.gutenform-field--checkbox-cards .gutenform-checkbox-option {
+.streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option {
 	flex: 1 1 12rem;
 	min-width: 12rem;
 }
 
-.gutenform-field--checkbox-badges .gutenform-checkbox-options {
+.streamery-forms-field--checkbox-badges .streamery-forms-checkbox-options {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;

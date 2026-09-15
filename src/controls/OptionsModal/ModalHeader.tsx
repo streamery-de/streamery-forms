@@ -12,9 +12,9 @@ interface ModalHeaderProps {
 
 export const ModalHeader = ({ onClose, syncLabelValue, onSyncChange }: ModalHeaderProps) => {
 	return (
-		<div className="gutenform-options-modal-header">
-			<div className="gutenform-options-modal-header__content">
-				<h2 className="gutenform-options-modal-header__title">{__('manageOptions')}</h2>
+		<div className="streamery-forms-options-modal-header">
+			<div className="streamery-forms-options-modal-header__content">
+				<h2 className="streamery-forms-options-modal-header__title">{__('manageOptions')}</h2>
 				<CheckboxControl
 					label={__('syncLabelAndValue')}
 					checked={syncLabelValue}

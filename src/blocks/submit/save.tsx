@@ -21,8 +21,8 @@ export default function save(props: BlockSaveProps<SubmitAttributes>) {
 	return (
 		<div { ...useBlockProps.save() }>
 			<button type="submit" id={props.attributes.id}>
-				<span className="gutenform-submit-spinner" aria-hidden="true" />
-				<span className="gutenform-submit-text">{props.attributes.label}</span>
+				<span className="streamery-forms-submit-spinner" aria-hidden="true" />
+				<span className="streamery-forms-submit-text">{props.attributes.label}</span>
 			</button>
 		</div>
 	);

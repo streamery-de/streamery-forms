@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gutenform/submit",
+	"name": "streamery-forms/submit",
 	"version": "0.1.0",
 	"title": "Submit",
 	"category": "widgets",
 	"icon": "marker",
-	"description": "Submit button block for Gutenform.",
-	"ancestor": ["gutenform/form"],
+	"description": "Submit button block for Streamery Forms.",
+	"ancestor": ["streamery-forms/form"],
 	"example": {},
 	"attributes": {
 		"style": {
@@ -27,7 +27,7 @@
 		"html": false,
 		"align": true
 	},
-	"textdomain": "gutenform-builder",
+	"textdomain": "streamery-forms",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

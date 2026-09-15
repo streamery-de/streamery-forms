@@ -34,7 +34,7 @@ export default function Edit(props: BlockEditProps<CaptchaAttributes>) {
 							{ label: 'Google reCAPTCHA', value: 'recaptcha' },
 						]}
 						onChange={(value) => setAttributes({ captchaType: value as 'friendlycaptcha' | 'recaptcha' })}
-						help={__('captchaKeysHint', 'Site key and secret are configured once under Gutenform → Settings, not per block.')}
+						help={__('captchaKeysHint', 'Site key and secret are configured once under Streamery Forms → Settings, not per block.')}
 					/>
 				</PanelBody>
 			</InspectorControls>
@@ -45,7 +45,7 @@ export default function Edit(props: BlockEditProps<CaptchaAttributes>) {
 				onHelpChange={(help) => setAttributes({ help })}
 				attributes={attributes}
 			>
-				<div className="gutenform-captcha-placeholder" style={{ padding: '20px', border: '2px dashed #ccc', textAlign: 'center' }}>
+				<div className="streamery-forms-captcha-placeholder" style={{ padding: '20px', border: '2px dashed #ccc', textAlign: 'center' }}>
 					{attributes.captchaType === 'friendlycaptcha' ? '🔒 FriendlyCaptcha' : '🛡️ Google reCAPTCHA'}
 					<p style={{ fontSize: '12px', color: '#666', marginTop: '8px' }}>
 						{__('captchaEditorPlaceholder', 'CAPTCHA will be displayed here on the frontend')}

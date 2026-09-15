@@ -1,12 +1,12 @@
-.block-editor-block-icon.has-colors .gutenform-block-icon svg,
-.components-button .gutenform-block-icon svg {
+.block-editor-block-icon.has-colors .streamery-forms-block-icon svg,
+.components-button .streamery-forms-block-icon svg {
     fill: none !important;
     width: 100%;
     height: 100%;
 }
 
-.gutenform-block-icon:not(.clean) {
-    background: linear-gradient(to bottom, #E71D73, #A0174F);
+.streamery-forms-block-icon:not(.clean) {
+    background: linear-gradient(130deg, #0289d9, #18d94b);
     color: white;
     /* border-radius: 50%; */
     display: flex;
@@ -21,7 +21,7 @@
     mask-size: 100% 100%;
 }
 
-.block-editor-list-view-tree .gutenform-block-icon:not(.clean) {
+.block-editor-list-view-tree .streamery-forms-block-icon:not(.clean) {
     width: 20px;
     height: 20px;
     min-width: 20px;
@@ -29,7 +29,7 @@
     padding: 4px;
 }
 
-.gutenform-block-icon.clean {
+.streamery-forms-block-icon.clean {
     display: flex;
     align-items: center;
     justify-content: center;

@@ -31,8 +31,8 @@ export const CopyableFieldControl = ({
 			) : (
 				<CopyableTextControl value={value} label={label} />
 			)}
-			<div className="gutenform-copyable-field-control__toggle-wrapper">
-				<div className="gutenform-copyable-field-control__toggle gutenform-custom-name-toggle">
+			<div className="streamery-forms-copyable-field-control__toggle-wrapper">
+				<div className="streamery-forms-copyable-field-control__toggle streamery-forms-custom-name-toggle">
 					<ToggleControl
 						label={customToggleLabel}
 						checked={useCustom}

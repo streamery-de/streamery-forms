@@ -3,15 +3,15 @@
 /**
  * Database seeder for default Database Provider.
  *
- * @package Gutenform
+ * @package StreameryForms
  * @subpackage Database\Seeders
  * @since 1.0.0
  */
 
-namespace Gutenform\Database\Seeders;
+namespace StreameryForms\Database\Seeders;
 
-use Gutenform\Models\Providers;
-use Gutenform\Models\Mailboxes;
+use StreameryForms\Models\Providers;
+use StreameryForms\Models\Mailboxes;
 
 defined('ABSPATH') || exit;
 
@@ -20,7 +20,7 @@ defined('ABSPATH') || exit;
  *
  * Creates the default Database Provider entry in the database.
  *
- * @package Gutenform\Database\Seeders
+ * @package StreameryForms\Database\Seeders
  * @since 1.0.0
  */
 class DatabaseProviderSeeder
@@ -46,12 +46,12 @@ class DatabaseProviderSeeder
             // Create default Database Provider.
             Providers::create(
                 array(
-                    'name'            => __('Database Provider (Default)', 'gutenform-builder'),
+                    'name'            => __('Database Provider (Default)', 'streamery-forms'),
                     'provider_type'   => 'database',
                     'form_identifier' => null, // Global provider
                     'settings'        => array(
                         'mailbox_id'  => $mailbox_id,
-                        'subject'     => __('New Form Submission: {form_title}', 'gutenform-builder'),
+                        'subject'     => __('New Form Submission: {form_title}', 'streamery-forms'),
                         'from_email'  => get_option('admin_email'),
                     ),
                     'is_active'      => true,

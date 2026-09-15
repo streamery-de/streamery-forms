@@ -1,4 +1,4 @@
-.gutenform-name-display__container {
+.streamery-forms-name-display__container {
 	display: flex;
 	align-items: stretch;
 	width: 100%;
@@ -8,7 +8,7 @@
 	overflow: hidden;
 }
 
-.gutenform-name-display__input {
+.streamery-forms-name-display__input {
 	flex: 1;
 	border: none;
 	padding: 6px 8px;
@@ -23,7 +23,7 @@
 	min-width: 0;
 }
 
-.gutenform-name-display__button {
+.streamery-forms-name-display__button {
 	border-radius: 0;
 	border-left: 1px solid #ddd;
 	padding: 6px 12px;
@@ -39,8 +39,8 @@
 	transition: all 0.2s ease;
 }
 
-.gutenform-name-display__button--copied {
-	background: linear-gradient(to bottom, #E71D73, #A0174F);
+.streamery-forms-name-display__button--copied {
+	background: linear-gradient(130deg, #0289d9, #18d94b);
 	color: #fff;
 }
 

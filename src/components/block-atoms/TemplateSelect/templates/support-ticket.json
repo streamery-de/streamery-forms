@@ -2,8 +2,8 @@
   "labelKey": "templateSupportTicket",
   "category": "advanced",
   "value": [
-    ["gutenform/input", { "type": "text", "label": { "__": "customerIdOrderNumber", "fallback": "Kunden-ID / Bestellnummer" }, "required": false }],
-    ["gutenform/select", {
+    ["streamery-forms/input", { "type": "text", "label": { "__": "customerIdOrderNumber", "fallback": "Kunden-ID / Bestellnummer" }, "required": false }],
+    ["streamery-forms/select", {
       "label": { "__": "problemCategory", "fallback": "Kategorie des Problems" },
       "options": [
         { "label": { "__": "technical", "fallback": "Technisch" }, "value": "technical" },
@@ -12,7 +12,7 @@
       ],
       "required": true
     }],
-    ["gutenform/select", {
+    ["streamery-forms/select", {
       "label": { "__": "urgency", "fallback": "Dringlichkeit" },
       "options": [
         { "label": { "__": "low", "fallback": "Niedrig" }, "value": "low" },
@@ -21,9 +21,9 @@
       ],
       "required": true
     }],
-    ["gutenform/textarea", { "label": { "__": "problemDescription", "fallback": "Problembeschreibung" }, "required": true, "rows": 5 }],
-    ["gutenform/file", { "label": { "__": "screenshotUpload", "fallback": "Screenshot" }, "required": false, "acceptTypes": "image/*" }],
-    ["gutenform/submit", {}],
-    ["gutenform/success", {}]
+    ["streamery-forms/textarea", { "label": { "__": "problemDescription", "fallback": "Problembeschreibung" }, "required": true, "rows": 5 }],
+    ["streamery-forms/file", { "label": { "__": "screenshotUpload", "fallback": "Screenshot" }, "required": false, "acceptTypes": "image/*" }],
+    ["streamery-forms/submit", {}],
+    ["streamery-forms/success", {}]
   ]
 }

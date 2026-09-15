@@ -1,24 +1,24 @@
 /* noUiSlider base styles – customize in skin (e.g. default) */
 @import 'nouislider/dist/nouislider.css';
 
-.gutenform-field .gutenform-slider-wrapper {
+.streamery-forms-field .streamery-forms-slider-wrapper {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
 	flex-wrap: wrap;
 }
 
-.gutenform-field .gutenform-slider {
+.streamery-forms-field .streamery-forms-slider {
 	flex: 1;
 	min-width: 120px;
 	min-height: 18px;
 }
 
-.gutenform-field .gutenform-slider.gutenform-slider--editor {
+.streamery-forms-field .streamery-forms-slider.streamery-forms-slider--editor {
 	min-height: 18px;
 }
 
 /* Vertical slider needs explicit height (set in edit/save or via options) */
-.gutenform-field .gutenform-slider[style*='height'] {
+.streamery-forms-field .streamery-forms-slider[style*='height'] {
 	flex: 0 0 auto;
 }

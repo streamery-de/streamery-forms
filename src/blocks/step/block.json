@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gutenform/step",
+	"name": "streamery-forms/step",
 	"version": "0.1.0",
 	"title": "Step",
 	"category": "widgets",
 	"icon": "editor-ol",
-	"description": "Step container block for multi-step forms in Gutenform.",
-	"parent": ["gutenform/form"],
+	"description": "Step container block for multi-step forms in Streamery Forms.",
+	"parent": ["streamery-forms/form"],
 	"example": {},
 	"attributes": {
 		"title": {
@@ -23,7 +23,7 @@
 			"default": null
 		}
 	},
-	"usesContext": ["gutenform/activeStep"],
+	"usesContext": ["streamery-forms/activeStep"],
 	"supports": {
 		"html": false,
 		"spacing": {
@@ -48,7 +48,7 @@
 			}
 		}
 	},
-	"textdomain": "gutenform-builder",
+	"textdomain": "streamery-forms",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

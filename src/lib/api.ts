@@ -1,13 +1,13 @@
 /**
- * API utility functions for Gutenform
+ * API utility functions for Streamery Forms
  */
 
-declare const gutenForm: {
+declare const streameryForms: {
   apiUrl: string;
 };
 
-const API_BASE_URL = gutenForm?.apiUrl || '';
-const API_NAMESPACE = 'gutenform/v1';
+const API_BASE_URL = streameryForms?.apiUrl || '';
+const API_NAMESPACE = 'streamery-forms/v1';
 
 /**
  * Get the full API URL for an endpoint.
@@ -50,7 +50,7 @@ export async function apiRequest<T = any>(
   const url = getApiUrl(endpoint);
   
   // Get WordPress REST API nonce
-  const nonce = (window as any).wpApiSettings?.nonce || (window as any).gutenForm?.nonce || '';
+  const nonce = (window as any).wpApiSettings?.nonce || (window as any).streameryForms?.nonce || '';
   
   const defaultHeaders: HeadersInit = {
     'Content-Type': 'application/json',

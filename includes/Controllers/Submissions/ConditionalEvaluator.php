@@ -6,11 +6,11 @@
  * Evaluates provider conditional_show rules against submission data.
  * Mirrors the frontend logic in view.ts (evaluateSingleCondition / evaluateConditionConfig).
  *
- * @package Gutenform\Controllers\Submissions
+ * @package StreameryForms\Controllers\Submissions
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\Submissions;
+namespace StreameryForms\Controllers\Submissions;
 
 defined('ABSPATH') || exit;
 

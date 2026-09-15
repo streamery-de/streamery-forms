@@ -63,18 +63,18 @@ export function ProvidersSection({ formClientId, attributes, setAttributes, setP
 
 	return (
 		<>
-			<h3 className="gutenform-form-settings__section-title">
+			<h3 className="streamery-forms-form-settings__section-title">
 				{__('formSettingsProviders')}
 			</h3>
-			<p className="gutenform-form-settings__section-description">
+			<p className="streamery-forms-form-settings__section-description">
 				{__('formSettingsProvidersDescription')}
 			</p>
 
 			{loading && (
-				<p className="gutenform-form-settings__section-description">{__('loadingProviders')}</p>
+				<p className="streamery-forms-form-settings__section-description">{__('loadingProviders')}</p>
 			)}
 			{error && (
-				<p className="gutenform-form-settings__section-description">
+				<p className="streamery-forms-form-settings__section-description">
 					{__('error')}: {error.message}
 				</p>
 			)}
@@ -82,14 +82,14 @@ export function ProvidersSection({ formClientId, attributes, setAttributes, setP
 			{requiredFeeds.map((feed) => (
 				<div
 					key={feed.id}
-					className="gutenform-form-settings__provider-row gutenform-form-settings__provider-row--locked"
+					className="streamery-forms-form-settings__provider-row streamery-forms-form-settings__provider-row--locked"
 				>
-					<div className="gutenform-form-settings__provider-row-header">
-						<div className="gutenform-form-settings__provider-identity">
-							<div className="gutenform-form-settings__provider-name">{feed.name}</div>
-							<div className="gutenform-form-settings__provider-meta">{providerMeta(feed)}</div>
+					<div className="streamery-forms-form-settings__provider-row-header">
+						<div className="streamery-forms-form-settings__provider-identity">
+							<div className="streamery-forms-form-settings__provider-name">{feed.name}</div>
+							<div className="streamery-forms-form-settings__provider-meta">{providerMeta(feed)}</div>
 						</div>
-						<span className="gutenform-form-settings__lock">
+						<span className="streamery-forms-form-settings__lock">
 							<Lock size={13} aria-hidden="true" />
 							{__('alwaysOn')}
 						</span>
@@ -110,14 +110,14 @@ export function ProvidersSection({ formClientId, attributes, setAttributes, setP
 						key={feed.id}
 						className={
 							enabled
-								? 'gutenform-form-settings__provider-row'
-								: 'gutenform-form-settings__provider-row gutenform-form-settings__provider-row--off'
+								? 'streamery-forms-form-settings__provider-row'
+								: 'streamery-forms-form-settings__provider-row streamery-forms-form-settings__provider-row--off'
 						}
 					>
-						<div className="gutenform-form-settings__provider-row-header">
-							<div className="gutenform-form-settings__provider-identity">
-								<div className="gutenform-form-settings__provider-name">{feed.name}</div>
-								<div className="gutenform-form-settings__provider-meta">{providerMeta(feed)}</div>
+						<div className="streamery-forms-form-settings__provider-row-header">
+							<div className="streamery-forms-form-settings__provider-identity">
+								<div className="streamery-forms-form-settings__provider-name">{feed.name}</div>
+								<div className="streamery-forms-form-settings__provider-meta">{providerMeta(feed)}</div>
 							</div>
 							<ToggleControl
 								label={__('enableProvider')}
@@ -129,7 +129,7 @@ export function ProvidersSection({ formClientId, attributes, setAttributes, setP
 						</div>
 
 						{enabled && (
-							<div className="gutenform-form-settings__provider-extras">
+							<div className="streamery-forms-form-settings__provider-extras">
 								<Button variant="secondary" onClick={() => setEditingProviderId(feed.id)}>
 									{__('editTemplate')}
 								</Button>
@@ -164,7 +164,7 @@ export function ProvidersSection({ formClientId, attributes, setAttributes, setP
 			})}
 
 			{!loading && !error && optionalFeeds.length === 0 && (
-				<p className="gutenform-form-settings__section-description">{__('noOptionalProviders')}</p>
+				<p className="streamery-forms-form-settings__section-description">{__('noOptionalProviders')}</p>
 			)}
 
 			<FullscreenTemplateEditor

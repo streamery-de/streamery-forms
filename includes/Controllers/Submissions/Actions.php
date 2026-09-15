@@ -4,15 +4,15 @@
  *
  * REST API controller for form submission handling.
  *
- * @package Gutenform\Controllers\Submissions
+ * @package StreameryForms\Controllers\Submissions
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\Submissions;
+namespace StreameryForms\Controllers\Submissions;
 
-use Gutenform\Core\FormRegistry;
-use Gutenform\Core\SpamProtection;
-use Gutenform\Core\UploadTokens;
+use StreameryForms\Core\FormRegistry;
+use StreameryForms\Core\SpamProtection;
+use StreameryForms\Core\UploadTokens;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -54,7 +54,7 @@ class Actions {
 		if ( ! wp_verify_nonce( $nonce, 'wp_rest' ) ) {
 			return new \WP_Error(
 				'invalid_nonce',
-				__( 'Invalid nonce.', 'gutenform-builder' ),
+				__( 'Invalid nonce.', 'streamery-forms' ),
 				array( 'status' => 403 )
 			);
 		}
@@ -71,7 +71,7 @@ class Actions {
 		if ( empty( $form_identifier ) ) {
 			return new \WP_Error(
 				'missing_form_identifier',
-				__( 'Form identifier is missing.', 'gutenform-builder' ),
+				__( 'Form identifier is missing.', 'streamery-forms' ),
 				array( 'status' => 400 )
 			);
 		}
@@ -84,7 +84,7 @@ class Actions {
 		if ( null === $form_config ) {
 			return new \WP_Error(
 				'unknown_form',
-				__( 'This form could not be found.', 'gutenform-builder' ),
+				__( 'This form could not be found.', 'streamery-forms' ),
 				array( 'status' => 404 )
 			);
 		}
@@ -102,7 +102,7 @@ class Actions {
 		if ( ! $spam_protection->verify_captcha( $submission_data, $form_settings ) ) {
 			return new \WP_Error(
 				'captcha_failed',
-				__( 'CAPTCHA verification failed. Please try again.', 'gutenform-builder' ),
+				__( 'CAPTCHA verification failed. Please try again.', 'streamery-forms' ),
 				array( 'status' => 400 )
 			);
 		}
@@ -123,7 +123,7 @@ class Actions {
 		if ( ! empty( $validation['errors'] ) ) {
 			return new \WP_Error(
 				'validation_failed',
-				__( 'Please check the highlighted fields.', 'gutenform-builder' ),
+				__( 'Please check the highlighted fields.', 'streamery-forms' ),
 				array(
 					'status'       => 422,
 					'field_errors' => $validation['errors'],
@@ -141,13 +141,13 @@ class Actions {
 		if ( $result['success'] ) {
 			return array(
 				'success' => true,
-				'message' => __( 'Form submitted successfully.', 'gutenform-builder' ),
+				'message' => __( 'Form submitted successfully.', 'streamery-forms' ),
 				'data'    => $result,
 			);
 		} else {
 			return new \WP_Error(
 				'submission_failed',
-				__( 'Form submission failed.', 'gutenform-builder' ),
+				__( 'Form submission failed.', 'streamery-forms' ),
 				array(
 					'status'  => 500,
 					'errors'  => $result['errors'],

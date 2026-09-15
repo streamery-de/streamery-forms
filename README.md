@@ -1,14 +1,14 @@
 <div align="center">
-  <img src="readme-assets/logo-color.svg" alt="Gutenform Logo" width="400">
+  <img src="readme-assets/logo-color.svg" alt="Streamery Forms Logo" width="400">
 </div>
 
-# Gutenform
+# Streamery Forms
 
-A modern WordPress form builder plugin built with Gutenberg blocks. Create beautiful, responsive forms directly in the WordPress block editor and manage all submissions through an intuitive inbox interface.
+A modern WordPress form builder plugin for the block editor. Create beautiful, responsive forms directly in the WordPress block editor and manage all submissions through an intuitive inbox interface.
 
 ## Features
 
-### 🎨 Gutenberg Block-Based Forms
+### 🎨 Block-Based Forms
 - **Form Block**: Create form containers with customizable settings and provider configuration
 - **Input Block**: Text, email, and other input field types (with field transformations)
 - **Textarea Block**: Multi-line text input fields
@@ -69,7 +69,7 @@ A modern WordPress form builder plugin built with Gutenberg blocks. Create beaut
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/gutenform.git
+git clone https://github.com/streamery-de/streamery-forms.git
 ```
 
 2. Install dependencies:
@@ -112,7 +112,7 @@ npm run build
 
 ### Managing Submissions
 
-1. Navigate to **Gutenform > Inbox** in the WordPress admin (or use the Admin Bar shortcut if enabled)
+1. Navigate to **Streamery Forms > Inbox** in the WordPress admin (or use the Admin Bar shortcut if enabled)
 2. View all form submissions in the inbox interface
 3. Use filters to:
    - Filter by form identifier
@@ -124,23 +124,23 @@ npm run build
 
 ### Configuring Providers & Email
 
-1. Go to **Gutenform > Settings** (then **Providers** in the sidebar)
+1. Go to **Streamery Forms > Settings** (then **Providers** in the sidebar)
 2. Configure your Email provider settings
-3. Optionally configure **SMTP** (Gutenform > Settings > SMTP) for reliable delivery
+3. Optionally configure **SMTP** (Streamery Forms > Settings > SMTP) for reliable delivery
 4. Configure your Database provider settings
 5. Enable or disable providers as needed
 6. View **Email Logs** to debug sent emails
 
 ### Managing Mailboxes
 
-1. Navigate to **Gutenform > Settings > Mailboxes**
+1. Navigate to **Streamery Forms > Settings > Mailboxes**
 2. Create and manage mailboxes for organizing forms
 3. Assign forms to specific mailboxes
 
 ### Forms Usage & Labels
 
-1. Go to **Gutenform > Forms** to see where forms are used (posts/pages with embedded forms)
-2. Go to **Gutenform > Settings > Labels** to create custom labels with colors
+1. Go to **Streamery Forms > Forms** to see where forms are used (posts/pages with embedded forms)
+2. Go to **Streamery Forms > Settings > Labels** to create custom labels with colors
 3. Apply labels to submissions in the Inbox for better organization
 
 ## Development
@@ -181,7 +181,7 @@ npm run build
 ### Project Structure
 
 ```
-gutenform/
+streamery-forms/
 ├── assets/              # Built assets (generated)
 ├── config/             # Plugin configuration
 ├── database/           # Database migrations and seeders
@@ -207,7 +207,7 @@ gutenform/
 
 ### REST API Endpoints
 
-All API endpoints are prefixed with `/gutenform/v1/`
+All API endpoints are prefixed with `/streamery-forms/v1/`
 
 #### Submissions & Entries
 - `POST /submit` - Submit a form (frontend)
@@ -270,7 +270,7 @@ All API endpoints are prefixed with `/gutenform/v1/`
 - `GET /email-templates/{name}` - Get template
 - `POST /email-templates/preview` - Preview template
 
-## Extending Gutenform
+## Extending Streamery Forms
 
 ### Creating Custom Providers
 
@@ -281,7 +281,7 @@ You can create custom providers to handle form submissions in different ways:
 
 namespace YourNamespace\Providers;
 
-use Gutenform\Providers\AbstractProvider;
+use StreameryForms\Providers\AbstractProvider;
 
 class CustomProvider extends AbstractProvider {
     
@@ -303,7 +303,7 @@ class CustomProvider extends AbstractProvider {
 Then register your provider:
 
 ```php
-add_filter( 'gutenform/available_providers', function( $providers ) {
+add_filter( 'streamery-forms/available_providers', function( $providers ) {
     $providers[] = YourNamespace\Providers\CustomProvider::class;
     return $providers;
 } );
@@ -319,7 +319,12 @@ GPLv2 or later
 
 ## Support
 
-For support, please open an issue on the [GitHub repository](https://github.com/yourusername/gutenform).
+For support, please open an issue on the [GitHub repository](https://github.com/streamery-de/streamery-forms).
+
+Streamery Forms is free, with no pro version and no locked features. If it saves you time, you can support its development:
+
+- ☕ [Buy a coffee on Ko-fi](https://ko-fi.com/streamery)
+- ⭐ [Leave a review on WordPress.org](https://wordpress.org/support/plugin/streamery-forms/reviews/#new-post)
 
 ## Documentation
 
@@ -338,7 +343,7 @@ See `documentation/DEPLOY.md` for Vercel deployment.
 
 ### 1.0.0
 - Initial release
-- Gutenberg block-based form builder
+- Block-based form builder
 - Inbox interface for submission management
 - Email and Database providers
 - Mailbox and label management

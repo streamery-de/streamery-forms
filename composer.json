@@ -1,11 +1,11 @@
 {
-  "name": "streamery/gutenform-builder",
-  "description": "Gutenform Builder",
+  "name": "streamery/streamery-forms",
+  "description": "Streamery Forms",
   "autoload": {
     "psr-4": {
-      "Gutenform\\": "includes/",
-      "Gutenform\\Database\\": "database/",
-      "Gutenform\\Libs\\": "libs/"
+      "StreameryForms\\": "includes/",
+      "StreameryForms\\Database\\": "database/",
+      "StreameryForms\\Libs\\": "libs/"
     },
     "files": [
       "libs/assets.php",

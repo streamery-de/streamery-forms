@@ -10,11 +10,11 @@
  * base64 "encoding" this replaces, which offered no protection at all and is
  * exactly the pattern WordPress.org review flags as obfuscation.
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
 defined('ABSPATH') || exit;
 
@@ -28,7 +28,7 @@ class Crypto
 	 * an encrypted value apart from a legacy base64 or plaintext value stored
 	 * by a previous plugin version.
 	 */
-	private const PREFIX = 'gf_enc$';
+	private const PREFIX = 'sfenc$';
 
 	/**
 	 * Encrypts a string for storage. Returns the plaintext unchanged (not
@@ -125,9 +125,15 @@ class Crypto
 		}
 
 		add_action('admin_notices', function () {
+			// Only on the plugin's own pages, where these secrets are entered.
+			$screen = get_current_screen();
+			if (! $screen || false === strpos($screen->id, 'streamery-forms')) {
+				return;
+			}
+
 			printf(
-				'<div class="notice notice-warning"><p>%s</p></div>',
-				esc_html__('Gutenform: the libsodium PHP extension is not available on this server, so secrets you save (SMTP password, CAPTCHA keys) are stored in plain text rather than encrypted. Ask your host to enable the sodium extension.', 'gutenform-builder')
+				'<div class="notice notice-warning is-dismissible"><p>%s</p></div>',
+				esc_html__('Streamery Forms: the libsodium PHP extension is not available on this server, so secrets you save (SMTP password, CAPTCHA keys) are stored in plain text rather than encrypted. Ask your host to enable the sodium extension.', 'streamery-forms')
 			);
 		});
 	}

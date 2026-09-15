@@ -4,10 +4,10 @@
  */
 
 window.addEventListener('DOMContentLoaded', () => {
-	const navBlocks = document.querySelectorAll('.wp-block-gutenform-step-navigation');
+	const navBlocks = document.querySelectorAll('.wp-block-streamery-forms-step-navigation');
 
 	navBlocks.forEach((nav) => {
-		const form = nav.closest('.wp-block-gutenform-form') as HTMLFormElement | null;
+		const form = nav.closest('.wp-block-streamery-forms-form') as HTMLFormElement | null;
 		if (!form) return;
 
 		const prevBtn = nav.querySelector<HTMLButtonElement>('[data-action="prev"]');
@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		if (prevBtn) {
 			prevBtn.addEventListener('click', (e) => {
 				e.preventDefault();
-				const event = new CustomEvent('gutenform:step-prev', { bubbles: true });
+				const event = new CustomEvent('streamery-forms:step-prev', { bubbles: true });
 				form.dispatchEvent(event);
 			});
 		}
@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		if (nextBtn) {
 			nextBtn.addEventListener('click', (e) => {
 				e.preventDefault();
-				const event = new CustomEvent('gutenform:step-next', { bubbles: true });
+				const event = new CustomEvent('streamery-forms:step-next', { bubbles: true });
 				form.dispatchEvent(event);
 			});
 		}
@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		if (submitBtn) {
 			submitBtn.addEventListener('click', (e) => {
 				e.preventDefault();
-				const event = new CustomEvent('gutenform:step-submit', { bubbles: true });
+				const event = new CustomEvent('streamery-forms:step-submit', { bubbles: true });
 				form.dispatchEvent(event);
 			});
 		}

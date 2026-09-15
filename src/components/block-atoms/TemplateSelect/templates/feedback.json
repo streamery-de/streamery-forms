@@ -2,7 +2,7 @@
   "labelKey": "templateFeedback",
   "category": "advanced",
   "value": [
-    ["gutenform/select", {
+    ["streamery-forms/select", {
       "label": { "__": "howSatisfied", "fallback": "Wie zufrieden waren Sie? (1-10)" },
       "options": [
         { "label": "1", "value": "1" }, { "label": "2", "value": "2" }, { "label": "3", "value": "3" },
@@ -11,9 +11,9 @@
       ],
       "required": true
     }],
-    ["gutenform/textarea", { "label": { "__": "whatDidYouLike", "fallback": "Was hat Ihnen besonders gut gefallen?" }, "required": false, "rows": 4 }],
-    ["gutenform/textarea", { "label": { "__": "whatCanWeImprove", "fallback": "Was können wir besser machen?" }, "required": false, "rows": 4 }],
-    ["gutenform/select", {
+    ["streamery-forms/textarea", { "label": { "__": "whatDidYouLike", "fallback": "Was hat Ihnen besonders gut gefallen?" }, "required": false, "rows": 4 }],
+    ["streamery-forms/textarea", { "label": { "__": "whatCanWeImprove", "fallback": "Was können wir besser machen?" }, "required": false, "rows": 4 }],
+    ["streamery-forms/select", {
       "label": { "__": "contactForFollowUp", "fallback": "Dürfen wir Sie für Rückfragen kontaktieren?" },
       "options": [
         { "label": { "__": "yes", "fallback": "Ja" }, "value": "yes" },
@@ -21,8 +21,8 @@
       ],
       "required": true
     }],
-    ["gutenform/input", { "type": "email", "label": { "__": "emailFollowUp", "fallback": "E-Mail (für Rückfragen)" }, "required": false }],
-    ["gutenform/submit", {}],
-    ["gutenform/success", {}]
+    ["streamery-forms/input", { "type": "email", "label": { "__": "emailFollowUp", "fallback": "E-Mail (für Rückfragen)" }, "required": false }],
+    ["streamery-forms/submit", {}],
+    ["streamery-forms/success", {}]
   ]
 }

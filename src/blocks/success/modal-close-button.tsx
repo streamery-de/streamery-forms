@@ -8,7 +8,7 @@ export const ModalCloseButton = ({ onClose }: ModalCloseButtonProps) => {
 	return (
 		<button
 			type="button"
-			className="gutenform-success-modal-close"
+			className="streamery-forms-success-modal-close"
 			onClick={(e) => {
 				e.preventDefault();
 				e.stopPropagation();

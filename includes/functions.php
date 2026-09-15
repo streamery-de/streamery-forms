@@ -5,7 +5,7 @@
  *
  * @since 1.0.0
  *
- * @package Gutenform
+ * @package StreameryForms
  */
 
 defined('ABSPATH') || exit;

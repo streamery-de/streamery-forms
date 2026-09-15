@@ -14,7 +14,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
-const STORAGE_PREFIX = "gutenform-inbox-"
+const STORAGE_PREFIX = "streamery-forms-inbox-"
 
 function getStoredOpen(storageKey: string, defaultOpen: boolean): boolean {
   if (typeof window === "undefined") return defaultOpen

@@ -5,14 +5,14 @@
  *
  * Sends form submissions via email using WordPress wp_mail().
  *
- * @package Gutenform\Providers
+ * @package StreameryForms\Providers
  * @since 1.0.0
  */
 
-namespace Gutenform\Providers;
+namespace StreameryForms\Providers;
 
-use Gutenform\Core\EmailTemplates;
-use Gutenform\Core\Debug;
+use StreameryForms\Core\EmailTemplates;
+use StreameryForms\Core\Debug;
 
 defined('ABSPATH') || exit;
 
@@ -41,7 +41,7 @@ class Email extends AbstractProvider
      */
     public function get_title(): string
     {
-        return __('Email Notification', 'gutenform-builder');
+        return __('Email Notification', 'streamery-forms');
     }
 
     /**
@@ -102,7 +102,7 @@ class Email extends AbstractProvider
                 } else {
                     // Template not found, fall back to regular body
                     Debug::log(sprintf(
-                            'GutenForm Email Provider: Template "%s" not found, using regular body.',
+                            'Streamery Forms Email Provider: Template "%s" not found, using regular body.',
                             $template_name
                         ));
                     $body = $this->replace_placeholders(
@@ -143,11 +143,11 @@ class Email extends AbstractProvider
         );
 
         Debug::log(sprintf(
-                'GutenForm Email Provider: Starting email processing for form "%s"',
+                'Streamery Forms Email Provider: Starting email processing for form "%s"',
                 $form_identifier
             ));
         Debug::log(sprintf(
-                'GutenForm Email Provider: To: %s, From: %s <%s>, Subject: %s',
+                'Streamery Forms Email Provider: To: %s, From: %s <%s>, Subject: %s',
                 $to_email,
                 $from_name,
                 $from_email,
@@ -159,12 +159,12 @@ class Email extends AbstractProvider
             $is_placeholder = (strpos($to_email_raw, '{') !== false && strpos($to_email_raw, '}') !== false);
             if ($is_placeholder && empty($to_email_replaced)) {
                     Debug::log(sprintf(
-                        'GutenForm Email Provider Error: Placeholder "%s" could not be resolved. No primary mail found in form submission. Make sure an email field is marked as primary mail or contains a valid email address.',
+                        'Streamery Forms Email Provider Error: Placeholder "%s" could not be resolved. No primary mail found in form submission. Make sure an email field is marked as primary mail or contains a valid email address.',
                         $to_email_raw
                     ));
                 } else {
                     Debug::log(sprintf(
-                        'GutenForm Email Provider Error: Invalid to_email address. Original: "%s", Replaced: "%s", Sanitized: "%s"',
+                        'Streamery Forms Email Provider Error: Invalid to_email address. Original: "%s", Replaced: "%s", Sanitized: "%s"',
                         $to_email_raw,
                         $to_email_replaced,
                         $to_email
@@ -176,7 +176,7 @@ class Email extends AbstractProvider
         // Validate from_email after placeholder replacement
         if (empty($from_email) || ! is_email($from_email)) {
             Debug::log(sprintf(
-                    'GutenForm Email Provider Error: Invalid from_email address after placeholder replacement. Original: "%s", Replaced: "%s"',
+                    'Streamery Forms Email Provider Error: Invalid from_email address after placeholder replacement. Original: "%s", Replaced: "%s"',
                     $provider_settings['from_email'] ?? '',
                     $from_email_raw
                 ));
@@ -197,16 +197,16 @@ class Email extends AbstractProvider
         // 4. Send email
         if (! empty($attachments)) {
             Debug::log(sprintf(
-                'GutenForm Email Provider: Attaching %d file(s) to email',
+                'Streamery Forms Email Provider: Attaching %d file(s) to email',
                 count($attachments)
             ));
         }
         $result = wp_mail($to_email, $subject, $body, $headers, $attachments);
 
         if ($result) {
-                Debug::log(sprintf('GutenForm Email Provider: Email sent successfully to %s', $to_email));
+                Debug::log(sprintf('Streamery Forms Email Provider: Email sent successfully to %s', $to_email));
             } else {
-                Debug::log(sprintf('GutenForm Email Provider Error: wp_mail() failed for %s. Check WordPress mail configuration.', $to_email));
+                Debug::log(sprintf('Streamery Forms Email Provider Error: wp_mail() failed for %s. Check WordPress mail configuration.', $to_email));
             }
 
         return $result;
@@ -222,54 +222,54 @@ class Email extends AbstractProvider
         return array(
             array(
                 'name'        => 'to_email',
-                'label'       => __('Email Address', 'gutenform-builder'),
+                'label'       => __('Email Address', 'streamery-forms'),
                 'type'        => 'email',
                 'required'    => true,
                 'default'     => '',
-                'description' => __('Email address to which the notification will be sent.', 'gutenform-builder'),
+                'description' => __('Email address to which the notification will be sent.', 'streamery-forms'),
                 'placeholder' => 'admin@example.com',
             ),
             array(
                 'name'        => 'subject',
-                'label'       => __('Subject', 'gutenform-builder'),
+                'label'       => __('Subject', 'streamery-forms'),
                 'type'        => 'text',
                 'required'    => true,
-                'default'     => __('New Form Submission: {form_title}', 'gutenform-builder'),
-                'description' => __('Email subject. Placeholders like {form_title} will be replaced.', 'gutenform-builder'),
+                'default'     => __('New Form Submission: {form_title}', 'streamery-forms'),
+                'description' => __('Email subject. Placeholders like {form_title} will be replaced.', 'streamery-forms'),
             ),
             array(
                 'name'        => 'body',
-                'label'       => __('Message', 'gutenform-builder'),
+                'label'       => __('Message', 'streamery-forms'),
                 'type'        => 'textarea',
                 'required'    => true,
                 'default'     => '{all_fields}',
-                'description' => __('Email message. HTML allowed. Placeholders like {field_name} will be replaced. Use {content} to inject form-specific content when the form has "Use provider layout" enabled.', 'gutenform-builder'),
+                'description' => __('Email message. HTML allowed. Placeholders like {field_name} will be replaced. Use {content} to inject form-specific content when the form has "Use provider layout" enabled.', 'streamery-forms'),
                 'rows'        => 6,
             ),
             array(
                 'name'        => 'from_email',
-                'label'       => __('From Email', 'gutenform-builder'),
+                'label'       => __('From Email', 'streamery-forms'),
                 'type'        => 'text',
                 'required'    => false,
                 'default'     => get_option('admin_email'),
-                'description' => __('Email address of the sender. Placeholders like {field_email} can be used.', 'gutenform-builder'),
+                'description' => __('Email address of the sender. Placeholders like {field_email} can be used.', 'streamery-forms'),
             ),
             array(
                 'name'        => 'from_name',
-                'label'       => __('From Name', 'gutenform-builder'),
+                'label'       => __('From Name', 'streamery-forms'),
                 'type'        => 'text',
                 'required'    => false,
                 'default'     => get_bloginfo('name'),
-                'description' => __('Name of the sender.', 'gutenform-builder'),
+                'description' => __('Name of the sender.', 'streamery-forms'),
             ),
             // Email Template Settings (internal use only)
             array(
                 'name'        => 'email_template',
-                'label'       => __('Template', 'gutenform-builder'),
+                'label'       => __('Template', 'streamery-forms'),
                 'type'        => 'text',
                 'required'    => false,
                 'default'     => '',
-                'description' => __('Template name (internal use).', 'gutenform-builder'),
+                'description' => __('Template name (internal use).', 'streamery-forms'),
             ),
         );
     }
@@ -281,7 +281,7 @@ class Email extends AbstractProvider
      * the submission payload -- Controllers\Submissions\Actions has already
      * resolved every file field from its upload token, so the 'url' present
      * here can only be one this site generated for a file it actually wrote
-     * to wp-content/uploads/gutenform/. This never fetches a remote URL.
+     * to wp-content/uploads/streamery-forms/. This never fetches a remote URL.
      *
      * @param array $submission_data The form submission data.
      * @return array Array of local file paths for wp_mail() attachments.

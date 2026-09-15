@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gutenform/slider",
+	"name": "streamery-forms/slider",
 	"version": "0.1.0",
 	"title": "Slider",
 	"category": "widgets",
 	"icon": "marker",
-	"description": "Slider block for Gutenform.",
-	"ancestor": ["gutenform/form"],
+	"description": "Slider block for Streamery Forms.",
+	"ancestor": ["streamery-forms/form"],
 	"example": {},
 	"attributes": {
 		"style": { "type": "object", "default": {} },
@@ -39,7 +39,7 @@
 		"animationDuration": { "type": "number", "default": 300 }
 	},
 	"supports": { "html": false },
-	"textdomain": "gutenform-builder",
+	"textdomain": "streamery-forms",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

@@ -2,10 +2,10 @@
   "labelKey": "templateTableReservation",
   "category": "advanced",
   "value": [
-    ["gutenform/input", { "type": "date", "label": { "__": "date", "fallback": "Datum" }, "required": true }],
-    ["gutenform/input", { "type": "time", "label": { "__": "time", "fallback": "Uhrzeit" }, "required": true }],
-    ["gutenform/input", { "type": "number", "label": { "__": "numberOfGuests", "fallback": "Personenanzahl" }, "required": true, "defaultValue": "2" }],
-    ["gutenform/select", {
+    ["streamery-forms/input", { "type": "date", "label": { "__": "date", "fallback": "Datum" }, "required": true }],
+    ["streamery-forms/input", { "type": "time", "label": { "__": "time", "fallback": "Uhrzeit" }, "required": true }],
+    ["streamery-forms/input", { "type": "number", "label": { "__": "numberOfGuests", "fallback": "Personenanzahl" }, "required": true, "defaultValue": "2" }],
+    ["streamery-forms/select", {
       "label": { "__": "area", "fallback": "Bereich" },
       "options": [
         { "label": { "__": "indoors", "fallback": "Innen" }, "value": "indoors" },
@@ -13,8 +13,8 @@
       ],
       "required": true
     }],
-    ["gutenform/input", { "type": "text", "label": { "__": "specialOccasions", "fallback": "Besondere Anlässe (z. B. Geburtstag)" }, "required": false }],
-    ["gutenform/submit", {}],
-    ["gutenform/success", {}]
+    ["streamery-forms/input", { "type": "text", "label": { "__": "specialOccasions", "fallback": "Besondere Anlässe (z. B. Geburtstag)" }, "required": false }],
+    ["streamery-forms/submit", {}],
+    ["streamery-forms/success", {}]
   ]
 }

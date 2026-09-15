@@ -16,7 +16,7 @@ This is a WordPress Plugin Boilerplate project that follows modern development p
 
 ### Root Directory Structure
 ```
-gutenform/
+streamery-forms/
 ├── config/                 # PHP configuration files
 ├── database/              # Database migrations and seeders
 │   ├── Migrations/        # Database schema changes
@@ -167,7 +167,7 @@ npm run block:build        # Build blocks
 class Admin {
     public function bootstrap() {
         wp_enqueue_script(
-            'gutenform-admin',
+            'streamery-forms-admin',
             WORDPRESS_PLUGIN_BOILERPLATE_ASSETS_URL . '/admin/dist/main.js',
             array('wp-element', 'wp-components'),
             WORDPRESS_PLUGIN_BOILERPLATE_VERSION,
@@ -295,15 +295,15 @@ This project uses a **PHP-based translation system** where all strings are trans
 ### PHP i18n
 ```php
 // Load text domain
-load_plugin_textdomain('gutenform', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+load_plugin_textdomain('streamery-forms', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 
 // Use translation functions in PHP
-__('Hello World', 'gutenform');
-_e('Hello World', 'gutenform');
+__('Hello World', 'streamery-forms');
+_e('Hello World', 'streamery-forms');
 
 // Add strings to JavaScript via Strings class
 // includes/Assets/Strings.php
-'helloWorld' => __('Hello World', 'gutenform'),
+'helloWorld' => __('Hello World', 'streamery-forms'),
 ```
 
 ### JavaScript/TypeScript i18n
@@ -315,7 +315,7 @@ import { __ } from '../../lib/i18n';  // Block editor (relative)
 // Use camelCase keys (NOT English strings)
 const MyComponent = () => {
   return <h1>{__('helloWorld')}</h1>;  // ✅ Correct
-  // return <h1>{__('Hello World', 'gutenform')}</h1>;  // ❌ Wrong - old format
+  // return <h1>{__('Hello World', 'streamery-forms')}</h1>;  // ❌ Wrong - old format
 };
 ```
 
@@ -340,7 +340,7 @@ add_action('plugins_loaded', 'wordpress_plugin_boilerplate_init');
 ```jsx
 // Access WordPress data
 const MyComponent = () => {
-  const wpData = window.gutenFormAdmin || {};
+  const wpData = window.streameryFormsAdmin || {};
   
   return (
     <div>

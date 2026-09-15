@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gutenform/date-time",
+	"name": "streamery-forms/date-time",
 	"version": "0.1.0",
 	"title": "Date / Time",
 	"category": "widgets",
 	"icon": "marker",
-	"description": "Date or time field for Gutenform.",
-	"ancestor": ["gutenform/form"],
+	"description": "Date or time field for Streamery Forms.",
+	"ancestor": ["streamery-forms/form"],
 	"example": {},
 	"attributes": {
 		"style": { "type": "object", "default": {} },
@@ -28,7 +28,7 @@
 		"conditionalShow": { "type": "object", "default": null }
 	},
 	"supports": { "html": false },
-	"textdomain": "gutenform-builder",
+	"textdomain": "streamery-forms",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

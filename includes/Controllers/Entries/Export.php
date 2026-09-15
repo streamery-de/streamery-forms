@@ -6,13 +6,13 @@
  * CSV export of inbox submissions -- expected of any form plugin, and
  * previously not possible at all.
  *
- * @package Gutenform\Controllers\Entries
+ * @package StreameryForms\Controllers\Entries
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\Entries;
+namespace StreameryForms\Controllers\Entries;
 
-use Gutenform\Models\Entries;
+use StreameryForms\Models\Entries;
 
 defined('ABSPATH') || exit;
 
@@ -88,7 +88,7 @@ class Export
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'entry_export_failed',
-				__('Failed to export entries: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to export entries: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -237,7 +237,7 @@ class Export
 	 */
 	private function build_filename(\WP_REST_Request $request): string
 	{
-		$parts = array('gutenform', 'entries');
+		$parts = array('streamery-forms', 'entries');
 
 		if ($request->get_param('form_identifier')) {
 			$parts[] = sanitize_file_name((string) $request->get_param('form_identifier'));

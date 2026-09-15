@@ -19,4 +19,4 @@ registerBlockType( metadata.name as string, {
 
 // Registers the step switcher AND the Form Settings button on every block
 // inside a form, at any nesting depth.
-addFilter('editor.BlockEdit', 'gutenform/with-form-toolbar', withFormToolbar);
+addFilter('editor.BlockEdit', 'streamery-forms/with-form-toolbar', withFormToolbar);

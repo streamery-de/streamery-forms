@@ -2,7 +2,7 @@
   "labelKey": "templateProductConfigurator",
   "category": "advanced",
   "value": [
-    ["gutenform/select", {
+    ["streamery-forms/select", {
       "label": { "__": "productChoice", "fallback": "Produktwahl" },
       "options": [
         { "label": { "__": "selectAnOption", "fallback": "Bitte wählen" }, "value": "" },
@@ -11,7 +11,7 @@
       ],
       "required": true
     }],
-    ["gutenform/select", {
+    ["streamery-forms/select", {
       "label": { "__": "addOns", "fallback": "Zusatzoptionen" },
       "options": [
         { "label": { "__": "expressProcessing", "fallback": "Expressbearbeitung +20 €" }, "value": "express" },
@@ -19,9 +19,9 @@
       ],
       "required": false
     }],
-    ["gutenform/textarea", { "label": { "__": "deliveryAddress", "fallback": "Lieferadresse" }, "required": true, "rows": 3 }],
-    ["gutenform/input", { "type": "text", "label": { "__": "billingAddressSame", "fallback": "Rechnungsadresse" }, "required": false, "placeholder": { "__": "sameAsDelivery", "fallback": "Gleiche wie Lieferadresse" } }],
-    ["gutenform/submit", {}],
-    ["gutenform/success", {}]
+    ["streamery-forms/textarea", { "label": { "__": "deliveryAddress", "fallback": "Lieferadresse" }, "required": true, "rows": 3 }],
+    ["streamery-forms/input", { "type": "text", "label": { "__": "billingAddressSame", "fallback": "Rechnungsadresse" }, "required": false, "placeholder": { "__": "sameAsDelivery", "fallback": "Gleiche wie Lieferadresse" } }],
+    ["streamery-forms/submit", {}],
+    ["streamery-forms/success", {}]
   ]
 }

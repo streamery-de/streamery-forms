@@ -3,14 +3,14 @@
 /**
  * Database migration for email logs table.
  *
- * @package Gutenform
+ * @package StreameryForms
  * @subpackage Database\Migrations
  * @since 1.0.0
  */
 
-namespace Gutenform\Database\Migrations;
+namespace StreameryForms\Database\Migrations;
 
-use Gutenform\Interfaces\Migration;
+use StreameryForms\Interfaces\Migration;
 use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
 use Prappo\WpEloquent\Database\Schema\Blueprint;
 
@@ -19,9 +19,9 @@ defined('ABSPATH') || exit;
 /**
  * Class EmailLogs
  *
- * Represents the migration for creating the 'wp_gutenform_email_logs' table.
+ * Represents the migration for creating the 'wp_streamery_forms_email_logs' table.
  *
- * @package Gutenform\Database\Migrations
+ * @package StreameryForms\Database\Migrations
  */
 class EmailLogs implements Migration
 {
@@ -31,7 +31,7 @@ class EmailLogs implements Migration
      *
      * @var string
      */
-    public static $table = 'gutenform_email_logs';
+    public static $table = 'streamery_forms_email_logs';
 
     /**
      * Run the migrations.

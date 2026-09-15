@@ -3,14 +3,14 @@
 /**
  * Database migration for entry labels tables.
  *
- * @package Gutenform
+ * @package StreameryForms
  * @subpackage Database\Migrations
  * @since 1.0.0
  */
 
-namespace Gutenform\Database\Migrations;
+namespace StreameryForms\Database\Migrations;
 
-use Gutenform\Interfaces\Migration;
+use StreameryForms\Interfaces\Migration;
 use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
 use Prappo\WpEloquent\Database\Schema\Blueprint;
 
@@ -21,7 +21,7 @@ defined('ABSPATH') || exit;
  *
  * Represents the migration for creating the entry labels tables.
  *
- * @package Gutenform\Database\Migrations
+ * @package StreameryForms\Database\Migrations
  */
 class EntryLabels implements Migration
 {
@@ -31,14 +31,14 @@ class EntryLabels implements Migration
 	 *
 	 * @var string
 	 */
-	public static $labels_table = 'gutenform_entry_labels';
+	public static $labels_table = 'streamery_forms_entry_labels';
 
 	/**
 	 * Table name for label relations.
 	 *
 	 * @var string
 	 */
-	public static $rel_table = 'gutenform_entry_label_rel';
+	public static $rel_table = 'streamery_forms_entry_label_rel';
 
 	/**
 	 * Run the migrations.

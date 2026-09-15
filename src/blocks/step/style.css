@@ -1,10 +1,10 @@
 /* Step block styles */
-.wp-block-gutenform-step {
+.wp-block-streamery-forms-step {
 	width: 100%;
 }
 
 /* Frontend: hide non-active steps */
-.wp-block-gutenform-step:not(.gutenform-step--active) {
+.wp-block-streamery-forms-step:not(.streamery-forms-step--active) {
 	display: none;
 	pointer-events: none;
 }

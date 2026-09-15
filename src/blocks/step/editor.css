@@ -1,10 +1,10 @@
 /* Step block editor styles */
-.wp-block-gutenform-step {
+.wp-block-streamery-forms-step {
 	position: relative;
 	min-height: 60px;
 }
 
-.wp-block-gutenform-step.gutenform-step--hidden {
+.wp-block-streamery-forms-step.streamery-forms-step--hidden {
 	display: none;
 	pointer-events: none;
 }

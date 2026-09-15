@@ -11,7 +11,7 @@ type FileInspectorControlsProps = BlockEditProps<FileAttributes>;
 
 export const FileInspectorControls = ({ attributes, setAttributes, clientId }: FileInspectorControlsProps) => {
 	// Get WordPress upload limit (in MB) - this will be passed from PHP
-	const wpUploadLimit = (window as any).gutenform?.uploadLimit || 0;
+	const wpUploadLimit = (window as any).streamery_forms?.uploadLimit || 0;
 	const maxFileSizeHint = wpUploadLimit > 0 
 		? __('maxFileSizeHint', `Maximum: ${wpUploadLimit} MB (WordPress upload limit)`)
 		: __('maxFileSizeHintDefault', 'Maximum file size is limited by WordPress upload settings');

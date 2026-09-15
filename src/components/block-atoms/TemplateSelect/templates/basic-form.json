@@ -2,9 +2,9 @@
   "labelKey": "basicForm",
   "category": "start",
   "value": [
-    ["gutenform/input", { "type": "text", "label": "" }],
-    ["gutenform/textarea", {}],
-    ["gutenform/submit", {}],
-    ["gutenform/success", {}]
+    ["streamery-forms/input", { "type": "text", "label": "" }],
+    ["streamery-forms/textarea", {}],
+    ["streamery-forms/submit", {}],
+    ["streamery-forms/success", {}]
   ]
 }

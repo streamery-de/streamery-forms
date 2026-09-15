@@ -3,7 +3,7 @@
 /**
  * Form Registry
  *
- * Keeps a server-side index of every gutenform/form block in the site's
+ * Keeps a server-side index of every streamery-forms/form block in the site's
  * content, so the submission endpoint can resolve which provider feeds run,
  * with which settings, and what the form's field schema is -- without
  * trusting anything the submitting browser sends.
@@ -13,15 +13,15 @@
  * frontend read them back out and POSTed them along, and the server used them
  * as-is. That let anyone choose which feeds fired and with what mail body.
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
-use Gutenform\Models\Forms;
-use Gutenform\Providers\Registry;
-use Gutenform\Traits\Base;
+use StreameryForms\Models\Forms;
+use StreameryForms\Providers\Registry;
+use StreameryForms\Traits\Base;
 
 defined('ABSPATH') || exit;
 
@@ -91,7 +91,7 @@ class FormRegistry
 	 */
 	public function index_post(\WP_Post $post): int
 	{
-		if (false === strpos((string) $post->post_content, 'gutenform/form')) {
+		if (false === strpos((string) $post->post_content, 'streamery-forms/form')) {
 			// No forms here any more -- clear anything previously indexed for this post.
 			$this->on_deleted_post($post->ID);
 			return 0;
@@ -219,7 +219,7 @@ class FormRegistry
 		global $wpdb;
 
 		// Narrow to posts whose content mentions both the block and this identifier.
-		$like_block = '%' . $wpdb->esc_like('gutenform/form') . '%';
+		$like_block = '%' . $wpdb->esc_like('streamery-forms/form') . '%';
 		$like_id    = '%' . $wpdb->esc_like($form_identifier) . '%';
 
 		$post_ids = $wpdb->get_col( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- one-shot lookup of posts containing this form; result is then indexed.
@@ -293,7 +293,7 @@ class FormRegistry
 		}
 
 		try {
-			$feeds = \Gutenform\Models\Providers::whereIn('provider_type', $slugs)
+			$feeds = \StreameryForms\Models\Providers::whereIn('provider_type', $slugs)
 				->where('is_active', true)
 				->orderBy('id', 'ASC')
 				->get();
@@ -413,6 +413,6 @@ class FormRegistry
 	 */
 	private function log(string $message): void
 	{
-		Debug::log('GutenForm FormRegistry: ' . $message);
+		Debug::log('Streamery Forms FormRegistry: ' . $message);
 	}
 }

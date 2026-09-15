@@ -21,17 +21,17 @@
  */
 
 /**
- * Translatable frontend string, localized from PHP onto window.gutenform
+ * Translatable frontend string, localized from PHP onto window.streamery_forms
  * (see includes/Assets/Frontend.php). The second argument is the English
  * fallback used when no translation is available.
  */
 function formString(key: string, fallback: string): string {
-	const strings = (window as any).gutenform?.strings || {};
+	const strings = (window as any).streamery_forms?.strings || {};
 	return strings[key] || fallback;
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-	const form = document.querySelectorAll('.wp-block-gutenform-form');
+	const form = document.querySelectorAll('.wp-block-streamery-forms-form');
 	form.forEach(form => {
         const formDataOptions = form.getAttribute('data-form-options');
         if (!formDataOptions) {
@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 
 		// Multi-step form setup
-		const steps = form.querySelectorAll<HTMLElement>('.wp-block-gutenform-step');
+		const steps = form.querySelectorAll<HTMLElement>('.wp-block-streamery-forms-step');
 		const isMultiStep = steps.length > 0;
 		let currentStep = 0;
 
@@ -151,12 +151,12 @@ window.addEventListener('DOMContentLoaded', () => {
 			}
 
 			if (result.success) {
-				form.classList.add('gutenform-form--success-view');
+				form.classList.add('streamery-forms-form--success-view');
 
 				if (form instanceof HTMLFormElement) {
 					form.reset();
 					// Also clear file upload lists
-					const fileLists = form.querySelectorAll('.gutenform-file-upload-list');
+					const fileLists = form.querySelectorAll('.streamery-forms-file-upload-list');
 					fileLists.forEach(list => {
 						list.innerHTML = '';
 					});
@@ -168,7 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
 					goToStepByVisibleIndex(form as HTMLElement, steps, visibleStepIndices, 0);
 					updateStepNavigationButtons(form as HTMLElement, steps, visibleStepIndices, 0);
 					if (formOptions.formId) {
-						sessionStorage.removeItem(`gutenform_progress_${formOptions.formId}`);
+						sessionStorage.removeItem(`streamery_forms_progress_${formOptions.formId}`);
 					}
 				}
 
@@ -178,9 +178,9 @@ window.addEventListener('DOMContentLoaded', () => {
 					return;
 				}
 
-				// If the form has a gutenform/success block, the success-view class
+				// If the form has a streamery-forms/success block, the success-view class
 				// reveals it; otherwise fall back to an inline confirmation.
-				if (!form.querySelector('.wp-block-gutenform-success')) {
+				if (!form.querySelector('.wp-block-streamery-forms-success')) {
 					showFormMessage(
 						form as HTMLElement,
 						'success',
@@ -214,7 +214,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function setSubmitLoading(formEl: HTMLElement, loading: boolean) {
-	formEl.classList.toggle('gutenform-form--submitting', loading);
+	formEl.classList.toggle('streamery-forms-form--submitting', loading);
 	// Announce the pending state instead of only greying the button out.
 	formEl.setAttribute('aria-busy', loading ? 'true' : 'false');
 	const buttons = formEl.querySelectorAll<HTMLButtonElement>('button[type="submit"], [data-action="submit"]');
@@ -281,7 +281,7 @@ function evaluateFieldConditions(formEl: HTMLElement): void {
 		try {
 			const config = JSON.parse(json) as ConditionalShowConfig;
 			const show = evaluateConditionConfig(config, formEl);
-			wrapper.classList.toggle('gutenform-field--conditional-hidden', !show);
+			wrapper.classList.toggle('streamery-forms-field--conditional-hidden', !show);
 			wrapper.style.display = show ? '' : 'none';
 
 			// A hidden field that is still `required` silently blocks submission:
@@ -322,25 +322,25 @@ function applyDefaultValueFromField(formEl: HTMLElement): void {
  * Steps without data-conditional-show are always visible.
  */
 function getVisibleStepIndices(formEl: HTMLElement): number[] {
-	const steps = formEl.querySelectorAll<HTMLElement>('.wp-block-gutenform-step');
+	const steps = formEl.querySelectorAll<HTMLElement>('.wp-block-streamery-forms-step');
 	const visible: number[] = [];
 	steps.forEach((step, index) => {
 		const json = step.getAttribute('data-conditional-show');
 		if (!json) {
 			visible.push(index);
-			step.classList.remove('gutenform-step--conditional-hidden');
+			step.classList.remove('streamery-forms-step--conditional-hidden');
 			step.style.display = '';
 			return;
 		}
 		try {
 			const config = JSON.parse(json) as ConditionalShowConfig;
 			const show = evaluateConditionConfig(config, formEl);
-			step.classList.toggle('gutenform-step--conditional-hidden', !show);
+			step.classList.toggle('streamery-forms-step--conditional-hidden', !show);
 			step.style.display = show ? '' : 'none';
 			if (show) visible.push(index);
 		} catch (e) {
 			visible.push(index);
-			step.classList.remove('gutenform-step--conditional-hidden');
+			step.classList.remove('streamery-forms-step--conditional-hidden');
 			step.style.display = '';
 		}
 	});
@@ -360,14 +360,17 @@ function getVisibleStepIndices(formEl: HTMLElement): number[] {
 function focusStep(formEl: HTMLElement, stepEl: HTMLElement, visibleIndex: number, total: number) {
 	if (!stepEl) return;
 
-	// The step container is not natively focusable.
+	// The step container is not natively focusable. Focusing does not scroll
+	// reliably on its own: a tall step whose lower part is already on screen
+	// counts as "visible", so the user stayed at the bottom by the nav buttons.
 	stepEl.setAttribute('tabindex', '-1');
-	stepEl.focus({ preventScroll: false });
+	stepEl.focus({ preventScroll: true });
+	scrollFormIntoView(formEl);
 
-	let liveRegion = formEl.querySelector<HTMLElement>('.gutenform-step-status');
+	let liveRegion = formEl.querySelector<HTMLElement>('.streamery-forms-step-status');
 	if (!liveRegion) {
 		liveRegion = document.createElement('p');
-		liveRegion.className = 'gutenform-step-status gutenform-visually-hidden';
+		liveRegion.className = 'streamery-forms-step-status streamery-forms-visually-hidden';
 		liveRegion.setAttribute('role', 'status');
 		liveRegion.setAttribute('aria-live', 'polite');
 		formEl.insertBefore(liveRegion, formEl.firstChild);
@@ -381,6 +384,20 @@ function focusStep(formEl: HTMLElement, stepEl: HTMLElement, visibleIndex: numbe
 	liveRegion.textContent = title ? `${label}: ${title}` : label;
 }
 
+/**
+ * Scrolls back to the top of the form after a step change, but only when the
+ * top is out of view. The gap above it (scroll-margin-top, see style.css)
+ * keeps it clear of the admin bar and sticky theme headers.
+ */
+function scrollFormIntoView(formEl: HTMLElement) {
+	const offset = parseFloat(getComputedStyle(formEl).scrollMarginTop) || 0;
+	const top = formEl.getBoundingClientRect().top;
+	if (top >= offset && top < window.innerHeight) return;
+
+	const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+	formEl.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+}
+
 function goToStepByVisibleIndex(
 	formEl: HTMLElement,
 	steps: NodeListOf<HTMLElement>,
@@ -391,16 +408,16 @@ function goToStepByVisibleIndex(
 	steps.forEach((step, index) => {
 		if (index === realIndex) {
 			step.style.display = '';
-			step.classList.add('gutenform-step--active');
-			step.classList.remove('gutenform-step--hidden');
+			step.classList.add('streamery-forms-step--active');
+			step.classList.remove('streamery-forms-step--hidden');
 		} else {
 			step.style.display = 'none';
-			step.classList.remove('gutenform-step--active');
-			step.classList.add('gutenform-step--hidden');
+			step.classList.remove('streamery-forms-step--active');
+			step.classList.add('streamery-forms-step--hidden');
 		}
 	});
 
-	const event = new CustomEvent('gutenform:stepchange', {
+	const event = new CustomEvent('streamery-forms:stepchange', {
 		detail: {
 			currentStep: visibleIndex,
 			totalSteps: visibleStepIndices.length,
@@ -426,7 +443,7 @@ function initMultiStepForm(
 	// Restore saved progress from sessionStorage
 	if (formId) {
 		try {
-			const saved = sessionStorage.getItem(`gutenform_progress_${formId}`);
+			const saved = sessionStorage.getItem(`streamery_forms_progress_${formId}`);
 			if (saved) {
 				const progressData = JSON.parse(saved);
 				if (progressData.fields) {
@@ -456,7 +473,7 @@ function initMultiStepForm(
 	// Show initial step
 	refreshVisibleAndGo();
 
-	formEl.addEventListener('gutenform:step-next', ((e: Event) => {
+	formEl.addEventListener('streamery-forms:step-next', ((e: Event) => {
 		e.preventDefault();
 		visibleStepIndices = getVisibleStepIndices(formEl);
 		if (currentVisibleIndex >= visibleStepIndices.length - 1) return;
@@ -471,7 +488,7 @@ function initMultiStepForm(
 		focusStep(formEl, steps[visibleStepIndices[currentVisibleIndex]], currentVisibleIndex, visibleStepIndices.length);
 	}) as EventListener);
 
-	formEl.addEventListener('gutenform:step-prev', ((e: Event) => {
+	formEl.addEventListener('streamery-forms:step-prev', ((e: Event) => {
 		e.preventDefault();
 		if (currentVisibleIndex <= 0) return;
 
@@ -482,7 +499,7 @@ function initMultiStepForm(
 		focusStep(formEl, steps[visibleStepIndices[currentVisibleIndex]], currentVisibleIndex, visibleStepIndices.length);
 	}) as EventListener);
 
-	formEl.addEventListener('gutenform:step-submit', ((e: Event) => {
+	formEl.addEventListener('streamery-forms:step-submit', ((e: Event) => {
 		e.preventDefault();
 		visibleStepIndices = getVisibleStepIndices(formEl);
 		const currentStepEl = steps[visibleStepIndices[currentVisibleIndex]];
@@ -516,7 +533,7 @@ function updateStepNavigationButtons(
 	const activeStep = realIndex !== undefined ? steps[realIndex] : undefined;
 	if (!activeStep) return;
 
-	const navBlock = activeStep.querySelector('.wp-block-gutenform-step-navigation');
+	const navBlock = activeStep.querySelector('.wp-block-streamery-forms-step-navigation');
 	if (!navBlock) return;
 
 	const prevBtn = navBlock.querySelector<HTMLElement>('[data-action="prev"]');
@@ -549,16 +566,16 @@ function validateStep(stepEl: HTMLElement): boolean {
 	let isValid = true;
 
 	requiredFields.forEach((field) => {
-		const wrapper = field.closest('.gutenform-field');
-		if (wrapper?.classList.contains('gutenform-field--conditional-hidden')) {
+		const wrapper = field.closest('.streamery-forms-field');
+		if (wrapper?.classList.contains('streamery-forms-field--conditional-hidden')) {
 			return; // skip validation for conditionally hidden fields
 		}
 		if (!field.value.trim()) {
 			isValid = false;
-			field.classList.add('gutenform-field--invalid');
+			field.classList.add('streamery-forms-field--invalid');
 			field.reportValidity();
 		} else {
-			field.classList.remove('gutenform-field--invalid');
+			field.classList.remove('streamery-forms-field--invalid');
 		}
 	});
 
@@ -600,9 +617,9 @@ async function submitFormWithProviders(
 	renderedAt: number = 0
 ): Promise<SubmitResult> {
 	try {
-		const apiUrl = window.gutenform?.apiUrl || '';
-		const nonce = window.gutenform?.nonce || '';
-		const namespace = window.gutenform?.namespace || 'gutenform/v1';
+		const apiUrl = window.streamery_forms?.apiUrl || '';
+		const nonce = window.streamery_forms?.nonce || '';
+		const namespace = window.streamery_forms?.namespace || 'streamery-forms/v1';
 
 		const response = await fetch(
 			`${apiUrl}${namespace}/submit`,
@@ -653,7 +670,7 @@ function showFormMessage(formEl: HTMLElement, type: 'success' | 'error', message
 	clearFormMessage(formEl);
 
 	const box = document.createElement('div');
-	box.className = `gutenform-form-message gutenform-form-message--${type}`;
+	box.className = `streamery-forms-form-message streamery-forms-form-message--${type}`;
 	box.setAttribute('role', type === 'error' ? 'alert' : 'status');
 	box.setAttribute('aria-live', type === 'error' ? 'assertive' : 'polite');
 	box.textContent = message;
@@ -663,7 +680,7 @@ function showFormMessage(formEl: HTMLElement, type: 'success' | 'error', message
 }
 
 function clearFormMessage(formEl: HTMLElement) {
-	formEl.querySelectorAll('.gutenform-form-message').forEach((el) => el.remove());
+	formEl.querySelectorAll('.streamery-forms-form-message').forEach((el) => el.remove());
 }
 
 /**
@@ -677,14 +694,14 @@ function showFieldErrors(formEl: HTMLElement, fieldErrors: Record<string, string
 		);
 		if (!field) return;
 
-		const wrapper = field.closest('.gutenform-field') || field.parentElement;
+		const wrapper = field.closest('.streamery-forms-field') || field.parentElement;
 		if (!wrapper) return;
 
 		field.setAttribute('aria-invalid', 'true');
 
 		const errorEl = document.createElement('p');
-		const errorId = `gutenform-error-${fieldName.replace(/[^A-Za-z0-9_-]/g, '')}`;
-		errorEl.className = 'gutenform-field__error';
+		const errorId = `streamery-forms-error-${fieldName.replace(/[^A-Za-z0-9_-]/g, '')}`;
+		errorEl.className = 'streamery-forms-field__error';
 		errorEl.id = errorId;
 		errorEl.textContent = message;
 
@@ -694,7 +711,7 @@ function showFieldErrors(formEl: HTMLElement, fieldErrors: Record<string, string
 }
 
 function clearFieldErrors(formEl: HTMLElement) {
-	formEl.querySelectorAll('.gutenform-field__error').forEach((el) => el.remove());
+	formEl.querySelectorAll('.streamery-forms-field__error').forEach((el) => el.remove());
 	formEl.querySelectorAll('[aria-invalid="true"]').forEach((el) => {
 		el.removeAttribute('aria-invalid');
 		el.removeAttribute('aria-describedby');
@@ -716,7 +733,7 @@ function focusFirstInvalidField(
 	if (!invalid) return;
 
 	if (isMultiStep) {
-		const owningStep = invalid.closest('.wp-block-gutenform-step');
+		const owningStep = invalid.closest('.wp-block-streamery-forms-step');
 		if (owningStep) {
 			const visibleStepIndices = getVisibleStepIndices(formEl);
 			const stepIndex = Array.from(steps).indexOf(owningStep as HTMLElement);
@@ -737,14 +754,14 @@ function focusFirstInvalidField(
  */
 function showDebugView(debugData: any) {
 	// Remove existing debug view if any
-	const existingDebug = document.getElementById('gutenform-debug-view');
+	const existingDebug = document.getElementById('streamery-forms-debug-view');
 	if (existingDebug) {
 		existingDebug.remove();
 	}
 
 	// Create debug view container
 	const debugContainer = document.createElement('div');
-	debugContainer.id = 'gutenform-debug-view';
+	debugContainer.id = 'streamery-forms-debug-view';
 	document.body.appendChild(debugContainer);
 
 	// Import and render DebugView component
@@ -759,7 +776,7 @@ function showDebugView(debugData: any) {
 				</div>
 				<div style="display: flex; align-items: center; gap: 8px;">
 					<span class="chevron" style="font-size: 12px; color: #6b7280;">▲</span>
-					<button onclick="this.closest('[id=\\'gutenform-debug-view\\']').remove();" style="background: none; border: none; color: #6b7280; cursor: pointer; font-size: 16px;">×</button>
+					<button onclick="this.closest('[id=\\'streamery-forms-debug-view\\']').remove();" style="background: none; border: none; color: #6b7280; cursor: pointer; font-size: 16px;">×</button>
 				</div>
 			</div>
 			<div class="debug-content" style="max-height: 600px; overflow-y: auto; padding: 12px; font-size: 12px;">
@@ -814,7 +831,7 @@ function showDebugView(debugData: any) {
  */
 function loadSkinCSS(skinName: string) { 
 	// Check if skin CSS is already loaded
-	const existingLink = document.querySelector(`link[data-gutenform-skin="${skinName}"]`);
+	const existingLink = document.querySelector(`link[data-streamery-forms-skin="${skinName}"]`);
 	if (existingLink) {
 		return;
 	}
@@ -824,8 +841,8 @@ function loadSkinCSS(skinName: string) {
 	link.rel = 'stylesheet';
 	// Load from assets/skins (built skins)
 	// @ts-expect-error - assetsUrl is not defined in the window object
-	const assetsUrl = window.gutenform?.assetsUrl || '';
+	const assetsUrl = window.streamery_forms?.assetsUrl || '';
 	link.href = `${assetsUrl}/blocks/skins/${skinName}/index.css`;
-	link.setAttribute('data-gutenform-skin', skinName);
+	link.setAttribute('data-streamery-forms-skin', skinName);
 	document.head.appendChild(link);
 }

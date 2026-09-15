@@ -7,9 +7,9 @@
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\Posts;
+namespace StreameryForms\Controllers\Posts;
 
-use Gutenform\Models\Posts;
+use StreameryForms\Models\Posts;
 
 class Actions {
 	public function get_all_posts() {

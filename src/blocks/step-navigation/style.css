@@ -1,12 +1,12 @@
 /* Step Navigation styles */
-.wp-block-gutenform-step-navigation {
+.wp-block-streamery-forms-step-navigation {
 	display: flex;
 	gap: 12px;
 	align-items: center;
 	margin-top: 16px;
 }
 
-.wp-block-gutenform-step-navigation button {
+.wp-block-streamery-forms-step-navigation button {
 	padding: 10px 24px;
 	border: 1px solid currentColor;
 	border-radius: 4px;
@@ -17,23 +17,23 @@
 	transition: opacity 0.2s ease;
 }
 
-.wp-block-gutenform-step-navigation button:hover {
+.wp-block-streamery-forms-step-navigation button:hover {
 	opacity: 0.8;
 }
 
-.wp-block-gutenform-step-navigation .gutenform-step-prev {
+.wp-block-streamery-forms-step-navigation .streamery-forms-step-prev {
 	background: transparent;
 	color: inherit;
 }
 
-.wp-block-gutenform-step-navigation .gutenform-step-next,
-.wp-block-gutenform-step-navigation .gutenform-step-submit {
+.wp-block-streamery-forms-step-navigation .streamery-forms-step-next,
+.wp-block-streamery-forms-step-navigation .streamery-forms-step-submit {
 	background: currentColor;
 	border-color: currentColor;
 }
 
-.wp-block-gutenform-step-navigation .gutenform-step-next span,
-.wp-block-gutenform-step-navigation .gutenform-step-submit span {
+.wp-block-streamery-forms-step-navigation .streamery-forms-step-next span,
+.wp-block-streamery-forms-step-navigation .streamery-forms-step-submit span {
 	/* Invert text color for filled buttons */
 	filter: invert(1);
 }

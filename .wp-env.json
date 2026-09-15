@@ -12,9 +12,6 @@
 		"WP_DEBUG_DISPLAY": false,
 		"SCRIPT_DEBUG": true,
 		"WP_ENVIRONMENT_TYPE": "local"
-	},
-	"mappings": {
-		"wp-content/plugins/gutenform-builder": "."
 	}
 }
 

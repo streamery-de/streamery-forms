@@ -36,7 +36,7 @@ export const FieldWrapper = ({
 				tagName="p"
 				value={help}
 				onChange={onHelpChange}
-				className="gutenform-field__help"
+				className="streamery-forms-field__help"
 				placeholder={__('enterHelpText')}
 			/>
 		</div>

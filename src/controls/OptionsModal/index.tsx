@@ -225,7 +225,7 @@ export const OptionsModal = ({
 
 	const modalContent = (
 		<div
-			className="gutenform-options-modal-overlay"
+			className="streamery-forms-options-modal-overlay"
 			onClick={(e) => {
 				if (e.target === e.currentTarget) {
 					onClose();
@@ -233,7 +233,7 @@ export const OptionsModal = ({
 			}}
 		>
 			<div
-				className="gutenform-options-modal-container"
+				className="streamery-forms-options-modal-container"
 				onClick={(e) => e.stopPropagation()}
 			>
 				<ModalHeader
@@ -243,7 +243,7 @@ export const OptionsModal = ({
 				/>
 
 				{/* Content */}
-				<div className="gutenform-options-modal-content">
+				<div className="streamery-forms-options-modal-content">
 					{!hasOptions ? (
 						<PresetGrid
 							presets={presets}
@@ -252,7 +252,7 @@ export const OptionsModal = ({
 							onBulkAddClick={() => setIsBulkAddOpen(true)}
 						/>
 					) : (
-						<div className="gutenform-options-modal-content-wrapper">
+						<div className="streamery-forms-options-modal-content-wrapper">
 							{(someSelected || allSelected) && (
 								<BulkActionsBar
 									selectedCount={selectedIndices.size}

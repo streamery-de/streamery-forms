@@ -2,9 +2,9 @@
   "labelKey": "templateProjectRequest",
   "category": "multistep",
   "value": [
-    ["gutenform/progress", { "variant": "bubbles" }],
-    ["gutenform/step", { "title": { "__": "theProject", "fallback": "Das Projekt" } }, [
-      ["gutenform/select", {
+    ["streamery-forms/progress", { "variant": "bubbles" }],
+    ["streamery-forms/step", { "title": { "__": "theProject", "fallback": "Das Projekt" } }, [
+      ["streamery-forms/select", {
         "label": { "__": "projectType", "fallback": "Art des Projekts" },
         "options": [
           { "label": "Webdesign", "value": "webdesign" },
@@ -14,7 +14,7 @@
         ],
         "required": true
       }],
-      ["gutenform/select", {
+      ["streamery-forms/select", {
         "label": { "__": "currentStatus", "fallback": "Aktueller Status" },
         "options": [
           { "label": { "__": "justAnIdea", "fallback": "Nur eine Idee" }, "value": "idea" },
@@ -23,10 +23,10 @@
         ],
         "required": true
       }],
-      ["gutenform/step-navigation", {}]
+      ["streamery-forms/step-navigation", {}]
     ]],
-    ["gutenform/step", { "title": { "__": "framework", "fallback": "Rahmenbedingungen" } }, [
-      ["gutenform/select", {
+    ["streamery-forms/step", { "title": { "__": "framework", "fallback": "Rahmenbedingungen" } }, [
+      ["streamery-forms/select", {
         "label": { "__": "budgetRange", "fallback": "Budgetrahmen" },
         "options": [
           { "label": "< 2.000 €", "value": "under2k" },
@@ -36,15 +36,15 @@
         ],
         "required": true
       }],
-      ["gutenform/input", { "type": "date", "label": { "__": "deadline", "fallback": "Deadline" }, "required": false }],
-      ["gutenform/step-navigation", {}]
+      ["streamery-forms/input", { "type": "date", "label": { "__": "deadline", "fallback": "Deadline" }, "required": false }],
+      ["streamery-forms/step-navigation", {}]
     ]],
-    ["gutenform/step", { "title": { "__": "contactDetails", "fallback": "Kontaktdaten" } }, [
-      ["gutenform/input", { "type": "text", "label": { "__": "name", "fallback": "Name" }, "required": true }],
-      ["gutenform/input", { "type": "text", "label": { "__": "company", "fallback": "Firma" }, "required": false }],
-      ["gutenform/input", { "type": "email", "label": { "__": "email", "fallback": "E-Mail" }, "required": true, "isPrimaryMail": true }],
-      ["gutenform/step-navigation", {}]
+    ["streamery-forms/step", { "title": { "__": "contactDetails", "fallback": "Kontaktdaten" } }, [
+      ["streamery-forms/input", { "type": "text", "label": { "__": "name", "fallback": "Name" }, "required": true }],
+      ["streamery-forms/input", { "type": "text", "label": { "__": "company", "fallback": "Firma" }, "required": false }],
+      ["streamery-forms/input", { "type": "email", "label": { "__": "email", "fallback": "E-Mail" }, "required": true, "isPrimaryMail": true }],
+      ["streamery-forms/step-navigation", {}]
     ]],
-    ["gutenform/success", {}]
+    ["streamery-forms/success", {}]
   ]
 }

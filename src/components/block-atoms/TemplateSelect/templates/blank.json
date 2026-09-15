@@ -2,7 +2,7 @@
   "labelKey": "templateBlank",
   "category": "start",
   "value": [
-    ["gutenform/submit", {}],
-    ["gutenform/success", {}]
+    ["streamery-forms/submit", {}],
+    ["streamery-forms/success", {}]
   ]
 }

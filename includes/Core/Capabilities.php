@@ -3,17 +3,17 @@
 /**
  * Capabilities
  *
- * Defines Gutenform's own capabilities and the role/permission wiring around
+ * Defines Streamery Forms' own capabilities and the role/permission wiring around
  * them, so REST access and admin UI can move off manage_options (which
  * Administrator-only) and give Editors least-privilege access to entries.
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
-use Gutenform\Traits\Base;
+use StreameryForms\Traits\Base;
 
 defined('ABSPATH') || exit;
 
@@ -27,17 +27,17 @@ class Capabilities
 	/**
 	 * View inbox entries and export them.
 	 */
-	public const VIEW_ENTRIES = 'gutenform_view_entries';
+	public const VIEW_ENTRIES = 'streamery_forms_view_entries';
 
 	/**
 	 * Update/delete entries, manage labels and folders.
 	 */
-	public const MANAGE_ENTRIES = 'gutenform_manage_entries';
+	public const MANAGE_ENTRIES = 'streamery_forms_manage_entries';
 
 	/**
 	 * Administrator-only: SMTP, provider feeds, mailboxes, debug, everything else.
 	 */
-	public const MANAGE_SETTINGS = 'gutenform_manage_settings';
+	public const MANAGE_SETTINGS = 'streamery_forms_manage_settings';
 
 	/**
 	 * Bump when the capability set changes, so maybe_upgrade_roles() re-runs
@@ -124,12 +124,12 @@ class Capabilities
 	 */
 	public function maybe_upgrade_roles()
 	{
-		if (get_option('gutenform_capabilities_version') === self::VERSION) {
+		if (get_option('streamery_forms_capabilities_version') === self::VERSION) {
 			return;
 		}
 
 		self::grant_role_capabilities();
-		update_option('gutenform_capabilities_version', self::VERSION, false);
+		update_option('streamery_forms_capabilities_version', self::VERSION, false);
 	}
 
 	/**

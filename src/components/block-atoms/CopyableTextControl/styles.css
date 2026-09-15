@@ -1,4 +1,4 @@
-.gutenform-copyable-text-control__container {
+.streamery-forms-copyable-text-control__container {
 	display: flex;
 	align-items: stretch;
 	width: 100%;
@@ -9,7 +9,7 @@
 	margin-bottom: 10px;
 }
 
-input.gutenform-copyable-text-control__input {
+input.streamery-forms-copyable-text-control__input {
 	flex: 1;
 	border: none;
 	padding: 6px 8px;
@@ -24,7 +24,7 @@ input.gutenform-copyable-text-control__input {
 	min-width: 0;
 }
 
-button.components-button.gutenform-copyable-text-control__button {
+button.components-button.streamery-forms-copyable-text-control__button {
 	border-radius: 0;
 	border-left: 1px solid #ddd;
 	padding: 6px 12px;
@@ -40,8 +40,8 @@ button.components-button.gutenform-copyable-text-control__button {
 	transition: all 0.2s ease;
 }
 
-button.components-button.gutenform-copyable-text-control__button--copied {
-	background: linear-gradient(to bottom, #E71D73, #A0174F);
+button.components-button.streamery-forms-copyable-text-control__button--copied {
+	background: linear-gradient(130deg, #0289d9, #18d94b);
 	color: #fff;
 }
 

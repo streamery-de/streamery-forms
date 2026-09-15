@@ -29,8 +29,8 @@ export const CopyableNameControl = ({
 			) : (
 				<>
 					<CopyableTextControl value={value} label={label} />
-					<div className="gutenform-copyable-name-control__toggle-wrapper">
-						<div className="gutenform-copyable-name-control__toggle gutenform-custom-name-toggle">
+					<div className="streamery-forms-copyable-name-control__toggle-wrapper">
+						<div className="streamery-forms-copyable-name-control__toggle streamery-forms-custom-name-toggle">
 							<ToggleControl
 								label="Use custom name"
 								checked={useCustomName}

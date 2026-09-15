@@ -20,9 +20,9 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 	} = props.attributes;
 	const className = cn(
 		getFieldClasses(props.attributes),
-		'gutenform-field--checkbox',
-		`gutenform-field--checkbox-${styleVariant}`,
-		`gutenform-field--layout-${layout}`
+		'streamery-forms-field--checkbox',
+		`streamery-forms-field--checkbox-${styleVariant}`,
+		`streamery-forms-field--layout-${layout}`
 	);
 
 	const defaultValues = defaultValue
@@ -48,12 +48,12 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 			aria-describedby={help ? `${id}-help` : undefined}
 			aria-required={required && !isConsent ? 'true' : undefined}
 		>
-			{label && <GroupLabel className="gutenform-field__label">{label}</GroupLabel>}
+			{label && <GroupLabel className="streamery-forms-field__label">{label}</GroupLabel>}
 			<div
 				className={cn(
-					'gutenform-checkbox-options',
-					`gutenform-checkbox--${styleVariant}`,
-					`gutenform-checkbox--layout-${layout}`
+					'streamery-forms-checkbox-options',
+					`streamery-forms-checkbox--${styleVariant}`,
+					`streamery-forms-checkbox--layout-${layout}`
 				)}
 			>
 				{options.map((option, index) => {
@@ -64,7 +64,7 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 					return (
 						<label
 							key={index}
-							className="gutenform-checkbox-option"
+							className="streamery-forms-checkbox-option"
 							htmlFor={inputId}
 						>
 							<input
@@ -76,12 +76,12 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 								defaultChecked={checked}
 								data-required={required ? 'true' : undefined}
 							/>
-							<span className="gutenform-checkbox-option-content">
-								<span className="gutenform-checkbox-option-label">
+							<span className="streamery-forms-checkbox-option-content">
+								<span className="streamery-forms-checkbox-option-label">
 									{option.label}
 								</span>
 								{option.description && (
-									<span className="gutenform-checkbox-option-description">
+									<span className="streamery-forms-checkbox-option-description">
 										{option.description}
 									</span>
 								)}
@@ -90,7 +90,7 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 					);
 				})}
 			</div>
-			{help && <p className="gutenform-field__help" id={`${id}-help`}>{help}</p>}
+			{help && <p className="streamery-forms-field__help" id={`${id}-help`}>{help}</p>}
 		</Wrapper>
 	);
 }

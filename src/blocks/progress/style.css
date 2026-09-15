@@ -1,12 +1,12 @@
 /* Bar variant */
-.gutenform-progress-bar {
+.streamery-forms-progress-bar {
 	display: flex;
 	align-items: center;
 	gap: 12px;
 	width: 100%;
 }
 
-.gutenform-progress-bar__track {
+.streamery-forms-progress-bar__track {
 	flex: 1;
 	height: 8px;
 	background: color-mix(in srgb, currentColor 20%, transparent);
@@ -14,14 +14,14 @@
 	overflow: hidden;
 }
 
-.gutenform-progress-bar__fill {
+.streamery-forms-progress-bar__fill {
 	height: 100%;
 	background: currentColor;
 	border-radius: 4px;
 	transition: width 0.3s ease;
 }
 
-.gutenform-progress-bar__label {
+.streamery-forms-progress-bar__label {
 	font-size: 14px;
 	font-weight: 600;
 	min-width: 40px;
@@ -30,7 +30,7 @@
 }
 
 /* Bubbles variant */
-.gutenform-progress-bubbles {
+.streamery-forms-progress-bubbles {
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -38,7 +38,7 @@
 	position: relative;
 }
 
-.gutenform-progress-bubble {
+.streamery-forms-progress-bubble {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -47,7 +47,7 @@
 	min-width: 0;
 }
 
-.gutenform-progress-bubble__circle {
+.streamery-forms-progress-bubble__circle {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
@@ -64,19 +64,19 @@
 	transition: all 0.3s ease;
 }
 
-.gutenform-progress-bubble--active .gutenform-progress-bubble__circle {
+.streamery-forms-progress-bubble--active .streamery-forms-progress-bubble__circle {
 	border-color: currentColor;
 	color: currentColor;
 	box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 15%, transparent);
 }
 
-.gutenform-progress-bubble--completed .gutenform-progress-bubble__circle {
+.streamery-forms-progress-bubble--completed .streamery-forms-progress-bubble__circle {
 	border-color: currentColor;
 	background: color-mix(in srgb, currentColor 10%, transparent);
 	color: currentColor;
 }
 
-.gutenform-progress-bubble__title {
+.streamery-forms-progress-bubble__title {
 	margin-top: 8px;
 	font-size: 12px;
 	color: color-mix(in srgb, currentColor 40%, transparent);
@@ -87,17 +87,17 @@
 	white-space: nowrap;
 }
 
-.gutenform-progress-bubble--active .gutenform-progress-bubble__title {
+.streamery-forms-progress-bubble--active .streamery-forms-progress-bubble__title {
 	color: currentColor;
 	font-weight: 600;
 }
 
-.gutenform-progress-bubble--completed .gutenform-progress-bubble__title {
+.streamery-forms-progress-bubble--completed .streamery-forms-progress-bubble__title {
 	color: currentColor;
 }
 
 /* Connecting line between bubbles */
-.gutenform-progress-bubble__line {
+.streamery-forms-progress-bubble__line {
 	position: absolute;
 	top: 20px;
 	left: calc(50% + 24px);
@@ -108,6 +108,6 @@
 	transition: background 0.3s ease;
 }
 
-.gutenform-progress-bubble__line--completed {
+.streamery-forms-progress-bubble__line--completed {
 	background: currentColor;
 }

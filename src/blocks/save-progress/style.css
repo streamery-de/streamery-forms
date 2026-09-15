@@ -1,9 +1,9 @@
 /* Save Progress styles */
-.wp-block-gutenform-save-progress {
+.wp-block-streamery-forms-save-progress {
 	margin-top: 8px;
 }
 
-.gutenform-save-progress-btn {
+.streamery-forms-save-progress-btn {
 	padding: 8px 20px;
 	background: transparent;
 	border: 1px dashed currentColor;
@@ -16,11 +16,11 @@
 	transition: all 0.2s ease;
 }
 
-.gutenform-save-progress-btn:hover {
+.streamery-forms-save-progress-btn:hover {
 	opacity: 0.8;
 }
 
-.gutenform-save-progress-btn--saved {
+.streamery-forms-save-progress-btn--saved {
 	border-style: solid;
 	border-color: #16a34a;
 	color: #16a34a;

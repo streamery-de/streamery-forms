@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gutenform/step-navigation",
+	"name": "streamery-forms/step-navigation",
 	"version": "0.1.0",
 	"title": "Step Navigation",
 	"category": "widgets",
 	"icon": "arrow-right-alt",
-	"description": "Navigation buttons for multi-step forms in Gutenform.",
-	"ancestor": ["gutenform/form"],
+	"description": "Navigation buttons for multi-step forms in Streamery Forms.",
+	"ancestor": ["streamery-forms/form"],
 	"example": {},
 	"attributes": {
 		"nextLabel": {
@@ -47,7 +47,7 @@
 			"fontSize": true
 		}
 	},
-	"textdomain": "gutenform-builder",
+	"textdomain": "streamery-forms",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

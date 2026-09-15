@@ -11,6 +11,7 @@ import { MailList } from "@/components/inbox/mail-list"
 import { Nav } from "@/components/inbox/nav"
 import { CollapsibleSection } from "@/components/inbox/collapsible-section"
 import { FolderNav } from "@/components/inbox/folder-nav"
+import { SupportCard } from "@/components/support/SupportCard"
 import type { InboxFolderItem } from "@/admin/pages/inbox/use-inbox-folders"
 import { Mail as MailType } from "@/components/inbox/mail-display"
 import { useMail } from "@/admin/pages/inbox/use-mail"
@@ -178,7 +179,7 @@ export function MailComp({
           <Separator />
           <CollapsibleSection
             title={__("forms")}
-            storageKey="gutenform-inbox-forms-collapsed"
+            storageKey="streamery-forms-inbox-forms-collapsed"
             defaultOpen={false}
             isCollapsed={isCollapsed}
           >
@@ -190,7 +191,7 @@ export function MailComp({
           <Separator />
           <CollapsibleSection
             title={__("labels")}
-            storageKey="gutenform-inbox-labels-collapsed"
+            storageKey="streamery-forms-inbox-labels-collapsed"
             defaultOpen={false}
             isCollapsed={isCollapsed}
           >
@@ -199,6 +200,7 @@ export function MailComp({
               links={labelNavLinks}
             />
           </CollapsibleSection>
+          {!isCollapsed && <SupportCard variant="milestone" className="m-2 mt-4" />}
         </ResizablePanel>
         <ResizableHandle withHandle />
         <ResizablePanel defaultSize={defaultLayout[1]} minSize={30} className="h-full overflow-y-auto"

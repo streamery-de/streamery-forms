@@ -67,7 +67,7 @@ export default function MailPage() {
     refetch: refetchFolders,
   } = useInboxFolders();
 
-  const AUTO_REFRESH_STORAGE_KEY = 'gutenform-inbox-auto-refresh';
+  const AUTO_REFRESH_STORAGE_KEY = 'streamery-forms-inbox-auto-refresh';
   const [autoRefresh, setAutoRefresh] = useState(() => {
     if (typeof window === 'undefined') return true;
     const stored = localStorage.getItem(AUTO_REFRESH_STORAGE_KEY);

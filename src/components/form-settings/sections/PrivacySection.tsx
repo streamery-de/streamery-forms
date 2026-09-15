@@ -23,17 +23,17 @@ export function PrivacySection({ formSettings, setFormSettings }: Props) {
 
 	return (
 		<>
-			<h3 className="gutenform-form-settings__section-title">
+			<h3 className="streamery-forms-form-settings__section-title">
 				{__('formSettingsPrivacy', 'Privacy')}
 			</h3>
-			<p className="gutenform-form-settings__section-description">
+			<p className="streamery-forms-form-settings__section-description">
 				{__(
 					'formSettingsPrivacyDescription',
 					'Controls what is kept about each submission, and for how long.'
 				)}
 			</p>
 
-			<div className="gutenform-form-settings__field">
+			<div className="streamery-forms-form-settings__field">
 				<ToggleControl
 					label={__('storeIpAddress', "Store the submitter's IP address")}
 					help={__(
@@ -46,7 +46,7 @@ export function PrivacySection({ formSettings, setFormSettings }: Props) {
 				/>
 			</div>
 
-			<div className="gutenform-form-settings__field">
+			<div className="streamery-forms-form-settings__field">
 				<TextControl
 					label={__('retentionDays', 'Delete entries after (days)')}
 					type="number"

@@ -7,8 +7,8 @@
 # inside the release zip.
 #
 # Everything the plugin needs at runtime must NOT be listed here:
-#   assets/  includes/  libs/  database/  languages/  vendor/  composer.json
-#   composer.lock  gutenform-builder.php  plugin.php  uninstall.php  readme.txt
+#   assets/  includes/  libs/  database/  vendor/  composer.json
+#   composer.lock  streamery-forms.php  plugin.php  uninstall.php  readme.txt
 #   LICENSE
 #
 # Patterns follow gitignore semantics: a bare name like `src` matches at EVERY
@@ -62,6 +62,11 @@
 # --- Tests ---
 /tests
 /test-results
+
+# --- Translations ---
+# Not bundled: WordPress.org delivers translations from translate.wordpress.org.
+# The .pot/.po files stay in the repository as the source for those.
+/languages
 
 # --- Docs & internal planning (not shipped to users) ---
 /documentation

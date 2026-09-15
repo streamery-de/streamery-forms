@@ -13,7 +13,7 @@ export function GeneralForm() {
   const [debugLoading, setDebugLoading] = useState(true)
   const [debugSaving, setDebugSaving] = useState(false)
 
-  const [adminBarEnabled, setAdminBarEnabled] = useState(true)
+  const [adminBarEnabled, setAdminBarEnabled] = useState(false)
   const [adminBarLoading, setAdminBarLoading] = useState(true)
   const [adminBarSaving, setAdminBarSaving] = useState(false)
 

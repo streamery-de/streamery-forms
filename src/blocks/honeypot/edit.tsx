@@ -33,7 +33,7 @@ export default function Edit(props: BlockEditProps<HoneypotAttributes>) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div className="gutenform-honeypot-placeholder" style={{ padding: '12px', background: '#f5f5f5', border: '1px dashed #ccc', borderRadius: '4px', fontSize: '12px', color: '#666' }}>
+			<div className="streamery-forms-honeypot-placeholder" style={{ padding: '12px', background: '#f5f5f5', border: '1px dashed #ccc', borderRadius: '4px', fontSize: '12px', color: '#666' }}>
 				{__('honeypotEditorTitle', '🕵️ HoneyPot Field (Hidden)')}
 				<p style={{ margin: '4px 0 0 0', fontSize: '11px' }}>
 					{__('honeypotEditorPlaceholder', 'Completely hidden on the frontend. If it is filled in, the submission is rejected server-side as spam.')}

@@ -3,17 +3,17 @@
 /**
  * Populated Select Options
  *
- * Fills gutenform/select fields marked with optionsPopulated via the
- * gutenform/select/populated_options filter at render time (and over REST
+ * Fills streamery-forms/select fields marked with optionsPopulated via the
+ * streamery-forms/select/populated_options filter at render time (and over REST
  * as a client-side fallback).
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
-use Gutenform\Traits\Base;
+use StreameryForms\Traits\Base;
 
 defined('ABSPATH') || exit;
 
@@ -43,7 +43,7 @@ class PopulatedSelect
 	 */
 	public function render_block(string $block_content, array $block): string
 	{
-		if (($block['blockName'] ?? '') !== 'gutenform/select') {
+		if (($block['blockName'] ?? '') !== 'streamery-forms/select') {
 			return $block_content;
 		}
 
@@ -95,7 +95,7 @@ class PopulatedSelect
 		 * @param array $options Array of ['label' => string, 'value' => string].
 		 * @param array $context Field context (name, id, label, placeholder, attributes, post_id, source).
 		 */
-		$options = apply_filters('gutenform/select/populated_options', array(), $filter_context);
+		$options = apply_filters('streamery-forms/select/populated_options', array(), $filter_context);
 
 		return self::normalize_options($options);
 	}
@@ -171,7 +171,7 @@ class PopulatedSelect
 	 * Finds a field block's attributes by its submit name.
 	 *
 	 * @param array  $blocks     Parsed blocks.
-	 * @param string $block_name Block name (e.g. gutenform/select).
+	 * @param string $block_name Block name (e.g. streamery-forms/select).
 	 * @param string $field_name Field name attribute.
 	 * @return array|null
 	 */

@@ -3,23 +3,23 @@
 /**
  * Database seeder for entry labels.
  *
- * @package Gutenform
+ * @package StreameryForms
  * @subpackage Database\Seeders
  * @since 1.0.0
  */
 
-namespace Gutenform\Database\Seeders;
+namespace StreameryForms\Database\Seeders;
 
-use Gutenform\Models\EntryLabels;
+use StreameryForms\Models\EntryLabels;
 
 defined('ABSPATH') || exit;
 
 /**
  * Class EntryLabels
  *
- * Represents the seeder for the 'gutenform_entry_labels' table.
+ * Represents the seeder for the 'streamery_forms_entry_labels' table.
  *
- * @package Gutenform\Database\Seeders
+ * @package StreameryForms\Database\Seeders
  * @since 1.0.0
  */
 class EntryLabelsSeeder
@@ -43,8 +43,8 @@ class EntryLabelsSeeder
 				'date_created' => $current_date,
 			),
 			array(
-				'name'         => __('Follow Up', 'gutenform-builder'),
-				'description'  => __('Entries that need follow-up', 'gutenform-builder'),
+				'name'         => __('Follow Up', 'streamery-forms'),
+				'description'  => __('Entries that need follow-up', 'streamery-forms'),
 				'color'        => '#f59e0b', // Amber
 				'date_created' => $current_date,
 			),

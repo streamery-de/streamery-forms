@@ -5,11 +5,11 @@
  *
  * Handles loading and processing of email templates.
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
 defined('ABSPATH') || exit;
 
@@ -207,13 +207,13 @@ class EmailTemplates
          * @param array $directories Array of directory paths.
          * @return array Modified array of directory paths.
          */
-        $directories = apply_filters('gutenform/email_template_directories', $directories);
+        $directories = apply_filters('streamery-forms/email_template_directories', $directories);
         // Renamed in 1.0.0; the old underscore name still runs for compatibility.
         $directories = apply_filters_deprecated(
-            'gutenform_email_template_directories',
+            'streamery_forms_email_template_directories',
             array($directories),
             '1.0.0',
-            'gutenform/email_template_directories'
+            'streamery-forms/email_template_directories'
         );
 
         // Ensure all directories exist and are readable

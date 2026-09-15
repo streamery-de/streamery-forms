@@ -2,14 +2,14 @@
 /**
  * Database migration for adding form_identifier column to providers table.
  *
- * @package Gutenform
+ * @package StreameryForms
  * @subpackage Database\Migrations
  * @since 1.0.0
  */
 
-namespace Gutenform\Database\Migrations;
+namespace StreameryForms\Database\Migrations;
 
-use Gutenform\Interfaces\Migration;
+use StreameryForms\Interfaces\Migration;
 use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
 use Prappo\WpEloquent\Database\Schema\Blueprint;
 
@@ -18,7 +18,7 @@ use Prappo\WpEloquent\Database\Schema\Blueprint;
  *
  * Adds form_identifier column and removes UNIQUE constraint on provider_type.
  *
- * @package Gutenform\Database\Migrations
+ * @package StreameryForms\Database\Migrations
  */
 class AddFormIdentifierToProviders implements Migration {
 
@@ -27,7 +27,7 @@ class AddFormIdentifierToProviders implements Migration {
 	 *
 	 * @var string
 	 */
-	public static $table = 'gutenform_providers';
+	public static $table = 'streamery_forms_providers';
 
 	/**
 	 * Run the migrations.

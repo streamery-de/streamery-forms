@@ -2,7 +2,7 @@
  * The following styles get applied inside the editor only.
  */
 
-.gutenform-success-screen-toolbar-button {
+.streamery-forms-success-screen-toolbar-button {
 	display: inline-flex;
 	align-items: center;
 	gap: 6px;
@@ -13,7 +13,7 @@
 }
 
 /* Change template modal – warning notice */
-.gutenform-change-template-modal .gutenform-change-template-modal__warning {
+.streamery-forms-change-template-modal .streamery-forms-change-template-modal__warning {
 	margin: 0 0 1rem 0;
 	padding: 10px 12px;
 	background: #fcf0f1;
@@ -24,7 +24,7 @@
 	color: #1e1e1e;
 }
 
-.wp-block-gutenform-form {
+.wp-block-streamery-forms-form {
     > .block-editor-inner-blocks > .block-editor-block-list__layout {
         .block-list-appender {
             position: relative;
@@ -33,7 +33,7 @@
         }
     }
 
-    .is-layout-grid .gutenform-field{
+    .is-layout-grid .streamery-forms-field{
         padding-block: 0.75rem;
         padding-inline: 2px;
     }

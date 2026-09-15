@@ -5,21 +5,21 @@
  *
  * Handles entry-related actions such as creation, retrieval, deletion, and update.
  *
- * @package Gutenform\Controllers\Entries
+ * @package StreameryForms\Controllers\Entries
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\Entries;
+namespace StreameryForms\Controllers\Entries;
 
-use Gutenform\Models\Entries;
-use Gutenform\Models\InboxFolder;
+use StreameryForms\Models\Entries;
+use StreameryForms\Models\InboxFolder;
 
 /**
  * Class Actions
  *
  * Handles entry-related actions.
  *
- * @package Gutenform\Controllers\Entries
+ * @package StreameryForms\Controllers\Entries
  */
 class Actions
 {
@@ -49,13 +49,13 @@ class Actions
 
 			return array(
 				'success' => true,
-				'message' => __('Entry created successfully.', 'gutenform-builder'),
+				'message' => __('Entry created successfully.', 'streamery-forms'),
 				'data'    => $entry,
 			);
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'entry_creation_failed',
-				__('Failed to create entry: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to create entry: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -168,7 +168,7 @@ class Actions
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'entry_retrieval_failed',
-				__('Failed to retrieve entries: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to retrieve entries: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -190,7 +190,7 @@ class Actions
 			if (! $entry) {
 				return new \WP_Error(
 					'entry_not_found',
-					__('Entry not found.', 'gutenform-builder'),
+					__('Entry not found.', 'streamery-forms'),
 					array('status' => 404)
 				);
 			}
@@ -202,7 +202,7 @@ class Actions
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'entry_retrieval_failed',
-				__('Failed to retrieve entry: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to retrieve entry: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -223,7 +223,7 @@ class Actions
 		if (! $entry) {
 			return new \WP_Error(
 				'entry_not_found',
-				__('Entry not found.', 'gutenform-builder'),
+				__('Entry not found.', 'streamery-forms'),
 				array('status' => 404)
 			);
 		}
@@ -267,7 +267,7 @@ class Actions
 						if (!$folder) {
 							return new \WP_Error(
 								'invalid_folder',
-								__('Folder not found or does not belong to this mailbox.', 'gutenform-builder'),
+								__('Folder not found or does not belong to this mailbox.', 'streamery-forms'),
 								array('status' => 400)
 							);
 						}
@@ -285,13 +285,13 @@ class Actions
 
 			return array(
 				'success' => true,
-				'message' => __('Entry updated successfully.', 'gutenform-builder'),
+				'message' => __('Entry updated successfully.', 'streamery-forms'),
 				'data'    => $entry,
 			);
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'entry_update_failed',
-				__('Failed to update entry: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to update entry: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -312,7 +312,7 @@ class Actions
 		if (! $entry) {
 			return new \WP_Error(
 				'entry_not_found',
-				__('Entry not found.', 'gutenform-builder'),
+				__('Entry not found.', 'streamery-forms'),
 				array('status' => 404)
 			);
 		}
@@ -324,12 +324,12 @@ class Actions
 
 			return array(
 				'success' => true,
-				'message' => __('Entry moved to trash successfully.', 'gutenform-builder'),
+				'message' => __('Entry moved to trash successfully.', 'streamery-forms'),
 			);
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'entry_deletion_failed',
-				__('Failed to move entry to trash: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to move entry to trash: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -351,7 +351,7 @@ class Actions
 		if (! $entry) {
 			return new \WP_Error(
 				'entry_not_found',
-				__('Entry not found.', 'gutenform-builder'),
+				__('Entry not found.', 'streamery-forms'),
 				array('status' => 404)
 			);
 		}
@@ -365,13 +365,13 @@ class Actions
 
 			return array(
 				'success' => true,
-				'message' => $is_read ? __('Entry marked as read.', 'gutenform-builder') : __('Entry marked as unread.', 'gutenform-builder'),
+				'message' => $is_read ? __('Entry marked as read.', 'streamery-forms') : __('Entry marked as unread.', 'streamery-forms'),
 				'data'    => $entry,
 			);
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'entry_update_failed',
-				__('Failed to update entry: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to update entry: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -420,7 +420,7 @@ class Actions
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'form_identifiers_retrieval_failed',
-				__('Failed to retrieve form identifiers: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to retrieve form identifiers: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -470,7 +470,7 @@ class Actions
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'statuses_retrieval_failed',
-				__('Failed to retrieve statuses: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to retrieve statuses: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}
@@ -489,7 +489,7 @@ class Actions
 		if (!$nonce || !wp_verify_nonce($nonce, 'wp_rest')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('Security check failed.', 'gutenform-builder'),
+				__('Security check failed.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -498,7 +498,7 @@ class Actions
 		if (!current_user_can('manage_options')) {
 			return new \WP_Error(
 				'rest_forbidden',
-				__('You do not have permission to empty trash.', 'gutenform-builder'),
+				__('You do not have permission to empty trash.', 'streamery-forms'),
 				array('status' => 403)
 			);
 		}
@@ -514,7 +514,7 @@ class Actions
 						'%d entry permanently deleted.',
 						'%d entries permanently deleted.',
 						$deleted_count,
-						'gutenform-builder'
+						'streamery-forms'
 					),
 					$deleted_count
 				),
@@ -523,7 +523,7 @@ class Actions
 		} catch (\Exception $e) {
 			return new \WP_Error(
 				'trash_empty_failed',
-				__('Failed to empty trash: ', 'gutenform-builder') . $e->getMessage(),
+				__('Failed to empty trash: ', 'streamery-forms') . $e->getMessage(),
 				array('status' => 500)
 			);
 		}

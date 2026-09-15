@@ -23,23 +23,23 @@ export function SpamSection({ formSettings, setFormSettings }: Props) {
 	const honeypot = spam.honeypot !== false;
 	const captcha = spam.captcha !== false;
 
-	const captchaConfig = (window as any).gutenform?.captcha || {};
+	const captchaConfig = (window as any).streamery_forms?.captcha || {};
 	const anyCaptchaConfigured =
 		!!captchaConfig?.recaptcha?.enabled || !!captchaConfig?.friendlycaptcha?.enabled;
 
 	return (
 		<>
-			<h3 className="gutenform-form-settings__section-title">
+			<h3 className="streamery-forms-form-settings__section-title">
 				{__('formSettingsSpam', 'Spam Protection')}
 			</h3>
-			<p className="gutenform-form-settings__section-description">
+			<p className="streamery-forms-form-settings__section-description">
 				{__(
 					'formSettingsSpamDescription',
 					'Rate limiting and submit-timing checks always run and are not configurable per form.'
 				)}
 			</p>
 
-			<div className="gutenform-form-settings__field">
+			<div className="streamery-forms-form-settings__field">
 				<ToggleControl
 					label={__('honeypotEnabled', 'Honeypot field')}
 					help={__(
@@ -52,7 +52,7 @@ export function SpamSection({ formSettings, setFormSettings }: Props) {
 				/>
 			</div>
 
-			<div className="gutenform-form-settings__field">
+			<div className="streamery-forms-form-settings__field">
 				<ToggleControl
 					label={__('captchaEnabled', 'CAPTCHA verification')}
 					help={__(
@@ -66,7 +66,7 @@ export function SpamSection({ formSettings, setFormSettings }: Props) {
 			</div>
 
 			{captcha && (
-				<div className="gutenform-form-settings__field">
+				<div className="streamery-forms-form-settings__field">
 					<SelectControl
 						label={__('captchaType', 'CAPTCHA type')}
 						value={spam.captchaType || 'friendlycaptcha'}
@@ -89,7 +89,7 @@ export function SpamSection({ formSettings, setFormSettings }: Props) {
 				<Notice status="warning" isDismissible={false}>
 					{__(
 						'captchaNotConfigured',
-						'No CAPTCHA keys are configured yet. Add them under Gutenform → Settings; until then, CAPTCHA verification is skipped.'
+						'No CAPTCHA keys are configured yet. Add them under Streamery Forms → Settings; until then, CAPTCHA verification is skipped.'
 					)}
 				</Notice>
 			)}

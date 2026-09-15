@@ -3,13 +3,13 @@
 /**
  * Class Entries
  *
- * Represents the Entries model for Gutenform.
+ * Represents the Entries model for Streamery Forms.
  *
- * @package Gutenform\Models
+ * @package StreameryForms\Models
  * @since 1.0.0
  */
 
-namespace Gutenform\Models;
+namespace StreameryForms\Models;
 
 use Prappo\WpEloquent\Database\Eloquent\Model;
 
@@ -18,9 +18,9 @@ defined('ABSPATH') || exit;
 /**
  * Class Entries
  *
- * Represents the Entries model for Gutenform.
+ * Represents the Entries model for Streamery Forms.
  *
- * @package Gutenform\Models
+ * @package StreameryForms\Models
  */
 class Entries extends Model
 {
@@ -30,7 +30,7 @@ class Entries extends Model
      *
      * @var string
      */
-    protected $table = 'gutenform_entries';
+    protected $table = 'streamery_forms_entries';
 
     /**
      * The primary key for the model.
@@ -141,7 +141,7 @@ class Entries extends Model
     {
         return $this->belongsToMany(
             EntryLabels::class,
-            'gutenform_entry_label_rel',
+            'streamery_forms_entry_label_rel',
             'entry_id',
             'label_id'
         );

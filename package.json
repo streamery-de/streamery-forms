@@ -1,6 +1,6 @@
 {
-  "name": "gutenform-builder",
-  "version": "1.0.0",
+  "name": "streamery-forms",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite -c vite.admin.config.js --port 5174",
@@ -13,8 +13,8 @@
     "format:fix": "prettier --write .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "release": "npm run build && wp dist-archive . ./gutenform-builder.zip",
-    "i18n": "php -d memory_limit=1G $(which wp) i18n make-pot . languages/gutenform-builder.pot --domain=gutenform-builder --exclude=node_modules,vendor,assets,documentation,release,.storybook,npm,readme-assets,planned_features",
+    "release": "npm run build && wp dist-archive . ./streamery-forms.zip --plugin-dirname=streamery-forms",
+    "i18n": "php -d memory_limit=1G $(which wp) i18n make-pot . languages/streamery-forms.pot --domain=streamery-forms --exclude=node_modules,vendor,assets,documentation,release,.storybook,npm,readme-assets,planned_features",
     "i18n:compile": "wp i18n make-mo languages/ && wp i18n make-php languages/",
     "i18n:json": "wp i18n make-json languages/ --no-purge",
     "block:start": "wp-scripts start --webpack-src-dir=src/blocks --output-path=assets/blocks",

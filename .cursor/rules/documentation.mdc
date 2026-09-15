@@ -1,5 +1,5 @@
 ---
-description: How to document the Gutenform plugin (where, when, format)
+description: How to document the Streamery Forms plugin (where, when, format)
 globs: "**/*.md","**/*.mdx","documentation/content/**"
 alwaysApply: false
 ---

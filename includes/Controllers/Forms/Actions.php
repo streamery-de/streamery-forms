@@ -3,17 +3,17 @@
 /**
  * Class Actions
  *
- * Handles form usage overview: posts that contain embedded Gutenform blocks.
+ * Handles form usage overview: posts that contain embedded Streamery Forms blocks.
  *
- * @package Gutenform\Controllers\Forms
+ * @package StreameryForms\Controllers\Forms
  * @since 1.0.0
  */
 
-namespace Gutenform\Controllers\Forms;
+namespace StreameryForms\Controllers\Forms;
 
-use Gutenform\Core\BlockScanner;
-use Gutenform\Models\Mailboxes;
-use Gutenform\Models\Providers;
+use StreameryForms\Core\BlockScanner;
+use StreameryForms\Models\Mailboxes;
+use StreameryForms\Models\Providers;
 
 defined('ABSPATH') || exit;
 
@@ -22,7 +22,7 @@ defined('ABSPATH') || exit;
  *
  * Handles form usage and overview actions.
  *
- * @package Gutenform\Controllers\Forms
+ * @package StreameryForms\Controllers\Forms
  */
 class Actions
 {
@@ -73,7 +73,7 @@ class Actions
 	}
 
 	/**
-	 * Get all posts that contain at least one gutenform/form block, grouped by post type.
+	 * Get all posts that contain at least one streamery-forms/form block, grouped by post type.
 	 *
 	 * @param \WP_REST_Request $request The REST request object.
 	 * @return \WP_REST_Response|\WP_Error
@@ -114,7 +114,7 @@ class Actions
 
 		$by_post_type = array();
 		foreach ($posts as $post) {
-			if (strpos($post->post_content, 'gutenform/form') === false) {
+			if (strpos($post->post_content, 'streamery-forms/form') === false) {
 				continue;
 			}
 			$blocks = parse_blocks($post->post_content);

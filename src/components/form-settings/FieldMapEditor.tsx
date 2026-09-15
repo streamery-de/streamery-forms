@@ -38,7 +38,7 @@ export function FieldMapEditor({ fields, value, onChange }: Props) {
 			<strong style={{ display: 'block', marginBottom: 4 }}>
 				{__('fieldMapping', 'Field mapping')}
 			</strong>
-			<p className="gutenform-form-settings__section-description">
+			<p className="streamery-forms-form-settings__section-description">
 				{__(
 					'fieldMappingHelp',
 					'Leave empty to send all fields unchanged. Use dot paths (contact.email) for nested payloads.'

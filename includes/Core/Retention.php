@@ -7,15 +7,15 @@
  * their form. Entries used to be kept forever with no way to change that,
  * which is a problem for anyone with a GDPR deletion policy.
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
-use Gutenform\Models\Entries;
-use Gutenform\Models\Forms;
-use Gutenform\Traits\Base;
+use StreameryForms\Models\Entries;
+use StreameryForms\Models\Forms;
+use StreameryForms\Traits\Base;
 
 defined('ABSPATH') || exit;
 
@@ -29,7 +29,7 @@ class Retention
 	/**
 	 * Cron hook name.
 	 */
-	public const CRON_HOOK = 'gutenform_purge_expired_entries';
+	public const CRON_HOOK = 'streamery_forms_purge_expired_entries';
 
 	/**
 	 * Registers the cron schedule and handler.
@@ -109,6 +109,6 @@ class Retention
 	 */
 	private function log(string $message): void
 	{
-		Debug::log('GutenForm Retention: ' . $message);
+		Debug::log('Streamery Forms Retention: ' . $message);
 	}
 }

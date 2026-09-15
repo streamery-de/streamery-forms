@@ -31,9 +31,9 @@ export default function Edit(props: BlockEditProps<CheckboxAttributes>) {
 			<FieldWrapper
 				className={cn(
 					getFieldClasses(attributes),
-					'gutenform-field--checkbox',
-					`gutenform-field--checkbox-${styleVariant}`,
-					`gutenform-field--layout-${layout}`,
+					'streamery-forms-field--checkbox',
+					`streamery-forms-field--checkbox-${styleVariant}`,
+					`streamery-forms-field--layout-${layout}`,
 				)}
 				label={attributes.label}
 				onLabelChange={(label) => setAttributes({ label })}
@@ -42,19 +42,19 @@ export default function Edit(props: BlockEditProps<CheckboxAttributes>) {
 				attributes={attributes}
 			>
 				<div
-					className={`gutenform-checkbox-options gutenform-checkbox--${styleVariant} gutenform-checkbox--layout-${layout}`}
+					className={`streamery-forms-checkbox-options streamery-forms-checkbox--${styleVariant} streamery-forms-checkbox--layout-${layout}`}
 					role="group"
 					aria-label={attributes.label || __('options')}
 				>
 					{options.length === 0 ? (
-						<span className="gutenform-checkbox-placeholder">
+						<span className="streamery-forms-checkbox-placeholder">
 							{__('addOptionsInSidebar')}
 						</span>
 					) : (
 						options.map((option, index) => (
 							<label
 								key={index}
-								className="gutenform-checkbox-option"
+								className="streamery-forms-checkbox-option"
 								htmlFor={`${attributes.id}-${index}`}
 							>
 								<input
@@ -66,12 +66,12 @@ export default function Edit(props: BlockEditProps<CheckboxAttributes>) {
 									checked={false}
 									readOnly
 								/>
-								<span className="gutenform-checkbox-option-content">
-									<span className="gutenform-checkbox-option-label">
+								<span className="streamery-forms-checkbox-option-content">
+									<span className="streamery-forms-checkbox-option-label">
 										{option.label}
 									</span>
 									{option.description && (
-										<span className="gutenform-checkbox-option-description">
+										<span className="streamery-forms-checkbox-option-description">
 											{option.description}
 										</span>
 									)}

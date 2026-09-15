@@ -1,23 +1,23 @@
 /**
  * CAPTCHA Block Frontend Script
  * Initializes FriendlyCaptcha (bundled locally, no CDN) and Google reCAPTCHA v3.
- * Site keys come from the plugin's global CAPTCHA settings (window.gutenform.captcha),
+ * Site keys come from the plugin's global CAPTCHA settings (window.streamery_forms.captcha),
  * never from block attributes -- only "which provider" is a per-block choice.
  */
 import { WidgetInstance } from 'friendly-challenge';
 
-interface GutenformCaptchaConfig {
+interface StreameryFormsCaptchaConfig {
 	recaptcha?: { enabled: boolean; siteKey: string };
 	friendlycaptcha?: { enabled: boolean; siteKey: string };
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-	const captchaBlocks = document.querySelectorAll('.wp-block-gutenform-captcha');
-	const config: GutenformCaptchaConfig = (window as any).gutenform?.captcha || {};
+	const captchaBlocks = document.querySelectorAll('.wp-block-streamery-forms-captcha');
+	const config: StreameryFormsCaptchaConfig = (window as any).streamery_forms?.captcha || {};
 
 	captchaBlocks.forEach((block) => {
 		const captchaType = block.getAttribute('data-captcha-type');
-		const container = block.querySelector('.gutenform-captcha-container') as HTMLElement;
+		const container = block.querySelector('.streamery-forms-captcha-container') as HTMLElement;
 
 		if (!container) return;
 

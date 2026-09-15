@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-namespace Gutenform\Libs\DatabaseConnection;
+namespace StreameryForms\Libs\DatabaseConnection;
 
 use Prappo\WpEloquent\Application;
 

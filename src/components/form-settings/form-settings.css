@@ -4,13 +4,13 @@
  * Deliberately WITHOUT `@tailwind base` -- Preflight would reset the whole
  * block editor UI, since wp-scripts pipes this through the same global
  * PostCSS/Tailwind config. Only components + utilities are emitted, and the
- * shadcn CSS variables are scoped to `.gutenform-ui` instead of `:root` so
+ * shadcn CSS variables are scoped to `.streamery-forms-ui` instead of `:root` so
  * they can't leak into the editor either.
  */
 @tailwind components;
 @tailwind utilities;
 
-.gutenform-ui {
+.streamery-forms-ui {
 	--background: 0 0% 100%;
 	--foreground: 222.2 84% 4.9%;
 	--card: 0 0% 100%;
@@ -45,24 +45,24 @@
 
 /*
  * Small, tightly scoped reset for editor styles that bleed into the shadcn
- * components. Everything here is confined to .gutenform-ui.
+ * components. Everything here is confined to .streamery-forms-ui.
  */
-.gutenform-ui *,
-.gutenform-ui *::before,
-.gutenform-ui *::after {
+.streamery-forms-ui *,
+.streamery-forms-ui *::before,
+.streamery-forms-ui *::after {
 	box-sizing: border-box;
 }
 
-.gutenform-ui button {
+.streamery-forms-ui button {
 	margin: 0;
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
 }
 
-.gutenform-ui input,
-.gutenform-ui select,
-.gutenform-ui textarea {
+.streamery-forms-ui input,
+.streamery-forms-ui select,
+.streamery-forms-ui textarea {
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
@@ -70,7 +70,7 @@
 	box-shadow: none;
 }
 
-.gutenform-ui p {
+.streamery-forms-ui p {
 	margin: 0;
 }
 
@@ -80,14 +80,14 @@
  * absolutely and rely on content margin-top; newer ones use sticky
  * plus negative horizontal margins. Reset both.
  */
-.gutenform-form-settings-modal .components-modal__content {
+.streamery-forms-form-settings-modal .components-modal__content {
 	display: flex;
 	flex-direction: column;
 	padding: 0;
 	margin-top: 0;
 }
 
-.gutenform-form-settings-modal .components-modal__header {
+.streamery-forms-form-settings-modal .components-modal__header {
 	position: relative;
 	top: auto;
 	right: auto;
@@ -103,21 +103,21 @@
 	background: #fff;
 }
 
-.gutenform-form-settings-modal .gutenform-ui {
+.streamery-forms-form-settings-modal .streamery-forms-ui {
 	flex: 1 1 auto;
 	min-height: 0;
 	display: flex;
 	flex-direction: column;
 }
 
-.gutenform-form-settings__layout {
+.streamery-forms-form-settings__layout {
 	display: flex;
 	flex: 1 1 auto;
 	min-height: 460px;
 	max-height: min(70vh, 640px);
 }
 
-.gutenform-form-settings__nav {
+.streamery-forms-form-settings__nav {
 	flex: 0 0 220px;
 	display: flex;
 	flex-direction: column;
@@ -128,7 +128,7 @@
 	overflow-y: auto;
 }
 
-.gutenform-form-settings-modal .gutenform-ui .gutenform-form-settings__nav-item {
+.streamery-forms-form-settings-modal .streamery-forms-ui .streamery-forms-form-settings__nav-item {
 	display: block;
 	width: 100%;
 	margin: 0;
@@ -152,9 +152,9 @@
 	cursor: pointer;
 }
 
-.gutenform-form-settings-modal .gutenform-ui .gutenform-form-settings__nav-item:hover,
-.gutenform-form-settings-modal .gutenform-ui .gutenform-form-settings__nav-item:focus,
-.gutenform-form-settings-modal .gutenform-ui .gutenform-form-settings__nav-item:focus-visible {
+.streamery-forms-form-settings-modal .streamery-forms-ui .streamery-forms-form-settings__nav-item:hover,
+.streamery-forms-form-settings-modal .streamery-forms-ui .streamery-forms-form-settings__nav-item:focus,
+.streamery-forms-form-settings-modal .streamery-forms-ui .streamery-forms-form-settings__nav-item:focus-visible {
 	background: #e0e0e0;
 	background-color: #e0e0e0;
 	color: #1e1e1e;
@@ -163,40 +163,40 @@
 	outline: none;
 }
 
-.gutenform-form-settings-modal .gutenform-ui .gutenform-form-settings__nav-item[aria-current='true'],
-.gutenform-form-settings-modal .gutenform-ui .gutenform-form-settings__nav-item[aria-current='true']:hover,
-.gutenform-form-settings-modal .gutenform-ui .gutenform-form-settings__nav-item[aria-current='true']:focus,
-.gutenform-form-settings-modal .gutenform-ui .gutenform-form-settings__nav-item[aria-current='true']:focus-visible {
+.streamery-forms-form-settings-modal .streamery-forms-ui .streamery-forms-form-settings__nav-item[aria-current='true'],
+.streamery-forms-form-settings-modal .streamery-forms-ui .streamery-forms-form-settings__nav-item[aria-current='true']:hover,
+.streamery-forms-form-settings-modal .streamery-forms-ui .streamery-forms-form-settings__nav-item[aria-current='true']:focus,
+.streamery-forms-form-settings-modal .streamery-forms-ui .streamery-forms-form-settings__nav-item[aria-current='true']:focus-visible {
 	background: #3858e9;
 	background-color: #3858e9;
 	color: #fff;
 	opacity: 1;
 }
 
-.gutenform-form-settings__panel {
+.streamery-forms-form-settings__panel {
 	flex: 1 1 auto;
 	padding: 24px 28px;
 	overflow-y: auto;
 	background: #fff;
 }
 
-.gutenform-form-settings__section-title {
+.streamery-forms-form-settings__section-title {
 	font-size: 15px;
 	font-weight: 600;
 	margin: 0 0 4px;
 	color: #1e1e1e;
 }
 
-.gutenform-form-settings__section-description {
+.streamery-forms-form-settings__section-description {
 	color: #646970;
 	margin: 0 0 16px;
 }
 
-.gutenform-form-settings__field {
+.streamery-forms-form-settings__field {
 	margin-bottom: 18px;
 }
 
-.gutenform-form-settings__provider-row {
+.streamery-forms-form-settings__provider-row {
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
@@ -208,39 +208,39 @@
 	background: #fff;
 }
 
-.gutenform-form-settings__provider-row--locked,
-.gutenform-form-settings__provider-row--off {
+.streamery-forms-form-settings__provider-row--locked,
+.streamery-forms-form-settings__provider-row--off {
 	background: #f6f7f7;
 }
 
-.gutenform-form-settings__provider-row-header {
+.streamery-forms-form-settings__provider-row-header {
 	display: flex;
 	align-items: center;
 	gap: 12px;
 }
 
-.gutenform-form-settings__provider-identity {
+.streamery-forms-form-settings__provider-identity {
 	flex: 1 1 auto;
 	min-width: 0;
 }
 
-.gutenform-form-settings__provider-name {
+.streamery-forms-form-settings__provider-name {
 	font-weight: 500;
 	color: #1e1e1e;
 }
 
-.gutenform-form-settings__provider-meta {
+.streamery-forms-form-settings__provider-meta {
 	margin-top: 2px;
 	font-size: 12px;
 	font-weight: 400;
 	color: #646970;
 }
 
-.gutenform-form-settings__provider-row-header .components-toggle-control {
+.streamery-forms-form-settings__provider-row-header .components-toggle-control {
 	margin: 0;
 }
 
-.gutenform-form-settings__provider-extras {
+.streamery-forms-form-settings__provider-extras {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -249,7 +249,7 @@
 	border-top: 1px solid #e0e0e0;
 }
 
-.gutenform-form-settings__lock {
+.streamery-forms-form-settings__lock {
 	color: #646970;
 	display: inline-flex;
 	align-items: center;
@@ -258,7 +258,7 @@
 	font-size: 12px;
 }
 
-.gutenform-success-screen-toolbar-button {
+.streamery-forms-success-screen-toolbar-button {
 	display: inline-flex;
 	align-items: center;
 	gap: 6px;

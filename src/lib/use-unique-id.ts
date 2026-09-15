@@ -7,14 +7,14 @@ import { useSelect } from "@wordpress/data"
  * @param currentId - The current ID value (may be empty or undefined)
  * @param clientId - The WordPress block clientId
  * @param getAllBlockIds - Function that returns all existing block IDs on the page
- * @param prefix - The prefix for the ID (default: 'gutenform-input')
+ * @param prefix - The prefix for the ID (default: 'streamery-forms-input')
  * @returns A unique ID string
  */
 export const generateUniqueBlockId = (
   currentId: string | undefined,
   clientId: string,
   getAllBlockIds: () => string[],
-  prefix: string = 'gutenform-input'
+  prefix: string = 'streamery-forms-input'
 ): string => {
   // If no current ID, use the default pattern with clientId
   if (!currentId) {
@@ -81,13 +81,13 @@ export const generateUniqueBlockId = (
  * @param currentId - The current ID value from block attributes
  * @param clientId - The WordPress block clientId
  * @param setAttributes - Function to update block attributes
- * @param prefix - The prefix for the ID (default: 'gutenform-input')
+ * @param prefix - The prefix for the ID (default: 'streamery-forms-input')
  */
 export const useUniqueID = (
   currentId: string | undefined,
   clientId: string,
   setAttributes: (attributes: { id: string }) => void,
-  prefix: string = 'gutenform-input'
+  prefix: string = 'streamery-forms-input'
 ): void => {
   // Get all blocks to check for duplicate IDs
   const allBlocks = useSelect(

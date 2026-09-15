@@ -4,14 +4,14 @@
  *
  * Configures PHPMailer to use SMTP settings from the plugin.
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
-use Gutenform\Traits\Base;
-use Gutenform\Core\Crypto;
+use StreameryForms\Traits\Base;
+use StreameryForms\Core\Crypto;
 
 defined('ABSPATH') || exit;
 
@@ -42,7 +42,7 @@ class Smtp
 	 */
 	public function configure_phpmailer($phpmailer)
 	{
-		$settings = get_option('gutenform_smtp_settings', array());
+		$settings = get_option('streamery_forms_smtp_settings', array());
 
 		// Only configure if SMTP is enabled
 		if (empty($settings['enabled']) || !$settings['enabled']) {

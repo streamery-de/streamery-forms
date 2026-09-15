@@ -1,120 +1,109 @@
+# Copyright (C) 2026 Streamery
+# This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Gutenform Builder 0.0.1\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gutenform-"
-"builder\n"
-"POT-Creation-Date: 2026-08-24T21:09:47+00:00\n"
-"PO-Revision-Date: 2025-12-16 14:47+0000\n"
-"Last-Translator: Gutenform Team\n"
-"Language-Team: German <de@li.org>\n"
-"Language: de_DE\n"
+"Project-Id-Version: Streamery Forms 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/streamery-forms\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-15T13:38:28+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
-"X-Domain: gutenform-builder\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: streamery-forms\n"
 
 #. Plugin Name of the plugin
-#: gutenform-builder.php
-msgid "Gutenform Builder"
-msgstr "Gutenform Builder"
+#: streamery-forms.php
+#: includes/Admin/AdminBar.php:79
+#: includes/Admin/Menu.php:48
+#: includes/Admin/Menu.php:49
+#: includes/Assets/Strings.php:587
+msgid "Streamery Forms"
+msgstr ""
 
 #. Plugin URI of the plugin
-#: gutenform-builder.php
-msgid "https://gutenform.de"
+#. Author URI of the plugin
+#: streamery-forms.php
+msgid "https://streamery.de"
 msgstr ""
 
 #. Description of the plugin
-#: gutenform-builder.php
-msgid ""
-"A modern WordPress form builder plugin built with Gutenberg blocks. Create "
-"beautiful, responsive forms directly in the WordPress block editor and "
-"manage all submissions through an intuitive inbox interface. Features an "
-"extensible provider system for handling form submissions via email, "
-"database, or custom providers."
+#: streamery-forms.php
+msgid "Build forms in the block editor, collect submissions in a built-in inbox, and forward them by email or webhook."
 msgstr ""
-"Ein modernes WordPress-Formular-Plugin, das mit Gutenberg-Blöcken erstellt "
-"wurde. Erstellen Sie schöne, responsive Formulare direkt im WordPress-Block-"
-"Editor und verwalten Sie alle Übermittlungen über eine intuitive Posteingang-"
-"Oberfläche. Bietet ein erweiterbares Anbieter-System zur Verarbeitung von "
-"Formular-Übermittlungen per E-Mail, Datenbank oder benutzerdefinierten "
-"Anbietern."
 
 #. Author of the plugin
-#: gutenform-builder.php
+#: streamery-forms.php
 msgid "Streamery"
-msgstr ""
-
-#. Author URI of the plugin
-#: gutenform-builder.php
-msgid "https://streamery.de"
 msgstr ""
 
 #: database/Seeders/DatabaseProviderSeeder.php:49
 msgid "Database Provider (Default)"
-msgstr "Datenbank-Anbieter (Standard)"
+msgstr ""
 
 #: database/Seeders/DatabaseProviderSeeder.php:54
-#: includes/Providers/Database.php:75 includes/Providers/Database.php:179
-#: includes/Providers/Email.php:247
+#: includes/Providers/Database.php:76
+#: includes/Providers/Database.php:174
+#: includes/Providers/Email.php:237
 msgid "New Form Submission: {form_title}"
-msgstr "Neue Formular-Übermittlung: {form_title}"
+msgstr ""
 
-#: database/Seeders/EntryLabelsSeeder.php:46 includes/Assets/Strings.php:86
+#: database/Seeders/EntryLabelsSeeder.php:46
+#: includes/Assets/Strings.php:86
 msgid "Follow Up"
-msgstr "Nachfassung"
+msgstr ""
 
 #: database/Seeders/EntryLabelsSeeder.php:47
 msgid "Entries that need follow-up"
-msgstr "Einträge, die nachverfolgt werden müssen"
+msgstr ""
 
-#: database/Seeders/MailboxesSeeder.php:44 includes/Assets/Strings.php:196
-#: includes/Providers/Database.php:158
+#: database/Seeders/MailboxesSeeder.php:44
+#: includes/Assets/Strings.php:196
+#: includes/Providers/Database.php:153
 msgid "Default Mailbox"
-msgstr "Standard-Postfach"
-
-#: gutenform-builder.php:41
-msgid "Gutenform Builder could not start."
 msgstr ""
 
-#. translators: %s: what is missing from the installation, e.g. "vendor/autoload.php".
-#: gutenform-builder.php:45
-msgid ""
-"This copy is missing its build output (%s). Install the plugin from an "
-"official release package, or run \"composer install --no-dev -o\" and \"npm "
-"install && npm run build\" in the plugin directory."
-msgstr ""
-
-#: includes/Admin/AdminBar.php:79 includes/Admin/Menu.php:48
-#: includes/Admin/Menu.php:49
-msgid "Gutenform"
-msgstr "Gutenform"
-
-#: includes/Admin/AdminBar.php:129 includes/Admin/Menu.php:79
-#: includes/Admin/Menu.php:80 includes/Assets/Strings.php:591
+#: includes/Admin/AdminBar.php:129
+#: includes/Admin/Menu.php:78
+#: includes/Admin/Menu.php:79
+#: includes/Assets/Strings.php:591
 msgid "Settings"
-msgstr "Einstellungen"
+msgstr ""
 
-#: includes/Admin/Menu.php:63 includes/Admin/Menu.php:64
+#: includes/Admin/Menu.php:62
+#: includes/Admin/Menu.php:63
 #: includes/Assets/Strings.php:76
 msgid "Inbox"
-msgstr "Posteingang"
+msgstr ""
 
-#: includes/Admin/Menu.php:71 includes/Admin/Menu.php:72
-#: includes/Assets/Strings.php:89 includes/Assets/Strings.php:90
+#: includes/Admin/Menu.php:70
+#: includes/Admin/Menu.php:71
+#: includes/Assets/Strings.php:89
+#: includes/Assets/Strings.php:90
 msgid "Forms"
+msgstr ""
+
+#: includes/Admin/Support.php:89
+msgid "Support on Ko-fi"
+msgstr ""
+
+#: includes/Admin/Support.php:90
+msgid "Rate Streamery Forms"
 msgstr ""
 
 #: includes/Assets/Frontend.php:137
 msgid "Cancel upload"
 msgstr ""
 
-#: includes/Assets/Frontend.php:138 includes/Assets/Strings.php:637
+#: includes/Assets/Frontend.php:138
+#: includes/Assets/Strings.php:637
 msgid "Remove file"
 msgstr ""
 
-#: includes/Assets/Frontend.php:139 includes/Assets/Strings.php:633
+#: includes/Assets/Frontend.php:139
+#: includes/Assets/Strings.php:633
 msgid "Upload failed"
 msgstr ""
 
@@ -126,178 +115,176 @@ msgstr ""
 msgid "Thank you! Your submission has been received."
 msgstr ""
 
-#: includes/Assets/Frontend.php:142 includes/Assets/Strings.php:283
+#: includes/Assets/Frontend.php:142
+#: includes/Assets/Strings.php:283
 msgid "Your submission could not be sent. Please try again."
 msgstr ""
 
 #: includes/Assets/Strings.php:28
 msgid "Loading..."
-msgstr "Lädt..."
+msgstr ""
 
 #: includes/Assets/Strings.php:29
 msgid "Error"
-msgstr "Fehler"
+msgstr ""
 
 #: includes/Assets/Strings.php:30
 msgid "An error occurred"
-msgstr "Ein Fehler ist aufgetreten"
+msgstr ""
 
-#: includes/Assets/Strings.php:31 includes/Assets/Strings.php:769
+#: includes/Assets/Strings.php:31
+#: includes/Assets/Strings.php:769
 msgid "Save"
-msgstr "Speichern"
+msgstr ""
 
-#: includes/Assets/Strings.php:32 includes/Assets/Strings.php:638
-#: includes/Core/Deactivate.php:91
+#: includes/Assets/Strings.php:32
+#: includes/Assets/Strings.php:638
+#: includes/Core/Deactivate.php:80
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr ""
 
 #: includes/Assets/Strings.php:33
 msgid "Delete"
-msgstr "Löschen"
+msgstr ""
 
-#: includes/Assets/Strings.php:34 includes/Assets/Strings.php:770
+#: includes/Assets/Strings.php:34
+#: includes/Assets/Strings.php:770
 msgid "Edit"
-msgstr "Bearbeiten"
+msgstr ""
 
 #: includes/Assets/Strings.php:35
 msgid "Create"
-msgstr "Erstellen"
+msgstr ""
 
 #: includes/Assets/Strings.php:36
 msgid "Update"
-msgstr "Aktualisieren"
+msgstr ""
 
 #: includes/Assets/Strings.php:37
 msgid "Close"
-msgstr "Schließen"
+msgstr ""
 
-#: includes/Assets/Strings.php:38 includes/Providers/AbstractProvider.php:342
+#: includes/Assets/Strings.php:38
+#: includes/Providers/AbstractProvider.php:342
 msgid "Yes"
-msgstr "Ja"
+msgstr ""
 
-#: includes/Assets/Strings.php:39 includes/Providers/AbstractProvider.php:342
+#: includes/Assets/Strings.php:39
+#: includes/Providers/AbstractProvider.php:342
 msgid "No"
-msgstr "Nein"
+msgstr ""
 
 #: includes/Assets/Strings.php:40
 msgid "Copied"
-msgstr "Kopiert"
+msgstr ""
 
 #: includes/Assets/Strings.php:41
 msgid "Copy"
-msgstr "Kopieren"
+msgstr ""
 
 #: includes/Assets/Strings.php:42
 msgid "Copy to clipboard"
-msgstr "In Zwischenablage kopieren"
+msgstr ""
 
 #: includes/Assets/Strings.php:43
 msgid "Copied!"
-msgstr "Kopiert!"
+msgstr ""
 
 #: includes/Assets/Strings.php:46
 msgid "Login"
-msgstr "Anmelden"
+msgstr ""
 
 #: includes/Assets/Strings.php:47
 msgid "Enter your email below to login to your account"
-msgstr "Geben Sie Ihre E-Mail-Adresse unten ein, um sich anzumelden"
+msgstr ""
 
 #: includes/Assets/Strings.php:48
 msgid "Email"
-msgstr "E-Mail"
+msgstr ""
 
 #: includes/Assets/Strings.php:49
 msgid "Password"
-msgstr "Passwort"
+msgstr ""
 
 #: includes/Assets/Strings.php:50
 msgid "Forgot your password?"
-msgstr "Passwort vergessen?"
+msgstr ""
 
 #: includes/Assets/Strings.php:51
 msgid "Login with Google"
-msgstr "Mit Google anmelden"
+msgstr ""
 
 #: includes/Assets/Strings.php:52
 msgid "Don't have an account?"
-msgstr "Haben Sie noch kein Konto?"
+msgstr ""
 
 #: includes/Assets/Strings.php:53
 msgid "Sign up"
-msgstr "Registrieren"
+msgstr ""
 
 #: includes/Assets/Strings.php:56
 msgid "Oops!"
-msgstr "Ups!"
+msgstr ""
 
 #: includes/Assets/Strings.php:57
 msgid "Sorry, an unexpected error has occurred."
-msgstr "Entschuldigung, ein unerwarteter Fehler ist aufgetreten."
+msgstr ""
 
 #: includes/Assets/Strings.php:60
 msgid "Add your first Mail Provider"
-msgstr "Fügen Sie Ihren ersten E-Mail-Anbieter hinzu"
+msgstr ""
 
 #: includes/Assets/Strings.php:61
 msgid "Configure an email provider to receive form submissions via email."
 msgstr ""
-"Konfigurieren Sie einen E-Mail-Anbieter, um Formular-Übermittlungen per E-"
-"Mail zu erhalten."
 
 #: includes/Assets/Strings.php:62
 msgid "Create your first Mailbox"
-msgstr "Erstellen Sie Ihr erstes Postfach"
+msgstr ""
 
 #: includes/Assets/Strings.php:63
 msgid "Organize form submissions into mailboxes for better management."
 msgstr ""
-"Organisieren Sie Formular-Übermittlungen in Postfächern für besseres "
-"Management."
 
 #: includes/Assets/Strings.php:64
 msgid "Add your first Label"
-msgstr "Fügen Sie Ihr erstes Label hinzu"
+msgstr ""
 
 #: includes/Assets/Strings.php:65
 msgid "Create labels to categorize and organize your form entries."
 msgstr ""
-"Erstellen Sie Labels, um Ihre Formulareinträge zu kategorisieren und zu "
-"organisieren."
 
 #: includes/Assets/Strings.php:66
 msgid "Create your first Form"
-msgstr "Erstellen Sie Ihr erstes Formular"
+msgstr ""
 
 #: includes/Assets/Strings.php:67
-msgid "Build a form using Gutenberg blocks and start collecting submissions."
+msgid "Build a form in the block editor and start collecting submissions."
 msgstr ""
-"Erstellen Sie ein Formular mit Gutenberg-Blöcken und beginnen Sie mit dem "
-"Sammeln von Übermittlungen."
 
 #: includes/Assets/Strings.php:68
 msgid "Build Your first Form"
-msgstr "Erstellen Sie Ihr erstes Formular"
+msgstr ""
 
 #: includes/Assets/Strings.php:69
-msgid "Create your first form using the Gutenberg block editor"
-msgstr "Erstellen Sie Ihr erstes Formular mit dem Gutenberg-Block-Editor"
+msgid "Create your first form in the block editor"
+msgstr ""
 
 #: includes/Assets/Strings.php:70
-msgid "Welcome to GutenForm!"
-msgstr "Willkommen bei GutenForm!"
+msgid "Welcome to Streamery Forms!"
+msgstr ""
 
 #: includes/Assets/Strings.php:71
 msgid "Loading checklist..."
-msgstr "Checkliste wird geladen..."
+msgstr ""
 
 #: includes/Assets/Strings.php:72
 msgid "View"
-msgstr "Ansehen"
+msgstr ""
 
 #: includes/Assets/Strings.php:73
 msgid "Setup"
-msgstr "Einrichtung"
+msgstr ""
 
 #: includes/Assets/Strings.php:77
 msgid "Auto-refresh"
@@ -313,27 +300,28 @@ msgstr ""
 
 #: includes/Assets/Strings.php:80
 msgid "All"
-msgstr "Alle"
+msgstr ""
 
 #: includes/Assets/Strings.php:81
 msgid "Unread"
-msgstr "Ungelesen"
+msgstr ""
 
 #: includes/Assets/Strings.php:82
 msgid "Read"
-msgstr "Gelesen"
+msgstr ""
 
 #: includes/Assets/Strings.php:83
 msgid "Starred"
-msgstr "Markiert"
+msgstr ""
 
 #: includes/Assets/Strings.php:84
 msgid "Unstarred"
-msgstr "Nicht markiert"
+msgstr ""
 
-#: includes/Assets/Strings.php:85 includes/Assets/Strings.php:576
+#: includes/Assets/Strings.php:85
+#: includes/Assets/Strings.php:576
 msgid "Important"
-msgstr "Wichtig"
+msgstr ""
 
 #: includes/Assets/Strings.php:91
 msgid "No posts with embedded forms found."
@@ -343,11 +331,13 @@ msgstr ""
 msgid "Form ID"
 msgstr ""
 
-#: includes/Assets/Strings.php:93 includes/Assets/Strings.php:192
+#: includes/Assets/Strings.php:93
+#: includes/Assets/Strings.php:192
 msgid "Title"
-msgstr "Titel"
+msgstr ""
 
-#: includes/Assets/Strings.php:94 includes/Providers/Database.php:165
+#: includes/Assets/Strings.php:94
+#: includes/Providers/Database.php:160
 msgid "Mailbox"
 msgstr ""
 
@@ -365,47 +355,47 @@ msgstr ""
 
 #: includes/Assets/Strings.php:100
 msgid "License Key"
-msgstr "Lizenzschlüssel"
+msgstr ""
 
 #: includes/Assets/Strings.php:101
 msgid "Enter your license key"
-msgstr "Geben Sie Ihren Lizenzschlüssel ein"
+msgstr ""
 
 #: includes/Assets/Strings.php:102
-msgid "Enter your Gutenform license key to unlock premium features."
+msgid "Enter your Streamery Forms license key to unlock premium features."
 msgstr ""
-"Geben Sie Ihren Gutenform-Lizenzschlüssel ein, um Premium-Funktionen "
-"freizuschalten."
 
 #: includes/Assets/Strings.php:103
 msgid "Settings saved"
-msgstr "Einstellungen gespeichert"
+msgstr ""
 
 #: includes/Assets/Strings.php:104
 msgid "Your general settings have been updated successfully."
-msgstr "Ihre allgemeinen Einstellungen wurden erfolgreich aktualisiert."
+msgstr ""
 
 #: includes/Assets/Strings.php:105
 msgid "Save changes"
-msgstr "Änderungen speichern"
+msgstr ""
 
 #: includes/Assets/Strings.php:106
 msgid "License key is required."
-msgstr "Lizenzschlüssel ist erforderlich."
+msgstr ""
 
 #: includes/Assets/Strings.php:109
 msgid "Providers"
-msgstr "Anbieter"
+msgstr ""
 
 #: includes/Assets/Strings.php:110
 msgid "Manage your form submission providers."
-msgstr "Verwalten Sie Ihre Formular-Übermittlungsanbieter."
+msgstr ""
 
-#: includes/Assets/Strings.php:111 includes/Assets/Strings.php:116
+#: includes/Assets/Strings.php:111
+#: includes/Assets/Strings.php:116
 msgid "Add Provider"
-msgstr "Anbieter hinzufügen"
+msgstr ""
 
-#: includes/Assets/Strings.php:112 includes/Assets/Strings.php:113
+#: includes/Assets/Strings.php:112
+#: includes/Assets/Strings.php:113
 msgid "More"
 msgstr ""
 
@@ -423,23 +413,23 @@ msgstr ""
 
 #: includes/Assets/Strings.php:118
 msgid "Create Provider"
-msgstr "Anbieter erstellen"
+msgstr ""
 
 #: includes/Assets/Strings.php:119
 msgid "Edit Provider"
-msgstr "Anbieter bearbeiten"
+msgstr ""
 
 #: includes/Assets/Strings.php:120
 msgid "Provider created"
-msgstr "Anbieter erstellt"
+msgstr ""
 
 #: includes/Assets/Strings.php:121
 msgid "The provider has been created successfully."
-msgstr "Der Anbieter wurde erfolgreich erstellt."
+msgstr ""
 
 #: includes/Assets/Strings.php:122
 msgid "Provider updated"
-msgstr "Anbieter aktualisiert"
+msgstr ""
 
 #: includes/Assets/Strings.php:123
 msgid "Preview"
@@ -450,9 +440,7 @@ msgid "Email Preview"
 msgstr ""
 
 #: includes/Assets/Strings.php:125
-msgid ""
-"Preview how your email template will look. Placeholders are highlighted in "
-"yellow."
+msgid "Preview how your email template will look. Placeholders are highlighted in yellow."
 msgstr ""
 
 #: includes/Assets/Strings.php:126
@@ -460,9 +448,7 @@ msgid "Debug Mode"
 msgstr ""
 
 #: includes/Assets/Strings.php:127
-msgid ""
-"Enable debug mode to see detailed information about form submissions in the "
-"frontend. Only visible to logged-in users."
+msgid "Enable debug mode to see detailed information about form submissions in the frontend. Only visible to logged-in users."
 msgstr ""
 
 #: includes/Assets/Strings.php:128
@@ -490,9 +476,7 @@ msgid "Empty Trash"
 msgstr ""
 
 #: includes/Assets/Strings.php:134
-msgid ""
-"Are you sure you want to permanently delete all entries in trash? This "
-"action cannot be undone."
+msgid "Are you sure you want to permanently delete all entries in trash? This action cannot be undone."
 msgstr ""
 
 #: includes/Assets/Strings.php:135
@@ -507,7 +491,8 @@ msgstr ""
 msgid "Emptying..."
 msgstr ""
 
-#: includes/Assets/Strings.php:138 includes/Assets/Strings.php:139
+#: includes/Assets/Strings.php:138
+#: includes/Assets/Strings.php:139
 #: includes/Assets/Strings.php:610
 msgid "selected"
 msgstr ""
@@ -516,9 +501,10 @@ msgstr ""
 msgid "Select All"
 msgstr ""
 
-#: includes/Assets/Strings.php:141 includes/Assets/Strings.php:207
+#: includes/Assets/Strings.php:141
+#: includes/Assets/Strings.php:207
 msgid "Add Label"
-msgstr "Label hinzufügen"
+msgstr ""
 
 #: includes/Assets/Strings.php:142
 msgid "Move to Archive"
@@ -602,245 +588,242 @@ msgstr ""
 
 #: includes/Assets/Strings.php:162
 msgid "The provider has been updated successfully."
-msgstr "Der Anbieter wurde erfolgreich aktualisiert."
+msgstr ""
 
 #: includes/Assets/Strings.php:163
 msgid "Provider deleted"
-msgstr "Anbieter gelöscht"
+msgstr ""
 
 #: includes/Assets/Strings.php:164
 msgid "The provider has been deleted successfully."
-msgstr "Der Anbieter wurde erfolgreich gelöscht."
+msgstr ""
 
 #: includes/Assets/Strings.php:165
 msgid "Are you sure you want to delete this provider?"
-msgstr "Sind Sie sicher, dass Sie diesen Anbieter löschen möchten?"
+msgstr ""
 
 #: includes/Assets/Strings.php:166
 msgid "Loading providers..."
-msgstr "Anbieter werden geladen..."
+msgstr ""
 
-#: includes/Assets/Strings.php:167 includes/Assets/Strings.php:190
+#: includes/Assets/Strings.php:167
+#: includes/Assets/Strings.php:190
 #: includes/Assets/Strings.php:218
 msgid "Error:"
-msgstr "Fehler:"
+msgstr ""
 
 #: includes/Assets/Strings.php:168
 msgid "No providers found. Create your first provider to get started."
 msgstr ""
-"Keine Anbieter gefunden. Erstellen Sie Ihren ersten Anbieter, um zu beginnen."
 
 #: includes/Assets/Strings.php:169
 msgid "Provider Type"
-msgstr "Anbietertyp"
+msgstr ""
 
 #: includes/Assets/Strings.php:170
 msgid "Active"
-msgstr "Aktiv"
+msgstr ""
 
 #: includes/Assets/Strings.php:171
 msgid "Inactive"
-msgstr "Inaktiv"
+msgstr ""
 
 #: includes/Assets/Strings.php:172
 msgid "Created"
-msgstr "Erstellt"
+msgstr ""
 
 #: includes/Assets/Strings.php:175
 msgid "Mailboxes"
-msgstr "Postfächer"
+msgstr ""
 
 #: includes/Assets/Strings.php:176
 msgid "Manage your mailboxes for form submissions."
-msgstr "Verwalten Sie Ihre Postfächer für Formular-Übermittlungen."
+msgstr ""
 
 #: includes/Assets/Strings.php:177
 msgid "Add Mailbox"
-msgstr "Postfach hinzufügen"
+msgstr ""
 
 #: includes/Assets/Strings.php:178
 msgid "Create Mailbox"
-msgstr "Postfach erstellen"
+msgstr ""
 
 #: includes/Assets/Strings.php:179
 msgid "Edit Mailbox"
-msgstr "Postfach bearbeiten"
+msgstr ""
 
 #: includes/Assets/Strings.php:180
 msgid "Mailbox created"
-msgstr "Postfach erstellt"
+msgstr ""
 
 #: includes/Assets/Strings.php:181
 msgid "The mailbox has been created successfully."
-msgstr "Das Postfach wurde erfolgreich erstellt."
+msgstr ""
 
 #: includes/Assets/Strings.php:182
 msgid "Mailbox updated"
-msgstr "Postfach aktualisiert"
+msgstr ""
 
 #: includes/Assets/Strings.php:183
 msgid "The mailbox has been updated successfully."
-msgstr "Das Postfach wurde erfolgreich aktualisiert."
+msgstr ""
 
 #: includes/Assets/Strings.php:184
 msgid "Mailbox deleted"
-msgstr "Postfach gelöscht"
+msgstr ""
 
 #: includes/Assets/Strings.php:185
 msgid "The mailbox has been deleted successfully."
-msgstr "Das Postfach wurde erfolgreich gelöscht."
+msgstr ""
 
 #: includes/Assets/Strings.php:186
 msgid "Are you sure you want to delete this mailbox?"
-msgstr "Sind Sie sicher, dass Sie dieses Postfach löschen möchten?"
+msgstr ""
 
 #: includes/Assets/Strings.php:187
 msgid "Cannot delete default mailbox"
-msgstr "Standard-Postfach kann nicht gelöscht werden"
+msgstr ""
 
 #: includes/Assets/Strings.php:188
 msgid "Please set another mailbox as default before deleting this one."
 msgstr ""
-"Bitte setzen Sie ein anderes Postfach als Standard, bevor Sie dieses löschen."
 
 #: includes/Assets/Strings.php:189
 msgid "Loading mailboxes..."
-msgstr "Postfächer werden geladen..."
+msgstr ""
 
 #: includes/Assets/Strings.php:191
 msgid "No mailboxes found. Create your first mailbox to get started."
 msgstr ""
-"Keine Postfächer gefunden. Erstellen Sie Ihr erstes Postfach, um zu beginnen."
 
 #: includes/Assets/Strings.php:193
 msgid "Title is required"
-msgstr "Titel ist erforderlich"
+msgstr ""
 
 #: includes/Assets/Strings.php:194
 msgid "My Mailbox"
-msgstr "Mein Postfach"
+msgstr ""
 
 #: includes/Assets/Strings.php:195
 msgid "A descriptive name for this mailbox."
-msgstr "Ein beschreibender Name für dieses Postfach."
+msgstr ""
 
 #: includes/Assets/Strings.php:197
 msgid "Set this mailbox as the default for new form submissions."
 msgstr ""
-"Setzen Sie dieses Postfach als Standard für neue Formular-Übermittlungen."
 
-#: includes/Assets/Strings.php:198 includes/Providers/Database.php:150
+#: includes/Assets/Strings.php:198
+#: includes/Providers/Database.php:145
 msgid "Default"
-msgstr "Standard"
+msgstr ""
 
 #: includes/Assets/Strings.php:199
 msgid "Create a new mailbox to receive form submissions."
 msgstr ""
-"Erstellen Sie ein neues Postfach, um Formular-Übermittlungen zu erhalten."
 
 #: includes/Assets/Strings.php:200
 msgid "Update the mailbox details below."
-msgstr "Aktualisieren Sie die Postfach-Details unten."
+msgstr ""
 
 #: includes/Assets/Strings.php:201
 msgid "Default mailbox cannot be deleted"
-msgstr "Standard-Postfach kann nicht gelöscht werden"
+msgstr ""
 
 #: includes/Assets/Strings.php:202
 msgid "Delete mailbox"
-msgstr "Postfach löschen"
+msgstr ""
 
 #: includes/Assets/Strings.php:205
 msgid "Labels"
-msgstr "Labels"
+msgstr ""
 
 #: includes/Assets/Strings.php:206
 msgid "Manage labels for organizing form entries."
-msgstr "Verwalten Sie Labels zur Organisation von Formulareinträgen."
+msgstr ""
 
 #: includes/Assets/Strings.php:208
 msgid "Create Label"
-msgstr "Label erstellen"
+msgstr ""
 
 #: includes/Assets/Strings.php:209
 msgid "Edit Label"
-msgstr "Label bearbeiten"
+msgstr ""
 
 #: includes/Assets/Strings.php:210
 msgid "Label created"
-msgstr "Label erstellt"
+msgstr ""
 
 #: includes/Assets/Strings.php:211
 msgid "The label has been created successfully."
-msgstr "Das Label wurde erfolgreich erstellt."
+msgstr ""
 
 #: includes/Assets/Strings.php:212
 msgid "Label updated"
-msgstr "Label aktualisiert"
+msgstr ""
 
 #: includes/Assets/Strings.php:213
 msgid "The label has been updated successfully."
-msgstr "Das Label wurde erfolgreich aktualisiert."
+msgstr ""
 
 #: includes/Assets/Strings.php:214
 msgid "Label deleted"
-msgstr "Label gelöscht"
+msgstr ""
 
 #: includes/Assets/Strings.php:215
 msgid "The label has been deleted successfully."
-msgstr "Das Label wurde erfolgreich gelöscht."
+msgstr ""
 
 #: includes/Assets/Strings.php:216
 msgid "Are you sure you want to delete this label?"
-msgstr "Sind Sie sicher, dass Sie dieses Label löschen möchten?"
+msgstr ""
 
 #: includes/Assets/Strings.php:217
 msgid "Loading labels..."
-msgstr "Labels werden geladen..."
+msgstr ""
 
 #: includes/Assets/Strings.php:219
 msgid "No labels found. Create your first label to get started."
-msgstr "Keine Labels gefunden. Erstellen Sie Ihr erstes Label, um zu beginnen."
+msgstr ""
 
 #: includes/Assets/Strings.php:220
 msgid "Name"
-msgstr "Name"
+msgstr ""
 
 #: includes/Assets/Strings.php:221
 msgid "Name is required"
-msgstr "Name ist erforderlich"
+msgstr ""
 
 #: includes/Assets/Strings.php:222
 msgid "Description"
-msgstr "Beschreibung"
+msgstr ""
 
 #: includes/Assets/Strings.php:223
 msgid "Color"
-msgstr "Farbe"
+msgstr ""
 
 #: includes/Assets/Strings.php:224
 msgid "Color must be a valid hex color (e.g., #FF0000)"
-msgstr "Farbe muss eine gültige Hex-Farbe sein (z.B. #FF0000)"
+msgstr ""
 
 #: includes/Assets/Strings.php:227
 msgid "Global Field Settings"
-msgstr "Globale Feldeinstellungen"
+msgstr ""
 
 #: includes/Assets/Strings.php:228
 msgid "Use custom name"
-msgstr "Benutzerdefinierten Namen verwenden"
+msgstr ""
 
 #: includes/Assets/Strings.php:229
 msgid "Use custom ID"
-msgstr "Benutzerdefinierte ID verwenden"
+msgstr ""
 
 #: includes/Assets/Strings.php:230
 msgid "Placeholder"
-msgstr "Platzhalter"
+msgstr ""
 
 #: includes/Assets/Strings.php:231
 msgid "Required"
-msgstr "Erforderlich"
+msgstr ""
 
 #: includes/Assets/Strings.php:232
 msgid "Conditional logic"
@@ -858,11 +841,12 @@ msgstr ""
 msgid "Condition"
 msgstr ""
 
-#: includes/Assets/Strings.php:236 includes/Assets/Strings.php:605
+#: includes/Assets/Strings.php:236
+#: includes/Assets/Strings.php:605
 #: includes/Providers/AbstractProvider.php:351
-#: includes/Providers/Webhook.php:660
+#: includes/Providers/Webhook.php:659
 msgid "Value"
-msgstr "Wert"
+msgstr ""
 
 #: includes/Assets/Strings.php:237
 msgid "— None —"
@@ -946,31 +930,31 @@ msgstr ""
 
 #: includes/Assets/Strings.php:257
 msgid "Enter label"
-msgstr "Label eingeben"
+msgstr ""
 
 #: includes/Assets/Strings.php:258
 msgid "Enter help text"
-msgstr "Hilfetext eingeben"
+msgstr ""
 
 #: includes/Assets/Strings.php:259
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #: includes/Assets/Strings.php:260
 msgid "Select an option..."
-msgstr "Option auswählen..."
+msgstr ""
 
 #: includes/Assets/Strings.php:261
 msgid "Button Label"
-msgstr "Button-Beschriftung"
+msgstr ""
 
 #: includes/Assets/Strings.php:262
 msgid "Success modal (hidden in preview)"
-msgstr "Erfolgs-Modal (in Vorschau ausgeblendet)"
+msgstr ""
 
 #: includes/Assets/Strings.php:263
 msgid "Toggle Success View"
-msgstr "Erfolgsansicht umschalten"
+msgstr ""
 
 #: includes/Assets/Strings.php:264
 msgid "Success screen"
@@ -997,8 +981,7 @@ msgid "Storage & Inbox"
 msgstr ""
 
 #: includes/Assets/Strings.php:270
-msgid ""
-"Every submission of this form is stored in the inbox. Choose where it lands."
+msgid "Every submission of this form is stored in the inbox. Choose where it lands."
 msgstr ""
 
 #: includes/Assets/Strings.php:271
@@ -1006,9 +989,7 @@ msgid "Providers & Actions"
 msgstr ""
 
 #: includes/Assets/Strings.php:272
-msgid ""
-"These run in order every time the form is submitted. Storage always runs "
-"first, so a failing integration can never lose a submission."
+msgid "These run in order every time the form is submitted. Storage always runs first, so a failing integration can never lose a submission."
 msgstr ""
 
 #: includes/Assets/Strings.php:273
@@ -1016,9 +997,7 @@ msgid "Spam Protection"
 msgstr ""
 
 #: includes/Assets/Strings.php:274
-msgid ""
-"Rate limiting and submit-timing checks always run and are not configurable "
-"per form."
+msgid "Rate limiting and submit-timing checks always run and are not configurable per form."
 msgstr ""
 
 #: includes/Assets/Strings.php:275
@@ -1026,9 +1005,7 @@ msgid "After Submit"
 msgstr ""
 
 #: includes/Assets/Strings.php:276
-msgid ""
-"You edit the success screen from the toolbar. Use the fields below for the "
-"error message and an optional redirect."
+msgid "You edit the success screen from the toolbar. Use the fields below for the error message and an optional redirect."
 msgstr ""
 
 #: includes/Assets/Strings.php:277
@@ -1048,7 +1025,7 @@ msgid "Enable provider"
 msgstr ""
 
 #: includes/Assets/Strings.php:281
-msgid "No additional providers yet. Add them under Gutenform → Providers."
+msgid "No additional providers yet. Add them under Streamery Forms → Providers."
 msgstr ""
 
 #: includes/Assets/Strings.php:282
@@ -1060,9 +1037,7 @@ msgid "Redirect URL"
 msgstr ""
 
 #: includes/Assets/Strings.php:285
-msgid ""
-"If set, the visitor is sent here after a successful submission instead of "
-"seeing the success screen."
+msgid "If set, the visitor is sent here after a successful submission instead of seeing the success screen."
 msgstr ""
 
 #: includes/Assets/Strings.php:286
@@ -1074,40 +1049,36 @@ msgid "Entry subject"
 msgstr ""
 
 #: includes/Assets/Strings.php:288
-msgid ""
-"Shown as the entry title in the inbox. Placeholders like {form_title} are "
-"replaced."
+msgid "Shown as the entry title in the inbox. Placeholders like {form_title} are replaced."
 msgstr ""
 
 #: includes/Assets/Strings.php:289
-msgid ""
-"Choosing a new template will replace all current form content. This cannot "
-"be undone."
+msgid "Choosing a new template will replace all current form content. This cannot be undone."
 msgstr ""
 
 #: includes/Assets/Strings.php:290
 msgid "Skin"
-msgstr "Design"
+msgstr ""
 
 #: includes/Assets/Strings.php:291
 msgid "Text"
-msgstr "Text"
+msgstr ""
 
 #: includes/Assets/Strings.php:292
 msgid "Number"
-msgstr "Nummer"
+msgstr ""
 
 #: includes/Assets/Strings.php:293
 msgid "Phone"
-msgstr "Telefon"
+msgstr ""
 
 #: includes/Assets/Strings.php:294
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: includes/Assets/Strings.php:295
 msgid "Search"
-msgstr "Suchen"
+msgstr ""
 
 #: includes/Assets/Strings.php:296
 msgid "Enter text"
@@ -1167,84 +1138,78 @@ msgstr ""
 
 #: includes/Assets/Strings.php:310
 msgid "Age Groups"
-msgstr "Altersgruppen"
+msgstr ""
 
 #: includes/Assets/Strings.php:311
 msgid "Mr."
-msgstr "Herr"
+msgstr ""
 
 #: includes/Assets/Strings.php:312
 msgid "Mrs."
-msgstr "Frau"
+msgstr ""
 
 #: includes/Assets/Strings.php:313
 msgid "Diverse"
-msgstr "Divers"
+msgstr ""
 
 #: includes/Assets/Strings.php:314
 msgid "0-17 years"
-msgstr "0-17 Jahre"
+msgstr ""
 
 #: includes/Assets/Strings.php:315
 msgid "18-24 years"
-msgstr "18-24 Jahre"
+msgstr ""
 
 #: includes/Assets/Strings.php:316
 msgid "25-34 years"
-msgstr "25-34 Jahre"
+msgstr ""
 
 #: includes/Assets/Strings.php:317
 msgid "35-44 years"
-msgstr "35-44 Jahre"
+msgstr ""
 
 #: includes/Assets/Strings.php:318
 msgid "45-54 years"
-msgstr "45-54 Jahre"
+msgstr ""
 
 #: includes/Assets/Strings.php:319
 msgid "55-64 years"
-msgstr "55-64 Jahre"
+msgstr ""
 
 #: includes/Assets/Strings.php:320
 msgid "65+ years"
-msgstr "65+ Jahre"
+msgstr ""
 
 #: includes/Assets/Strings.php:321
 msgid "Setup your First Mailbox"
-msgstr "Richten Sie Ihr erstes Postfach ein"
+msgstr ""
 
 #: includes/Assets/Strings.php:322
 msgid "Create a custom mailbox to organize your form entries"
 msgstr ""
-"Erstellen Sie ein benutzerdefiniertes Postfach, um Ihre Formulareinträge zu "
-"organisieren"
 
 #: includes/Assets/Strings.php:323
 msgid "Are The Labels (default) ok or change something?"
-msgstr "Sind die Labels (Standard) in Ordnung oder möchten Sie etwas ändern?"
+msgstr ""
 
 #: includes/Assets/Strings.php:324
 msgid "Review and customize your entry labels"
-msgstr "Überprüfen und passen Sie Ihre Eintrags-Labels an"
+msgstr ""
 
 #: includes/Assets/Strings.php:325
 msgid "Configure an email provider to receive form submissions"
 msgstr ""
-"Konfigurieren Sie einen E-Mail-Anbieter, um Formular-Übermittlungen zu "
-"erhalten"
 
 #: includes/Assets/Strings.php:328
 msgid "Select Field Settings"
-msgstr "Auswahlfeld-Einstellungen"
+msgstr ""
 
 #: includes/Assets/Strings.php:329
 msgid "Populate options"
 msgstr ""
 
 #: includes/Assets/Strings.php:330
-msgid ""
-"Options are not managed in the editor. They are filled when the page loads "
-"via the gutenform/select/populated_options filter in your theme or plugin."
+msgid "Options are not managed in the editor. They are filled when the page loads via the streamery-forms/select/populated_options filter in your theme or plugin."
 msgstr ""
 
 #: includes/Assets/Strings.php:331
@@ -1271,19 +1236,23 @@ msgstr ""
 msgid "Subscribe to newsletter"
 msgstr ""
 
-#: includes/Assets/Strings.php:339 includes/Assets/Strings.php:347
+#: includes/Assets/Strings.php:339
+#: includes/Assets/Strings.php:347
 msgid "Standard"
 msgstr ""
 
-#: includes/Assets/Strings.php:340 includes/Assets/Strings.php:348
+#: includes/Assets/Strings.php:340
+#: includes/Assets/Strings.php:348
 msgid "Schalter"
 msgstr ""
 
-#: includes/Assets/Strings.php:341 includes/Assets/Strings.php:350
+#: includes/Assets/Strings.php:341
+#: includes/Assets/Strings.php:350
 msgid "Karten"
 msgstr ""
 
-#: includes/Assets/Strings.php:342 includes/Assets/Strings.php:349
+#: includes/Assets/Strings.php:342
+#: includes/Assets/Strings.php:349
 msgid "Badges"
 msgstr ""
 
@@ -1303,11 +1272,13 @@ msgstr ""
 msgid "Layout"
 msgstr ""
 
-#: includes/Assets/Strings.php:352 includes/Assets/Strings.php:369
+#: includes/Assets/Strings.php:352
+#: includes/Assets/Strings.php:369
 msgid "Horizontal"
 msgstr ""
 
-#: includes/Assets/Strings.php:353 includes/Assets/Strings.php:370
+#: includes/Assets/Strings.php:353
+#: includes/Assets/Strings.php:370
 msgid "Vertical"
 msgstr ""
 
@@ -1315,12 +1286,14 @@ msgstr ""
 msgid "Date / Time Field Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:356 includes/Assets/Strings.php:460
+#: includes/Assets/Strings.php:356
+#: includes/Assets/Strings.php:460
 #: includes/Assets/Strings.php:725
 msgid "Date"
 msgstr ""
 
-#: includes/Assets/Strings.php:357 includes/Assets/Strings.php:461
+#: includes/Assets/Strings.php:357
+#: includes/Assets/Strings.php:461
 msgid "Time"
 msgstr ""
 
@@ -1356,7 +1329,8 @@ msgstr ""
 msgid "Max"
 msgstr ""
 
-#: includes/Assets/Strings.php:367 includes/Assets/Strings.php:802
+#: includes/Assets/Strings.php:367
+#: includes/Assets/Strings.php:802
 msgid "Step"
 msgstr ""
 
@@ -1422,7 +1396,7 @@ msgstr ""
 
 #: includes/Assets/Strings.php:385
 msgid "Basic Form"
-msgstr "Basisformular"
+msgstr ""
 
 #: includes/Assets/Strings.php:386
 msgid "Start"
@@ -1444,7 +1418,8 @@ msgstr ""
 msgid "Choose a template to get started. You can adjust the fields afterwards."
 msgstr ""
 
-#: includes/Assets/Strings.php:391 includes/Assets/Strings.php:765
+#: includes/Assets/Strings.php:391
+#: includes/Assets/Strings.php:765
 msgid "Blank"
 msgstr ""
 
@@ -1484,10 +1459,11 @@ msgstr ""
 msgid "Personal data"
 msgstr ""
 
-#: includes/Assets/Strings.php:401 includes/Assets/Strings.php:409
-#: includes/Providers/Email.php:252
+#: includes/Assets/Strings.php:401
+#: includes/Assets/Strings.php:409
+#: includes/Providers/Email.php:242
 msgid "Message"
-msgstr "Nachricht"
+msgstr ""
 
 #: includes/Assets/Strings.php:402
 msgid "Support Ticket"
@@ -1509,10 +1485,11 @@ msgstr ""
 msgid "Last name"
 msgstr ""
 
-#: includes/Assets/Strings.php:408 includes/Providers/Database.php:176
-#: includes/Providers/Email.php:244
+#: includes/Assets/Strings.php:408
+#: includes/Providers/Database.php:171
+#: includes/Providers/Email.php:234
 msgid "Subject"
-msgstr "Betreff"
+msgstr ""
 
 #: includes/Assets/Strings.php:410
 msgid "Privacy consent"
@@ -1770,201 +1747,204 @@ msgstr ""
 msgid "General enquiry"
 msgstr ""
 
-#: includes/Assets/Strings.php:476 includes/Assets/Strings.php:592
+#: includes/Assets/Strings.php:476
+#: includes/Assets/Strings.php:592
 msgid "Support"
-msgstr "Support"
+msgstr ""
 
-#: includes/Assets/Strings.php:477 includes/Assets/Strings.php:781
+#: includes/Assets/Strings.php:477
+#: includes/Assets/Strings.php:781
 msgid "Other"
 msgstr ""
 
 #: includes/Assets/Strings.php:478
 msgid "Country"
-msgstr "Land"
+msgstr ""
 
 #: includes/Assets/Strings.php:479
 msgid "Federal States"
-msgstr "Bundesländer"
+msgstr ""
 
 #: includes/Assets/Strings.php:480
 msgid "Germany"
-msgstr "Deutschland"
+msgstr ""
 
 #: includes/Assets/Strings.php:481
 msgid "Austria"
-msgstr "Österreich"
+msgstr ""
 
 #: includes/Assets/Strings.php:482
 msgid "Switzerland"
-msgstr "Schweiz"
+msgstr ""
 
 #: includes/Assets/Strings.php:483
 msgid "France"
-msgstr "Frankreich"
+msgstr ""
 
 #: includes/Assets/Strings.php:484
 msgid "Italy"
-msgstr "Italien"
+msgstr ""
 
 #: includes/Assets/Strings.php:485
 msgid "Spain"
-msgstr "Spanien"
+msgstr ""
 
 #: includes/Assets/Strings.php:486
 msgid "Netherlands"
-msgstr "Niederlande"
+msgstr ""
 
 #: includes/Assets/Strings.php:487
 msgid "Belgium"
-msgstr "Belgien"
+msgstr ""
 
 #: includes/Assets/Strings.php:488
 msgid "Poland"
-msgstr "Polen"
+msgstr ""
 
 #: includes/Assets/Strings.php:489
 msgid "Czech Republic"
-msgstr "Tschechische Republik"
+msgstr ""
 
 #: includes/Assets/Strings.php:490
 msgid "Baden-Württemberg"
-msgstr "Baden-Württemberg"
+msgstr ""
 
 #: includes/Assets/Strings.php:491
 msgid "Bavaria"
-msgstr "Bayern"
+msgstr ""
 
 #: includes/Assets/Strings.php:492
 msgid "Berlin"
-msgstr "Berlin"
+msgstr ""
 
 #: includes/Assets/Strings.php:493
 msgid "Brandenburg"
-msgstr "Brandenburg"
+msgstr ""
 
 #: includes/Assets/Strings.php:494
 msgid "Bremen"
-msgstr "Bremen"
+msgstr ""
 
 #: includes/Assets/Strings.php:495
 msgid "Hamburg"
-msgstr "Hamburg"
+msgstr ""
 
 #: includes/Assets/Strings.php:496
 msgid "Hesse"
-msgstr "Hessen"
+msgstr ""
 
 #: includes/Assets/Strings.php:497
 msgid "Mecklenburg-Western Pomerania"
-msgstr "Mecklenburg-Vorpommern"
+msgstr ""
 
 #: includes/Assets/Strings.php:498
 msgid "Lower Saxony"
-msgstr "Niedersachsen"
+msgstr ""
 
 #: includes/Assets/Strings.php:499
 msgid "North Rhine-Westphalia"
-msgstr "Nordrhein-Westfalen"
+msgstr ""
 
 #: includes/Assets/Strings.php:500
 msgid "Rhineland-Palatinate"
-msgstr "Rheinland-Pfalz"
+msgstr ""
 
 #: includes/Assets/Strings.php:501
 msgid "Saarland"
-msgstr "Saarland"
+msgstr ""
 
 #: includes/Assets/Strings.php:502
 msgid "Saxony"
-msgstr "Sachsen"
+msgstr ""
 
 #: includes/Assets/Strings.php:503
 msgid "Saxony-Anhalt"
-msgstr "Sachsen-Anhalt"
+msgstr ""
 
 #: includes/Assets/Strings.php:504
 msgid "Schleswig-Holstein"
-msgstr "Schleswig-Holstein"
+msgstr ""
 
 #: includes/Assets/Strings.php:505
 msgid "Thuringia"
-msgstr "Thüringen"
+msgstr ""
 
 #: includes/Assets/Strings.php:508
 msgid "Dashboard"
-msgstr "Dashboard"
+msgstr ""
 
 #: includes/Assets/Strings.php:509
 msgid "Overview"
-msgstr "Übersicht"
+msgstr ""
 
 #: includes/Assets/Strings.php:510
 msgid "Analytics"
-msgstr "Analysen"
+msgstr ""
 
 #: includes/Assets/Strings.php:511
 msgid "Reports"
-msgstr "Berichte"
+msgstr ""
 
 #: includes/Assets/Strings.php:512
 msgid "Notifications"
-msgstr "Benachrichtigungen"
+msgstr ""
 
 #: includes/Assets/Strings.php:513
 msgid "Total Revenue"
-msgstr "Gesamtumsatz"
+msgstr ""
 
 #: includes/Assets/Strings.php:514
 msgid "Subscriptions"
-msgstr "Abonnements"
+msgstr ""
 
 #: includes/Assets/Strings.php:515
 msgid "Sales"
-msgstr "Verkäufe"
+msgstr ""
 
 #: includes/Assets/Strings.php:516
 msgid "Active Now"
-msgstr "Jetzt aktiv"
+msgstr ""
 
-#: includes/Assets/Strings.php:517 includes/Assets/Strings.php:639
+#: includes/Assets/Strings.php:517
+#: includes/Assets/Strings.php:639
 msgid "Download"
-msgstr "Herunterladen"
+msgstr ""
 
 #: includes/Assets/Strings.php:518
 msgid "Recent Sales"
-msgstr "Letzte Verkäufe"
+msgstr ""
 
 #: includes/Assets/Strings.php:519
 msgid "You made 265 sales this month."
-msgstr "Sie haben diesen Monat 265 Verkäufe getätigt."
+msgstr ""
 
 #: includes/Assets/Strings.php:520
 msgid "from last month"
-msgstr "vom letzten Monat"
+msgstr ""
 
 #: includes/Assets/Strings.php:521
 msgid "since last hour"
-msgstr "seit der letzten Stunde"
+msgstr ""
 
 #: includes/Assets/Strings.php:524
 msgid "Junk"
-msgstr "Spam"
+msgstr ""
 
 #: includes/Assets/Strings.php:525
 msgid "Archive"
-msgstr "Archiv"
+msgstr ""
 
 #: includes/Assets/Strings.php:526
 msgid "Trash"
-msgstr "Papierkorb"
+msgstr ""
 
 #: includes/Assets/Strings.php:527
 msgid "No data"
-msgstr "Keine Daten"
+msgstr ""
 
 #: includes/Assets/Strings.php:528
 msgid "Entry Labels"
-msgstr "Eintrags-Labels"
+msgstr ""
 
 #: includes/Assets/Strings.php:531
 msgid "Folders"
@@ -1999,9 +1979,7 @@ msgid "Folder deleted"
 msgstr ""
 
 #: includes/Assets/Strings.php:539
-msgid ""
-"Are you sure you want to delete this folder? Entries will be removed from "
-"the folder but not deleted."
+msgid "Are you sure you want to delete this folder? Entries will be removed from the folder but not deleted."
 msgstr ""
 
 #: includes/Assets/Strings.php:540
@@ -2014,71 +1992,67 @@ msgstr ""
 
 #: includes/Assets/Strings.php:544
 msgid "Provider type is required"
-msgstr "Anbietertyp ist erforderlich"
+msgstr ""
 
 #: includes/Assets/Strings.php:545
 msgid "Select"
-msgstr "Auswählen"
+msgstr ""
 
 #: includes/Assets/Strings.php:546
 msgid "My Email Provider"
-msgstr "Mein E-Mail-Anbieter"
+msgstr ""
 
 #: includes/Assets/Strings.php:547
 msgid "A descriptive name for this provider."
-msgstr "Ein beschreibender Name für diesen Anbieter."
+msgstr ""
 
 #: includes/Assets/Strings.php:548
 msgid "Select a provider type"
-msgstr "Wählen Sie einen Anbietertyp"
+msgstr ""
 
 #: includes/Assets/Strings.php:549
 msgid "Select the type of provider."
-msgstr "Wählen Sie den Typ des Anbieters."
+msgstr ""
 
 #: includes/Assets/Strings.php:550
 msgid "Form Identifier (optional)"
-msgstr "Formular-ID (optional)"
+msgstr ""
 
 #: includes/Assets/Strings.php:551
 msgid "Leave empty for global provider"
-msgstr "Leer lassen für globalen Anbieter"
+msgstr ""
 
 #: includes/Assets/Strings.php:552
-msgid ""
-"Form-specific provider. Leave empty for global provider that can be used by "
-"all forms."
+msgid "Form-specific provider. Leave empty for global provider that can be used by all forms."
 msgstr ""
-"Formularspezifischer Anbieter. Leer lassen für globalen Anbieter, der von "
-"allen Formularen verwendet werden kann."
 
 #: includes/Assets/Strings.php:553
 msgid "Enable or disable this provider."
-msgstr "Diesen Anbieter aktivieren oder deaktivieren."
+msgstr ""
 
 #: includes/Assets/Strings.php:554
 msgid "Manage form submission providers (Email, Webhook, etc.)."
-msgstr "Verwalten Sie Formular-Übermittlungsanbieter (E-Mail, Webhook, etc.)."
+msgstr ""
 
 #: includes/Assets/Strings.php:555
 msgid "Update the provider details below."
-msgstr "Aktualisieren Sie die Anbieter-Details unten."
+msgstr ""
 
 #: includes/Assets/Strings.php:556
 msgid "Configure a new provider for form submissions."
-msgstr "Konfigurieren Sie einen neuen Anbieter für Formular-Übermittlungen."
+msgstr ""
 
 #: includes/Assets/Strings.php:557
 msgid "Type:"
-msgstr "Typ:"
+msgstr ""
 
 #: includes/Assets/Strings.php:558
 msgid "Form:"
-msgstr "Formular:"
+msgstr ""
 
 #: includes/Assets/Strings.php:559
 msgid "Global Provider"
-msgstr "Globaler Anbieter"
+msgstr ""
 
 #: includes/Assets/Strings.php:560
 msgid "Select providers"
@@ -2093,9 +2067,7 @@ msgid "Use provider layout"
 msgstr ""
 
 #: includes/Assets/Strings.php:563
-msgid ""
-"When enabled, your content replaces the {content} placeholder in the "
-"provider template. When disabled, this HTML is used as the full email body."
+msgid "When enabled, your content replaces the {content} placeholder in the provider template. When disabled, this HTML is used as the full email body."
 msgstr ""
 
 #: includes/Assets/Strings.php:564
@@ -2129,73 +2101,66 @@ msgstr ""
 #: includes/Assets/Strings.php:573
 msgid "Manage labels for organizing and categorizing form entries."
 msgstr ""
-"Verwalten Sie Labels zur Organisation und Kategorisierung von "
-"Formulareinträgen."
 
 #: includes/Assets/Strings.php:574
 msgid "Update the label details below."
-msgstr "Aktualisieren Sie die Label-Details unten."
+msgstr ""
 
 #: includes/Assets/Strings.php:575
 msgid "Create a new label to organize your form entries."
 msgstr ""
-"Erstellen Sie ein neues Label, um Ihre Formulareinträge zu organisieren."
 
 #: includes/Assets/Strings.php:577
 msgid "A unique name for this label."
-msgstr "Ein eindeutiger Name für dieses Label."
+msgstr ""
 
 #: includes/Assets/Strings.php:578
 msgid "Optional description for this label"
-msgstr "Optionale Beschreibung für dieses Label"
+msgstr ""
 
 #: includes/Assets/Strings.php:579
 msgid "An optional description to help identify this label."
-msgstr "Eine optionale Beschreibung zur Identifizierung dieses Labels."
+msgstr ""
 
 #: includes/Assets/Strings.php:580
 msgid "Choose a color to visually identify this label."
-msgstr "Wählen Sie eine Farbe zur visuellen Identifizierung dieses Labels."
+msgstr ""
 
 #: includes/Assets/Strings.php:583
 msgid "Let's get you started with a few quick steps"
-msgstr "Lassen Sie uns mit ein paar schnellen Schritten beginnen"
+msgstr ""
 
 #: includes/Assets/Strings.php:584
 msgid "🎉 All set! Redirecting to inbox..."
-msgstr "🎉 Alles fertig! Weiterleitung zum Posteingang..."
-
-#: includes/Assets/Strings.php:587
-msgid "Plugin Name"
-msgstr "Plugin-Name"
+msgstr ""
 
 #: includes/Assets/Strings.php:588
 msgid "Toggle navigation menu"
-msgstr "Navigationsmenü umschalten"
+msgstr ""
 
 #: includes/Assets/Strings.php:589
 msgid "Toggle user menu"
-msgstr "Benutzermenü umschalten"
+msgstr ""
 
 #: includes/Assets/Strings.php:590
 msgid "My Account"
-msgstr "Mein Konto"
+msgstr ""
 
 #: includes/Assets/Strings.php:593
 msgid "Logout"
-msgstr "Abmelden"
+msgstr ""
 
 #: includes/Assets/Strings.php:594
 msgid "Charts"
-msgstr "Diagramme"
+msgstr ""
 
 #: includes/Assets/Strings.php:597
 msgid "Manage Options"
-msgstr "Optionen verwalten"
+msgstr ""
 
 #: includes/Assets/Strings.php:598
 msgid "Sync label and value"
-msgstr "Label und Wert synchronisieren"
+msgstr ""
 
 #: includes/Assets/Strings.php:599
 msgid "Add Bulk Options"
@@ -2270,9 +2235,7 @@ msgid "Accepted file types"
 msgstr ""
 
 #: includes/Assets/Strings.php:621
-msgid ""
-"Comma-separated MIME types or file extensions (e.g., image/*,application/"
-"pdf,.doc,.docx)"
+msgid "Comma-separated MIME types or file extensions (e.g., image/*,application/pdf,.doc,.docx)"
 msgstr ""
 
 #: includes/Assets/Strings.php:622
@@ -2332,7 +2295,8 @@ msgstr ""
 msgid "View file"
 msgstr ""
 
-#: includes/Assets/Strings.php:643 includes/Assets/Strings.php:706
+#: includes/Assets/Strings.php:643
+#: includes/Assets/Strings.php:706
 msgid "SMTP Settings"
 msgstr ""
 
@@ -2341,12 +2305,11 @@ msgid "Configure SMTP settings for sending emails via wp_mail()."
 msgstr ""
 
 #: includes/Assets/Strings.php:645
-msgid ""
-"To configure SMTP and send form submission emails reliably, please activate "
-"the WP Mail SMTP plugin."
+msgid "To configure SMTP and send form submission emails reliably, please activate the WP Mail SMTP plugin."
 msgstr ""
 
-#: includes/Assets/Strings.php:646 includes/Assets/Strings.php:650
+#: includes/Assets/Strings.php:646
+#: includes/Assets/Strings.php:650
 msgid "WP Mail SMTP plugin"
 msgstr ""
 
@@ -2359,9 +2322,7 @@ msgid "WP Mail Logging plugin"
 msgstr ""
 
 #: includes/Assets/Strings.php:649
-msgid ""
-"For advanced SMTP features like email logging, conditional routing, and "
-"multiple providers, consider using the"
+msgid "For advanced SMTP features like email logging, conditional routing, and multiple providers, consider using the"
 msgstr ""
 
 #: includes/Assets/Strings.php:651
@@ -2452,18 +2413,20 @@ msgstr ""
 msgid "From Email Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:673 includes/Providers/Database.php:185
-#: includes/Providers/Email.php:261
+#: includes/Assets/Strings.php:673
+#: includes/Providers/Database.php:180
+#: includes/Providers/Email.php:251
 msgid "From Email"
-msgstr "Absender E-Mail"
+msgstr ""
 
 #: includes/Assets/Strings.php:674
 msgid "The email address that will appear as the sender."
 msgstr ""
 
-#: includes/Assets/Strings.php:675 includes/Providers/Email.php:269
+#: includes/Assets/Strings.php:675
+#: includes/Providers/Email.php:259
 msgid "From Name"
-msgstr "Absender Name"
+msgstr ""
 
 #: includes/Assets/Strings.php:676
 msgid "Your Site Name"
@@ -2493,7 +2456,8 @@ msgstr ""
 msgid "Test Email Sent"
 msgstr ""
 
-#: includes/Assets/Strings.php:683 includes/Assets/Strings.php:703
+#: includes/Assets/Strings.php:683
+#: includes/Assets/Strings.php:703
 msgid "Test Failed"
 msgstr ""
 
@@ -2581,7 +2545,8 @@ msgstr ""
 msgid "Start Test"
 msgstr ""
 
-#: includes/Assets/Strings.php:707 includes/Assets/Strings.php:724
+#: includes/Assets/Strings.php:707
+#: includes/Assets/Strings.php:724
 msgid "From"
 msgstr ""
 
@@ -2606,8 +2571,7 @@ msgid "Enable Email Logging"
 msgstr ""
 
 #: includes/Assets/Strings.php:715
-msgid ""
-"Log all emails sent through wp_mail() for debugging and auditing purposes."
+msgid "Log all emails sent through wp_mail() for debugging and auditing purposes."
 msgstr ""
 
 #: includes/Assets/Strings.php:716
@@ -2715,15 +2679,11 @@ msgid "Primary Mail"
 msgstr ""
 
 #: includes/Assets/Strings.php:748
-msgid ""
-"Mark this email field as the primary email address for form submissions. "
-"Only one field per form can be primary."
+msgid "Mark this email field as the primary email address for form submissions. Only one field per form can be primary."
 msgstr ""
 
 #: includes/Assets/Strings.php:749
-msgid ""
-"Another email field is already set as primary mail. Unset it first or it "
-"will be automatically unset when you enable this one."
+msgid "Another email field is already set as primary mail. Unset it first or it will be automatically unset when you enable this one."
 msgstr ""
 
 #: includes/Assets/Strings.php:752
@@ -2806,7 +2766,8 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: includes/Assets/Strings.php:779 includes/Providers/Email.php:278
+#: includes/Assets/Strings.php:779
+#: includes/Providers/Email.php:268
 msgid "Template"
 msgstr ""
 
@@ -2816,26 +2777,22 @@ msgstr ""
 
 #: includes/Assets/Strings.php:784
 msgid "Missing Fields"
-msgstr "Fehlende Felder"
+msgstr ""
 
 #: includes/Assets/Strings.php:785
-msgid ""
-"The following fields are referenced in the provider but not present in the "
-"form:"
+msgid "The following fields are referenced in the provider but not present in the form:"
 msgstr ""
-"Die folgenden Felder werden im Provider verwendet, sind aber nicht im "
-"Formular vorhanden:"
 
 #: includes/Assets/Strings.php:786
 msgid "Add Missing Fields"
-msgstr "Fehlende Felder hinzufügen"
+msgstr ""
 
 #: includes/Assets/Strings.php:789
 msgid "Admin Bar Menu"
 msgstr ""
 
 #: includes/Assets/Strings.php:790
-msgid "Show Gutenform in the WordPress admin bar with an unread entries count."
+msgid "Show Streamery Forms in the WordPress admin bar with an unread entries count."
 msgstr ""
 
 #: includes/Assets/Strings.php:791
@@ -2848,23 +2805,23 @@ msgstr ""
 
 #: includes/Assets/Strings.php:795
 msgid "Custom Fields"
-msgstr "Benutzerdefinierte Felder"
+msgstr ""
 
 #: includes/Assets/Strings.php:796
 msgid "Add Custom Field"
-msgstr "Feld hinzufügen"
+msgstr ""
 
 #: includes/Assets/Strings.php:797
 msgid "Field Label"
-msgstr "Feldbezeichnung"
+msgstr ""
 
 #: includes/Assets/Strings.php:798
 msgid "Field Name"
-msgstr "Feldname"
+msgstr ""
 
 #: includes/Assets/Strings.php:799
 msgid "Drag to insert"
-msgstr "Zum Einfügen ziehen"
+msgstr ""
 
 #: includes/Assets/Strings.php:803
 msgid "Add Step"
@@ -2926,29 +2883,62 @@ msgstr ""
 msgid "Step Title"
 msgstr ""
 
-#: includes/Controllers/Database/Actions.php:33
+#: includes/Assets/Strings.php:820
+msgid "Support Streamery Forms"
+msgstr ""
+
+#: includes/Assets/Strings.php:821
+msgid "Streamery Forms is free, with no pro version and no locked features. If it saves you time, a coffee helps keep it maintained."
+msgstr ""
+
+#. translators: %d: submission milestone, e.g. 50.
+#: includes/Assets/Strings.php:823
+msgid "%d+ submissions collected"
+msgstr ""
+
+#: includes/Assets/Strings.php:824
+msgid "Glad Streamery Forms is working for you. If you like it, a coffee or a quick review helps a lot."
+msgstr ""
+
+#: includes/Assets/Strings.php:825
+msgid "Buy a coffee"
+msgstr ""
+
+#: includes/Assets/Strings.php:826
+msgid "Sponsor on GitHub"
+msgstr ""
+
+#: includes/Assets/Strings.php:827
+msgid "Leave a review"
+msgstr ""
+
+#: includes/Assets/Strings.php:828
+msgid "Don't show again"
+msgstr ""
+
+#: includes/Controllers/Database/Actions.php:34
 msgid "Demo data already exists in the database."
-msgstr "Demo-Daten existieren bereits in der Datenbank."
+msgstr ""
 
-#: includes/Controllers/Database/Actions.php:41
+#: includes/Controllers/Database/Actions.php:42
 msgid "Demo data has been successfully seeded."
-msgstr "Demo-Daten wurden erfolgreich eingefügt."
+msgstr ""
 
-#: includes/Controllers/Database/Actions.php:46
+#: includes/Controllers/Database/Actions.php:47
 msgid "Error seeding demo data: "
-msgstr "Fehler beim Einfügen der Demo-Daten: "
+msgstr ""
 
-#: includes/Controllers/Database/Actions.php:81
+#: includes/Controllers/Database/Actions.php:80
 msgid "You do not have permission to perform this action."
-msgstr "Sie haben keine Berechtigung, diese Aktion auszuführen."
+msgstr ""
 
-#: includes/Controllers/Database/Actions.php:132
+#: includes/Controllers/Database/Actions.php:98
 msgid "All database tables have been successfully removed."
-msgstr "Alle Datenbanktabellen wurden erfolgreich entfernt."
+msgstr ""
 
-#: includes/Controllers/Database/Actions.php:144
+#: includes/Controllers/Database/Actions.php:108
 msgid "Error removing database tables: "
-msgstr "Fehler beim Entfernen der Datenbanktabellen: "
+msgstr ""
 
 #: includes/Controllers/EmailLogs/Actions.php:31
 #: includes/Controllers/EmailLogs/Actions.php:76
@@ -2996,38 +2986,39 @@ msgstr ""
 #: includes/Controllers/Entries/Actions.php:492
 #: includes/Controllers/Settings/Actions.php:76
 #: includes/Controllers/Settings/Actions.php:181
-#: includes/Controllers/Settings/Actions.php:468
-#: includes/Controllers/Settings/Actions.php:549
-#: includes/Controllers/Settings/Actions.php:626
-#: includes/Controllers/Settings/Actions.php:697
-#: includes/Controllers/Settings/Actions.php:761
-#: includes/Controllers/Settings/Actions.php:823
+#: includes/Controllers/Settings/Actions.php:464
+#: includes/Controllers/Settings/Actions.php:545
+#: includes/Controllers/Settings/Actions.php:622
+#: includes/Controllers/Settings/Actions.php:693
+#: includes/Controllers/Settings/Actions.php:734
+#: includes/Controllers/Settings/Actions.php:795
+#: includes/Controllers/Settings/Actions.php:857
 msgid "Security check failed."
 msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:52
 msgid "Entry created successfully."
-msgstr "Eintrag erfolgreich erstellt."
+msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:58
 msgid "Failed to create entry: "
-msgstr "Fehler beim Erstellen des Eintrags: "
+msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:171
 msgid "Failed to retrieve entries: "
-msgstr "Fehler beim Abrufen der Einträge: "
+msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:193
 #: includes/Controllers/Entries/Actions.php:226
 #: includes/Controllers/Entries/Actions.php:315
 #: includes/Controllers/Entries/Actions.php:354
-#: includes/Controllers/EntryLabels/Actions.php:236
+#: includes/Controllers/EntryLabels/Actions.php:237
 msgid "Entry not found."
-msgstr "Eintrag nicht gefunden."
+msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:205
 msgid "Failed to retrieve entry: "
-msgstr "Fehler beim Abrufen des Eintrags: "
+msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:270
 msgid "Folder not found or does not belong to this mailbox."
@@ -3035,12 +3026,12 @@ msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:288
 msgid "Entry updated successfully."
-msgstr "Eintrag erfolgreich aktualisiert."
+msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:294
 #: includes/Controllers/Entries/Actions.php:374
 msgid "Failed to update entry: "
-msgstr "Fehler beim Aktualisieren des Eintrags: "
+msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:327
 msgid "Entry moved to trash successfully."
@@ -3052,19 +3043,19 @@ msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:368
 msgid "Entry marked as read."
-msgstr "Eintrag als gelesen markiert."
+msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:368
 msgid "Entry marked as unread."
-msgstr "Eintrag als ungelesen markiert."
+msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:423
 msgid "Failed to retrieve form identifiers: "
-msgstr "Fehler beim Abrufen der Formular-IDs: "
+msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:473
 msgid "Failed to retrieve statuses: "
-msgstr "Fehler beim Abrufen der Status: "
+msgstr ""
 
 #: includes/Controllers/Entries/Actions.php:501
 msgid "You do not have permission to empty trash."
@@ -3088,110 +3079,111 @@ msgstr ""
 #: includes/Controllers/EntryLabels/Actions.php:37
 #: includes/Controllers/EntryLabels/Actions.php:145
 msgid "A label with this name already exists."
-msgstr "Ein Label mit diesem Namen existiert bereits."
+msgstr ""
 
 #: includes/Controllers/EntryLabels/Actions.php:52
 msgid "Label created successfully."
-msgstr "Label erfolgreich erstellt."
+msgstr ""
 
 #: includes/Controllers/EntryLabels/Actions.php:58
 msgid "Failed to create label: "
-msgstr "Fehler beim Erstellen des Labels: "
+msgstr ""
 
 #: includes/Controllers/EntryLabels/Actions.php:81
 msgid "Failed to retrieve labels: "
-msgstr "Fehler beim Abrufen der Labels: "
+msgstr ""
 
 #: includes/Controllers/EntryLabels/Actions.php:102
 #: includes/Controllers/EntryLabels/Actions.php:134
 #: includes/Controllers/EntryLabels/Actions.php:191
-#: includes/Controllers/EntryLabels/Actions.php:244
+#: includes/Controllers/EntryLabels/Actions.php:245
 msgid "Label not found."
-msgstr "Label nicht gefunden."
+msgstr ""
 
 #: includes/Controllers/EntryLabels/Actions.php:114
 msgid "Failed to retrieve label: "
-msgstr "Fehler beim Abrufen des Labels: "
+msgstr ""
 
 #: includes/Controllers/EntryLabels/Actions.php:165
 msgid "Label updated successfully."
-msgstr "Label erfolgreich aktualisiert."
+msgstr ""
 
 #: includes/Controllers/EntryLabels/Actions.php:171
 msgid "Failed to update label: "
-msgstr "Fehler beim Aktualisieren des Labels: "
+msgstr ""
 
-#: includes/Controllers/EntryLabels/Actions.php:209
+#: includes/Controllers/EntryLabels/Actions.php:210
 msgid "Label deleted successfully."
-msgstr "Label erfolgreich gelöscht."
+msgstr ""
 
-#: includes/Controllers/EntryLabels/Actions.php:214
+#: includes/Controllers/EntryLabels/Actions.php:215
 msgid "Failed to delete label: "
-msgstr "Fehler beim Löschen des Labels: "
+msgstr ""
 
-#: includes/Controllers/EntryLabels/Actions.php:265
+#: includes/Controllers/EntryLabels/Actions.php:266
 msgid "Label is already attached to this entry."
-msgstr "Label ist bereits an diesen Eintrag angehängt."
+msgstr ""
 
-#: includes/Controllers/EntryLabels/Actions.php:282
+#: includes/Controllers/EntryLabels/Actions.php:283
 msgid "Label attached to entry successfully."
-msgstr "Label erfolgreich an Eintrag angehängt."
+msgstr ""
 
-#: includes/Controllers/EntryLabels/Actions.php:287
+#: includes/Controllers/EntryLabels/Actions.php:288
 msgid "Failed to attach label: "
-msgstr "Fehler beim Anhängen des Labels: "
+msgstr ""
 
-#: includes/Controllers/EntryLabels/Actions.php:319
+#: includes/Controllers/EntryLabels/Actions.php:320
 msgid "Label is not attached to this entry."
-msgstr "Label ist nicht an diesen Eintrag angehängt."
+msgstr ""
 
-#: includes/Controllers/EntryLabels/Actions.php:326
+#: includes/Controllers/EntryLabels/Actions.php:327
 msgid "Label detached from entry successfully."
-msgstr "Label erfolgreich vom Eintrag getrennt."
+msgstr ""
 
-#: includes/Controllers/EntryLabels/Actions.php:331
+#: includes/Controllers/EntryLabels/Actions.php:332
 msgid "Failed to detach label: "
-msgstr "Fehler beim Trennen des Labels: "
+msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:87
-#: includes/Controllers/FileUpload/Actions.php:325
+#: includes/Controllers/FileUpload/Actions.php:88
+#: includes/Controllers/FileUpload/Actions.php:122
+#: includes/Controllers/FileUpload/Actions.php:344
 msgid "No file was uploaded."
 msgstr ""
 
 #. translators: %s: maximum file size in megabytes.
-#: includes/Controllers/FileUpload/Actions.php:155
+#: includes/Controllers/FileUpload/Actions.php:174
 msgid "File is too large. Maximum size is %s MB."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:171
+#: includes/Controllers/FileUpload/Actions.php:190
 msgid "Invalid file type. Please check the accepted file types."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:181
+#: includes/Controllers/FileUpload/Actions.php:200
 msgid "This file type is not allowed."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:321
+#: includes/Controllers/FileUpload/Actions.php:340
 msgid "File exceeds the maximum upload size."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:323
+#: includes/Controllers/FileUpload/Actions.php:342
 msgid "File was only partially uploaded."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:327
+#: includes/Controllers/FileUpload/Actions.php:346
 msgid "Missing temporary folder."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:329
+#: includes/Controllers/FileUpload/Actions.php:348
 msgid "Failed to write file to disk."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:331
+#: includes/Controllers/FileUpload/Actions.php:350
 msgid "File upload stopped by extension."
 msgstr ""
 
-#: includes/Controllers/FileUpload/Actions.php:333
+#: includes/Controllers/FileUpload/Actions.php:352
 msgid "Unknown upload error."
 msgstr ""
 
@@ -3250,85 +3242,85 @@ msgstr ""
 
 #: includes/Controllers/Mailboxes/Actions.php:50
 msgid "Mailbox created successfully."
-msgstr "Postfach erfolgreich erstellt."
+msgstr ""
 
 #: includes/Controllers/Mailboxes/Actions.php:56
 msgid "Failed to create mailbox: "
-msgstr "Fehler beim Erstellen des Postfachs: "
+msgstr ""
 
 #: includes/Controllers/Mailboxes/Actions.php:92
 msgid "Failed to retrieve mailboxes: "
-msgstr "Fehler beim Abrufen der Postfächer: "
+msgstr ""
 
 #: includes/Controllers/Mailboxes/Actions.php:114
 #: includes/Controllers/Mailboxes/Actions.php:147
 #: includes/Controllers/Mailboxes/Actions.php:201
 msgid "Mailbox not found."
-msgstr "Postfach nicht gefunden."
+msgstr ""
 
 #: includes/Controllers/Mailboxes/Actions.php:126
 msgid "Failed to retrieve mailbox: "
-msgstr "Fehler beim Abrufen des Postfachs: "
+msgstr ""
 
 #: includes/Controllers/Mailboxes/Actions.php:174
 msgid "Mailbox updated successfully."
-msgstr "Postfach erfolgreich aktualisiert."
+msgstr ""
 
 #: includes/Controllers/Mailboxes/Actions.php:180
 msgid "Failed to update mailbox: "
-msgstr "Fehler beim Aktualisieren des Postfachs: "
+msgstr ""
 
 #: includes/Controllers/Mailboxes/Actions.php:211
 msgid "Mailbox deleted successfully."
-msgstr "Postfach erfolgreich gelöscht."
+msgstr ""
 
 #: includes/Controllers/Mailboxes/Actions.php:216
 msgid "Failed to delete mailbox: "
-msgstr "Fehler beim Löschen des Postfachs: "
+msgstr ""
 
 #: includes/Controllers/Providers/Actions.php:142
 msgid "Provider created successfully."
-msgstr "Anbieter erfolgreich erstellt."
+msgstr ""
 
 #: includes/Controllers/Providers/Actions.php:148
 msgid "Failed to create provider: "
-msgstr "Fehler beim Erstellen des Anbieters: "
+msgstr ""
 
 #: includes/Controllers/Providers/Actions.php:199
 msgid "Failed to retrieve providers: "
-msgstr "Fehler beim Abrufen der Anbieter: "
+msgstr ""
 
 #: includes/Controllers/Providers/Actions.php:221
 #: includes/Controllers/Providers/Actions.php:262
 #: includes/Controllers/Providers/Actions.php:295
 #: includes/Controllers/Providers/Actions.php:361
 msgid "Provider not found."
-msgstr "Anbieter nicht gefunden."
+msgstr ""
 
 #: includes/Controllers/Providers/Actions.php:233
 #: includes/Controllers/Providers/Actions.php:274
 msgid "Failed to retrieve provider: "
-msgstr "Fehler beim Abrufen des Anbieters: "
+msgstr ""
 
 #: includes/Controllers/Providers/Actions.php:334
 msgid "Provider updated successfully."
-msgstr "Anbieter erfolgreich aktualisiert."
+msgstr ""
 
 #: includes/Controllers/Providers/Actions.php:340
 msgid "Failed to update provider: "
-msgstr "Fehler beim Aktualisieren des Anbieters: "
+msgstr ""
 
 #: includes/Controllers/Providers/Actions.php:371
 msgid "Provider deleted successfully."
-msgstr "Anbieter erfolgreich gelöscht."
+msgstr ""
 
 #: includes/Controllers/Providers/Actions.php:376
 msgid "Failed to delete provider: "
-msgstr "Fehler beim Löschen des Anbieters: "
+msgstr ""
 
 #: includes/Controllers/Providers/Actions.php:417
 msgid "Failed to retrieve provider types: "
-msgstr "Fehler beim Abrufen der Anbietertypen: "
+msgstr ""
 
 #: includes/Controllers/Select/Actions.php:36
 msgid "field_name and post_id are required."
@@ -3347,10 +3339,11 @@ msgid "You do not have permission to view SMTP settings."
 msgstr ""
 
 #: includes/Controllers/Settings/Actions.php:85
-#: includes/Controllers/Settings/Actions.php:635
-#: includes/Controllers/Settings/Actions.php:706
-#: includes/Controllers/Settings/Actions.php:769
-#: includes/Controllers/Settings/Actions.php:832
+#: includes/Controllers/Settings/Actions.php:631
+#: includes/Controllers/Settings/Actions.php:702
+#: includes/Controllers/Settings/Actions.php:743
+#: includes/Controllers/Settings/Actions.php:803
+#: includes/Controllers/Settings/Actions.php:866
 msgid "You do not have permission to manage settings."
 msgstr ""
 
@@ -3393,9 +3386,7 @@ msgid "Invalid test email address after sanitization: %s"
 msgstr ""
 
 #: includes/Controllers/Settings/Actions.php:259
-msgid ""
-"Invalid from email address. Please provide a valid email address in the From "
-"Email field."
+msgid "Invalid from email address. Please provide a valid email address in the From Email field."
 msgstr ""
 
 #: includes/Controllers/Settings/Actions.php:297
@@ -3403,111 +3394,109 @@ msgid "Invalid from email address. Please provide a valid email address."
 msgstr ""
 
 #: includes/Controllers/Settings/Actions.php:315
-msgid "Gutenform SMTP Test Email"
+msgid "Streamery Forms SMTP Test Email"
 msgstr ""
 
 #: includes/Controllers/Settings/Actions.php:316
-msgid "This is a test email from Gutenform SMTP settings."
+msgid "This is a test email from Streamery Forms SMTP settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:351
+#: includes/Controllers/Settings/Actions.php:349
 msgid "Test email address is empty. Please provide a valid email address."
 msgstr ""
 
 #. translators: %s: the email address that failed validation.
-#: includes/Controllers/Settings/Actions.php:370
+#: includes/Controllers/Settings/Actions.php:368
 msgid "Invalid test email address before sending: %s"
 msgstr ""
 
 #. translators: %s: recipient email address.
-#: includes/Controllers/Settings/Actions.php:399
+#: includes/Controllers/Settings/Actions.php:395
 msgid "Test email sent successfully to %s."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:412
-msgid ""
-"Failed to send test email. Please check your SMTP settings, credentials, and "
-"server configuration."
+#: includes/Controllers/Settings/Actions.php:408
+msgid "Failed to send test email. Please check your SMTP settings, credentials, and server configuration."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:433
+#: includes/Controllers/Settings/Actions.php:429
 msgid "You do not have permission to view CAPTCHA settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:476
+#: includes/Controllers/Settings/Actions.php:472
 msgid "You do not have permission to manage CAPTCHA settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:509
+#: includes/Controllers/Settings/Actions.php:505
 msgid "CAPTCHA settings saved successfully."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:525
+#: includes/Controllers/Settings/Actions.php:521
 msgid "You do not have permission to view debug settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:558
+#: includes/Controllers/Settings/Actions.php:554
 msgid "You do not have permission to manage debug settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:576
+#: includes/Controllers/Settings/Actions.php:572
 msgid "Debug mode enabled."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:577
+#: includes/Controllers/Settings/Actions.php:573
 msgid "Debug mode disabled."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:584
+#: includes/Controllers/Settings/Actions.php:580
 msgid "Failed to update debug mode."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:600
-#: includes/Controllers/Settings/Actions.php:665
-#: includes/Controllers/Settings/Actions.php:735
-#: includes/Controllers/Settings/Actions.php:799
+#: includes/Controllers/Settings/Actions.php:596
+#: includes/Controllers/Settings/Actions.php:661
+#: includes/Controllers/Settings/Actions.php:769
+#: includes/Controllers/Settings/Actions.php:833
 msgid "You do not have permission to view settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:648
+#: includes/Controllers/Settings/Actions.php:644
 msgid "First steps skipped."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:649
+#: includes/Controllers/Settings/Actions.php:645
 msgid "First steps re-enabled."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:719
+#: includes/Controllers/Settings/Actions.php:715
 msgid "Charts are now visible."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:720
+#: includes/Controllers/Settings/Actions.php:716
 msgid "Charts are now hidden."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:782
-msgid "All Gutenform data will be deleted when the plugin is deleted."
+#: includes/Controllers/Settings/Actions.php:816
+msgid "All Streamery Forms data will be deleted when the plugin is deleted."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:783
-msgid "Gutenform data will be kept when the plugin is deleted."
+#: includes/Controllers/Settings/Actions.php:817
+msgid "Streamery Forms data will be kept when the plugin is deleted."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:845
+#: includes/Controllers/Settings/Actions.php:879
 msgid "Admin bar menu enabled."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:846
+#: includes/Controllers/Settings/Actions.php:880
 msgid "Admin bar menu disabled."
 msgstr ""
 
 #: includes/Controllers/Submissions/Actions.php:57
 msgid "Invalid nonce."
-msgstr "Ungültiger Nonce."
+msgstr ""
 
 #: includes/Controllers/Submissions/Actions.php:74
 msgid "Form identifier is missing."
-msgstr "Formular-ID fehlt."
+msgstr ""
 
 #: includes/Controllers/Submissions/Actions.php:87
 msgid "This form could not be found."
@@ -3523,11 +3512,11 @@ msgstr ""
 
 #: includes/Controllers/Submissions/Actions.php:144
 msgid "Form submitted successfully."
-msgstr "Formular erfolgreich übermittelt."
+msgstr ""
 
 #: includes/Controllers/Submissions/Actions.php:150
 msgid "Form submission failed."
-msgstr "Formular-Übermittlung fehlgeschlagen."
+msgstr ""
 
 #. translators: %s: form field name.
 #: includes/Controllers/Submissions/FieldValidator.php:71
@@ -3571,74 +3560,65 @@ msgstr ""
 #. translators: %s: provider slug.
 #: includes/Controllers/Submissions/Handler.php:93
 msgid "Provider \"%s\" not found."
-msgstr "Anbieter \"%s\" nicht gefunden."
+msgstr ""
 
 #. translators: %s: provider title.
 #: includes/Controllers/Submissions/Handler.php:129
 msgid "Provider \"%s\" could not process the submission."
-msgstr "Anbieter \"%s\" konnte die Übermittlung nicht verarbeiten."
+msgstr ""
 
 #. translators: 1: provider title, 2: error message.
 #: includes/Controllers/Submissions/Handler.php:141
 msgid "Error in Provider \"%1$s\": %2$s"
 msgstr ""
 
-#: includes/Core/Crypto.php:130
-msgid ""
-"Gutenform: the libsodium PHP extension is not available on this server, so "
-"secrets you save (SMTP password, CAPTCHA keys) are stored in plain text "
-"rather than encrypted. Ask your host to enable the sodium extension."
+#: includes/Core/Crypto.php:136
+msgid "Streamery Forms: the libsodium PHP extension is not available on this server, so secrets you save (SMTP password, CAPTCHA keys) are stored in plain text rather than encrypted. Ask your host to enable the sodium extension."
+msgstr ""
+
+#: includes/Core/Deactivate.php:74
+msgid "Deactivate Streamery Forms"
+msgstr ""
+
+#: includes/Core/Deactivate.php:75
+msgid "What would you like to do?"
 msgstr ""
 
 #: includes/Core/Deactivate.php:76
-msgid "Deactivate Gutenform"
-msgstr "Gutenform deaktivieren"
+msgid "Just disable the plugin"
+msgstr ""
 
 #: includes/Core/Deactivate.php:77
-msgid "What would you like to do?"
-msgstr "Was möchten Sie tun?"
-
-#: includes/Core/Deactivate.php:81
-msgid "Just disable the plugin"
-msgstr "Plugin nur deaktivieren"
-
-#: includes/Core/Deactivate.php:82
 msgid "Keep all data and settings. You can reactivate the plugin later."
 msgstr ""
-"Alle Daten und Einstellungen behalten. Sie können das Plugin später wieder "
-"aktivieren."
 
-#: includes/Core/Deactivate.php:86
+#: includes/Core/Deactivate.php:78
 msgid "Disable and remove database tables"
-msgstr "Deaktivieren und Datenbanktabellen entfernen"
-
-#: includes/Core/Deactivate.php:87
-msgid ""
-"This will permanently delete all form entries, accounts, and settings. This "
-"action cannot be undone."
 msgstr ""
-"Dies wird alle Formulareinträge, Konten und Einstellungen dauerhaft löschen. "
-"Diese Aktion kann nicht rückgängig gemacht werden."
 
-#: includes/Core/Deactivate.php:92
+#: includes/Core/Deactivate.php:79
+msgid "This will permanently delete all form entries, accounts, and settings. This action cannot be undone."
+msgstr ""
+
+#: includes/Core/Deactivate.php:81
 msgid "Continue"
-msgstr "Fortfahren"
+msgstr ""
 
-#: includes/Core/Deactivate.php:164
+#: includes/Core/Deactivate.php:82
 msgid "Processing..."
-msgstr "Verarbeitung..."
+msgstr ""
 
-#: includes/Core/Deactivate.php:194
+#: includes/Core/Deactivate.php:83
 msgid "Database tables removed successfully. Deactivating plugin..."
-msgstr "Datenbanktabellen erfolgreich entfernt. Plugin wird deaktiviert..."
+msgstr ""
 
-#: includes/Core/Deactivate.php:197 includes/Core/Deactivate.php:210
+#: includes/Core/Deactivate.php:84
 msgid "Error removing database tables. Please try again."
 msgstr ""
-"Fehler beim Entfernen der Datenbanktabellen. Bitte versuchen Sie es erneut."
 
-#: includes/Core/Privacy.php:53 includes/Core/Privacy.php:67
-msgid "Gutenform form submissions"
+#: includes/Core/Privacy.php:53
+#: includes/Core/Privacy.php:67
+msgid "Streamery Forms form submissions"
 msgstr ""
 
 #: includes/Core/Privacy.php:91
@@ -3662,7 +3642,8 @@ msgstr ""
 msgid "Could not delete form submission %d."
 msgstr ""
 
-#: includes/Core/SpamProtection.php:61 includes/Core/SpamProtection.php:65
+#: includes/Core/SpamProtection.php:61
+#: includes/Core/SpamProtection.php:65
 msgid "Submission rejected."
 msgstr ""
 
@@ -3672,199 +3653,196 @@ msgstr ""
 
 #: includes/Providers/AbstractProvider.php:351
 msgid "Field"
-msgstr "Feld"
+msgstr ""
 
-#: includes/Providers/Database.php:44
+#: includes/Providers/Database.php:45
 msgid "Database Storage"
-msgstr "Datenbank-Speicherung"
+msgstr ""
 
-#: includes/Providers/Database.php:169
+#: includes/Providers/Database.php:164
 msgid "Select the mailbox where the entry will be stored."
 msgstr ""
 
-#: includes/Providers/Database.php:180
+#: includes/Providers/Database.php:175
 msgid "Subject for the entry. Placeholders like {form_title} will be replaced."
-msgstr "Betreff für den Eintrag. Platzhalter wie {form_title} werden ersetzt."
-
-#: includes/Providers/Database.php:189
-msgid ""
-"Email address of the sender that will be stored in the entry. Placeholders "
-"like {field_email} can be used."
 msgstr ""
 
-#: includes/Providers/Email.php:43
+#: includes/Providers/Database.php:184
+msgid "Email address of the sender that will be stored in the entry. Placeholders like {field_email} can be used."
+msgstr ""
+
+#: includes/Providers/Email.php:44
 msgid "Email Notification"
-msgstr "E-Mail-Benachrichtigung"
+msgstr ""
 
-#: includes/Providers/Email.php:235
+#: includes/Providers/Email.php:225
 msgid "Email Address"
-msgstr "E-Mail-Adresse"
+msgstr ""
 
-#: includes/Providers/Email.php:239
+#: includes/Providers/Email.php:229
 msgid "Email address to which the notification will be sent."
-msgstr "E-Mail-Adresse, an die die Benachrichtigung gesendet wird."
+msgstr ""
 
-#: includes/Providers/Email.php:248
+#: includes/Providers/Email.php:238
 msgid "Email subject. Placeholders like {form_title} will be replaced."
-msgstr "E-Mail-Betreff. Platzhalter wie {form_title} werden ersetzt."
-
-#: includes/Providers/Email.php:256
-msgid ""
-"Email message. HTML allowed. Placeholders like {field_name} will be "
-"replaced. Use {content} to inject form-specific content when the form has "
-"\"Use provider layout\" enabled."
 msgstr ""
 
-#: includes/Providers/Email.php:265
-msgid ""
-"Email address of the sender. Placeholders like {field_email} can be used."
+#: includes/Providers/Email.php:246
+msgid "Email message. HTML allowed. Placeholders like {field_name} will be replaced. Use {content} to inject form-specific content when the form has \"Use provider layout\" enabled."
 msgstr ""
 
-#: includes/Providers/Email.php:273
+#: includes/Providers/Email.php:255
+msgid "Email address of the sender. Placeholders like {field_email} can be used."
+msgstr ""
+
+#: includes/Providers/Email.php:263
 msgid "Name of the sender."
-msgstr "Name des Absenders."
+msgstr ""
 
-#: includes/Providers/Email.php:282
+#: includes/Providers/Email.php:272
 msgid "Template name (internal use)."
 msgstr ""
 
-#: includes/Providers/Webhook.php:54
+#: includes/Providers/Webhook.php:55
 msgid "Webhook"
 msgstr ""
 
 #. translators: %d: HTTP status code returned by the webhook endpoint.
-#: includes/Providers/Webhook.php:149
+#: includes/Providers/Webhook.php:150
 msgid "Endpoint returned HTTP %d."
 msgstr ""
 
-#: includes/Providers/Webhook.php:165
+#: includes/Providers/Webhook.php:166
 msgid "No webhook URL configured."
 msgstr ""
 
-#: includes/Providers/Webhook.php:170
+#: includes/Providers/Webhook.php:171
 msgid "Webhook URL is not a valid absolute URL."
 msgstr ""
 
-#: includes/Providers/Webhook.php:174
+#: includes/Providers/Webhook.php:175
 msgid "Webhook URL must use http or https."
 msgstr ""
 
-#: includes/Providers/Webhook.php:190
+#: includes/Providers/Webhook.php:191
 msgid "Webhook URL points at a private or local address, which is not allowed."
 msgstr ""
 
-#: includes/Providers/Webhook.php:551
+#: includes/Providers/Webhook.php:550
 msgid "Endpoint URL"
 msgstr ""
 
-#: includes/Providers/Webhook.php:555
-msgid ""
-"The https URL that submissions are sent to. Private and local addresses are "
-"blocked."
+#: includes/Providers/Webhook.php:554
+msgid "The https URL that submissions are sent to. Private and local addresses are blocked."
 msgstr ""
 
-#: includes/Providers/Webhook.php:560
+#: includes/Providers/Webhook.php:559
 msgid "HTTP Method"
 msgstr ""
 
-#: includes/Providers/Webhook.php:572
+#: includes/Providers/Webhook.php:571
 msgid "Content Type"
 msgstr ""
 
-#: includes/Providers/Webhook.php:583
+#: includes/Providers/Webhook.php:582
 msgid "Authentication"
 msgstr ""
 
-#: includes/Providers/Webhook.php:588
+#: includes/Providers/Webhook.php:587
 msgid "None"
 msgstr ""
 
-#: includes/Providers/Webhook.php:589
+#: includes/Providers/Webhook.php:588
 msgid "Bearer token"
 msgstr ""
 
-#: includes/Providers/Webhook.php:590
+#: includes/Providers/Webhook.php:589
 msgid "API key header"
 msgstr ""
 
-#: includes/Providers/Webhook.php:591
+#: includes/Providers/Webhook.php:590
 msgid "Basic auth"
 msgstr ""
 
-#: includes/Providers/Webhook.php:596
+#: includes/Providers/Webhook.php:595
 msgid "Bearer Token"
 msgstr ""
 
-#: includes/Providers/Webhook.php:601
+#: includes/Providers/Webhook.php:600
 msgid "Sent as an Authorization: Bearer header."
 msgstr ""
 
-#: includes/Providers/Webhook.php:605
+#: includes/Providers/Webhook.php:604
 msgid "API Key Header Name"
 msgstr ""
 
-#: includes/Providers/Webhook.php:609
+#: includes/Providers/Webhook.php:608
 msgid "Letters, digits and hyphens only."
 msgstr ""
 
-#: includes/Providers/Webhook.php:613
+#: includes/Providers/Webhook.php:612
 msgid "API Key"
 msgstr ""
 
-#: includes/Providers/Webhook.php:621
+#: includes/Providers/Webhook.php:620
 msgid "Basic Auth Username"
 msgstr ""
 
-#: includes/Providers/Webhook.php:628
+#: includes/Providers/Webhook.php:627
 msgid "Basic Auth Password"
 msgstr ""
 
-#: includes/Providers/Webhook.php:636
+#: includes/Providers/Webhook.php:635
 msgid "Sign payload (HMAC)"
 msgstr ""
 
-#: includes/Providers/Webhook.php:640
-msgid ""
-"Adds X-Gutenform-Timestamp and X-Gutenform-Signature headers so the receiver "
-"can verify the payload."
+#: includes/Providers/Webhook.php:639
+msgid "Adds X-Streamery-Forms-Timestamp and X-Streamery-Forms-Signature headers so the receiver can verify the payload."
 msgstr ""
 
-#: includes/Providers/Webhook.php:644
+#: includes/Providers/Webhook.php:643
 msgid "Signing Secret"
 msgstr ""
 
-#: includes/Providers/Webhook.php:649
+#: includes/Providers/Webhook.php:648
 msgid "Used for the HMAC signature: sha256 over \"<timestamp>.<body>\"."
 msgstr ""
 
-#: includes/Providers/Webhook.php:653
+#: includes/Providers/Webhook.php:652
 msgid "Custom Headers"
 msgstr ""
 
-#: includes/Providers/Webhook.php:657
+#: includes/Providers/Webhook.php:656
 msgid "Additional headers sent with every request."
 msgstr ""
 
-#: includes/Providers/Webhook.php:659
+#: includes/Providers/Webhook.php:658
 msgid "Header"
 msgstr ""
 
-#: includes/Providers/Webhook.php:665
+#: includes/Providers/Webhook.php:664
 msgid "Timeout (seconds)"
 msgstr ""
 
-#: includes/Providers/Webhook.php:669
+#: includes/Providers/Webhook.php:668
 msgid "Maximum 15 seconds."
 msgstr ""
 
-#: includes/Providers/Webhook.php:673
+#: includes/Providers/Webhook.php:672
 msgid "Field Mapping"
 msgstr ""
 
-#: includes/Providers/Webhook.php:677
-msgid ""
-"Map form fields to payload keys. Dot paths create nested objects (e.g. "
-"contact.email). Leave empty to send all fields unchanged."
+#: includes/Providers/Webhook.php:676
+msgid "Map form fields to payload keys. Dot paths create nested objects (e.g. contact.email). Leave empty to send all fields unchanged."
+msgstr ""
+
+#: streamery-forms.php:46
+msgid "Streamery Forms could not start."
+msgstr ""
+
+#. translators: %s: what is missing from the installation, e.g. "vendor/autoload.php".
+#: streamery-forms.php:50
+msgid "This copy is missing its build output (%s). Install the plugin from an official release package, or run \"composer install --no-dev -o\" and \"npm install && npm run build\" in the plugin directory."
 msgstr ""
 
 #: src/blocks/captcha/block.json
@@ -3874,9 +3852,7 @@ msgstr ""
 
 #: src/blocks/captcha/block.json
 msgctxt "block description"
-msgid ""
-"CAPTCHA block for spam protection. Supports FriendlyCaptcha and Google "
-"reCAPTCHA."
+msgid "CAPTCHA block for spam protection. Supports FriendlyCaptcha and Google reCAPTCHA."
 msgstr ""
 
 #: src/blocks/checkbox/block.json
@@ -3886,7 +3862,7 @@ msgstr ""
 
 #: src/blocks/checkbox/block.json
 msgctxt "block description"
-msgid "Checkbox block for Gutenform."
+msgid "Checkbox block for Streamery Forms."
 msgstr ""
 
 #: src/blocks/date-time/block.json
@@ -3896,7 +3872,7 @@ msgstr ""
 
 #: src/blocks/date-time/block.json
 msgctxt "block description"
-msgid "Date or time field for Gutenform."
+msgid "Date or time field for Streamery Forms."
 msgstr ""
 
 #: src/blocks/file/block.json
@@ -3906,18 +3882,18 @@ msgstr ""
 
 #: src/blocks/file/block.json
 msgctxt "block description"
-msgid "File upload block for Gutenform."
+msgid "File upload block for Streamery Forms."
 msgstr ""
 
 #: src/blocks/form/block.json
 msgctxt "block title"
 msgid "Form"
-msgstr "Formular"
+msgstr ""
 
 #: src/blocks/form/block.json
 msgctxt "block description"
-msgid "Form Wrapper block for Gutenform."
-msgstr "Formular-Wrapper-Block für Gutenform."
+msgid "Form Wrapper block for Streamery Forms."
+msgstr ""
 
 #: src/blocks/honeypot/block.json
 msgctxt "block title"
@@ -3926,19 +3902,18 @@ msgstr ""
 
 #: src/blocks/honeypot/block.json
 msgctxt "block description"
-msgid ""
-"Hidden field for spam detection. Bots will fill this field, humans won't."
+msgid "Hidden field for spam detection. Bots will fill this field, humans won't."
 msgstr ""
 
 #: src/blocks/input/block.json
 msgctxt "block title"
 msgid "Input"
-msgstr "Eingabe"
+msgstr ""
 
 #: src/blocks/input/block.json
 msgctxt "block description"
-msgid "Input block for Gutenform."
-msgstr "Eingabe-Block für Gutenform."
+msgid "Input block for Streamery Forms."
+msgstr ""
 
 #: src/blocks/progress/block.json
 msgctxt "block title"
@@ -3947,7 +3922,7 @@ msgstr ""
 
 #: src/blocks/progress/block.json
 msgctxt "block description"
-msgid "Progress indicator for multi-step forms in Gutenform."
+msgid "Progress indicator for multi-step forms in Streamery Forms."
 msgstr ""
 
 #: src/blocks/radio/block.json
@@ -3957,7 +3932,7 @@ msgstr ""
 
 #: src/blocks/radio/block.json
 msgctxt "block description"
-msgid "Radio block for Gutenform."
+msgid "Radio block for Streamery Forms."
 msgstr ""
 
 #: src/blocks/save-progress/block.json
@@ -3967,18 +3942,18 @@ msgstr ""
 
 #: src/blocks/save-progress/block.json
 msgctxt "block description"
-msgid "Save form progress to continue later in Gutenform."
+msgid "Save form progress to continue later in Streamery Forms."
 msgstr ""
 
 #: src/blocks/select/block.json
 msgctxt "block title"
 msgid "Select"
-msgstr "Auswahl"
+msgstr ""
 
 #: src/blocks/select/block.json
 msgctxt "block description"
-msgid "Select block for Gutenform."
-msgstr "Auswahl-Block für Gutenform."
+msgid "Select block for Streamery Forms."
+msgstr ""
 
 #: src/blocks/slider/block.json
 msgctxt "block title"
@@ -3987,7 +3962,7 @@ msgstr ""
 
 #: src/blocks/slider/block.json
 msgctxt "block description"
-msgid "Slider block for Gutenform."
+msgid "Slider block for Streamery Forms."
 msgstr ""
 
 #: src/blocks/step-navigation/block.json
@@ -3997,7 +3972,7 @@ msgstr ""
 
 #: src/blocks/step-navigation/block.json
 msgctxt "block description"
-msgid "Navigation buttons for multi-step forms in Gutenform."
+msgid "Navigation buttons for multi-step forms in Streamery Forms."
 msgstr ""
 
 #: src/blocks/step/block.json
@@ -4007,65 +3982,35 @@ msgstr ""
 
 #: src/blocks/step/block.json
 msgctxt "block description"
-msgid "Step container block for multi-step forms in Gutenform."
+msgid "Step container block for multi-step forms in Streamery Forms."
 msgstr ""
 
 #: src/blocks/submit/block.json
 msgctxt "block title"
 msgid "Submit"
-msgstr "Absenden"
+msgstr ""
 
 #: src/blocks/submit/block.json
 msgctxt "block description"
-msgid "Submit button block for Gutenform."
-msgstr "Absenden-Button-Block für Gutenform."
+msgid "Submit button block for Streamery Forms."
+msgstr ""
 
 #: src/blocks/success/block.json
 msgctxt "block title"
 msgid "Success"
-msgstr "Erfolg"
+msgstr ""
 
 #: src/blocks/success/block.json
 msgctxt "block description"
-msgid "Success Section for Gutenform."
-msgstr "Erfolgs-Bereich für Gutenform."
+msgid "Success Section for Streamery Forms."
+msgstr ""
 
 #: src/blocks/textarea/block.json
 msgctxt "block title"
 msgid "Textarea"
-msgstr "Textbereich"
+msgstr ""
 
 #: src/blocks/textarea/block.json
 msgctxt "block description"
-msgid "Textarea block for Gutenform."
-msgstr "Textbereich-Block für Gutenform."
-
-#~ msgid "Database Provider (Standard)"
-#~ msgstr "Datenbank-Anbieter (Standard)"
-
-#~ msgid "Neue Formular-Übermittlung: {form_title}"
-#~ msgstr "Neue Formular-Übermittlung: {form_title}"
-
-#~ msgid "Chart"
-#~ msgstr "Diagramm"
-
-#~ msgid "Database Provider could not process the submission."
-#~ msgstr "Datenbank-Anbieter konnte die Übermittlung nicht verarbeiten."
-
-#~ msgid "Database Provider Error: %s"
-#~ msgstr "Datenbank-Anbieter Fehler: %s"
-
-#~ msgid "Error in Provider \"%s\": %s"
-#~ msgstr "Fehler im Anbieter \"%s\": %s"
-
-#~ msgid ""
-#~ "Message for the entry. Placeholders like {field_name} will be replaced."
-#~ msgstr ""
-#~ "Nachricht für den Eintrag. Platzhalter wie {field_name} werden ersetzt."
-
-#~ msgid ""
-#~ "Email message. HTML allowed. Placeholders like {field_name} will be "
-#~ "replaced."
-#~ msgstr ""
-#~ "E-Mail-Nachricht. HTML erlaubt. Platzhalter wie {field_name} werden "
-#~ "ersetzt."
+msgid "Textarea block for Streamery Forms."
+msgstr ""

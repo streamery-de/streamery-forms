@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gutenform/captcha",
+	"name": "streamery-forms/captcha",
 	"version": "0.1.0",
 	"title": "CAPTCHA",
 	"category": "widgets",
 	"icon": "shield",
 	"description": "CAPTCHA block for spam protection. Supports FriendlyCaptcha and Google reCAPTCHA.",
-	"ancestor": ["gutenform/form"],
+	"ancestor": ["streamery-forms/form"],
 	"example": {},
 	"attributes": {
 		"style": {
@@ -51,7 +51,7 @@
 	"supports": {
 		"html": false
 	},
-	"textdomain": "gutenform-builder",
+	"textdomain": "streamery-forms",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

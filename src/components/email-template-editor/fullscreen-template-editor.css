@@ -1,9 +1,9 @@
 /**
  * Fullscreen Template Editor – plain CSS for use in block editor (no Tailwind).
- * Prefix: gutenform-te
+ * Prefix: streamery-forms-te
  */
 
-.gutenform-te {
+.streamery-forms-te {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -11,12 +11,12 @@
   overflow: hidden;
 }
 
-.gutenform-te__header {
+.streamery-forms-te__header {
   padding: 24px 24px 16px;
   border-bottom: 1px solid #e5e7eb;
 }
 
-.gutenform-te__title {
+.streamery-forms-te__title {
   font-size: 1.125rem;
   line-height: 1.2;
   font-weight: 600;
@@ -24,28 +24,28 @@
   margin: 0;
 }
 
-.gutenform-te__description {
+.streamery-forms-te__description {
   font-size: 0.875rem;
   color: #6b7280;
   margin-top: 0.25rem;
   margin-bottom: 0;
 }
 
-.gutenform-te__checkbox-row {
+.streamery-forms-te__checkbox-row {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   padding-top: 0.5rem;
 }
 
-.gutenform-te__checkbox-inner {
+.streamery-forms-te__checkbox-inner {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 /* Checkbox (Radix) when Tailwind not loaded */
-.gutenform-te__checkbox-inner button[role="checkbox"] {
+.streamery-forms-te__checkbox-inner button[role="checkbox"] {
   width: 1rem;
   height: 1rem;
   flex-shrink: 0;
@@ -60,48 +60,48 @@
   outline: none;
 }
 
-.gutenform-te__checkbox-inner button[role="checkbox"]:focus-visible {
+.streamery-forms-te__checkbox-inner button[role="checkbox"]:focus-visible {
   box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2563eb;
 }
 
-.gutenform-te__checkbox-inner button[role="checkbox"]:disabled {
+.streamery-forms-te__checkbox-inner button[role="checkbox"]:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.gutenform-te__checkbox-inner button[role="checkbox"][data-state="checked"] {
+.streamery-forms-te__checkbox-inner button[role="checkbox"][data-state="checked"] {
   background: #2563eb;
   color: #fff;
   border-color: #2563eb;
 }
 
-.gutenform-te__checkbox-inner button[role="checkbox"] svg {
+.streamery-forms-te__checkbox-inner button[role="checkbox"] svg {
   width: 0.875rem;
   height: 0.875rem;
 }
 
-.gutenform-te__checkbox-label {
+.streamery-forms-te__checkbox-label {
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.2;
   cursor: pointer;
 }
 
-.gutenform-te__checkbox-help {
+.streamery-forms-te__checkbox-help {
   font-size: 0.75rem;
   color: #6b7280;
   padding-left: 1.5rem;
   margin: 0;
 }
 
-.gutenform-te__main {
+.streamery-forms-te__main {
   flex: 1;
   display: flex;
   overflow: hidden;
   min-height: 0;
 }
 
-.gutenform-te__sidebar {
+.streamery-forms-te__sidebar {
   width: 320px;
   min-width: 320px;
   border-right: 1px solid #e5e7eb;
@@ -110,25 +110,25 @@
   overflow: hidden;
 }
 
-.gutenform-te__sidebar-inner {
+.streamery-forms-te__sidebar-inner {
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.gutenform-te__section {
+.streamery-forms-te__section {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.gutenform-te__section-title {
+.streamery-forms-te__section-title {
   font-size: 0.875rem;
   font-weight: 600;
 }
 
-.gutenform-te__main-area {
+.streamery-forms-te__main-area {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -136,28 +136,28 @@
   min-height: 0;
 }
 
-.gutenform-te__content-row {
+.streamery-forms-te__content-row {
   flex: 1;
   display: flex;
   min-height: 0;
   border-bottom: 1px solid #e5e7eb;
 }
 
-.gutenform-te__preview-col {
+.streamery-forms-te__preview-col {
   flex: 1;
   display: flex;
   flex-direction: column;
   min-height: 0;
 }
 
-.gutenform-te__panel-header {
+.streamery-forms-te__panel-header {
   padding: 8px 16px;
   border-bottom: 1px solid #e5e7eb;
   font-size: 14px;
   font-weight: 600;
 }
 
-.gutenform-te__preview-box {
+.streamery-forms-te__preview-box {
   flex: 1;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.03);
@@ -165,7 +165,7 @@
   position: relative;
 }
 
-.gutenform-te__preview-inner {
+.streamery-forms-te__preview-inner {
   width: 100%;
   min-height: 100%;
   border: 1px solid #e5e7eb;
@@ -174,7 +174,7 @@
   padding: 1rem;
 }
 
-.gutenform-te__preview-empty {
+.streamery-forms-te__preview-empty {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,7 +183,7 @@
   font-size: 0.875rem;
 }
 
-.gutenform-te__editor-col {
+.streamery-forms-te__editor-col {
   flex: 1;
   min-height: 0;
   border-left: 1px solid #e5e7eb;
@@ -191,12 +191,12 @@
   flex-direction: column;
 }
 
-.gutenform-te__editor-inner {
+.streamery-forms-te__editor-inner {
   flex: 1;
   min-height: 200px;
 }
 
-.gutenform-te__footer {
+.streamery-forms-te__footer {
   padding: 16px 24px;
   border-top: 1px solid #e5e7eb;
   display: flex;
@@ -205,7 +205,7 @@
 }
 
 /* Wrapper when used inside WordPress Modal (needs height) */
-.gutenform-te__wp-wrap {
+.streamery-forms-te__wp-wrap {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -215,27 +215,27 @@
 }
 
 /* ScrollArea child in sidebar */
-.gutenform-te__scroll-area {
+.streamery-forms-te__scroll-area {
   flex: 1;
   min-height: 0;
 }
 
-/* Select dropdown z-index in modal (portal may be outside .gutenform-te) */
-.gutenform-te__select-content {
+/* Select dropdown z-index in modal (portal may be outside .streamery-forms-te) */
+.streamery-forms-te__select-content {
   z-index: 100000 !important;
 }
 
-.gutenform-te__template-title {
+.streamery-forms-te__template-title {
   font-weight: 500;
 }
 
-.gutenform-te__template-desc {
+.streamery-forms-te__template-desc {
   font-size: 0.75rem;
   color: #6b7280;
 }
 
 /* Buttons in footer – base button styles if not from design system */
-.gutenform-te__btn {
+.streamery-forms-te__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -247,39 +247,39 @@
   border: 1px solid transparent;
 }
 
-.gutenform-te__btn--outline {
+.streamery-forms-te__btn--outline {
   border-color: #e5e7eb;
   background: #fff;
   color: #374151;
 }
 
-.gutenform-te__btn--outline:hover {
+.streamery-forms-te__btn--outline:hover {
   background: #f9fafb;
 }
 
-.gutenform-te__btn--primary {
+.streamery-forms-te__btn--primary {
   background: #2563eb;
   color: #fff;
   border-color: #2563eb;
 }
 
-.gutenform-te__btn--primary:hover {
+.streamery-forms-te__btn--primary:hover {
   background: #1d4ed8;
 }
 
-.gutenform-te__btn svg {
+.streamery-forms-te__btn svg {
   margin-right: 0.5rem;
 }
 
 /* Fallbacks for child components when Tailwind is not loaded (e.g. block editor) */
-.gutenform-te label {
+.streamery-forms-te label {
   font-size: 0.875rem;
   font-weight: 500;
   display: block;
 }
 
-.gutenform-te input[type="text"],
-.gutenform-te input[type="search"] {
+.streamery-forms-te input[type="text"],
+.streamery-forms-te input[type="search"] {
   width: 100%;
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
@@ -288,20 +288,20 @@
   background: #fff;
 }
 
-.gutenform-te input:focus {
+.streamery-forms-te input:focus {
   outline: none;
   border-color: #2563eb;
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
-.gutenform-te [role="separator"] {
+.streamery-forms-te [role="separator"] {
   height: 1px;
   background: #e5e7eb;
   margin: 0.5rem 0;
 }
 
 /* Placeholder list (PlaceholderDraggable) when Tailwind not loaded */
-.gutenform-te__placeholders {
+.streamery-forms-te__placeholders {
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   background: #fff;
@@ -310,7 +310,7 @@
 }
 
 /* CardHeader */
-.gutenform-te__placeholders > div:first-child {
+.streamery-forms-te__placeholders > div:first-child {
   padding: 1.5rem;
   border-bottom: 1px solid #e5e7eb;
   display: flex;
@@ -318,7 +318,7 @@
   gap: 0.375rem;
 }
 
-.gutenform-te__placeholders > div:first-child h3 {
+.streamery-forms-te__placeholders > div:first-child h3 {
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.2;
@@ -326,21 +326,21 @@
   margin: 0;
 }
 
-.gutenform-te__placeholders > div:first-child p {
+.streamery-forms-te__placeholders > div:first-child p {
   font-size: 0.875rem;
   color: #6b7280;
   margin: 0;
 }
 
 /* CardContent */
-.gutenform-te__placeholders > div:last-child {
+.streamery-forms-te__placeholders > div:last-child {
   padding: 1.5rem 1.5rem 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.gutenform-te__placeholders > div:last-child input {
+.streamery-forms-te__placeholders > div:last-child input {
   width: 100%;
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
@@ -350,7 +350,7 @@
 }
 
 /* Scroll container (space-y-4 max-h-[400px]) */
-.gutenform-te__placeholders > div:last-child > div:last-child {
+.streamery-forms-te__placeholders > div:last-child > div:last-child {
   max-height: 400px;
   overflow-y: auto;
   display: flex;
@@ -359,14 +359,14 @@
 }
 
 /* Category group */
-.gutenform-te__placeholders > div:last-child > div:last-child > div {
+.streamery-forms-te__placeholders > div:last-child > div:last-child > div {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
 /* Category label */
-.gutenform-te__placeholders > div:last-child > div:last-child > div > div:first-child {
+.streamery-forms-te__placeholders > div:last-child > div:last-child > div > div:first-child {
   font-size: 0.75rem;
   font-weight: 600;
   color: #6b7280;
@@ -374,14 +374,14 @@
 }
 
 /* Rows container (space-y-1) */
-.gutenform-te__placeholders > div:last-child > div:last-child > div > div:last-child {
+.streamery-forms-te__placeholders > div:last-child > div:last-child > div > div:last-child {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
 /* Placeholder row (draggable item) */
-.gutenform-te__placeholders [data-placeholder-row] {
+.streamery-forms-te__placeholders [data-placeholder-row] {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -391,33 +391,33 @@
   transition: background-color 0.15s;
 }
 
-.gutenform-te__placeholders [data-placeholder-row]:hover {
+.streamery-forms-te__placeholders [data-placeholder-row]:hover {
   background-color: #f3f4f6;
 }
 
-.gutenform-te__placeholders [data-placeholder-row]:active {
+.streamery-forms-te__placeholders [data-placeholder-row]:active {
   cursor: grabbing;
 }
 
-.gutenform-te__placeholders [data-placeholder-row].opacity-50,
-.gutenform-te__placeholders [data-placeholder-row][style*="opacity: 0.5"] {
+.streamery-forms-te__placeholders [data-placeholder-row].opacity-50,
+.streamery-forms-te__placeholders [data-placeholder-row][style*="opacity: 0.5"] {
   opacity: 0.5;
 }
 
-.gutenform-te__placeholders [data-placeholder-row] svg {
+.streamery-forms-te__placeholders [data-placeholder-row] svg {
   width: 1rem;
   height: 1rem;
   flex-shrink: 0;
   color: #6b7280;
 }
 
-.gutenform-te__placeholders [data-placeholder-row] > div {
+.streamery-forms-te__placeholders [data-placeholder-row] > div {
   flex: 1;
   min-width: 0;
   overflow: hidden;
 }
 
-.gutenform-te__placeholders [data-placeholder-row] > div > div:first-child {
+.streamery-forms-te__placeholders [data-placeholder-row] > div > div:first-child {
   font-size: 0.875rem;
   font-weight: 500;
   white-space: nowrap;
@@ -425,7 +425,7 @@
   text-overflow: ellipsis;
 }
 
-.gutenform-te__placeholders [data-placeholder-row] > div > div:last-child {
+.streamery-forms-te__placeholders [data-placeholder-row] > div > div:last-child {
   font-size: 0.75rem;
   color: #6b7280;
   font-family: ui-monospace, monospace;
@@ -436,7 +436,7 @@
 
 /* Placeholder while the code editor chunk is being fetched (see the lazy()
    import in FullscreenTemplateEditor.tsx). */
-.gutenform-te__editor-loading {
+.streamery-forms-te__editor-loading {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -447,16 +447,16 @@
 }
 
 /* Wrapper that receives placeholder drops for the code editor. */
-.gutenform-te__editor-dropzone {
+.streamery-forms-te__editor-dropzone {
 	height: 100%;
 	min-height: 0;
 }
 
-.gutenform-te__editor-dropzone .cm-editor {
+.streamery-forms-te__editor-dropzone .cm-editor {
 	height: 100%;
 }
 
-.gutenform-te__editor-dropzone .cm-scroller {
+.streamery-forms-te__editor-dropzone .cm-scroller {
 	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 	font-size: 13px;
 }

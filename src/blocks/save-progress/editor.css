@@ -1,5 +1,5 @@
 /* Save Progress editor styles */
-.wp-block-gutenform-save-progress button[disabled] {
+.wp-block-streamery-forms-save-progress button[disabled] {
 	cursor: default;
 	opacity: 1;
 }

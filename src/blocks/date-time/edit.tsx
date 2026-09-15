@@ -33,23 +33,23 @@ export default function Edit(props: BlockEditProps<DateTimeAttributes>) {
 				onHelpChange={(help) => setAttributes({ help })}
 				attributes={attributes}
 			>
-				<div className="gutenform-datetime-inputs">
+				<div className="streamery-forms-datetime-inputs">
 					<input
 						type={inputType}
 						disabled
 						name={attributes.name}
 						id={attributes.id}
-						className="gutenform-datetime-input"
+						className="streamery-forms-datetime-input"
 					/>
 					{range && (
 						<>
-							<span className="gutenform-datetime-separator">–</span>
+							<span className="streamery-forms-datetime-separator">–</span>
 							<input
 								type={inputType}
 								disabled
 								name={`${attributes.name}_end`}
 								id={`${attributes.id}-end`}
-								className="gutenform-datetime-input"
+								className="streamery-forms-datetime-input"
 							/>
 						</>
 					)}

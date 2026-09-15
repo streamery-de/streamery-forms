@@ -1,20 +1,20 @@
 <?php
 
-namespace Gutenform\Admin;
+namespace StreameryForms\Admin;
 
-use Gutenform\Models\Entries;
-use Gutenform\Models\Mailboxes;
-use Gutenform\Traits\Base;
+use StreameryForms\Models\Entries;
+use StreameryForms\Models\Mailboxes;
+use StreameryForms\Traits\Base;
 
 defined('ABSPATH') || exit;
 
 /**
  * Class AdminBar
  *
- * Adds a Gutenform node to the WordPress admin bar with an unread
+ * Adds a Streamery Forms node to the WordPress admin bar with an unread
  * entries count bubble and a dropdown listing all mailboxes + settings.
  *
- * @package Gutenform\Admin
+ * @package StreameryForms\Admin
  * @since   1.1.0
  */
 class AdminBar
@@ -27,7 +27,7 @@ class AdminBar
 	 *
 	 * @var string
 	 */
-	const OPTION_KEY = 'gutenform_admin_bar_enabled';
+	const OPTION_KEY = 'streamery_forms_admin_bar_enabled';
 
 	/**
 	 * Initialize hooks.
@@ -54,13 +54,13 @@ class AdminBar
 	}
 
 	/**
-	 * Check whether the admin bar feature is enabled (default: true).
+	 * Check whether the admin bar feature is enabled. Opt-in (default: false).
 	 *
 	 * @return bool
 	 */
 	public static function is_enabled(): bool
 	{
-		return (bool) get_option(self::OPTION_KEY, true);
+		return (bool) get_option(self::OPTION_KEY, false);
 	}
 
 	/**
@@ -76,7 +76,7 @@ class AdminBar
 
 		// Build the title with optional bubble.
 		$title = '<span class="ab-icon dashicons dashicons-email"></span>';
-		$title .= '<span class="ab-label">' . esc_html__('Gutenform', 'gutenform-builder') . '</span>';
+		$title .= '<span class="ab-label">' . esc_html__('Streamery Forms', 'streamery-forms') . '</span>';
 
 		if ($unread_count > 0) {
 			$display_count = $unread_count > 99 ? '99+' : $unread_count;
@@ -85,11 +85,11 @@ class AdminBar
 
 		// Top-level node.
 		$wp_admin_bar->add_node(array(
-			'id'    => 'gutenform',
+			'id'    => 'streamery-forms',
 			'title' => $title,
-			'href'  => admin_url('admin.php?page=gutenform#/inbox'),
+			'href'  => admin_url('admin.php?page=streamery-forms#/inbox'),
 			'meta'  => array(
-				'class' => 'gutenform-admin-bar-node',
+				'class' => 'streamery-forms-admin-bar-node',
 			),
 		));
 
@@ -105,29 +105,29 @@ class AdminBar
 			}
 
 			$wp_admin_bar->add_node(array(
-				'id'     => 'gutenform-mailbox-' . $mailbox->id,
-				'parent' => 'gutenform',
+				'id'     => 'streamery-forms-mailbox-' . $mailbox->id,
+				'parent' => 'streamery-forms',
 				'title'  => $mailbox_title,
-				'href'   => admin_url('admin.php?page=gutenform#/inbox?mailbox=' . $mailbox->id),
+				'href'   => admin_url('admin.php?page=streamery-forms#/inbox?mailbox=' . $mailbox->id),
 			));
 		}
 
 		// Separator (visual divider via empty group).
 		$wp_admin_bar->add_node(array(
-			'id'     => 'gutenform-separator',
-			'parent' => 'gutenform',
+			'id'     => 'streamery-forms-separator',
+			'parent' => 'streamery-forms',
 			'title'  => '<hr style="margin:4px 0;border:0;border-top:1px solid rgba(255,255,255,.15);">',
 			'meta'   => array(
-				'class' => 'gf-admin-bar-separator',
+				'class' => 'streamery-forms-admin-bar-separator',
 			),
 		));
 
 		// Dropdown: Settings.
 		$wp_admin_bar->add_node(array(
-			'id'     => 'gutenform-settings',
-			'parent' => 'gutenform',
-			'title'  => esc_html__('Settings', 'gutenform-builder'),
-			'href'   => admin_url('admin.php?page=gutenform-settings#/settings'),
+			'id'     => 'streamery-forms-settings',
+			'parent' => 'streamery-forms',
+			'title'  => esc_html__('Settings', 'streamery-forms'),
+			'href'   => admin_url('admin.php?page=streamery-forms-settings#/settings'),
 		));
 	}
 
@@ -191,10 +191,10 @@ class AdminBar
 		// wp_add_inline_style() rather than echoed as a raw <style> block, so the
 		// CSS goes through WordPress' own enqueue pipeline -- required for the
 		// WordPress.org review, and it means the styles can be dequeued.
-		$handle = 'gutenform-admin-bar';
+		$handle = 'streamery-forms-admin-bar';
 
 		if (! wp_style_is($handle, 'registered')) {
-			wp_register_style($handle, false, array(), GUTENFORM_VERSION);
+			wp_register_style($handle, false, array(), STREAMERY_FORMS_VERSION);
 		}
 
 		if (! wp_style_is($handle, 'enqueued')) {
@@ -210,8 +210,8 @@ class AdminBar
 	 */
 	private static function get_styles(): string
 	{
-		return '/* Gutenform Admin Bar */
-#wpadminbar .gutenform-admin-bar-node .ab-icon.dashicons {
+		return '/* Streamery Forms Admin Bar */
+#wpadminbar .streamery-forms-admin-bar-node .ab-icon.dashicons {
     font-size: 18px !important;
     line-height: 1.3 !important;
     width: 20px !important;
@@ -219,12 +219,12 @@ class AdminBar
     margin-right: 4px !important;
 }
 
-#wpadminbar .gutenform-admin-bar-node .ab-icon.dashicons::before {
+#wpadminbar .streamery-forms-admin-bar-node .ab-icon.dashicons::before {
     font-size: 18px !important;
     line-height: 1.3 !important;
 }
 
-#wpadminbar .gutenform-admin-bar-node > .ab-item {
+#wpadminbar .streamery-forms-admin-bar-node > .ab-item {
     display: flex !important;
     align-items: center !important;
 }
@@ -254,13 +254,13 @@ class AdminBar
 }
 
 /* Separator */
-#wpadminbar .gf-admin-bar-separator > .ab-item {
+#wpadminbar .streamery-forms-admin-bar-separator > .ab-item {
     height: auto !important;
     padding: 0 10px !important;
     cursor: default !important;
 }
 
-#wpadminbar .gf-admin-bar-separator > .ab-item:hover {
+#wpadminbar .streamery-forms-admin-bar-separator > .ab-item:hover {
     background: none !important;
     color: inherit !important;
 }';

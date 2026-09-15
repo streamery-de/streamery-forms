@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gutenform/form",
+	"name": "streamery-forms/form",
 	"version": "0.1.0",
 	"title": "Form",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Form Wrapper block for Gutenform.",
+	"description": "Form Wrapper block for Streamery Forms.",
 	"example": {},
 	"attributes": {
 		"spacing": {
@@ -70,8 +70,8 @@
 		}
 	},
 	"providesContext": {
-		"gutenform/activeStep": "activeStep",
-		"gutenform/formId": "formId"
+		"streamery-forms/activeStep": "activeStep",
+		"streamery-forms/formId": "formId"
 	},
 	"supports": {
 		"anchor": true,
@@ -121,7 +121,7 @@
 			}
 		}
 	},
-	"textdomain": "gutenform-builder",
+	"textdomain": "streamery-forms",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

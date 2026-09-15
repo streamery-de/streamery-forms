@@ -7,11 +7,11 @@
  * lived as private methods on Controllers\Forms\Actions; FormRegistry needs
  * the exact same traversal, so they're extracted here rather than duplicated.
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
 defined('ABSPATH') || exit;
 
@@ -27,18 +27,18 @@ class BlockScanner
 	 * @var array<string, string>
 	 */
 	public const FIELD_BLOCKS = array(
-		'gutenform/input'     => 'input',
-		'gutenform/textarea'  => 'textarea',
-		'gutenform/select'    => 'select',
-		'gutenform/checkbox'  => 'checkbox',
-		'gutenform/radio'     => 'radio',
-		'gutenform/date-time' => 'date-time',
-		'gutenform/slider'    => 'slider',
-		'gutenform/file'      => 'file',
+		'streamery-forms/input'     => 'input',
+		'streamery-forms/textarea'  => 'textarea',
+		'streamery-forms/select'    => 'select',
+		'streamery-forms/checkbox'  => 'checkbox',
+		'streamery-forms/radio'     => 'radio',
+		'streamery-forms/date-time' => 'date-time',
+		'streamery-forms/slider'    => 'slider',
+		'streamery-forms/file'      => 'file',
 	);
 
 	/**
-	 * Recursively find all gutenform/form blocks in a block list.
+	 * Recursively find all streamery-forms/form blocks in a block list.
 	 *
 	 * @param array $blocks Parsed blocks.
 	 * @return array List of form block data (attrs + inner_blocks + field_count).
@@ -50,7 +50,7 @@ class BlockScanner
 		foreach ($blocks as $block) {
 			$name = isset($block['blockName']) ? $block['blockName'] : '';
 
-			if ('gutenform/form' === $name) {
+			if ('streamery-forms/form' === $name) {
 				$inner   = isset($block['innerBlocks']) ? $block['innerBlocks'] : array();
 				$found[] = array(
 					'attrs'        => isset($block['attrs']) ? $block['attrs'] : array(),
@@ -124,7 +124,7 @@ class BlockScanner
 	 * which for a multi-value checkbox group is "name[]", matching what the
 	 * markup renders and therefore what arrives in submission_data.
 	 *
-	 * @param array $blocks Parsed inner blocks of a gutenform/form block.
+	 * @param array $blocks Parsed inner blocks of a streamery-forms/form block.
 	 * @return array<string, array>
 	 */
 	public static function extract_field_schema(array $blocks): array
@@ -156,7 +156,7 @@ class BlockScanner
 	/**
 	 * Builds a single field schema entry.
 	 *
-	 * @param string $block_name Block name (e.g. gutenform/input).
+	 * @param string $block_name Block name (e.g. streamery-forms/input).
 	 * @param array  $attrs      Block attributes.
 	 * @param string $name       Field name attribute.
 	 * @return array

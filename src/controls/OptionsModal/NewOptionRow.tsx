@@ -33,7 +33,7 @@ export const NewOptionRow = ({ newOption, syncLabelValue, onChange, onAdd, showD
 		: newOption.label && newOption.value;
 
 	return (
-		<tr className="gutenform-options-table-row-new">
+		<tr className="streamery-forms-options-table-row-new">
 			<td></td>
 			<td></td>
 			<td>
@@ -81,7 +81,7 @@ export const NewOptionRow = ({ newOption, syncLabelValue, onChange, onAdd, showD
 					/>
 				</td>
 			)}
-			<td className="gutenform-options-table-td-actions">
+			<td className="streamery-forms-options-table-td-actions">
 				<Button
 					onClick={onAdd}
 					variant="primary"

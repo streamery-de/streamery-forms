@@ -53,7 +53,7 @@ import { ProviderTypeGrid } from "@/components/providers/ProviderTypeGrid"
 // Supabase, Brevo) are gone: WordPress.org guideline 5 forbids advertising
 // features the shipped build cannot deliver, and the tiles carried third-party
 // trademarks and logos besides. Those providers live in the Pro add-on, which
-// registers itself through the gutenform/available_providers filter -- so this
+// registers itself through the streamery-forms/available_providers filter -- so this
 // grid simply shows whatever providers are actually installed.
 import { PlaceholderInput } from "@/components/ui/placeholder-input"
 import { EmailField } from "@/components/ui/email-field"

@@ -8,12 +8,12 @@ export default function Edit(props: BlockEditProps<SaveProgressAttributes>) {
 	const { attributes, setAttributes } = props;
 
 	const blockProps = useBlockProps({
-		className: 'gutenform-save-progress',
+		className: 'streamery-forms-save-progress',
 	});
 
 	return (
 		<div { ...blockProps }>
-			<button type="button" className="gutenform-save-progress-btn" disabled>
+			<button type="button" className="streamery-forms-save-progress-btn" disabled>
 				<RichText
 					tagName="span"
 					value={attributes.label}

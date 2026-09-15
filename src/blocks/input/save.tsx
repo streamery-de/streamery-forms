@@ -43,7 +43,7 @@ export default function save(props: BlockSaveProps<InputAttributes>) {
 				defaultValue={props.attributes.defaultValue}
 				data-primary-mail={isPrimaryMail ? 'true' : undefined}
 			/>
-			{props.attributes.help && <p className="gutenform-field__help" id={`${props.attributes.id}-help`}>{props.attributes.help}</p>}
+			{props.attributes.help && <p className="streamery-forms-field__help" id={`${props.attributes.id}-help`}>{props.attributes.help}</p>}
 		</div>
 	);
 }

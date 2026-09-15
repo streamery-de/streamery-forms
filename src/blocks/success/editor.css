@@ -2,11 +2,11 @@
  * The following styles get applied inside the editor only.
  */
 
-.gutenform-success-modal-content {
+.streamery-forms-success-modal-content {
 	position: relative;
 }
 
-.gutenform-success-modal-close {
+.streamery-forms-success-modal-close {
 	position: absolute;
 	top: 10px;
 	right: 10px;
@@ -27,12 +27,12 @@
 	justify-content: center;
 }
 
-.gutenform-success-modal-close:hover {
+.streamery-forms-success-modal-close:hover {
 	background-color: #f0f0f0;
 	color: #000;
 }
 
-.gutenform-success-modal-close:focus {
+.streamery-forms-success-modal-close:focus {
 	outline: 2px solid #0073aa;
 	outline-offset: 2px;
 }

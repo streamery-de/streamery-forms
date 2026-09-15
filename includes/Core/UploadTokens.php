@@ -10,11 +10,11 @@
  * single-use, per-file token. Only that token, resolved server-side, may be
  * referenced by a submission.
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
 defined('ABSPATH') || exit;
 
@@ -26,7 +26,7 @@ class UploadTokens
 	/**
 	 * Transient key prefix.
 	 */
-	private const PREFIX = 'gutenform_upload_';
+	private const PREFIX = 'streamery_forms_upload_';
 
 	/**
 	 * How long an uploaded-but-not-yet-submitted file stays claimable.

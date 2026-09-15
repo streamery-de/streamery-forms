@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project uses a **PHP-based translation system** where all translatable strings are defined in PHP, translated using WordPress i18n functions, and passed to JavaScript via `window.gutenForm.strings` (admin) or `window.gutenform.strings` (block editor).
+This project uses a **PHP-based translation system** where all translatable strings are defined in PHP, translated using WordPress i18n functions, and passed to JavaScript via `window.streameryForms.strings` (admin) or `window.streamery_forms.strings` (block editor).
 
 **Key Principle**: No translatable strings should exist in JavaScript/TypeScript files. All strings are translated in PHP and accessed via keys.
 
@@ -12,17 +12,17 @@ This project uses a **PHP-based translation system** where all translatable stri
 
 1. **Strings Class**: `includes/Assets/Strings.php`
    - Contains all translatable strings as an array
-   - Each string is translated using `__('English text', 'gutenform')`
+   - Each string is translated using `__('English text', 'streamery-forms')`
    - Keys are in **camelCase** format (e.g., `'globalFieldSettings'`)
 
 2. **Asset Loading**: `includes/Assets/Admin.php`
    - Passes strings to JavaScript via `wp_localize_script()`
-   - Available as `window.gutenForm.strings` (admin) or `window.gutenform.strings` (block editor)
+   - Available as `window.streameryForms.strings` (admin) or `window.streamery_forms.strings` (block editor)
 
 ### JavaScript/TypeScript Side
 
 1. **i18n Utility**: `src/lib/i18n.ts`
-   - Provides `__()` function that reads from `window.gutenForm.strings` or `window.gutenform.strings`
+   - Provides `__()` function that reads from `window.streameryForms.strings` or `window.streamery_forms.strings`
    - Handles case-insensitive lookups and backward compatibility
 
 2. **Usage**: Import and use in any React/TypeScript file:
@@ -47,8 +47,8 @@ public static function get_strings(): array
         // ... existing strings ...
         
         // Your new string
-        'myNewString' => __('My New String', 'gutenform'),
-        'myNewStringWithPlaceholder' => __('My string with %s placeholder', 'gutenform'),
+        'myNewString' => __('My New String', 'streamery-forms'),
+        'myNewStringWithPlaceholder' => __('My string with %s placeholder', 'streamery-forms'),
     );
 }
 ```
@@ -82,7 +82,7 @@ After adding new strings:
    npm run i18n
    ```
 
-2. **Update translation files** (e.g., `languages/gutenform-de_DE.po`):
+2. **Update translation files** (e.g., `languages/streamery-forms-de_DE.po`):
    - Add translations for new strings
    - Compile to MO file:
    ```bash
@@ -141,8 +141,8 @@ After adding new strings:
 
 ```php
 // In Strings.php
-'nameRequired' => __('Name is required', 'gutenform'),
-'emailInvalid' => __('Please enter a valid email address', 'gutenform'),
+'nameRequired' => __('Name is required', 'streamery-forms'),
+'emailInvalid' => __('Please enter a valid email address', 'streamery-forms'),
 ```
 
 ```typescript
@@ -157,8 +157,8 @@ const schema = z.object({
 
 ```php
 // In Strings.php
-'settingsSaved' => __('Settings saved', 'gutenform'),
-'settingsSavedDescription' => __('Your settings have been updated successfully.', 'gutenform'),
+'settingsSaved' => __('Settings saved', 'streamery-forms'),
+'settingsSavedDescription' => __('Your settings have been updated successfully.', 'streamery-forms'),
 ```
 
 ```typescript
@@ -175,7 +175,7 @@ For strings with placeholders, handle in JavaScript:
 
 ```php
 // In Strings.php
-'welcomeMessage' => __('Welcome, %s!', 'gutenform'),
+'welcomeMessage' => __('Welcome, %s!', 'streamery-forms'),
 ```
 
 ```typescript
@@ -198,7 +198,7 @@ const message = __('welcomeMessage').replace('%s', userName);
 
 1. **Don't use English strings as keys** in JavaScript (e.g., `__('Global Field Settings')`)
 2. **Don't hardcode strings** in JavaScript/TypeScript files
-3. **Don't use the old WordPress format** `__('String', 'gutenform')` in JS
+3. **Don't use the old WordPress format** `__('String', 'streamery-forms')` in JS
 4. **Don't create duplicate keys** with different casing
 5. **Don't forget to regenerate POT file** after adding strings
 
@@ -209,7 +209,7 @@ If you find old WordPress i18n format in JavaScript:
 **Before**:
 ```typescript
 import { __ } from '@wordpress/i18n';
-const label = __('Global Field Settings', 'gutenform');
+const label = __('Global Field Settings', 'streamery-forms');
 ```
 
 **After**:
@@ -220,12 +220,12 @@ const label = __('globalFieldSettings');
 
 ## Troubleshooting
 
-### String shows "gutenform" or the key name
+### String shows "streamery-forms" or the key name
 
 1. **Check the key exists** in `includes/Assets/Strings.php`
 2. **Verify key spelling** (camelCase, exact match)
 3. **Check browser console** for JavaScript errors
-4. **Verify strings are loaded**: `console.log(window.gutenForm?.strings)`
+4. **Verify strings are loaded**: `console.log(window.streameryForms?.strings)`
 5. **Clear cache** and rebuild assets
 
 ### String not found
@@ -250,9 +250,9 @@ const label = __('globalFieldSettings');
 1. **Add strings to PHP**:
 ```php
 // In includes/Assets/Strings.php
-'advancedSettings' => __('Advanced Settings', 'gutenform'),
-'advancedSettingsDescription' => __('Configure advanced plugin options.', 'gutenform'),
-'saveAdvancedSettings' => __('Save Advanced Settings', 'gutenform'),
+'advancedSettings' => __('Advanced Settings', 'streamery-forms'),
+'advancedSettingsDescription' => __('Configure advanced plugin options.', 'streamery-forms'),
+'saveAdvancedSettings' => __('Save Advanced Settings', 'streamery-forms'),
 ```
 
 2. **Use in React component**:

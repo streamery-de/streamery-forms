@@ -2,10 +2,10 @@
   "labelKey": "templateEventRsvp",
   "category": "advanced",
   "value": [
-    ["gutenform/input", { "type": "text", "label": { "__": "name", "fallback": "Name" }, "required": true }],
-    ["gutenform/input", { "type": "email", "label": { "__": "email", "fallback": "E-Mail" }, "required": true, "isPrimaryMail": true }],
-    ["gutenform/input", { "type": "number", "label": { "__": "numberOfGuests", "fallback": "Anzahl Begleitpersonen" }, "required": false, "defaultValue": "0" }],
-    ["gutenform/select", {
+    ["streamery-forms/input", { "type": "text", "label": { "__": "name", "fallback": "Name" }, "required": true }],
+    ["streamery-forms/input", { "type": "email", "label": { "__": "email", "fallback": "E-Mail" }, "required": true, "isPrimaryMail": true }],
+    ["streamery-forms/input", { "type": "number", "label": { "__": "numberOfGuests", "fallback": "Anzahl Begleitpersonen" }, "required": false, "defaultValue": "0" }],
+    ["streamery-forms/select", {
       "label": { "__": "dietaryPreferences", "fallback": "Essenswünsche" },
       "options": [
         { "label": { "__": "all", "fallback": "Alles" }, "value": "all" },
@@ -15,7 +15,7 @@
       ],
       "required": false
     }],
-    ["gutenform/select", {
+    ["streamery-forms/select", {
       "label": { "__": "eveningEventParticipation", "fallback": "Teilnahme Abendveranstaltung" },
       "options": [
         { "label": { "__": "yes", "fallback": "Ja" }, "value": "yes" },
@@ -23,7 +23,7 @@
       ],
       "required": true
     }],
-    ["gutenform/submit", {}],
-    ["gutenform/success", {}]
+    ["streamery-forms/submit", {}],
+    ["streamery-forms/success", {}]
   ]
 }

@@ -3,14 +3,14 @@
 /**
  * Database migration for entries table.
  *
- * @package Gutenform
+ * @package StreameryForms
  * @subpackage Database\Migrations
  * @since 1.0.0
  */
 
-namespace Gutenform\Database\Migrations;
+namespace StreameryForms\Database\Migrations;
 
-use Gutenform\Interfaces\Migration;
+use StreameryForms\Interfaces\Migration;
 use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
 use Prappo\WpEloquent\Database\Schema\Blueprint;
 
@@ -19,9 +19,9 @@ defined('ABSPATH') || exit;
 /**
  * Class Entries
  *
- * Represents the migration for creating the 'wp_gutenform_entries' table.
+ * Represents the migration for creating the 'wp_streamery_forms_entries' table.
  *
- * @package Gutenform\Database\Migrations
+ * @package StreameryForms\Database\Migrations
  */
 class Entries implements Migration
 {
@@ -31,7 +31,7 @@ class Entries implements Migration
 	 *
 	 * @var string
 	 */
-	public static $table = 'gutenform_entries';
+	public static $table = 'streamery_forms_entries';
 
 	/**
 	 * Run the migrations.

@@ -71,9 +71,9 @@ export const BulkAddOptions = ({
 		<Modal
 			title={__('addBulkOptions')}
 			onRequestClose={handleClose}
-			className="gutenform-bulk-add-options-modal"
+			className="streamery-forms-bulk-add-options-modal"
 		>
-			<div className="gutenform-bulk-add-options-content">
+			<div className="streamery-forms-bulk-add-options-content">
 				<TextareaControl
 					label={__('bulkOptionsPlaceholder')}
 					value={bulkText}
@@ -83,7 +83,7 @@ export const BulkAddOptions = ({
 					help={__('bulkOptionsExample')}
 					__nextHasNoMarginBottom={true}
 				/>
-				<div className="gutenform-bulk-add-options-footer">
+				<div className="streamery-forms-bulk-add-options-footer">
 					<Button onClick={handleClose} variant="secondary">
 						{__('cancel')}
 					</Button>

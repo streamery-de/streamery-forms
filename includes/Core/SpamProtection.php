@@ -9,11 +9,11 @@
  * browser (or not at all), which means it protected against nothing --
  * anyone can POST straight to the REST endpoint.
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
 defined('ABSPATH') || exit;
 
@@ -27,7 +27,7 @@ class SpamProtection
 	 * honeypot block's save.tsx), so this can be checked without knowing a
 	 * given form's field schema.
 	 */
-	public const HONEYPOT_PREFIX = 'gutenform_honeypot_';
+	public const HONEYPOT_PREFIX = 'streamery_forms_honeypot_';
 
 	/**
 	 * Minimum seconds allowed to pass between the form rendering and the
@@ -58,11 +58,11 @@ class SpamProtection
 
 		if ($honeypot_enabled && $this->is_honeypot_filled($submission_data)) {
 			// Don't tell a bot why it failed -- generic rejection.
-			return new \WP_Error('spam_rejected', __('Submission rejected.', 'gutenform-builder'), array('status' => 400));
+			return new \WP_Error('spam_rejected', __('Submission rejected.', 'streamery-forms'), array('status' => 400));
 		}
 
 		if (! $this->is_submit_timing_valid($rendered_at)) {
-			return new \WP_Error('spam_rejected', __('Submission rejected.', 'gutenform-builder'), array('status' => 400));
+			return new \WP_Error('spam_rejected', __('Submission rejected.', 'streamery-forms'), array('status' => 400));
 		}
 
 		return null;
@@ -102,7 +102,7 @@ class SpamProtection
 			return null;
 		}
 
-		$limits = apply_filters('gutenform/submit/rate_limits', array(
+		$limits = apply_filters('streamery-forms/submit/rate_limits', array(
 			array(
 				'window'   => MINUTE_IN_SECONDS,
 				'max'      => 10,
@@ -116,13 +116,13 @@ class SpamProtection
 		));
 
 		foreach ($limits as $limit) {
-			$key   = 'gutenform_rl_' . $limit['transient_suffix'] . '_' . md5($ip);
+			$key   = 'streamery_forms_rl_' . $limit['transient_suffix'] . '_' . md5($ip);
 			$count = (int) get_transient($key);
 
 			if ($count >= (int) $limit['max']) {
 				return new \WP_Error(
 					'rate_limited',
-					__('Too many submissions. Please try again later.', 'gutenform-builder'),
+					__('Too many submissions. Please try again later.', 'streamery-forms'),
 					array('status' => 429)
 				);
 			}
@@ -172,7 +172,7 @@ class SpamProtection
 		}
 
 		$elapsed_seconds = (time() * 1000 - $rendered_at) / 1000;
-		$min_seconds     = (int) apply_filters('gutenform/submit/min_seconds', self::MIN_SUBMIT_SECONDS);
+		$min_seconds     = (int) apply_filters('streamery-forms/submit/min_seconds', self::MIN_SUBMIT_SECONDS);
 
 		return $elapsed_seconds >= $min_seconds;
 	}
@@ -195,7 +195,7 @@ class SpamProtection
 			return true;
 		}
 
-		$settings = get_option('gutenform_captcha_settings', array());
+		$settings = get_option('streamery_forms_captcha_settings', array());
 
 		$recaptcha = $settings['recaptcha'] ?? array();
 		if (! empty($recaptcha['enabled']) && ! empty($recaptcha['secret_key'])) {

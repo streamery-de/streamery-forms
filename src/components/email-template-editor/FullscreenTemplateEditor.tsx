@@ -323,42 +323,42 @@ export function FullscreenTemplateEditor({
   const onClose = () => onOpenChange(false)
 
   const modalContent = (
-    <div className="gutenform-te">
-        <div className="gutenform-te__header">
-          <h2 className="gutenform-te__title">
+    <div className="streamery-forms-te">
+        <div className="streamery-forms-te__header">
+          <h2 className="streamery-forms-te__title">
             {__("emailTemplateEditor") || __("editTemplate") || "Edit template"}
           </h2>
-          <p className="gutenform-te__description">
+          <p className="streamery-forms-te__description">
             {__("emailTemplateEditorDescription") || "Edit your email template HTML with live preview"}
           </p>
           {showUseProviderLayoutCheckbox && (
-            <div className="gutenform-te__checkbox-row">
-              <div className="gutenform-te__checkbox-inner">
+            <div className="streamery-forms-te__checkbox-row">
+              <div className="streamery-forms-te__checkbox-inner">
                 <Checkbox
                   id="use-provider-layout"
                   checked={useProviderLayout}
                   onCheckedChange={(checked) => setUseProviderLayout(checked === true)}
                 />
-                <label htmlFor="use-provider-layout" className="gutenform-te__checkbox-label">
+                <label htmlFor="use-provider-layout" className="streamery-forms-te__checkbox-label">
                   {__("useProviderLayout")}
                 </label>
               </div>
-              <p className="gutenform-te__checkbox-help">
+              <p className="streamery-forms-te__checkbox-help">
                 {__("useProviderLayoutHelp")}
               </p>
             </div>
           )}
         </div>
 
-        <div className="gutenform-te__main">
+        <div className="streamery-forms-te__main">
           {/* Sidebar */}
-          <div className="gutenform-te__sidebar">
-            <ScrollArea className="gutenform-te__scroll-area">
-              <div className="gutenform-te__sidebar-inner">
+          <div className="streamery-forms-te__sidebar">
+            <ScrollArea className="streamery-forms-te__scroll-area">
+              <div className="streamery-forms-te__sidebar-inner">
                 {/* Template Selection (hidden in form context) */}
                 {!hideTemplateSelection && (
                   <>
-                    <div className="gutenform-te__section">
+                    <div className="streamery-forms-te__section">
                       <Label>{__("selectTemplate") || "Select Template"}</Label>
                       <Select
                         value={selectedTemplate || 'blank'}
@@ -368,14 +368,14 @@ export function FullscreenTemplateEditor({
                         <SelectTrigger>
                           <SelectValue placeholder={__("selectTemplate") || "Select Template"} />
                         </SelectTrigger>
-                        <SelectContent className="gutenform-te__select-content">
+                        <SelectContent className="streamery-forms-te__select-content">
                           <SelectItem value="blank">{__("blank") || "Blank"}</SelectItem>
                           {templates.map((template) => (
                             <SelectItem key={template.name} value={template.name}>
                               <div>
-                                <div className="gutenform-te__template-title">{template.title}</div>
+                                <div className="streamery-forms-te__template-title">{template.title}</div>
                                 {template.description && (
-                                  <div className="gutenform-te__template-desc">
+                                  <div className="streamery-forms-te__template-desc">
                                     {template.description}
                                   </div>
                                 )}
@@ -392,8 +392,8 @@ export function FullscreenTemplateEditor({
                 {/* Custom Fields (only when not using custom placeholders from form) */}
                 {customPlaceholders.length === 0 && (
                   <>
-                    <div className="gutenform-te__section">
-                      <div className="gutenform-te__section-title">
+                    <div className="streamery-forms-te__section">
+                      <div className="streamery-forms-te__section-title">
                         {__("customFields") || "Custom Fields"}
                       </div>
                       <CustomFieldInput onFieldAdd={handlePlaceholderInsert} />
@@ -404,7 +404,7 @@ export function FullscreenTemplateEditor({
 
                 {/* Placeholders Section (includes form fields when customPlaceholders provided) */}
                 <PlaceholderDraggable
-                  className="gutenform-te__placeholders"
+                  className="streamery-forms-te__placeholders"
                   onPlaceholderSelect={handlePlaceholderInsert}
                   customPlaceholders={customPlaceholders}
                 />
@@ -413,15 +413,15 @@ export function FullscreenTemplateEditor({
           </div>
 
           {/* Main Content Area - Preview and Editor */}
-          <div className="gutenform-te__main-area">
-            <div className="gutenform-te__content-row">
+          <div className="streamery-forms-te__main-area">
+            <div className="streamery-forms-te__content-row">
               {/* Preview */}
-              <div className="gutenform-te__preview-col">
-                <div className="gutenform-te__panel-header">
+              <div className="streamery-forms-te__preview-col">
+                <div className="streamery-forms-te__panel-header">
                   <Label>{__("preview") || "Preview"}</Label>
                 </div>
                 <div
-                  className="gutenform-te__preview-box"
+                  className="streamery-forms-te__preview-box"
                   onDragOver={(e) => {
                     e.preventDefault()
                     e.stopPropagation()
@@ -432,11 +432,11 @@ export function FullscreenTemplateEditor({
                   {previewHtml ? (
                     <div
                       dangerouslySetInnerHTML={{ __html: previewHtml }}
-                      className="gutenform-te__preview-inner"
+                      className="streamery-forms-te__preview-inner"
                       style={{ pointerEvents: 'auto' }}
                     />
                   ) : (
-                    <div className="gutenform-te__preview-empty">
+                    <div className="streamery-forms-te__preview-empty">
                       {__("noPreviewAvailable") || "No preview available"}
                     </div>
                   )}
@@ -444,17 +444,17 @@ export function FullscreenTemplateEditor({
               </div>
 
               {/* HTML Editor */}
-              <div className="gutenform-te__editor-col">
-                <div className="gutenform-te__panel-header">
+              <div className="streamery-forms-te__editor-col">
+                <div className="streamery-forms-te__panel-header">
                   <Label>{__("htmlEditor") || "HTML Editor"}</Label>
                 </div>
-                <div className="gutenform-te__editor-inner">
+                <div className="streamery-forms-te__editor-inner">
                   <div
-                    className="gutenform-te__editor-dropzone"
+                    className="streamery-forms-te__editor-dropzone"
                     onDrop={handleEditorDrop}
                     onDragOver={handleEditorDragOver}
                   >
-                    <Suspense fallback={<div className="gutenform-te__editor-loading">{__("loading") || "Loading…"}</div>}>
+                    <Suspense fallback={<div className="streamery-forms-te__editor-loading">{__("loading") || "Loading…"}</div>}>
                       <HtmlCodeEditor
                         value={String(html || '')}
                         onChange={(value: string) => setHtml(String(value || ''))}
@@ -468,11 +468,11 @@ export function FullscreenTemplateEditor({
           </div>
         </div>
 
-        <div className="gutenform-te__footer">
-          <button type="button" className="gutenform-te__btn gutenform-te__btn--outline" onClick={onClose}>
+        <div className="streamery-forms-te__footer">
+          <button type="button" className="streamery-forms-te__btn streamery-forms-te__btn--outline" onClick={onClose}>
             {__("cancel") || "Cancel"}
           </button>
-          <button type="button" className="gutenform-te__btn gutenform-te__btn--primary" onClick={handleSave}>
+          <button type="button" className="streamery-forms-te__btn streamery-forms-te__btn--primary" onClick={handleSave}>
             <Save className="h-4 w-4" style={{ marginRight: 8 }} />
             {__("save") || "Save"}
           </button>
@@ -485,7 +485,7 @@ export function FullscreenTemplateEditor({
       <WpModal
         title={__("emailTemplateEditor") || __("editTemplate") || "Edit template"}
         onRequestClose={onClose}
-        className="gutenform-fullscreen-template-editor-wp"
+        className="streamery-forms-fullscreen-template-editor-wp"
         style={{
           maxWidth: '95vw',
           width: '95vw',
@@ -497,7 +497,7 @@ export function FullscreenTemplateEditor({
           overflow: 'hidden',
         }}
       >
-        <div className="gutenform-te__wp-wrap">
+        <div className="streamery-forms-te__wp-wrap">
           {modalContent}
         </div>
       </WpModal>

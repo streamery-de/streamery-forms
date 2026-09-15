@@ -57,7 +57,7 @@ export default function save(props: BlockSaveProps<SelectAttributes>) {
 					</>
 				)}
 			</select>
-			{help && <p className="gutenform-field__help" id={`${id}-help`}>{help}</p>}
+			{help && <p className="streamery-forms-field__help" id={`${id}-help`}>{help}</p>}
 		</div>
 	);
 }

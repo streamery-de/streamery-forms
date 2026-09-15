@@ -5,13 +5,13 @@
  *
  * Logs all emails sent via wp_mail().
  *
- * @package Gutenform\Core
+ * @package StreameryForms\Core
  * @since 1.0.0
  */
 
-namespace Gutenform\Core;
+namespace StreameryForms\Core;
 
-use Gutenform\Models\EmailLogs;
+use StreameryForms\Models\EmailLogs;
 
 defined('ABSPATH') || exit;
 
@@ -22,7 +22,7 @@ defined('ABSPATH') || exit;
  */
 class EmailLogger
 {
-    use \Gutenform\Traits\Base;
+    use \StreameryForms\Traits\Base;
 
     /**
      * Current email data being logged
@@ -55,7 +55,7 @@ class EmailLogger
     public function capture_email_data($phpmailer)
     {
         // Check if email logging is enabled
-        $smtp_settings = get_option('gutenform_smtp_settings', array());
+        $smtp_settings = get_option('streamery_forms_smtp_settings', array());
         if (empty($smtp_settings['email_logging']) || !$smtp_settings['email_logging']) {
             return;
         }
@@ -104,7 +104,7 @@ class EmailLogger
     private function log_email($status, $error_message = '')
     {
         // Check if email logging is enabled
-        $smtp_settings = get_option('gutenform_smtp_settings', array());
+        $smtp_settings = get_option('streamery_forms_smtp_settings', array());
         if (empty($smtp_settings['email_logging']) || !$smtp_settings['email_logging']) {
             return;
         }
@@ -164,7 +164,7 @@ class EmailLogger
             EmailLogs::create($log_data);
         } catch (\Exception $e) {
             // Log error but don't break email sending
-            Debug::log('Gutenform Email Logger Error: ' . $e->getMessage());
+            Debug::log('Streamery Forms Email Logger Error: ' . $e->getMessage());
         }
 
         // Clear current email data

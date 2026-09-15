@@ -37,7 +37,7 @@ export function DebugView({ debugData }: DebugViewProps) {
       setIsExpanded(true)
       
       // Write to console
-      console.group('🔍 GutenForm Debug Information')
+      console.group('🔍 Streamery Forms Debug Information')
       console.log('Form Identifier:', debugData.form_identifier)
       console.log('Timestamp:', debugData.timestamp)
       console.log('Providers:', debugData.providers)

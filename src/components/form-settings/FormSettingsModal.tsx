@@ -35,7 +35,7 @@ const SECTIONS: Array<{ id: SectionId; label: string }> = [
 ];
 
 export type FormSettingsModalProps = {
-	/** clientId of the gutenform/form block being edited (never an inner block). */
+	/** clientId of the streamery-forms/form block being edited (never an inner block). */
 	formClientId: string;
 	onClose: () => void;
 };
@@ -86,17 +86,17 @@ export function FormSettingsModal({ formClientId, onClose }: FormSettingsModalPr
 		<Modal
 			title={__('formSettings')}
 			onRequestClose={onClose}
-			className="gutenform-form-settings-modal"
+			className="streamery-forms-form-settings-modal"
 			size="large"
 		>
-			<div className="gutenform-ui">
-				<div className="gutenform-form-settings__layout">
-					<nav className="gutenform-form-settings__nav" aria-label={__('formSettings')}>
+			<div className="streamery-forms-ui">
+				<div className="streamery-forms-form-settings__layout">
+					<nav className="streamery-forms-form-settings__nav" aria-label={__('formSettings')}>
 						{SECTIONS.map((section) => (
 							<button
 								key={section.id}
 								type="button"
-								className="gutenform-form-settings__nav-item"
+								className="streamery-forms-form-settings__nav-item"
 								aria-current={activeSection === section.id}
 								onClick={() => setActiveSection(section.id)}
 							>
@@ -105,7 +105,7 @@ export function FormSettingsModal({ formClientId, onClose }: FormSettingsModalPr
 						))}
 					</nav>
 
-					<div className="gutenform-form-settings__panel">
+					<div className="streamery-forms-form-settings__panel">
 						{activeSection === 'storage' && (
 							<StorageSection
 								attributes={attributes}
@@ -146,7 +146,7 @@ export function FormSettingsModal({ formClientId, onClose }: FormSettingsModalPr
 /** Shared lock indicator for provider entries a form may not switch off. */
 export function LockedIndicator() {
 	return (
-		<span className="gutenform-form-settings__lock">
+		<span className="streamery-forms-form-settings__lock">
 			<Lock size={13} aria-hidden="true" />
 			{__('alwaysOn', 'Always on')}
 		</span>
