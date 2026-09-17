@@ -71,30 +71,39 @@ Privacy policy: https://friendlycaptcha.com/legal/privacy/
 
 == Source Code ==
 
-The JavaScript and CSS in `assets/admin/dist/` and `assets/blocks/` are compiled. The human-readable source is public at:
+Some JavaScript and CSS in this plugin is compiled. The complete, human-readable source ships inside the plugin in the `src/` folder, together with the build configuration. The same code is also public and maintained at:
 
 https://github.com/streamery-de/streamery-forms
 
-* `src/admin/`, `src/components/`, `src/lib/` — the admin app (React), built with Vite (`vite.admin.config.js`) into `assets/admin/dist/`
-* `src/blocks/` — the form blocks, built with `@wordpress/scripts` (`webpack.config.js`) into `assets/blocks/`
+Compiled file → source:
+
+* `assets/blocks/{block}/index.js`, `view.js`, `*.css` → `src/blocks/{block}/` (e.g. `assets/blocks/select/view.js` → `src/blocks/select/view.ts`), built with @wordpress/scripts (`webpack.config.js`)
+* `assets/blocks/skins/default/` → `src/skins/default/`
+* `assets/blocks/{number}.js` → shared, lazy-loaded chunks of the HTML email editor: currently `3024.js` from `src/components/email-template-editor/HtmlCodeEditor.tsx` and `3468.js` with the bundled CodeMirror library (see below)
+* `assets/admin/dist/` → `src/admin/`, `src/components/`, `src/lib/`, `src/hooks/`, built with Vite (`vite.admin.config.js`, `tailwind.config.js`, `postcss.config.cjs`)
 * `assets/admin/deactivate.js` and `assets/admin/deactivate.css` are not compiled
 
-To build the plugin from source:
+To rebuild the compiled files (Node.js 20, Composer):
 
 1. `composer install --no-dev --optimize-autoloader`
 2. `npm ci`
-3. `npm run build`
+3. `npm run build` (runs `vite build -c vite.admin.config.js` and `wp-scripts build`)
 
-Bundled third-party libraries (all MIT-licensed; full list in `package.json` and `composer.json`):
+Bundled third-party libraries (all MIT or ISC licensed; exact versions in `package-lock.json` and `composer.lock`):
 
+* CodeMirror, @uiw/react-codemirror — https://github.com/codemirror/dev, https://github.com/uiwjs/react-codemirror
 * friendly-challenge — https://github.com/FriendlyCaptcha/friendly-challenge
-* CodeMirror / @uiw/react-codemirror — https://github.com/uiwjs/react-codemirror
 * noUiSlider — https://github.com/leongersen/noUiSlider
+* dnd kit — https://github.com/clauderic/dnd-kit
+* Lucide — https://github.com/lucide-icons/lucide
 * Radix UI — https://github.com/radix-ui/primitives
 * React Router — https://github.com/remix-run/react-router
 * Recharts — https://github.com/recharts/recharts
 * date-fns — https://github.com/date-fns/date-fns
 * Zod — https://github.com/colinhacks/zod
+* clsx — https://github.com/lukeed/clsx
+* tailwind-merge — https://github.com/dcastil/tailwind-merge
+* Nano Stores — https://github.com/nanostores/nanostores
 * vite-for-wp (adapted in `libs/assets.php`) — https://github.com/kucrut/vite-for-wp
 * wp-eloquent (Composer, in `vendor/`) — https://github.com/prappo/wp-eloquent
 
