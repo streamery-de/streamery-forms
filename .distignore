@@ -9,14 +9,16 @@
 # Everything the plugin needs at runtime must NOT be listed here:
 #   assets/  includes/  libs/  database/  vendor/  composer.json
 #   composer.lock  streamery-forms.php  plugin.php  uninstall.php  readme.txt
-#   LICENSE
+#   LICENSE  src/ (source + email templates) and the build configs that turn
+#   src/ into assets/ (package.json, package-lock.json, webpack.config.js,
+#   vite.admin.config.js, postcss.config.cjs, tailwind.config.js, tsconfig.json)
 #
 # Patterns follow gitignore semantics: a bare name like `src` matches at EVERY
 # depth, so it also swallows vendor/prappo/wp-eloquent/src -- which broke the
 # 1.0.0 zip with a fatal error on activation (autoload_files.php requires
 # .../src/Support/helpers.php). Anything meant only for the plugin root MUST be
 # written with a leading slash. Only the glob patterns below (*.zip, *.map,
-# *.log, .DS_Store, .git) are intentionally recursive.
+# *.log, *.stories.*, .DS_Store, .git) are intentionally recursive.
 
 # --- Version control / CI ---
 .git
@@ -25,28 +27,26 @@
 /.github
 /.distignore
 
-# --- Sources (compiled into assets/ at build time) ---
-/src
+# --- Sources ---
+# src/ ships with the plugin on purpose: it is the human-readable source of
+# assets/admin/dist and assets/blocks (WordPress.org guideline 4), and PHP reads
+# src/email-templates at runtime. The build configs below ship with it so the
+# assets can be rebuilt from the plugin alone. Storybook stories are dev-only.
 /.storybook
+*.stories.jsx
+*.stories.tsx
 
 # --- Dependencies / lockfiles ---
 # composer.json/composer.lock ship alongside /vendor so Plugin Check can see
 # what populated it (a vendor dir without composer.json is flagged as an
 # unneeded/unexplained folder).
 /node_modules
-/package.json
-/package-lock.json
 /yarn.lock
 
 # --- Build & tooling configs ---
-/webpack.config.js
 /webpack.config.cjs
 /vite.config.js
-/vite.admin.config.js
-/postcss.config.cjs
 /postcss.config.js
-/tailwind.config.js
-/tsconfig.json
 /components.json
 /phpcs.xml.dist
 /phpunit.xml.dist
