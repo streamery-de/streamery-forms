@@ -80,7 +80,7 @@ Compiled file → source:
 * `assets/blocks/{block}/index.js`, `view.js`, `*.css` → `src/blocks/{block}/` (e.g. `assets/blocks/select/view.js` → `src/blocks/select/view.ts`), built with @wordpress/scripts (`webpack.config.js`)
 * `assets/blocks/skins/default/` → `src/skins/default/`
 * `assets/blocks/{number}.js` → shared, lazy-loaded chunks of the HTML email editor: currently `3024.js` from `src/components/email-template-editor/HtmlCodeEditor.tsx` and `3468.js` with the bundled CodeMirror library (see below)
-* `assets/admin/dist/` → `src/admin/`, `src/components/`, `src/lib/`, `src/hooks/`, built with Vite (`vite.admin.config.js`, `tailwind.config.js`, `postcss.config.cjs`)
+* `assets/admin/dist/` → `src/admin/`, `src/components/`, `src/lib/`, `src/hooks/`, built with Vite (`vite.admin.config.js`, `tailwind.config.js`, `postcss.config.js`)
 * `assets/admin/deactivate.js` and `assets/admin/deactivate.css` are not compiled
 
 To rebuild the compiled files (Node.js 20, Composer):
