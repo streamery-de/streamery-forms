@@ -5,7 +5,7 @@ Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,7 +71,7 @@ Privacy policy: https://friendlycaptcha.com/legal/privacy/
 
 == Source Code ==
 
-Some JavaScript and CSS in this plugin is compiled. The complete, human-readable source ships inside the plugin in the `src/` folder, together with the build configuration. The same code is also public and maintained at:
+Some JavaScript and CSS in this plugin is compiled. The complete, human-readable source ships inside the plugin in the `src/` folder, together with the build configuration. Every compiled file begins with a comment naming its source folder. The same code is also public and maintained at:
 
 https://github.com/streamery-de/streamery-forms
 
@@ -157,6 +157,11 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Changelog ==
 
+= 1.0.2 =
+* Fix: The required asterisk now shows on checkbox and radio groups.
+* Fix: Checkbox groups accept multiple selections.
+* Every compiled JavaScript and CSS file now starts with a comment pointing to its source.
+
 = 1.0.1 =
 * Fix: Multi-step forms now scroll back to the top of the form when moving to the next or previous step.
 
@@ -164,6 +169,9 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Fixes required checkbox/radio groups and multi-select checkboxes.
 
 = 1.0.1 =
 Multi-step forms scroll back to the top of the form on step change.
