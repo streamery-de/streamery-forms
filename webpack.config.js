@@ -7,6 +7,25 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const require = createRequire(import.meta.url);
 const defaultConfig = require('@wordpress/scripts/config/webpack.config');
+const webpack = require('webpack');
+
+const REPOSITORY_URL = 'https://github.com/streamery-de/streamery-forms';
+
+// Every compiled file starts with a comment naming its human-readable source,
+// so the source can be found from the minified file alone (WordPress.org
+// plugin guideline 4).
+function sourceBanner({ filename }) {
+	const [first, second] = filename.split('/');
+	let source;
+	if (first === 'skins') {
+		source = `src/skins/${second}/`;
+	} else if (filename.includes('/')) {
+		source = `src/blocks/${first}/`;
+	} else {
+		source = 'src/components/email-template-editor/ and the bundled libraries listed in readme.txt';
+	}
+	return `Streamery Forms - compiled file. Human-readable source: ${source} (shipped in this plugin) and ${REPOSITORY_URL} - build: npm ci && npm run build`;
+}
 
 // Get all skins from src/skins directory
 function getSkinEntries() {
@@ -55,6 +74,16 @@ export default (env, argv) => {
 	
 	const finalConfig = {
 		...config,
+		plugins: [
+			...config.plugins,
+			new webpack.BannerPlugin({
+				banner: sourceBanner,
+				// Lazy chunks are emitted as e.g. `3024.js?ver=<hash>`.
+				test: /\.(js|css)(\?|$)/,
+				// After minification, which would otherwise strip the comment.
+				stage: webpack.Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE + 1,
+			}),
+		],
 		entry: Object.keys(mergedEntry).length > 0 ? mergedEntry : config.entry,
 		resolve: {
 			...existingResolve,

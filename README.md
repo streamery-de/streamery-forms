@@ -1,5 +1,8 @@
 <div align="center">
-  <img src="readme-assets/logo-color.svg" alt="Streamery Forms Logo" width="400">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="readme-assets/logo-white.png">
+    <img src="readme-assets/logo.png" alt="Streamery" width="360">
+  </picture>
 </div>
 
 # Streamery Forms
@@ -326,34 +329,6 @@ Streamery Forms is free, with no pro version and no locked features. If it saves
 - ☕ [Buy a coffee on Ko-fi](https://ko-fi.com/streamery)
 - ⭐ [Leave a review on WordPress.org](https://wordpress.org/support/plugin/streamery-forms/reviews/#new-post)
 
-## Documentation
-
-The `documentation/` folder contains a Next.js app for platform docs and preview. To run it locally:
-
-```bash
-cd documentation
-npm install
-npm run build
-npm run start
-```
-
-See `documentation/DEPLOY.md` for Vercel deployment.
-
 ## Changelog
 
-### 1.0.0
-- Initial release
-- Block-based form builder
-- Inbox interface for submission management
-- Email and Database providers
-- Mailbox and label management
-- Modern React admin interface
-
-### Later updates (since README revamp)
-- **Blocks**: Select, Checkbox, Radio, Date-Time, Slider, File upload, Captcha, Honeypot, Step, Step Navigation, Progress, Save Progress, Success view
-- **Multi-step forms**: Step blocks, navigation, progress indicator, save/resume
-- **Spam protection**: Captcha and Honeypot blocks
-- **Admin**: Forms Usage page, Admin Bar shortcut, SMTP settings, Email logging
-- **Inbox**: Bulk actions, improved filtering
-- **API**: Forms usage, file upload, SMTP/debug/admin-bar, email logs and templates
-- **i18n**: PHP-based translation system for admin and blocks
+See the `== Changelog ==` section in [readme.txt](readme.txt).
