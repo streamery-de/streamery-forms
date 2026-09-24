@@ -89,7 +89,7 @@ To rebuild the compiled files (Node.js 20, Composer):
 2. `npm ci`
 3. `npm run build` (runs `vite build -c vite.admin.config.js` and `wp-scripts build`)
 
-Bundled third-party libraries (all MIT or ISC licensed; exact versions in `package-lock.json` and `composer.lock`):
+Bundled third-party libraries (all MIT or ISC licensed; exact versions in `package-lock.json` and `vendor/composer/installed.json`):
 
 * CodeMirror, @uiw/react-codemirror — https://github.com/codemirror/dev, https://github.com/uiwjs/react-codemirror
 * friendly-challenge — https://github.com/FriendlyCaptcha/friendly-challenge
