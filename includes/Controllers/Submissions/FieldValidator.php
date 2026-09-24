@@ -75,6 +75,8 @@ class FieldValidator
                 continue;
             }
 
+            $value = $this->normalize_multi_value($field, $value);
+
             $error = $this->validate_value($field, $value);
             if (null !== $error) {
                 $errors[$field['name']] = $error;
@@ -98,6 +100,32 @@ class FieldValidator
         }
 
         return '' === trim((string) $value);
+    }
+
+    /**
+     * Turns a comma-joined checkbox group value into an array.
+     *
+     * Older versions of the frontend script sent a checkbox group as one
+     * string ("a, b"), and cached pages may still ship that script. A string
+     * that is itself one of the options is left alone, so an option value
+     * containing ", " still validates.
+     *
+     * @param array $field Field definition.
+     * @param mixed $value Submitted value.
+     * @return mixed
+     */
+    private function normalize_multi_value(array $field, $value)
+    {
+        if (empty($field['multi']) || ! is_string($value)) {
+            return $value;
+        }
+
+        $options = $field['options'] ?? array();
+        if (in_array($value, $options, true)) {
+            return array($value);
+        }
+
+        return array_map('trim', explode(', ', $value));
     }
 
     /**

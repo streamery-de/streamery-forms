@@ -224,7 +224,16 @@ form.wp-block-streamery-forms-form {
     }
   }
 
-  .streamery-forms-field--required label::after {
+  /* Checkbox/radio groups title themselves with a <legend> or <span>, not a
+     <label>, and their option labels use ::after for the control visuals. */
+  .streamery-forms-field--required label:not(.streamery-forms-checkbox-option, .streamery-forms-radio-option)::after,
+  .streamery-forms-field--required .streamery-forms-field__label::after {
+    content: " *";
+    color: var(--field-required-color, #f00);
+  }
+
+  /* A consent checkbox without a title marks its own text instead. */
+  .streamery-forms-field--required[data-consent]:not(:has(> .streamery-forms-field__label)) .streamery-forms-checkbox-option-label::after {
     content: " *";
     color: var(--field-required-color, #f00);
   }

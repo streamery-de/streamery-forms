@@ -98,16 +98,17 @@ window.addEventListener('DOMContentLoaded', () => {
 			}
 
 			const formData = new FormData(form as HTMLFormElement);
-			// Build data object: for keys with multiple values (e.g. checkboxes with name[]),
-			// use all values joined comma-separated; otherwise single value
-			const data: Record<string, string> = {};
+			// Build data object: multi-value fields (checkbox groups render as name[])
+			// are sent as arrays so the server can check each value against the
+			// field's options; everything else is sent as a single value.
+			const data: Record<string, unknown> = {};
 			const seen = new Set<string>();
 			for (const [key] of formData) {
 				if (seen.has(key)) continue;
 				seen.add(key);
 				const values = formData.getAll(key);
-				if (values.length > 1) {
-					data[key] = values.join(', ');
+				if (key.endsWith('[]') || values.length > 1) {
+					data[key] = values;
 				} else if (values.length === 1) {
 					data[key] = values[0];
 				}
@@ -612,7 +613,7 @@ interface SubmitResult {
  * (see includes/Core/FormRegistry.php).
  */
 async function submitFormWithProviders(
-	formData: Record<string, FormDataEntryValue>,
+	formData: Record<string, unknown>,
 	formIdentifier: string,
 	renderedAt: number = 0
 ): Promise<SubmitResult> {
