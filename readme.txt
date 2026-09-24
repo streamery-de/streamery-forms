@@ -80,7 +80,7 @@ Compiled file → source:
 * `assets/blocks/{block}/index.js`, `view.js`, `*.css` → `src/blocks/{block}/` (e.g. `assets/blocks/select/view.js` → `src/blocks/select/view.ts`), built with @wordpress/scripts (`webpack.config.js`)
 * `assets/blocks/skins/default/` → `src/skins/default/`
 * `assets/blocks/{number}.js` → shared, lazy-loaded chunks of the HTML email editor: currently `3024.js` from `src/components/email-template-editor/HtmlCodeEditor.tsx` and `3468.js` with the bundled CodeMirror library (see below)
-* `assets/admin/dist/` → `src/admin/`, `src/components/`, `src/lib/`, `src/hooks/`, built with Vite (`vite.admin.config.js`, `tailwind.config.js`, `postcss.config.cjs`)
+* `assets/admin/dist/` → `src/admin/`, `src/components/`, `src/lib/`, `src/hooks/`, built with Vite (`vite.admin.config.js`, `tailwind.config.js`, `postcss.config.js`)
 * `assets/admin/deactivate.js` and `assets/admin/deactivate.css` are not compiled
 
 To rebuild the compiled files (Node.js 20, Composer):
@@ -89,7 +89,7 @@ To rebuild the compiled files (Node.js 20, Composer):
 2. `npm ci`
 3. `npm run build` (runs `vite build -c vite.admin.config.js` and `wp-scripts build`)
 
-Bundled third-party libraries (all MIT or ISC licensed; exact versions in `package-lock.json` and `composer.lock`):
+Bundled third-party libraries (all MIT or ISC licensed; exact versions in `package-lock.json` and `vendor/composer/installed.json`):
 
 * CodeMirror, @uiw/react-codemirror — https://github.com/codemirror/dev, https://github.com/uiwjs/react-codemirror
 * friendly-challenge — https://github.com/FriendlyCaptcha/friendly-challenge

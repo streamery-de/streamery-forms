@@ -8,10 +8,10 @@
 #
 # Everything the plugin needs at runtime must NOT be listed here:
 #   assets/  includes/  libs/  database/  vendor/  composer.json
-#   composer.lock  streamery-forms.php  plugin.php  uninstall.php  readme.txt
+#   streamery-forms.php  plugin.php  uninstall.php  readme.txt
 #   LICENSE  src/ (source + email templates) and the build configs that turn
 #   src/ into assets/ (package.json, package-lock.json, webpack.config.js,
-#   vite.admin.config.js, postcss.config.cjs, tailwind.config.js, tsconfig.json)
+#   vite.admin.config.js, postcss.config.js, tailwind.config.js, tsconfig.json)
 #
 # Patterns follow gitignore semantics: a bare name like `src` matches at EVERY
 # depth, so it also swallows vendor/prappo/wp-eloquent/src -- which broke the
@@ -37,16 +37,17 @@
 *.stories.tsx
 
 # --- Dependencies / lockfiles ---
-# composer.json/composer.lock ship alongside /vendor so Plugin Check can see
-# what populated it (a vendor dir without composer.json is flagged as an
-# unneeded/unexplained folder).
+# composer.json ships alongside /vendor so Plugin Check can see what populated
+# it (a vendor dir without composer.json is flagged as an unneeded/unexplained
+# folder). composer.lock stays out: .lock is not a file type the WordPress.org
+# review accepts, and the exact versions are in vendor/composer/installed.json.
 /node_modules
 /yarn.lock
+/composer.lock
 
 # --- Build & tooling configs ---
 /webpack.config.cjs
 /vite.config.js
-/postcss.config.js
 /components.json
 /phpcs.xml.dist
 /phpunit.xml.dist
