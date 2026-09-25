@@ -4,6 +4,7 @@ import './style.css';
 
 import Edit from './edit'; 
 import save from './save';
+import deprecated from './deprecated';
 import metadata from './block.json';
 
 import { TextCursorInput } from 'lucide-react';
@@ -24,6 +25,7 @@ registerBlockType(metadata.name as string, {
 	icon: <BlockIcon icon={TextCursorInput} />,
 	edit: Edit,
 	save,
+	deprecated,
 	transforms: {
 		to: [
 			{

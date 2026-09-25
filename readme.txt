@@ -5,7 +5,7 @@ Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,10 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Changelog ==
 
+= 1.0.10 =
+* Fix: Default values now show in the frontend for input, textarea, radio, checkbox and date/time fields. They were written in a form browsers ignore.
+* Fix: Leftover defaults from the old placeholder copy (e.g. a lone "M") are removed when a form is opened in the editor, so they don't suddenly appear as field values.
+
 = 1.0.9 =
 * New: "Default value" for select and radio fields: choose the preselected option or "No default".
 * New: Checkbox fields get a checklist to preselect one or more options (not for consent checkboxes).
@@ -204,6 +208,9 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.10 =
+Default values now reach the frontend. Open and update pages with forms once so their fields are saved in the new format.
 
 = 1.0.9 =
 Default values for select, radio, checkbox, input and textarea fields. Check inputs whose placeholder was copied into the value.

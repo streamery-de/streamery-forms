@@ -2,9 +2,16 @@ import { RadioAttributes } from '@/blockTypes/radio';
 import { hasConditionalShowToOutput } from '@/blockTypes/conditionalLogic';
 import { useBlockProps } from '@wordpress/block-editor';
 import { type BlockSaveProps } from '@wordpress/blocks';
+import { dropOptionPlaceholderCopy } from '../../lib/deprecations';
+import metadata from './block.json';
 import { getFieldClasses, cn } from '../../lib/utils';
 
-export default function save(props: BlockSaveProps<RadioAttributes>) {
+/**
+ * Save output up to 1.0.9. It passed defaultValue/defaultChecked, which the
+ * block serializer does not turn into value/checked, so defaults never
+ * reached the frontend.
+ */
+function saveV1(props: BlockSaveProps<RadioAttributes>) {
 	const {
 		options,
 		name,
@@ -71,7 +78,7 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 								value={option.value}
 								id={inputId}
 								required={required}
-								checked={checked}
+								defaultChecked={checked}
 							/>
 							<span className="streamery-forms-radio-option-content">
 								{option.imageUrl && (
@@ -123,3 +130,11 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 		</fieldset>
 	);
 }
+
+export default [
+	{
+		attributes: metadata.attributes,
+		save: saveV1,
+		migrate: dropOptionPlaceholderCopy,
+	},
+];

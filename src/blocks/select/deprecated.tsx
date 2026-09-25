@@ -5,6 +5,7 @@ import { type BlockSaveProps } from '@wordpress/blocks';
 import { getFieldClasses } from '../../lib/utils';
 import { __ } from "@/lib/i18n";
 import metadata from './block.json';
+import { dropOptionPlaceholderCopy } from '../../lib/deprecations';
 
 /**
  * Save output before 1.0.9, which ignored defaultValue. Blocks whose default
@@ -57,5 +58,6 @@ export default [
 	{
 		attributes: metadata.attributes,
 		save: saveV1,
+		migrate: dropOptionPlaceholderCopy,
 	},
 ];

@@ -2,9 +2,16 @@ import { CheckboxAttributes } from '@/blockTypes/checkbox';
 import { hasConditionalShowToOutput } from '@/blockTypes/conditionalLogic';
 import { useBlockProps } from '@wordpress/block-editor';
 import { type BlockSaveProps } from '@wordpress/blocks';
+import { dropOptionPlaceholderCopy } from '../../lib/deprecations';
+import metadata from './block.json';
 import { getFieldClasses, cn } from '../../lib/utils';
 
-export default function save(props: BlockSaveProps<CheckboxAttributes>) {
+/**
+ * Save output up to 1.0.9. It passed defaultValue/defaultChecked, which the
+ * block serializer does not turn into value/checked, so defaults never
+ * reached the frontend.
+ */
+function saveV1(props: BlockSaveProps<CheckboxAttributes>) {
 	const {
 		options,
 		name,
@@ -82,7 +89,7 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 								value={option.value}
 								id={inputId}
 								required={isConsent ? required : undefined}
-								checked={checked}
+								defaultChecked={checked}
 								data-required={required ? 'true' : undefined}
 							/>
 							<span className="streamery-forms-checkbox-option-content">
@@ -135,3 +142,11 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 		</Wrapper>
 	);
 }
+
+export default [
+	{
+		attributes: metadata.attributes,
+		save: saveV1,
+		migrate: dropOptionPlaceholderCopy,
+	},
+];
