@@ -14,6 +14,7 @@ export const allowedBlocks = [
 	'streamery-forms/step',
 	'streamery-forms/progress',
 	'streamery-forms/save-progress',
+	'streamery-forms/field-value',
 	'core/columns',
 	'core/column',
 	'core/heading',

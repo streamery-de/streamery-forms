@@ -11,6 +11,7 @@ import { ToolbarGroup, PanelBody, TextControl } from '@wordpress/components';
 import { type BlockEditProps } from '@wordpress/blocks';
 import { useSelect } from '@wordpress/data';
 import { type StepNavigationAttributes } from '@/blockTypes/step-navigation';
+import { getFormStepBlocks } from '../../lib/form-steps';
 import './editor.css';
 
 export default function Edit(props: BlockEditProps<StepNavigationAttributes>) {
@@ -19,7 +20,7 @@ export default function Edit(props: BlockEditProps<StepNavigationAttributes>) {
 	// Compute step index and total steps by traversing block hierarchy
 	const { stepIndex, totalSteps } = useSelect(
 		(select: any) => {
-			const { getBlockParents, getBlocks, getBlockName } = select('core/block-editor');
+			const { getBlockParents, getBlockName } = select('core/block-editor');
 			const parents = getBlockParents(clientId);
 
 			// Find the parent step block
@@ -37,8 +38,7 @@ export default function Edit(props: BlockEditProps<StepNavigationAttributes>) {
 
 			if (!formClientId) return { stepIndex: 0, totalSteps: 1 };
 
-			const formBlocks = getBlocks(formClientId);
-			const stepBlocks = formBlocks.filter((b: any) => b.name === 'streamery-forms/step');
+			const stepBlocks = getFormStepBlocks(select('core/block-editor'), formClientId);
 			const idx = stepClientId
 				? stepBlocks.findIndex((b: any) => b.clientId === stepClientId)
 				: 0;

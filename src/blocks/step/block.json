@@ -7,7 +7,7 @@
 	"category": "widgets",
 	"icon": "editor-ol",
 	"description": "Step container block for multi-step forms in Streamery Forms.",
-	"parent": ["streamery-forms/form"],
+	"ancestor": ["streamery-forms/form"],
 	"example": {},
 	"attributes": {
 		"title": {
