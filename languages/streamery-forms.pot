@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Streamery Forms 1.0.1\n"
+"Project-Id-Version: Streamery Forms 1.0.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/streamery-forms\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-15T14:18:38+00:00\n"
+"POT-Creation-Date: 2026-09-25T14:31:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: streamery-forms\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: includes/Admin/AdminBar.php:79
 #: includes/Admin/Menu.php:48
 #: includes/Admin/Menu.php:49
-#: includes/Assets/Strings.php:587
+#: includes/Assets/Strings.php:617
 msgid "Streamery Forms"
 msgstr ""
 
@@ -72,7 +72,7 @@ msgstr ""
 #: includes/Admin/AdminBar.php:129
 #: includes/Admin/Menu.php:78
 #: includes/Admin/Menu.php:79
-#: includes/Assets/Strings.php:591
+#: includes/Assets/Strings.php:621
 msgid "Settings"
 msgstr ""
 
@@ -97,30 +97,30 @@ msgstr ""
 msgid "Rate Streamery Forms"
 msgstr ""
 
-#: includes/Assets/Frontend.php:137
+#: includes/Assets/Frontend.php:140
 msgid "Cancel upload"
 msgstr ""
 
-#: includes/Assets/Frontend.php:138
-#: includes/Assets/Strings.php:637
+#: includes/Assets/Frontend.php:141
+#: includes/Assets/Strings.php:667
 msgid "Remove file"
 msgstr ""
 
-#: includes/Assets/Frontend.php:139
-#: includes/Assets/Strings.php:633
+#: includes/Assets/Frontend.php:142
+#: includes/Assets/Strings.php:663
 msgid "Upload failed"
 msgstr ""
 
-#: includes/Assets/Frontend.php:140
+#: includes/Assets/Frontend.php:143
 msgid "Network error"
 msgstr ""
 
-#: includes/Assets/Frontend.php:141
+#: includes/Assets/Frontend.php:144
 msgid "Thank you! Your submission has been received."
 msgstr ""
 
-#: includes/Assets/Frontend.php:142
-#: includes/Assets/Strings.php:283
+#: includes/Assets/Frontend.php:145
+#: includes/Assets/Strings.php:307
 msgid "Your submission could not be sent. Please try again."
 msgstr ""
 
@@ -137,12 +137,12 @@ msgid "An error occurred"
 msgstr ""
 
 #: includes/Assets/Strings.php:31
-#: includes/Assets/Strings.php:769
+#: includes/Assets/Strings.php:799
 msgid "Save"
 msgstr ""
 
 #: includes/Assets/Strings.php:32
-#: includes/Assets/Strings.php:638
+#: includes/Assets/Strings.php:668
 #: includes/Core/Deactivate.php:80
 msgid "Cancel"
 msgstr ""
@@ -152,7 +152,7 @@ msgid "Delete"
 msgstr ""
 
 #: includes/Assets/Strings.php:34
-#: includes/Assets/Strings.php:770
+#: includes/Assets/Strings.php:800
 msgid "Edit"
 msgstr ""
 
@@ -323,7 +323,7 @@ msgid "Unstarred"
 msgstr ""
 
 #: includes/Assets/Strings.php:85
-#: includes/Assets/Strings.php:576
+#: includes/Assets/Strings.php:606
 msgid "Important"
 msgstr ""
 
@@ -497,7 +497,7 @@ msgstr ""
 
 #: includes/Assets/Strings.php:138
 #: includes/Assets/Strings.php:139
-#: includes/Assets/Strings.php:610
+#: includes/Assets/Strings.php:640
 msgid "selected"
 msgstr ""
 
@@ -717,6 +717,7 @@ msgid "Set this mailbox as the default for new form submissions."
 msgstr ""
 
 #: includes/Assets/Strings.php:198
+#: includes/Core/Skins.php:59
 #: includes/Providers/Database.php:145
 msgid "Default"
 msgstr ""
@@ -830,2093 +831,2211 @@ msgid "Required"
 msgstr ""
 
 #: includes/Assets/Strings.php:232
-msgid "Conditional logic"
+msgid "Field value"
 msgstr ""
 
 #: includes/Assets/Strings.php:233
-msgid "Where"
+#: includes/Providers/AbstractProvider.php:351
+msgid "Field"
 msgstr ""
 
 #: includes/Assets/Strings.php:234
-msgid "Show when field"
+msgid "Text before"
 msgstr ""
 
 #: includes/Assets/Strings.php:235
-msgid "Condition"
+msgid "Text after"
 msgstr ""
 
 #: includes/Assets/Strings.php:236
-#: includes/Assets/Strings.php:605
+msgid "Only shown together with a value."
+msgstr ""
+
+#: includes/Assets/Strings.php:237
+msgid "Fallback"
+msgstr ""
+
+#: includes/Assets/Strings.php:238
+msgid "Shown while the field is empty. Leave empty to hide the block until there is a value."
+msgstr ""
+
+#: includes/Assets/Strings.php:239
+msgid "Show option labels instead of values"
+msgstr ""
+
+#: includes/Assets/Strings.php:240
+msgid "Bold value"
+msgstr ""
+
+#: includes/Assets/Strings.php:241
+msgid "Only the value, not the text before or after it."
+msgstr ""
+
+#: includes/Assets/Strings.php:242
+msgid "Choose a field in the sidebar"
+msgstr ""
+
+#: includes/Assets/Strings.php:243
+msgid "Hide label"
+msgstr ""
+
+#: includes/Assets/Strings.php:244
+msgid "The label stays readable for screen readers."
+msgstr ""
+
+#: includes/Assets/Strings.php:245
+msgid "Image position"
+msgstr ""
+
+#: includes/Assets/Strings.php:246
+msgid "Before the text"
+msgstr ""
+
+#: includes/Assets/Strings.php:247
+msgid "After the text"
+msgstr ""
+
+#: includes/Assets/Strings.php:248
+msgid "Top left"
+msgstr ""
+
+#: includes/Assets/Strings.php:249
+msgid "Centered (no checkbox)"
+msgstr ""
+
+#: includes/Assets/Strings.php:250
+msgid "Allow custom option"
+msgstr ""
+
+#: includes/Assets/Strings.php:251
+msgid "Adds a last option with a text field for the visitor's own answer."
+msgstr ""
+
+#: includes/Assets/Strings.php:252
+msgid "Custom option placeholder"
+msgstr ""
+
+#: includes/Assets/Strings.php:253
+msgid "Other…"
+msgstr ""
+
+#: includes/Assets/Strings.php:254
+msgid "Image"
+msgstr ""
+
+#: includes/Assets/Strings.php:255
+msgid "Remove image"
+msgstr ""
+
+#: includes/Assets/Strings.php:256
+msgid "Conditional logic"
+msgstr ""
+
+#: includes/Assets/Strings.php:257
+msgid "Where"
+msgstr ""
+
+#: includes/Assets/Strings.php:258
+msgid "Show when field"
+msgstr ""
+
+#: includes/Assets/Strings.php:259
+msgid "Condition"
+msgstr ""
+
+#: includes/Assets/Strings.php:260
+#: includes/Assets/Strings.php:635
 #: includes/Providers/AbstractProvider.php:351
 #: includes/Providers/Webhook.php:659
 msgid "Value"
 msgstr ""
 
-#: includes/Assets/Strings.php:237
+#: includes/Assets/Strings.php:261
 msgid "— None —"
 msgstr ""
 
-#: includes/Assets/Strings.php:238
+#: includes/Assets/Strings.php:262
 msgid "Equals"
 msgstr ""
 
-#: includes/Assets/Strings.php:239
+#: includes/Assets/Strings.php:263
 msgid "Does not equal"
 msgstr ""
 
-#: includes/Assets/Strings.php:240
+#: includes/Assets/Strings.php:264
 msgid "Is empty"
 msgstr ""
 
-#: includes/Assets/Strings.php:241
+#: includes/Assets/Strings.php:265
 msgid "Is not empty"
 msgstr ""
 
-#: includes/Assets/Strings.php:242
+#: includes/Assets/Strings.php:266
 msgid "Contains"
 msgstr ""
 
-#: includes/Assets/Strings.php:243
+#: includes/Assets/Strings.php:267
 msgid "Default value from field"
 msgstr ""
 
-#: includes/Assets/Strings.php:244
+#: includes/Assets/Strings.php:268
 msgid "Use value of this field as preselection"
 msgstr ""
 
-#: includes/Assets/Strings.php:245
+#: includes/Assets/Strings.php:269
 msgid "Add condition"
 msgstr ""
 
-#: includes/Assets/Strings.php:246
+#: includes/Assets/Strings.php:270
 msgid "Delete all"
 msgstr ""
 
-#: includes/Assets/Strings.php:247
+#: includes/Assets/Strings.php:271
 msgid "AND"
 msgstr ""
 
-#: includes/Assets/Strings.php:248
+#: includes/Assets/Strings.php:272
 msgid "OR"
 msgstr ""
 
-#: includes/Assets/Strings.php:249
+#: includes/Assets/Strings.php:273
 msgid "Select value…"
 msgstr ""
 
-#: includes/Assets/Strings.php:250
+#: includes/Assets/Strings.php:274
 msgid "Button labels"
 msgstr ""
 
-#: includes/Assets/Strings.php:251
+#: includes/Assets/Strings.php:275
 msgid "Previous button"
 msgstr ""
 
-#: includes/Assets/Strings.php:252
+#: includes/Assets/Strings.php:276
 msgid "Shown on all steps except the first."
 msgstr ""
 
-#: includes/Assets/Strings.php:253
+#: includes/Assets/Strings.php:277
 msgid "Next button"
 msgstr ""
 
-#: includes/Assets/Strings.php:254
+#: includes/Assets/Strings.php:278
 msgid "Shown when there is a following step."
 msgstr ""
 
-#: includes/Assets/Strings.php:255
+#: includes/Assets/Strings.php:279
 msgid "Submit button"
 msgstr ""
 
-#: includes/Assets/Strings.php:256
+#: includes/Assets/Strings.php:280
 msgid "Shown on the last visible step (e.g. when using conditional steps)."
 msgstr ""
 
-#: includes/Assets/Strings.php:257
+#: includes/Assets/Strings.php:281
 msgid "Enter label"
 msgstr ""
 
-#: includes/Assets/Strings.php:258
+#: includes/Assets/Strings.php:282
 msgid "Enter help text"
 msgstr ""
 
-#: includes/Assets/Strings.php:259
+#: includes/Assets/Strings.php:283
 msgid "ID"
 msgstr ""
 
-#: includes/Assets/Strings.php:260
+#: includes/Assets/Strings.php:284
 msgid "Select an option..."
 msgstr ""
 
-#: includes/Assets/Strings.php:261
+#: includes/Assets/Strings.php:285
 msgid "Button Label"
 msgstr ""
 
-#: includes/Assets/Strings.php:262
+#: includes/Assets/Strings.php:286
 msgid "Success modal (hidden in preview)"
 msgstr ""
 
-#: includes/Assets/Strings.php:263
+#: includes/Assets/Strings.php:287
 msgid "Toggle Success View"
 msgstr ""
 
-#: includes/Assets/Strings.php:264
+#: includes/Assets/Strings.php:288
 msgid "Success screen"
 msgstr ""
 
-#: includes/Assets/Strings.php:265
+#: includes/Assets/Strings.php:289
 msgid "Edit success screen"
 msgstr ""
 
-#: includes/Assets/Strings.php:266
+#: includes/Assets/Strings.php:290
 msgid "Back to form"
 msgstr ""
 
-#: includes/Assets/Strings.php:267
+#: includes/Assets/Strings.php:291
 msgid "Change template"
 msgstr ""
 
-#: includes/Assets/Strings.php:268
+#: includes/Assets/Strings.php:292
 msgid "Form Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:269
+#: includes/Assets/Strings.php:293
 msgid "Storage & Inbox"
 msgstr ""
 
-#: includes/Assets/Strings.php:270
+#: includes/Assets/Strings.php:294
 msgid "Every submission of this form is stored in the inbox. Choose where it lands."
 msgstr ""
 
-#: includes/Assets/Strings.php:271
+#: includes/Assets/Strings.php:295
 msgid "Providers & Actions"
 msgstr ""
 
-#: includes/Assets/Strings.php:272
+#: includes/Assets/Strings.php:296
 msgid "These run in order every time the form is submitted. Storage always runs first, so a failing integration can never lose a submission."
 msgstr ""
 
-#: includes/Assets/Strings.php:273
+#: includes/Assets/Strings.php:297
 msgid "Spam Protection"
 msgstr ""
 
-#: includes/Assets/Strings.php:274
+#: includes/Assets/Strings.php:298
 msgid "Rate limiting and submit-timing checks always run and are not configurable per form."
 msgstr ""
 
-#: includes/Assets/Strings.php:275
+#: includes/Assets/Strings.php:299
 msgid "After Submit"
 msgstr ""
 
-#: includes/Assets/Strings.php:276
+#: includes/Assets/Strings.php:300
 msgid "You edit the success screen from the toolbar. Use the fields below for the error message and an optional redirect."
 msgstr ""
 
-#: includes/Assets/Strings.php:277
+#: includes/Assets/Strings.php:301
 msgid "Privacy"
 msgstr ""
 
-#: includes/Assets/Strings.php:278
+#: includes/Assets/Strings.php:302
 msgid "Controls what is kept about each submission, and for how long."
 msgstr ""
 
-#: includes/Assets/Strings.php:279
+#: includes/Assets/Strings.php:303
 msgid "Always on"
 msgstr ""
 
-#: includes/Assets/Strings.php:280
+#: includes/Assets/Strings.php:304
 msgid "Enable provider"
 msgstr ""
 
-#: includes/Assets/Strings.php:281
+#: includes/Assets/Strings.php:305
 msgid "No additional providers yet. Add them under Streamery Forms → Providers."
 msgstr ""
 
-#: includes/Assets/Strings.php:282
+#: includes/Assets/Strings.php:306
 msgid "Error message"
 msgstr ""
 
-#: includes/Assets/Strings.php:284
+#: includes/Assets/Strings.php:308
 msgid "Redirect URL"
 msgstr ""
 
-#: includes/Assets/Strings.php:285
+#: includes/Assets/Strings.php:309
 msgid "If set, the visitor is sent here after a successful submission instead of seeing the success screen."
 msgstr ""
 
-#: includes/Assets/Strings.php:286
+#: includes/Assets/Strings.php:310
 msgid "Enter an absolute URL (https://…) or a path starting with a slash."
 msgstr ""
 
-#: includes/Assets/Strings.php:287
+#: includes/Assets/Strings.php:311
 msgid "Entry subject"
 msgstr ""
 
-#: includes/Assets/Strings.php:288
+#: includes/Assets/Strings.php:312
 msgid "Shown as the entry title in the inbox. Placeholders like {form_title} are replaced."
 msgstr ""
 
-#: includes/Assets/Strings.php:289
+#: includes/Assets/Strings.php:313
 msgid "Choosing a new template will replace all current form content. This cannot be undone."
 msgstr ""
 
-#: includes/Assets/Strings.php:290
+#: includes/Assets/Strings.php:314
 msgid "Skin"
 msgstr ""
 
-#: includes/Assets/Strings.php:291
+#: includes/Assets/Strings.php:315
 msgid "Text"
 msgstr ""
 
-#: includes/Assets/Strings.php:292
+#: includes/Assets/Strings.php:316
 msgid "Number"
 msgstr ""
 
-#: includes/Assets/Strings.php:293
+#: includes/Assets/Strings.php:317
 msgid "Phone"
 msgstr ""
 
-#: includes/Assets/Strings.php:294
+#: includes/Assets/Strings.php:318
 msgid "URL"
 msgstr ""
 
-#: includes/Assets/Strings.php:295
+#: includes/Assets/Strings.php:319
 msgid "Search"
 msgstr ""
 
-#: includes/Assets/Strings.php:296
+#: includes/Assets/Strings.php:320
 msgid "Enter text"
 msgstr ""
 
-#: includes/Assets/Strings.php:297
+#: includes/Assets/Strings.php:321
 msgid "Enter email"
 msgstr ""
 
-#: includes/Assets/Strings.php:298
+#: includes/Assets/Strings.php:322
 msgid "Enter phone number"
 msgstr ""
 
-#: includes/Assets/Strings.php:299
+#: includes/Assets/Strings.php:323
 msgid "Enter URL"
 msgstr ""
 
-#: includes/Assets/Strings.php:300
+#: includes/Assets/Strings.php:324
 msgid "Enter number"
 msgstr ""
 
-#: includes/Assets/Strings.php:301
+#: includes/Assets/Strings.php:325
 msgid "Enter search term"
 msgstr ""
 
-#: includes/Assets/Strings.php:302
+#: includes/Assets/Strings.php:326
 msgid "Single-line text input for names, titles, or short answers."
 msgstr ""
 
-#: includes/Assets/Strings.php:303
+#: includes/Assets/Strings.php:327
 msgid "Email address field with built-in format validation."
 msgstr ""
 
-#: includes/Assets/Strings.php:304
+#: includes/Assets/Strings.php:328
 msgid "Phone number field optimized for tel input."
 msgstr ""
 
-#: includes/Assets/Strings.php:305
+#: includes/Assets/Strings.php:329
 msgid "Website or link field with URL validation."
 msgstr ""
 
-#: includes/Assets/Strings.php:306
+#: includes/Assets/Strings.php:330
 msgid "Numeric input for quantities, ages, or amounts."
 msgstr ""
 
-#: includes/Assets/Strings.php:307
+#: includes/Assets/Strings.php:331
 msgid "Search-style input for lookup or filter fields."
 msgstr ""
 
-#: includes/Assets/Strings.php:308
-msgid "Required privacy or terms consent checkbox."
+#: includes/Assets/Strings.php:332
+msgid "Checkboxes"
 msgstr ""
 
-#: includes/Assets/Strings.php:309
-msgid "Optional newsletter or marketing opt-in."
+#: includes/Assets/Strings.php:333
+msgid "A group of options where visitors can pick several."
 msgstr ""
 
-#: includes/Assets/Strings.php:310
-msgid "Age Groups"
-msgstr ""
-
-#: includes/Assets/Strings.php:311
-msgid "Mr."
-msgstr ""
-
-#: includes/Assets/Strings.php:312
-msgid "Mrs."
-msgstr ""
-
-#: includes/Assets/Strings.php:313
-msgid "Diverse"
-msgstr ""
-
-#: includes/Assets/Strings.php:314
-msgid "0-17 years"
-msgstr ""
-
-#: includes/Assets/Strings.php:315
-msgid "18-24 years"
-msgstr ""
-
-#: includes/Assets/Strings.php:316
-msgid "25-34 years"
-msgstr ""
-
-#: includes/Assets/Strings.php:317
-msgid "35-44 years"
-msgstr ""
-
-#: includes/Assets/Strings.php:318
-msgid "45-54 years"
-msgstr ""
-
-#: includes/Assets/Strings.php:319
-msgid "55-64 years"
-msgstr ""
-
-#: includes/Assets/Strings.php:320
-msgid "65+ years"
-msgstr ""
-
-#: includes/Assets/Strings.php:321
-msgid "Setup your First Mailbox"
-msgstr ""
-
-#: includes/Assets/Strings.php:322
-msgid "Create a custom mailbox to organize your form entries"
-msgstr ""
-
-#: includes/Assets/Strings.php:323
-msgid "Are The Labels (default) ok or change something?"
-msgstr ""
-
-#: includes/Assets/Strings.php:324
-msgid "Review and customize your entry labels"
-msgstr ""
-
-#: includes/Assets/Strings.php:325
-msgid "Configure an email provider to receive form submissions"
-msgstr ""
-
-#: includes/Assets/Strings.php:328
-msgid "Select Field Settings"
-msgstr ""
-
-#: includes/Assets/Strings.php:329
-msgid "Populate options"
-msgstr ""
-
-#: includes/Assets/Strings.php:330
-msgid "Options are not managed in the editor. They are filled when the page loads via the streamery-forms/select/populated_options filter in your theme or plugin."
-msgstr ""
-
-#: includes/Assets/Strings.php:331
-msgid "Example"
-msgstr ""
-
-#: includes/Assets/Strings.php:334
-msgid "Checkbox Field Settings"
-msgstr ""
-
+#. translators: %d: option number
 #: includes/Assets/Strings.php:335
-msgid "Consent"
+msgid "Option %d"
 msgstr ""
 
 #: includes/Assets/Strings.php:336
-msgid "I agree to the privacy policy."
+msgid "Required privacy or terms consent checkbox."
 msgstr ""
 
 #: includes/Assets/Strings.php:337
-msgid "Newsletter"
+msgid "Optional newsletter or marketing opt-in."
 msgstr ""
 
 #: includes/Assets/Strings.php:338
-msgid "Subscribe to newsletter"
+msgid "Age Groups"
 msgstr ""
 
 #: includes/Assets/Strings.php:339
-#: includes/Assets/Strings.php:347
-msgid "Standard"
+msgid "Mr."
 msgstr ""
 
 #: includes/Assets/Strings.php:340
-#: includes/Assets/Strings.php:348
-msgid "Schalter"
+msgid "Mrs."
 msgstr ""
 
 #: includes/Assets/Strings.php:341
-#: includes/Assets/Strings.php:350
-msgid "Karten"
+msgid "Diverse"
 msgstr ""
 
 #: includes/Assets/Strings.php:342
-#: includes/Assets/Strings.php:349
-msgid "Badges"
+msgid "0-17 years"
 msgstr ""
 
 #: includes/Assets/Strings.php:343
-msgid "Style"
+msgid "18-24 years"
 msgstr ""
 
 #: includes/Assets/Strings.php:344
-msgid "Add options via sidebar (Checkbox Field Settings)."
+msgid "25-34 years"
+msgstr ""
+
+#: includes/Assets/Strings.php:345
+msgid "35-44 years"
 msgstr ""
 
 #: includes/Assets/Strings.php:346
-msgid "Radio Field Settings"
+msgid "45-54 years"
+msgstr ""
+
+#: includes/Assets/Strings.php:347
+msgid "55-64 years"
+msgstr ""
+
+#: includes/Assets/Strings.php:348
+msgid "65+ years"
+msgstr ""
+
+#: includes/Assets/Strings.php:349
+msgid "Setup your First Mailbox"
+msgstr ""
+
+#: includes/Assets/Strings.php:350
+msgid "Create a custom mailbox to organize your form entries"
 msgstr ""
 
 #: includes/Assets/Strings.php:351
-msgid "Layout"
+msgid "Are The Labels (default) ok or change something?"
 msgstr ""
 
 #: includes/Assets/Strings.php:352
-#: includes/Assets/Strings.php:369
-msgid "Horizontal"
+msgid "Review and customize your entry labels"
 msgstr ""
 
 #: includes/Assets/Strings.php:353
-#: includes/Assets/Strings.php:370
-msgid "Vertical"
-msgstr ""
-
-#: includes/Assets/Strings.php:355
-msgid "Date / Time Field Settings"
+msgid "Configure an email provider to receive form submissions"
 msgstr ""
 
 #: includes/Assets/Strings.php:356
-#: includes/Assets/Strings.php:460
-#: includes/Assets/Strings.php:725
-msgid "Date"
+msgid "Select Field Settings"
 msgstr ""
 
 #: includes/Assets/Strings.php:357
-#: includes/Assets/Strings.php:461
-msgid "Time"
+msgid "Populate options"
 msgstr ""
 
 #: includes/Assets/Strings.php:358
-msgid "Date & Time"
+msgid "Options are not managed in the editor. They are filled when the page loads via the streamery-forms/select/populated_options filter in your theme or plugin."
 msgstr ""
 
 #: includes/Assets/Strings.php:359
-msgid "Single"
+msgid "Example"
 msgstr ""
 
-#: includes/Assets/Strings.php:360
-msgid "Range"
-msgstr ""
-
-#: includes/Assets/Strings.php:361
-msgid "Mode"
+#: includes/Assets/Strings.php:362
+msgid "Checkbox Field Settings"
 msgstr ""
 
 #: includes/Assets/Strings.php:363
-msgid "Slider Field Settings"
+msgid "Consent"
 msgstr ""
 
 #: includes/Assets/Strings.php:364
-msgid "Slider display"
+msgid "I agree to the privacy policy."
 msgstr ""
 
 #: includes/Assets/Strings.php:365
-msgid "Min"
+msgid "Newsletter"
 msgstr ""
 
 #: includes/Assets/Strings.php:366
-msgid "Max"
+msgid "Subscribe to newsletter"
 msgstr ""
 
 #: includes/Assets/Strings.php:367
-#: includes/Assets/Strings.php:802
-msgid "Step"
+#: includes/Assets/Strings.php:375
+msgid "Standard"
 msgstr ""
 
 #: includes/Assets/Strings.php:368
-msgid "Orientation"
+#: includes/Assets/Strings.php:376
+msgid "Schalter"
+msgstr ""
+
+#: includes/Assets/Strings.php:369
+#: includes/Assets/Strings.php:378
+msgid "Karten"
+msgstr ""
+
+#: includes/Assets/Strings.php:370
+#: includes/Assets/Strings.php:377
+msgid "Badges"
 msgstr ""
 
 #: includes/Assets/Strings.php:371
-msgid "Direction"
+msgid "Style"
 msgstr ""
 
 #: includes/Assets/Strings.php:372
-msgid "Left to right"
-msgstr ""
-
-#: includes/Assets/Strings.php:373
-msgid "Right to left"
+msgid "Add options via sidebar (Checkbox Field Settings)."
 msgstr ""
 
 #: includes/Assets/Strings.php:374
-msgid "Show tooltips"
-msgstr ""
-
-#: includes/Assets/Strings.php:375
-msgid "Connect handles (range)"
-msgstr ""
-
-#: includes/Assets/Strings.php:376
-msgid "Min. distance between handles"
-msgstr ""
-
-#: includes/Assets/Strings.php:377
-msgid "Max. distance between handles"
-msgstr ""
-
-#: includes/Assets/Strings.php:378
-msgid "Padding start"
+msgid "Radio Field Settings"
 msgstr ""
 
 #: includes/Assets/Strings.php:379
-msgid "Padding end"
+msgid "Layout"
 msgstr ""
 
 #: includes/Assets/Strings.php:380
-msgid "Animate on set"
+#: includes/Assets/Strings.php:397
+msgid "Horizontal"
 msgstr ""
 
 #: includes/Assets/Strings.php:381
-msgid "Animation duration (ms)"
-msgstr ""
-
-#: includes/Assets/Strings.php:382
-msgid "Default value"
+#: includes/Assets/Strings.php:398
+msgid "Vertical"
 msgstr ""
 
 #: includes/Assets/Strings.php:383
-msgid "Default value (start)"
+msgid "Date / Time Field Settings"
 msgstr ""
 
 #: includes/Assets/Strings.php:384
-msgid "Default value (end)"
+#: includes/Assets/Strings.php:490
+#: includes/Assets/Strings.php:755
+msgid "Date"
 msgstr ""
 
 #: includes/Assets/Strings.php:385
-msgid "Basic Form"
+#: includes/Assets/Strings.php:491
+msgid "Time"
 msgstr ""
 
 #: includes/Assets/Strings.php:386
-msgid "Start"
+msgid "Date & Time"
 msgstr ""
 
 #: includes/Assets/Strings.php:387
-msgid "Basics"
+msgid "Single"
 msgstr ""
 
 #: includes/Assets/Strings.php:388
-msgid "Advanced"
+msgid "Range"
 msgstr ""
 
 #: includes/Assets/Strings.php:389
-msgid "Multi-step"
-msgstr ""
-
-#: includes/Assets/Strings.php:390
-msgid "Choose a template to get started. You can adjust the fields afterwards."
+msgid "Mode"
 msgstr ""
 
 #: includes/Assets/Strings.php:391
-#: includes/Assets/Strings.php:765
-msgid "Blank"
+msgid "Slider Field Settings"
 msgstr ""
 
 #: includes/Assets/Strings.php:392
-msgid "Contact Form"
+msgid "Slider display"
 msgstr ""
 
 #: includes/Assets/Strings.php:393
-msgid "Newsletter Signup"
+msgid "Min"
 msgstr ""
 
 #: includes/Assets/Strings.php:394
-msgid "Callback Request"
+msgid "Max"
 msgstr ""
 
 #: includes/Assets/Strings.php:395
-msgid "Event Registration / RSVP"
+#: includes/Assets/Strings.php:832
+msgid "Step"
 msgstr ""
 
 #: includes/Assets/Strings.php:396
-msgid "Job Application"
-msgstr ""
-
-#: includes/Assets/Strings.php:397
-msgid "Customer Feedback / Survey"
-msgstr ""
-
-#: includes/Assets/Strings.php:398
-msgid "Basic Multi-Step Form"
+msgid "Orientation"
 msgstr ""
 
 #: includes/Assets/Strings.php:399
-msgid "Project Request (Multi-Step)"
+msgid "Direction"
 msgstr ""
 
 #: includes/Assets/Strings.php:400
-msgid "Personal data"
+msgid "Left to right"
 msgstr ""
 
 #: includes/Assets/Strings.php:401
+msgid "Right to left"
+msgstr ""
+
+#: includes/Assets/Strings.php:402
+msgid "Show tooltips"
+msgstr ""
+
+#: includes/Assets/Strings.php:403
+msgid "Connect handles (range)"
+msgstr ""
+
+#: includes/Assets/Strings.php:404
+msgid "Min. distance between handles"
+msgstr ""
+
+#: includes/Assets/Strings.php:405
+msgid "Max. distance between handles"
+msgstr ""
+
+#: includes/Assets/Strings.php:406
+msgid "Padding start"
+msgstr ""
+
+#: includes/Assets/Strings.php:407
+msgid "Padding end"
+msgstr ""
+
+#: includes/Assets/Strings.php:408
+msgid "Animate on set"
+msgstr ""
+
 #: includes/Assets/Strings.php:409
+msgid "Animation duration (ms)"
+msgstr ""
+
+#: includes/Assets/Strings.php:410
+msgid "Default value"
+msgstr ""
+
+#: includes/Assets/Strings.php:411
+msgid "No default"
+msgstr ""
+
+#: includes/Assets/Strings.php:412
+msgid "Prefilled in the field. Visitors can change it."
+msgstr ""
+
+#: includes/Assets/Strings.php:413
+msgid "Default value (start)"
+msgstr ""
+
+#: includes/Assets/Strings.php:414
+msgid "Default value (end)"
+msgstr ""
+
+#: includes/Assets/Strings.php:415
+msgid "Basic Form"
+msgstr ""
+
+#: includes/Assets/Strings.php:416
+msgid "Start"
+msgstr ""
+
+#: includes/Assets/Strings.php:417
+msgid "Basics"
+msgstr ""
+
+#: includes/Assets/Strings.php:418
+msgid "Advanced"
+msgstr ""
+
+#: includes/Assets/Strings.php:419
+msgid "Multi-step"
+msgstr ""
+
+#: includes/Assets/Strings.php:420
+msgid "Choose a template to get started. You can adjust the fields afterwards."
+msgstr ""
+
+#: includes/Assets/Strings.php:421
+#: includes/Assets/Strings.php:795
+msgid "Blank"
+msgstr ""
+
+#: includes/Assets/Strings.php:422
+msgid "Contact Form"
+msgstr ""
+
+#: includes/Assets/Strings.php:423
+msgid "Newsletter Signup"
+msgstr ""
+
+#: includes/Assets/Strings.php:424
+msgid "Callback Request"
+msgstr ""
+
+#: includes/Assets/Strings.php:425
+msgid "Event Registration / RSVP"
+msgstr ""
+
+#: includes/Assets/Strings.php:426
+msgid "Job Application"
+msgstr ""
+
+#: includes/Assets/Strings.php:427
+msgid "Customer Feedback / Survey"
+msgstr ""
+
+#: includes/Assets/Strings.php:428
+msgid "Basic Multi-Step Form"
+msgstr ""
+
+#: includes/Assets/Strings.php:429
+msgid "Project Request (Multi-Step)"
+msgstr ""
+
+#: includes/Assets/Strings.php:430
+msgid "Personal data"
+msgstr ""
+
+#: includes/Assets/Strings.php:431
+#: includes/Assets/Strings.php:439
 #: includes/Providers/Email.php:242
 msgid "Message"
 msgstr ""
 
-#: includes/Assets/Strings.php:402
+#: includes/Assets/Strings.php:432
 msgid "Support Ticket"
 msgstr ""
 
-#: includes/Assets/Strings.php:403
+#: includes/Assets/Strings.php:433
 msgid "Table Reservation"
 msgstr ""
 
-#: includes/Assets/Strings.php:404
+#: includes/Assets/Strings.php:434
 msgid "Product Configurator"
 msgstr ""
 
-#: includes/Assets/Strings.php:406
+#: includes/Assets/Strings.php:436
 msgid "First name"
 msgstr ""
 
-#: includes/Assets/Strings.php:407
+#: includes/Assets/Strings.php:437
 msgid "Last name"
 msgstr ""
 
-#: includes/Assets/Strings.php:408
+#: includes/Assets/Strings.php:438
 #: includes/Providers/Database.php:171
 #: includes/Providers/Email.php:234
 msgid "Subject"
 msgstr ""
 
-#: includes/Assets/Strings.php:410
+#: includes/Assets/Strings.php:440
 msgid "Privacy consent"
 msgstr ""
 
-#: includes/Assets/Strings.php:411
+#: includes/Assets/Strings.php:441
 msgid "I agree to the privacy policy"
 msgstr ""
 
-#: includes/Assets/Strings.php:412
+#: includes/Assets/Strings.php:442
 msgid "So we can address you personally"
 msgstr ""
 
-#: includes/Assets/Strings.php:413
+#: includes/Assets/Strings.php:443
 msgid "Best time to reach"
 msgstr ""
 
-#: includes/Assets/Strings.php:414
+#: includes/Assets/Strings.php:444
 msgid "Reason for call (optional)"
 msgstr ""
 
-#: includes/Assets/Strings.php:415
+#: includes/Assets/Strings.php:445
 msgid "Morning"
 msgstr ""
 
-#: includes/Assets/Strings.php:416
+#: includes/Assets/Strings.php:446
 msgid "Afternoon"
 msgstr ""
 
-#: includes/Assets/Strings.php:417
+#: includes/Assets/Strings.php:447
 msgid "Evening"
 msgstr ""
 
-#: includes/Assets/Strings.php:418
+#: includes/Assets/Strings.php:448
 msgid "Number of guests"
 msgstr ""
 
-#: includes/Assets/Strings.php:419
+#: includes/Assets/Strings.php:449
 msgid "Dietary preferences"
 msgstr ""
 
-#: includes/Assets/Strings.php:420
+#: includes/Assets/Strings.php:450
 msgid "Vegetarian"
 msgstr ""
 
-#: includes/Assets/Strings.php:421
+#: includes/Assets/Strings.php:451
 msgid "Vegan"
 msgstr ""
 
-#: includes/Assets/Strings.php:422
+#: includes/Assets/Strings.php:452
 msgid "Allergies"
 msgstr ""
 
-#: includes/Assets/Strings.php:423
+#: includes/Assets/Strings.php:453
 msgid "Evening event participation"
 msgstr ""
 
-#: includes/Assets/Strings.php:424
+#: includes/Assets/Strings.php:454
 msgid "Address"
 msgstr ""
 
-#: includes/Assets/Strings.php:425
+#: includes/Assets/Strings.php:455
 msgid "Desired position"
 msgstr ""
 
-#: includes/Assets/Strings.php:426
+#: includes/Assets/Strings.php:456
 msgid "Developer"
 msgstr ""
 
-#: includes/Assets/Strings.php:427
+#: includes/Assets/Strings.php:457
 msgid "Designer"
 msgstr ""
 
-#: includes/Assets/Strings.php:428
+#: includes/Assets/Strings.php:458
 msgid "Marketing"
 msgstr ""
 
-#: includes/Assets/Strings.php:429
+#: includes/Assets/Strings.php:459
 msgid "Earliest start date"
 msgstr ""
 
-#: includes/Assets/Strings.php:430
+#: includes/Assets/Strings.php:460
 msgid "Salary expectation"
 msgstr ""
 
-#: includes/Assets/Strings.php:431
+#: includes/Assets/Strings.php:461
 msgid "Resume / CV (PDF)"
 msgstr ""
 
-#: includes/Assets/Strings.php:432
+#: includes/Assets/Strings.php:462
 msgid "Cover letter / Portfolio"
 msgstr ""
 
-#: includes/Assets/Strings.php:433
+#: includes/Assets/Strings.php:463
 msgid "How satisfied were you? (1-10)"
 msgstr ""
 
-#: includes/Assets/Strings.php:434
+#: includes/Assets/Strings.php:464
 msgid "What did you particularly like?"
 msgstr ""
 
-#: includes/Assets/Strings.php:435
+#: includes/Assets/Strings.php:465
 msgid "What can we improve?"
 msgstr ""
 
-#: includes/Assets/Strings.php:436
+#: includes/Assets/Strings.php:466
 msgid "May we contact you for follow-up questions?"
 msgstr ""
 
-#: includes/Assets/Strings.php:437
+#: includes/Assets/Strings.php:467
 msgid "Email (for follow-up)"
 msgstr ""
 
-#: includes/Assets/Strings.php:438
+#: includes/Assets/Strings.php:468
 msgid "The project"
 msgstr ""
 
-#: includes/Assets/Strings.php:439
+#: includes/Assets/Strings.php:469
 msgid "Project type"
 msgstr ""
 
-#: includes/Assets/Strings.php:440
+#: includes/Assets/Strings.php:470
 msgid "Current status"
 msgstr ""
 
-#: includes/Assets/Strings.php:441
+#: includes/Assets/Strings.php:471
 msgid "Just an idea"
 msgstr ""
 
-#: includes/Assets/Strings.php:442
+#: includes/Assets/Strings.php:472
 msgid "Specification available"
 msgstr ""
 
-#: includes/Assets/Strings.php:443
+#: includes/Assets/Strings.php:473
 msgid "Relaunch"
 msgstr ""
 
-#: includes/Assets/Strings.php:444
+#: includes/Assets/Strings.php:474
 msgid "Framework"
 msgstr ""
 
-#: includes/Assets/Strings.php:445
+#: includes/Assets/Strings.php:475
 msgid "Budget range"
 msgstr ""
 
-#: includes/Assets/Strings.php:446
+#: includes/Assets/Strings.php:476
 msgid "Deadline"
 msgstr ""
 
-#: includes/Assets/Strings.php:447
+#: includes/Assets/Strings.php:477
 msgid "Contact details"
 msgstr ""
 
-#: includes/Assets/Strings.php:448
+#: includes/Assets/Strings.php:478
 msgid "Company"
 msgstr ""
 
-#: includes/Assets/Strings.php:449
+#: includes/Assets/Strings.php:479
 msgid "Customer ID / Order number"
 msgstr ""
 
-#: includes/Assets/Strings.php:450
+#: includes/Assets/Strings.php:480
 msgid "Problem category"
 msgstr ""
 
-#: includes/Assets/Strings.php:451
+#: includes/Assets/Strings.php:481
 msgid "Technical"
 msgstr ""
 
-#: includes/Assets/Strings.php:452
+#: includes/Assets/Strings.php:482
 msgid "Billing"
 msgstr ""
 
-#: includes/Assets/Strings.php:453
+#: includes/Assets/Strings.php:483
 msgid "Shipping"
 msgstr ""
 
-#: includes/Assets/Strings.php:454
+#: includes/Assets/Strings.php:484
 msgid "Urgency"
 msgstr ""
 
-#: includes/Assets/Strings.php:455
+#: includes/Assets/Strings.php:485
 msgid "Low"
 msgstr ""
 
-#: includes/Assets/Strings.php:456
+#: includes/Assets/Strings.php:486
 msgid "Medium"
 msgstr ""
 
-#: includes/Assets/Strings.php:457
+#: includes/Assets/Strings.php:487
 msgid "Critical"
 msgstr ""
 
-#: includes/Assets/Strings.php:458
+#: includes/Assets/Strings.php:488
 msgid "Problem description"
 msgstr ""
 
-#: includes/Assets/Strings.php:459
+#: includes/Assets/Strings.php:489
 msgid "Screenshot"
 msgstr ""
 
-#: includes/Assets/Strings.php:462
+#: includes/Assets/Strings.php:492
 msgid "Area"
 msgstr ""
 
-#: includes/Assets/Strings.php:463
+#: includes/Assets/Strings.php:493
 msgid "Indoors"
 msgstr ""
 
-#: includes/Assets/Strings.php:464
+#: includes/Assets/Strings.php:494
 msgid "Terrace"
 msgstr ""
 
-#: includes/Assets/Strings.php:465
+#: includes/Assets/Strings.php:495
 msgid "Special occasions (e.g. birthday)"
 msgstr ""
 
-#: includes/Assets/Strings.php:466
+#: includes/Assets/Strings.php:496
 msgid "Product choice"
 msgstr ""
 
-#: includes/Assets/Strings.php:467
+#: includes/Assets/Strings.php:497
 msgid "Basic package – 99 €"
 msgstr ""
 
-#: includes/Assets/Strings.php:468
+#: includes/Assets/Strings.php:498
 msgid "Premium – 199 €"
 msgstr ""
 
-#: includes/Assets/Strings.php:469
+#: includes/Assets/Strings.php:499
 msgid "Add-ons"
 msgstr ""
 
-#: includes/Assets/Strings.php:470
+#: includes/Assets/Strings.php:500
 msgid "Express processing +20 €"
 msgstr ""
 
-#: includes/Assets/Strings.php:471
+#: includes/Assets/Strings.php:501
 msgid "Gift wrapping +5 €"
 msgstr ""
 
-#: includes/Assets/Strings.php:472
+#: includes/Assets/Strings.php:502
 msgid "Delivery address"
 msgstr ""
 
-#: includes/Assets/Strings.php:473
+#: includes/Assets/Strings.php:503
 msgid "Billing address"
 msgstr ""
 
-#: includes/Assets/Strings.php:474
+#: includes/Assets/Strings.php:504
 msgid "Same as delivery address"
 msgstr ""
 
-#: includes/Assets/Strings.php:475
+#: includes/Assets/Strings.php:505
 msgid "General enquiry"
 msgstr ""
 
-#: includes/Assets/Strings.php:476
-#: includes/Assets/Strings.php:592
+#: includes/Assets/Strings.php:506
+#: includes/Assets/Strings.php:622
 msgid "Support"
 msgstr ""
 
-#: includes/Assets/Strings.php:477
-#: includes/Assets/Strings.php:781
+#: includes/Assets/Strings.php:507
+#: includes/Assets/Strings.php:811
 msgid "Other"
 msgstr ""
 
-#: includes/Assets/Strings.php:478
+#: includes/Assets/Strings.php:508
 msgid "Country"
 msgstr ""
 
-#: includes/Assets/Strings.php:479
+#: includes/Assets/Strings.php:509
 msgid "Federal States"
 msgstr ""
 
-#: includes/Assets/Strings.php:480
+#: includes/Assets/Strings.php:510
 msgid "Germany"
 msgstr ""
 
-#: includes/Assets/Strings.php:481
+#: includes/Assets/Strings.php:511
 msgid "Austria"
 msgstr ""
 
-#: includes/Assets/Strings.php:482
+#: includes/Assets/Strings.php:512
 msgid "Switzerland"
 msgstr ""
 
-#: includes/Assets/Strings.php:483
+#: includes/Assets/Strings.php:513
 msgid "France"
 msgstr ""
 
-#: includes/Assets/Strings.php:484
+#: includes/Assets/Strings.php:514
 msgid "Italy"
 msgstr ""
 
-#: includes/Assets/Strings.php:485
+#: includes/Assets/Strings.php:515
 msgid "Spain"
 msgstr ""
 
-#: includes/Assets/Strings.php:486
+#: includes/Assets/Strings.php:516
 msgid "Netherlands"
 msgstr ""
 
-#: includes/Assets/Strings.php:487
+#: includes/Assets/Strings.php:517
 msgid "Belgium"
 msgstr ""
 
-#: includes/Assets/Strings.php:488
+#: includes/Assets/Strings.php:518
 msgid "Poland"
 msgstr ""
 
-#: includes/Assets/Strings.php:489
+#: includes/Assets/Strings.php:519
 msgid "Czech Republic"
 msgstr ""
 
-#: includes/Assets/Strings.php:490
+#: includes/Assets/Strings.php:520
 msgid "Baden-Württemberg"
 msgstr ""
 
-#: includes/Assets/Strings.php:491
+#: includes/Assets/Strings.php:521
 msgid "Bavaria"
 msgstr ""
 
-#: includes/Assets/Strings.php:492
+#: includes/Assets/Strings.php:522
 msgid "Berlin"
 msgstr ""
 
-#: includes/Assets/Strings.php:493
+#: includes/Assets/Strings.php:523
 msgid "Brandenburg"
 msgstr ""
 
-#: includes/Assets/Strings.php:494
+#: includes/Assets/Strings.php:524
 msgid "Bremen"
 msgstr ""
 
-#: includes/Assets/Strings.php:495
+#: includes/Assets/Strings.php:525
 msgid "Hamburg"
 msgstr ""
 
-#: includes/Assets/Strings.php:496
+#: includes/Assets/Strings.php:526
 msgid "Hesse"
 msgstr ""
 
-#: includes/Assets/Strings.php:497
+#: includes/Assets/Strings.php:527
 msgid "Mecklenburg-Western Pomerania"
 msgstr ""
 
-#: includes/Assets/Strings.php:498
+#: includes/Assets/Strings.php:528
 msgid "Lower Saxony"
 msgstr ""
 
-#: includes/Assets/Strings.php:499
+#: includes/Assets/Strings.php:529
 msgid "North Rhine-Westphalia"
 msgstr ""
 
-#: includes/Assets/Strings.php:500
+#: includes/Assets/Strings.php:530
 msgid "Rhineland-Palatinate"
 msgstr ""
 
-#: includes/Assets/Strings.php:501
+#: includes/Assets/Strings.php:531
 msgid "Saarland"
 msgstr ""
 
-#: includes/Assets/Strings.php:502
+#: includes/Assets/Strings.php:532
 msgid "Saxony"
 msgstr ""
 
-#: includes/Assets/Strings.php:503
+#: includes/Assets/Strings.php:533
 msgid "Saxony-Anhalt"
 msgstr ""
 
-#: includes/Assets/Strings.php:504
+#: includes/Assets/Strings.php:534
 msgid "Schleswig-Holstein"
 msgstr ""
 
-#: includes/Assets/Strings.php:505
+#: includes/Assets/Strings.php:535
 msgid "Thuringia"
 msgstr ""
 
-#: includes/Assets/Strings.php:508
+#: includes/Assets/Strings.php:538
 msgid "Dashboard"
 msgstr ""
 
-#: includes/Assets/Strings.php:509
+#: includes/Assets/Strings.php:539
 msgid "Overview"
 msgstr ""
 
-#: includes/Assets/Strings.php:510
+#: includes/Assets/Strings.php:540
 msgid "Analytics"
 msgstr ""
 
-#: includes/Assets/Strings.php:511
+#: includes/Assets/Strings.php:541
 msgid "Reports"
 msgstr ""
 
-#: includes/Assets/Strings.php:512
+#: includes/Assets/Strings.php:542
 msgid "Notifications"
 msgstr ""
 
-#: includes/Assets/Strings.php:513
+#: includes/Assets/Strings.php:543
 msgid "Total Revenue"
 msgstr ""
 
-#: includes/Assets/Strings.php:514
+#: includes/Assets/Strings.php:544
 msgid "Subscriptions"
 msgstr ""
 
-#: includes/Assets/Strings.php:515
+#: includes/Assets/Strings.php:545
 msgid "Sales"
 msgstr ""
 
-#: includes/Assets/Strings.php:516
+#: includes/Assets/Strings.php:546
 msgid "Active Now"
 msgstr ""
 
-#: includes/Assets/Strings.php:517
-#: includes/Assets/Strings.php:639
+#: includes/Assets/Strings.php:547
+#: includes/Assets/Strings.php:669
 msgid "Download"
 msgstr ""
 
-#: includes/Assets/Strings.php:518
+#: includes/Assets/Strings.php:548
 msgid "Recent Sales"
 msgstr ""
 
-#: includes/Assets/Strings.php:519
+#: includes/Assets/Strings.php:549
 msgid "You made 265 sales this month."
 msgstr ""
 
-#: includes/Assets/Strings.php:520
+#: includes/Assets/Strings.php:550
 msgid "from last month"
 msgstr ""
 
-#: includes/Assets/Strings.php:521
+#: includes/Assets/Strings.php:551
 msgid "since last hour"
 msgstr ""
 
-#: includes/Assets/Strings.php:524
+#: includes/Assets/Strings.php:554
 msgid "Junk"
 msgstr ""
 
-#: includes/Assets/Strings.php:525
+#: includes/Assets/Strings.php:555
 msgid "Archive"
 msgstr ""
 
-#: includes/Assets/Strings.php:526
+#: includes/Assets/Strings.php:556
 msgid "Trash"
 msgstr ""
 
-#: includes/Assets/Strings.php:527
+#: includes/Assets/Strings.php:557
 msgid "No data"
 msgstr ""
 
-#: includes/Assets/Strings.php:528
+#: includes/Assets/Strings.php:558
 msgid "Entry Labels"
 msgstr ""
 
-#: includes/Assets/Strings.php:531
+#: includes/Assets/Strings.php:561
 msgid "Folders"
 msgstr ""
 
-#: includes/Assets/Strings.php:532
+#: includes/Assets/Strings.php:562
 msgid "New Folder"
 msgstr ""
 
-#: includes/Assets/Strings.php:533
+#: includes/Assets/Strings.php:563
 msgid "Edit Folder"
 msgstr ""
 
-#: includes/Assets/Strings.php:534
+#: includes/Assets/Strings.php:564
 msgid "Delete Folder"
 msgstr ""
 
-#: includes/Assets/Strings.php:535
+#: includes/Assets/Strings.php:565
 msgid "Folder name"
 msgstr ""
 
-#: includes/Assets/Strings.php:536
+#: includes/Assets/Strings.php:566
 msgid "Folder created"
 msgstr ""
 
-#: includes/Assets/Strings.php:537
+#: includes/Assets/Strings.php:567
 msgid "Folder updated"
 msgstr ""
 
-#: includes/Assets/Strings.php:538
+#: includes/Assets/Strings.php:568
 msgid "Folder deleted"
 msgstr ""
 
-#: includes/Assets/Strings.php:539
+#: includes/Assets/Strings.php:569
 msgid "Are you sure you want to delete this folder? Entries will be removed from the folder but not deleted."
 msgstr ""
 
-#: includes/Assets/Strings.php:540
+#: includes/Assets/Strings.php:570
 msgid "Create Subfolder"
 msgstr ""
 
-#: includes/Assets/Strings.php:541
+#: includes/Assets/Strings.php:571
 msgid "Rename Folder"
 msgstr ""
 
-#: includes/Assets/Strings.php:544
+#: includes/Assets/Strings.php:574
 msgid "Provider type is required"
 msgstr ""
 
-#: includes/Assets/Strings.php:545
+#: includes/Assets/Strings.php:575
 msgid "Select"
 msgstr ""
 
-#: includes/Assets/Strings.php:546
+#: includes/Assets/Strings.php:576
 msgid "My Email Provider"
 msgstr ""
 
-#: includes/Assets/Strings.php:547
+#: includes/Assets/Strings.php:577
 msgid "A descriptive name for this provider."
 msgstr ""
 
-#: includes/Assets/Strings.php:548
+#: includes/Assets/Strings.php:578
 msgid "Select a provider type"
 msgstr ""
 
-#: includes/Assets/Strings.php:549
+#: includes/Assets/Strings.php:579
 msgid "Select the type of provider."
 msgstr ""
 
-#: includes/Assets/Strings.php:550
+#: includes/Assets/Strings.php:580
 msgid "Form Identifier (optional)"
 msgstr ""
 
-#: includes/Assets/Strings.php:551
+#: includes/Assets/Strings.php:581
 msgid "Leave empty for global provider"
 msgstr ""
 
-#: includes/Assets/Strings.php:552
+#: includes/Assets/Strings.php:582
 msgid "Form-specific provider. Leave empty for global provider that can be used by all forms."
 msgstr ""
 
-#: includes/Assets/Strings.php:553
+#: includes/Assets/Strings.php:583
 msgid "Enable or disable this provider."
 msgstr ""
 
-#: includes/Assets/Strings.php:554
+#: includes/Assets/Strings.php:584
 msgid "Manage form submission providers (Email, Webhook, etc.)."
 msgstr ""
 
-#: includes/Assets/Strings.php:555
+#: includes/Assets/Strings.php:585
 msgid "Update the provider details below."
 msgstr ""
 
-#: includes/Assets/Strings.php:556
+#: includes/Assets/Strings.php:586
 msgid "Configure a new provider for form submissions."
 msgstr ""
 
-#: includes/Assets/Strings.php:557
+#: includes/Assets/Strings.php:587
 msgid "Type:"
 msgstr ""
 
-#: includes/Assets/Strings.php:558
+#: includes/Assets/Strings.php:588
 msgid "Form:"
 msgstr ""
 
-#: includes/Assets/Strings.php:559
+#: includes/Assets/Strings.php:589
 msgid "Global Provider"
 msgstr ""
 
-#: includes/Assets/Strings.php:560
+#: includes/Assets/Strings.php:590
 msgid "Select providers"
 msgstr ""
 
-#: includes/Assets/Strings.php:561
+#: includes/Assets/Strings.php:591
 msgid "Edit template"
 msgstr ""
 
-#: includes/Assets/Strings.php:562
+#: includes/Assets/Strings.php:592
 msgid "Use provider layout"
 msgstr ""
 
-#: includes/Assets/Strings.php:563
+#: includes/Assets/Strings.php:593
 msgid "When enabled, your content replaces the {content} placeholder in the provider template. When disabled, this HTML is used as the full email body."
 msgstr ""
 
-#: includes/Assets/Strings.php:564
+#: includes/Assets/Strings.php:594
 msgid "Content (replaces {content})"
 msgstr ""
 
-#: includes/Assets/Strings.php:565
+#: includes/Assets/Strings.php:595
 msgid "Full email body (HTML)"
 msgstr ""
 
-#: includes/Assets/Strings.php:566
+#: includes/Assets/Strings.php:596
 msgid "Available placeholders"
 msgstr ""
 
-#: includes/Assets/Strings.php:567
+#: includes/Assets/Strings.php:597
 msgid "Provider only when"
 msgstr ""
 
-#: includes/Assets/Strings.php:568
+#: includes/Assets/Strings.php:598
 msgid "Inserted placeholders"
 msgstr ""
 
-#: includes/Assets/Strings.php:569
+#: includes/Assets/Strings.php:599
 msgid "Replace"
 msgstr ""
 
-#: includes/Assets/Strings.php:570
+#: includes/Assets/Strings.php:600
 msgid "Remove"
 msgstr ""
 
-#: includes/Assets/Strings.php:573
+#: includes/Assets/Strings.php:603
 msgid "Manage labels for organizing and categorizing form entries."
 msgstr ""
 
-#: includes/Assets/Strings.php:574
+#: includes/Assets/Strings.php:604
 msgid "Update the label details below."
 msgstr ""
 
-#: includes/Assets/Strings.php:575
+#: includes/Assets/Strings.php:605
 msgid "Create a new label to organize your form entries."
 msgstr ""
 
-#: includes/Assets/Strings.php:577
+#: includes/Assets/Strings.php:607
 msgid "A unique name for this label."
 msgstr ""
 
-#: includes/Assets/Strings.php:578
+#: includes/Assets/Strings.php:608
 msgid "Optional description for this label"
 msgstr ""
 
-#: includes/Assets/Strings.php:579
+#: includes/Assets/Strings.php:609
 msgid "An optional description to help identify this label."
 msgstr ""
 
-#: includes/Assets/Strings.php:580
+#: includes/Assets/Strings.php:610
 msgid "Choose a color to visually identify this label."
 msgstr ""
 
-#: includes/Assets/Strings.php:583
+#: includes/Assets/Strings.php:613
 msgid "Let's get you started with a few quick steps"
 msgstr ""
 
-#: includes/Assets/Strings.php:584
+#: includes/Assets/Strings.php:614
 msgid "🎉 All set! Redirecting to inbox..."
 msgstr ""
 
-#: includes/Assets/Strings.php:588
+#: includes/Assets/Strings.php:618
 msgid "Toggle navigation menu"
 msgstr ""
 
-#: includes/Assets/Strings.php:589
+#: includes/Assets/Strings.php:619
 msgid "Toggle user menu"
 msgstr ""
 
-#: includes/Assets/Strings.php:590
+#: includes/Assets/Strings.php:620
 msgid "My Account"
 msgstr ""
 
-#: includes/Assets/Strings.php:593
+#: includes/Assets/Strings.php:623
 msgid "Logout"
 msgstr ""
 
-#: includes/Assets/Strings.php:594
+#: includes/Assets/Strings.php:624
 msgid "Charts"
 msgstr ""
 
-#: includes/Assets/Strings.php:597
+#: includes/Assets/Strings.php:627
 msgid "Manage Options"
 msgstr ""
 
-#: includes/Assets/Strings.php:598
+#: includes/Assets/Strings.php:628
 msgid "Sync label and value"
 msgstr ""
 
-#: includes/Assets/Strings.php:599
+#: includes/Assets/Strings.php:629
 msgid "Add Bulk Options"
 msgstr ""
 
-#: includes/Assets/Strings.php:600
+#: includes/Assets/Strings.php:630
 msgid "Enter options separated by commas. Use format: Label or Label:value"
 msgstr ""
 
-#: includes/Assets/Strings.php:601
+#: includes/Assets/Strings.php:631
 msgid "Example: Red,Blue,Green or Red:red,Blue:blue,Green:green"
 msgstr ""
 
-#: includes/Assets/Strings.php:602
+#: includes/Assets/Strings.php:632
 msgid "Add Options"
 msgstr ""
 
-#: includes/Assets/Strings.php:603
+#: includes/Assets/Strings.php:633
 msgid "Move"
 msgstr ""
 
-#: includes/Assets/Strings.php:604
+#: includes/Assets/Strings.php:634
 msgid "Label"
 msgstr ""
 
-#: includes/Assets/Strings.php:606
+#: includes/Assets/Strings.php:636
 msgid "Actions"
 msgstr ""
 
-#: includes/Assets/Strings.php:607
+#: includes/Assets/Strings.php:637
 msgid "New label..."
 msgstr ""
 
-#: includes/Assets/Strings.php:608
+#: includes/Assets/Strings.php:638
 msgid "New value..."
 msgstr ""
 
-#: includes/Assets/Strings.php:609
+#: includes/Assets/Strings.php:639
 msgid "Add"
 msgstr ""
 
-#: includes/Assets/Strings.php:611
+#: includes/Assets/Strings.php:641
 msgid "Delete Selected"
 msgstr ""
 
-#: includes/Assets/Strings.php:612
+#: includes/Assets/Strings.php:642
 msgid "Choose a template or start empty"
 msgstr ""
 
-#: includes/Assets/Strings.php:613
+#: includes/Assets/Strings.php:643
 msgid "Start without template"
 msgstr ""
 
-#: includes/Assets/Strings.php:614
+#: includes/Assets/Strings.php:644
 msgid "Options:"
 msgstr ""
 
-#: includes/Assets/Strings.php:617
+#: includes/Assets/Strings.php:647
 msgid "File Upload Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:618
+#: includes/Assets/Strings.php:648
 msgid "Allow multiple files"
 msgstr ""
 
-#: includes/Assets/Strings.php:619
+#: includes/Assets/Strings.php:649
 msgid "Maximum number of files"
 msgstr ""
 
-#: includes/Assets/Strings.php:620
+#: includes/Assets/Strings.php:650
 msgid "Accepted file types"
 msgstr ""
 
-#: includes/Assets/Strings.php:621
+#: includes/Assets/Strings.php:651
 msgid "Comma-separated MIME types or file extensions (e.g., image/*,application/pdf,.doc,.docx)"
 msgstr ""
 
-#: includes/Assets/Strings.php:622
+#: includes/Assets/Strings.php:652
 msgid "Maximum file size (MB)"
 msgstr ""
 
 #. translators: %s: maximum upload size in megabytes.
-#: includes/Assets/Strings.php:624
+#: includes/Assets/Strings.php:654
 msgid "Maximum: %s MB (WordPress upload limit)"
 msgstr ""
 
-#: includes/Assets/Strings.php:625
+#: includes/Assets/Strings.php:655
 msgid "Maximum file size is limited by WordPress upload settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:626
+#: includes/Assets/Strings.php:656
 msgid "Allow URL upload"
 msgstr ""
 
-#: includes/Assets/Strings.php:627
+#: includes/Assets/Strings.php:657
 msgid "Allow users to upload files by providing a URL"
 msgstr ""
 
-#: includes/Assets/Strings.php:628
+#: includes/Assets/Strings.php:658
 msgid "Select a file to upload"
 msgstr ""
 
-#: includes/Assets/Strings.php:629
+#: includes/Assets/Strings.php:659
 msgid "or drag and drop it here"
 msgstr ""
 
-#: includes/Assets/Strings.php:630
+#: includes/Assets/Strings.php:660
 msgid "Or upload from URL"
 msgstr ""
 
-#: includes/Assets/Strings.php:631
+#: includes/Assets/Strings.php:661
 msgid "Add file URL"
 msgstr ""
 
-#: includes/Assets/Strings.php:632
+#: includes/Assets/Strings.php:662
 msgid "Uploading file..."
 msgstr ""
 
-#: includes/Assets/Strings.php:634
+#: includes/Assets/Strings.php:664
 msgid "File is too large"
 msgstr ""
 
-#: includes/Assets/Strings.php:635
+#: includes/Assets/Strings.php:665
 msgid "Invalid file type"
 msgstr ""
 
-#: includes/Assets/Strings.php:636
+#: includes/Assets/Strings.php:666
 msgid "Maximum number of files reached"
 msgstr ""
 
-#: includes/Assets/Strings.php:640
+#: includes/Assets/Strings.php:670
 msgid "View file"
 msgstr ""
 
-#: includes/Assets/Strings.php:643
-#: includes/Assets/Strings.php:706
+#: includes/Assets/Strings.php:673
+#: includes/Assets/Strings.php:736
 msgid "SMTP Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:644
+#: includes/Assets/Strings.php:674
 msgid "Configure SMTP settings for sending emails via wp_mail()."
 msgstr ""
 
-#: includes/Assets/Strings.php:645
+#: includes/Assets/Strings.php:675
 msgid "To configure SMTP and send form submission emails reliably, please activate the WP Mail SMTP plugin."
 msgstr ""
 
-#: includes/Assets/Strings.php:646
-#: includes/Assets/Strings.php:650
+#: includes/Assets/Strings.php:676
+#: includes/Assets/Strings.php:680
 msgid "WP Mail SMTP plugin"
 msgstr ""
 
-#: includes/Assets/Strings.php:647
+#: includes/Assets/Strings.php:677
 msgid "For email logging and debugging, you can also use the"
 msgstr ""
 
-#: includes/Assets/Strings.php:648
+#: includes/Assets/Strings.php:678
 msgid "WP Mail Logging plugin"
 msgstr ""
 
-#: includes/Assets/Strings.php:649
+#: includes/Assets/Strings.php:679
 msgid "For advanced SMTP features like email logging, conditional routing, and multiple providers, consider using the"
 msgstr ""
 
-#: includes/Assets/Strings.php:651
+#: includes/Assets/Strings.php:681
 msgid "SMTP Configuration"
 msgstr ""
 
-#: includes/Assets/Strings.php:652
+#: includes/Assets/Strings.php:682
 msgid "Configure your SMTP server settings to send emails reliably."
 msgstr ""
 
-#: includes/Assets/Strings.php:653
+#: includes/Assets/Strings.php:683
 msgid "Enable SMTP"
 msgstr ""
 
-#: includes/Assets/Strings.php:654
+#: includes/Assets/Strings.php:684
 msgid "Enable SMTP to send emails through a custom SMTP server."
 msgstr ""
 
-#: includes/Assets/Strings.php:655
+#: includes/Assets/Strings.php:685
 msgid "SMTP Host"
 msgstr ""
 
-#: includes/Assets/Strings.php:656
+#: includes/Assets/Strings.php:686
 msgid "SMTP host is required"
 msgstr ""
 
-#: includes/Assets/Strings.php:657
+#: includes/Assets/Strings.php:687
 msgid "The SMTP server hostname (e.g., smtp.gmail.com)."
 msgstr ""
 
-#: includes/Assets/Strings.php:658
+#: includes/Assets/Strings.php:688
 msgid "SMTP Port"
 msgstr ""
 
-#: includes/Assets/Strings.php:659
+#: includes/Assets/Strings.php:689
 msgid "SMTP port is required"
 msgstr ""
 
-#: includes/Assets/Strings.php:660
+#: includes/Assets/Strings.php:690
 msgid "The SMTP server port (usually 587 for TLS, 465 for SSL)."
 msgstr ""
 
-#: includes/Assets/Strings.php:661
+#: includes/Assets/Strings.php:691
 msgid "Encryption"
 msgstr ""
 
-#: includes/Assets/Strings.php:662
+#: includes/Assets/Strings.php:692
 msgid "Choose the encryption method for your SMTP connection."
 msgstr ""
 
-#: includes/Assets/Strings.php:663
+#: includes/Assets/Strings.php:693
 msgid "Select encryption"
 msgstr ""
 
-#: includes/Assets/Strings.php:664
+#: includes/Assets/Strings.php:694
 msgid "SMTP Authentication"
 msgstr ""
 
-#: includes/Assets/Strings.php:665
+#: includes/Assets/Strings.php:695
 msgid "Enable if your SMTP server requires authentication."
 msgstr ""
 
-#: includes/Assets/Strings.php:666
+#: includes/Assets/Strings.php:696
 msgid "SMTP Username"
 msgstr ""
 
-#: includes/Assets/Strings.php:667
+#: includes/Assets/Strings.php:697
 msgid "SMTP username is required when authentication is enabled"
 msgstr ""
 
-#: includes/Assets/Strings.php:668
+#: includes/Assets/Strings.php:698
 msgid "Your SMTP username (usually your email address)."
 msgstr ""
 
-#: includes/Assets/Strings.php:669
+#: includes/Assets/Strings.php:699
 msgid "SMTP Password"
 msgstr ""
 
-#: includes/Assets/Strings.php:670
+#: includes/Assets/Strings.php:700
 msgid "Leave blank to keep current password"
 msgstr ""
 
-#: includes/Assets/Strings.php:671
+#: includes/Assets/Strings.php:701
 msgid "Your SMTP password. Leave blank to keep the current password."
 msgstr ""
 
-#: includes/Assets/Strings.php:672
+#: includes/Assets/Strings.php:702
 msgid "From Email Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:673
+#: includes/Assets/Strings.php:703
 #: includes/Providers/Database.php:180
 #: includes/Providers/Email.php:251
 msgid "From Email"
 msgstr ""
 
-#: includes/Assets/Strings.php:674
+#: includes/Assets/Strings.php:704
 msgid "The email address that will appear as the sender."
 msgstr ""
 
-#: includes/Assets/Strings.php:675
+#: includes/Assets/Strings.php:705
 #: includes/Providers/Email.php:259
 msgid "From Name"
 msgstr ""
 
-#: includes/Assets/Strings.php:676
+#: includes/Assets/Strings.php:706
 msgid "Your Site Name"
 msgstr ""
 
-#: includes/Assets/Strings.php:677
+#: includes/Assets/Strings.php:707
 msgid "The name that will appear as the sender."
 msgstr ""
 
-#: includes/Assets/Strings.php:678
+#: includes/Assets/Strings.php:708
 msgid "Test Connection"
 msgstr ""
 
-#: includes/Assets/Strings.php:679
+#: includes/Assets/Strings.php:709
 msgid "Testing..."
 msgstr ""
 
-#: includes/Assets/Strings.php:680
+#: includes/Assets/Strings.php:710
 msgid "Saving..."
 msgstr ""
 
-#: includes/Assets/Strings.php:681
+#: includes/Assets/Strings.php:711
 msgid "SMTP settings have been saved successfully."
 msgstr ""
 
-#: includes/Assets/Strings.php:682
+#: includes/Assets/Strings.php:712
 msgid "Test Email Sent"
 msgstr ""
 
-#: includes/Assets/Strings.php:683
-#: includes/Assets/Strings.php:703
+#: includes/Assets/Strings.php:713
+#: includes/Assets/Strings.php:733
 msgid "Test Failed"
 msgstr ""
 
-#: includes/Assets/Strings.php:684
+#: includes/Assets/Strings.php:714
 msgid "Failed to send test email. Please check your SMTP settings."
 msgstr ""
 
-#: includes/Assets/Strings.php:685
+#: includes/Assets/Strings.php:715
 msgid "SMTP is not enabled. Please enable SMTP before testing."
 msgstr ""
 
-#: includes/Assets/Strings.php:686
+#: includes/Assets/Strings.php:716
 msgid "Invalid email address"
 msgstr ""
 
-#: includes/Assets/Strings.php:687
+#: includes/Assets/Strings.php:717
 msgid "Test SMTP Connection"
 msgstr ""
 
-#: includes/Assets/Strings.php:688
+#: includes/Assets/Strings.php:718
 msgid "Test your SMTP settings by sending a test email."
 msgstr ""
 
-#: includes/Assets/Strings.php:689
+#: includes/Assets/Strings.php:719
 msgid "Validating Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:690
+#: includes/Assets/Strings.php:720
 msgid "Configuring SMTP"
 msgstr ""
 
-#: includes/Assets/Strings.php:691
+#: includes/Assets/Strings.php:721
 msgid "Connecting to Server"
 msgstr ""
 
-#: includes/Assets/Strings.php:692
+#: includes/Assets/Strings.php:722
 msgid "Authenticating"
 msgstr ""
 
-#: includes/Assets/Strings.php:693
+#: includes/Assets/Strings.php:723
 msgid "Sending Test Email"
 msgstr ""
 
-#: includes/Assets/Strings.php:694
+#: includes/Assets/Strings.php:724
 msgid "Receiving Response"
 msgstr ""
 
-#: includes/Assets/Strings.php:695
+#: includes/Assets/Strings.php:725
 msgid "Settings are valid"
 msgstr ""
 
-#: includes/Assets/Strings.php:696
+#: includes/Assets/Strings.php:726
 msgid "Connected to server"
 msgstr ""
 
-#: includes/Assets/Strings.php:697
+#: includes/Assets/Strings.php:727
 msgid "Authentication successful"
 msgstr ""
 
-#: includes/Assets/Strings.php:698
+#: includes/Assets/Strings.php:728
 msgid "Authentication not required"
 msgstr ""
 
-#: includes/Assets/Strings.php:699
+#: includes/Assets/Strings.php:729
 msgid "Test email sent"
 msgstr ""
 
-#: includes/Assets/Strings.php:700
+#: includes/Assets/Strings.php:730
 msgid "Error received"
 msgstr ""
 
-#: includes/Assets/Strings.php:701
+#: includes/Assets/Strings.php:731
 msgid "Test Progress"
 msgstr ""
 
-#: includes/Assets/Strings.php:702
+#: includes/Assets/Strings.php:732
 msgid "Test Successful"
 msgstr ""
 
-#: includes/Assets/Strings.php:704
+#: includes/Assets/Strings.php:734
 msgid "Logs"
 msgstr ""
 
-#: includes/Assets/Strings.php:705
+#: includes/Assets/Strings.php:735
 msgid "Start Test"
 msgstr ""
 
-#: includes/Assets/Strings.php:707
-#: includes/Assets/Strings.php:724
+#: includes/Assets/Strings.php:737
+#: includes/Assets/Strings.php:754
 msgid "From"
 msgstr ""
 
-#: includes/Assets/Strings.php:708
+#: includes/Assets/Strings.php:738
 msgid "Error Details"
 msgstr ""
 
-#: includes/Assets/Strings.php:709
+#: includes/Assets/Strings.php:739
 msgid "Test Email Address"
 msgstr ""
 
-#: includes/Assets/Strings.php:710
+#: includes/Assets/Strings.php:740
 msgid "Enter email address to receive test email"
 msgstr ""
 
-#: includes/Assets/Strings.php:711
+#: includes/Assets/Strings.php:741
 msgid "The email address where the test email will be sent."
 msgstr ""
 
-#: includes/Assets/Strings.php:714
+#: includes/Assets/Strings.php:744
 msgid "Enable Email Logging"
 msgstr ""
 
-#: includes/Assets/Strings.php:715
+#: includes/Assets/Strings.php:745
 msgid "Log all emails sent through wp_mail() for debugging and auditing purposes."
 msgstr ""
 
-#: includes/Assets/Strings.php:716
+#: includes/Assets/Strings.php:746
 msgid "Email Logs"
 msgstr ""
 
-#: includes/Assets/Strings.php:717
+#: includes/Assets/Strings.php:747
 msgid "View and manage all logged emails."
 msgstr ""
 
-#: includes/Assets/Strings.php:718
+#: includes/Assets/Strings.php:748
 msgid "No email logs found."
 msgstr ""
 
-#: includes/Assets/Strings.php:719
+#: includes/Assets/Strings.php:749
 msgid "Email log deleted"
 msgstr ""
 
-#: includes/Assets/Strings.php:720
+#: includes/Assets/Strings.php:750
 msgid "The email log has been deleted successfully."
 msgstr ""
 
-#: includes/Assets/Strings.php:721
+#: includes/Assets/Strings.php:751
 msgid "Are you sure you want to delete all email logs?"
 msgstr ""
 
-#: includes/Assets/Strings.php:722
+#: includes/Assets/Strings.php:752
 msgid "All email logs deleted"
 msgstr ""
 
-#: includes/Assets/Strings.php:723
+#: includes/Assets/Strings.php:753
 msgid "All email logs have been deleted successfully."
 msgstr ""
 
-#: includes/Assets/Strings.php:726
+#: includes/Assets/Strings.php:756
 msgid "Showing"
 msgstr ""
 
-#: includes/Assets/Strings.php:727
+#: includes/Assets/Strings.php:757
 msgid "of"
 msgstr ""
 
-#: includes/Assets/Strings.php:728
+#: includes/Assets/Strings.php:758
 msgid "Previous"
 msgstr ""
 
-#: includes/Assets/Strings.php:729
+#: includes/Assets/Strings.php:759
 msgid "Next"
 msgstr ""
 
-#: includes/Assets/Strings.php:730
+#: includes/Assets/Strings.php:760
 msgid "Delete All"
 msgstr ""
 
-#: includes/Assets/Strings.php:733
+#: includes/Assets/Strings.php:763
 msgid "Email Template"
 msgstr ""
 
-#: includes/Assets/Strings.php:734
+#: includes/Assets/Strings.php:764
 msgid "Choose and customize an email template for your notifications."
 msgstr ""
 
-#: includes/Assets/Strings.php:735
+#: includes/Assets/Strings.php:765
 msgid "Select Template"
 msgstr ""
 
-#: includes/Assets/Strings.php:736
+#: includes/Assets/Strings.php:766
 msgid "Primary Color"
 msgstr ""
 
-#: includes/Assets/Strings.php:737
+#: includes/Assets/Strings.php:767
 msgid "Secondary Color"
 msgstr ""
 
-#: includes/Assets/Strings.php:738
+#: includes/Assets/Strings.php:768
 msgid "Font Family"
 msgstr ""
 
-#: includes/Assets/Strings.php:739
+#: includes/Assets/Strings.php:769
 msgid "Logo URL"
 msgstr ""
 
-#: includes/Assets/Strings.php:740
+#: includes/Assets/Strings.php:770
 msgid "URL to your logo image. Will be displayed in the email header."
 msgstr ""
 
-#: includes/Assets/Strings.php:741
+#: includes/Assets/Strings.php:771
 msgid "Select a template to preview"
 msgstr ""
 
-#: includes/Assets/Strings.php:742
+#: includes/Assets/Strings.php:772
 msgid "Apply Template"
 msgstr ""
 
-#: includes/Assets/Strings.php:743
+#: includes/Assets/Strings.php:773
 msgid "Show Preview"
 msgstr ""
 
-#: includes/Assets/Strings.php:744
+#: includes/Assets/Strings.php:774
 msgid "Hide Preview"
 msgstr ""
 
-#: includes/Assets/Strings.php:747
+#: includes/Assets/Strings.php:777
 msgid "Primary Mail"
 msgstr ""
 
-#: includes/Assets/Strings.php:748
+#: includes/Assets/Strings.php:778
 msgid "Mark this email field as the primary email address for form submissions. Only one field per form can be primary."
 msgstr ""
 
-#: includes/Assets/Strings.php:749
+#: includes/Assets/Strings.php:779
 msgid "Another email field is already set as primary mail. Unset it first or it will be automatically unset when you enable this one."
 msgstr ""
 
-#: includes/Assets/Strings.php:752
+#: includes/Assets/Strings.php:782
 msgid "Insert Placeholder"
 msgstr ""
 
-#: includes/Assets/Strings.php:753
+#: includes/Assets/Strings.php:783
 msgid "Use Placeholder"
 msgstr ""
 
-#: includes/Assets/Strings.php:754
+#: includes/Assets/Strings.php:784
 msgid "Select Placeholder"
 msgstr ""
 
-#: includes/Assets/Strings.php:757
+#: includes/Assets/Strings.php:787
 msgid "Custom"
 msgstr ""
 
-#: includes/Assets/Strings.php:758
+#: includes/Assets/Strings.php:788
 msgid "Select a template or use custom HTML."
 msgstr ""
 
-#: includes/Assets/Strings.php:759
+#: includes/Assets/Strings.php:789
 msgid "Failed to load template."
 msgstr ""
 
-#: includes/Assets/Strings.php:760
+#: includes/Assets/Strings.php:790
 msgid "Template Customization"
 msgstr ""
 
-#: includes/Assets/Strings.php:763
+#: includes/Assets/Strings.php:793
 msgid "Email Template Editor"
 msgstr ""
 
-#: includes/Assets/Strings.php:764
+#: includes/Assets/Strings.php:794
 msgid "Edit your email template HTML with live preview"
 msgstr ""
 
-#: includes/Assets/Strings.php:766
+#: includes/Assets/Strings.php:796
 msgid "Template Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:767
+#: includes/Assets/Strings.php:797
 msgid "HTML Editor"
 msgstr ""
 
-#: includes/Assets/Strings.php:768
+#: includes/Assets/Strings.php:798
 msgid "No preview available"
 msgstr ""
 
-#: includes/Assets/Strings.php:771
+#: includes/Assets/Strings.php:801
 msgid "Select from Media Library"
 msgstr ""
 
-#: includes/Assets/Strings.php:772
+#: includes/Assets/Strings.php:802
 msgid "Select Image"
 msgstr ""
 
-#: includes/Assets/Strings.php:773
+#: includes/Assets/Strings.php:803
 msgid "Use this image"
 msgstr ""
 
-#: includes/Assets/Strings.php:774
+#: includes/Assets/Strings.php:804
 msgid "Site Name"
 msgstr ""
 
-#: includes/Assets/Strings.php:775
+#: includes/Assets/Strings.php:805
 msgid "Available Placeholders"
 msgstr ""
 
-#: includes/Assets/Strings.php:776
+#: includes/Assets/Strings.php:806
 msgid "Drag and drop or click to insert placeholders"
 msgstr ""
 
-#: includes/Assets/Strings.php:777
+#: includes/Assets/Strings.php:807
 msgid "Search placeholders..."
 msgstr ""
 
-#: includes/Assets/Strings.php:778
+#: includes/Assets/Strings.php:808
 msgid "System"
 msgstr ""
 
-#: includes/Assets/Strings.php:779
+#: includes/Assets/Strings.php:809
 #: includes/Providers/Email.php:268
 msgid "Template"
 msgstr ""
 
-#: includes/Assets/Strings.php:780
+#: includes/Assets/Strings.php:810
 msgid "Form Fields"
 msgstr ""
 
-#: includes/Assets/Strings.php:784
+#: includes/Assets/Strings.php:814
 msgid "Missing Fields"
 msgstr ""
 
-#: includes/Assets/Strings.php:785
+#: includes/Assets/Strings.php:815
 msgid "The following fields are referenced in the provider but not present in the form:"
 msgstr ""
 
-#: includes/Assets/Strings.php:786
+#: includes/Assets/Strings.php:816
 msgid "Add Missing Fields"
 msgstr ""
 
-#: includes/Assets/Strings.php:789
+#: includes/Assets/Strings.php:819
 msgid "Admin Bar Menu"
 msgstr ""
 
-#: includes/Assets/Strings.php:790
+#: includes/Assets/Strings.php:820
 msgid "Show Streamery Forms in the WordPress admin bar with an unread entries count."
 msgstr ""
 
-#: includes/Assets/Strings.php:791
+#: includes/Assets/Strings.php:821
 msgid "Admin bar menu has been enabled."
 msgstr ""
 
-#: includes/Assets/Strings.php:792
+#: includes/Assets/Strings.php:822
 msgid "Admin bar menu has been disabled."
 msgstr ""
 
-#: includes/Assets/Strings.php:795
+#: includes/Assets/Strings.php:825
 msgid "Custom Fields"
 msgstr ""
 
-#: includes/Assets/Strings.php:796
+#: includes/Assets/Strings.php:826
 msgid "Add Custom Field"
 msgstr ""
 
-#: includes/Assets/Strings.php:797
+#: includes/Assets/Strings.php:827
 msgid "Field Label"
 msgstr ""
 
-#: includes/Assets/Strings.php:798
+#: includes/Assets/Strings.php:828
 msgid "Field Name"
 msgstr ""
 
-#: includes/Assets/Strings.php:799
+#: includes/Assets/Strings.php:829
 msgid "Drag to insert"
 msgstr ""
 
-#: includes/Assets/Strings.php:803
+#: includes/Assets/Strings.php:833
 msgid "Add Step"
 msgstr ""
 
-#: includes/Assets/Strings.php:804
+#: includes/Assets/Strings.php:834
 msgid "Delete Step"
 msgstr ""
 
-#: includes/Assets/Strings.php:805
+#: includes/Assets/Strings.php:835
 msgid "Move Left"
 msgstr ""
 
-#: includes/Assets/Strings.php:806
+#: includes/Assets/Strings.php:836
 msgid "Move Right"
 msgstr ""
 
-#: includes/Assets/Strings.php:807
+#: includes/Assets/Strings.php:837
 msgid "Step Navigation"
 msgstr ""
 
-#: includes/Assets/Strings.php:808
+#: includes/Assets/Strings.php:838
 msgid "Back"
 msgstr ""
 
-#: includes/Assets/Strings.php:809
+#: includes/Assets/Strings.php:839
 msgid "Submit"
 msgstr ""
 
-#: includes/Assets/Strings.php:810
+#: includes/Assets/Strings.php:840
 msgid "Save & Continue Later"
 msgstr ""
 
-#: includes/Assets/Strings.php:811
+#: includes/Assets/Strings.php:841
 msgid "Progress saved"
 msgstr ""
 
-#: includes/Assets/Strings.php:812
+#: includes/Assets/Strings.php:842
 msgid "Progress restored"
 msgstr ""
 
-#: includes/Assets/Strings.php:813
+#: includes/Assets/Strings.php:843
 msgid "Progress Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:814
+#: includes/Assets/Strings.php:844
 msgid "Display Variant"
 msgstr ""
 
-#: includes/Assets/Strings.php:815
+#: includes/Assets/Strings.php:845
 msgid "Progress Bar"
 msgstr ""
 
-#: includes/Assets/Strings.php:816
+#: includes/Assets/Strings.php:846
 msgid "Step Bubbles"
 msgstr ""
 
-#: includes/Assets/Strings.php:817
+#: includes/Assets/Strings.php:847
 msgid "Step Title"
 msgstr ""
 
-#: includes/Assets/Strings.php:820
+#: includes/Assets/Strings.php:850
 msgid "Support Streamery Forms"
 msgstr ""
 
-#: includes/Assets/Strings.php:821
+#: includes/Assets/Strings.php:851
 msgid "Streamery Forms is free, with no pro version and no locked features. If it saves you time, a coffee helps keep it maintained."
 msgstr ""
 
 #. translators: %d: submission milestone, e.g. 50.
-#: includes/Assets/Strings.php:823
+#: includes/Assets/Strings.php:853
 msgid "%d+ submissions collected"
 msgstr ""
 
-#: includes/Assets/Strings.php:824
+#: includes/Assets/Strings.php:854
 msgid "Glad Streamery Forms is working for you. If you like it, a coffee or a quick review helps a lot."
 msgstr ""
 
-#: includes/Assets/Strings.php:825
+#: includes/Assets/Strings.php:855
 msgid "Buy a coffee"
 msgstr ""
 
-#: includes/Assets/Strings.php:826
+#: includes/Assets/Strings.php:856
 msgid "Sponsor on GitHub"
 msgstr ""
 
-#: includes/Assets/Strings.php:827
+#: includes/Assets/Strings.php:857
 msgid "Leave a review"
 msgstr ""
 
-#: includes/Assets/Strings.php:828
+#: includes/Assets/Strings.php:858
 msgid "Don't show again"
 msgstr ""
 
@@ -3523,32 +3642,32 @@ msgid "Form submission failed."
 msgstr ""
 
 #. translators: %s: form field name.
-#: includes/Controllers/Submissions/FieldValidator.php:71
+#: includes/Controllers/Submissions/FieldValidator.php:77
 msgid "The field \"%s\" is required."
 msgstr ""
 
 #. translators: 1: form field name, 2: maximum number of files.
-#: includes/Controllers/Submissions/FieldValidator.php:191
+#: includes/Controllers/Submissions/FieldValidator.php:237
 msgid "The field \"%1$s\" accepts at most %2$d file(s)."
 msgstr ""
 
 #. translators: %s: form field name.
-#: includes/Controllers/Submissions/FieldValidator.php:218
+#: includes/Controllers/Submissions/FieldValidator.php:264
 msgid "The field \"%s\" must be a valid email address."
 msgstr ""
 
 #. translators: %s: form field name.
-#: includes/Controllers/Submissions/FieldValidator.php:228
+#: includes/Controllers/Submissions/FieldValidator.php:274
 msgid "The field \"%s\" must be a number."
 msgstr ""
 
 #. translators: %s: form field name.
-#: includes/Controllers/Submissions/FieldValidator.php:238
+#: includes/Controllers/Submissions/FieldValidator.php:284
 msgid "The field \"%s\" must be a valid URL."
 msgstr ""
 
 #. translators: %s: form field name.
-#: includes/Controllers/Submissions/FieldValidator.php:256
+#: includes/Controllers/Submissions/FieldValidator.php:302
 msgid "The field \"%s\" has an invalid value."
 msgstr ""
 
@@ -3646,6 +3765,10 @@ msgstr ""
 msgid "Could not delete form submission %d."
 msgstr ""
 
+#: includes/Core/Skins.php:60
+msgid "Default skin for Streamery Forms."
+msgstr ""
+
 #: includes/Core/SpamProtection.php:61
 #: includes/Core/SpamProtection.php:65
 msgid "Submission rejected."
@@ -3653,10 +3776,6 @@ msgstr ""
 
 #: includes/Core/SpamProtection.php:125
 msgid "Too many submissions. Please try again later."
-msgstr ""
-
-#: includes/Providers/AbstractProvider.php:351
-msgid "Field"
 msgstr ""
 
 #: includes/Providers/Database.php:45
@@ -3877,6 +3996,46 @@ msgstr ""
 #: src/blocks/date-time/block.json
 msgctxt "block description"
 msgid "Date or time field for Streamery Forms."
+msgstr ""
+
+#: src/blocks/field-value/block.json
+msgctxt "block title"
+msgid "Field Value"
+msgstr ""
+
+#: src/blocks/field-value/block.json
+msgctxt "block description"
+msgid "Shows the current value of a form field, e.g. a name in a heading or a summary."
+msgstr ""
+
+#: src/blocks/field-value/block.json
+msgctxt "block keyword"
+msgid "value"
+msgstr ""
+
+#: src/blocks/field-value/block.json
+msgctxt "block keyword"
+msgid "field"
+msgstr ""
+
+#: src/blocks/field-value/block.json
+msgctxt "block keyword"
+msgid "summary"
+msgstr ""
+
+#: src/blocks/field-value/block.json
+msgctxt "block keyword"
+msgid "dynamic"
+msgstr ""
+
+#: src/blocks/field-value/block.json
+msgctxt "block keyword"
+msgid "wert"
+msgstr ""
+
+#: src/blocks/field-value/block.json
+msgctxt "block keyword"
+msgid "zusammenfassung"
 msgstr ""
 
 #: src/blocks/file/block.json
