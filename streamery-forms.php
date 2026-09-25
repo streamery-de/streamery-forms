@@ -7,7 +7,7 @@
  * Author: Streamery
  * Author URI: https://streamery.de
  * License: GPL-2.0-or-later
- * Version: 1.0.4
+ * Version: 1.0.5
  * Requires at least: 6.5
  * Requires PHP: 7.4
  * Text Domain: streamery-forms

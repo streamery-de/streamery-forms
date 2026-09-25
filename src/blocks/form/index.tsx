@@ -7,6 +7,7 @@ import Edit from './edit';
 import save from './save';
 import metadata from './block.json';
 import withFormToolbar from './with-form-toolbar';
+import './with-conditional-logic';
 
 import { LayoutDashboard } from 'lucide-react';
 
