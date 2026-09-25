@@ -124,29 +124,40 @@ class BlockScanner
 	 * which for a multi-value checkbox group is "name[]", matching what the
 	 * markup renders and therefore what arrives in submission_data.
 	 *
-	 * @param array $blocks Parsed inner blocks of a streamery-forms/form block.
+	 * @param array $blocks          Parsed inner blocks of a streamery-forms/form block.
+	 * @param bool  $in_conditional  Whether an ancestor block (step, group, …)
+	 *                               carries conditional logic.
 	 * @return array<string, array>
 	 */
-	public static function extract_field_schema(array $blocks): array
+	public static function extract_field_schema(array $blocks, bool $in_conditional = false): array
 	{
 		$fields = array();
 
 		foreach ($blocks as $block) {
 			$block_name = isset($block['blockName']) ? $block['blockName'] : '';
+			$attrs      = isset($block['attrs']) ? $block['attrs'] : array();
 
 			if (isset(self::FIELD_BLOCKS[$block_name])) {
-				$attrs = isset($block['attrs']) ? $block['attrs'] : array();
-				$name  = isset($attrs['name']) ? (string) $attrs['name'] : '';
+				$name = isset($attrs['name']) ? (string) $attrs['name'] : '';
 
 				if ('' !== $name) {
 					$field = self::build_field($block_name, $attrs, $name);
+					// A field inside a conditionally hidden container may be
+					// missing from the submission just like a conditional field.
+					$field['conditional'] = $field['conditional'] || $in_conditional;
 					$fields[$field['key']] = $field;
 				}
 			}
 
 			if (! empty($block['innerBlocks'])) {
 				// Nested fields (steps, groups, columns) merge into the same flat schema.
-				$fields = array_merge($fields, self::extract_field_schema($block['innerBlocks']));
+				$fields = array_merge(
+					$fields,
+					self::extract_field_schema(
+						$block['innerBlocks'],
+						$in_conditional || ! empty($attrs['conditionalShow'])
+					)
+				);
 			}
 		}
 

@@ -5,7 +5,7 @@ Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,10 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Changelog ==
 
+= 1.0.5 =
+* New: Conditional logic works on every block inside a form -- groups, headings, columns, images and more -- not just on fields.
+* Fix: Fields inside a hidden group stay disabled even when their own condition is met, and required fields inside a conditional group no longer block submission when the group is hidden.
+
 = 1.0.4 =
 * New: "Image position" setting for checkbox and radio cards: top left, or centered without the check indicator (the selected card is marked by its border).
 * Option images now have a fixed height and keep their aspect ratio instead of being cropped.
@@ -180,6 +184,9 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.5 =
+Conditional logic for any block inside a form. Re-save existing forms that use conditional groups.
 
 = 1.0.4 =
 Centered image cards for checkbox/radio groups; option images are no longer cropped.

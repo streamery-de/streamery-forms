@@ -1,6 +1,6 @@
 {
   "name": "streamery-forms",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite -c vite.admin.config.js --port 5174",

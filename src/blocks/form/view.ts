@@ -286,24 +286,26 @@ function evaluateFieldConditions(formEl: HTMLElement): void {
 			const show = evaluateConditionConfig(config, formEl);
 			wrapper.classList.toggle('streamery-forms-field--conditional-hidden', !show);
 			wrapper.style.display = show ? '' : 'none';
-
-			// A hidden field that is still `required` silently blocks submission:
-			// the browser refuses to submit a form with an invalid control it
-			// cannot focus, and the submit event never fires -- so nothing
-			// happens and nothing explains why. Disabling the controls while
-			// hidden takes them out of both validation and FormData, which is
-			// also what the server expects for a conditional field.
-			wrapper
-				.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>(
-					'input, select, textarea'
-				)
-				.forEach((control) => {
-					control.disabled = !show;
-				});
 		} catch (e) {
 			console.warn('Invalid data-conditional-show:', json);
 		}
 	});
+
+	// A hidden field that is still `required` silently blocks submission:
+	// the browser refuses to submit a form with an invalid control it cannot
+	// focus, and the submit event never fires -- so nothing happens and nothing
+	// explains why. Disabling the controls while hidden takes them out of both
+	// validation and FormData, which is also what the server expects for a
+	// conditional field. Done in a second pass over the final state, because
+	// conditions nest (a field inside a hidden group) and a visible inner field
+	// must not re-enable controls its hidden container just disabled.
+	formEl
+		.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>(
+			'[data-conditional-show] input, [data-conditional-show] select, [data-conditional-show] textarea'
+		)
+		.forEach((control) => {
+			control.disabled = control.closest('.streamery-forms-field--conditional-hidden') !== null;
+		});
 }
 
 function applyDefaultValueFromField(formEl: HTMLElement): void {
@@ -569,9 +571,9 @@ function validateStep(stepEl: HTMLElement): boolean {
 	let isValid = true;
 
 	requiredFields.forEach((field) => {
-		const wrapper = field.closest('.streamery-forms-field');
-		if (wrapper?.classList.contains('streamery-forms-field--conditional-hidden')) {
-			return; // skip validation for conditionally hidden fields
+		// Skip fields hidden by conditional logic -- their own or a container's.
+		if (field.closest('.streamery-forms-field--conditional-hidden')) {
+			return;
 		}
 		if (!field.value.trim()) {
 			isValid = false;

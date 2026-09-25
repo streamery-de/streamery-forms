@@ -5,6 +5,7 @@ use StreameryForms\Core\Capabilities;
 use StreameryForms\Core\FormRegistry;
 use StreameryForms\Core\Privacy;
 use StreameryForms\Core\PopulatedSelect;
+use StreameryForms\Core\ConditionalBlocks;
 use StreameryForms\Core\Install;
 use StreameryForms\Core\Deactivate;
 use StreameryForms\Core\Smtp;
@@ -98,6 +99,7 @@ final class StreameryForms
 		FormRegistry::get_instance()->init();
 		Privacy::get_instance()->init();
 		PopulatedSelect::get_instance()->init();
+		ConditionalBlocks::get_instance()->init();
 		\StreameryForms\Core\Retention::get_instance()->init();
 		Frontend::get_instance()->bootstrap();
 		API::get_instance()->init();
