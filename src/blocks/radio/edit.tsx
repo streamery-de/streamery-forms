@@ -34,6 +34,7 @@ export default function Edit(props: BlockEditProps<RadioAttributes>) {
 					`streamery-forms-field--radio-${styleVariant}`,
 					`streamery-forms-field--layout-${layout}`,
 					attributes.imagePosition === 'center' && styleVariant === 'cards' && 'streamery-forms-field--image-center',
+					attributes.inlineImagePosition === 'after' && styleVariant !== 'cards' && 'streamery-forms-field--image-after',
 				)}
 				label={attributes.label}
 				onLabelChange={(label) => setAttributes({ label })}

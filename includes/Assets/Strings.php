@@ -243,6 +243,8 @@ class Strings
 			'hideLabel' => __('Hide label', 'streamery-forms'),
 			'hideLabelHelp' => __('The label stays readable for screen readers.', 'streamery-forms'),
 			'imagePosition' => __('Image position', 'streamery-forms'),
+			'imagePositionBefore' => __('Before the text', 'streamery-forms'),
+			'imagePositionAfter' => __('After the text', 'streamery-forms'),
 			'imagePositionTopLeft' => __('Top left', 'streamery-forms'),
 			'imagePositionCenter' => __('Centered (no checkbox)', 'streamery-forms'),
 			'allowCustomOption' => __('Allow custom option', 'streamery-forms'),

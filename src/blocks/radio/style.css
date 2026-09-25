@@ -254,14 +254,40 @@
 	object-fit: contain;
 }
 
+/* Image next to the text: a grid keeps a description under the label, with
+   the image spanning both rows. */
 .streamery-forms-field--radio .streamery-forms-radio-option--has-image .streamery-forms-radio-option-content {
-	flex-direction: row;
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: start;
 	align-items: center;
-	gap: 0.5rem;
+	column-gap: 0.5rem;
+	row-gap: 0.125rem;
+}
+
+.streamery-forms-field--radio .streamery-forms-radio-option--has-image .streamery-forms-radio-option-image {
+	grid-column: 1;
+	grid-row: 1 / span 2;
+}
+
+.streamery-forms-field--radio .streamery-forms-radio-option--has-image .streamery-forms-radio-option-label,
+.streamery-forms-field--radio .streamery-forms-radio-option--has-image .streamery-forms-radio-option-description {
+	grid-column: 2;
+}
+
+/* "After the text" (every style but cards) */
+.streamery-forms-field--image-after .streamery-forms-radio-option--has-image .streamery-forms-radio-option-image {
+	grid-column: 2;
+}
+
+.streamery-forms-field--image-after .streamery-forms-radio-option--has-image .streamery-forms-radio-option-label,
+.streamery-forms-field--image-after .streamery-forms-radio-option--has-image .streamery-forms-radio-option-description {
+	grid-column: 1;
 }
 
 /* Cards: image top left, label + description stay bottom left */
 .streamery-forms-field--radio-cards .streamery-forms-radio-option--has-image .streamery-forms-radio-option-content {
+	display: flex;
 	flex: 1;
 	flex-direction: column;
 	align-items: flex-start;
