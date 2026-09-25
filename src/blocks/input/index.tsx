@@ -93,5 +93,5 @@ registerBlockType(metadata.name as string, {
 } as any);
 
 // Block Variations (Presets)
-registerFieldVariations(metadata.name as string, getInputPresets());
+registerFieldVariations(metadata.name as string, getInputPresets(), ['input', 'field']);
 

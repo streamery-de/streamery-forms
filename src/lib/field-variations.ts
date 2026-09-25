@@ -10,6 +10,8 @@ export type FieldVariationPreset<TAttributes extends Record<string, unknown>> = 
 	icon: LucideIcon;
 	attributes: Partial<TAttributes>;
 	isDefault?: boolean;
+	/** Extra inserter search terms for this variation. */
+	keywords?: string[];
 	isActive?: (attributes: TAttributes) => boolean;
 };
 
@@ -23,6 +25,8 @@ export function getActiveFieldVariation<TAttributes extends Record<string, unkno
 export function registerFieldVariations<TAttributes extends Record<string, unknown>>(
 	blockName: string,
 	presets: FieldVariationPreset<TAttributes>[],
+	/** Search terms shared by every variation, e.g. the block's own name. */
+	keywords: string[] = [],
 ): void {
 	presets.forEach((preset, index) => {
 		const variation: BlockVariation = {
@@ -33,6 +37,7 @@ export function registerFieldVariations<TAttributes extends Record<string, unkno
 			attributes: preset.attributes as BlockVariation['attributes'],
 			scope: ['inserter', 'block', 'transform'],
 			isDefault: preset.isDefault ?? index === 0,
+			keywords: [...keywords, ...(preset.keywords ?? [])],
 		};
 
 		if (preset.isActive) {

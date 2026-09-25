@@ -1,11 +1,33 @@
 import { __ } from '@/lib/i18n';
-import { Mail, ShieldCheck } from 'lucide-react';
+import { ListChecks, Mail, ShieldCheck } from 'lucide-react';
 import { type FieldVariationPreset } from '@/lib/field-variations';
 import { type CheckboxAttributes } from '@/blockTypes/checkbox';
 
 export type CheckboxPreset = FieldVariationPreset<CheckboxAttributes>;
 
 export const getCheckboxPresets = (): CheckboxPreset[] => [
+	{
+		// Plain multi-option group -- the variation for images and a custom option.
+		name: 'group',
+		title: __('checkboxGroup', 'Checkboxes'),
+		description: __('checkboxVariationGroupDescription', 'A group of options where visitors can pick several.'),
+		icon: ListChecks,
+		attributes: {
+			presetName: 'group',
+			label: __('checkboxGroup', 'Checkboxes'),
+			options: [
+				{ label: __('optionNumber', 'Option %d').replace('%d', '1'), value: 'option-1' },
+				{ label: __('optionNumber', 'Option %d').replace('%d', '2'), value: 'option-2' },
+			],
+			required: false,
+			isConsent: false,
+			styleVariant: 'default',
+			layout: 'vertical',
+		},
+		isDefault: true,
+		isActive: (attributes) =>
+			!attributes.isConsent && attributes.presetName !== 'consent' && attributes.presetName !== 'newsletter',
+	},
 	{
 		name: 'consent',
 		title: __('consent'),
@@ -20,7 +42,6 @@ export const getCheckboxPresets = (): CheckboxPreset[] => [
 			styleVariant: 'default',
 			layout: 'vertical',
 		},
-		isDefault: true,
 		isActive: (attributes) => attributes.presetName === 'consent' || attributes.isConsent === true,
 	},
 	{
@@ -47,7 +68,7 @@ export const getCheckboxOptionPresets = (): Array<{
 	options: CheckboxPreset['attributes']['options'];
 }> =>
 	getCheckboxPresets()
-		.filter((preset) => !preset.attributes.isConsent)
+		.filter((preset) => !preset.attributes.isConsent && preset.name !== 'group')
 		.map(({ name, title, attributes }) => ({
 			name,
 			title,

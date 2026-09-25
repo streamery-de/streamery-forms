@@ -313,6 +313,10 @@ class Strings
 			'inputVariationUrlDescription' => __('Website or link field with URL validation.', 'streamery-forms'),
 			'inputVariationNumberDescription' => __('Numeric input for quantities, ages, or amounts.', 'streamery-forms'),
 			'inputVariationSearchDescription' => __('Search-style input for lookup or filter fields.', 'streamery-forms'),
+			'checkboxGroup' => __('Checkboxes', 'streamery-forms'),
+			'checkboxVariationGroupDescription' => __('A group of options where visitors can pick several.', 'streamery-forms'),
+			/* translators: %d: option number */
+			'optionNumber' => __('Option %d', 'streamery-forms'),
 			'checkboxVariationConsentDescription' => __('Required privacy or terms consent checkbox.', 'streamery-forms'),
 			'checkboxVariationNewsletterDescription' => __('Optional newsletter or marketing opt-in.', 'streamery-forms'),
 			'ageGroups' => __('Age Groups', 'streamery-forms'),

@@ -72,4 +72,10 @@ registerBlockType(metadata.name as string, {
 } as any);
 
 // Block Variations (Presets including Consent)
-registerFieldVariations(metadata.name as string, getCheckboxPresets());
+// Every variation is findable as "checkbox": with a default variation the
+// inserter hides the base block, so its title alone isn't searchable.
+registerFieldVariations(metadata.name as string, getCheckboxPresets(), [
+	'checkbox',
+	'checkboxes',
+	__('checkboxGroup', 'Checkboxes'),
+]);
