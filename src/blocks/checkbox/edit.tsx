@@ -24,6 +24,9 @@ export default function Edit(props: BlockEditProps<CheckboxAttributes>) {
 	const isConsent = attributes.isConsent || false;
 	const styleVariant = attributes.styleVariant || 'default';
 	const layout = attributes.layout || 'vertical';
+	const defaultValues = attributes.defaultValue
+		? attributes.defaultValue.split(',').map((v) => v.trim())
+		: [];
 
 	return (
 		<>
@@ -68,7 +71,7 @@ export default function Edit(props: BlockEditProps<CheckboxAttributes>) {
 									name={isConsent ? attributes.name : `${attributes.name}[]`}
 									value={option.value}
 									id={`${attributes.id}-${index}`}
-									checked={false}
+									checked={defaultValues.includes(option.value)}
 									readOnly
 								/>
 								<span className="streamery-forms-checkbox-option-content">

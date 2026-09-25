@@ -1,6 +1,6 @@
 import { __ } from "@/lib/i18n";
 import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, SelectControl, ToggleControl, Notice } from '@wordpress/components';
+import { PanelBody, SelectControl, TextControl, ToggleControl, Notice } from '@wordpress/components';
 import { useDispatch } from '@wordpress/data';
 import { FieldControls } from '../../components/block-atoms/FieldControls';
 import { ConditionalLogicControls } from '../../components/block-atoms/ConditionalLogicControls';
@@ -53,6 +53,15 @@ export const InputInspectorControls = ({ attributes, setAttributes, clientId }: 
 							{ label: __('url'), value: 'url' },
 							{ label: __('search'), value: 'search' },
 						]}
+						__next40pxDefaultSize={true}
+						__nextHasNoMarginBottom={true}
+					/>
+					<TextControl
+						label={__('defaultValue', 'Default value')}
+						help={__('defaultValueHelp', 'Prefilled in the field. Visitors can change it.')}
+						type={attributes.type || 'text'}
+						value={attributes.defaultValue || ''}
+						onChange={(defaultValue) => setAttributes({ defaultValue })}
 						__next40pxDefaultSize={true}
 						__nextHasNoMarginBottom={true}
 					/>

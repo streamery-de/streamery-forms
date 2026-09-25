@@ -5,7 +5,7 @@ Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,13 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Changelog ==
 
+= 1.0.9 =
+* New: "Default value" for select and radio fields: choose the preselected option or "No default".
+* New: Checkbox fields get a checklist to preselect one or more options (not for consent checkboxes).
+* New: Default value field for input and textarea fields.
+* Fix: Select fields now actually preselect their default option.
+* Fix: Typing a placeholder no longer copies its first letter into the field's value.
+
 = 1.0.8 =
 * Fix: Option images sit next to the text again in the default, toggle and badge styles. The skin's option layout overrode them and stacked image and text.
 
@@ -197,6 +204,9 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.9 =
+Default values for select, radio, checkbox, input and textarea fields. Check inputs whose placeholder was copied into the value.
 
 = 1.0.8 =
 Fixes the layout of option images next to the text.

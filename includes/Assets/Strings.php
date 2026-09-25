@@ -408,6 +408,8 @@ class Strings
 			'animate' => __('Animate on set', 'streamery-forms'),
 			'animationDuration' => __('Animation duration (ms)', 'streamery-forms'),
 			'defaultValue' => __('Default value', 'streamery-forms'),
+			'noDefaultValue' => __('No default', 'streamery-forms'),
+			'defaultValueHelp' => __('Prefilled in the field. Visitors can change it.', 'streamery-forms'),
 			'defaultValueStart' => __('Default value (start)', 'streamery-forms'),
 			'defaultValueEnd' => __('Default value (end)', 'streamery-forms'),
 			'basicForm' => __('Basic Form', 'streamery-forms'),

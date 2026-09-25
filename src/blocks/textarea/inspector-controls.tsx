@@ -1,6 +1,6 @@
 import { __ } from '@/lib/i18n';
 import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, RangeControl } from '@wordpress/components';
+import { PanelBody, RangeControl, TextareaControl } from '@wordpress/components';
 import { type BlockEditProps } from '@wordpress/blocks';
 import { type TextareaAttributes } from '@/blockTypes/textarea';
 import { FieldControls } from '../../components/block-atoms/FieldControls';
@@ -21,6 +21,13 @@ export const TextareaInspectorControls = ({ attributes, setAttributes, clientId 
 						max={10}
 						step={1}
 						__next40pxDefaultSize={true}
+						__nextHasNoMarginBottom={true}
+					/>
+					<TextareaControl
+						label={__('defaultValue', 'Default value')}
+						help={__('defaultValueHelp', 'Prefilled in the field. Visitors can change it.')}
+						value={attributes.defaultValue || ''}
+						onChange={(defaultValue) => setAttributes({ defaultValue })}
 						__nextHasNoMarginBottom={true}
 					/>
 				</PanelBody>

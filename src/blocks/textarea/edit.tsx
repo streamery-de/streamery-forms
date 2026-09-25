@@ -37,7 +37,7 @@ export default function Edit(props: BlockEditProps<TextareaAttributes>) {
 					name={attributes.name}
 					id={attributes.id}
 					required={attributes.required}
-					defaultValue={attributes.defaultValue}
+					value={attributes.defaultValue || ''}
 				/>
 			</FieldWrapper>
 		</>

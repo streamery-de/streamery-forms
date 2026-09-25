@@ -34,6 +34,7 @@ export default function Edit(props: BlockEditProps<InputAttributes>) {
 					disabled
 					type={attributes.type}
 					placeholder={attributes.placeholder}
+					value={attributes.defaultValue || ''}
 					name={attributes.name}
 					id={attributes.id}
 					required={attributes.required}

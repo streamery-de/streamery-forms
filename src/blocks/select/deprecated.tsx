@@ -1,28 +1,19 @@
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
 import { SelectAttributes } from '@/blockTypes/select';
 import { hasConditionalShowToOutput } from '@/blockTypes/conditionalLogic';
 import { useBlockProps } from '@wordpress/block-editor';
 import { type BlockSaveProps } from '@wordpress/blocks';
 import { getFieldClasses } from '../../lib/utils';
 import { __ } from "@/lib/i18n";
+import metadata from './block.json';
 
 /**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
- *
- * @return {Element} Element to render.
+ * Save output before 1.0.9, which ignored defaultValue. Blocks whose default
+ * already matched an option (e.g. copied over from the placeholder) would
+ * otherwise fail block validation.
  */
-export default function save(props: BlockSaveProps<SelectAttributes>) {
+function saveV1(props: BlockSaveProps<SelectAttributes>) {
 	const className = getFieldClasses(props.attributes);
-	const { optionsPopulated, options, placeholder, name, id, required, label, help, conditionalShow, defaultValue, defaultValueFromField } = props.attributes;
+	const { optionsPopulated, options, placeholder, name, id, required, label, help, conditionalShow, defaultValueFromField } = props.attributes;
 
 	return (
 		<div
@@ -50,11 +41,7 @@ export default function save(props: BlockSaveProps<SelectAttributes>) {
 							</option>
 						)}
 						{options.map((option, index) => (
-							<option
-								key={index}
-								value={option.value}
-								selected={defaultValue !== '' && defaultValue === option.value}
-							>
+							<option key={index} value={option.value}>
 								{option.label}
 							</option>
 						))}
@@ -66,3 +53,9 @@ export default function save(props: BlockSaveProps<SelectAttributes>) {
 	);
 }
 
+export default [
+	{
+		attributes: metadata.attributes,
+		save: saveV1,
+	},
+];

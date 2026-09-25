@@ -31,13 +31,7 @@ export const FieldControls = ({
 			<TextControl
 				label={__("placeholder")}
 				value={attributes.placeholder}
-				onChange={(placeholder) => {
-					setAttributes({ placeholder });
-					// Set placeholder as defaultValue if defaultValue is empty
-					if (!attributes.defaultValue && placeholder) {
-						setAttributes({ defaultValue: placeholder });
-					}
-				}}
+				onChange={(placeholder) => setAttributes({ placeholder })}
 				__next40pxDefaultSize={true}
 				__nextHasNoMarginBottom={true}
 			/>
