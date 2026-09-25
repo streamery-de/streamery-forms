@@ -9,13 +9,17 @@ import { cn } from '../../lib/utils';
  * only carries the fallback.
  */
 export default function save({ attributes }: BlockSaveProps<FieldValueAttributes>) {
-	const { sourceFieldName, level, textAlign, prefix, suffix, fallback, showOptionLabels } = attributes;
+	const { sourceFieldName, level, textAlign, prefix, suffix, fallback, showOptionLabels, valueBold } = attributes;
 	const TagName = (level > 0 ? `h${level}` : 'p') as 'p';
 
 	return (
 		<TagName
 			{...useBlockProps.save({
-				className: cn(textAlign && `has-text-align-${textAlign}`, !fallback && 'is-empty'),
+				className: cn(
+					textAlign && `has-text-align-${textAlign}`,
+					!fallback && 'is-empty',
+					valueBold && 'has-bold-value'
+				),
 				'data-field-value': sourceFieldName,
 				'data-field-value-labels': showOptionLabels ? 'true' : 'false',
 			})}

@@ -9,6 +9,11 @@
 	display: none;
 }
 
+/* "Bold value": only the value, prefix and suffix keep the block's weight. */
+.wp-block-streamery-forms-field-value.has-bold-value .streamery-forms-field-value__value {
+	font-weight: bold;
+}
+
 /* Editor only: the placeholder stands in for the live value. */
 .streamery-forms-field-value__placeholder {
 	opacity: 0.6;

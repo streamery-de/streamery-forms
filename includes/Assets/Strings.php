@@ -237,6 +237,8 @@ class Strings
 			'fieldValueFallback' => __('Fallback', 'streamery-forms'),
 			'fieldValueFallbackHelp' => __('Shown while the field is empty. Leave empty to hide the block until there is a value.', 'streamery-forms'),
 			'fieldValueShowLabels' => __('Show option labels instead of values', 'streamery-forms'),
+			'fieldValueBold' => __('Bold value', 'streamery-forms'),
+			'fieldValueBoldHelp' => __('Only the value, not the text before or after it.', 'streamery-forms'),
 			'fieldValueChooseField' => __('Choose a field in the sidebar', 'streamery-forms'),
 			'hideLabel' => __('Hide label', 'streamery-forms'),
 			'hideLabelHelp' => __('The label stays readable for screen readers.', 'streamery-forms'),
