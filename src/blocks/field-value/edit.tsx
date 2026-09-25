@@ -8,20 +8,22 @@ import {
 	InspectorControls,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import { PanelBody, SelectControl, TextControl, ToggleControl } from '@wordpress/components';
+import { PanelBody, SelectControl, TextControl, ToggleControl, ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { type BlockEditProps } from '@wordpress/blocks';
 import { type FieldValueAttributes } from '@/blockTypes/field-value';
 import { useFormFieldList } from '@/hooks/useFormFieldList';
 import { cn } from '../../lib/utils';
+import { Bold } from 'lucide-react';
+import BlockIcon from '../../components/block-atoms/BlockIcon';
 
 export default function Edit({ attributes, setAttributes, clientId }: BlockEditProps<FieldValueAttributes>) {
-	const { sourceFieldName, level, textAlign, prefix, suffix, fallback, showOptionLabels } = attributes;
+	const { sourceFieldName, level, textAlign, prefix, suffix, fallback, showOptionLabels, valueBold } = attributes;
 	const fields = useFormFieldList(clientId);
 	const field = fields.find((f) => f.name === sourceFieldName);
 	const TagName = (level > 0 ? `h${level}` : 'p') as 'p';
 
 	const blockProps = useBlockProps({
-		className: cn(textAlign && `has-text-align-${textAlign}`),
+		className: cn(textAlign && `has-text-align-${textAlign}`, valueBold && 'has-bold-value'),
 	});
 
 	return (
@@ -36,6 +38,16 @@ export default function Edit({ attributes, setAttributes, clientId }: BlockEditP
 					value={textAlign}
 					onChange={(nextAlign: string | undefined) => setAttributes({ textAlign: nextAlign })}
 				/>
+			</BlockControls>
+			<BlockControls group="inline">
+				<ToolbarGroup>
+					<ToolbarButton
+						icon={<BlockIcon icon={Bold} clean={true} />}
+						label={__('fieldValueBold', 'Bold value')}
+						isPressed={!!valueBold}
+						onClick={() => setAttributes({ valueBold: !valueBold })}
+					/>
+				</ToolbarGroup>
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('fieldValueSettings', 'Field value')}>
@@ -71,6 +83,13 @@ export default function Edit({ attributes, setAttributes, clientId }: BlockEditP
 						value={fallback}
 						onChange={(value) => setAttributes({ fallback: value })}
 						__next40pxDefaultSize
+						__nextHasNoMarginBottom
+					/>
+					<ToggleControl
+						label={__('fieldValueBold', 'Bold value')}
+						help={__('fieldValueBoldHelp', 'Only the value, not the text before or after it.')}
+						checked={!!valueBold}
+						onChange={(value) => setAttributes({ valueBold: value })}
 						__nextHasNoMarginBottom
 					/>
 					{field?.options && (

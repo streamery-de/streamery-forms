@@ -17,7 +17,8 @@
 		"prefix": { "type": "string", "default": "" },
 		"suffix": { "type": "string", "default": "" },
 		"fallback": { "type": "string", "default": "" },
-		"showOptionLabels": { "type": "boolean", "default": true }
+		"showOptionLabels": { "type": "boolean", "default": true },
+		"valueBold": { "type": "boolean", "default": false }
 	},
 	"supports": {
 		"html": false,

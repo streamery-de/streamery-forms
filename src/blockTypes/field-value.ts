@@ -12,4 +12,6 @@ export type FieldValueAttributes = {
 	fallback: string;
 	/** Select/radio/checkbox: show the option label instead of its value. */
 	showOptionLabels: boolean;
+	/** Bold value, independent of prefix and suffix. */
+	valueBold?: boolean;
 };
