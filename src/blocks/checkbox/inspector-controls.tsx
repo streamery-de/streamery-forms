@@ -50,6 +50,21 @@ export const CheckboxInspectorControls = ({
 							setAttributes({ styleVariant })
 						}
 					/>
+					{attributes.styleVariant === 'cards' && (
+						<SelectControl
+							label={__('imagePosition', 'Image position')}
+							value={attributes.imagePosition || 'top-left'}
+							options={[
+								{ value: 'top-left', label: __('imagePositionTopLeft', 'Top left') },
+								{ value: 'center', label: __('imagePositionCenter', 'Centered (no checkbox)') },
+							]}
+							onChange={(imagePosition: string) =>
+								setAttributes({ imagePosition: imagePosition as CheckboxAttributes['imagePosition'] })
+							}
+							__next40pxDefaultSize={true}
+							__nextHasNoMarginBottom={true}
+						/>
+					)}
 					<LayoutOrientationControl
 						label={__('layout')}
 						value={attributes.layout || 'vertical'}

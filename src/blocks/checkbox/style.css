@@ -296,12 +296,13 @@
 }
 
 /* Option image */
+/* Fixed height, natural width: logos keep their aspect ratio uncropped. */
 .streamery-forms-field--checkbox .streamery-forms-checkbox-option-image {
 	display: block;
-	width: 2rem;
-	height: 2rem;
-	object-fit: cover;
-	border-radius: calc(var(--field-rounded, 0.5rem) / 2);
+	width: auto;
+	max-width: 100%;
+	height: var(--field-option-image-height, 2rem);
+	object-fit: contain;
 }
 
 .streamery-forms-field--checkbox .streamery-forms-checkbox-option--has-image .streamery-forms-checkbox-option-content {
@@ -320,11 +321,36 @@
 }
 
 .streamery-forms-field--checkbox-cards .streamery-forms-checkbox-option-image {
-	width: 3rem;
-	height: 3rem;
+	height: var(--field-option-image-height-cards, 3rem);
+	/* keep clear of the check indicator top right */
+	max-width: calc(100% - 1.75rem);
 	margin-bottom: auto;
 	padding-bottom: 0.5rem;
 	box-sizing: content-box;
+}
+
+/* Cards, image centered: no check indicator -- the selected card is marked by
+   its border alone. */
+.streamery-forms-field--image-center .streamery-forms-checkbox-option::before,
+.streamery-forms-field--image-center .streamery-forms-checkbox-option::after {
+	display: none;
+}
+
+.streamery-forms-field--image-center .streamery-forms-checkbox-option {
+	justify-content: center;
+}
+
+.streamery-forms-field--image-center .streamery-forms-checkbox-option--has-image .streamery-forms-checkbox-option-content {
+	flex: 0 1 auto;
+	align-items: center;
+	margin: auto 0;
+	text-align: center;
+}
+
+.streamery-forms-field--image-center .streamery-forms-checkbox-option-image {
+	max-width: 100%;
+	margin-bottom: 0;
+	padding-bottom: 0.25rem;
 }
 
 /* Custom option: the text field sits above the invisible checkbox overlay */
@@ -364,4 +390,10 @@
 .streamery-forms-field--checkbox-cards .streamery-forms-custom-option-input:focus,
 .streamery-forms-field--checkbox-badges .streamery-forms-custom-option-input:focus {
 	border-bottom-color: var(--field-accent, #0289d9);
+}
+
+/* Without the indicator, keyboard focus has to show on the card itself. */
+.streamery-forms-field--image-center .streamery-forms-checkbox-option:has(input:focus-visible) {
+	outline: 2px solid var(--field-accent, #0289d9);
+	outline-offset: 2px;
 }
