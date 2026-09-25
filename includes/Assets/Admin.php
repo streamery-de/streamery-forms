@@ -139,6 +139,7 @@ class Admin
 			'streamery-forms-step-navigation-editor-script',
 			'streamery-forms-save-progress-editor-script',
 			'streamery-forms-progress-editor-script',
+			'streamery-forms-field-value-editor-script',
 		);
 
 		// Get WordPress upload limit in MB

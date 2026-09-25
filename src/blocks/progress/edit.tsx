@@ -4,6 +4,7 @@ import { PanelBody, SelectControl } from '@wordpress/components';
 import { type BlockEditProps } from '@wordpress/blocks';
 import { useSelect } from '@wordpress/data';
 import { type ProgressAttributes } from '@/blockTypes/progress';
+import { findFormClientId, getFormStepBlocks } from '../../lib/form-steps';
 import './editor.css';
 
 export default function Edit(props: BlockEditProps<ProgressAttributes>) {
@@ -14,13 +15,10 @@ export default function Edit(props: BlockEditProps<ProgressAttributes>) {
 	// Get step blocks from the parent form
 	const steps = useSelect(
 		(select: any) => {
-			const { getBlockParents, getBlocks } = select('core/block-editor');
-			const parents = getBlockParents(clientId);
-			const formId = parents[parents.length - 1];
+			const blockEditor = select('core/block-editor');
+			const formId = findFormClientId(blockEditor, clientId);
 			if (!formId) return [];
-			const formBlocks = getBlocks(formId);
-			return formBlocks
-				.filter((b: any) => b.name === 'streamery-forms/step')
+			return getFormStepBlocks(blockEditor, formId)
 				.map((b: any, index: number) => ({
 					title: b.attributes.title || `Step ${index + 1}`,
 					index,

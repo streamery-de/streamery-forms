@@ -19,6 +19,7 @@ import { Plus, Settings } from 'lucide-react';
 import BlockIcon from '../../components/block-atoms/BlockIcon';
 import { FormSettingsModal } from '../../components/form-settings/FormSettingsModal';
 import { SuccessScreenToolbarButton } from '../../components/form-settings/SuccessScreenToolbarButton';
+import { findFormClientId, getFormStepBlocks } from '../../lib/form-steps';
 
 const withFormToolbar = createHigherOrderComponent((BlockEdit: any) => {
 	return (props: any) => {
@@ -33,33 +34,29 @@ const withFormToolbar = createHigherOrderComponent((BlockEdit: any) => {
 
 		const formData = useSelect(
 			(select: any) => {
-				const { getBlockParents, getBlocks, getBlockName, getBlockAttributes } =
-					select('core/block-editor');
+				const blockEditor = select('core/block-editor');
+				const { getBlockName, getBlockAttributes, getBlockRootClientId, getBlockIndex } = blockEditor;
 
 				// The form block renders its own toolbar (see block-controls.tsx).
 				if (getBlockName(clientId) === 'streamery-forms/form') {
 					return null;
 				}
 
-				let formClientId: string | null = null;
-				for (const pid of getBlockParents(clientId)) {
-					if (getBlockName(pid) === 'streamery-forms/form') {
-						formClientId = pid;
-						break;
-					}
-				}
-
+				const formClientId = findFormClientId(blockEditor, clientId);
 				if (!formClientId) return null;
 
-				const stepBlocks = getBlocks(formClientId).filter(
-					(b: any) => b.name === 'streamery-forms/step'
-				);
+				// Steps may be nested (e.g. one column of the form), not just direct children.
+				const stepBlocks = getFormStepBlocks(blockEditor, formClientId);
 				const formAttrs = getBlockAttributes(formClientId);
+				const lastStep = stepBlocks[stepBlocks.length - 1];
 
 				return {
 					formClientId,
 					activeStep: formAttrs?.activeStep ?? 0,
 					successView: !!formAttrs?.successView,
+					// A new step goes right after the last one, in the same container.
+					newStepRootClientId: lastStep ? getBlockRootClientId(lastStep.clientId) : formClientId,
+					newStepIndex: lastStep ? getBlockIndex(lastStep.clientId) + 1 : undefined,
 					steps: stepBlocks.map((b: any, i: number) => ({
 						clientId: b.clientId,
 						title: b.attributes.title || `Step ${i + 1}`,
@@ -76,7 +73,7 @@ const withFormToolbar = createHigherOrderComponent((BlockEdit: any) => {
 			return <BlockEdit { ...props } />;
 		}
 
-		const { formClientId, activeStep, successView, steps } = formData;
+		const { formClientId, activeStep, successView, steps, newStepRootClientId, newStepIndex } = formData;
 
 		const handleSwitchStep = (step: { clientId: string; index: number }) => {
 			updateBlockAttributes(formClientId, { activeStep: step.index });
@@ -89,7 +86,7 @@ const withFormToolbar = createHigherOrderComponent((BlockEdit: any) => {
 			const newBlock = createBlock('streamery-forms/step', {
 				title: `Step ${steps.length + 1}`,
 			});
-			insertBlock(newBlock, undefined, formClientId);
+			insertBlock(newBlock, newStepIndex, newStepRootClientId);
 			updateBlockAttributes(formClientId, { activeStep: steps.length });
 		};
 

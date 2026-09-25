@@ -1,0 +1,59 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "streamery-forms/field-value",
+	"version": "0.1.0",
+	"title": "Field Value",
+	"category": "widgets",
+	"icon": "editor-code",
+	"description": "Shows the current value of a form field, e.g. a name in a heading or a summary.",
+	"ancestor": ["streamery-forms/form"],
+	"keywords": ["value", "field", "summary", "dynamic", "wert", "zusammenfassung"],
+	"example": {},
+	"attributes": {
+		"sourceFieldName": { "type": "string", "default": "" },
+		"level": { "type": "number", "default": 0 },
+		"textAlign": { "type": "string" },
+		"prefix": { "type": "string", "default": "" },
+		"suffix": { "type": "string", "default": "" },
+		"fallback": { "type": "string", "default": "" },
+		"showOptionLabels": { "type": "boolean", "default": true }
+	},
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"],
+		"color": {
+			"gradients": true,
+			"link": false,
+			"__experimentalDefaultControls": {
+				"background": true,
+				"text": true
+			}
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true,
+			"__experimentalDefaultControls": {
+				"margin": false,
+				"padding": false
+			}
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalWritingMode": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		}
+	},
+	"textdomain": "streamery-forms",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

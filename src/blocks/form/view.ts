@@ -64,13 +64,16 @@ window.addEventListener('DOMContentLoaded', () => {
 		// Conditional logic: evaluate field visibility and select default-from-field
 		evaluateFieldConditions(form as HTMLElement);
 		applyDefaultValueFromField(form as HTMLElement);
+		updateFieldValueOutputs(form as HTMLElement);
 		form.addEventListener('input', () => {
 			evaluateFieldConditions(form as HTMLElement);
 			applyDefaultValueFromField(form as HTMLElement);
+			updateFieldValueOutputs(form as HTMLElement);
 		});
 		form.addEventListener('change', () => {
 			evaluateFieldConditions(form as HTMLElement);
 			applyDefaultValueFromField(form as HTMLElement);
+			updateFieldValueOutputs(form as HTMLElement);
 		});
 
 		form.addEventListener('submit', async (e) => {
@@ -234,12 +237,14 @@ type ConditionalShowRule = {
 
 type ConditionalShowConfig = ConditionalShowRule | { logic: 'and' | 'or'; conditions: ConditionalShowRule[] };
 
+/**
+ * Raw value of a field for conditional logic. Reads the *checked* radio and
+ * all checked boxes of a group (name or name[]), not just the first control
+ * with that name -- which used to be the first radio's value regardless of
+ * the selection, and nothing at all for checkbox groups.
+ */
 function getSourceFieldValue(formEl: HTMLElement, fieldName: string): string {
-	const field = formEl.querySelector<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>(
-		`[name="${fieldName}"]`
-	);
-	if (!field) return '';
-	return (field.value || '').trim();
+	return getFieldDisplayValue(formEl, fieldName, { labels: false, formatDates: false });
 }
 
 function evaluateSingleCondition(condition: ConditionalShowRule, formEl: HTMLElement): boolean {
@@ -306,6 +311,89 @@ function evaluateFieldConditions(formEl: HTMLElement): void {
 		.forEach((control) => {
 			control.disabled = control.closest('.streamery-forms-field--conditional-hidden') !== null;
 		});
+}
+
+/**
+ * Current value of a field: all checked boxes of a group, the checked radio,
+ * file names -- optionally with option labels instead of values and localized
+ * dates (for the field-value block). Disabled controls (hidden by conditional logic) don't count,
+ * matching what the form would submit.
+ */
+function getFieldDisplayValue(
+	formEl: HTMLElement,
+	fieldName: string,
+	{ labels: useLabels, formatDates }: { labels: boolean; formatDates: boolean }
+): string {
+	const name = CSS.escape(fieldName);
+	const controls = formEl.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>(
+		`[name="${name}"], [name="${name}[]"]`
+	);
+	const values: string[] = [];
+
+	controls.forEach((control) => {
+		if (control.disabled) return;
+
+		if (control instanceof HTMLSelectElement) {
+			Array.from(control.selectedOptions).forEach((option) => {
+				if (option.value !== '') values.push(useLabels ? option.text.trim() : option.value);
+			});
+			return;
+		}
+
+		if (control instanceof HTMLInputElement && (control.type === 'checkbox' || control.type === 'radio')) {
+			if (!control.checked || control.value === '') return;
+			const label = control.hasAttribute('data-custom-option')
+				? null
+				: control.closest('label')?.querySelector('[class$="-option-label"]');
+			values.push(useLabels && label?.textContent ? label.textContent.trim() : control.value);
+			return;
+		}
+
+		if (control instanceof HTMLInputElement && control.type === 'file') {
+			Array.from(control.files || []).forEach((file) => values.push(file.name));
+			return;
+		}
+
+		const raw = (control.value || '').trim();
+		if (raw === '') return;
+
+		if (formatDates && control instanceof HTMLInputElement && (control.type === 'date' || control.type === 'datetime-local')) {
+			const date = new Date(control.type === 'date' ? `${raw}T00:00` : raw);
+			if (!Number.isNaN(date.getTime())) {
+				const locale = document.documentElement.lang || undefined;
+				values.push(control.type === 'date' ? date.toLocaleDateString(locale) : date.toLocaleString(locale));
+				return;
+			}
+		}
+
+		values.push(raw);
+	});
+
+	return values.join(', ');
+}
+
+/**
+ * Fills every field-value block in the form with the current value of its
+ * source field. Deliberately not bound to the form's reset event, so the
+ * values survive a successful submit and can be shown on the success screen.
+ */
+function updateFieldValueOutputs(formEl: HTMLElement): void {
+	formEl.querySelectorAll<HTMLElement>('[data-field-value]').forEach((block) => {
+		const fieldName = block.getAttribute('data-field-value');
+		const output = block.querySelector<HTMLElement>('.streamery-forms-field-value__value');
+		if (!fieldName || !output) return;
+
+		const value = getFieldDisplayValue(formEl, fieldName, {
+			labels: block.getAttribute('data-field-value-labels') !== 'false',
+			formatDates: true,
+		});
+		const fallback = output.getAttribute('data-fallback') || '';
+
+		// textContent, never innerHTML: this is visitor input.
+		output.textContent = value || fallback;
+		block.classList.toggle('is-fallback', value === '');
+		block.classList.toggle('is-empty', value === '' && fallback === '');
+	});
 }
 
 function applyDefaultValueFromField(formEl: HTMLElement): void {

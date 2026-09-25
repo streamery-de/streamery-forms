@@ -1,0 +1,15 @@
+/* Nothing to show and no fallback: the whole block disappears. */
+.wp-block-streamery-forms-field-value.is-empty {
+	display: none;
+}
+
+/* Prefix and suffix only make sense next to a real value. */
+.wp-block-streamery-forms-field-value.is-fallback .streamery-forms-field-value__prefix,
+.wp-block-streamery-forms-field-value.is-fallback .streamery-forms-field-value__suffix {
+	display: none;
+}
+
+/* Editor only: the placeholder stands in for the live value. */
+.streamery-forms-field-value__placeholder {
+	opacity: 0.6;
+}

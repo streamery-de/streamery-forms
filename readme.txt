@@ -5,7 +5,7 @@ Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,11 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Changelog ==
 
+= 1.0.6 =
+* New: "Field Value" block shows the current value of a form field live, e.g. in a heading, a summary column or the success screen. Supports typography, colors and spacing like the Site Title block.
+* New: Steps can be nested anywhere inside a form, e.g. in one column next to a live summary.
+* Fix: Conditional logic now reads the selected radio option and all checked boxes of a checkbox group.
+
 = 1.0.5 =
 * New: Conditional logic works on every block inside a form -- groups, headings, columns, images and more -- not just on fields.
 * Fix: Fields inside a hidden group stay disabled even when their own condition is met, and required fields inside a conditional group no longer block submission when the group is hidden.
@@ -184,6 +189,9 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.6 =
+New Field Value block, nested steps, and conditional logic based on radio and checkbox fields works correctly.
 
 = 1.0.5 =
 Conditional logic for any block inside a form. Re-save existing forms that use conditional groups.

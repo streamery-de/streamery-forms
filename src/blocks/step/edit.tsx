@@ -13,6 +13,7 @@ import { type StepAttributes } from '@/blockTypes/step';
 import { ConditionalLogicControls } from '../../components/block-atoms/ConditionalLogicControls';
 import { allowedBlocks, prioritizedInserterBlocks } from './allowedBlocks';
 import { useUniqueID } from '../../lib/use-unique-id';
+import { findFormClientId, getFormStepBlocks } from '../../lib/form-steps';
 import './editor.css';
 
 export default function Edit(props: BlockEditProps<StepAttributes>) {
@@ -34,29 +35,18 @@ export default function Edit(props: BlockEditProps<StepAttributes>) {
 	// Compute this step's index and check if any descendant is selected
 	const { stepIndex, hasSelectedDescendant, formClientId } = useSelect(
 		(select: any) => {
-			const { getBlockParents, getBlocks, hasSelectedInnerBlock, getBlockName } = select('core/block-editor');
-			const parents = getBlockParents(clientId);
-			const parentId = parents[parents.length - 1];
+			const blockEditor = select('core/block-editor');
+			const formId = findFormClientId(blockEditor, clientId);
 
-			// Find the form block
-			let formId: string | null = null;
-			for (const pid of [...parents].reverse()) {
-				const name = getBlockName(pid);
-				if (name === 'streamery-forms/form') {
-					formId = pid;
-					break;
-				}
-			}
+			if (!formId) return { stepIndex: 0, hasSelectedDescendant: false, formClientId: null };
 
-			if (!parentId) return { stepIndex: 0, hasSelectedDescendant: false, formClientId: null };
-
-			const siblings = getBlocks(parentId);
-			const stepBlocks = siblings.filter((b: any) => b.name === 'streamery-forms/step');
+			// Index among ALL steps of the form -- steps may be nested in columns/groups.
+			const stepBlocks = getFormStepBlocks(blockEditor, formId);
 			const idx = stepBlocks.findIndex((b: any) => b.clientId === clientId);
 
 			return {
 				stepIndex: idx >= 0 ? idx : 0,
-				hasSelectedDescendant: hasSelectedInnerBlock(clientId, true),
+				hasSelectedDescendant: blockEditor.hasSelectedInnerBlock(clientId, true),
 				formClientId: formId,
 			};
 		},
