@@ -5,7 +5,7 @@ Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,11 +157,12 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Changelog ==
 
-= 1.1.0 =
+= 1.0.3 =
 * New: Themes and plugins can register their own form skins with the `streamery-forms/skins` filter, including skins that extend another skin.
 * New: Checkbox and radio options can show an image (top left on the Cards style).
 * New: Checkbox and radio groups can offer a custom option where visitors type their own answer.
 * New: "Hide label" toggle in the global field settings. The label stays available to screen readers.
+* Fix: The checkbox block can be found in the block inserter again, and a plain checkbox group is its default.
 
 = 1.0.2 =
 * Fix: The required asterisk now shows on checkbox and radio groups.
@@ -175,6 +176,9 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+Custom skins via filter, images and a custom option for checkbox/radio groups, and a "Hide label" field setting.
 
 = 1.0.2 =
 Fixes required checkbox/radio groups and multi-select checkboxes.
