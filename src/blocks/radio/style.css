@@ -283,6 +283,14 @@
 	min-width: 0;
 }
 
+/* Cards stack vertically: keep the text field at the bottom left, where the
+   label of the other cards sits, instead of stretching over the full height. */
+.streamery-forms-field--radio-cards .streamery-forms-radio-option--custom .streamery-forms-radio-option-content {
+	flex: 0 0 auto;
+	width: 100%;
+	margin-top: auto;
+}
+
 .streamery-forms-field--radio .streamery-forms-custom-option-input {
 	width: 100%;
 	min-width: 8rem;
