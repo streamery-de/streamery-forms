@@ -53,7 +53,10 @@ export default function Edit(props: BlockEditProps<RadioAttributes>) {
 						options.map((option, index) => (
 							<label
 								key={index}
-								className="streamery-forms-radio-option"
+								className={cn(
+									'streamery-forms-radio-option',
+									option.imageUrl && 'streamery-forms-radio-option--has-image'
+								)}
 								htmlFor={`${attributes.id}-${index}`}
 							>
 								<input
@@ -65,6 +68,13 @@ export default function Edit(props: BlockEditProps<RadioAttributes>) {
 									readOnly
 								/>
 								<span className="streamery-forms-radio-option-content">
+									{option.imageUrl && (
+										<img
+											className="streamery-forms-radio-option-image"
+											src={option.imageUrl}
+											alt={option.imageAlt || ''}
+										/>
+									)}
 									<span className="streamery-forms-radio-option-label">
 										{option.label}
 									</span>
@@ -76,6 +86,19 @@ export default function Edit(props: BlockEditProps<RadioAttributes>) {
 								</span>
 							</label>
 						))
+					)}
+					{attributes.allowCustomOption && (
+						<label className="streamery-forms-radio-option streamery-forms-radio-option--custom">
+							<input type="radio" disabled checked={false} readOnly />
+							<span className="streamery-forms-radio-option-content">
+								<input
+									type="text"
+									className="streamery-forms-custom-option-input"
+									placeholder={attributes.customOptionLabel || __('customOptionDefault', 'Other…')}
+									disabled
+								/>
+							</span>
+						</label>
 					)}
 				</div>
 			</FieldWrapper>

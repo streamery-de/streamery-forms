@@ -17,6 +17,8 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 		defaultValue,
 		styleVariant = 'default',
 		layout = 'vertical',
+		allowCustomOption = false,
+		customOptionLabel = '',
 	} = props.attributes;
 	const className = cn(
 		getFieldClasses(props.attributes),
@@ -64,7 +66,10 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 					return (
 						<label
 							key={index}
-							className="streamery-forms-checkbox-option"
+							className={cn(
+								'streamery-forms-checkbox-option',
+								option.imageUrl && 'streamery-forms-checkbox-option--has-image'
+							)}
 							htmlFor={inputId}
 						>
 							<input
@@ -77,6 +82,14 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 								data-required={required ? 'true' : undefined}
 							/>
 							<span className="streamery-forms-checkbox-option-content">
+								{option.imageUrl && (
+									<img
+										className="streamery-forms-checkbox-option-image"
+										src={option.imageUrl}
+										alt={option.imageAlt || ''}
+										loading="lazy"
+									/>
+								)}
 								<span className="streamery-forms-checkbox-option-label">
 									{option.label}
 								</span>
@@ -89,6 +102,30 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 						</label>
 					);
 				})}
+				{allowCustomOption && !isConsent && (
+					<label
+						className="streamery-forms-checkbox-option streamery-forms-checkbox-option--custom"
+						htmlFor={`${id}-custom`}
+					>
+						<input
+							type="checkbox"
+							name={`${name}[]`}
+							value=""
+							id={`${id}-custom`}
+							data-custom-option="true"
+							data-required={required ? 'true' : undefined}
+						/>
+						<span className="streamery-forms-checkbox-option-content">
+							<input
+								type="text"
+								className="streamery-forms-custom-option-input"
+								placeholder={customOptionLabel || undefined}
+								aria-label={customOptionLabel || label || undefined}
+								maxLength={200}
+							/>
+						</span>
+					</label>
+				)}
 			</div>
 			{help && <p className="streamery-forms-field__help" id={`${id}-help`}>{help}</p>}
 		</Wrapper>

@@ -22,7 +22,10 @@
 				"properties": {
 					"label": { "type": "string" },
 					"value": { "type": "string" },
-					"description": { "type": "string" }
+					"description": { "type": "string" },
+					"imageId": { "type": "number" },
+					"imageUrl": { "type": "string" },
+					"imageAlt": { "type": "string" }
 				}
 			}
 		},
@@ -42,6 +45,9 @@
 			"type": "string",
 			"default": ""
 		},
+		"allowCustomOption": { "type": "boolean", "default": false },
+		"customOptionLabel": { "type": "string", "default": "" },
+		"hideLabel": { "type": "boolean", "default": false },
 		"label": { "type": "string", "default": "" },
 		"placeholder": { "type": "string", "default": "" },
 		"help": { "type": "string", "default": "" },

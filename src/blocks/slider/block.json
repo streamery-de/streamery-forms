@@ -17,6 +17,7 @@
 		"range": { "type": "boolean", "default": false },
 		"defaultValueStart": { "type": "number", "default": 0 },
 		"defaultValueEnd": { "type": "number", "default": 100 },
+		"hideLabel": { "type": "boolean", "default": false },
 		"label": { "type": "string", "default": "" },
 		"placeholder": { "type": "string", "default": "" },
 		"help": { "type": "string", "default": "" },

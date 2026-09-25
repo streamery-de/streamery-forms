@@ -9,6 +9,9 @@ export type Option = {
 	label: string;
 	value: string;
 	description?: string;
+	imageId?: number;
+	imageUrl?: string;
+	imageAlt?: string;
 };
 
 interface OptionsRepeaterProps {
@@ -23,6 +26,8 @@ interface OptionsRepeaterProps {
 	}>;
 	/** Show description field for each option (checkbox/radio only) */
 	showDescription?: boolean;
+	/** Show image picker for each option (checkbox/radio only) */
+	showImage?: boolean;
 }
 
 export const OptionsRepeater = ({
@@ -32,6 +37,7 @@ export const OptionsRepeater = ({
 	onSyncLabelValueChange,
 	presets = [],
 	showDescription = false,
+	showImage = false,
 }: OptionsRepeaterProps) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -62,6 +68,7 @@ export const OptionsRepeater = ({
 				onSyncLabelValueChange={onSyncLabelValueChange}
 				presets={presets}
 				showDescription={showDescription}
+				showImage={showImage}
 			/>
 		</>
 	);

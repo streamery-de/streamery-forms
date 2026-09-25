@@ -83,3 +83,25 @@
 	border-color: #dc2626 !important;
 	box-shadow: 0 0 0 1px #dc2626;
 }
+/* "Hide label" field setting: visually hidden, still announced by screen
+   readers. In the editor (block wrapper carries block-editor-block-list__block)
+   the label stays visible but dimmed so it can still be edited. */
+.streamery-forms-field--label-hidden:not(.block-editor-block-list__block) > label,
+.streamery-forms-field--label-hidden:not(.block-editor-block-list__block) > legend,
+.streamery-forms-field--label-hidden:not(.block-editor-block-list__block) > .streamery-forms-field__label {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+.block-editor-block-list__block.streamery-forms-field--label-hidden > label,
+.block-editor-block-list__block.streamery-forms-field--label-hidden > legend,
+.block-editor-block-list__block.streamery-forms-field--label-hidden > .streamery-forms-field__label {
+	opacity: 0.45;
+}

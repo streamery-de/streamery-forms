@@ -33,6 +33,12 @@ class FieldValidator
     );
 
     /**
+     * Longest free-text value a checkbox/radio "custom option" may carry.
+     * Matches the maxlength of the frontend text field.
+     */
+    private const CUSTOM_OPTION_MAX_LENGTH = 200;
+
+    /**
      * Validates and filters submission data against a form's field schema.
      *
      * @param array $submission_data Sanitized submission data.
@@ -187,14 +193,26 @@ class FieldValidator
 
         $submitted = is_array($value) ? $value : array($value);
 
+        // A group with a custom option accepts exactly one free-text value
+        // on top of the fixed options.
+        $custom_left = ! empty($field['allow_custom']) ? 1 : 0;
+
         foreach ($submitted as $item) {
             if (is_array($item)) {
                 return $this->invalid_value_error($field);
             }
 
-            if (! in_array((string) $item, $options, true)) {
-                return $this->invalid_value_error($field);
+            if (in_array((string) $item, $options, true)) {
+                continue;
             }
+
+            $item = trim((string) $item);
+            if ($custom_left > 0 && '' !== $item && mb_strlen($item) <= self::CUSTOM_OPTION_MAX_LENGTH) {
+                $custom_left--;
+                continue;
+            }
+
+            return $this->invalid_value_error($field);
         }
 
         return null;

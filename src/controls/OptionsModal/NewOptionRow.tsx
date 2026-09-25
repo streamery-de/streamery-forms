@@ -9,9 +9,10 @@ interface NewOptionRowProps {
 	onChange: (option: Option) => void;
 	onAdd: () => void;
 	showDescription?: boolean;
+	showImage?: boolean;
 }
 
-export const NewOptionRow = ({ newOption, syncLabelValue, onChange, onAdd, showDescription = false }: NewOptionRowProps) => {
+export const NewOptionRow = ({ newOption, syncLabelValue, onChange, onAdd, showDescription = false, showImage = false }: NewOptionRowProps) => {
 	const handleLabelChange = (label: string) => {
 		// If sync is enabled, automatically set value to label
 		const updatedOption = syncLabelValue
@@ -36,6 +37,7 @@ export const NewOptionRow = ({ newOption, syncLabelValue, onChange, onAdd, showD
 		<tr className="streamery-forms-options-table-row-new">
 			<td></td>
 			<td></td>
+			{showImage && <td></td>}
 			<td>
 				<TextControl
 					value={newOption.label}

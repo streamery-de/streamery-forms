@@ -17,6 +17,7 @@ export const getFieldClasses = (attributes: any) => {
     'streamery-forms-field',
     attributes.type && `streamery-forms-field-type--${attributes.type.toLowerCase()}`,
     attributes.required && 'streamery-forms-field--required',
+    attributes.hideLabel && 'streamery-forms-field--label-hidden',
     attributes.mode && `streamery-forms-field--datetime-mode-${attributes.mode}`,
     attributes.range === true && 'streamery-forms-field--range'
   )

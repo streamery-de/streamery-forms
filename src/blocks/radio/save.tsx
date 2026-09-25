@@ -16,6 +16,8 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 		defaultValue,
 		styleVariant = 'default',
 		layout = 'vertical',
+		allowCustomOption = false,
+		customOptionLabel = '',
 	} = props.attributes;
 	const className = cn(
 		getFieldClasses(props.attributes),
@@ -53,7 +55,10 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 					return (
 						<label
 							key={index}
-							className="streamery-forms-radio-option"
+							className={cn(
+								'streamery-forms-radio-option',
+								option.imageUrl && 'streamery-forms-radio-option--has-image'
+							)}
 							htmlFor={inputId}
 						>
 							<input
@@ -65,6 +70,14 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 								defaultChecked={checked}
 							/>
 							<span className="streamery-forms-radio-option-content">
+								{option.imageUrl && (
+									<img
+										className="streamery-forms-radio-option-image"
+										src={option.imageUrl}
+										alt={option.imageAlt || ''}
+										loading="lazy"
+									/>
+								)}
 								<span className="streamery-forms-radio-option-label">
 									{option.label}
 								</span>
@@ -77,6 +90,30 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 						</label>
 					);
 				})}
+				{allowCustomOption && (
+					<label
+						className="streamery-forms-radio-option streamery-forms-radio-option--custom"
+						htmlFor={`${id}-custom`}
+					>
+						<input
+							type="radio"
+							name={name}
+							value=""
+							id={`${id}-custom`}
+							required={required}
+							data-custom-option="true"
+						/>
+						<span className="streamery-forms-radio-option-content">
+							<input
+								type="text"
+								className="streamery-forms-custom-option-input"
+								placeholder={customOptionLabel || undefined}
+								aria-label={customOptionLabel || label || undefined}
+								maxLength={200}
+							/>
+						</span>
+					</label>
+				)}
 			</div>
 			{help && <p className="streamery-forms-field__help" id={`${id}-help`}>{help}</p>}
 		</fieldset>

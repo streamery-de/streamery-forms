@@ -157,6 +157,12 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Changelog ==
 
+= 1.1.0 =
+* New: Themes and plugins can register their own form skins with the `streamery-forms/skins` filter, including skins that extend another skin.
+* New: Checkbox and radio options can show an image (top left on the Cards style).
+* New: Checkbox and radio groups can offer a custom option where visitors type their own answer.
+* New: "Hide label" toggle in the global field settings. The label stays available to screen readers.
+
 = 1.0.2 =
 * Fix: The required asterisk now shows on checkbox and radio groups.
 * Fix: Checkbox groups accept multiple selections.

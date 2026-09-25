@@ -18,6 +18,7 @@
 			"type": "string",
 			"default": "text"
 		},
+		"hideLabel": { "type": "boolean", "default": false },
 		"label": {
 			"type": "string",
 			"default": ""

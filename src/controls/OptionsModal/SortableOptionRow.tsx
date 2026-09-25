@@ -3,6 +3,7 @@ import { Button, TextControl, CheckboxControl } from '@wordpress/components';
 import { GripVertical, Trash2 } from 'lucide-react';
 import BlockIcon from '../../components/block-atoms/BlockIcon';
 import { type Option } from '../OptionsRepeater';
+import { OptionImageControl } from './OptionImageControl';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import './styles.css';
@@ -16,6 +17,7 @@ interface SortableOptionRowProps {
 	isSelected: boolean;
 	onSelect: (index: number, selected: boolean) => void;
 	showDescription?: boolean;
+	showImage?: boolean;
 }
 
 export const SortableOptionRow = ({
@@ -27,6 +29,7 @@ export const SortableOptionRow = ({
 	isSelected,
 	onSelect,
 	showDescription = false,
+	showImage = false,
 }: SortableOptionRowProps) => {
 	const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
 		id: `option-${index}`,
@@ -59,6 +62,14 @@ export const SortableOptionRow = ({
 			>
 				<BlockIcon icon={GripVertical} clean={true} />
 			</td>
+			{showImage && (
+				<td className="streamery-forms-options-table-td-image">
+					<OptionImageControl
+						option={option}
+						onChange={(updated) => onChange(index, updated)}
+					/>
+				</td>
+			)}
 			<OptionFields 
 				option={option} 
 				syncLabelValue={syncLabelValue} 

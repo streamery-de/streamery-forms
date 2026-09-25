@@ -7,6 +7,7 @@ namespace StreameryForms\Assets;
 use StreameryForms\Traits\Base;
 use StreameryForms\Libs\Assets;
 use StreameryForms\Assets\Strings;
+use StreameryForms\Core\Skins;
 
 defined('ABSPATH') || exit;
 
@@ -150,6 +151,7 @@ class Admin
 				$editor_data = array(
 					'strings' => Strings::get_strings(),
 					'uploadLimit' => $upload_limit_mb,
+					'skins' => Skins::get_instance()->get_client_config(),
 				);
 				wp_localize_script($handle, 'streamery_forms', $editor_data);
 				// Also pass via streameryForms for consistency

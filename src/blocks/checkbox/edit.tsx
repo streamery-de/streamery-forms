@@ -54,7 +54,10 @@ export default function Edit(props: BlockEditProps<CheckboxAttributes>) {
 						options.map((option, index) => (
 							<label
 								key={index}
-								className="streamery-forms-checkbox-option"
+								className={cn(
+									'streamery-forms-checkbox-option',
+									option.imageUrl && 'streamery-forms-checkbox-option--has-image'
+								)}
 								htmlFor={`${attributes.id}-${index}`}
 							>
 								<input
@@ -67,6 +70,13 @@ export default function Edit(props: BlockEditProps<CheckboxAttributes>) {
 									readOnly
 								/>
 								<span className="streamery-forms-checkbox-option-content">
+									{option.imageUrl && (
+										<img
+											className="streamery-forms-checkbox-option-image"
+											src={option.imageUrl}
+											alt={option.imageAlt || ''}
+										/>
+									)}
 									<span className="streamery-forms-checkbox-option-label">
 										{option.label}
 									</span>
@@ -78,6 +88,19 @@ export default function Edit(props: BlockEditProps<CheckboxAttributes>) {
 								</span>
 							</label>
 						))
+					)}
+					{attributes.allowCustomOption && !isConsent && (
+						<label className="streamery-forms-checkbox-option streamery-forms-checkbox-option--custom">
+							<input type="checkbox" disabled checked={false} readOnly />
+							<span className="streamery-forms-checkbox-option-content">
+								<input
+									type="text"
+									className="streamery-forms-custom-option-input"
+									placeholder={attributes.customOptionLabel || __('customOptionDefault', 'Other…')}
+									disabled
+								/>
+							</span>
+						</label>
 					)}
 				</div>
 			</FieldWrapper>

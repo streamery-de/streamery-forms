@@ -3,6 +3,7 @@ type Attributes = {
 	id: string;
 	placeholder: string;
 	required: boolean;
+	hideLabel?: boolean;
 	useCustomName: boolean | undefined;
 	useCustomId: boolean | undefined;
 	defaultValue?: string;

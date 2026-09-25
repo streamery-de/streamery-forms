@@ -47,6 +47,13 @@ export const FieldControls = ({
 				onChange={(required) => setAttributes({ required })}
 				__nextHasNoMarginBottom={true}
 			/>
+			<ToggleControl
+				label={__("hideLabel", "Hide label")}
+				help={__("hideLabelHelp", "The label stays readable for screen readers.")}
+				checked={attributes.hideLabel || false}
+				onChange={(hideLabel) => setAttributes({ hideLabel })}
+				__nextHasNoMarginBottom={true}
+			/>
 			</PanelBody>
 		</InspectorControls>
 	);

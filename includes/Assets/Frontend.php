@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace StreameryForms\Assets;
 
 use StreameryForms\Core\BlockScanner;
+use StreameryForms\Core\Skins;
 use StreameryForms\Traits\Base;
 use StreameryForms\Libs\Assets;
 
@@ -78,7 +79,7 @@ class Frontend
 
 		// Always set the streamery-forms object inline so it's available before view scripts run
 		$inline_script = sprintf(
-			'window.streamery_forms = window.streamery_forms || {}; window.streamery_forms.assetsUrl = %s; window.streamery_forms.pluginUrl = %s; window.streamery_forms.apiUrl = %s; window.streamery_forms.nonce = %s; window.streamery_forms.namespace = %s; window.streamery_forms.captcha = %s; window.streamery_forms.strings = %s; window.streamery_forms.postId = %s;',
+			'window.streamery_forms = window.streamery_forms || {}; window.streamery_forms.assetsUrl = %s; window.streamery_forms.pluginUrl = %s; window.streamery_forms.apiUrl = %s; window.streamery_forms.nonce = %s; window.streamery_forms.namespace = %s; window.streamery_forms.captcha = %s; window.streamery_forms.strings = %s; window.streamery_forms.postId = %s; window.streamery_forms.skins = %s;',
 			wp_json_encode(STREAMERY_FORMS_ASSETS_URL),
 			wp_json_encode(STREAMERY_FORMS_URL),
 			wp_json_encode($api_url),
@@ -86,7 +87,8 @@ class Frontend
 			wp_json_encode(STREAMERY_FORMS_ROUTE_PREFIX),
 			wp_json_encode($captcha),
 			wp_json_encode($this->get_frontend_strings()),
-			wp_json_encode(is_singular() ? (int) get_queried_object_id() : 0)
+			wp_json_encode(is_singular() ? (int) get_queried_object_id() : 0),
+			wp_json_encode(Skins::get_instance()->get_client_config())
 		);
 
 		// Try to add inline script to wp-blocks, fallback to wp-util if not available
@@ -119,6 +121,7 @@ class Frontend
 					'captcha'   => $captcha,
 					'strings'   => $this->get_frontend_strings(),
 					'postId'    => is_singular() ? (int) get_queried_object_id() : 0,
+					'skins'     => Skins::get_instance()->get_client_config(),
 				)
 			);
 		}
@@ -267,6 +270,38 @@ class Frontend
 					STREAMERY_FORMS_VERSION
 				);
 			}
+		}
+
+		$this->enqueue_external_editor_skins();
+	}
+
+	/**
+	 * Enqueue skins registered via the 'streamery-forms/skins' filter in the
+	 * block editor. A skin that extends another depends on its base handle, so
+	 * the base stylesheet is always printed first.
+	 *
+	 * @return void
+	 */
+	private function enqueue_external_editor_skins()
+	{
+		$skins = Skins::get_instance()->get_skins();
+
+		foreach ($skins as $slug => $skin) {
+			// Built-in skins were already enqueued from the skins directory.
+			if (wp_style_is('streamery-forms-skin-' . $slug, 'enqueued')) {
+				continue;
+			}
+
+			$deps = array();
+			if (null !== $skin['extends']) {
+				$deps[] = 'streamery-forms-skin-' . $skin['extends'];
+			}
+
+			wp_register_style('streamery-forms-skin-' . $slug, $skin['url'], $deps, STREAMERY_FORMS_VERSION);
+		}
+
+		foreach (array_keys($skins) as $slug) {
+			wp_enqueue_style('streamery-forms-skin-' . $slug);
 		}
 	}
 }
