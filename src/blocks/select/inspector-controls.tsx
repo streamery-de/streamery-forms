@@ -6,6 +6,7 @@ import { ConditionalLogicControls, DefaultValueFromFieldControl } from '../../co
 import { type BlockEditProps } from '@wordpress/blocks';
 import { type SelectAttributes } from '@/blockTypes/select';
 import { OptionsRepeater } from '../../controls/OptionsRepeater';
+import { DefaultOptionControl } from '../../controls/DefaultOptionControl';
 import { PopulateOptionsToggle } from '../../controls/PopulateOptionsToggle';
 import { PopulatedOptionsMessage } from '../../controls/PopulatedOptionsMessage';
 import { getSelectPresets } from './presets';
@@ -40,13 +41,20 @@ export const SelectInspectorControls = ({ attributes, setAttributes, clientId }:
 					{attributes.optionsPopulated ? (
 						<PopulatedOptionsMessage />
 					) : (
-						<OptionsRepeater
-							options={options}
-							syncLabelValue={syncLabelValue}
-							onChange={handleOptionsChange}
-							onSyncLabelValueChange={handleSyncLabelValueChange}
-							presets={getSelectPresets()}
-						/>
+						<>
+							<OptionsRepeater
+								options={options}
+								syncLabelValue={syncLabelValue}
+								onChange={handleOptionsChange}
+								onSyncLabelValueChange={handleSyncLabelValueChange}
+								presets={getSelectPresets()}
+							/>
+							<DefaultOptionControl
+								options={options}
+								value={attributes.defaultValue || ''}
+								onChange={(defaultValue) => setAttributes({ defaultValue })}
+							/>
+						</>
 					)}
 				</PanelBody>
 			</InspectorControls>

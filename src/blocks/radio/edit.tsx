@@ -67,6 +67,7 @@ export default function Edit(props: BlockEditProps<RadioAttributes>) {
 									name={attributes.name}
 									value={option.value}
 									id={`${attributes.id}-${index}`}
+									checked={!!attributes.defaultValue && attributes.defaultValue === option.value}
 									readOnly
 								/>
 								<span className="streamery-forms-radio-option-content">

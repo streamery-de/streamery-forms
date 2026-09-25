@@ -7,6 +7,8 @@ type GlobalFieldAttributes = {
 	placeholder: string;
 	help: string;
 	required: boolean;
+	/** Initial value; for option fields the value of the preselected option ('' = none). */
+	defaultValue?: string;
 	/** Visually hide the label (it stays available to screen readers). */
 	hideLabel?: boolean;
 	useCustomName: boolean | undefined;

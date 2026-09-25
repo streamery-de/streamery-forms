@@ -7,6 +7,7 @@ import { LayoutOrientationControl } from '../../components/block-atoms/LayoutOri
 import { type BlockEditProps } from '@wordpress/blocks';
 import { type CheckboxAttributes } from '@/blockTypes/checkbox';
 import { OptionsRepeater } from '../../controls/OptionsRepeater';
+import { DefaultOptionsChecklist } from '../../controls/DefaultOptionControl';
 import { getCheckboxOptionPresets } from './presets';
 
 type CheckboxInspectorControlsProps = BlockEditProps<CheckboxAttributes>;
@@ -42,6 +43,13 @@ export const CheckboxInspectorControls = ({
 						showDescription
 						showImage
 					/>
+					{!attributes.isConsent && (
+						<DefaultOptionsChecklist
+							options={options}
+							value={attributes.defaultValue || ''}
+							onChange={(defaultValue) => setAttributes({ defaultValue })}
+						/>
+					)}
 					<SelectControl
 						label={__('style', 'Stil')}
 						value={attributes.styleVariant || 'default'}

@@ -7,6 +7,7 @@ import { LayoutOrientationControl } from '../../components/block-atoms/LayoutOri
 import { type BlockEditProps } from '@wordpress/blocks';
 import { type RadioAttributes } from '@/blockTypes/radio';
 import { OptionsRepeater } from '../../controls/OptionsRepeater';
+import { DefaultOptionControl } from '../../controls/DefaultOptionControl';
 
 type RadioInspectorControlsProps = BlockEditProps<RadioAttributes>;
 
@@ -40,6 +41,11 @@ export const RadioInspectorControls = ({
 						presets={[]}
 						showDescription
 						showImage
+					/>
+					<DefaultOptionControl
+						options={options}
+						value={attributes.defaultValue || ''}
+						onChange={(defaultValue) => setAttributes({ defaultValue })}
 					/>
 					<SelectControl
 						label={__('style', 'Stil')}

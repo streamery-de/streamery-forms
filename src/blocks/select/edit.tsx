@@ -33,6 +33,7 @@ export default function Edit(props: BlockEditProps<SelectAttributes>) {
 			>
 				<select
 					disabled
+					value={attributes.optionsPopulated ? '' : attributes.defaultValue || ''}
 					name={attributes.name}
 					id={attributes.id}
 					required={attributes.required}
