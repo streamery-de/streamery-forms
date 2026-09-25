@@ -569,10 +569,29 @@ function validateStep(stepEl: HTMLElement): boolean {
 	);
 
 	let isValid = true;
+	const reportedGroups = new Set<string>();
 
 	requiredFields.forEach((field) => {
 		// Skip fields hidden by conditional logic -- their own or a container's.
 		if (field.closest('.streamery-forms-field--conditional-hidden')) {
+			return;
+		}
+		// Radio/checkbox groups: valid once any option of the group is checked.
+		// Their value attribute says nothing about whether one was picked.
+		if (field instanceof HTMLInputElement && (field.type === 'radio' || field.type === 'checkbox')) {
+			const group = Array.from(
+				stepEl.querySelectorAll<HTMLInputElement>(`input[name="${CSS.escape(field.name)}"]`)
+			);
+			if (group.some((input) => input.checked)) {
+				field.classList.remove('streamery-forms-field--invalid');
+				return;
+			}
+			isValid = false;
+			field.classList.add('streamery-forms-field--invalid');
+			if (!reportedGroups.has(field.name)) {
+				reportedGroups.add(field.name);
+				field.reportValidity();
+			}
 			return;
 		}
 		if (!field.value.trim()) {
