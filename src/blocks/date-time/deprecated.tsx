@@ -2,9 +2,16 @@ import { DateTimeAttributes } from '@/blockTypes/date-time';
 import { hasConditionalShowToOutput } from '@/blockTypes/conditionalLogic';
 import { useBlockProps } from '@wordpress/block-editor';
 import { type BlockSaveProps } from '@wordpress/blocks';
+import { dropPlaceholderCopy } from '../../lib/deprecations';
+import metadata from './block.json';
 import { getFieldClasses } from '../../lib/utils';
 
-export default function save(props: BlockSaveProps<DateTimeAttributes>) {
+/**
+ * Save output up to 1.0.9. It passed defaultValue/defaultChecked, which the
+ * block serializer does not turn into value/checked, so defaults never
+ * reached the frontend.
+ */
+function saveV1(props: BlockSaveProps<DateTimeAttributes>) {
 	const className = getFieldClasses(props.attributes);
 	const {
 		mode,
@@ -44,7 +51,7 @@ export default function save(props: BlockSaveProps<DateTimeAttributes>) {
 					name={name}
 					id={id}
 					required={required}
-					value={defaultValue || undefined}
+					defaultValue={defaultValue}
 					{...(min && { min })}
 					{...(max && !range && { max })}
 					className="streamery-forms-datetime-input"
@@ -59,7 +66,7 @@ export default function save(props: BlockSaveProps<DateTimeAttributes>) {
 							name={`${name}_end`}
 							id={`${id}-end`}
 							required={required}
-							value={defaultValueEnd || undefined}
+							defaultValue={defaultValueEnd}
 							{...(min && { min })}
 							{...(max && { max })}
 							className="streamery-forms-datetime-input"
@@ -71,3 +78,11 @@ export default function save(props: BlockSaveProps<DateTimeAttributes>) {
 		</div>
 	);
 }
+
+export default [
+	{
+		attributes: metadata.attributes,
+		save: saveV1,
+		migrate: dropPlaceholderCopy,
+	},
+];

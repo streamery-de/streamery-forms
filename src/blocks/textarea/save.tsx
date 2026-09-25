@@ -30,7 +30,7 @@ export default function save(props: BlockSaveProps<TextareaAttributes>) {
 			})}
 		>
 			<label htmlFor={props.attributes.id}>{props.attributes.label}</label>
-			<textarea rows={props.attributes.rows} placeholder={props.attributes.placeholder} name={props.attributes.name} id={props.attributes.id} required={props.attributes.required} defaultValue={props.attributes.defaultValue} aria-describedby={props.attributes.help ? `${props.attributes.id}-help` : undefined} />
+			<textarea rows={props.attributes.rows} placeholder={props.attributes.placeholder} name={props.attributes.name} id={props.attributes.id} required={props.attributes.required} value={props.attributes.defaultValue || undefined} aria-describedby={props.attributes.help ? `${props.attributes.id}-help` : undefined} />
 			{props.attributes.help && <p className="streamery-forms-field__help" id={`${props.attributes.id}-help`}>{props.attributes.help}</p>}
 		</div>
 	);
