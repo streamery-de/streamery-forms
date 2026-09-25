@@ -16,6 +16,7 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 		defaultValue,
 		styleVariant = 'default',
 		layout = 'vertical',
+		imagePosition = 'top-left',
 		allowCustomOption = false,
 		customOptionLabel = '',
 	} = props.attributes;
@@ -23,7 +24,8 @@ export default function save(props: BlockSaveProps<RadioAttributes>) {
 		getFieldClasses(props.attributes),
 		'streamery-forms-field--radio',
 		`streamery-forms-field--radio-${styleVariant}`,
-		`streamery-forms-field--layout-${layout}`
+		`streamery-forms-field--layout-${layout}`,
+		imagePosition === 'center' && styleVariant === 'cards' && 'streamery-forms-field--image-center'
 	);
 
 	return (

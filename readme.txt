@@ -5,7 +5,7 @@ Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,10 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Changelog ==
 
+= 1.0.4 =
+* New: "Image position" setting for checkbox and radio cards: top left, or centered without the check indicator (the selected card is marked by its border).
+* Option images now have a fixed height and keep their aspect ratio instead of being cropped.
+
 = 1.0.3 =
 * New: Themes and plugins can register their own form skins with the `streamery-forms/skins` filter, including skins that extend another skin.
 * New: Checkbox and radio options can show an image (top left on the Cards style).
@@ -176,6 +180,9 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.4 =
+Centered image cards for checkbox/radio groups; option images are no longer cropped.
 
 = 1.0.3 =
 Custom skins via filter, images and a custom option for checkbox/radio groups, and a "Hide label" field setting.

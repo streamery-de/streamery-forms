@@ -34,6 +34,7 @@ export default function Edit(props: BlockEditProps<CheckboxAttributes>) {
 					'streamery-forms-field--checkbox',
 					`streamery-forms-field--checkbox-${styleVariant}`,
 					`streamery-forms-field--layout-${layout}`,
+					attributes.imagePosition === 'center' && styleVariant === 'cards' && 'streamery-forms-field--image-center',
 				)}
 				label={attributes.label}
 				onLabelChange={(label) => setAttributes({ label })}

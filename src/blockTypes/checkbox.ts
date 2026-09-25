@@ -11,6 +11,8 @@ export type CheckboxAttributes = GlobalFieldAttributes & {
 	}>;
 	styleVariant: 'default' | 'toggle' | 'cards' | 'badges';
 	layout: 'horizontal' | 'vertical';
+	/** Cards style: option image top left, or centered without the check indicator. */
+	imagePosition?: 'top-left' | 'center';
 	/** Append an option whose value the visitor types in. */
 	allowCustomOption?: boolean;
 	/** Placeholder of the custom option's text field. */
