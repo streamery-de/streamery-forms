@@ -287,18 +287,31 @@ namespace YourNamespace\Providers;
 use StreameryForms\Providers\AbstractProvider;
 
 class CustomProvider extends AbstractProvider {
-    
+
     public function get_slug(): string {
         return 'custom-provider';
     }
-    
-    public function get_name(): string {
+
+    public function get_title(): string {
         return 'Custom Provider';
     }
-    
-    public function handle_submission( array $data, array $config ): bool {
+
+    public function process_submission( array $submission_data, array $provider_settings, string $form_identifier ): bool {
         // Your custom submission handling logic
         return true;
+    }
+
+    public function get_settings_fields(): array {
+        // Settings shown for this provider in the admin, e.g.:
+        return array(
+            array(
+                'name'     => 'api_key',
+                'label'    => 'API key',
+                'type'     => 'text',
+                'required' => true,
+                'default'  => '',
+            ),
+        );
     }
 }
 ```
@@ -311,6 +324,27 @@ add_filter( 'streamery-forms/available_providers', function( $providers ) {
     return $providers;
 } );
 ```
+
+### Custom Skins
+
+Themes and plugins can register their own form skins with the `streamery-forms/skins` filter. Every skin is a stylesheet; registered skins show up in the **Skin** dropdown of the form block and are loaded in the editor and on the frontend.
+
+```php
+add_filter( 'streamery-forms/skins', function ( array $skins ) {
+    $skins['brand'] = array(
+        'label'       => 'Brand',                                         // required
+        'description' => 'Forms in our corporate design.',                // optional
+        'url'         => get_theme_file_uri( 'assets/forms/brand.css' ),  // required
+        'extends'     => 'default',                                       // optional
+    );
+    return $skins;
+} );
+```
+
+- The array key is the skin slug. It is run through `sanitize_key()`.
+- `label` and `url` are required; entries without them are ignored. The URL is run through `esc_url_raw()`.
+- `extends` names another registered skin. That skin's stylesheet is loaded first, so your skin only needs to override what differs. Chains are resolved recursively; an `extends` pointing at an unknown skin is dropped.
+- The built-in `default` skin cannot be overridden.
 
 ## Contributing
 

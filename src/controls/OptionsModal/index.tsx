@@ -24,6 +24,7 @@ interface OptionsModalProps {
 		options: Option[];
 	}>;
 	showDescription?: boolean;
+	showImage?: boolean;
 }
 
 export const OptionsModal = ({
@@ -35,6 +36,7 @@ export const OptionsModal = ({
 	onSyncLabelValueChange,
 	presets,
 	showDescription = false,
+	showImage = false,
 }: OptionsModalProps) => {
 	const [localOptions, setLocalOptions] = useState<Option[]>(options);
 	const [newOption, setNewOption] = useState<Option>(
@@ -276,6 +278,7 @@ export const OptionsModal = ({
 								onAddNewOption={handleAddNewOption}
 								onBulkAddClick={() => setIsBulkAddOpen(true)}
 								showDescription={showDescription}
+								showImage={showImage}
 							/>
 						</div>
 					)}

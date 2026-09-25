@@ -16,6 +16,7 @@
 		"defaultValueEnd": { "type": "string", "default": "" },
 		"min": { "type": "string", "default": "" },
 		"max": { "type": "string", "default": "" },
+		"hideLabel": { "type": "boolean", "default": false },
 		"label": { "type": "string", "default": "" },
 		"placeholder": { "type": "string", "default": "" },
 		"help": { "type": "string", "default": "" },

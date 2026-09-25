@@ -37,6 +37,7 @@
 			"type": "boolean",
 			"default": false
 		},
+		"hideLabel": { "type": "boolean", "default": false },
 		"label": {
 			"type": "string",
 			"default": ""

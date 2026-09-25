@@ -20,6 +20,8 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#view-script
  */
 
+import { getRegisteredSkins } from '../../lib/skins';
+
 /**
  * Translatable frontend string, localized from PHP onto window.streamery_forms
  * (see includes/Assets/Frontend.php). The second argument is the English
@@ -828,22 +830,36 @@ function showDebugView(debugData: any) {
 }
 
 /**
- * Load skin CSS dynamically
+ * Load skin CSS dynamically. A skin registered via the 'streamery-forms/skins'
+ * filter brings its own URL; a skin that extends another loads its base
+ * first so the cascade is base -> child. `seen` guards against extends cycles.
  */
-function loadSkinCSS(skinName: string) { 
+function loadSkinCSS(skinName: string, seen: Set<string> = new Set()) {
+	if (seen.has(skinName)) {
+		return;
+	}
+	seen.add(skinName);
+
+	const skin = getRegisteredSkins().find((entry) => entry.name === skinName);
+	if (skin?.extends) {
+		loadSkinCSS(skin.extends, seen);
+	}
+
 	// Check if skin CSS is already loaded
-	const existingLink = document.querySelector(`link[data-streamery-forms-skin="${skinName}"]`);
+	const existingLink = document.querySelector(`link[data-streamery-forms-skin="${CSS.escape(skinName)}"]`);
 	if (existingLink) {
 		return;
 	}
 
-	// Create link element for skin CSS
 	const link = document.createElement('link');
 	link.rel = 'stylesheet';
-	// Load from assets/skins (built skins)
-	// @ts-expect-error - assetsUrl is not defined in the window object
-	const assetsUrl = window.streamery_forms?.assetsUrl || '';
-	link.href = `${assetsUrl}/blocks/skins/${skinName}/index.css`;
+	if (skin?.url) {
+		link.href = skin.url;
+	} else {
+		// Fallback: built skins in assets/blocks/skins
+		const assetsUrl = (window as any).streamery_forms?.assetsUrl || '';
+		link.href = `${assetsUrl}/blocks/skins/${skinName}/index.css`;
+	}
 	link.setAttribute('data-streamery-forms-skin', skinName);
 	document.head.appendChild(link);
 }

@@ -186,6 +186,11 @@ class BlockScanner
 		if (in_array($type, array('select', 'radio', 'checkbox'), true)) {
 			$field['options'] = self::extract_option_values($attrs);
 
+			// Radio/checkbox groups may offer a free-text "custom option".
+			if (in_array($type, array('radio', 'checkbox'), true) && ! $is_consent) {
+				$field['allow_custom'] = ! empty($attrs['allowCustomOption']);
+			}
+
 			// A select whose options are populated at render time from another
 			// source has no fixed allowlist we can enforce.
 			if ('select' === $type && ! empty($attrs['optionsPopulated'])) {

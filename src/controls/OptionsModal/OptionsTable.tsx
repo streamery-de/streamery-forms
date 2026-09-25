@@ -37,6 +37,7 @@ interface OptionsTableProps {
 	onAddNewOption: () => void;
 	onBulkAddClick: () => void;
 	showDescription?: boolean;
+	showImage?: boolean;
 }
 
 export const OptionsTable = ({
@@ -55,6 +56,7 @@ export const OptionsTable = ({
 	onAddNewOption,
 	onBulkAddClick,
 	showDescription = false,
+	showImage = false,
 }: OptionsTableProps) => {
 	const sensors = useSensors(
 		useSensor(PointerSensor),
@@ -94,6 +96,11 @@ export const OptionsTable = ({
 									<th className="streamery-forms-options-table-th-move">
 										{__('move')}
 									</th>
+									{showImage && (
+										<th>
+											{__('optionImage', 'Image')}
+										</th>
+									)}
 									<th>
 										{__('label')}
 									</th>
@@ -122,6 +129,7 @@ export const OptionsTable = ({
 										isSelected={selectedIndices.has(index)}
 										onSelect={onSelect}
 										showDescription={showDescription}
+										showImage={showImage}
 									/>
 								))}
 								<NewOptionRow
@@ -130,6 +138,7 @@ export const OptionsTable = ({
 									onChange={onNewOptionChange}
 									onAdd={onAddNewOption}
 									showDescription={showDescription}
+										showImage={showImage}
 								/>
 							</tbody>
 						</table>

@@ -5,11 +5,29 @@ import { type BlockEditProps } from '@wordpress/blocks';
 import { useEffect, useState } from '@wordpress/element';
 import { dismissSupport, getSupportData, hasSupportLinks, onSupportDismissed } from '@/lib/support';
 import { type FormAttributes } from '@/blockTypes/form';
-import skins from '../../skins';
+import builtInSkins from '../../skins';
+import { getRegisteredSkins } from '@/lib/skins';
 import { useProviderValidation } from '../../hooks/useProviderValidation';
 import { MissingFieldsDialog } from '../../components/block-atoms/MissingFieldsDialog';
 
 type FormInspectorControlsProps = BlockEditProps<FormAttributes>;
+
+/**
+ * Built-in skins first, then the ones a theme registered via the
+ * 'streamery-forms/skins' filter -- the first entry for a name wins.
+ */
+const getSkinOptions = () => {
+	const seen = new Set<string>();
+	return [...builtInSkins, ...getRegisteredSkins()]
+		.filter((skin) => {
+			if (!skin.name || seen.has(skin.name)) {
+				return false;
+			}
+			seen.add(skin.name);
+			return true;
+		})
+		.map((skin) => ({ label: skin.label, value: skin.name }));
+};
 
 /**
  * Collapsed "Support Streamery Forms" panel -- form block only, admins only, gone
@@ -88,10 +106,7 @@ export const FormInspectorControls = ({ attributes, setAttributes, clientId }: F
 						label={__('skin')}
 						value={attributes.skin || 'default'}
 						onChange={(skin) => setAttributes({ skin })}
-						options={skins.map((skin) => ({
-							label: skin.label,
-							value: skin.name,
-						}))}
+						options={getSkinOptions()}
 						__next40pxDefaultSize={true}
 						__nextHasNoMarginBottom={true}
 					/>

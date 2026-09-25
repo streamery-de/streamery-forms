@@ -243,3 +243,74 @@
 	flex-wrap: wrap;
 	gap: 0.5rem;
 }
+
+/* Option image */
+.streamery-forms-field--radio .streamery-forms-radio-option-image {
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	object-fit: cover;
+	border-radius: calc(var(--field-rounded, 0.5rem) / 2);
+}
+
+.streamery-forms-field--radio .streamery-forms-radio-option--has-image .streamery-forms-radio-option-content {
+	flex-direction: row;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+/* Cards: image top left, label + description stay bottom left */
+.streamery-forms-field--radio-cards .streamery-forms-radio-option--has-image .streamery-forms-radio-option-content {
+	flex: 1;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 0;
+	gap: 0.125rem;
+}
+
+.streamery-forms-field--radio-cards .streamery-forms-radio-option-image {
+	width: 3rem;
+	height: 3rem;
+	margin-bottom: auto;
+	padding-bottom: 0.5rem;
+	box-sizing: content-box;
+}
+
+/* Custom option: the text field sits above the invisible radio overlay */
+.streamery-forms-field--radio .streamery-forms-radio-option--custom .streamery-forms-radio-option-content {
+	z-index: 2;
+	flex: 1;
+	min-width: 0;
+}
+
+/* Cards stack vertically: keep the text field at the bottom left, where the
+   label of the other cards sits, instead of stretching over the full height. */
+.streamery-forms-field--radio-cards .streamery-forms-radio-option--custom .streamery-forms-radio-option-content {
+	flex: 0 0 auto;
+	width: 100%;
+	margin-top: auto;
+}
+
+.streamery-forms-field--radio .streamery-forms-custom-option-input {
+	width: 100%;
+	min-width: 8rem;
+	box-sizing: border-box;
+	font: inherit;
+	color: inherit;
+}
+
+.streamery-forms-field--radio-cards .streamery-forms-custom-option-input,
+.streamery-forms-field--radio-badges .streamery-forms-custom-option-input {
+	padding: 0;
+	border: 0;
+	border-bottom: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+	outline: none;
+}
+
+.streamery-forms-field--radio-cards .streamery-forms-custom-option-input:focus,
+.streamery-forms-field--radio-badges .streamery-forms-custom-option-input:focus {
+	border-bottom-color: var(--field-accent, #0289d9);
+}

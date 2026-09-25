@@ -1,5 +1,5 @@
 import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { PanelBody, SelectControl, TextControl, ToggleControl } from '@wordpress/components';
 import { __ } from '@/lib/i18n';
 import { FieldControls } from '../../components/block-atoms/FieldControls';
 import { ConditionalLogicControls } from '../../components/block-atoms/ConditionalLogicControls';
@@ -39,6 +39,7 @@ export const RadioInspectorControls = ({
 						onSyncLabelValueChange={() => {}}
 						presets={[]}
 						showDescription
+						showImage
 					/>
 					<SelectControl
 						label={__('style', 'Stil')}
@@ -55,6 +56,29 @@ export const RadioInspectorControls = ({
 							setAttributes({ layout })
 						}
 					/>
+					<ToggleControl
+						label={__('allowCustomOption', 'Allow custom option')}
+						help={__('allowCustomOptionHelp', 'Adds a last option with a text field for the visitor\'s own answer.')}
+						checked={attributes.allowCustomOption || false}
+						onChange={(allowCustomOption) =>
+							setAttributes({
+								allowCustomOption,
+								...(allowCustomOption && !attributes.customOptionLabel && {
+									customOptionLabel: __('customOptionDefault', 'Other…'),
+								}),
+							})
+						}
+						__nextHasNoMarginBottom={true}
+					/>
+					{attributes.allowCustomOption && (
+						<TextControl
+							label={__('customOptionPlaceholder', 'Custom option placeholder')}
+							value={attributes.customOptionLabel || ''}
+							onChange={(customOptionLabel) => setAttributes({ customOptionLabel })}
+							__next40pxDefaultSize={true}
+							__nextHasNoMarginBottom={true}
+						/>
+					)}
 				</PanelBody>
 			</InspectorControls>
 			{clientId && (
