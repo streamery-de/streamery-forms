@@ -18,6 +18,7 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 		styleVariant = 'default',
 		layout = 'vertical',
 		imagePosition = 'top-left',
+		inlineImagePosition = 'before',
 		allowCustomOption = false,
 		customOptionLabel = '',
 	} = props.attributes;
@@ -26,7 +27,8 @@ export default function save(props: BlockSaveProps<CheckboxAttributes>) {
 		'streamery-forms-field--checkbox',
 		`streamery-forms-field--checkbox-${styleVariant}`,
 		`streamery-forms-field--layout-${layout}`,
-		imagePosition === 'center' && styleVariant === 'cards' && 'streamery-forms-field--image-center'
+		imagePosition === 'center' && styleVariant === 'cards' && 'streamery-forms-field--image-center',
+		inlineImagePosition === 'after' && styleVariant !== 'cards' && 'streamery-forms-field--image-after'
 	);
 
 	const defaultValues = defaultValue

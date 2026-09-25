@@ -50,7 +50,7 @@ export const CheckboxInspectorControls = ({
 							setAttributes({ styleVariant })
 						}
 					/>
-					{attributes.styleVariant === 'cards' && (
+					{attributes.styleVariant === 'cards' ? (
 						<SelectControl
 							label={__('imagePosition', 'Image position')}
 							value={attributes.imagePosition || 'top-left'}
@@ -60,6 +60,22 @@ export const CheckboxInspectorControls = ({
 							]}
 							onChange={(imagePosition: string) =>
 								setAttributes({ imagePosition: imagePosition as CheckboxAttributes['imagePosition'] })
+							}
+							__next40pxDefaultSize={true}
+							__nextHasNoMarginBottom={true}
+						/>
+					) : (
+						<SelectControl
+							label={__('imagePosition', 'Image position')}
+							value={attributes.inlineImagePosition || 'before'}
+							options={[
+								{ value: 'before', label: __('imagePositionBefore', 'Before the text') },
+								{ value: 'after', label: __('imagePositionAfter', 'After the text') },
+							]}
+							onChange={(inlineImagePosition: string) =>
+								setAttributes({
+									inlineImagePosition: inlineImagePosition as CheckboxAttributes['inlineImagePosition'],
+								})
 							}
 							__next40pxDefaultSize={true}
 							__nextHasNoMarginBottom={true}

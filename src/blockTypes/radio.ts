@@ -11,6 +11,8 @@ export type RadioAttributes = GlobalFieldAttributes & {
 	}>;
 	styleVariant: 'default' | 'toggle' | 'badges' | 'cards';
 	layout: 'horizontal' | 'vertical';
+	/** Every style but cards: option image before or after the text. */
+	inlineImagePosition?: 'before' | 'after';
 	/** Cards style: option image top left, or centered without the check indicator. */
 	imagePosition?: 'top-left' | 'center';
 	/** Append an option whose value the visitor types in. */

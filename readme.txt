@@ -5,7 +5,7 @@ Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,11 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Changelog ==
 
+= 1.0.7 =
+* New: The Field Value block can show the value in bold, independent of the text before and after it.
+* New: "Image position" for checkbox and radio options in every style but cards: before or after the text.
+* An option's description now sits under its label when the option has an image.
+
 = 1.0.6 =
 * New: "Field Value" block shows the current value of a form field live, e.g. in a heading, a summary column or the success screen. Supports typography, colors and spacing like the Site Title block.
 * New: Steps can be nested anywhere inside a form, e.g. in one column next to a live summary.
@@ -189,6 +194,9 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.7 =
+Bold value option for the Field Value block and image position before/after the text for checkbox and radio options.
 
 = 1.0.6 =
 New Field Value block, nested steps, and conditional logic based on radio and checkbox fields works correctly.

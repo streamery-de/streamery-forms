@@ -37,6 +37,7 @@
 			"type": "string",
 			"default": "vertical"
 		},
+		"inlineImagePosition": { "type": "string", "default": "before" },
 		"imagePosition": { "type": "string", "default": "top-left" },
 		"allowCustomOption": { "type": "boolean", "default": false },
 		"customOptionLabel": { "type": "string", "default": "" },
