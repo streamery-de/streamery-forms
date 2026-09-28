@@ -20,6 +20,10 @@ const sidebarNavItems = [
     href: "#/settings/labels",
   },
   {
+    title: "CAPTCHA",
+    href: "#/settings/captcha",
+  },
+  {
     title: "SMTP",
     href: "#/settings/smtp",
   },

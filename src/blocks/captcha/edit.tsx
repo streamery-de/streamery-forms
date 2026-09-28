@@ -5,7 +5,7 @@ import './editor.css';
 import { useUniqueID } from '../../lib/use-unique-id';
 import { useNameFromLabel } from '../../lib/use-name-from-label';
 import { FieldWrapper } from '../../components/block-atoms/FieldWrapper';
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { Notice, PanelBody } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 
 export default function Edit(props: BlockEditProps<CaptchaAttributes>) {
@@ -22,20 +22,30 @@ export default function Edit(props: BlockEditProps<CaptchaAttributes>) {
 		attributes.useCustomName || false
 	);
 
+	// The provider is a site-wide setting (Settings → CAPTCHA). The block's
+	// captchaType attribute is kept for existing content, but the frontend
+	// always renders the active provider.
+	const captchaConfig = (window as any).streamery_forms?.captcha || {};
+	const activeProvider = captchaConfig?.recaptcha?.enabled
+		? 'Google reCAPTCHA v3'
+		: captchaConfig?.friendlycaptcha?.enabled
+			? 'Friendly Captcha'
+			: '';
+
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody title={__('captchaSettings', 'CAPTCHA Settings')}>
-					<SelectControl
-						label={__('captchaType', 'CAPTCHA Type')}
-						value={attributes.captchaType}
-						options={[
-							{ label: 'FriendlyCaptcha', value: 'friendlycaptcha' },
-							{ label: 'Google reCAPTCHA', value: 'recaptcha' },
-						]}
-						onChange={(value) => setAttributes({ captchaType: value as 'friendlycaptcha' | 'recaptcha' })}
-						help={__('captchaKeysHint', 'Site key and secret are configured once under Streamery Forms → Settings, not per block.')}
-					/>
+					{activeProvider ? (
+						<p>{__('captchaActiveProvider', 'Active provider:')} <strong>{activeProvider}</strong></p>
+					) : (
+						<Notice status="warning" isDismissible={false}>
+							{__('captchaNoProvider', 'No CAPTCHA provider is active. Set one up under Streamery Forms → Settings → CAPTCHA.')}
+						</Notice>
+					)}
+					<p className="components-base-control__help">
+						{__('captchaKeysHint', 'Site key and secret are configured once under Streamery Forms → Settings → CAPTCHA, not per block.')}
+					</p>
 				</PanelBody>
 			</InspectorControls>
 			<FieldWrapper
@@ -46,7 +56,7 @@ export default function Edit(props: BlockEditProps<CaptchaAttributes>) {
 				attributes={attributes}
 			>
 				<div className="streamery-forms-captcha-placeholder" style={{ padding: '20px', border: '2px dashed #ccc', textAlign: 'center' }}>
-					{attributes.captchaType === 'friendlycaptcha' ? '🔒 FriendlyCaptcha' : '🛡️ Google reCAPTCHA'}
+					{activeProvider ? `🛡️ ${activeProvider}` : `⚠️ ${__('captchaNoProviderShort', 'No CAPTCHA provider active')}`}
 					<p style={{ fontSize: '12px', color: '#666', marginTop: '8px' }}>
 						{__('captchaEditorPlaceholder', 'CAPTCHA will be displayed here on the frontend')}
 					</p>
@@ -55,4 +65,3 @@ export default function Edit(props: BlockEditProps<CaptchaAttributes>) {
 		</>
 	);
 }
-

@@ -5,7 +5,7 @@ Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.11
+Stable tag: 1.0.12
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,12 +57,12 @@ All of these are enforced on the server. A submission cannot bypass them by talk
 
 Streamery Forms does not contact any external service on its own. The following are optional and only ever active once **you** configure them.
 
-**Google reCAPTCHA** — only when you enable reCAPTCHA and enter your keys under Streamery Forms → Settings. When enabled, the reCAPTCHA script is loaded from Google on pages containing a form, and the visitor's CAPTCHA response token plus their IP address are sent to Google for verification on submit.
+**Google reCAPTCHA** — only when you enable reCAPTCHA and enter your keys under Streamery Forms → Settings → CAPTCHA. When enabled, the reCAPTCHA script is loaded from Google on pages containing a form, and the visitor's CAPTCHA response token plus their IP address are sent to Google for verification on submit.
 Service: https://www.google.com/recaptcha/
 Terms: https://policies.google.com/terms
 Privacy policy: https://policies.google.com/privacy
 
-**FriendlyCaptcha** — only when you enable FriendlyCaptcha and enter your keys. The widget itself is bundled with the plugin and is not loaded from a third party. On submit, the visitor's CAPTCHA solution is sent to the FriendlyCaptcha API for verification.
+**FriendlyCaptcha** — only when you enable FriendlyCaptcha and enter your keys under Streamery Forms → Settings → CAPTCHA. The widget script is bundled with the plugin, not loaded from a third party. On pages with a CAPTCHA block it requests a puzzle from the FriendlyCaptcha API, and on submit the visitor's solution is sent to the FriendlyCaptcha API for verification.
 Service: https://friendlycaptcha.com/
 Terms: https://friendlycaptcha.com/legal/terms/
 Privacy policy: https://friendlycaptcha.com/legal/privacy/
@@ -161,6 +161,13 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Changelog ==
 
+= 1.0.12 =
+* New: CAPTCHA tab under Settings to enter the site key and secret for Friendly Captcha or Google reCAPTCHA v3. Only one provider can be active.
+* Fix: CAPTCHA secrets were sent to the provider still encrypted, so every CAPTCHA check would have failed.
+* Fix: With a CAPTCHA provider active, forms without a CAPTCHA block were rejected. Only forms with a CAPTCHA block are verified now.
+* Fix: The reCAPTCHA token is refreshed every 90 seconds. It used to expire two minutes after the page loaded.
+* The CAPTCHA block always uses the active provider and shows in the editor which one that is.
+
 = 1.0.11 =
 * Fix: The inbox and notification emails no longer show the internal `_primary_mail_field` entry.
 * Fix: Checkbox fields are labelled "Checkboxes" instead of "Checkboxes[]" in the inbox and emails.
@@ -218,6 +225,9 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.12 =
+CAPTCHA keys can now be set under Settings → CAPTCHA. Fixes CAPTCHA verification.
 
 = 1.0.11 =
 Cleaner inbox and notification emails: internal fields are hidden and checkbox labels are fixed.

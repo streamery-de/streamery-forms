@@ -197,16 +197,18 @@ class SpamProtection
 
 		$settings = get_option('streamery_forms_captcha_settings', array());
 
+		// Secrets are stored encrypted (Settings\Actions::save_captcha_settings),
+		// so they are decrypted right before being sent to the provider.
 		$recaptcha = $settings['recaptcha'] ?? array();
 		if (! empty($recaptcha['enabled']) && ! empty($recaptcha['secret_key'])) {
 			$token = $submission_data['g-recaptcha-response'] ?? '';
-			return $this->verify_recaptcha((string) $token, (string) $recaptcha['secret_key']);
+			return $this->verify_recaptcha((string) $token, Crypto::decrypt((string) $recaptcha['secret_key']));
 		}
 
 		$friendly = $settings['friendlycaptcha'] ?? array();
 		if (! empty($friendly['enabled']) && ! empty($friendly['secret_key'])) {
 			$token = $submission_data['frc-captcha-response'] ?? '';
-			return $this->verify_friendlycaptcha((string) $token, (string) $friendly['secret_key']);
+			return $this->verify_friendlycaptcha((string) $token, Crypto::decrypt((string) $friendly['secret_key']));
 		}
 
 		return true;
