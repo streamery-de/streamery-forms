@@ -2338,6 +2338,12 @@ msgstr "Diagramme"
 msgid "Manage Options"
 msgstr "Optionen verwalten"
 
+#. translators: %d: number of options in a choice field
+#: includes/Assets/Strings.php:629
+#, php-format
+msgid "%d options"
+msgstr "%d Optionen"
+
 #: includes/Assets/Strings.php:628
 msgid "Sync label and value"
 msgstr "Label und Wert synchronisieren"

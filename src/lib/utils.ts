@@ -22,3 +22,16 @@ export const getFieldClasses = (attributes: any) => {
     attributes.range === true && 'streamery-forms-field--range'
   )
 }
+
+/**
+ * Submission data minus internal metadata. Keys starting with "_" (e.g.
+ * _primary_mail_field) are bookkeeping written by the frontend, not fields.
+ */
+export const visibleEntryFields = (data: Record<string, unknown> | null | undefined) =>
+  Object.entries(data || {}).filter(([key]) => !key.startsWith('_'))
+
+/** Field label for display: "checkboxes[]" -> "Checkboxes". */
+export const formatFieldLabel = (key: string) => {
+  const name = key.replace(/\[\]$/, '')
+  return name.charAt(0).toUpperCase() + name.slice(1)
+}

@@ -625,6 +625,8 @@ class Strings
 
 			// Options Modal
 			'manageOptions' => __('Manage Options', 'streamery-forms'),
+			/* translators: %d: number of options in a choice field */
+			'optionsCount' => __('%d options', 'streamery-forms'),
 			'syncLabelAndValue' => __('Sync label and value', 'streamery-forms'),
 			'addBulkOptions' => __('Add Bulk Options', 'streamery-forms'),
 			'bulkOptionsPlaceholder' => __('Enter options separated by commas. Use format: Label or Label:value', 'streamery-forms'),

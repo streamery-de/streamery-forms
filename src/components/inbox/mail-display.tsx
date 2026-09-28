@@ -39,6 +39,7 @@ import {
 } from "@/components/ui/tooltip"
 import { EntryLabel, useEntryLabels, useUpdateEntry, Entry } from "@/hooks"
 import { __ } from "@/lib/i18n"
+import { formatFieldLabel, visibleEntryFields } from "@/lib/utils"
 import { useProviderByType } from "@/hooks/useProviders"
 import { useEffect, useMemo, ReactNode } from "react"
 import {
@@ -112,7 +113,7 @@ function AllFieldsTable({ data }: { data: Record<string, any> }) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {Object.entries(data).map(([key, value]) => {
+        {visibleEntryFields(data).map(([key, value]) => {
           // Format value
           let formattedValue: React.ReactNode;
           
@@ -166,7 +167,7 @@ function AllFieldsTable({ data }: { data: Record<string, any> }) {
           return (
             <TableRow key={key}>
               <TableCell className="font-semibold align-top">
-                {key.charAt(0).toUpperCase() + key.slice(1)}
+                {formatFieldLabel(key)}
               </TableCell>
               <TableCell>{formattedValue}</TableCell>
             </TableRow>

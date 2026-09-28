@@ -46,7 +46,7 @@ export const OptionsRepeater = ({
 			<PanelRow>
 				<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
 					<span style={{ fontSize: '13px', color: '#646970' }}>
-						{options.length} {__('Optionen')}
+						{__('optionsCount').replace('%d', String(options.length))}
 					</span>
 					<Button
 						onClick={() => setIsModalOpen(true)}
