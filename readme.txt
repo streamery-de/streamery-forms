@@ -5,7 +5,7 @@ Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.10
+Stable tag: 1.0.11
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -161,6 +161,12 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Changelog ==
 
+= 1.0.11 =
+* Fix: The inbox and notification emails no longer show the internal `_primary_mail_field` entry.
+* Fix: Checkbox fields are labelled "Checkboxes" instead of "Checkboxes[]" in the inbox and emails.
+* Fix: The options count in the field sidebar was always in German. It is now translatable.
+* Screenshots added for the WordPress.org plugin page.
+
 = 1.0.10 =
 * Fix: Default values now show in the frontend for input, textarea, radio, checkbox and date/time fields. They were written in a form browsers ignore.
 * Fix: Leftover defaults from the old placeholder copy (e.g. a lone "M") are removed when a form is opened in the editor, so they don't suddenly appear as field values.
@@ -212,6 +218,9 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.11 =
+Cleaner inbox and notification emails: internal fields are hidden and checkbox labels are fixed.
 
 = 1.0.10 =
 Default values now reach the frontend. Open and update pages with forms once so their fields are saved in the new format.
