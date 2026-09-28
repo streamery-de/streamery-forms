@@ -326,6 +326,10 @@ abstract class AbstractProvider
 
         $rows = '';
         foreach ($submission_data as $key => $value) {
+            if (0 === strpos((string) $key, '_')) {
+                continue; // internal metadata (e.g. _primary_mail_field)
+            }
+
             // Format value
             if (is_array($value)) {
                 // Check if this is a file array (has 'url' key in first element)
@@ -344,7 +348,7 @@ abstract class AbstractProvider
                 $formatted_value = esc_html((string) $value);
             }
 
-            $rows .= '<tr style="border-bottom:1px solid #eee;"><td style="padding: 5px 10px; font-weight:bold; text-align:left;">' . esc_html($key) . '</td><td style="padding: 5px 10px;">' . $formatted_value . '</td></tr>';
+            $rows .= '<tr style="border-bottom:1px solid #eee;"><td style="padding: 5px 10px; font-weight:bold; text-align:left;">' . esc_html(preg_replace('/\[\]$/', '', (string) $key)) . '</td><td style="padding: 5px 10px;">' . $formatted_value . '</td></tr>';
         }
 
         $table = '<table style="border-collapse:collapse;width:100%;background:#fafbfc;border:1px solid #eaeaea;font-family:sans-serif;font-size:14px;margin:10px 0 15px 0;">';

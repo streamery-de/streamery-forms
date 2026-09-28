@@ -5,7 +5,7 @@ Tags: forms, contact form, form builder, block editor, webhook
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.10
+Stable tag: 1.0.11
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -149,13 +149,23 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Screenshots ==
 
-1. Building a form in the block editor with field blocks
-2. The Form Settings dialog — storage, providers, spam protection, privacy
-3. The inbox with folders, labels, and submission details
-4. Provider configuration, including the webhook feed
-5. A published form on the front end
+1. A multi-step form in the block editor, with a progress bar and step navigation
+2. Starter templates: begin with a ready-made form or an empty one
+3. All field blocks in the block inserter
+4. Field settings in the block sidebar
+5. The inbox with folders, labels and submission details
+6. Overview of all forms on the site
+7. General plugin settings
+8. Provider configuration
+9. The email template editor with live preview
 
 == Changelog ==
+
+= 1.0.11 =
+* Fix: The inbox and notification emails no longer show the internal `_primary_mail_field` entry.
+* Fix: Checkbox fields are labelled "Checkboxes" instead of "Checkboxes[]" in the inbox and emails.
+* Fix: The options count in the field sidebar was always in German. It is now translatable.
+* Screenshots added for the WordPress.org plugin page.
 
 = 1.0.10 =
 * Fix: Default values now show in the frontend for input, textarea, radio, checkbox and date/time fields. They were written in a form browsers ignore.
@@ -208,6 +218,9 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.11 =
+Cleaner inbox and notification emails: internal fields are hidden and checkbox labels are fixed.
 
 = 1.0.10 =
 Default values now reach the frontend. Open and update pages with forms once so their fields are saved in the new format.

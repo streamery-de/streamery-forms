@@ -8,6 +8,7 @@ import { NavLink } from "@/components/inbox/nav";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { __ } from "@/lib/i18n";
+import { formatFieldLabel, visibleEntryFields } from "@/lib/utils";
 import { toast } from "sonner"
 import { useInboxFolders } from "./use-inbox-folders"
 
@@ -99,8 +100,8 @@ export default function MailPage() {
     if (typeof data !== 'object') {
       return data?.toString() || __('noData');
     }
-    return Object.entries(data || {}).map(([key, value]) => {
-      return `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`;
+    return visibleEntryFields(data).map(([key, value]) => {
+      return `${formatFieldLabel(key)}: ${value}`;
     }).join('\n') || __('noData');
   }
 
