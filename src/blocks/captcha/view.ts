@@ -15,16 +15,18 @@ window.addEventListener('DOMContentLoaded', () => {
 	const captchaBlocks = document.querySelectorAll('.wp-block-streamery-forms-captcha');
 	const config: StreameryFormsCaptchaConfig = (window as any).streamery_forms?.captcha || {};
 
+	// The provider is a site-wide setting and only one can be active, so the
+	// block's data-captcha-type (from older content) is not consulted: a block
+	// saved as "friendlycaptcha" must still work when reCAPTCHA is active.
 	captchaBlocks.forEach((block) => {
-		const captchaType = block.getAttribute('data-captcha-type');
 		const container = block.querySelector('.streamery-forms-captcha-container') as HTMLElement;
 
 		if (!container) return;
 
-		if (captchaType === 'friendlycaptcha' && config.friendlycaptcha?.enabled && config.friendlycaptcha.siteKey) {
-			initFriendlyCaptcha(container, config.friendlycaptcha.siteKey);
-		} else if (captchaType === 'recaptcha' && config.recaptcha?.enabled && config.recaptcha.siteKey) {
+		if (config.recaptcha?.enabled && config.recaptcha.siteKey) {
 			initRecaptcha(container, config.recaptcha.siteKey);
+		} else if (config.friendlycaptcha?.enabled && config.friendlycaptcha.siteKey) {
+			initFriendlyCaptcha(container, config.friendlycaptcha.siteKey);
 		}
 	});
 });
@@ -57,13 +59,22 @@ function initRecaptcha(container: HTMLElement, siteKey: string) {
 	const grecaptcha = (window as any).grecaptcha;
 	if (!grecaptcha) return;
 
-	grecaptcha.ready(() => {
+	const input = document.createElement('input');
+	input.type = 'hidden';
+	input.name = 'g-recaptcha-response';
+	container.appendChild(input);
+
+	// A v3 token is valid for two minutes and can be verified only once, so a
+	// token fetched at page load fails for anyone who takes longer to fill in
+	// the form or submits twice. Refresh it well inside that window.
+	const refresh = () => {
 		grecaptcha.execute(siteKey, { action: 'submit' }).then((token: string) => {
-			const input = document.createElement('input');
-			input.type = 'hidden';
-			input.name = 'g-recaptcha-response';
 			input.value = token;
-			container.appendChild(input);
 		});
+	};
+
+	grecaptcha.ready(() => {
+		refresh();
+		window.setInterval(refresh, 90 * 1000);
 	});
 }

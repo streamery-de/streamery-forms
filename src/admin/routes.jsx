@@ -10,6 +10,7 @@ import MailboxesPage from "./pages/settings/mailboxes";
 import ProvidersPage from "./pages/settings/providers";
 import LabelsPage from "./pages/settings/labels";
 import SmtpPage from "./pages/settings/smtp";
+import CaptchaPage from "./pages/settings/captcha";
 import WelcomePage from "./pages/welcome";
 import FormsUsagePage from "./pages/forms-usage";
 
@@ -56,6 +57,10 @@ export const router = createHashRouter([
           {
             path: "smtp",
             element: <SmtpPage />,
+          },
+          {
+            path: "captcha",
+            element: <CaptchaPage />,
           },
         ],
       },

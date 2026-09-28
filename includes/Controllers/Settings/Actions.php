@@ -498,6 +498,12 @@ class Actions
 			);
 		}
 
+		// Only one provider can be active: the frontend renders one widget and
+		// verify_captcha() checks one token. reCAPTCHA wins, as it does there.
+		if ($settings['recaptcha']['enabled'] && $settings['friendlycaptcha']['enabled']) {
+			$settings['friendlycaptcha']['enabled'] = false;
+		}
+
 		update_option('streamery_forms_captcha_settings', $settings, false);
 
 		return array(

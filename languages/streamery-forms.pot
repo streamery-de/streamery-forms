@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Streamery Forms 1.0.10\n"
+"Project-Id-Version: Streamery Forms 1.0.11\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/streamery-forms\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-28T07:21:40+00:00\n"
+"POT-Creation-Date: 2026-09-28T08:13:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: streamery-forms\n"
@@ -137,7 +137,7 @@ msgid "An error occurred"
 msgstr ""
 
 #: includes/Assets/Strings.php:31
-#: includes/Assets/Strings.php:801
+#: includes/Assets/Strings.php:823
 msgid "Save"
 msgstr ""
 
@@ -152,7 +152,7 @@ msgid "Delete"
 msgstr ""
 
 #: includes/Assets/Strings.php:34
-#: includes/Assets/Strings.php:802
+#: includes/Assets/Strings.php:824
 msgid "Edit"
 msgstr ""
 
@@ -1403,7 +1403,7 @@ msgstr ""
 
 #: includes/Assets/Strings.php:384
 #: includes/Assets/Strings.php:490
-#: includes/Assets/Strings.php:757
+#: includes/Assets/Strings.php:779
 msgid "Date"
 msgstr ""
 
@@ -1445,7 +1445,7 @@ msgid "Max"
 msgstr ""
 
 #: includes/Assets/Strings.php:395
-#: includes/Assets/Strings.php:834
+#: includes/Assets/Strings.php:856
 msgid "Step"
 msgstr ""
 
@@ -1542,7 +1542,7 @@ msgid "Choose a template to get started. You can adjust the fields afterwards."
 msgstr ""
 
 #: includes/Assets/Strings.php:421
-#: includes/Assets/Strings.php:797
+#: includes/Assets/Strings.php:819
 msgid "Blank"
 msgstr ""
 
@@ -1876,7 +1876,7 @@ msgid "Support"
 msgstr ""
 
 #: includes/Assets/Strings.php:507
-#: includes/Assets/Strings.php:813
+#: includes/Assets/Strings.php:835
 msgid "Other"
 msgstr ""
 
@@ -2424,7 +2424,7 @@ msgid "View file"
 msgstr ""
 
 #: includes/Assets/Strings.php:675
-#: includes/Assets/Strings.php:738
+#: includes/Assets/Strings.php:760
 msgid "SMTP Settings"
 msgstr ""
 
@@ -2437,7 +2437,7 @@ msgid "To configure SMTP and send form submission emails reliably, please activa
 msgstr ""
 
 #: includes/Assets/Strings.php:678
-#: includes/Assets/Strings.php:682
+#: includes/Assets/Strings.php:704
 msgid "WP Mail SMTP plugin"
 msgstr ""
 
@@ -2449,598 +2449,678 @@ msgstr ""
 msgid "WP Mail Logging plugin"
 msgstr ""
 
-#: includes/Assets/Strings.php:681
-msgid "For advanced SMTP features like email logging, conditional routing, and multiple providers, consider using the"
-msgstr ""
-
 #: includes/Assets/Strings.php:683
-msgid "SMTP Configuration"
+msgid "CAPTCHA Settings"
 msgstr ""
 
 #: includes/Assets/Strings.php:684
-msgid "Configure your SMTP server settings to send emails reliably."
+msgid "Site-wide keys for the CAPTCHA block. Every form with a CAPTCHA block uses the active provider."
 msgstr ""
 
 #: includes/Assets/Strings.php:685
-msgid "Enable SMTP"
+msgid "Active provider"
 msgstr ""
 
 #: includes/Assets/Strings.php:686
-msgid "Enable SMTP to send emails through a custom SMTP server."
+msgid "None (CAPTCHA off)"
 msgstr ""
 
 #: includes/Assets/Strings.php:687
-msgid "SMTP Host"
+msgid "Friendly Captcha"
 msgstr ""
 
 #: includes/Assets/Strings.php:688
-msgid "SMTP host is required"
+msgid "Google reCAPTCHA v3"
 msgstr ""
 
 #: includes/Assets/Strings.php:689
-msgid "The SMTP server hostname (e.g., smtp.gmail.com)."
+msgid "Only one provider can be active. Keys of the other provider are kept."
 msgstr ""
 
 #: includes/Assets/Strings.php:690
-msgid "SMTP Port"
+msgid "Site key"
 msgstr ""
 
 #: includes/Assets/Strings.php:691
-msgid "SMTP port is required"
+msgid "Secret key"
 msgstr ""
 
 #: includes/Assets/Strings.php:692
-msgid "The SMTP server port (usually 587 for TLS, 465 for SSL)."
+msgid "Stored encrypted and never shown again. Leave unchanged to keep the saved key."
 msgstr ""
 
 #: includes/Assets/Strings.php:693
-msgid "Encryption"
+msgid "Get your keys"
 msgstr ""
 
 #: includes/Assets/Strings.php:694
-msgid "Choose the encryption method for your SMTP connection."
+msgid "reCAPTCHA loads a script from Google and sends visitor data to Google. Mention this in your privacy policy."
 msgstr ""
 
 #: includes/Assets/Strings.php:695
-msgid "Select encryption"
+msgid "The Friendly Captcha widget ships with the plugin. It fetches puzzles from the Friendly Captcha API, which also verifies each submission."
 msgstr ""
 
 #: includes/Assets/Strings.php:696
-msgid "SMTP Authentication"
+msgid "Enter both the site key and the secret key."
 msgstr ""
 
 #: includes/Assets/Strings.php:697
-msgid "Enable if your SMTP server requires authentication."
+msgid "Active provider:"
 msgstr ""
 
 #: includes/Assets/Strings.php:698
-msgid "SMTP Username"
+msgid "No CAPTCHA provider is active. Set one up under Streamery Forms → Settings → CAPTCHA."
 msgstr ""
 
 #: includes/Assets/Strings.php:699
-msgid "SMTP username is required when authentication is enabled"
+msgid "No CAPTCHA provider active"
 msgstr ""
 
 #: includes/Assets/Strings.php:700
-msgid "Your SMTP username (usually your email address)."
+msgid "Site key and secret are configured once under Streamery Forms → Settings → CAPTCHA, not per block."
 msgstr ""
 
 #: includes/Assets/Strings.php:701
-msgid "SMTP Password"
+msgid "CAPTCHA will be displayed here on the frontend"
 msgstr ""
 
 #: includes/Assets/Strings.php:702
-msgid "Leave blank to keep current password"
+msgid "Add a CAPTCHA block to each form that should be protected. It can be switched off per form under Form Settings → Spam Protection."
 msgstr ""
 
 #: includes/Assets/Strings.php:703
-msgid "Your SMTP password. Leave blank to keep the current password."
-msgstr ""
-
-#: includes/Assets/Strings.php:704
-msgid "From Email Settings"
+msgid "For advanced SMTP features like email logging, conditional routing, and multiple providers, consider using the"
 msgstr ""
 
 #: includes/Assets/Strings.php:705
+msgid "SMTP Configuration"
+msgstr ""
+
+#: includes/Assets/Strings.php:706
+msgid "Configure your SMTP server settings to send emails reliably."
+msgstr ""
+
+#: includes/Assets/Strings.php:707
+msgid "Enable SMTP"
+msgstr ""
+
+#: includes/Assets/Strings.php:708
+msgid "Enable SMTP to send emails through a custom SMTP server."
+msgstr ""
+
+#: includes/Assets/Strings.php:709
+msgid "SMTP Host"
+msgstr ""
+
+#: includes/Assets/Strings.php:710
+msgid "SMTP host is required"
+msgstr ""
+
+#: includes/Assets/Strings.php:711
+msgid "The SMTP server hostname (e.g., smtp.gmail.com)."
+msgstr ""
+
+#: includes/Assets/Strings.php:712
+msgid "SMTP Port"
+msgstr ""
+
+#: includes/Assets/Strings.php:713
+msgid "SMTP port is required"
+msgstr ""
+
+#: includes/Assets/Strings.php:714
+msgid "The SMTP server port (usually 587 for TLS, 465 for SSL)."
+msgstr ""
+
+#: includes/Assets/Strings.php:715
+msgid "Encryption"
+msgstr ""
+
+#: includes/Assets/Strings.php:716
+msgid "Choose the encryption method for your SMTP connection."
+msgstr ""
+
+#: includes/Assets/Strings.php:717
+msgid "Select encryption"
+msgstr ""
+
+#: includes/Assets/Strings.php:718
+msgid "SMTP Authentication"
+msgstr ""
+
+#: includes/Assets/Strings.php:719
+msgid "Enable if your SMTP server requires authentication."
+msgstr ""
+
+#: includes/Assets/Strings.php:720
+msgid "SMTP Username"
+msgstr ""
+
+#: includes/Assets/Strings.php:721
+msgid "SMTP username is required when authentication is enabled"
+msgstr ""
+
+#: includes/Assets/Strings.php:722
+msgid "Your SMTP username (usually your email address)."
+msgstr ""
+
+#: includes/Assets/Strings.php:723
+msgid "SMTP Password"
+msgstr ""
+
+#: includes/Assets/Strings.php:724
+msgid "Leave blank to keep current password"
+msgstr ""
+
+#: includes/Assets/Strings.php:725
+msgid "Your SMTP password. Leave blank to keep the current password."
+msgstr ""
+
+#: includes/Assets/Strings.php:726
+msgid "From Email Settings"
+msgstr ""
+
+#: includes/Assets/Strings.php:727
 #: includes/Providers/Database.php:180
 #: includes/Providers/Email.php:251
 msgid "From Email"
 msgstr ""
 
-#: includes/Assets/Strings.php:706
+#: includes/Assets/Strings.php:728
 msgid "The email address that will appear as the sender."
 msgstr ""
 
-#: includes/Assets/Strings.php:707
+#: includes/Assets/Strings.php:729
 #: includes/Providers/Email.php:259
 msgid "From Name"
 msgstr ""
 
-#: includes/Assets/Strings.php:708
+#: includes/Assets/Strings.php:730
 msgid "Your Site Name"
 msgstr ""
 
-#: includes/Assets/Strings.php:709
+#: includes/Assets/Strings.php:731
 msgid "The name that will appear as the sender."
 msgstr ""
 
-#: includes/Assets/Strings.php:710
+#: includes/Assets/Strings.php:732
 msgid "Test Connection"
 msgstr ""
 
-#: includes/Assets/Strings.php:711
+#: includes/Assets/Strings.php:733
 msgid "Testing..."
 msgstr ""
 
-#: includes/Assets/Strings.php:712
+#: includes/Assets/Strings.php:734
 msgid "Saving..."
 msgstr ""
 
-#: includes/Assets/Strings.php:713
+#: includes/Assets/Strings.php:735
 msgid "SMTP settings have been saved successfully."
 msgstr ""
 
-#: includes/Assets/Strings.php:714
+#: includes/Assets/Strings.php:736
 msgid "Test Email Sent"
 msgstr ""
 
-#: includes/Assets/Strings.php:715
-#: includes/Assets/Strings.php:735
+#: includes/Assets/Strings.php:737
+#: includes/Assets/Strings.php:757
 msgid "Test Failed"
 msgstr ""
 
-#: includes/Assets/Strings.php:716
+#: includes/Assets/Strings.php:738
 msgid "Failed to send test email. Please check your SMTP settings."
 msgstr ""
 
-#: includes/Assets/Strings.php:717
+#: includes/Assets/Strings.php:739
 msgid "SMTP is not enabled. Please enable SMTP before testing."
 msgstr ""
 
-#: includes/Assets/Strings.php:718
+#: includes/Assets/Strings.php:740
 msgid "Invalid email address"
 msgstr ""
 
-#: includes/Assets/Strings.php:719
+#: includes/Assets/Strings.php:741
 msgid "Test SMTP Connection"
 msgstr ""
 
-#: includes/Assets/Strings.php:720
+#: includes/Assets/Strings.php:742
 msgid "Test your SMTP settings by sending a test email."
 msgstr ""
 
-#: includes/Assets/Strings.php:721
+#: includes/Assets/Strings.php:743
 msgid "Validating Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:722
+#: includes/Assets/Strings.php:744
 msgid "Configuring SMTP"
 msgstr ""
 
-#: includes/Assets/Strings.php:723
+#: includes/Assets/Strings.php:745
 msgid "Connecting to Server"
 msgstr ""
 
-#: includes/Assets/Strings.php:724
+#: includes/Assets/Strings.php:746
 msgid "Authenticating"
 msgstr ""
 
-#: includes/Assets/Strings.php:725
+#: includes/Assets/Strings.php:747
 msgid "Sending Test Email"
 msgstr ""
 
-#: includes/Assets/Strings.php:726
+#: includes/Assets/Strings.php:748
 msgid "Receiving Response"
 msgstr ""
 
-#: includes/Assets/Strings.php:727
+#: includes/Assets/Strings.php:749
 msgid "Settings are valid"
 msgstr ""
 
-#: includes/Assets/Strings.php:728
+#: includes/Assets/Strings.php:750
 msgid "Connected to server"
 msgstr ""
 
-#: includes/Assets/Strings.php:729
+#: includes/Assets/Strings.php:751
 msgid "Authentication successful"
 msgstr ""
 
-#: includes/Assets/Strings.php:730
+#: includes/Assets/Strings.php:752
 msgid "Authentication not required"
 msgstr ""
 
-#: includes/Assets/Strings.php:731
+#: includes/Assets/Strings.php:753
 msgid "Test email sent"
 msgstr ""
 
-#: includes/Assets/Strings.php:732
+#: includes/Assets/Strings.php:754
 msgid "Error received"
 msgstr ""
 
-#: includes/Assets/Strings.php:733
+#: includes/Assets/Strings.php:755
 msgid "Test Progress"
 msgstr ""
 
-#: includes/Assets/Strings.php:734
+#: includes/Assets/Strings.php:756
 msgid "Test Successful"
 msgstr ""
 
-#: includes/Assets/Strings.php:736
+#: includes/Assets/Strings.php:758
 msgid "Logs"
 msgstr ""
 
-#: includes/Assets/Strings.php:737
+#: includes/Assets/Strings.php:759
 msgid "Start Test"
 msgstr ""
 
-#: includes/Assets/Strings.php:739
-#: includes/Assets/Strings.php:756
+#: includes/Assets/Strings.php:761
+#: includes/Assets/Strings.php:778
 msgid "From"
 msgstr ""
 
-#: includes/Assets/Strings.php:740
+#: includes/Assets/Strings.php:762
 msgid "Error Details"
 msgstr ""
 
-#: includes/Assets/Strings.php:741
+#: includes/Assets/Strings.php:763
 msgid "Test Email Address"
 msgstr ""
 
-#: includes/Assets/Strings.php:742
+#: includes/Assets/Strings.php:764
 msgid "Enter email address to receive test email"
 msgstr ""
 
-#: includes/Assets/Strings.php:743
+#: includes/Assets/Strings.php:765
 msgid "The email address where the test email will be sent."
 msgstr ""
 
-#: includes/Assets/Strings.php:746
+#: includes/Assets/Strings.php:768
 msgid "Enable Email Logging"
 msgstr ""
 
-#: includes/Assets/Strings.php:747
+#: includes/Assets/Strings.php:769
 msgid "Log all emails sent through wp_mail() for debugging and auditing purposes."
 msgstr ""
 
-#: includes/Assets/Strings.php:748
+#: includes/Assets/Strings.php:770
 msgid "Email Logs"
 msgstr ""
 
-#: includes/Assets/Strings.php:749
+#: includes/Assets/Strings.php:771
 msgid "View and manage all logged emails."
 msgstr ""
 
-#: includes/Assets/Strings.php:750
+#: includes/Assets/Strings.php:772
 msgid "No email logs found."
 msgstr ""
 
-#: includes/Assets/Strings.php:751
+#: includes/Assets/Strings.php:773
 msgid "Email log deleted"
 msgstr ""
 
-#: includes/Assets/Strings.php:752
+#: includes/Assets/Strings.php:774
 msgid "The email log has been deleted successfully."
 msgstr ""
 
-#: includes/Assets/Strings.php:753
+#: includes/Assets/Strings.php:775
 msgid "Are you sure you want to delete all email logs?"
 msgstr ""
 
-#: includes/Assets/Strings.php:754
+#: includes/Assets/Strings.php:776
 msgid "All email logs deleted"
 msgstr ""
 
-#: includes/Assets/Strings.php:755
+#: includes/Assets/Strings.php:777
 msgid "All email logs have been deleted successfully."
 msgstr ""
 
-#: includes/Assets/Strings.php:758
+#: includes/Assets/Strings.php:780
 msgid "Showing"
 msgstr ""
 
-#: includes/Assets/Strings.php:759
+#: includes/Assets/Strings.php:781
 msgid "of"
 msgstr ""
 
-#: includes/Assets/Strings.php:760
+#: includes/Assets/Strings.php:782
 msgid "Previous"
 msgstr ""
 
-#: includes/Assets/Strings.php:761
+#: includes/Assets/Strings.php:783
 msgid "Next"
 msgstr ""
 
-#: includes/Assets/Strings.php:762
+#: includes/Assets/Strings.php:784
 msgid "Delete All"
 msgstr ""
 
-#: includes/Assets/Strings.php:765
+#: includes/Assets/Strings.php:787
 msgid "Email Template"
 msgstr ""
 
-#: includes/Assets/Strings.php:766
+#: includes/Assets/Strings.php:788
 msgid "Choose and customize an email template for your notifications."
 msgstr ""
 
-#: includes/Assets/Strings.php:767
+#: includes/Assets/Strings.php:789
 msgid "Select Template"
 msgstr ""
 
-#: includes/Assets/Strings.php:768
+#: includes/Assets/Strings.php:790
 msgid "Primary Color"
 msgstr ""
 
-#: includes/Assets/Strings.php:769
+#: includes/Assets/Strings.php:791
 msgid "Secondary Color"
 msgstr ""
 
-#: includes/Assets/Strings.php:770
+#: includes/Assets/Strings.php:792
 msgid "Font Family"
 msgstr ""
 
-#: includes/Assets/Strings.php:771
+#: includes/Assets/Strings.php:793
 msgid "Logo URL"
 msgstr ""
 
-#: includes/Assets/Strings.php:772
+#: includes/Assets/Strings.php:794
 msgid "URL to your logo image. Will be displayed in the email header."
 msgstr ""
 
-#: includes/Assets/Strings.php:773
+#: includes/Assets/Strings.php:795
 msgid "Select a template to preview"
 msgstr ""
 
-#: includes/Assets/Strings.php:774
+#: includes/Assets/Strings.php:796
 msgid "Apply Template"
 msgstr ""
 
-#: includes/Assets/Strings.php:775
+#: includes/Assets/Strings.php:797
 msgid "Show Preview"
 msgstr ""
 
-#: includes/Assets/Strings.php:776
+#: includes/Assets/Strings.php:798
 msgid "Hide Preview"
 msgstr ""
 
-#: includes/Assets/Strings.php:779
+#: includes/Assets/Strings.php:801
 msgid "Primary Mail"
 msgstr ""
 
-#: includes/Assets/Strings.php:780
+#: includes/Assets/Strings.php:802
 msgid "Mark this email field as the primary email address for form submissions. Only one field per form can be primary."
 msgstr ""
 
-#: includes/Assets/Strings.php:781
+#: includes/Assets/Strings.php:803
 msgid "Another email field is already set as primary mail. Unset it first or it will be automatically unset when you enable this one."
 msgstr ""
 
-#: includes/Assets/Strings.php:784
+#: includes/Assets/Strings.php:806
 msgid "Insert Placeholder"
 msgstr ""
 
-#: includes/Assets/Strings.php:785
+#: includes/Assets/Strings.php:807
 msgid "Use Placeholder"
 msgstr ""
 
-#: includes/Assets/Strings.php:786
+#: includes/Assets/Strings.php:808
 msgid "Select Placeholder"
 msgstr ""
 
-#: includes/Assets/Strings.php:789
+#: includes/Assets/Strings.php:811
 msgid "Custom"
 msgstr ""
 
-#: includes/Assets/Strings.php:790
+#: includes/Assets/Strings.php:812
 msgid "Select a template or use custom HTML."
 msgstr ""
 
-#: includes/Assets/Strings.php:791
+#: includes/Assets/Strings.php:813
 msgid "Failed to load template."
 msgstr ""
 
-#: includes/Assets/Strings.php:792
+#: includes/Assets/Strings.php:814
 msgid "Template Customization"
 msgstr ""
 
-#: includes/Assets/Strings.php:795
+#: includes/Assets/Strings.php:817
 msgid "Email Template Editor"
 msgstr ""
 
-#: includes/Assets/Strings.php:796
+#: includes/Assets/Strings.php:818
 msgid "Edit your email template HTML with live preview"
 msgstr ""
 
-#: includes/Assets/Strings.php:798
+#: includes/Assets/Strings.php:820
 msgid "Template Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:799
+#: includes/Assets/Strings.php:821
 msgid "HTML Editor"
 msgstr ""
 
-#: includes/Assets/Strings.php:800
+#: includes/Assets/Strings.php:822
 msgid "No preview available"
 msgstr ""
 
-#: includes/Assets/Strings.php:803
+#: includes/Assets/Strings.php:825
 msgid "Select from Media Library"
 msgstr ""
 
-#: includes/Assets/Strings.php:804
+#: includes/Assets/Strings.php:826
 msgid "Select Image"
 msgstr ""
 
-#: includes/Assets/Strings.php:805
+#: includes/Assets/Strings.php:827
 msgid "Use this image"
 msgstr ""
 
-#: includes/Assets/Strings.php:806
+#: includes/Assets/Strings.php:828
 msgid "Site Name"
 msgstr ""
 
-#: includes/Assets/Strings.php:807
+#: includes/Assets/Strings.php:829
 msgid "Available Placeholders"
 msgstr ""
 
-#: includes/Assets/Strings.php:808
+#: includes/Assets/Strings.php:830
 msgid "Drag and drop or click to insert placeholders"
 msgstr ""
 
-#: includes/Assets/Strings.php:809
+#: includes/Assets/Strings.php:831
 msgid "Search placeholders..."
 msgstr ""
 
-#: includes/Assets/Strings.php:810
+#: includes/Assets/Strings.php:832
 msgid "System"
 msgstr ""
 
-#: includes/Assets/Strings.php:811
+#: includes/Assets/Strings.php:833
 #: includes/Providers/Email.php:268
 msgid "Template"
 msgstr ""
 
-#: includes/Assets/Strings.php:812
+#: includes/Assets/Strings.php:834
 msgid "Form Fields"
 msgstr ""
 
-#: includes/Assets/Strings.php:816
+#: includes/Assets/Strings.php:838
 msgid "Missing Fields"
 msgstr ""
 
-#: includes/Assets/Strings.php:817
+#: includes/Assets/Strings.php:839
 msgid "The following fields are referenced in the provider but not present in the form:"
 msgstr ""
 
-#: includes/Assets/Strings.php:818
+#: includes/Assets/Strings.php:840
 msgid "Add Missing Fields"
 msgstr ""
 
-#: includes/Assets/Strings.php:821
+#: includes/Assets/Strings.php:843
 msgid "Admin Bar Menu"
 msgstr ""
 
-#: includes/Assets/Strings.php:822
+#: includes/Assets/Strings.php:844
 msgid "Show Streamery Forms in the WordPress admin bar with an unread entries count."
 msgstr ""
 
-#: includes/Assets/Strings.php:823
+#: includes/Assets/Strings.php:845
 msgid "Admin bar menu has been enabled."
 msgstr ""
 
-#: includes/Assets/Strings.php:824
+#: includes/Assets/Strings.php:846
 msgid "Admin bar menu has been disabled."
 msgstr ""
 
-#: includes/Assets/Strings.php:827
+#: includes/Assets/Strings.php:849
 msgid "Custom Fields"
 msgstr ""
 
-#: includes/Assets/Strings.php:828
+#: includes/Assets/Strings.php:850
 msgid "Add Custom Field"
 msgstr ""
 
-#: includes/Assets/Strings.php:829
+#: includes/Assets/Strings.php:851
 msgid "Field Label"
 msgstr ""
 
-#: includes/Assets/Strings.php:830
+#: includes/Assets/Strings.php:852
 msgid "Field Name"
 msgstr ""
 
-#: includes/Assets/Strings.php:831
+#: includes/Assets/Strings.php:853
 msgid "Drag to insert"
 msgstr ""
 
-#: includes/Assets/Strings.php:835
+#: includes/Assets/Strings.php:857
 msgid "Add Step"
 msgstr ""
 
-#: includes/Assets/Strings.php:836
+#: includes/Assets/Strings.php:858
 msgid "Delete Step"
 msgstr ""
 
-#: includes/Assets/Strings.php:837
+#: includes/Assets/Strings.php:859
 msgid "Move Left"
 msgstr ""
 
-#: includes/Assets/Strings.php:838
+#: includes/Assets/Strings.php:860
 msgid "Move Right"
 msgstr ""
 
-#: includes/Assets/Strings.php:839
+#: includes/Assets/Strings.php:861
 msgid "Step Navigation"
 msgstr ""
 
-#: includes/Assets/Strings.php:840
+#: includes/Assets/Strings.php:862
 msgid "Back"
 msgstr ""
 
-#: includes/Assets/Strings.php:841
+#: includes/Assets/Strings.php:863
 msgid "Submit"
 msgstr ""
 
-#: includes/Assets/Strings.php:842
+#: includes/Assets/Strings.php:864
 msgid "Save & Continue Later"
 msgstr ""
 
-#: includes/Assets/Strings.php:843
+#: includes/Assets/Strings.php:865
 msgid "Progress saved"
 msgstr ""
 
-#: includes/Assets/Strings.php:844
+#: includes/Assets/Strings.php:866
 msgid "Progress restored"
 msgstr ""
 
-#: includes/Assets/Strings.php:845
+#: includes/Assets/Strings.php:867
 msgid "Progress Settings"
 msgstr ""
 
-#: includes/Assets/Strings.php:846
+#: includes/Assets/Strings.php:868
 msgid "Display Variant"
 msgstr ""
 
-#: includes/Assets/Strings.php:847
+#: includes/Assets/Strings.php:869
 msgid "Progress Bar"
 msgstr ""
 
-#: includes/Assets/Strings.php:848
+#: includes/Assets/Strings.php:870
 msgid "Step Bubbles"
 msgstr ""
 
-#: includes/Assets/Strings.php:849
+#: includes/Assets/Strings.php:871
 msgid "Step Title"
 msgstr ""
 
-#: includes/Assets/Strings.php:852
+#: includes/Assets/Strings.php:874
 msgid "Support Streamery Forms"
 msgstr ""
 
-#: includes/Assets/Strings.php:853
+#: includes/Assets/Strings.php:875
 msgid "Streamery Forms is free, with no pro version and no locked features. If it saves you time, a coffee helps keep it maintained."
 msgstr ""
 
 #. translators: %d: submission milestone, e.g. 50.
-#: includes/Assets/Strings.php:855
+#: includes/Assets/Strings.php:877
 msgid "%d+ submissions collected"
 msgstr ""
 
-#: includes/Assets/Strings.php:856
+#: includes/Assets/Strings.php:878
 msgid "Glad Streamery Forms is working for you. If you like it, a coffee or a quick review helps a lot."
 msgstr ""
 
-#: includes/Assets/Strings.php:857
+#: includes/Assets/Strings.php:879
 msgid "Buy a coffee"
 msgstr ""
 
-#: includes/Assets/Strings.php:858
+#: includes/Assets/Strings.php:880
 msgid "Sponsor on GitHub"
 msgstr ""
 
-#: includes/Assets/Strings.php:859
+#: includes/Assets/Strings.php:881
 msgid "Leave a review"
 msgstr ""
 
-#: includes/Assets/Strings.php:860
+#: includes/Assets/Strings.php:882
 msgid "Don't show again"
 msgstr ""
 
@@ -3115,12 +3195,12 @@ msgstr ""
 #: includes/Controllers/Settings/Actions.php:76
 #: includes/Controllers/Settings/Actions.php:181
 #: includes/Controllers/Settings/Actions.php:464
-#: includes/Controllers/Settings/Actions.php:545
-#: includes/Controllers/Settings/Actions.php:622
-#: includes/Controllers/Settings/Actions.php:693
-#: includes/Controllers/Settings/Actions.php:734
-#: includes/Controllers/Settings/Actions.php:795
-#: includes/Controllers/Settings/Actions.php:857
+#: includes/Controllers/Settings/Actions.php:551
+#: includes/Controllers/Settings/Actions.php:628
+#: includes/Controllers/Settings/Actions.php:699
+#: includes/Controllers/Settings/Actions.php:740
+#: includes/Controllers/Settings/Actions.php:801
+#: includes/Controllers/Settings/Actions.php:863
 msgid "Security check failed."
 msgstr ""
 
@@ -3467,11 +3547,11 @@ msgid "You do not have permission to view SMTP settings."
 msgstr ""
 
 #: includes/Controllers/Settings/Actions.php:85
-#: includes/Controllers/Settings/Actions.php:631
-#: includes/Controllers/Settings/Actions.php:702
-#: includes/Controllers/Settings/Actions.php:743
-#: includes/Controllers/Settings/Actions.php:803
-#: includes/Controllers/Settings/Actions.php:866
+#: includes/Controllers/Settings/Actions.php:637
+#: includes/Controllers/Settings/Actions.php:708
+#: includes/Controllers/Settings/Actions.php:749
+#: includes/Controllers/Settings/Actions.php:809
+#: includes/Controllers/Settings/Actions.php:872
 msgid "You do not have permission to manage settings."
 msgstr ""
 
@@ -3555,66 +3635,66 @@ msgstr ""
 msgid "You do not have permission to manage CAPTCHA settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:505
+#: includes/Controllers/Settings/Actions.php:511
 msgid "CAPTCHA settings saved successfully."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:521
+#: includes/Controllers/Settings/Actions.php:527
 msgid "You do not have permission to view debug settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:554
+#: includes/Controllers/Settings/Actions.php:560
 msgid "You do not have permission to manage debug settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:572
+#: includes/Controllers/Settings/Actions.php:578
 msgid "Debug mode enabled."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:573
+#: includes/Controllers/Settings/Actions.php:579
 msgid "Debug mode disabled."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:580
+#: includes/Controllers/Settings/Actions.php:586
 msgid "Failed to update debug mode."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:596
-#: includes/Controllers/Settings/Actions.php:661
-#: includes/Controllers/Settings/Actions.php:769
-#: includes/Controllers/Settings/Actions.php:833
+#: includes/Controllers/Settings/Actions.php:602
+#: includes/Controllers/Settings/Actions.php:667
+#: includes/Controllers/Settings/Actions.php:775
+#: includes/Controllers/Settings/Actions.php:839
 msgid "You do not have permission to view settings."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:644
+#: includes/Controllers/Settings/Actions.php:650
 msgid "First steps skipped."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:645
+#: includes/Controllers/Settings/Actions.php:651
 msgid "First steps re-enabled."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:715
+#: includes/Controllers/Settings/Actions.php:721
 msgid "Charts are now visible."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:716
+#: includes/Controllers/Settings/Actions.php:722
 msgid "Charts are now hidden."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:816
+#: includes/Controllers/Settings/Actions.php:822
 msgid "All Streamery Forms data will be deleted when the plugin is deleted."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:817
+#: includes/Controllers/Settings/Actions.php:823
 msgid "Streamery Forms data will be kept when the plugin is deleted."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:879
+#: includes/Controllers/Settings/Actions.php:885
 msgid "Admin bar menu enabled."
 msgstr ""
 
-#: includes/Controllers/Settings/Actions.php:880
+#: includes/Controllers/Settings/Actions.php:886
 msgid "Admin bar menu disabled."
 msgstr ""
 
@@ -3630,19 +3710,19 @@ msgstr ""
 msgid "This form could not be found."
 msgstr ""
 
-#: includes/Controllers/Submissions/Actions.php:105
+#: includes/Controllers/Submissions/Actions.php:109
 msgid "CAPTCHA verification failed. Please try again."
 msgstr ""
 
-#: includes/Controllers/Submissions/Actions.php:126
+#: includes/Controllers/Submissions/Actions.php:130
 msgid "Please check the highlighted fields."
 msgstr ""
 
-#: includes/Controllers/Submissions/Actions.php:144
+#: includes/Controllers/Submissions/Actions.php:148
 msgid "Form submitted successfully."
 msgstr ""
 
-#: includes/Controllers/Submissions/Actions.php:150
+#: includes/Controllers/Submissions/Actions.php:154
 msgid "Form submission failed."
 msgstr ""
 

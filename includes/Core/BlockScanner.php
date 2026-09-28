@@ -56,6 +56,7 @@ class BlockScanner
 					'attrs'        => isset($block['attrs']) ? $block['attrs'] : array(),
 					'inner_blocks' => $inner,
 					'field_count'  => self::count_field_blocks($inner),
+					'has_captcha'  => self::contains_block($inner, 'streamery-forms/captcha'),
 				);
 			}
 
@@ -65,6 +66,28 @@ class BlockScanner
 		}
 
 		return $found;
+	}
+
+	/**
+	 * Whether a block of the given name appears anywhere in a block list.
+	 *
+	 * @param array  $blocks     Parsed blocks.
+	 * @param string $block_name Block name, e.g. streamery-forms/captcha.
+	 * @return bool
+	 */
+	public static function contains_block(array $blocks, string $block_name): bool
+	{
+		foreach ($blocks as $block) {
+			if (isset($block['blockName']) && $block_name === $block['blockName']) {
+				return true;
+			}
+
+			if (! empty($block['innerBlocks']) && self::contains_block($block['innerBlocks'], $block_name)) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**

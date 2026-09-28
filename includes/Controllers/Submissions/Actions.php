@@ -99,7 +99,11 @@ class Actions {
 			return $spam_error;
 		}
 
-		if ( ! $spam_protection->verify_captcha( $submission_data, $form_settings ) ) {
+		// Only forms with a CAPTCHA block render a widget and send a token.
+		// Rows indexed before the flag existed are refreshed by get_form_config().
+		$has_captcha_block = $form_config['config']['has_captcha_block'] ?? true;
+
+		if ( $has_captcha_block && ! $spam_protection->verify_captcha( $submission_data, $form_settings ) ) {
 			return new \WP_Error(
 				'captcha_failed',
 				__( 'CAPTCHA verification failed. Please try again.', 'streamery-forms' ),

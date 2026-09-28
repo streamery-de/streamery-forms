@@ -121,6 +121,9 @@ class FormRegistry
 				'provider_ids'       => $this->sanitize_provider_ids($attrs['providerIds'] ?? array()),
 				'provider_overrides' => $this->sanitize_provider_overrides($attrs['providerOverrides'] ?? array()),
 				'field_count'        => (int) $form['field_count'],
+				// Submissions are only CAPTCHA-verified when the form renders a
+				// widget; otherwise there is no token to send.
+				'has_captcha_block'  => (bool) $form['has_captcha'],
 				'settings'           => $this->sanitize_form_settings($attrs['formSettings'] ?? array()),
 			);
 
@@ -195,6 +198,10 @@ class FormRegistry
 
 		if (! $row) {
 			$row = $this->lazy_rebuild($form_identifier);
+		} elseif (is_array($row->config) && ! array_key_exists('has_captcha_block', $row->config)) {
+			// Indexed before 1.0.12: refresh once so the CAPTCHA check knows
+			// whether the form has a CAPTCHA block.
+			$row = $this->reindex_row($row, $form_identifier);
 		}
 
 		if (! $row) {
@@ -206,6 +213,30 @@ class FormRegistry
 			'config'  => is_array($row->config) ? $row->config : array(),
 			'fields'  => is_array($row->fields) ? $row->fields : array(),
 		);
+	}
+
+	/**
+	 * Re-indexes the post an existing row came from and returns the fresh row.
+	 * Falls back to the old row if the post is gone or indexing fails.
+	 *
+	 * @param Forms  $row             Existing index row.
+	 * @param string $form_identifier Form identifier.
+	 * @return Forms
+	 */
+	private function reindex_row($row, string $form_identifier)
+	{
+		$post = get_post((int) $row->post_id);
+		if (! $post instanceof \WP_Post) {
+			return $row;
+		}
+
+		$this->index_post($post);
+
+		try {
+			return Forms::where('form_identifier', $form_identifier)->first() ?: $row;
+		} catch (\Exception $e) {
+			return $row;
+		}
 	}
 
 	/**
