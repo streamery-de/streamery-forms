@@ -149,11 +149,15 @@ Yes. Provider classes are registered through the `streamery-forms/available_prov
 
 == Screenshots ==
 
-1. Building a form in the block editor with field blocks
-2. The Form Settings dialog — storage, providers, spam protection, privacy
-3. The inbox with folders, labels, and submission details
-4. Provider configuration, including the webhook feed
-5. A published form on the front end
+1. A multi-step form in the block editor, with a progress bar and step navigation
+2. Starter templates: begin with a ready-made form or an empty one
+3. All field blocks in the block inserter
+4. Field settings in the block sidebar
+5. The inbox with folders, labels and submission details
+6. Overview of all forms on the site
+7. General plugin settings
+8. Provider configuration
+9. The email template editor with live preview
 
 == Changelog ==
 
