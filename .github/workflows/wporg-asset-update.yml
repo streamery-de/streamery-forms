@@ -1,0 +1,33 @@
+name: Update WordPress.org assets
+
+# Pushes banners/icons/screenshots (.wordpress-org/) and readme.txt to the
+# WordPress.org SVN repository without cutting a release. The tag-based deploy
+# in build-release.yml only runs on v* tags, so asset-only changes merged to
+# main would otherwise wait for the next version.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.wordpress-org/**'
+      - 'readme.txt'
+      - '.github/workflows/wporg-asset-update.yml'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update assets and readme on WordPress.org
+        uses: 10up/action-wordpress-plugin-asset-update@stable
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: streamery-forms
+          ASSETS_DIR: .wordpress-org
+          # main may contain unreleased code; only sync readme.txt and assets.
+          IGNORE_OTHER_FILES: true
