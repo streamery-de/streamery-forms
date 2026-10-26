@@ -1,7 +1,7 @@
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="readme-assets/logo-white.png">
-    <img src="readme-assets/logo.png" alt="Streamery" width="360">
+    <img src="readme-assets/logo.png" alt="Streamery Forms" width="360">
   </picture>
 </div>
 
